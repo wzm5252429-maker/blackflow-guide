@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "ruleset_id": "blackflow-template-csp-v1",
+  "title": "沉沦者的黑流树海固定拓扑与约束填充规则 v1",
+  "model_scope": "决策内核研究环境；不是客户端规则的逐字节复刻",
+  "notes": [
+    "地图采用黑流树海的四向平面网格、已完成节点可通行、未完成节点不可越过的移动语义。",
+    "地图拓扑只从43个公开基底中抽取；节点类型在固定格位上按数量、距离、成组和门控约束填充。",
+    "模板抽取权重和节点类型真实先验未公开；本文件中的 weight 仅是可替换的模拟器先验，不代表游戏概率。",
+    "公开客户端 topic 表不包含场景到选项效果的结构化关联；事件收益因此是可替换的合成模型。",
+    "所有随机收益在地图生成时固定，搜索期间不偷看隐藏 RNG；后续有真实概率表时应升级为 chance node。",
+    "普通区域初始行动力来自客户端 rogue_6_feature_ap_1 的 zone_into_reward：I–V层依次为5、6、7、8、8；三结局第VI层固定为5。",
+    "第VI层拓扑、起点、终点和四个内容节点来自路标档案馆2026-08-31构建包；它是固定、全揭示的特殊层，但来源没有声明其余8格的具体类型。",
+    "第VI层未声明槽位的类型范围和权重属于可替换的合成先验：用于产生训练扰动，不代表游戏真实数量或概率；应优先用真实对局日志更新。",
+    "value_scale=256 依据当前合成规则的回报分布校准，避免多数较好轨迹被裁剪为同一个价值目标。"
+  ],
+  "sources": [
+    "source_data/roguelike_topic_table_full.json#details.rogue_6",
+    "https://arkrog.com/tool/blackflowmap",
+    "https://www.lubiao.wiki/tools/blackstream-route (rules version 2026-08-31)",
+    "https://prts.wiki/w/沉沦者的黑流树海"
+  ],
+  "map_templates": "blackflow_map_templates_v1.json",
+  "node_distance_metric": "lubiao-final-neighbour-shortcut-v1",
+  "max_nodes": 50,
+  "max_options": 6,
+  "floors": {
+    "1": {"width": 5, "height": 3, "node_count": [11, 13], "action_points": 5, "minimum_exit_distance": 3, "maximum_graph_distance": 5, "exit_types": ["FINAL", "EVACUATE"]},
+    "2": {"width": 5, "height": 4, "node_count": [16, 20], "action_points": 6, "minimum_exit_distance": 3, "maximum_graph_distance": 8, "exit_types": ["FINAL", "EVACUATE"]},
+    "3": {"width": 7, "height": 5, "node_count": [26, 32], "action_points": 7, "minimum_exit_distance": 5, "maximum_graph_distance": 15, "exit_types": ["BATTLE_BOSS"]},
+    "4": {"width": 8, "height": 5, "node_count": [29, 36], "action_points": 8, "minimum_exit_distance": 4, "maximum_graph_distance": 14, "exit_types": ["FINAL", "EVACUATE"]},
+    "5": {"width": 10, "height": 5, "node_count": [37, 44], "action_points": 8, "minimum_exit_distance": 5, "maximum_graph_distance": 14, "exit_types": ["BATTLE_BOSS"]},
+    "6": {"width": 6, "height": 5, "node_count": [14, 14], "action_points": 5, "minimum_exit_distance": 3, "maximum_graph_distance": 5, "exit_types": ["BATTLE_BOSS"]}
+  },
+  "objective": {
+    "discount": 0.985,
+    "value_scale": 256.0,
+    "floor_clear_bonus": 8.0,
+    "run_clear_bonus": 30.0,
+    "chase_penalty": -7.0,
+    "weights": {
+      "hp": 0.12,
+      "max_hp": 0.25,
+      "shield": 0.15,
+      "gold": 0.12,
+      "hope": 0.85,
+      "parts": 2.2,
+      "relics": 2.7,
+      "tickets": 1.4,
+      "team_strength": 1.1,
+      "action_points": 0.55,
+      "key_item": 6.0
+    }
+  },
+  "node_rules": {
+    "BATTLE_NORMAL": {
+      "label": "作战", "category": "ferocity", "weight": 5.0,
+      "counts": {"1": [1,5], "2": [1,6], "3": [0,4], "4": [0,4], "5": [0,5], "6": [1,4]},
+      "distances": {"1": [1,4], "2": [1,7], "3": [1,15], "4": [1,14], "5": [1,14], "6": [2,5]}
+    },
+    "BATTLE_ELITE": {
+      "label": "紧急作战", "category": "ferocity", "weight": 1.4,
+      "counts": {"1": [0,1], "2": [0,1], "3": [0,3], "4": [0,4], "5": [0,5], "6": [0,2]},
+      "distances": {"1": [2,4], "2": [3,7], "3": [3,15], "4": [3,14], "5": [3,14], "6": [2,5]}
+    },
+    "BATTLE_BOSS": {
+      "label": "险路恶敌", "category": "ferocity", "weight": 0.0,
+      "counts": {"3": [1,1], "5": [1,1], "6": [1,1]},
+      "distances": {"3": [5,8], "5": [5,14], "6": [3,3]}
+    },
+    "BATTLE_SHOP": {
+      "label": "诡意行商", "category": "mystery", "weight": 1.3,
+      "counts": {"1": [1,2], "2": [0,1], "3": [0,1], "4": [0,3], "5": [0,2], "6": [1,2]},
+      "distances": {"1": [2,4], "2": [3,5], "3": [3,8], "4": [2,14], "5": [1,14], "6": [2,5]}
+    },
+    "REST": {
+      "label": "安全的角落", "category": "mystery", "weight": 0.8,
+      "counts": {"2": [0,1], "3": [0,2], "4": [0,1], "5": [0,2], "6": [0,1]},
+      "distances": {"2": [3,5], "3": [3,6], "4": [2,14], "5": [2,14], "6": [2,5]}
+    },
+    "INCIDENT": {
+      "label": "不期而遇", "category": "mystery", "weight": 3.2,
+      "counts": {"1": [0,2], "2": [0,2], "3": [0,4], "4": [0,3], "5": [0,4], "6": [1,3]},
+      "distances": {"1": [2,5], "2": [2,7], "3": [1,15], "4": [1,14], "5": [1,14], "6": [2,5]}
+    },
+    "WISH": {
+      "label": "得偿所愿", "category": "mystery", "weight": 1.5,
+      "counts": {"1": [0,1], "2": [0,1], "3": [0,3], "4": [0,2], "5": [0,6], "6": [0,1]},
+      "distances": {"1": [2,5], "2": [4,7], "3": [4,15], "4": [4,14], "5": [1,14], "6": [2,5]}
+    },
+    "SACRIFICE": {
+      "label": "失与得", "category": "mystery", "weight": 0.8,
+      "counts": {"2": [0,1], "3": [0,1], "4": [0,1], "5": [0,2], "6": [0,1]},
+      "distances": {"2": [3,5], "3": [3,6], "4": [2,4], "5": [2,14], "6": [2,5]}
+    },
+    "EXPEDITION": {
+      "label": "先行一步", "category": "mystery", "weight": 0.7,
+      "counts": {"2": [0,1], "3": [0,1], "4": [0,1]},
+      "distances": {"2": [2,4], "3": [2,4], "4": [2,4]}
+    },
+    "PORTAL": {
+      "label": "误入奇境", "category": "mystery", "weight": 0.5,
+      "counts": {"3": [0,1], "4": [0,1], "5": [0,1]},
+      "distances": {"3": [5,6], "4": [5,8], "5": [3,8]}
+    },
+    "DUEL": {
+      "label": "狭路相逢", "category": "mystery", "weight": 0.6,
+      "counts": {"3": [0,1], "4": [0,2], "5": [0,1], "6": [0,1]},
+      "distances": {"3": [2,4], "4": [2,14], "5": [2,4], "6": [2,5]}
+    },
+    "STORY": {"label": "命运所指", "category": "mystery", "weight": 0.0, "counts": {"5": [0,3], "6": [1,1]}, "distances": {"5": [1,14], "6": [1,1]}},
+    "STORY_HIDDEN": {"label": "命运所指", "category": "mystery", "weight": 0.0, "counts": {}, "distances": {}},
+    "SCRAP_SHOP": {
+      "label": "秘境行商", "category": "mystery", "weight": 1.3,
+      "counts": {"1": [0,1], "2": [0,1], "3": [0,1], "4": [0,2], "5": [0,2], "6": [0,1]},
+      "distances": {"1": [2,4], "2": [2,6], "3": [3,6], "4": [2,6], "5": [2,14], "6": [2,5]}
+    },
+    "DOOR": {"label": "曲折密道", "category": "mystery", "weight": 0.0, "counts": {"3": [0,2], "4": [0,2], "5": [0,2]}, "distances": {"3": [1,15], "4": [1,14], "5": [1,14]}},
+    "FINAL": {
+      "label": "险路尽头", "category": "mystery", "weight": 0.0,
+      "counts": {"1": [1,2], "2": [1,2], "4": [1,3]},
+      "distances": {"1": [5,5], "2": [3,8], "4": [4,14]}
+    },
+    "EVACUATE": {
+      "label": "险路小径", "category": "mystery", "weight": 0.0,
+      "counts": {"1": [0,1], "2": [0,1], "4": [0,1]},
+      "distances": {"1": [3,4], "2": [5,6], "4": [5,14]}
+    },
+    "EMPLOY": {
+      "label": "应急助力", "category": "mystery", "weight": 0.6,
+      "counts": {"2": [0,1], "3": [0,1], "4": [0,1], "5": [0,1], "6": [0,1]},
+      "distances": {"2": [2,5], "3": [4,15], "4": [2,3], "5": [3,5], "6": [2,5]}
+    },
+    "LIGHT": {
+      "label": "羽瞰点", "category": "mystery", "weight": 0.8,
+      "counts": {"2": [0,1], "3": [0,1], "4": [1,2], "5": [1,1], "6": [0,1]},
+      "distances": {"2": [3,6], "3": [4,7], "4": [3,8], "5": [5,8], "6": [2,5]}
+    },
+    "BATTLE_SAVAGE": {"label": "“居民”据点", "category": "ferocity", "weight": 0.0, "counts": {"2": [0,1], "4": [0,1], "5": [0,1], "6": [0,1]}, "distances": {"2": [4,7], "4": [4,14], "5": [4,14], "6": [2,5]}},
+    "EMPTY": {
+      "label": "林间空地", "category": "mystery", "weight": 3.0,
+      "counts": {"1": [0,3], "2": [0,7], "3": [5,11], "4": [3,13], "5": [10,16], "6": [0,8]},
+      "distances": {"1": [2,4], "2": [2,7], "3": [2,15], "4": [1,14], "5": [2,14], "6": [2,5]}
+    }
+  },
+  "event_pools": {
+    "1": ["思乡心切", "桑尼的邀请", "色味不同源", "敲动杠杆", "沉寂之屋"],
+    "2": ["思乡心切", "桑尼的邀请", "色味不同源", "敲动杠杆", "沉寂之屋", "独活", "划算买卖", "货从口出", "沉重的契约", "血衣之下", "呼吸的红苔", "被歌颂的影子", "临时中介所", "线人"],
+    "3": ["敲动杠杆", "沉寂之屋", "黑诞", "独活", "划算买卖", "货从口出", "沉重的契约", "血衣之下", "呼吸的红苔", "被歌颂的影子", "临时中介所", "线人", "鸭托邦", "湖中仙女", "洞中宝", "擒与缚", "泪之聚落"],
+    "4": ["敲动杠杆", "黑诞", "独活", "货从口出", "沉重的契约", "血衣之下", "呼吸的红苔", "被歌颂的影子", "临时中介所", "线人", "鸭托邦", "湖中仙女", "洞中宝", "愈创之心", "传奇团伙", "和平守卫者", "泪之聚落"],
+    "5": ["敲动杠杆", "黑诞", "货从口出", "沉重的契约", "血衣之下", "被歌颂的影子", "临时中介所", "湖中仙女", "擒与缚", "传奇团伙", "和平守卫者", "泪之聚落"],
+    "6": ["敲动杠杆", "货从口出", "被歌颂的影子", "擒与缚", "传奇团伙"]
+  }
+}
