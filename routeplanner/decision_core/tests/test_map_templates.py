@@ -2,8 +2,10 @@ from __future__ import annotations
 
 from collections import Counter, deque
 from dataclasses import FrozenInstanceError, replace
+from hashlib import sha256
 import json
 from pathlib import Path
+import re
 import tempfile
 import unittest
 
@@ -55,6 +57,47 @@ class MapTemplateTests(unittest.TestCase):
                 (0, 3): NodeType.INCIDENT,
                 (4, 3): NodeType.BATTLE_NORMAL,
                 (2, 5): NodeType.BATTLE_SHOP,
+            },
+        )
+
+    def test_sixth_floor_is_rederived_from_pinned_raw_source_fragment(self) -> None:
+        fixture_path = Path(__file__).parent / "golden" / "lubiao_floor6_v1.json"
+        fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
+        raw = fixture["raw_fragment"]
+        self.assertEqual(
+            sha256(raw.encode("utf-8")).hexdigest(),
+            fixture["fragment_sha256"],
+        )
+        # This source fragment is JSON5-like only because its keys are bare.
+        parsed = json.loads(re.sub(r"([,{])([A-Za-z][A-Za-z0-9]*):", r'\1"\2":', raw))
+        xy_to_row_col = lambda point: (point[1], point[0])
+        template = self.library.get("floor-6-01")
+        self.assertEqual((template.cols, template.rows), tuple(parsed["gridShape"]))
+        self.assertEqual(template.start, xy_to_row_col(parsed["startSlot"]))
+        self.assertEqual(
+            template.boss_terminal,
+            xy_to_row_col(parsed["terminalSlots"][0]),
+        )
+        self.assertEqual(
+            set(template.occupied_slots),
+            {xy_to_row_col(point) for point in parsed["occupiedSlots"]},
+        )
+        expected_edges = {
+            tuple(sorted((xy_to_row_col(left), xy_to_row_col(right))))
+            for left, right in parsed["edges"]
+        }
+        self.assertEqual(set(template.edges), expected_edges)
+        source_type_map = {
+            "fate-choice": NodeType.STORY,
+            "encounter": NodeType.INCIDENT,
+            "combat": NodeType.BATTLE_NORMAL,
+            "rogue-trader": NodeType.BATTLE_SHOP,
+        }
+        self.assertEqual(
+            dict(template.fixed_slot_types),
+            {
+                xy_to_row_col(item["slot"]): source_type_map[item["type"]]
+                for item in parsed["fixedNodes"]
             },
         )
 

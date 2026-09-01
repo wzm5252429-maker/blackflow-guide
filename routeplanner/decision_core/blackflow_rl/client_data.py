@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
-from hashlib import sha256
+from hashlib import sha1, sha256
 import json
 from pathlib import Path
 from typing import Any
@@ -18,6 +18,7 @@ DEFAULT_CLIENT_DATA = (
 class ClientDataSummary:
     path: str
     sha256: str
+    git_blob_sha: str
     topic_id: str
     node_types: int
     choices: int
@@ -96,6 +97,9 @@ def validate_client_data(
     return ClientDataSummary(
         path=str(source),
         sha256=sha256(raw).hexdigest(),
+        git_blob_sha=sha1(
+            f"blob {len(raw)}\0".encode("ascii") + raw
+        ).hexdigest(),  # noqa: S324 - Git object identity, not cryptography
         topic_id=topic_id,
         node_types=len(details["nodeTypeData"]),
         choices=len(details["choices"]),

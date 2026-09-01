@@ -7,7 +7,7 @@ environments.
 """
 
 from .domain import Action, ActionKind, GameState, NodeType, Transition
-from .mapgen import MapGenerator
+from .mapgen import MapGenerator, UnverifiedRuleError
 from .rules import Ruleset, load_ruleset
 from .simulator import BlackflowSimulator
 
@@ -20,7 +20,8 @@ __all__ = [
     "NodeType",
     "Ruleset",
     "Transition",
+    "UnverifiedRuleError",
     "load_ruleset",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

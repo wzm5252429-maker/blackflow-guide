@@ -3,19 +3,25 @@
   "ruleset_id": "blackflow-template-csp-v1",
   "title": "沉沦者的黑流树海固定拓扑与约束填充规则 v1",
   "model_scope": "决策内核研究环境；不是客户端规则的逐字节复刻",
+  "compatibility_profile": "lubiao-2026-08-31",
+  "random_generation_status": "synthetic-only-explicit-opt-in",
+  "evidence_catalog": "../evidence/rogue6_noncombat_event_catalog_v1.json",
+  "map_conflict_manifest": "../evidence/map_rule_conflicts_v1.json",
   "notes": [
     "地图采用黑流树海的四向平面网格、已完成节点可通行、未完成节点不可越过的移动语义。",
     "地图拓扑只从43个公开基底中抽取；节点类型在固定格位上按数量、距离、成组和门控约束填充。",
     "模板抽取权重和节点类型真实先验未公开；本文件中的 weight 仅是可替换的模拟器先验，不代表游戏概率。",
-    "公开客户端 topic 表不包含场景到选项效果的结构化关联；事件收益因此是可替换的合成模型。",
+    "公开客户端 topic 表不包含场景到选项效果的结构化关联；证据模式必须等待真实观测，合成收益只能显式启用。",
     "所有随机收益在地图生成时固定，搜索期间不偷看隐藏 RNG；后续有真实概率表时应升级为 chance node。",
     "普通区域初始行动力来自客户端 rogue_6_feature_ap_1 的 zone_into_reward：I–V层依次为5、6、7、8、8；三结局第VI层固定为5。",
-    "第VI层拓扑、起点、终点和四个内容节点来自路标档案馆2026-08-31构建包；它是固定、全揭示的特殊层，但来源没有声明其余8格的具体类型。",
-    "第VI层未声明槽位的类型范围和权重属于可替换的合成先验：用于产生训练扰动，不代表游戏真实数量或概率；应优先用真实对局日志更新。",
+    "第VI层拓扑、起点、终点和四个内容节点来自路标档案馆2026-08-31构建包；该来源没有声明其余8格的具体类型，也没有证明入层全揭示。",
+    "第VI层严格模式拒绝生成未声明槽位；显式研究模式使用可替换的合成先验，当前先验不包含失与得、狭路相逢、应急助力和居民据点，但这不构成对官服不可能出现的证明。",
     "value_scale=256 依据当前合成规则的回报分布校准，避免多数较好轨迹被裁剪为同一个价值目标。"
   ],
   "sources": [
     "source_data/roguelike_topic_table_full.json#details.rogue_6",
+    "data/evidence/rogue6_client_choice_snapshot_v1.json (client Git blob 723f15432e989b6d0d402c38548a74a317f2f97c)",
+    "data/evidence/map_rule_conflicts_v1.json",
     "https://arkrog.com/tool/blackflowmap",
     "https://www.lubiao.wiki/tools/blackstream-route (rules version 2026-08-31)",
     "https://prts.wiki/w/沉沦者的黑流树海"
@@ -90,8 +96,8 @@
     },
     "SACRIFICE": {
       "label": "失与得", "category": "mystery", "weight": 0.8,
-      "counts": {"2": [0,1], "3": [0,1], "4": [0,1], "5": [0,2], "6": [0,1]},
-      "distances": {"2": [3,5], "3": [3,6], "4": [2,4], "5": [2,14], "6": [2,5]}
+      "counts": {"2": [0,1], "3": [0,1], "4": [0,1], "5": [0,2]},
+      "distances": {"2": [3,5], "3": [3,6], "4": [2,4], "5": [2,14]}
     },
     "EXPEDITION": {
       "label": "先行一步", "category": "mystery", "weight": 0.7,
@@ -105,8 +111,8 @@
     },
     "DUEL": {
       "label": "狭路相逢", "category": "mystery", "weight": 0.6,
-      "counts": {"3": [0,1], "4": [0,2], "5": [0,1], "6": [0,1]},
-      "distances": {"3": [2,4], "4": [2,14], "5": [2,4], "6": [2,5]}
+      "counts": {"3": [0,1], "4": [0,2], "5": [0,1]},
+      "distances": {"3": [2,4], "4": [2,14], "5": [2,4]}
     },
     "STORY": {"label": "命运所指", "category": "mystery", "weight": 0.0, "counts": {"5": [0,3], "6": [1,1]}, "distances": {"5": [1,14], "6": [1,1]}},
     "STORY_HIDDEN": {"label": "命运所指", "category": "mystery", "weight": 0.0, "counts": {}, "distances": {}},
@@ -128,15 +134,15 @@
     },
     "EMPLOY": {
       "label": "应急助力", "category": "mystery", "weight": 0.6,
-      "counts": {"2": [0,1], "3": [0,1], "4": [0,1], "5": [0,1], "6": [0,1]},
-      "distances": {"2": [2,5], "3": [4,15], "4": [2,3], "5": [3,5], "6": [2,5]}
+      "counts": {"2": [0,1], "3": [0,1], "4": [0,1], "5": [0,1]},
+      "distances": {"2": [2,5], "3": [4,15], "4": [2,3], "5": [3,5]}
     },
     "LIGHT": {
       "label": "羽瞰点", "category": "mystery", "weight": 0.8,
       "counts": {"2": [0,1], "3": [0,1], "4": [1,2], "5": [1,1], "6": [0,1]},
       "distances": {"2": [3,6], "3": [4,7], "4": [3,8], "5": [5,8], "6": [2,5]}
     },
-    "BATTLE_SAVAGE": {"label": "“居民”据点", "category": "ferocity", "weight": 0.0, "counts": {"2": [0,1], "4": [0,1], "5": [0,1], "6": [0,1]}, "distances": {"2": [4,7], "4": [4,14], "5": [4,14], "6": [2,5]}},
+    "BATTLE_SAVAGE": {"label": "“居民”据点", "category": "ferocity", "weight": 0.0, "counts": {"2": [0,1], "4": [0,1], "5": [0,1]}, "distances": {"2": [4,7], "4": [4,14], "5": [4,14]}},
     "EMPTY": {
       "label": "林间空地", "category": "mystery", "weight": 3.0,
       "counts": {"1": [0,3], "2": [0,7], "3": [5,11], "4": [3,13], "5": [10,16], "6": [0,8]},

@@ -81,6 +81,8 @@ class Ruleset:
     ruleset_id: str
     title: str
     model_scope: str
+    compatibility_profile: str
+    random_generation_status: str
     notes: tuple[str, ...]
     sources: tuple[str, ...]
     max_nodes: int
@@ -199,6 +201,8 @@ def load_ruleset(path: str | Path | None = None) -> Ruleset:
         ruleset_id=str(data["ruleset_id"]),
         title=str(data["title"]),
         model_scope=str(data["model_scope"]),
+        compatibility_profile=str(data["compatibility_profile"]),
+        random_generation_status=str(data["random_generation_status"]),
         notes=tuple(map(str, data.get("notes", []))),
         sources=tuple(map(str, data.get("sources", []))),
         max_nodes=max_nodes,

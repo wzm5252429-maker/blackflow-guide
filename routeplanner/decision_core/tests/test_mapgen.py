@@ -9,6 +9,7 @@ from blackflow_rl.mapgen import (
     MapGenerationError,
     MapGenerator,
     MapGeneratorConfig,
+    UnverifiedRuleError,
     _distances,
     _rule_distances,
 )
@@ -17,7 +18,22 @@ from blackflow_rl.mapgen import (
 class MapGeneratorTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.generator = MapGenerator()
+        cls.generator = MapGenerator(
+            config=MapGeneratorConfig(
+                allow_synthetic_map_sampling=True,
+                allow_synthetic_event_effects=True,
+                allow_synthetic_floor6_contents=True,
+            )
+        )
+
+    def test_evidence_profile_refuses_unpublished_random_weights(self) -> None:
+        with self.assertRaisesRegex(UnverifiedRuleError, "真实抽取权重"):
+            MapGenerator().generate_floor(1, 1)
+        guarded = MapGenerator(
+            config=MapGeneratorConfig(allow_synthetic_map_sampling=True)
+        )
+        with self.assertRaisesRegex(UnverifiedRuleError, "其余8格"):
+            guarded.generate_floor(6, 1)
 
     def test_seed_is_reproducible(self) -> None:
         first = self.generator.generate_run(1234)
@@ -37,11 +53,18 @@ class MapGeneratorTests(unittest.TestCase):
                     enable_third_ending=True,
                 )
             )
+        with self.assertRaisesRegex(ValueError, "unverified assumption"):
+            MapGenerator(config=MapGeneratorConfig(reveal_all_floor6=True))
 
     def test_third_ending_explicitly_appends_fixed_sixth_floor(self) -> None:
         normal = self.generator.generate_run(20260831)
         third_generator = MapGenerator(
-            config=MapGeneratorConfig(enable_third_ending=True)
+            config=MapGeneratorConfig(
+                enable_third_ending=True,
+                allow_synthetic_map_sampling=True,
+                allow_synthetic_event_effects=True,
+                allow_synthetic_floor6_contents=True,
+            )
         )
         third = third_generator.generate_run(20260831)
         self.assertEqual([item.floor for item in normal], [1, 2, 3, 4, 5])
@@ -91,7 +114,7 @@ class MapGeneratorTests(unittest.TestCase):
             self.assertIs(by_position[(2, 3)], NodeType.BATTLE_BOSS)
         self.assertGreater(len(assignments), 1)
 
-    def test_every_verified_template_can_be_filled_without_changing_topology(self) -> None:
+    def test_every_pinned_template_can_be_filled_without_changing_topology(self) -> None:
         for index, template in enumerate(self.generator.templates.templates):
             floor_map = self.generator.generate_floor(
                 template.floor,
@@ -120,6 +143,9 @@ class MapGeneratorTests(unittest.TestCase):
                 enable_portal=True,
                 enable_expedition=True,
                 enable_second_ending=True,
+                allow_synthetic_map_sampling=True,
+                allow_synthetic_event_effects=True,
+                allow_synthetic_floor6_contents=True,
                 door_pair_probability=1.0,
                 evacuation_probability=1.0,
             )
@@ -143,6 +169,25 @@ class MapGeneratorTests(unittest.TestCase):
                 counts[NodeType.EVACUATE],
                 1 if template.floor in (1, 2, 4) else 0,
             )
+
+    def test_synthetic_sixth_floor_excludes_types_outside_current_prior(self) -> None:
+        forbidden = {
+            NodeType.SACRIFICE,
+            NodeType.DUEL,
+            NodeType.EMPLOY,
+            NodeType.BATTLE_SAVAGE,
+        }
+        generator = MapGenerator(
+            config=MapGeneratorConfig(
+                include_advanced_nodes=True,
+                allow_synthetic_map_sampling=True,
+                allow_synthetic_event_effects=True,
+                allow_synthetic_floor6_contents=True,
+            )
+        )
+        for seed in range(100):
+            generated = {node.node_type for node in generator.generate_floor(6, seed).nodes}
+            self.assertFalse(generated & forbidden, (seed, generated & forbidden))
 
     def test_many_maps_obey_graph_and_rule_invariants(self) -> None:
         for seed in range(30):

@@ -8,6 +8,7 @@ import numpy as np
 import torch
 
 from blackflow_rl.features import FeatureEncoder
+from blackflow_rl.mapgen import MapGenerator, MapGeneratorConfig
 from blackflow_rl.network import GraphPolicyValueNetwork, NetworkConfig
 from blackflow_rl.simulator import BlackflowSimulator
 from blackflow_rl.training import ReplaySample, Trainer, TrainingConfig
@@ -15,7 +16,14 @@ from blackflow_rl.training import ReplaySample, Trainer, TrainingConfig
 
 class NetworkAndTrainingTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.env = BlackflowSimulator()
+        self.env = BlackflowSimulator(
+            map_generator=MapGenerator(
+                config=MapGeneratorConfig(
+                    allow_synthetic_map_sampling=True,
+                    allow_synthetic_event_effects=True,
+                )
+            )
+        )
         self.encoder = FeatureEncoder(self.env)
 
     def test_encoder_and_network_mask_shapes(self) -> None:
@@ -77,6 +85,18 @@ class NetworkAndTrainingTests(unittest.TestCase):
             first = trainer.model.predict(**encoded.as_torch())[0]
             second = restored.model.predict(**encoded.as_torch())[0]
             self.assertTrue(torch.allclose(first, second))
+
+            changed_env = BlackflowSimulator(
+                map_generator=MapGenerator(
+                    config=MapGeneratorConfig(
+                        allow_synthetic_map_sampling=True,
+                        allow_synthetic_event_effects=True,
+                        door_pair_probability=0.75,
+                    )
+                )
+            )
+            with self.assertRaisesRegex(ValueError, "environment SHA"):
+                Trainer.load_checkpoint(changed_env, path)
 
 
 if __name__ == "__main__":

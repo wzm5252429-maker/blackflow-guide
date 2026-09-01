@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from collections import deque
-from dataclasses import replace
+from dataclasses import asdict, replace
 from hashlib import sha256
+import json
+from pathlib import Path
 from typing import Iterable
 
 from .domain import (
@@ -49,6 +51,39 @@ class BlackflowSimulator:
     @property
     def action_size(self) -> int:
         return self.ruleset.action_size
+
+    @property
+    def simulation_profile(self) -> str:
+        config = self.map_generator.config
+        if config.allow_synthetic_map_sampling and config.allow_synthetic_event_effects:
+            return "synthetic"
+        if not config.allow_synthetic_map_sampling and not config.allow_synthetic_event_effects:
+            return "evidence"
+        return "mixed"
+
+    @property
+    def environment_sha256(self) -> str:
+        """Fingerprint every runtime input that can change training semantics."""
+
+        root = Path(__file__).resolve().parent
+        payload = bytearray(b"blackflow-environment-v2\0")
+        payload.extend(self.ruleset.sha256.encode("ascii"))
+        payload.extend(b"\0")
+        payload.extend(
+            json.dumps(
+                asdict(self.map_generator.config),
+                sort_keys=True,
+                separators=(",", ":"),
+            ).encode("utf-8")
+        )
+        for name in ("domain.py", "mapgen.py", "simulator.py"):
+            payload.extend(b"\0" + name.encode("ascii") + b"\0")
+            payload.extend((root / name).read_bytes())
+        evidence_catalog = root.parent / "data" / "evidence" / "rogue6_noncombat_event_catalog_v1.json"
+        if evidence_catalog.is_file():
+            payload.extend(b"\0event-catalog\0")
+            payload.extend(evidence_catalog.read_bytes())
+        return sha256(payload).hexdigest()
 
     def reset(
         self,
@@ -126,6 +161,7 @@ class BlackflowSimulator:
         action = self.decode_action(state, action_id)
         messages: list[str] = []
         reward = 0.0
+        needs_observation = False
         next_state = state
 
         if action.kind is ActionKind.MOVE:
@@ -143,7 +179,11 @@ class BlackflowSimulator:
             messages.append(
                 f"移动到{self.node_label(node)}，消耗{action.movement_cost}行动力"
             )
-            if node.options:
+            if node.requires_observation:
+                needs_observation = True
+                next_state = replace(next_state, pending_node_id=node.node_id)
+                messages.append("该节点的真实场景/结算尚未观测，模拟器已停步")
+            elif node.options:
                 next_state = replace(next_state, pending_node_id=node.node_id)
             else:
                 next_state, gained = self._complete_node(next_state, node, node.auto_effect)
@@ -196,8 +236,101 @@ class BlackflowSimulator:
             next_state=next_state,
             reward=reward,
             terminated=next_state.terminal,
-            info={"action": action, "messages": tuple(messages)},
+            info={
+                "action": action,
+                "messages": tuple(messages),
+                "needs_observation": needs_observation,
+                "status": "NEEDS_OBSERVATION" if needs_observation else "OK",
+            },
         )
+
+    def ingest_external_observation(
+        self,
+        state: GameState,
+        *,
+        resources: ResourceState,
+        inventory: Iterable[str] | None = None,
+        complete_node: bool = True,
+        next_floor_map: FloorMap | None = None,
+        run_finished: bool | None = None,
+        note: str = "真人/识别适配器回填真实结算",
+    ) -> GameState:
+        """Resume an evidence-mode state from an absolute real-game observation.
+
+        This is intentionally not a simulated transition and does not create a
+        replay reward.  The caller must provide the post-resolution absolute
+        resource state immediately after resolving the node and before the
+        deterministic exit transition.  Unknown server effects are never
+        inferred here.  When the completed node is an exit, the already-modeled
+        AP/hope carry rule advances to the next floor.  If the caller did not
+        preload a future map, it must pass the newly observed ``next_floor_map``;
+        final completion must be confirmed explicitly with ``run_finished=True``.
+        """
+
+        if state.pending_node_id is None:
+            raise ValueError("no pending node is waiting for an external observation")
+        node = state.floor_map.node(state.pending_node_id)
+        if not node.requires_observation:
+            raise ValueError("pending node has a modeled choice and must use transition()")
+        if not complete_node and (next_floor_map is not None or run_finished is not None):
+            raise ValueError(
+                "next_floor_map/run_finished require complete_node=True"
+            )
+        if not node.is_exit and (next_floor_map is not None or run_finished is not None):
+            raise ValueError(
+                "next_floor_map/run_finished are valid only for an exit node"
+            )
+        completed = (
+            state.completed | {node.node_id}
+            if complete_node
+            else state.completed
+        )
+        next_state = replace(
+            state,
+            resources=resources,
+            inventory=(
+                state.inventory
+                if inventory is None
+                else frozenset(inventory)
+            ),
+            completed=completed,
+            pending_node_id=None if complete_node else state.pending_node_id,
+            history=state.history + (note,),
+        )
+        if complete_node and node.is_exit:
+            has_preloaded_future = state.floor_index + 1 < len(state.maps)
+            if next_floor_map is not None:
+                if has_preloaded_future:
+                    raise ValueError(
+                        "a future floor is already present; do not also pass next_floor_map"
+                    )
+                if run_finished:
+                    raise ValueError(
+                        "next_floor_map and run_finished=True are mutually exclusive"
+                    )
+                if next_floor_map.floor != state.floor + 1:
+                    raise ValueError(
+                        "next_floor_map must be the immediately following floor"
+                    )
+                self.map_generator.validate(next_floor_map)
+                next_state = replace(next_state, maps=state.maps + (next_floor_map,))
+                has_preloaded_future = True
+            if run_finished and has_preloaded_future:
+                raise ValueError(
+                    "run_finished=True conflicts with an already observed future floor"
+                )
+            if not has_preloaded_future and run_finished is not True:
+                raise ValueError(
+                    "exit observation needs next_floor_map or explicit run_finished=True"
+                )
+            next_state, _ignored_reward, exit_messages = self._advance_floor(
+                next_state, node
+            )
+            return replace(
+                next_state,
+                history=next_state.history + tuple(exit_messages),
+            )
+        return self._refresh_revealed(next_state)
 
     def reachable_frontier(self, state: GameState) -> dict[str, int]:
         """Return incomplete nodes reachable through completed nodes and their AP cost."""
@@ -358,6 +491,39 @@ class BlackflowSimulator:
         cached = self._future_belief_maps.get(floor)
         if cached is not None:
             return cached
+        if not self.map_generator.config.allow_synthetic_map_sampling:
+            # Evidence mode must not sample a made-up future topology.  Keep a
+            # canonical opaque two-node placeholder solely to preserve the
+            # number of remaining floors in global features.  Strict exits
+            # pause for external observation, so search never traverses it.
+            exit_type = (
+                NodeType.BATTLE_BOSS if floor in {3, 5, 6} else NodeType.FINAL
+            )
+            start_id = f"F{floor}_OBS_START"
+            exit_id = f"F{floor}_OBS_EXIT"
+            opaque = FloorMap(
+                floor=floor,
+                width=2,
+                height=1,
+                nodes=(
+                    MapNode(start_id, 0, 0, 0, NodeType.START, 0),
+                    MapNode(
+                        exit_id,
+                        1,
+                        0,
+                        1,
+                        exit_type,
+                        1,
+                        requires_observation=True,
+                    ),
+                ),
+                edges=((start_id, exit_id),),
+                start_node_id=start_id,
+                exit_node_ids=(exit_id,),
+                seed=0,
+            )
+            self._future_belief_maps[floor] = opaque
+            return opaque
         digest = sha256(
             f"{self.ruleset.ruleset_id}:{self.ruleset.sha256}:future-belief:{floor}".encode()
         ).digest()
@@ -373,6 +539,16 @@ class BlackflowSimulator:
         node_type: NodeType,
         event_options: tuple[EventOption, ...],
     ) -> MapNode:
+        if not self.map_generator.config.allow_synthetic_event_effects:
+            no_resolution_needed = {NodeType.START, NodeType.EMPTY, NodeType.DOOR}
+            return replace(
+                node,
+                node_type=node_type,
+                options=(),
+                auto_effect=ResourceDelta(),
+                event_name=None,
+                requires_observation=node_type not in no_resolution_needed,
+            )
         battle_rewards = {
             NodeType.BATTLE_NORMAL: ResourceDelta(gold=5, team_strength=1),
             NodeType.BATTLE_ELITE: ResourceDelta(
@@ -392,6 +568,7 @@ class BlackflowSimulator:
                 options=(),
                 auto_effect=battle_rewards[node_type],
                 event_name=None,
+                requires_observation=False,
             )
         fixed_effects = {
             NodeType.START: ResourceDelta(),
@@ -408,6 +585,7 @@ class BlackflowSimulator:
                 options=(),
                 auto_effect=fixed_effects[node_type],
                 event_name=None,
+                requires_observation=False,
             )
         return replace(
             node,
@@ -415,6 +593,7 @@ class BlackflowSimulator:
             options=event_options,
             auto_effect=ResourceDelta(),
             event_name="未进入节点期望模型",
+            requires_observation=False,
         )
 
     def _complete_node(
@@ -528,9 +707,9 @@ class BlackflowSimulator:
             return state
         revealed = set(state.revealed)
         floor_map = state.floor_map
-        if floor_map.floor == 6:
-            # Source Confluence is the third-ending special layer.  Unlike
-            # normal regions, the game reveals every node immediately.
+        if floor_map.floor == 6 and self.map_generator.config.reveal_all_floor6:
+            # The current topology source does not itself prove this behavior;
+            # keep it behind an explicit observed/synthetic profile switch.
             revealed.update(node.node_id for node in floor_map.nodes)
             return replace(state, revealed=frozenset(revealed))
         for node in floor_map.nodes:

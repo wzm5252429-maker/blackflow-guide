@@ -9,6 +9,7 @@ from typing import Any, Sequence
 
 from .agents import HeuristicEvaluator
 from .client_data import DEFAULT_CLIENT_DATA, validate_client_data
+from .evidence import audit_evidence
 from .mapgen import MapGenerator, MapGeneratorConfig
 from .mcts import MCTSConfig, PUCTMCTS
 from .simulator import BlackflowSimulator
@@ -40,6 +41,11 @@ def build_parser() -> argparse.ArgumentParser:
     validate = subparsers.add_parser("validate-data", help="校验本地 rogue_6 客户端数据")
     validate.add_argument("--path", type=Path, default=DEFAULT_CLIENT_DATA)
 
+    subparsers.add_parser(
+        "audit-evidence",
+        help="校验来源快照并报告仍阻止真实规则训练的未知项",
+    )
+
     sample = subparsers.add_parser("sample-map", help="抽取模板并打印一套约束地图")
     sample.add_argument("--seed", type=int, default=42)
     sample.add_argument("--floor", type=int, choices=range(1, 7), default=1)
@@ -47,9 +53,23 @@ def build_parser() -> argparse.ArgumentParser:
         "--ending-route",
         choices=("normal", "second", "third"),
         default="normal",
-        help="结局路线；third 会在 I–V 后追加固定拓扑、全揭示的第 VI 层",
+        help=(
+            "结局路线；third 会在 I–V 后追加第 VI 层固定拓扑；"
+            "全图揭示未获证实，默认不启用"
+        ),
     )
     sample.add_argument("--json", action="store_true", dest="as_json")
+    sample.add_argument(
+        "--profile",
+        choices=("evidence", "synthetic"),
+        default="evidence",
+        help="evidence拒绝未知概率抽样；synthetic仅供研究扰动",
+    )
+    sample.add_argument(
+        "--assume-floor6-full-reveal",
+        action="store_true",
+        help="未有独立证据；仅在synthetic profile中显式启用",
+    )
 
     simulate = subparsers.add_parser("simulate", help="运行一整局基线策略")
     simulate.add_argument("--seed", type=int, default=42)
@@ -57,11 +77,17 @@ def build_parser() -> argparse.ArgumentParser:
         "--policy", choices=("random", "heuristic", "mcts"), default="mcts"
     )
     simulate.add_argument("--simulations", type=int, default=32)
+    simulate.add_argument(
+        "--profile", choices=("evidence", "synthetic"), default="evidence"
+    )
 
     plan = subparsers.add_parser("plan", help="对开局状态给出 MCTS 下一步建议")
     plan.add_argument("--seed", type=int, default=42)
     plan.add_argument("--simulations", type=int, default=64)
     plan.add_argument("--checkpoint", type=Path)
+    plan.add_argument(
+        "--profile", choices=("evidence", "synthetic"), default="evidence"
+    )
 
     train = subparsers.add_parser("train", help="planner-guided rollout 训练")
     train.add_argument("--episodes", type=int, default=5)
@@ -76,6 +102,9 @@ def build_parser() -> argparse.ArgumentParser:
     train.add_argument(
         "--output", type=Path, default=Path("artifacts/blackflow_policy.pt")
     )
+    train.add_argument(
+        "--profile", choices=("evidence", "synthetic"), default="evidence"
+    )
 
     evaluate = subparsers.add_parser("evaluate", help="用相同随机种子比较策略")
     evaluate.add_argument("--checkpoint", type=Path)
@@ -83,6 +112,9 @@ def build_parser() -> argparse.ArgumentParser:
     evaluate.add_argument("--seed-start", type=int, default=10000)
     evaluate.add_argument("--simulations", type=int, default=32)
     evaluate.add_argument("--device", default="cpu")
+    evaluate.add_argument(
+        "--profile", choices=("evidence", "synthetic"), default="evidence"
+    )
 
     return parser
 
@@ -95,7 +127,24 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(_json(validate_client_data(args.path).to_dict()))
             return 0
 
-        simulator = BlackflowSimulator()
+        if args.command == "audit-evidence":
+            print(_json(audit_evidence().to_dict()))
+            return 0
+
+        synthetic = args.profile == "synthetic"
+        if getattr(args, "assume_floor6_full_reveal", False) and not synthetic:
+            raise ValueError("全揭示尚无独立证据，只能与 --profile synthetic 同时使用")
+        generator = MapGenerator(
+            config=MapGeneratorConfig(
+                allow_synthetic_map_sampling=synthetic,
+                allow_synthetic_event_effects=synthetic,
+                allow_synthetic_floor6_contents=(
+                    synthetic and getattr(args, "ending_route", None) == "third"
+                ),
+                reveal_all_floor6=getattr(args, "assume_floor6_full_reveal", False),
+            )
+        )
+        simulator = BlackflowSimulator(map_generator=generator)
         if args.command == "sample-map":
             if args.floor == 6 and args.ending_route != "third":
                 raise ValueError("第6层仅属于三结局；请同时传入 --ending-route third")
@@ -103,6 +152,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                 config=MapGeneratorConfig(
                     enable_second_ending=args.ending_route == "second",
                     enable_third_ending=args.ending_route == "third",
+                    allow_synthetic_map_sampling=synthetic,
+                    allow_synthetic_event_effects=synthetic,
+                    allow_synthetic_floor6_contents=(
+                        synthetic and args.ending_route == "third"
+                    ),
+                    reveal_all_floor6=args.assume_floor6_full_reveal,
                 )
             )
             simulator = BlackflowSimulator(map_generator=generator)
@@ -112,6 +167,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                 print(
                     _json(
                         {
+                            "profile": simulator.simulation_profile,
+                            "warning": (
+                                "constraint-compatible synthetic prior; not official RNG"
+                                if synthetic
+                                else None
+                            ),
                             "floor": floor_map.floor,
                             "seed": floor_map.seed,
                             "fingerprint": floor_map.fingerprint,
@@ -157,7 +218,10 @@ def main(argv: Sequence[str] | None = None) -> int:
                 policy=args.policy,
                 simulations=args.simulations,
             )
-            print(_json(asdict(stats)))
+            payload = asdict(stats)
+            payload["simulation_profile"] = simulator.simulation_profile
+            payload["verified_game_rules"] = False
+            print(_json(payload))
             return 0
 
         if args.command == "plan":
@@ -196,7 +260,16 @@ def main(argv: Sequence[str] | None = None) -> int:
             ]
             candidates.sort(key=lambda item: (-item["visits"], item["action_id"]))
             print(simulator.render_text(state))
-            print(_json({"root_value": result.root_value, "candidates": candidates}))
+            print(
+                _json(
+                    {
+                        "simulation_profile": simulator.simulation_profile,
+                        "verified_game_rules": False,
+                        "root_value": result.root_value,
+                        "candidates": candidates,
+                    }
+                )
+            )
             return 0
 
         if args.command == "train":
@@ -223,7 +296,16 @@ def main(argv: Sequence[str] | None = None) -> int:
             for report in trainer.train(args.episodes):
                 print(_json(report), flush=True)
             checkpoint = trainer.save_checkpoint(args.output)
-            print(_json({"checkpoint": str(checkpoint), "rules_sha256": simulator.ruleset.sha256}))
+            print(
+                _json(
+                    {
+                        "checkpoint": str(checkpoint),
+                        "simulation_profile": simulator.simulation_profile,
+                        "rules_sha256": simulator.ruleset.sha256,
+                        "environment_sha256": simulator.environment_sha256,
+                    }
+                )
+            )
             return 0
 
         if args.command == "evaluate":
@@ -235,14 +317,19 @@ def main(argv: Sequence[str] | None = None) -> int:
                 else None
             )
             seeds = range(args.seed_start, args.seed_start + args.episodes)
+            result = evaluate_policies(
+                simulator,
+                seeds,
+                trainer=trainer,
+                simulations=args.simulations,
+            )
             print(
                 _json(
-                    evaluate_policies(
-                        simulator,
-                        seeds,
-                        trainer=trainer,
-                        simulations=args.simulations,
-                    )
+                    {
+                        "simulation_profile": simulator.simulation_profile,
+                        "verified_game_rules": False,
+                        "results": result,
+                    }
                 )
             )
             return 0

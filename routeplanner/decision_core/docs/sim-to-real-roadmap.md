@@ -11,6 +11,7 @@
 - `network.py` 实现地图图编码、候选动作 policy head 和 value head；
 - `training.py` 实现 MCTS 引导的 rollout、回放训练、固定种子评估和 checkpoint 恢复；
 - 当前仓库没有已训练 checkpoint，也没有真实局评估结果；
+- `ingest_external_observation()` 已支持结算后绝对状态和逐层地图追加，但尚无真实 UI 候选选项/条件/后果的注入与规划接口；未知事件仍需人选完后再回填；
 - 所有战斗与追猎默认胜利，许多地图概率、事件收益和掉落是明确标记的合成先验。
 
 因此，继续单纯扩大模拟训练量，最可能得到的是“更擅长利用当前合成规则”的模型，而不是更高的真实通关率。最短落地路径是先做可校准的真人辅助系统，再让 GNN 在真实数据上逐步接管 MCTS 的先验与价值估计。
@@ -173,4 +174,3 @@ pre_state, post_state, outcome, timestamp
 1. 定义真实局状态/日志 schema，并做人工导入与确定性回放；
 2. 增加失败终态与按 `stage_id + roster + player_profile` 校准的战斗结果模型；
 3. 将 value 改为通关概率与风险预测，在真实日志上评估后再扩大 GNN 训练规模。
-

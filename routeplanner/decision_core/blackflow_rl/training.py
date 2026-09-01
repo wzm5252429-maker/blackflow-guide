@@ -114,7 +114,7 @@ class TorchPolicyValueEvaluator:
 
 
 class Trainer:
-    CHECKPOINT_FORMAT = 1
+    CHECKPOINT_FORMAT = 2
 
     def __init__(
         self,
@@ -127,6 +127,11 @@ class Trainer:
         from .network import GraphPolicyValueNetwork, NetworkConfig
 
         self.simulator = simulator
+        if simulator.simulation_profile != "synthetic":
+            raise ValueError(
+                "端到端 rollout 目前依赖未验证的地图/事件先验；"
+                "训练必须显式构造 synthetic profile，且结果不得称为真实规则训练"
+            )
         self.config = config or TrainingConfig()
         self.encoder = FeatureEncoder(simulator, full_observability=False)
         torch.manual_seed(self.config.seed)
@@ -299,6 +304,8 @@ class Trainer:
             "format_version": self.CHECKPOINT_FORMAT,
             "ruleset_id": self.simulator.ruleset.ruleset_id,
             "rules_sha256": self.simulator.ruleset.sha256,
+            "simulation_profile": self.simulator.simulation_profile,
+            "environment_sha256": self.simulator.environment_sha256,
             "training_config": asdict(self.config),
             "network_config": asdict(self.model.config),
             "model_state_dict": self.model.state_dict(),
@@ -333,6 +340,10 @@ class Trainer:
             raise ValueError("unsupported trainer checkpoint format")
         if payload.get("rules_sha256") != simulator.ruleset.sha256:
             raise ValueError("checkpoint rules SHA does not match current rules")
+        if payload.get("simulation_profile") != simulator.simulation_profile:
+            raise ValueError("checkpoint simulation profile does not match current environment")
+        if payload.get("environment_sha256") != simulator.environment_sha256:
+            raise ValueError("checkpoint environment SHA does not match current semantics")
         config_data = dict(payload["training_config"])
         if device is not None:
             config_data["device"] = device

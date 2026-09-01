@@ -19,9 +19,9 @@ _CONTENT_TOTAL_RANGES: Mapping[int, Mapping[str, tuple[int, int]]] = {
     3: {"mystery": (7, 13), "ferocity": (4, 7)},
     4: {"mystery": (8, 14), "ferocity": (4, 8)},
     5: {"mystery": (9, 18), "ferocity": (5, 11)},
-    # VI has one fixed, fully revealed topology.  The route tool proves four
-    # content slots; the other eight use an explicit synthetic prior until
-    # real run observations can replace these broad category bounds.
+    # VI has one fixed topology.  The route tool proves four content slots,
+    # but not full-map reveal; the other eight use an explicit synthetic prior
+    # until real run observations can replace these broad category bounds.
     6: {"mystery": (3, 9), "ferocity": (1, 6)},
 }
 _TOTAL_EXCLUDED_TYPES = frozenset(
@@ -44,6 +44,10 @@ class MapGenerationError(RuntimeError):
     pass
 
 
+class UnverifiedRuleError(MapGenerationError):
+    """Raised when evidence mode would otherwise invent a game rule."""
+
+
 @dataclass(frozen=True, slots=True)
 class MapGeneratorConfig:
     max_attempts: int = 200
@@ -54,6 +58,10 @@ class MapGeneratorConfig:
     enable_third_ending: bool = False
     door_pair_probability: float = 0.25
     evacuation_probability: float = 0.35
+    allow_synthetic_map_sampling: bool = False
+    allow_synthetic_event_effects: bool = False
+    allow_synthetic_floor6_contents: bool = False
+    reveal_all_floor6: bool = False
 
 
 class MapGenerator:
@@ -62,8 +70,15 @@ class MapGenerator:
     The public tools expose 43 I--V main-route topologies plus one fixed VI
     third-ending topology.  The checked-in catalogue keeps those structures
     exact; synthetic fallback weights apply only to the unknown I--V sampling
-    stages.  VI keeps its topology and four observed content slots fixed;
-    only the eight source-unspecified slots use the versioned synthetic prior.
+    stages.  VI keeps its topology and four observed content slots fixed.  Its
+    eight source-unspecified slots are generated only when the caller opts in
+    to the versioned synthetic prior.
+
+    Evidence mode is the default and refuses random generation because the
+    real template/node weights are unpublished.  Constraint-valid research
+    sampling and approximate payloads remain available solely through the
+    explicit ``allow_synthetic_map_sampling`` and
+    ``allow_synthetic_event_effects`` flags.
     """
 
     def __init__(
@@ -85,6 +100,14 @@ class MapGenerator:
             raise ValueError(
                 "enable_second_ending and enable_third_ending are mutually exclusive"
             )
+        if self.config.reveal_all_floor6 and not (
+            self.config.allow_synthetic_map_sampling
+            and self.config.allow_synthetic_floor6_contents
+        ):
+            raise ValueError(
+                "reveal_all_floor6 is an unverified assumption and requires the "
+                "explicit synthetic floor-VI profile"
+            )
 
     def generate_run(self, seed: int) -> tuple[FloorMap, ...]:
         master = random.Random(seed)
@@ -101,6 +124,18 @@ class MapGenerator:
     def generate_floor(
         self, floor: int, seed: int, *, template_id: str | None = None
     ) -> FloorMap:
+        if not self.config.allow_synthetic_map_sampling:
+            raise UnverifiedRuleError(
+                "公开来源能校验拓扑、数量和距离约束，但没有公开模板/节点的真实抽取权重；"
+                "证据模式不生成伪装成官服概率的随机地图。可对真实观测调用 validate，"
+                "或仅为研究显式启用 allow_synthetic_map_sampling=True"
+            )
+        if floor == 6 and not self.config.allow_synthetic_floor6_contents:
+            raise UnverifiedRuleError(
+                "第VI层拓扑和4个固定内容格已有证据，但其余8格的类型/分布未知；"
+                "请提供真实对局格位观测，或仅为研究显式启用 "
+                "allow_synthetic_floor6_contents=True"
+            )
         floor_rule = self.ruleset.floor(floor)
         master = random.Random(seed)
         if template_id is None:
@@ -229,7 +264,12 @@ class MapGenerator:
         }
         for index, point in enumerate(ordered_points):
             node_type = assigned[point]
-            event_name, options, auto_effect = self._content_for_node(
+            (
+                event_name,
+                options,
+                auto_effect,
+                requires_observation,
+            ) = self._content_for_node(
                 floor_rule.floor, node_type, rng
             )
             nodes.append(
@@ -244,6 +284,7 @@ class MapGenerator:
                     auto_effect=auto_effect,
                     event_name=event_name,
                     repeatable=node_type in repeatable_types,
+                    requires_observation=requires_observation,
                 )
             )
         mapped_edges = tuple(
@@ -632,6 +673,25 @@ class MapGenerator:
         floor: int,
         node_type: NodeType,
         rng: random.Random,
+    ) -> tuple[str | None, tuple[EventOption, ...], ResourceDelta, bool]:
+        if not self.config.allow_synthetic_event_effects:
+            if node_type in {NodeType.START, NodeType.EMPTY, NodeType.DOOR}:
+                return None, (), ResourceDelta(), False
+            # The public client table proves the node type and display text,
+            # but not the server-side event draw, reward execution, or random
+            # weights. Completing it as a no-op would silently teach a false
+            # rule, so evidence mode pauses until a real observation arrives.
+            return None, (), ResourceDelta(), True
+        event_name, options, effect = self._synthetic_content_for_node(
+            floor, node_type, rng
+        )
+        return event_name, options, effect, False
+
+    def _synthetic_content_for_node(
+        self,
+        floor: int,
+        node_type: NodeType,
+        rng: random.Random,
     ) -> tuple[str | None, tuple[EventOption, ...], ResourceDelta]:
         if node_type is NodeType.BATTLE_NORMAL:
             return None, (), ResourceDelta(
@@ -890,6 +950,8 @@ class MapGenerator:
         )
         if any(
             node.node_type not in floor_rule.exit_types
+            or rule_distances[(node.row, node.col)]
+            < floor_rule.minimum_exit_distance
             or not self.ruleset.node_rules[node.node_type].allows(
                 floor_map.floor, rule_distances[(node.row, node.col)]
             )
@@ -899,7 +961,9 @@ class MapGenerator:
 
         template = self.templates.find_match(floor_map)
         if template is None:
-            raise MapGenerationError("map topology is not one of the verified templates")
+            raise MapGenerationError(
+                "map topology is not one of the pinned source-backed templates"
+            )
         for point, node_type in template.fixed_slot_types.items():
             if positions[point].node_type is not node_type:
                 raise MapGenerationError(
@@ -981,6 +1045,24 @@ class MapGenerator:
                     f"{node.node_type.value} at illegal rule distance "
                     f"{placement_distance}"
                 )
+
+        if not self.config.allow_synthetic_event_effects:
+            no_resolution_needed = {NodeType.START, NodeType.EMPTY, NodeType.DOOR}
+            for node in floor_map.nodes:
+                if node.node_type in no_resolution_needed:
+                    if node.requires_observation:
+                        raise MapGenerationError(
+                            f"{node.node_type.value} must not request an external resolution"
+                        )
+                elif (
+                    not node.requires_observation
+                    or node.options
+                    or node.auto_effect != ResourceDelta()
+                    or node.event_name is not None
+                ):
+                    raise MapGenerationError(
+                        f"evidence mode leaked an unverified payload for {node.node_type.value}"
+                    )
 
 
 def _grid_neighbours(point: GridPoint, width: int, height: int) -> tuple[GridPoint, ...]:

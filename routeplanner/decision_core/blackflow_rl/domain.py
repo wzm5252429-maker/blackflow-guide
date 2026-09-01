@@ -141,6 +141,7 @@ class MapNode:
     auto_effect: ResourceDelta = ResourceDelta()
     event_name: str | None = None
     repeatable: bool = False
+    requires_observation: bool = False
 
     @property
     def is_battle(self) -> bool:

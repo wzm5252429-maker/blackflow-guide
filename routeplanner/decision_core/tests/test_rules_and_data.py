@@ -16,6 +16,11 @@ class RulesAndDataTests(unittest.TestCase):
         )
         self.assertEqual(rules.action_size, 56)
         self.assertEqual(rules.schema_version, 1)
+        self.assertEqual(rules.compatibility_profile, "lubiao-2026-08-31")
+        self.assertEqual(
+            rules.random_generation_status,
+            "synthetic-only-explicit-opt-in",
+        )
         self.assertEqual(
             rules.node_distance_metric,
             "lubiao-final-neighbour-shortcut-v1",
@@ -37,6 +42,10 @@ class RulesAndDataTests(unittest.TestCase):
         self.assertEqual(
             summary.sha256,
             "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+        )
+        self.assertEqual(
+            summary.git_blob_sha,
+            "723f15432e989b6d0d402c38548a74a317f2f97c",
         )
         self.assertEqual(summary.node_types, 21)
         self.assertEqual(summary.choices, 396)
