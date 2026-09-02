@@ -1,0 +1,526 @@
+{
+  "Configurations": {
+    "Default": {
+      "TaskQueue": [
+        {
+          "$type": "StartUpTask",
+          "AccountName": "",
+          "AccountSwitchEnabled": false,
+          "Name": "",
+          "IsEnable": false,
+          "TaskType": "StartUp"
+        },
+        {
+          "$type": "RecruitTask",
+          "MaxTimes": 4,
+          "ExtraTagMode": 0,
+          "Level3PreferTags": [],
+          "PreferTagEnabled": false,
+          "PreserveTagList": [
+            "高级资深干员"
+          ],
+          "PreserveTagEnabled": true,
+          "RefreshLevel3": true,
+          "ForceRefresh": true,
+          "Level3Choose": true,
+          "Level4Choose": true,
+          "Level5Choose": true,
+          "Level6Choose": false,
+          "Level3Time": 540,
+          "Level4Time": 540,
+          "Name": "",
+          "IsEnable": false,
+          "TaskType": "Recruit"
+        },
+        {
+          "$type": "InfrastTask",
+          "Mode": "Normal",
+          "UsesOfDrones": "OriginStone",
+          "DormThreshold": 80,
+          "DormTrustEnabled": false,
+          "OriginiumShardAutoReplenishment": true,
+          "DormFilterNotStationed": true,
+          "ReceptionMessageBoard": true,
+          "ReceptionClueExchange": true,
+          "SendClue": true,
+          "ContinueTraining": false,
+          "CustomFileType": "user_defined",
+          "Filename": "",
+          "PlanSelect": -1,
+          "RoomList": [
+            {
+              "Room": "Mfg"
+            },
+            {
+              "Room": "Trade"
+            },
+            {
+              "Room": "Control"
+            },
+            {
+              "Room": "Power"
+            },
+            {
+              "Room": "Reception"
+            },
+            {
+              "Room": "Office"
+            },
+            {
+              "Room": "Dorm"
+            },
+            {
+              "Room": "Processing"
+            },
+            {
+              "Room": "Training"
+            }
+          ],
+          "Name": "",
+          "IsEnable": false,
+          "TaskType": "Infrast"
+        },
+        {
+          "$type": "FightTask",
+          "UseMedicine": true,
+          "MedicineCount": 140,
+          "UseStone": false,
+          "StoneCount": 0,
+          "EnableTargetDrop": true,
+          "DropId": "2004",
+          "DropCount": 20,
+          "IsInventoryTarget": false,
+          "EnableTimesLimit": false,
+          "TimesLimit": 8,
+          "Series": 6,
+          "StagePlan": [
+            ""
+          ],
+          "IsDrGrandet": false,
+          "UseExpiringMedicine": false,
+          "MedicineExpireDays": 2,
+          "UseExpireMedicineForActivity": false,
+          "UseCustomAnnihilation": true,
+          "AnnihilationStage": "Annihilation",
+          "HideUnavailableStage": true,
+          "IsStageManually": false,
+          "UseOptionalStage": false,
+          "UseStoneAllowSave": false,
+          "HideSeries": false,
+          "StageResetMode": "Current",
+          "UseWeeklySchedule": false,
+          "Name": "",
+          "IsEnable": false,
+          "TaskType": "Fight"
+        },
+        {
+          "$type": "FightTask",
+          "UseMedicine": false,
+          "MedicineCount": 0,
+          "UseStone": false,
+          "StoneCount": 0,
+          "EnableTargetDrop": false,
+          "DropId": "",
+          "DropCount": 0,
+          "IsInventoryTarget": false,
+          "EnableTimesLimit": false,
+          "TimesLimit": 2147483647,
+          "Series": 0,
+          "StagePlan": [
+            ""
+          ],
+          "IsDrGrandet": false,
+          "UseExpiringMedicine": false,
+          "MedicineExpireDays": 2,
+          "UseExpireMedicineForActivity": false,
+          "UseCustomAnnihilation": false,
+          "AnnihilationStage": "Annihilation",
+          "HideUnavailableStage": false,
+          "IsStageManually": false,
+          "UseOptionalStage": false,
+          "UseStoneAllowSave": false,
+          "HideSeries": false,
+          "StageResetMode": "Current",
+          "UseWeeklySchedule": false,
+          "Name": "剩余理智",
+          "IsEnable": false,
+          "TaskType": "Fight"
+        },
+        {
+          "$type": "MallTask",
+          "Shopping": true,
+          "CreditFight": false,
+          "CreditFightFormation": 0,
+          "CreditFightLastTime": "2025/09/04 00:00:00",
+          "CreditFightOnceADay": true,
+          "VisitFriends": true,
+          "VisitFriendsOnceADay": false,
+          "VisitFriendsLastTime": "2026/07/31 00:00:00",
+          "FirstList": "招聘许可",
+          "BlackList": "碳;家具;加急许可",
+          "ShoppingIgnoreBlackListWhenFull": false,
+          "OnlyBuyDiscount": false,
+          "ReserveMaxCredit": false,
+          "IsCreditFightAvailable": false,
+          "IsVisitFriendsAvailable": true,
+          "Name": "",
+          "IsEnable": false,
+          "TaskType": "Mall"
+        },
+        {
+          "$type": "AwardTask",
+          "Award": true,
+          "Mail": true,
+          "FreeGacha": true,
+          "Orundum": false,
+          "Mining": false,
+          "SpecialAccess": true,
+          "Name": "",
+          "IsEnable": false,
+          "TaskType": "Award"
+        },
+        {
+          "$type": "RoguelikeTask",
+          "Theme": "JieGarden",
+          "Difficulty": 0,
+          "Mode": "Investment",
+          "Squad": "堡垒战术分队",
+          "SquadCollectible": "指挥分队",
+          "Roles": "灵活部署",
+          "StartCount": 99999,
+          "CoreChar": "电弧",
+          "Investment": true,
+          "InvestCount": 999,
+          "InvestWithMoreScore": false,
+          "CollectibleStartAwards": "HotWater",
+          "CollectibleShopping": false,
+          "StartWithEliteTwo": false,
+          "StartWithEliteTwoOnly": false,
+          "ExpectedCollapsalParadigms": "",
+          "MonthlySquadAutoIterate": false,
+          "MonthlySquadCheckComms": false,
+          "DeepExplorationAutoIterate": false,
+          "FindPlaytimeTarget": "Ling",
+          "UseSupport": false,
+          "UseSupportNonFriend": false,
+          "RefreshTraderWithDice": false,
+          "SquadIsFoldartal": false,
+          "SamiFirstFloorFoldartal": false,
+          "SamiFirstFloorFoldartals": "",
+          "SamiNewSquad2StartingFoldartal": false,
+          "SamiNewSquad2StartingFoldartals": "",
+          "StopWhenDepositFull": false,
+          "StopAtFinalBoss": false,
+          "StopWhenLevelMax": true,
+          "StartWithSeed": false,
+          "Seed": "",
+          "Name": "",
+          "IsEnable": true,
+          "TaskType": "Roguelike"
+        },
+        {
+          "$type": "ReclamationTask",
+          "Theme": "RelaunchAnchor",
+          "Mode": "RA15",
+          "ToolToCraft": "",
+          "IncrementMode": 0,
+          "MaxCraftCountPerRound": 16,
+          "ClearStore": false,
+          "Name": "",
+          "IsEnable": false,
+          "TaskType": "Reclamation"
+        }
+      ],
+      "Gui": {
+        "ConnectSettings": {
+          "AutoDetect": true,
+          "AlwaysAutoDetect": true,
+          "Config": "PC",
+          "AdbPath": "<REDACTED_LOCAL_PATH>",
+          "AdbReplaced": false,
+          "Address": "<REDACTED_ADB_ADDRESS>",
+          "AddressHistory": [
+            "<REDACTED_ADB_ADDRESS>",
+            "<REDACTED_ADB_ADDRESS>"
+          ],
+          "Extras": {
+            "LDPlayer": {
+              "EmulatorPath": "",
+              "ManualSetIndex": false,
+              "InstanceIndex": 0,
+              "IsEnabled": false
+            },
+            "MuMuEmulator12": {
+              "EmulatorPath": "<REDACTED_LOCAL_PATH>",
+              "EnableBridgeConnection": false,
+              "EnableTouch": false,
+              "InstanceIndex": 0,
+              "IsEnabled": true
+            },
+            "Win32Extra": {
+              "ScreencapMethod": "FramePool",
+              "MouseMethod": "SendMessageWithCursorPos",
+              "KeyboardMethod": "SendMessage"
+            },
+            "BluestacksExtra": {
+              "ConfigKeyword": "",
+              "ConfigPath": ""
+            }
+          },
+          "AllowAdbRestart": true,
+          "AllowAdbHardRestart": true,
+          "TouchMode": "MaaTouch",
+          "EnableAdbLite": false,
+          "KillAdbOnExit": false
+        },
+        "Performance": {
+          "UseGpu": false,
+          "GpuDescription": "",
+          "GpuInstancePath": "",
+          "AllowDeprecatedGpu": false
+        },
+        "ExternalNotification": {
+          "Configs": [],
+          "SendWhenComplete": true,
+          "ShowWhenCompleteWithDetails": false,
+          "SendWhenError": true,
+          "SendWhenStalled": false
+        },
+        "RemoteControl": {
+          "RemoteControlGetTaskEndpointUri": "",
+          "RemoteControlReportStatusUri": "",
+          "RemoteControlUserIdentity": "",
+          "RemoteControlDeviceIdentity": "",
+          "RemoteControlPollIntervalMs": 1000
+        },
+        "RuntimeSettings": {
+          "ClientType": "Official",
+          "StartGame": true,
+          "DeployWithPause": false,
+          "AutoRestartOnDrop": true,
+          "RoguelikeDelayAbortUntilCombatComplete": false,
+          "PreRunScript": "",
+          "PostRunScript": "",
+          "ExecuteScriptOnCopilot": false,
+          "ExecuteScriptOnManualStop": false,
+          "BlockSleep": false,
+          "BlockSleepWithScreenOn": true,
+          "ReportToPenguin": true,
+          "PenguinId": "<REDACTED>",
+          "ReportToYituliu": true,
+          "EnableStallTimeout": true,
+          "StallTimeoutReminderIntervalMinutes": 30,
+          "StallTimeoutMinutes": 25
+        },
+        "StartUpSettings": {
+          "RunDirectly": false,
+          "SkipStartupAutoRunAfterUpdate": true,
+          "StartEmulator": false,
+          "RestartEmulatorWhenAdbFailed": false,
+          "EmulatorPath": "<REDACTED_LOCAL_PATH>",
+          "EmulatorAddCommand": "",
+          "EmulatorWaitSeconds": 30
+        },
+        "WindowTitlePrefix": "",
+        "PostActions": "None",
+        "AchievementPopupDisabled": false,
+        "AchievementPopupAutoClose": false
+      },
+      "Toolbox": {
+        "OperBoxExportFormat": "Clipboard",
+        "GachaShowDisclaimerNoMore": false,
+        "PeepTargetFps": 10,
+        "ChooseLevel3": false,
+        "ChooseLevel3Time": 540,
+        "ChooseLevel4": true,
+        "ChooseLevel4Time": 540,
+        "ChooseLevel5": true,
+        "ChooseLevel6": true,
+        "AutoSetTime": true,
+        "ShowPotential": true
+      },
+      "Copilot": {
+        "TaskList": [],
+        "EnableUserAdditional": false,
+        "UserAdditional": [],
+        "SupportMode": "WhenNeeded",
+        "SelectFormation": 1,
+        "LoopTimes": 1
+      },
+      "TaskSelectedIndex": 7
+    }
+  },
+  "Timers": {
+    "ForceScheduledStart": false,
+    "ShowWindowBeforeForceScheduledStart": false,
+    "CustomConfig": false,
+    "List": [
+      {
+        "Id": 0,
+        "IsEnabled": false,
+        "Config": "Default",
+        "Hour": 7,
+        "Minute": 20
+      },
+      {
+        "Id": 1,
+        "IsEnabled": false,
+        "Config": "Default",
+        "Hour": 3,
+        "Minute": 0
+      },
+      {
+        "Id": 2,
+        "IsEnabled": false,
+        "Config": "Default",
+        "Hour": 6,
+        "Minute": 0
+      },
+      {
+        "Id": 3,
+        "IsEnabled": false,
+        "Config": "Default",
+        "Hour": 9,
+        "Minute": 0
+      },
+      {
+        "Id": 4,
+        "IsEnabled": false,
+        "Config": "Default",
+        "Hour": 12,
+        "Minute": 0
+      },
+      {
+        "Id": 5,
+        "IsEnabled": false,
+        "Config": "Default",
+        "Hour": 15,
+        "Minute": 0
+      },
+      {
+        "Id": 6,
+        "IsEnabled": false,
+        "Config": "Default",
+        "Hour": 18,
+        "Minute": 0
+      },
+      {
+        "Id": 7,
+        "IsEnabled": false,
+        "Config": "Default",
+        "Hour": 21,
+        "Minute": 0
+      }
+    ]
+  },
+  "ConfigVersion": 1,
+  "Current": "Default",
+  "Update": {
+    "Name": "v6.16.8",
+    "UpdatePackage": "",
+    "IsFirstBoot": false,
+    "DoNotShowUpdate": false,
+    "VersionType": "Stable",
+    "AllowNightlyUpdates": false,
+    "HasAcknowledgedNightlyWarning": false,
+    "UpdateSource": "Github",
+    "ForceGithubGlobalSource": false,
+    "MirrorChyanCdk": "",
+    "MirrorChyanCdkExpiredTime": 0,
+    "CheckOnStartup": true,
+    "CheckOnSchedule": true,
+    "Proxy": "",
+    "ProxyType": "Http",
+    "AutoDownloadUpdatePackage": true,
+    "AutoInstallUpdatePackage": true,
+    "ShowUpdaterConsole": false,
+    "ShowUpdaterProgress": true
+  },
+  "AnnouncementInfo": {
+    "DoNotShowAgain": true,
+    "DoNotShow": false
+  },
+  "Gui": {
+    "DarkMode": "SyncWithOs",
+    "UseNotify": true,
+    "MainTasksInvertNullFunction": false,
+    "Localization": "zh-cn",
+    "OperNameLanguage": "OperNameLanguageMAA",
+    "UseTray": true,
+    "MinimizeToTray": false,
+    "MinimizeOnStartup": false,
+    "HideCloseButton": false,
+    "WindowTitleSelectShowList": "1 2 3 4",
+    "WindowTitleScrollable": false,
+    "LogItemDateFormat": "HH:mm:ss",
+    "WindowPlacement": {
+      "Length": 0,
+      "Flags": 0,
+      "ShowCmd": 0,
+      "MinPosition": {
+        "X": 0,
+        "Y": 0
+      },
+      "MaxPosition": {
+        "X": 0,
+        "Y": 0
+      },
+      "NormalPosition": {
+        "Left": 0,
+        "Top": 0,
+        "Right": 0,
+        "Bottom": 0
+      }
+    },
+    "LoadWindowPlacement": true,
+    "SaveWindowPlacement": true,
+    "InverseClearMode": "Clear",
+    "TaskQueueInverseMode": false,
+    "UseCardLog": true,
+    "MaxNumberOfLogThumbnails": 100,
+    "SoberLanguage": "zh-cn",
+    "Hangover": false,
+    "LastBuyWineTime": "2025-09-04T00:00:00+08:00",
+    "CustomCulture": "",
+    "IgnoreBadModulesAndUseSoftwareRendering": false,
+    "OverlayTarget": {
+      "ProcessId": 0,
+      "Hwnd": 0
+    },
+    "SettingOrders": [
+      "StartupSettings",
+      "SwitchConfiguration",
+      "UiSettings",
+      "ScheduleSettings",
+      "PerformanceSettings",
+      "GameSettings",
+      "ConnectionSettings",
+      "RemoteControlSettings",
+      "BackgroundSettings",
+      "ExternalNotificationSettings",
+      "HotKeySettings",
+      "AchievementSettings",
+      "UpdateSettings",
+      "IssueReport",
+      "AboutUs"
+    ],
+    "CollapesStates": [],
+    "HotKeys": {
+      "ShowGui": {
+        "Key": "M",
+        "Modifiers": "Alt, Control, Shift"
+      }
+    },
+    "GuideStep": 7,
+    "Background": {
+      "ImagePath": "background/background.png",
+      "StretchMode": "Fill",
+      "Opacity": 50,
+      "BlurEffectRadius": 5
+    },
+    "BackgroundMonetEnabled": false,
+    "BackgroundMonetMode": "Auto",
+    "BackgroundMonetCustomColor": "#326CF3",
+    "BackgroundMonetCachedColor": ""
+  }
+}

@@ -1,0 +1,2 @@
+session_id,game_version,difficulty,node_name,choice,precondition,before_resources,after_resources,reward,source_url,recorded_at,notes
+example-001,2026-07-16,N15,请替换为节点名,请替换为选项,记录前置藏品/分队/零件,"行动力=5;希望=3;源石锭=20","行动力=4;希望=5;源石锭=20",希望+2,视频或截图链接,2026-08-31,示例行请删除

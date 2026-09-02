@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "episodes": 80,
+  "epsilon": 0.07461711414710781,
+  "table": {
+    "first_floor_first_battle": {
+      "safe_block_heal_damage": {
+        "q": 0.8911304667257922,
+        "visits": 61,
+        "wins": 55
+      },
+      "early_damage_then_block": {
+        "q": -0.6222076416015625,
+        "visits": 8,
+        "wins": 2
+      },
+      "fast_block_double_damage": {
+        "q": -0.22664189338684082,
+        "visits": 11,
+        "wins": 7
+      }
+    }
+  }
+}

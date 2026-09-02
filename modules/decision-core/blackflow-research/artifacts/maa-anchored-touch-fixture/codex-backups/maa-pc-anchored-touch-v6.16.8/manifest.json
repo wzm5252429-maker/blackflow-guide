@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-09-01T23:42:32.9751816+08:00",
+  "maa_version": "v6.16.8+5ee4315f7d9d79f28a3a76dd6a75eb452ac1ff66",
+  "maa_dll_sha256": "94050652d294ff36a756ad8389e8e20992d3c29403c952cb1e1ccaf105ef3f5a",
+  "control_unit_sha256": "a47e5364305aa0d40c3720d6486b8ddd6215b24dce99717de53344a47c9b4805",
+  "config_sha256": "d341c0213fc0a64f23ed834dbef905bf597f49b9e00c30e900ea922e6ad5a9c9",
+  "original_mouse_method": "SendMessageWithCursorPos",
+  "framework_payload": "v5.13.0-beta.5"
+}
