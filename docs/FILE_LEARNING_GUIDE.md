@@ -1,384 +1,467 @@
-# 文件学习知识地图
+# Blackflow 核心代码最短学习路线
 
-本文按功能梳理三个交付范围中的文件，并说明读懂它们需要学习的知识。
+这份指南的目标不是让你系统学完人工智能、计算机视觉或前端开发，而是用尽量少的前置知识，达到以下程度：
 
-## 盘点范围
+- 能说清楚代码每一层在做什么；
+- 能沿着一次运行过程追踪数据；
+- 能看懂主要类、函数、张量形状和状态变化；
+- 能修改参数或小功能，并用测试确认没有改坏。
 
-- 地图识别器：`BFMapRecognizer/README_zh-CN.md`，1 个文件；
-- 第一场战斗自动化：`blackflow_first_battle/`，43 个文件；
-- 决策核心原工作区：175 个文件，不包含 `.git/` 内部对象库；
-- 本次新增：`PROJECT_STRUCTURE.md` 与本指南，共 2 个文件；
-- 最终合计覆盖 221 个文件。
+## 一、优先级与时间分配
 
-核心源码、配置、测试和文档逐文件列出；同类缓存、分块数据、逐页渲染图和二进制构建产物按明确路径模式成组列出。`__pycache__`、`.pyc`、安装结果、备份 DLL、QA 页面图等虽然通常应由 `.gitignore` 排除，本次仍纳入上传范围。
+你的优先级是：
 
-## 一、整体功能关系
+1. **MCTS、神经网络**
+2. **模拟器**
+3. **地图识别与计算机视觉**
+4. **AnchoredTouch**
+5. **网站搭建**
 
-```text
-地图截图与识别
-BFMapRecognizer
-    │ 输出节点、道路和有向图
-    ▼
-路线决策核心
-blackflow_rl
-    ├─ 地图模板与约束生成
-    ├─ 状态转移模拟器
-    ├─ PUCT-MCTS
-    └─ GNN policy/value 网络
-    │ 输出路线或事件动作建议
-    ▼
-真实执行层
-blackflow_first_battle / MAA AnchoredTouch
-    ├─ 截图与模板识别
-    ├─ 点击、拖动、技能动作
-    ├─ 胜负检测与日志
-    └─ 战术级 Q-learning
-```
+建议总投入约 **55～70 小时**：
 
-证据快照、客户端数据和规则审计共同约束决策核心，防止程序把未知游戏机制伪装成已验证规则。
+| 模块 | 建议时间 | 学到什么程度就够 |
+|---|---:|---|
+| 最低限度的 Python、数学与模拟器接口 | 6～8 小时 | 能看懂类型、数组形状、状态与动作 |
+| MCTS | 12～16 小时 | 能手算一次选择、扩展、回传，并读懂 `mcts.py` |
+| 神经网络与训练 | 14～18 小时 | 能解释输入、policy/value 输出、损失和训练循环 |
+| 模拟器深入阅读 | 7～9 小时 | 能追踪一次完整状态转移并添加小规则 |
+| 地图识别与计算机视觉 | 8～10 小时 | 能从截图追到识别结果和图结构 |
+| AnchoredTouch | 4～5 小时 | 能理解窗口句柄、坐标、消息注入和安全校验 |
+| 网站搭建 | 4～6 小时 | 能找到页面、组件、样式和数据入口并改小功能 |
 
-## 二、知识编号
+> 优先级不完全等于阅读顺序。MCTS 必须调用模拟器，因此先用 2～4 小时只学模拟器的接口，再集中攻 MCTS；模拟器内部实现可以之后再深入。
 
-| 编号 | 需要学习的知识 |
-|---|---|
-| K01 | Python 基础、模块、类型标注、异常处理、`pathlib`、命令行参数 |
-| K02 | JSON、CSV、JSONL、数据模式、序列化、版本兼容 |
-| K03 | 游戏领域建模、状态机、不可变状态、纯状态转移 |
-| K04 | 图论、邻接表、BFS、最短路、连通性、图拓扑 |
-| K05 | 约束满足问题、回溯搜索、可行性剪枝、随机种子与可复现性 |
-| K06 | MDP、奖励、Q-learning、MCTS、PUCT、探索与利用 |
-| K07 | NumPy、张量、特征工程、批处理、合法动作掩码 |
-| K08 | PyTorch、图神经网络、policy/value head、反向传播、checkpoint |
-| K09 | 单元测试、golden fixture、边界测试、性质与不变量测试 |
-| K10 | 证据工程、来源追踪、SHA-256、Git blob SHA、真实性边界 |
-| K11 | HTML、JavaScript 构建包、网页数据提取、客户端数据逆向阅读 |
-| K12 | Word、PDF、`python-docx`、OpenXML、文档生成与渲染验收 |
-| K13 | Windows 窗口、Win32 API、DPI、坐标转换、进程与全局热键 |
-| K14 | OpenCV、OCR、ONNX、模板匹配、ROI、屏幕截图与图像坐标 |
-| K15 | PowerShell、Windows Batch、依赖安装、构建与部署脚本 |
-| K16 | C#/.NET、P/Invoke、COM、WinForms、资源嵌入、PE/DLL/EXE |
-| K17 | MAA/MaaFramework、FramePool、Win32 ControlUnit、AnchoredTouch |
-| K18 | PNG、ICO、DOCX、PDF、EXE、DLL、PYC 等文件格式和构建产物 |
-| K19 | Git/GitHub、目录组织、忽略规则、版本与发布管理 |
-| K20 | 自动化安全、急停、日志、重试、哈希校验、可恢复安装 |
-| K21 | 《明日方舟》集成战略、黑流树海节点、资源、事件和结局机制 |
-| K22 | LangGraph、LangChain、OpenAI API、多 Agent 事实核验 |
-| K23 | 开源许可证、第三方文件再分发、隐私配置与凭据清理 |
+## 二、开始前只补这些基础
 
-## 三、地图截图与识别
+### Python：掌握到能读代码即可
 
-### `BFMapRecognizer/README_zh-CN.md`
+只需要会：
 
-用途：地图识别器的中文总说明。它描述窗口查找、MAA `FramePool` 截图、层数和区域 OCR、地图节点识别、`BlackFlow_corridor_net.onnx` 道路判断，以及 `blackflow-directed-graph-v1` 有向图导出格式。
+- 函数、类、模块导入；
+- `list`、`dict`、集合、循环和推导式；
+- `dataclass`、`Enum`、类型标注；
+- NumPy/PyTorch 数组的 `shape`、索引、拼接和广播；
+- 用断点、日志或 `print` 查看变量。
 
-需要学习：K02、K04、K10、K14、K17、K20、K21。
+不必先学：元类、装饰器原理、异步框架、复杂设计模式。
 
-阅读重点：
+### 数学：只保留会在代码中出现的部分
 
-- 截图、节点检测和道路检测是感知层；
-- ONNX `CorridorNet` 用于判断相邻节点之间是否有路；
-- MAA 原始无向道路会被转换为双向有向边；
-- 识别器可能恢复、聚焦窗口，并在需要时点击一次缩小地图按钮；它不会点击路线节点或执行事件、背包和战斗；
-- 导出的节点图仍需适配为决策核心的 `FloorMap`、`MapNode` 和 `GameState`；
-- 地图截图本身无法提供生命、行动力、希望、背包等完整玩家状态。
+只需要会：
 
-## 四、第一场战斗自动化工程
+- 向量、矩阵、点积；
+- 概率分布、期望、均值；
+- `softmax` 把分数变成概率；
+- 导数和梯度下降的直觉；
+- 交叉熵与均方误差分别在惩罚什么。
 
-目录：`blackflow_first_battle/`。它是“用户编写合法战术 → 视觉检测 → 实时执行 → 动作验证 → 判断胜负 → 更新战术价值”的首战闭环。这里的强化学习是对整套战术方案做选择，不是神经网络自动创造未知打法。
+先看 [PyTorch 官方基础教程](https://docs.pytorch.org/tutorials/beginner/basics/intro.html)，边运行边学。不要先花数周补完高等数学。
 
-### 4.1 使用说明、依赖与许可证
+## 三、第一优先级：MCTS
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `README.md` | 工程总说明、模板采集、坐标标定、动作格式、急停和 Q-learning 边界 | K02、K06、K13、K14、K20、K21 |
-| `requirements.txt` | NumPy、OpenCV、MSS、PyAutoGUI、pynput 依赖范围 | K01、K14、K19 |
-| `LICENSE` | MIT 许可证 | K23 |
+### 必须懂的核心知识
 
-### 4.2 Windows 启动脚本
+先把程序抽象成四件事：
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `01_install.bat` | 安装 Python 依赖，并在配置不存在时复制示例配置 | K15、K19 |
-| `02_run_simulation.bat` | 运行不操作游戏的模拟学习 | K01、K06、K15 |
-| `03_capture_window.bat` | 截取目标窗口，生成标定底图 | K13、K14、K15 |
-| `03b_crop_template.bat` | 输入检测器名称并交互裁剪模板 | K14、K15 |
-| `03c_get_point.bat` | 从标定截图选择位置并取得基准坐标 | K13、K14、K15 |
-| `04_run_first_battle.bat` | 执行一局真实首战 | K13、K15、K20 |
-| `05_train_repeatedly.bat` | 输入局数并连续执行真实对局学习 | K06、K13、K15、K20 |
+- **状态 `state`**：当前地图、资源、生命、已走节点等信息；
+- **动作 `action`**：下一步选择哪个节点或事件选项；
+- **状态转移 `transition`**：执行动作后得到新状态和奖励；
+- **终局 `terminal`**：本局是否结束。
 
-### 4.3 Python 核心源码
+然后掌握 MCTS 的四步：
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `blackflow/__init__.py` | Python 包声明和版本号 | K01 |
-| `blackflow/calibrate.py` | 截图、OpenCV 交互式 ROI 裁剪、模板缩放和坐标标定 | K01、K02、K13、K14 |
-| `blackflow/capture.py` | 使用 MSS 截取客户区并把 BGRA 转为 OpenCV BGR 图像 | K07、K13、K14 |
-| `blackflow/cli.py` | 解析真实运行、模拟运行、局数和是否学习等参数 | K01、K20 |
-| `blackflow/config.py` | 加载、验证策略 JSON，处理相对路径和配置错误 | K01、K02 |
-| `blackflow/controller.py` | PyAutoGUI 点击/拖动、坐标换算、DPI 处理、全局急停监听 | K13、K20 |
-| `blackflow/engine.py` | 编排画面轮询、战术选择、动作、重试、结果判断和学习更新 | K03、K06、K13、K14、K20 |
-| `blackflow/episode_log.py` | 写入 UTC 时间的 JSONL 事件日志和失败截图 | K02、K14、K20 |
-| `blackflow/learner.py` | 持久化 epsilon-greedy Q-learning，记录 Q 值、访问次数和胜率 | K02、K06 |
-| `blackflow/simulator.py` | 按战术胜率模拟对局，验证学习器能否偏向较优方案 | K02、K06 |
-| `blackflow/vision.py` | 模板匹配、像素范围、ROI、检测条件组合和点位解析 | K07、K14 |
-| `blackflow/window.py` | 枚举窗口、获取客户区物理像素坐标、处理 DPI 并聚焦窗口 | K13、K16 |
+1. **选择 Selection**：从根节点按 PUCT 分数向下走；
+2. **扩展 Expansion**：遇到未展开状态时创建子节点；
+3. **评估 Evaluation**：用规则或神经网络估计该状态价值；
+4. **回传 Backup**：把价值写回经过的节点。
 
-### 4.4 策略与运行数据
+代码中最重要的节点统计量：
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `configs/strategy_first_battle.example.json` | 完整策略示例：检测器、点位、战术、奖励和学习参数 | K02、K06、K13、K14、K21 |
-| `configs/strategy_first_battle.json` | 当前可编辑运行配置；盘点时内容与示例一致 | K02、K06、K13、K14、K21、K23 |
-| `calibration/window.png` | 窗口标定截图，用于裁模板和取坐标 | K14、K18、K23 |
-| `learning/README.txt` | 解释真实和模拟 Q 表的位置与删除后果 | K02、K06 |
-| `learning/simulation_q_table.json` | 模拟对局产生的 Q 值、访问次数、胜率和 epsilon | K02、K06 |
-| `templates/README.txt` | 说明真实运行所需的战斗、胜负和干员卡模板 | K14 |
+- `N`：访问次数；
+- `W`：累计价值；
+- `Q = W / N`：平均价值；
+- `P`：神经网络给出的先验概率。
 
-当前 `templates/` 只有说明文件，没有真实模板 PNG；也没有 `learning/q_table.json`，因此没有真实对局学习记录。真实运行前仍须按用户画面重新标定配置、坐标和模板。
-
-### 4.5 测试
-
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `tests/test_config_and_vision.py` | 验证示例配置、条件组合和检测点解析 | K02、K09、K14 |
-| `tests/test_learner.py` | 验证学习器会偏向更优战术并正确持久化 | K06、K09 |
-| `tests/test_simulator.py` | 验证完整模拟闭环会偏向安全方案 | K06、K09 |
-
-### 4.6 Python 缓存
-
-以下 12 个文件是 CPython 3.13 自动生成的字节码缓存：
+PUCT 可以先按下面这个直觉理解：
 
 ```text
-blackflow/__pycache__/__init__.cpython-313.pyc
-blackflow/__pycache__/calibrate.cpython-313.pyc
-blackflow/__pycache__/capture.cpython-313.pyc
-blackflow/__pycache__/cli.cpython-313.pyc
-blackflow/__pycache__/config.cpython-313.pyc
-blackflow/__pycache__/learner.cpython-313.pyc
-blackflow/__pycache__/simulator.cpython-313.pyc
-blackflow/__pycache__/vision.cpython-313.pyc
-blackflow/__pycache__/window.cpython-313.pyc
-tests/__pycache__/test_config_and_vision.cpython-313.pyc
-tests/__pycache__/test_learner.cpython-313.pyc
-tests/__pycache__/test_simulator.cpython-313.pyc
+选择分数 = 当前看起来有多好 Q
+         + 这个动作原本多有希望 P × 对尚未充分探索的奖励
 ```
 
-需要学习：K01、K18、K19。它们不是应当直接维护的源码，可由对应 `.py` 文件重新生成。
+单人路线规划和双人棋类有一个关键差异：回传时通常不需要像零和棋局那样每层把价值正负翻转。阅读实现时要专门确认这一点。
 
-## 五、路线决策、MCTS 与神经网络工作区
+### 对照代码的阅读顺序
 
-### 5.1 根目录文件
+1. `blackflow_rl/domain.py`：状态、动作和结果的数据结构；
+2. `blackflow_rl/simulator.py`：只先看 `legal_action_ids`、状态转移和终局判断；
+3. `tests/test_mcts.py`：先看测试希望 MCTS 做成什么；
+4. `blackflow_rl/mcts.py`：按“选择 → 扩展 → 评估 → 回传”标注函数；
+5. `blackflow_rl/agents.py`：MCTS 如何被包装成可调用的决策器；
+6. `blackflow_rl/cli.py`：命令行怎样启动规划。
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `.gitignore` | 忽略虚拟环境、缓存、训练 checkpoint、输出和部署产物 | K19 |
-| `README.md` | LangGraph 三路事实核验流程，以及路线决策核心入口 | K10、K19、K21、K22 |
-| `README_DECISION_CORE.md` | 决策核心功能、命令、真实性边界和真实接入缺口 | K03、K04、K06、K08、K10、K21 |
-| `PROJECT_STRUCTURE.md` | 本次 GitHub 功能目录、来源映射、模块关系与上传口径 | K19、K23 |
-| `requirements.txt` | 核验 Agent、文档解析、NumPy 和 PyTorch 的完整依赖 | K01、K08、K12、K22 |
-| `requirements-core.txt` | 决策核心的最小 NumPy、PyTorch 依赖 | K07、K08、K19 |
-| `build_blackflow_spec.py` | 生成规则库 JSON 和 Word 规范，包含表格、样式和页码 | K01、K02、K10、K12、K21 |
-| `inspect_rogue6.py` | 从完整客户端表抽取 `rogue_6` 节点、关卡、零件和藏品摘要 | K01、K02、K11、K21 |
-| `player_data_template.csv` | 玩家逐局实测数据录入模板 | K02、K10、K21、K23 |
-| `黑流树海模拟器规则库.json` | 节点、事件、收益、资源池、未知项和来源的机器可读规范 | K02、K03、K10、K21 |
-| `黑流树海节点事件与收益模拟器规范.docx` | 面向人的完整规则规范文档 | K10、K12、K21 |
-| `tree.json` | 外部游戏数据 GitHub 仓库的递归 tree API 快照 | K02、K10、K11、K19 |
+### 最有效的练习
 
-### 5.2 `blackflow_rl` 领域模型与接口
+1. 在纸上画一个只有 3 个动作、2 层深的小树；
+2. 手算前 3～5 次搜索后每条边的 `N/Q/P`；
+3. 在 `mcts.py` 临时输出根节点各动作统计；
+4. 把搜索次数从 8 改到 64，观察最终动作和访问次数；
+5. 人为屏蔽一个非法动作，确认它永远不会被选中。
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `blackflow_rl/__init__.py` | 暴露公共 API，并保持基础模拟器不强制导入 PyTorch | K01 |
-| `blackflow_rl/__main__.py` | 支持 `python -m blackflow_rl` 入口 | K01 |
-| `blackflow_rl/domain.py` | 定义节点、资源、事件选项、地图、动作、状态和转移对象 | K02、K03、K04、K21 |
-| `blackflow_rl/rules.py` | 把规则 JSON 解析成层规则、节点规则和目标函数 | K02、K03、K21 |
-| `blackflow_rl/cli.py` | 数据校验、证据审计、抽图、规划、模拟、训练和评估入口 | K01、K02、K06、K08 |
-| `blackflow_rl/client_data.py` | 验证完整客户端表的结构、数量和文件哈希 | K02、K10、K11 |
+可先运行：
 
-### 5.3 地图模板与约束生成
+```powershell
+py -3.13 -m unittest discover -s tests -p "test_mcts.py" -v
+py -3.13 -m blackflow_rl plan --seed 42 --simulations 8 --profile synthetic
+```
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `blackflow_rl/map_templates.py` | 加载并严格验证 44 个固定拓扑 | K02、K04、K09、K10 |
-| `blackflow_rl/mapgen.py` | 按层、距离、结局和特殊节点门控执行 CSP/回溯填图 | K03、K04、K05、K21 |
-| `blackflow_rl/evidence.py` | 固定证据哈希、重算来源摘要并判断真实训练条件 | K02、K10 |
-| `blackflow_rl/simulator.py` | 确定性状态转移、合法动作、跨层、事件、追猎和 belief state | K03、K04、K06、K10、K21 |
+如果本机 Python 版本不同，把 `py -3.13` 换成 `python`。
 
-### 5.4 搜索、特征和模型训练
+### 学习资料
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `blackflow_rl/agents.py` | 可解释启发式评估器，以及随机/启发式动作基线 | K03、K06、K21 |
-| `blackflow_rl/mcts.py` | 与具体游戏解耦的单玩家 PUCT-MCTS | K04、K06 |
-| `blackflow_rl/features.py` | 把地图、资源、可见节点和事件选项编码成 NumPy 特征 | K03、K07 |
-| `blackflow_rl/network.py` | 有向消息传递 GNN、节点/选项 policy head 和 value head | K04、K07、K08 |
-| `blackflow_rl/training.py` | MCTS 引导 rollout、回放池、损失、优化、评估和 checkpoint | K06、K07、K08、K20 |
+主线资料：
 
-### 5.5 规则与证据数据
+- [Sutton 与 Barto《Reinforcement Learning: An Introduction》开放 PDF](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf)：先看第 3～5 章，建立状态、动作、奖励、回报和蒙特卡洛估计概念；
+- [Browne 等人的 MCTS 综述](https://cs.gettysburg.edu/~tneller/cs371/mcts-survey.pdf)：重点读基本流程、UCT 和树策略，不必通读全部变体；
+- [AlphaZero 论文](https://arxiv.org/abs/1712.01815)：只看 policy/value 网络怎样与 MCTS 配合，不必复现围棋系统。
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `data/rules/blackflow_map_templates_v1.json` | I～V 层 43 个拓扑及第 VI 层 1 个固定拓扑 | K02、K04、K10、K21 |
-| `data/rules/blackflow_sim_v1.json` | 层参数、节点数量/距离、目标函数、事件池和证据状态 | K02、K03、K05、K10、K21 |
-| `data/evidence/map_rule_conflicts_v1.json` | 路标与影语集之间 26 项规则冲突及兼容策略 | K02、K10、K21 |
-| `data/evidence/rogue6_client_choice_snapshot_v1.json` | 客户端表的节点、选项和场景紧凑快照 | K02、K10、K11 |
-| `data/evidence/rogue6_noncombat_event_catalog_v1.json` | 非作战事件目录、证据等级、未知概率和运行时策略 | K02、K03、K10、K21 |
+中文视频补充：
 
-### 5.6 设计文档
+- [浙江大学：蒙特卡洛树搜索 MCTS 入门（B 站）](https://www.bilibili.com/video/BV1kT411G7nE/)；
+- [强化学习课程：MDP 与蒙特卡洛方法（B 站）](https://www.bilibili.com/video/BV1dV4y1n7Sn/)。
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `docs/FILE_LEARNING_GUIDE.md` | 本文：所有交付文件所需知识与建议学习顺序 | K19 |
-| `docs/decision-core.md` | 状态、动作、奖励、MCTS/GNN 架构和真实接入 | K03、K06、K08、K21 |
-| `docs/random-map-generation.md` | 固定拓扑、两套距离、节点门控、CSP 和失败策略 | K04、K05、K10、K21 |
-| `docs/rule-truth-audit-2026-09-01.md` | 地图和非作战事件真实性审计 | K10、K11、K21 |
-| `docs/sim-to-real-roadmap.md` | 从合成训练到真人顾问模式的阶段路线和验收门槛 | K03、K06、K08、K20、K21 |
-| `docs/maa-pc-anchored-touch.md` | MAA PC 后台输入回移方案与安全目标 | K13、K16、K17、K20 |
+### 学完的判断标准
 
-### 5.7 决策核心测试
+不看资料也能回答：为什么既要 `Q` 又要 `P`、访问次数如何影响探索、非法动作在哪里被屏蔽、搜索结束后为什么通常按访问次数选动作。
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `tests/test_evidence.py` | 证据完整性、哈希、动态成本、冲突配置和原始片段 | K09、K10 |
-| `tests/test_map_templates.py` | 模板数量、第 VI 层拓扑、图不变量和重复边拒绝 | K04、K09、K10 |
-| `tests/test_mapgen.py` | evidence 拒绝策略、种子复现、结局门控、CSP 和不变量 | K04、K05、K09、K10 |
-| `tests/test_mcts.py` | 单玩家 MCTS 回传不进行双人博弈符号翻转 | K06、K09 |
-| `tests/test_network_and_training.py` | 编码/掩码形状、训练批次和 checkpoint 往返 | K07、K08、K09 |
-| `tests/test_rules_and_data.py` | 行动力规则、客户端表摘要和损坏片段拒绝 | K02、K09、K10 |
-| `tests/test_simulator.py` | 严格未知事件、外部观测、belief、门节点、确定性和终止性 | K03、K06、K09、K10 |
-| `tests/golden/lubiao_floor6_v1.json` | 第 VI 层来源构建包的固定片段和坐标变换 | K02、K04、K09、K10 |
-| `tests/golden/lubiao_map_rules_v1.json` | 节点数量、距离和索引的固定来源夹具 | K02、K05、K09、K10 |
+## 四、第一优先级：神经网络与 GNN
 
-以下 7 个测试缓存由对应测试源码自动生成：
+### 必须懂的核心知识
+
+普通神经网络部分只需掌握：
+
+- 张量以及 batch 维、节点维、特征维；
+- 线性层、激活函数和前向传播；
+- 训练时的前向、计算损失、反向传播、更新参数；
+- `model.train()`、`model.eval()`、保存与加载 checkpoint。
+
+本项目还需要理解 GNN 的一个核心动作：
 
 ```text
-tests/__pycache__/test_evidence.cpython-313.pyc
-tests/__pycache__/test_map_templates.cpython-313.pyc
-tests/__pycache__/test_mapgen.cpython-313.pyc
-tests/__pycache__/test_mcts.cpython-313.pyc
-tests/__pycache__/test_network_and_training.cpython-313.pyc
-tests/__pycache__/test_rules_and_data.cpython-313.pyc
-tests/__pycache__/test_simulator.cpython-313.pyc
+每个地图节点的新表示
+= 自己原来的特征
++ 邻居节点信息的聚合
 ```
 
-需要学习：K01、K18、K19。
+policy/value 双头网络的含义：
 
-### 5.8 原始来源数据
+- **policy head**：给每个候选动作一个分数；
+- **value head**：估计当前状态最终能获得多大收益；
+- MCTS 用 policy 作为先验 `P`，用 value 作为叶子节点评估。
 
-| 文件或文件组 | 用途 | 需要学习 |
+必须特别关注 **mask**：不同状态的合法动作数量不同，非法动作不能进入 softmax 后获得概率。
+
+训练通常可先理解为：
+
+```text
+总损失 = policy 预测与搜索访问分布之间的误差
+       + value 预测与最终回报之间的误差
+       + 可选的正则项
+```
+
+### 对照代码的阅读顺序
+
+1. `tests/test_network_and_training.py`：先弄清输入输出和必须满足的形状；
+2. `blackflow_rl/features.py`：状态如何变成节点特征、图连接和 mask；
+3. `blackflow_rl/network.py`：GNN 主干、policy head、value head；
+4. `blackflow_rl/training.py`：样本、损失、优化器、checkpoint；
+5. 回看 `blackflow_rl/mcts.py`：网络输出如何进入搜索；
+6. `blackflow_rl/agents.py`：训练好的模型如何用于实际决策。
+
+阅读每个张量时，在纸上写形状，例如：
+
+```text
+node_features: [batch, nodes, features]
+policy_logits: [batch, actions]
+value:         [batch, 1]
+legal_mask:    [batch, actions]
+```
+
+实际形状以代码和测试为准，不要只靠变量名猜。
+
+### 最有效的练习
+
+1. 运行网络测试，给关键张量打印 `shape`；
+2. 手工构造一个只有 3 个节点的小图，检查输出维度；
+3. 把一个动作 mask 掉，确认其最终概率接近 0；
+4. 用一个样本反复训练到过拟合，确认 loss 能下降；
+5. 保存 checkpoint 后重新加载，确认同一输入的输出一致。
+
+```powershell
+py -3.13 -m unittest discover -s tests -p "test_network_and_training.py" -v
+```
+
+### 学习资料
+
+主线资料：
+
+- [PyTorch 官方 Learn the Basics](https://docs.pytorch.org/tutorials/beginner/basics/intro.html)：按 Tensors → Build Model → Autograd → Optimization 顺序；
+- [PyTorch Geometric 官方 Colab 教程](https://pytorch-geometric.readthedocs.io/en/latest/get_started/colabs.html)：先完成 Introduction 与 Node Classification；
+- [Stanford CS224W 官方课程页](https://web.stanford.edu/class/cs224w/)：只补图表示、消息传递和 GNN 三块。
+
+中文视频补充：
+
+- [同济子豪兄：斯坦福 CS224W 图机器学习中文精讲（B 站）](https://www.bilibili.com/video/BV1pR4y1S7GA/)；
+- [李宏毅课程助教：图神经网络 GNN（B 站）](https://www.bilibili.com/video/BV1G54y1971S/)。
+
+### 暂时不用学
+
+Transformer、扩散模型、目标检测网络训练、CUDA 内核、分布式训练、PPO、DQN 都不是读懂当前决策核心的前置条件。
+
+### 学完的判断标准
+
+能指出一个状态怎样变成网络输入、邻居信息在哪里聚合、两个输出头分别服务谁、两个损失分别在纠正什么，以及非法动作怎样被 mask。
+
+## 五、第二优先级：模拟器
+
+### 必须懂的核心知识
+
+- **确定性状态转移**：相同状态、动作和随机种子应产生可复现结果；
+- **MDP**：当前状态应包含决定下一步所需的信息；
+- **部分可观测性**：真实游戏中有未知信息，因此代码可能保留 belief/unknown 状态；
+- **规则与数据分离**：规则代码决定怎样变化，模板和数据描述具体数值；
+- **终局与奖励**：结束条件和奖励定义会直接改变 MCTS 偏好；
+- **未知机制处理**：不确定的数据应暂停、降级或显式标注，不能假装已知。
+
+### 对照代码的阅读顺序
+
+1. `tests/test_simulator.py`；
+2. `blackflow_rl/domain.py`；
+3. `blackflow_rl/rules.py`；
+4. `blackflow_rl/map_templates.py`；
+5. `blackflow_rl/mapgen.py`；
+6. `blackflow_rl/simulator.py`；
+7. `tests/test_rules_and_data.py`、`tests/test_mapgen.py`、`tests/test_map_templates.py`；
+8. `docs/decision-core.md` 与 `docs/random-map-generation.md`。
+
+### 最有效的练习
+
+- 选一个测试，逐字段写出动作前后的状态变化；
+- 固定 seed 重跑两次，确认地图与结果一致；
+- 增加一个极小的奖励或节点规则，并先补测试；
+- 故意制造未知事件，观察系统选择报错、暂停还是降级。
+
+```powershell
+py -3.13 -m unittest discover -s tests -p "test_simulator.py" -v
+py -3.13 -m unittest discover -s tests -p "test_mapgen.py" -v
+```
+
+### 学习资料
+
+- [Sutton 与 Barto 教材第 3～5 章](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf)；
+- [Gymnasium 官方：创建自定义环境](https://gymnasium.farama.org/main/tutorials/environment_creation/)：重点看 observation、action、reset、step、terminated；
+- [Stable Baselines3 / Gym 自定义环境教程（B 站）](https://www.bilibili.com/video/BV1ty4y197JE/)：只看环境接口部分，不必继续学全部算法。
+
+### 学完的判断标准
+
+给你一个状态和动作，你能顺着代码找到合法性检查、状态变化、奖励和终止条件，并解释它为什么可被 MCTS 反复调用。
+
+## 六、第三优先级：地图识别与计算机视觉
+
+### 必须懂的核心知识
+
+- 屏幕坐标、窗口坐标、客户区坐标及 DPI 缩放；
+- 截图、ROI 裁剪和颜色空间（RGB/BGR/灰度）；
+- 模板匹配、相似度分数、阈值和误检/漏检；
+- OCR 与模板匹配各自适合识别什么；
+- ONNX 模型的输入预处理、推理和输出后处理；
+- 从识别框/节点到 `map_graph.json` 的图结构转换。
+
+### 对照代码的阅读顺序
+
+先看第一场战斗自动化中的视觉链路：
+
+1. `modules/battle-automation/blackflow-first-battle/blackflow_first_battle/window.py`；
+2. `modules/battle-automation/blackflow-first-battle/blackflow_first_battle/capture.py`；
+3. `modules/battle-automation/blackflow-first-battle/blackflow_first_battle/vision.py`；
+4. `modules/battle-automation/blackflow-first-battle/blackflow_first_battle/calibrate.py`；
+5. 对应 `tests/` 与模板图片。
+
+再看地图识别器：
+
+1. GitHub 中的 `modules/map-recognition/BFMapRecognizer/README_zh-CN.md`；
+2. 本机 `D:\ArknightsAuto\BFMapRecognizer_v1.0.2_Windows\BFMapRecognizer\MapRecognizer.ps1`；
+3. 输出的 `map_result.json`、`map_graph.json` 和标注图；
+4. 看这些图数据怎样交给 `blackflow_rl/map_templates.py` 或适配层。
+
+地图识别器在 GitHub 中目前主要收录说明文档；完整运行程序仍以本机目录为准。
+
+### 最有效的练习
+
+1. 固定一张截图，裁出一个节点模板；
+2. 用 OpenCV `matchTemplate` 得到分数并画出识别框；
+3. 上下调整阈值，记录误检与漏检；
+4. 打开 `map_graph.json`，在截图上手工核对每个节点和边；
+5. 最后再看 ONNX 推理，把模型暂时当作“输入图像、输出候选节点”的黑盒。
+
+### 学习资料
+
+- [OpenCV 官方模板匹配教程](https://docs.opencv.org/4.x/de/da9/tutorial_template_matching.html)；
+- [ONNX Runtime 官方 Python 快速开始](https://onnxruntime.ai/docs/get-started/with-python.html)；
+- [OpenCV 计算机视觉课程：含模板匹配与 OCR（B 站）](https://www.bilibili.com/video/BV1xgW3zUEnt/)；
+- [OpenCV 入门课程：含模板匹配（B 站）](https://www.bilibili.com/video/BV1BenMz9ESE/)。
+
+### 暂时不用学
+
+先不要训练自己的 CNN，也不用先学完整的图像信号处理数学。当前目标是理解截图、预处理、推理、后处理和图结构输出这条管线。
+
+### 学完的判断标准
+
+能从一张窗口截图一路追到识别框、节点类型、边和 JSON 输出，并知道阈值、缩放和坐标系为什么会导致识别失败。
+
+## 七、第四优先级：AnchoredTouch
+
+### 先纠正名称
+
+实际技术名称是 **AnchoredTouch**。仓库中的 `MaaAnchoredTorchLauncher.cs`、`RegisterMaaAnchoredTorchShortcut.cs` 和部分产物保留了早期的 `AnchoredTorch` 拼写，但它们仍属于 AnchoredTouch 启动与校验工具，不是 PyTorch 的 `torch`。
+
+### 必须懂的核心知识
+
+- `HWND` 窗口句柄，以及前台/后台窗口输入的区别；
+- 屏幕坐标与客户区坐标换算；
+- Windows 消息队列和输入消息；
+- C# 通过 P/Invoke 调用 Win32 API；
+- DLL、ABI、位数与导出函数的基本概念；
+- 安装前备份、哈希校验、清单、恢复和 smoke test。
+
+### 对照代码的阅读顺序
+
+1. `docs/maa-pc-anchored-touch.md`；
+2. `tools/Start-MaaAnchoredTouch.ps1`；
+3. `tools/maa_anchored_touch.ps1`；
+4. `tools/Test-MaaAnchoredTouch.ps1`；
+5. `tools/anchored_touch_smoke/AnchoredTouchSmoke.cs`；
+6. `tools/MaaAnchoredTorchLauncher.cs`；
+7. `tools/MaaAnchoredTouchInstaller.cs`。
+
+### 最有效的练习
+
+- 先只运行无破坏性的 smoke test，确认窗口查找与坐标计算；
+- 画出“脚本 → 启动器 → DLL/API → 模拟器窗口”的调用链；
+- 给定一个屏幕坐标，手算客户区坐标后和日志对照；
+- 阅读安装器中的备份、哈希和回滚路径，不要一开始就在真实战斗中测试。
+
+### 学习资料
+
+- [MaaFramework 官方：控制方法](https://maafw.com/docs/2.4-ControlMethods/)；
+- [MaaFramework 官方：集成接口概览](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/en_us/2.2-IntegratedInterfaceOverview.md)；
+- [Microsoft Learn：.NET P/Invoke](https://learn.microsoft.com/en-us/dotnet/standard/native-interop/pinvoke)；
+- [Microsoft Learn：Win32 窗口消息](https://learn.microsoft.com/en-us/windows/win32/learnwin32/window-messages)；
+- [C# Win32、P/Invoke 与 Hook 示例课（B 站）](https://www.bilibili.com/video/BV1kg411L7pJ/)。
+
+### 学完的判断标准
+
+能解释程序如何找到目标窗口、如何换算坐标、C# 为什么能调用原生 DLL，以及为什么安装与启动前要做哈希、备份和校验。
+
+## 八、第五优先级：网站搭建
+
+网站当前主要技术栈可从根目录 `package.json` 确认，包括 TypeScript、React、Next.js、Tailwind CSS、Drizzle ORM，以及面向 Cloudflare 的构建工具。
+
+### 必须懂的核心知识
+
+- HTML 结构与 CSS 布局；
+- JavaScript/TypeScript 的对象、数组、函数、异步和类型；
+- React 组件、props、state、事件与 JSX；
+- Next.js 的 `app` 路由、`page`、`layout` 和服务端/客户端组件；
+- Tailwind 类名如何控制样式；
+- 表单校验、数据库 schema 和请求/响应的基本数据流；
+- `npm` 脚本、开发服务器、构建与部署。
+
+### 对照代码的阅读顺序
+
+1. 根目录 `package.json`：先认依赖和脚本；
+2. `app/`：从首页 `page` 和全局 `layout` 开始；
+3. `components/`：找到首页直接使用的组件，再逐层进入；
+4. 样式文件和 Tailwind 类名；
+5. `db/`：只看 schema 与页面需要的数据；
+6. `worker/` 与 Cloudflare 配置：最后再看部署入口；
+7. 测试与构建脚本。
+
+### 最有效的练习
+
+1. 修改一段页面文字和一个卡片样式；
+2. 新增一个静态页面并从导航进入；
+3. 给现有组件增加一个 prop；
+4. 最后再追踪一次“页面 → 校验 → 数据库/接口 → 页面更新”的完整数据流。
+
+```powershell
+npm install
+npm run dev
+npm test
+```
+
+若项目脚本调用 `.sh`，请在 Git Bash 或 WSL 中执行对应构建脚本。
+
+### 学习资料
+
+- [React 官方 Learn](https://react.dev/learn)；
+- [Next.js 官方 Learn](https://nextjs.org/learn)；
+- [TypeScript 官方 Handbook](https://www.typescriptlang.org/docs/handbook/)；
+- [Tailwind CSS 官方文档](https://tailwindcss.com/docs)；
+- [React + Next.js 实战入门（B 站）](https://www.bilibili.com/video/BV1NV4y1B73Y/)；
+- [Next.js 系列教程（B 站）](https://www.bilibili.com/video/BV1mnhJzbECu/)；
+- [React/Next.js 所需 TypeScript（B 站）](https://www.bilibili.com/video/BV1Fu34zHEsb/)。
+
+### 学完的判断标准
+
+看到一个页面时，能找到对应路由、组件、样式和数据来源，并独立完成文字、布局或小字段修改。
+
+## 九、建议的 6 周执行表
+
+按每天约 1～1.5 小时安排：
+
+| 周次 | 主任务 | 本周产出 |
 |---|---|---|
-| `source_data/roguelike_topic_table_full.json` | 完整客户端肉鸽主题表；证据审计主要上游数据 | K02、K10、K11、K21 |
-| `source_data/part_00`～`part_11` | 完整 JSON 的 12 个连续分块 | K02、K10、K11 |
-| `source_data/rem_00`、`rem_02`、`rem_04`、`rem_06`、`rem_07`、`rem_09` | 下载或区间恢复中间片段，不是独立有效 JSON | K10、K11、K18 |
-| `source_data/roguelike_topic_table.json` | 不完整或截断的主题表，不能作为完整 JSON 解析 | K02、K10、K11 |
-| `source_data/roguelike_table.json` | 肉鸽常量、物品、关卡、区域、选项、场景和结局表 | K02、K11、K21 |
-| `source_data/rogue6_inspection.json` | `inspect_rogue6.py` 生成的 `rogue_6` 摘要 | K02、K10、K21 |
-| `source_data/ISEvent.js` | 保存的网页 JavaScript 构建模块 | K10、K11 |
-| `source_data/prts_events_raw.html` | 一次 PRTS 请求返回的 403 HTML，属于失败取证记录 | K10、K11 |
+| 第 1 周 | 2 天补模拟器接口，随后学 MCTS | 手画搜索树；给根动作打印 `N/Q/P` |
+| 第 2 周 | MCTS 深入并结合项目代码 | 能完整讲解一次搜索；修改模拟次数并解释结果 |
+| 第 3 周 | PyTorch、GNN、policy/value 网络 | 标注全部关键张量形状；让一个小样本过拟合 |
+| 第 4 周 | 训练循环 + 模拟器内部 | 追踪一个训练样本；添加一条小规则和测试 |
+| 第 5 周 | 地图识别与计算机视觉 | 对固定截图做模板匹配；核对一份地图图结构 |
+| 第 6 周 | AnchoredTouch + 网站 | 画输入调用链；修改并运行一个网页小功能 |
 
-`part_00`～`part_11` 顺序拼接后的 SHA-256 与完整表一致；`roguelike_topic_table.json` 则是截断或损坏文件。
+如果时间不够，优先完成前 4 周。那已经足以理解整个决策核心为什么能运行。
 
-### 5.9 证据构建工具
+## 十、读代码时固定使用的方法
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `tools/build_evidence_snapshots.py` | 从完整客户端表和规则库生成紧凑、可复现证据快照 | K01、K02、K10 |
-| `tools/extract_lubiao_rule_fixture.py` | 从固定哈希的路标 JS 构建包解析数量和距离规则 | K01、K02、K10、K11 |
-| `tools/normalize_template_catalog.py` | 清除模板目录中损坏的旧说明文本，不修改图数据 | K01、K02、K10 |
+每个模块都按同一套方法，不要从第一个文件第一行硬啃到最后一行：
 
-对应的 3 个 CPython 3.13 缓存位于 `tools/__pycache__/`，文件名分别对应上述脚本。需要学习：K01、K18、K19。
+1. **先读测试**：确认输入、输出和边界条件；
+2. **只追一条路径**：选一个最小示例，从入口一路追到结果；
+3. **写下数据形状/状态**：张量写 `shape`，模拟器写动作前后字段；
+4. **运行并观察**：用断点或日志确认自己的理解；
+5. **只改一个变量**：参数、小规则、小组件均可；
+6. **重新运行测试**：让理解变成可验证结果；
+7. **最后再读旁支**：错误处理、兼容层和部署工具放到主流程之后。
 
-### 5.10 MAA AnchoredTouch 安装、启动与验证工具
+推荐为每个核心文件做一张四栏笔记：
 
-| 文件 | 用途 | 需要学习 |
-|---|---|---|
-| `tools/maa_anchored_touch.ps1` | 安装、恢复或检查 AnchoredTouch 兼容补丁 | K10、K15、K16、K17、K20 |
-| `tools/Build-MaaAnchoredTouchInstaller.ps1` | 验证负载哈希并编译嵌入式安装程序 | K15、K16、K18、K20 |
-| `tools/MaaAnchoredTouchInstaller.cs` | 图形安装器：检测、备份、替换、配置、快捷方式和恢复 | K13、K16、K17、K20 |
-| `tools/MaaAnchoredTorchLauncher.cs` | 启动前校验版本、DLL 哈希、配置和备份清单 | K10、K13、K16、K17、K20 |
-| `tools/RegisterMaaAnchoredTorchShortcut.cs` | 通过 COM ShellLink 创建 Windows 快捷方式 | K13、K16 |
-| `tools/Start-MaaAnchoredTouch.ps1` | 校验版本、文件和鼠标方法后启动 MAA | K10、K15、K17、K20 |
-| `tools/Test-MaaAnchoredTouch.ps1` | 用内嵌 C# Win32 窗口验证触控和鼠标行为 | K13、K15、K16、K17 |
-| `tools/启动 MAA（AnchoredTouch 校验）.cmd` | 面向双击使用的 PowerShell 7 包装器 | K15、K17、K20 |
-| `tools/anchored_touch_smoke/AnchoredTouchSmoke.cs` | 两个无害 Win32 窗口上的 ControlUnit 触控冒烟测试 | K13、K16、K17、K20 |
-| `tools/anchored_touch_smoke/Run-AnchoredTouchSmoke.ps1` | 编译并运行上述 C# 测试 | K15、K16、K17 |
-| `tools/anchored_touch_smoke/README.md` | 冒烟测试目标、依赖和运行方法 | K16、K17、K20 |
+| 文件 | 输入 | 输出 | 它负责的唯一核心问题 |
+|---|---|---|---|
+| `mcts.py` | 状态、模拟器、网络评估 | 根动作与搜索统计 | 怎样把有限模拟预算分配给候选动作 |
+| `network.py` | 图特征与合法动作 mask | policy、value | 怎样评价动作和状态 |
+| `simulator.py` | 状态、动作 | 新状态、奖励、终局 | 游戏规则怎样推进一步 |
+| `vision.py` | 截图/ROI | 匹配结果 | 画面上发生了什么 |
 
-### 5.11 启动器构建产物
+## 十一、明确不在当前学习范围内的内容
 
-以下 8 个文件是图标或已编译程序：
+为了尽快看懂代码，暂时跳过：
 
-```text
-tools/launcher-build/launcher-icon-final.png
-tools/launcher-build/launcher-icon.png
-tools/launcher-build/MAA-full.ico
-tools/launcher-build/MAA.ico
-tools/launcher-build/MAA(AnchoredTorch).exe
-tools/launcher-build/original-maa-icon-final.png
-tools/launcher-build/original-maa-icon.png
-tools/launcher-build/register-shortcut.exe
-```
+- 强化学习所有算法的完整谱系；
+- 神经网络严格数学证明和从零实现自动微分；
+- 自己训练目标检测或 OCR 大模型；
+- Windows 驱动、内核注入和逆向工程；
+- React/Next.js 框架源码与复杂前端架构；
+- 云原生平台的完整运维体系。
 
-需要学习：K16、K17、K18、K19。维护时应优先阅读生成它们的 C# 和 PowerShell 源码。
+这些内容只有在你准备重写相关模块时才需要深入。当前最佳路线是：**测试验证 → 单条执行链 → 小修改 → 再补理论**。
 
-### 5.12 安装夹具、备份和结果记录
-
-以下 11 个文件属于部署测试或真实安装产生的材料：
-
-```text
-artifacts/maa-anchored-touch-fixture/MAA.exe
-artifacts/maa-anchored-touch-fixture/MAA.dll
-artifacts/maa-anchored-touch-fixture/MaaWin32ControlUnit.dll
-artifacts/maa-anchored-touch-fixture/config/gui.new.json
-artifacts/maa-anchored-touch-fixture/install-result.json
-artifacts/maa-anchored-touch-fixture/codex-backups/maa-pc-anchored-touch-v6.16.8/gui.new.json.original
-artifacts/maa-anchored-touch-fixture/codex-backups/maa-pc-anchored-touch-v6.16.8/MAA.dll.original
-artifacts/maa-anchored-touch-fixture/codex-backups/maa-pc-anchored-touch-v6.16.8/MaaWin32ControlUnit.dll.original
-artifacts/maa-anchored-touch-fixture/codex-backups/maa-pc-anchored-touch-v6.16.8/manifest.json
-artifacts/maa-anchored-touch-live-install.json
-artifacts/maa-anchored-touch-live-install-2.json
-```
-
-需要学习：K02、K10、K13、K16、K17、K18、K20、K23。公开上传的 JSON 保留模式和字段，但本机绝对路径、个人标识、窗口位置、进程/句柄等值须脱敏。
-
-### 5.13 Word/PDF 视觉验收产物
-
-以下两组各包含 1 个 PDF 和 22 张逐页 PNG，共 46 个文件：
-
-```text
-qa_render_word/黑流树海节点事件与收益模拟器规范.pdf
-qa_render_word/page-01.png ～ page-22.png
-
-qa_render_word_v2/黑流树海节点事件与收益模拟器规范.pdf
-qa_render_word_v2/page-01.png ～ page-22.png
-```
-
-用途：把 DOCX 转为 PDF 和逐页图片，对分页、表格、字号、裁切和版式做视觉检查。需要学习：K12、K18、K19。
-
-### 5.14 工作区根缓存
-
-```text
-__pycache__/build_blackflow_spec.cpython-313.pyc
-__pycache__/document_validator.cpython-313.pyc
-```
-
-需要学习：K01、K18、K19。`document_validator.cpython-313.pyc` 对应的 `document_validator.py` 源码当前不在工作区；README 仍引用该程序，应优先找回源码，而不是长期维护字节码。
-
-## 六、建议学习顺序
-
-1. **基础与配置**：K01、K02、K19；先读两个工程 README、地图识别 README 和 requirements。
-2. **决策世界模型**：`domain.py` → `rules.py` → `data/rules/*.json` → `simulator.py`；对应 K03、K21。
-3. **地图生成**：图论/BFS → `map_templates.py` → `random-map-generation.md` → CSP/回溯 → `mapgen.py` 与测试；对应 K04、K05、K09。
-4. **MCTS**：MDP、奖励、UCB/PUCT → `mcts.py` → `agents.py` → `test_mcts.py`；对应 K06。
-5. **神经网络**：NumPy/张量/mask → PyTorch → GNN → `features.py` → `network.py` → `training.py`；对应 K07、K08。
-6. **识别与真实执行**：OpenCV/OCR/ONNX → Win32/DPI → MAA FramePool/ControlUnit → `vision.py`、`capture.py`、`window.py`、`controller.py`、`engine.py`；对应 K13、K14、K17、K20。
-7. **真实性与发布**：`evidence.py` → `data/evidence/*.json` → 规则审计 → 哈希/golden fixture → 隐私和许可证；对应 K10、K23。
-
-## 七、当前最重要的工程缺口
-
-- 地图识别器能输出节点和道路图，但尚缺到 `FloorMap` / `GameState` 的正式适配器；
-- 决策核心具备模拟器、MCTS、GNN 和训练框架，但真实概率、事件执行表和真实局模型仍不完整；
-- 第一场战斗工程具备视觉与动作闭环，但真实模板、真实坐标和真实战术仍需用户标定；
-- `document_validator.py` 源码缺失，只留下 CPython 缓存；
-- 当前没有已训练的决策核心 checkpoint，也没有真实对局 `q_table.json`；
-- 缓存、备份二进制、失败下载片段和脱敏配置虽按本次要求上传，仍与核心源码分区说明。
