@@ -1,0 +1,6 @@
+{
+  "action": "Install",
+  "installed": false,
+  "error": "MAA did not stop; no files were changed.",
+  "error_type": "System.Management.Automation.RuntimeException"
+}

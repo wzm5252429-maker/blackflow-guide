@@ -1,0 +1,11 @@
+{
+  "action": "Install",
+  "installed": true,
+  "maa_version": "v6.16.8+5ee4315f7d9d79f28a3a76dd6a75eb452ac1ff66",
+  "framework_control_unit": "v5.13.0-beta.5",
+  "mouse_method_ui_slot": "SendMessageWithWindowPos",
+  "mouse_method_passed_to_core": 1024,
+  "control_unit_sha256": "6744c36a3e6e18630cc88224f4e7fc9d71a7eea482f8ec6875cb994cb81bf0e4",
+  "configured_mouse_method": "SendMessageWithWindowPos",
+  "backup_path": "<REDACTED_LOCAL_PATH>"
+}

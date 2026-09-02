@@ -1,0 +1,372 @@
+{
+  "schema_version": 1,
+  "name": "黑流树海第一层第一次作战示例",
+  "window": {
+    "title_keywords": [
+      "明日方舟",
+      "Arknights"
+    ]
+  },
+  "base_resolution": [
+    1920,
+    1080
+  ],
+  "poll_interval": 0.12,
+  "logs_dir": "../logs",
+  "points": {
+    "start_battle_button": [1710, 980],
+    "speed_button": [1650, 65],
+    "card_1": [1370, 1000],
+    "card_2": [1480, 1000],
+    "card_3": [1590, 1000],
+    "main_block_tile": [980, 650],
+    "heal_tile": [1110, 520],
+    "damage_tile": [850, 520],
+    "skill_button": [1665, 775],
+    "retreat_button": [1500, 150]
+  },
+  "detectors": {
+    "battle_started": {
+      "type": "template",
+      "template": "../templates/battle_started.png",
+      "roi": [1540, 0, 380, 150],
+      "threshold": 0.86,
+      "grayscale": true
+    },
+    "victory": {
+      "type": "template",
+      "template": "../templates/victory.png",
+      "roi": [0, 0, 1920, 1080],
+      "threshold": 0.88,
+      "grayscale": true
+    },
+    "defeat": {
+      "type": "template",
+      "template": "../templates/defeat.png",
+      "roi": [0, 0, 1920, 1080],
+      "threshold": 0.88,
+      "grayscale": true
+    },
+    "card_blocker": {
+      "type": "template",
+      "template": "../templates/card_blocker.png",
+      "roi": [850, 850, 1070, 230],
+      "threshold": 0.84,
+      "grayscale": false
+    },
+    "card_healer": {
+      "type": "template",
+      "template": "../templates/card_healer.png",
+      "roi": [850, 850, 1070, 230],
+      "threshold": 0.84,
+      "grayscale": false
+    },
+    "card_damage": {
+      "type": "template",
+      "template": "../templates/card_damage.png",
+      "roi": [850, 850, 1070, 230],
+      "threshold": 0.84,
+      "grayscale": false
+    }
+  },
+  "context": {
+    "base": "first_floor_first_battle",
+    "feature_detectors": []
+  },
+  "episode": {
+    "prepare_actions": [
+      {
+        "label": "点击开始行动",
+        "type": "click",
+        "at": {
+          "point": "start_battle_button"
+        },
+        "post_delay": 1.0
+      }
+    ],
+    "battle_started_detector": "battle_started",
+    "battle_start_timeout": 120,
+    "idle_actions": [
+      {
+        "label": "等待战斗结算",
+        "type": "wait",
+        "seconds": 0.5,
+        "post_delay": 0
+      }
+    ],
+    "reset_after_victory": [],
+    "reset_after_defeat": [],
+    "reset_after_timeout": []
+  },
+  "plans": [
+    {
+      "id": "safe_block_heal_damage",
+      "description": "先阻挡，再治疗，最后补输出",
+      "actions": [
+        {
+          "label": "开启二倍速",
+          "type": "click",
+          "at": {
+            "point": "speed_button"
+          },
+          "when": {
+            "elapsed_ge": 1.0
+          },
+          "timeout": 10
+        },
+        {
+          "label": "部署地面阻挡",
+          "type": "deploy",
+          "card": {
+            "detector": "card_blocker"
+          },
+          "tile": {
+            "point": "main_block_tile"
+          },
+          "direction": "left",
+          "when": {
+            "all": [
+              {"elapsed_ge": 4.0},
+              {"detector": "card_blocker"}
+            ]
+          },
+          "timeout": 20,
+          "retries": 1,
+          "verify": {"detector": "card_blocker", "matched": false},
+          "verify_timeout": 3
+        },
+        {
+          "label": "部署治疗",
+          "type": "deploy",
+          "card": {
+            "detector": "card_healer"
+          },
+          "tile": {
+            "point": "heal_tile"
+          },
+          "direction": "left",
+          "when": {
+            "all": [
+              {"elapsed_ge": 10.0},
+              {"detector": "card_healer"}
+            ]
+          },
+          "timeout": 30,
+          "retries": 1,
+          "verify": {"detector": "card_healer", "matched": false},
+          "verify_timeout": 3
+        },
+        {
+          "label": "部署高台输出",
+          "type": "deploy",
+          "card": {
+            "detector": "card_damage"
+          },
+          "tile": {
+            "point": "damage_tile"
+          },
+          "direction": "left",
+          "when": {
+            "all": [
+              {"elapsed_ge": 16.0},
+              {"detector": "card_damage"}
+            ]
+          },
+          "timeout": 35,
+          "retries": 1,
+          "verify": {"detector": "card_damage", "matched": false},
+          "verify_timeout": 3
+        }
+      ]
+    },
+    {
+      "id": "early_damage_then_block",
+      "description": "先输出再阻挡，用于自动比较另一种顺序",
+      "actions": [
+        {
+          "label": "开启二倍速",
+          "type": "click",
+          "at": {
+            "point": "speed_button"
+          },
+          "when": {
+            "elapsed_ge": 1.0
+          },
+          "timeout": 10
+        },
+        {
+          "label": "先部署高台输出",
+          "type": "deploy",
+          "card": {
+            "detector": "card_damage"
+          },
+          "tile": {
+            "point": "damage_tile"
+          },
+          "direction": "left",
+          "when": {
+            "all": [
+              {"elapsed_ge": 4.0},
+              {"detector": "card_damage"}
+            ]
+          },
+          "timeout": 20,
+          "retries": 1,
+          "verify": {"detector": "card_damage", "matched": false},
+          "verify_timeout": 3
+        },
+        {
+          "label": "再部署地面阻挡",
+          "type": "deploy",
+          "card": {
+            "detector": "card_blocker"
+          },
+          "tile": {
+            "point": "main_block_tile"
+          },
+          "direction": "left",
+          "when": {
+            "all": [
+              {"elapsed_ge": 10.0},
+              {"detector": "card_blocker"}
+            ]
+          },
+          "timeout": 30,
+          "retries": 1,
+          "verify": {"detector": "card_blocker", "matched": false},
+          "verify_timeout": 3
+        },
+        {
+          "label": "最后部署治疗",
+          "type": "deploy",
+          "card": {
+            "detector": "card_healer"
+          },
+          "tile": {
+            "point": "heal_tile"
+          },
+          "direction": "left",
+          "when": {
+            "all": [
+              {"elapsed_ge": 16.0},
+              {"detector": "card_healer"}
+            ]
+          },
+          "timeout": 35,
+          "retries": 1,
+          "verify": {"detector": "card_healer", "matched": false},
+          "verify_timeout": 3
+        }
+      ]
+    },
+    {
+      "id": "fast_block_double_damage",
+      "description": "快速阻挡后连续补输出",
+      "actions": [
+        {
+          "label": "开启二倍速",
+          "type": "click",
+          "at": {
+            "point": "speed_button"
+          },
+          "when": {
+            "elapsed_ge": 1.0
+          },
+          "timeout": 10
+        },
+        {
+          "label": "快速部署阻挡",
+          "type": "deploy",
+          "card": {
+            "detector": "card_blocker"
+          },
+          "tile": {
+            "point": "main_block_tile"
+          },
+          "direction": "left",
+          "when": {
+            "all": [
+              {"elapsed_ge": 3.0},
+              {"detector": "card_blocker"}
+            ]
+          },
+          "timeout": 20,
+          "retries": 1,
+          "verify": {"detector": "card_blocker", "matched": false},
+          "verify_timeout": 3
+        },
+        {
+          "label": "部署第一输出",
+          "type": "deploy",
+          "card": {
+            "detector": "card_damage"
+          },
+          "tile": {
+            "point": "damage_tile"
+          },
+          "direction": "left",
+          "when": {
+            "all": [
+              {"elapsed_ge": 8.0},
+              {"detector": "card_damage"}
+            ]
+          },
+          "timeout": 25,
+          "retries": 1,
+          "verify": {"detector": "card_damage", "matched": false},
+          "verify_timeout": 3
+        },
+        {
+          "label": "部署第三人",
+          "type": "deploy",
+          "card": {
+            "detector": "card_healer"
+          },
+          "tile": {
+            "point": "heal_tile"
+          },
+          "direction": "left",
+          "when": {
+            "all": [
+              {"elapsed_ge": 14.0},
+              {"detector": "card_healer"}
+            ]
+          },
+          "timeout": 35,
+          "retries": 1,
+          "verify": {"detector": "card_healer", "matched": false},
+          "verify_timeout": 3
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "victory_detector": "victory",
+    "defeat_detector": "defeat",
+    "battle_timeout": 600,
+    "rewards": {
+      "victory": 1.0,
+      "defeat": -1.0,
+      "timeout": -1.2
+    }
+  },
+  "learning": {
+    "enabled": true,
+    "algorithm": "q_learning",
+    "state_file": "../learning/q_table.json",
+    "alpha": 0.25,
+    "gamma": 0.0,
+    "epsilon": 0.25,
+    "epsilon_min": 0.03,
+    "epsilon_decay": 0.985
+  },
+  "simulation": {
+    "reset_state": true,
+    "state_file": "../learning/simulation_q_table.json",
+    "plan_win_probability": {
+      "safe_block_heal_damage": 0.86,
+      "early_damage_then_block": 0.35,
+      "fast_block_double_damage": 0.62
+    }
+  }
+}
