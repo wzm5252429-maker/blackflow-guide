@@ -281,10 +281,10 @@ py -3.13 -m unittest discover -s tests -p "test_mapgen.py" -v
 
 先看第一场战斗自动化中的视觉链路：
 
-1. `modules/battle-automation/blackflow-first-battle/blackflow_first_battle/window.py`；
-2. `modules/battle-automation/blackflow-first-battle/blackflow_first_battle/capture.py`；
-3. `modules/battle-automation/blackflow-first-battle/blackflow_first_battle/vision.py`；
-4. `modules/battle-automation/blackflow-first-battle/blackflow_first_battle/calibrate.py`；
+1. `modules/battle-automation/blackflow-first-battle/blackflow/window.py`；
+2. `modules/battle-automation/blackflow-first-battle/blackflow/capture.py`；
+3. `modules/battle-automation/blackflow-first-battle/blackflow/vision.py`；
+4. `modules/battle-automation/blackflow-first-battle/blackflow/calibrate.py`；
 5. 对应 `tests/` 与模板图片。
 
 再看地图识别器：
