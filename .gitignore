@@ -9,4 +9,8 @@ artifacts/*
 !artifacts/blackflow_policy.pt
 !artifacts/training_1001_1500.log
 !artifacts/evaluation_1500.json
+!artifacts/training_1501_2500.log
+!artifacts/evaluation_2500.json
+!artifacts/training_2501_3500.log
+!artifacts/evaluation_3500.json
 .pytest_cache/
