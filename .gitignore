@@ -1,0 +1,12 @@
+.idea/
+.venv/
+venv/
+__pycache__/
+*.pyc
+output/
+artifacts/*
+*.pt
+!artifacts/blackflow_policy.pt
+!artifacts/training_1001_1500.log
+!artifacts/evaluation_1500.json
+.pytest_cache/

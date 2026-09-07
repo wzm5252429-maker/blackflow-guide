@@ -1,0 +1,6006 @@
+{
+  "seed": 3731427153149002185,
+  "steps": 31,
+  "total_reward": 84.16999999999999,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1001,
+  "replay_size": 20000,
+  "loss": 0.796095460653305,
+  "policy_loss": 0.7947824895381927,
+  "value_loss": 0.0013129591825418174
+}
+{
+  "seed": 7068158228555477913,
+  "steps": 29,
+  "total_reward": 72.59,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1002,
+  "replay_size": 20000,
+  "loss": 0.7635800242424011,
+  "policy_loss": 0.76249760389328,
+  "value_loss": 0.0010824065248016268
+}
+{
+  "seed": 1414457337730951023,
+  "steps": 31,
+  "total_reward": 72.03000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1003,
+  "replay_size": 20000,
+  "loss": 0.8826561868190765,
+  "policy_loss": 0.8815963864326477,
+  "value_loss": 0.0010598095250315964
+}
+{
+  "seed": 2872184297674156583,
+  "steps": 29,
+  "total_reward": 105.96,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1004,
+  "replay_size": 20000,
+  "loss": 0.8725113868713379,
+  "policy_loss": 0.871051162481308,
+  "value_loss": 0.0014602316077798605
+}
+{
+  "seed": 616717163143436447,
+  "steps": 32,
+  "total_reward": 89.78000000000003,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1005,
+  "replay_size": 20000,
+  "loss": 0.7895894944667816,
+  "policy_loss": 0.7883701026439667,
+  "value_loss": 0.0012193950824439526
+}
+{
+  "seed": 5808439308722836764,
+  "steps": 37,
+  "total_reward": 98.41,
+  "chase_count": 4,
+  "samples": 37,
+  "episode": 1006,
+  "replay_size": 20000,
+  "loss": 0.898811399936676,
+  "policy_loss": 0.8973625600337982,
+  "value_loss": 0.0014488460146822035
+}
+{
+  "seed": 3076590223380164022,
+  "steps": 27,
+  "total_reward": 87.57000000000002,
+  "chase_count": 4,
+  "samples": 27,
+  "episode": 1007,
+  "replay_size": 20000,
+  "loss": 0.8503171503543854,
+  "policy_loss": 0.8491914868354797,
+  "value_loss": 0.0011256797006353736
+}
+{
+  "seed": 7948506981786437924,
+  "steps": 29,
+  "total_reward": 87.19000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1008,
+  "replay_size": 20000,
+  "loss": 0.921505331993103,
+  "policy_loss": 0.920209527015686,
+  "value_loss": 0.0012958108563907444
+}
+{
+  "seed": 1623223466652985535,
+  "steps": 35,
+  "total_reward": 84.10000000000001,
+  "chase_count": 4,
+  "samples": 35,
+  "episode": 1009,
+  "replay_size": 20000,
+  "loss": 0.7871056497097015,
+  "policy_loss": 0.7857469022274017,
+  "value_loss": 0.0013587461435236037
+}
+{
+  "seed": 3191990727452126327,
+  "steps": 29,
+  "total_reward": 64.98000000000002,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1010,
+  "replay_size": 20000,
+  "loss": 0.9563789963722229,
+  "policy_loss": 0.9549804925918579,
+  "value_loss": 0.0013985018013045192
+}
+{
+  "seed": 2499648308528952391,
+  "steps": 38,
+  "total_reward": 95.88000000000002,
+  "chase_count": 5,
+  "samples": 38,
+  "episode": 1011,
+  "replay_size": 20000,
+  "loss": 0.8584225177764893,
+  "policy_loss": 0.857363760471344,
+  "value_loss": 0.001058741589076817
+}
+{
+  "seed": 8717666545645382844,
+  "steps": 26,
+  "total_reward": 68.98,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1012,
+  "replay_size": 20000,
+  "loss": 0.8516012132167816,
+  "policy_loss": 0.8504176437854767,
+  "value_loss": 0.001183587301056832
+}
+{
+  "seed": 8354588903459661609,
+  "steps": 23,
+  "total_reward": 92.90000000000002,
+  "chase_count": 5,
+  "samples": 23,
+  "episode": 1013,
+  "replay_size": 20000,
+  "loss": 0.8671171963214874,
+  "policy_loss": 0.8662615120410919,
+  "value_loss": 0.0008556856773793697
+}
+{
+  "seed": 5222507049350089404,
+  "steps": 23,
+  "total_reward": 88.38000000000001,
+  "chase_count": 5,
+  "samples": 23,
+  "episode": 1014,
+  "replay_size": 20000,
+  "loss": 0.7633276283740997,
+  "policy_loss": 0.7624169886112213,
+  "value_loss": 0.0009106442448683083
+}
+{
+  "seed": 3943164084741991370,
+  "steps": 37,
+  "total_reward": 73.57000000000001,
+  "chase_count": 5,
+  "samples": 37,
+  "episode": 1015,
+  "replay_size": 20000,
+  "loss": 0.9312259554862976,
+  "policy_loss": 0.9298984408378601,
+  "value_loss": 0.0013275141827762127
+}
+{
+  "seed": 8006651896135919155,
+  "steps": 29,
+  "total_reward": 83.43,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1016,
+  "replay_size": 20000,
+  "loss": 0.9273414611816406,
+  "policy_loss": 0.9262472987174988,
+  "value_loss": 0.0010941889777313918
+}
+{
+  "seed": 3080211859373104320,
+  "steps": 40,
+  "total_reward": 111.10000000000002,
+  "chase_count": 3,
+  "samples": 40,
+  "episode": 1017,
+  "replay_size": 20000,
+  "loss": 0.826913058757782,
+  "policy_loss": 0.8258310556411743,
+  "value_loss": 0.001082003174815327
+}
+{
+  "seed": 4234918569926520077,
+  "steps": 35,
+  "total_reward": 110.91,
+  "chase_count": 4,
+  "samples": 35,
+  "episode": 1018,
+  "replay_size": 20000,
+  "loss": 0.778172105550766,
+  "policy_loss": 0.7768068015575409,
+  "value_loss": 0.0013653074274770916
+}
+{
+  "seed": 7155109246657157517,
+  "steps": 30,
+  "total_reward": 89.41000000000001,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1019,
+  "replay_size": 20000,
+  "loss": 0.888672262430191,
+  "policy_loss": 0.886977881193161,
+  "value_loss": 0.0016943744849413633
+}
+{
+  "seed": 4200104029988093781,
+  "steps": 31,
+  "total_reward": 75.54000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1020,
+  "replay_size": 20000,
+  "loss": 0.8757434785366058,
+  "policy_loss": 0.8743218779563904,
+  "value_loss": 0.0014215852716006339
+}
+{
+  "seed": 1823323962441445133,
+  "steps": 28,
+  "total_reward": 82.56000000000002,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1021,
+  "replay_size": 20000,
+  "loss": 0.8784636855125427,
+  "policy_loss": 0.876789778470993,
+  "value_loss": 0.0016738954000175
+}
+{
+  "seed": 7703378265677552566,
+  "steps": 35,
+  "total_reward": 94.53,
+  "chase_count": 4,
+  "samples": 35,
+  "episode": 1022,
+  "replay_size": 20000,
+  "loss": 0.787799596786499,
+  "policy_loss": 0.7862901985645294,
+  "value_loss": 0.00150942406617105
+}
+{
+  "seed": 4700676159495111527,
+  "steps": 30,
+  "total_reward": 107.74000000000001,
+  "chase_count": 3,
+  "samples": 30,
+  "episode": 1023,
+  "replay_size": 20000,
+  "loss": 0.9045962691307068,
+  "policy_loss": 0.9031793177127838,
+  "value_loss": 0.0014169339556246996
+}
+{
+  "seed": 7259413371505624066,
+  "steps": 35,
+  "total_reward": 122.58000000000003,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1024,
+  "replay_size": 20000,
+  "loss": 0.8999062478542328,
+  "policy_loss": 0.8989745378494263,
+  "value_loss": 0.000931732589378953
+}
+{
+  "seed": 9010151783919267124,
+  "steps": 35,
+  "total_reward": 125.23000000000003,
+  "chase_count": 3,
+  "samples": 35,
+  "episode": 1025,
+  "replay_size": 20000,
+  "loss": 0.8901136219501495,
+  "policy_loss": 0.8890208005905151,
+  "value_loss": 0.0010928254923783243
+}
+{
+  "seed": 2651545207274065512,
+  "steps": 31,
+  "total_reward": 94.11000000000001,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1026,
+  "replay_size": 20000,
+  "loss": 0.870657205581665,
+  "policy_loss": 0.8693276047706604,
+  "value_loss": 0.0013295937096700072
+}
+{
+  "seed": 4053251788491076177,
+  "steps": 42,
+  "total_reward": 100.01000000000005,
+  "chase_count": 3,
+  "samples": 42,
+  "episode": 1027,
+  "replay_size": 20000,
+  "loss": 0.7375497221946716,
+  "policy_loss": 0.7363711893558502,
+  "value_loss": 0.0011785479728132486
+}
+{
+  "seed": 3642878689278782559,
+  "steps": 25,
+  "total_reward": 86.17,
+  "chase_count": 5,
+  "samples": 25,
+  "episode": 1028,
+  "replay_size": 20000,
+  "loss": 0.870628297328949,
+  "policy_loss": 0.8692675232887268,
+  "value_loss": 0.0013607724104076624
+}
+{
+  "seed": 3090682128995766292,
+  "steps": 33,
+  "total_reward": 99.29000000000002,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1029,
+  "replay_size": 20000,
+  "loss": 0.940035492181778,
+  "policy_loss": 0.9391628503799438,
+  "value_loss": 0.0008726254454813898
+}
+{
+  "seed": 6466611821315724723,
+  "steps": 35,
+  "total_reward": 99.82000000000002,
+  "chase_count": 4,
+  "samples": 35,
+  "episode": 1030,
+  "replay_size": 20000,
+  "loss": 0.9300359785556793,
+  "policy_loss": 0.928687185049057,
+  "value_loss": 0.0013487836113199592
+}
+{
+  "seed": 5119385281522762359,
+  "steps": 31,
+  "total_reward": 93.68,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1031,
+  "replay_size": 20000,
+  "loss": 0.878370076417923,
+  "policy_loss": 0.8771156668663025,
+  "value_loss": 0.0012544006458483636
+}
+{
+  "seed": 2591901123795346093,
+  "steps": 32,
+  "total_reward": 93.06,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1032,
+  "replay_size": 20000,
+  "loss": 0.8707762956619263,
+  "policy_loss": 0.8692243993282318,
+  "value_loss": 0.0015518906875513494
+}
+{
+  "seed": 8236704733071475326,
+  "steps": 29,
+  "total_reward": 83.9,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1033,
+  "replay_size": 20000,
+  "loss": 0.8776215314865112,
+  "policy_loss": 0.8758320212364197,
+  "value_loss": 0.0017895145574584603
+}
+{
+  "seed": 6879319977566955867,
+  "steps": 33,
+  "total_reward": 103.00000000000001,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1034,
+  "replay_size": 20000,
+  "loss": 0.886502593755722,
+  "policy_loss": 0.8854508101940155,
+  "value_loss": 0.001051775412634015
+}
+{
+  "seed": 1123441212139317729,
+  "steps": 33,
+  "total_reward": 70.78,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1035,
+  "replay_size": 20000,
+  "loss": 0.8382043838500977,
+  "policy_loss": 0.8375399112701416,
+  "value_loss": 0.0006644715613219887
+}
+{
+  "seed": 6403843011629965407,
+  "steps": 27,
+  "total_reward": 96.23000000000002,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1036,
+  "replay_size": 20000,
+  "loss": 0.8922631740570068,
+  "policy_loss": 0.8907407522201538,
+  "value_loss": 0.0015224069356918335
+}
+{
+  "seed": 2538536154788801137,
+  "steps": 29,
+  "total_reward": 105.34000000000003,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1037,
+  "replay_size": 20000,
+  "loss": 0.9964655041694641,
+  "policy_loss": 0.9955878257751465,
+  "value_loss": 0.0008776720205787569
+}
+{
+  "seed": 3053143416112318388,
+  "steps": 25,
+  "total_reward": 91.06,
+  "chase_count": 4,
+  "samples": 25,
+  "episode": 1038,
+  "replay_size": 20000,
+  "loss": 0.8841054737567902,
+  "policy_loss": 0.8826669454574585,
+  "value_loss": 0.001438511535525322
+}
+{
+  "seed": 2987352067029350944,
+  "steps": 38,
+  "total_reward": 102.38000000000004,
+  "chase_count": 5,
+  "samples": 38,
+  "episode": 1039,
+  "replay_size": 20000,
+  "loss": 0.8658358156681061,
+  "policy_loss": 0.8649052977561951,
+  "value_loss": 0.000930523790884763
+}
+{
+  "seed": 1137739060873099041,
+  "steps": 28,
+  "total_reward": 86.91000000000003,
+  "chase_count": 4,
+  "samples": 28,
+  "episode": 1040,
+  "replay_size": 20000,
+  "loss": 0.9080641567707062,
+  "policy_loss": 0.907097190618515,
+  "value_loss": 0.0009669708088040352
+}
+{
+  "seed": 396196789243267596,
+  "steps": 31,
+  "total_reward": 96.52000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1041,
+  "replay_size": 20000,
+  "loss": 0.7333816289901733,
+  "policy_loss": 0.7321938574314117,
+  "value_loss": 0.00118778069736436
+}
+{
+  "seed": 6518483107436064431,
+  "steps": 34,
+  "total_reward": 101.66000000000003,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1042,
+  "replay_size": 20000,
+  "loss": 0.8220833539962769,
+  "policy_loss": 0.8208043575286865,
+  "value_loss": 0.001278997107874602
+}
+{
+  "seed": 5216518809910145605,
+  "steps": 28,
+  "total_reward": 85.83000000000003,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1043,
+  "replay_size": 20000,
+  "loss": 0.8334739506244659,
+  "policy_loss": 0.8319974541664124,
+  "value_loss": 0.0014765257365070283
+}
+{
+  "seed": 1654556182519466829,
+  "steps": 37,
+  "total_reward": 115.60000000000005,
+  "chase_count": 4,
+  "samples": 37,
+  "episode": 1044,
+  "replay_size": 20000,
+  "loss": 0.8424044847488403,
+  "policy_loss": 0.8411793112754822,
+  "value_loss": 0.001225186453666538
+}
+{
+  "seed": 6903509899042483750,
+  "steps": 35,
+  "total_reward": 82.89000000000001,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1045,
+  "replay_size": 20000,
+  "loss": 0.8401835560798645,
+  "policy_loss": 0.8388842046260834,
+  "value_loss": 0.0012993498239666224
+}
+{
+  "seed": 3366159970033971506,
+  "steps": 36,
+  "total_reward": 96.99000000000001,
+  "chase_count": 4,
+  "samples": 36,
+  "episode": 1046,
+  "replay_size": 20000,
+  "loss": 0.9173497259616852,
+  "policy_loss": 0.9162955284118652,
+  "value_loss": 0.0010541946976445615
+}
+{
+  "seed": 4193402165825829417,
+  "steps": 35,
+  "total_reward": 98.85000000000001,
+  "chase_count": 4,
+  "samples": 35,
+  "episode": 1047,
+  "replay_size": 20000,
+  "loss": 0.980318546295166,
+  "policy_loss": 0.9792367815971375,
+  "value_loss": 0.0010817601578310132
+}
+{
+  "seed": 6262277000514699760,
+  "steps": 33,
+  "total_reward": 93.95000000000002,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1048,
+  "replay_size": 20000,
+  "loss": 0.7572385668754578,
+  "policy_loss": 0.7561648786067963,
+  "value_loss": 0.0010736798285506666
+}
+{
+  "seed": 7408641708760616144,
+  "steps": 30,
+  "total_reward": 69.77999999999999,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1049,
+  "replay_size": 20000,
+  "loss": 0.9680024981498718,
+  "policy_loss": 0.9668765664100647,
+  "value_loss": 0.001125935057643801
+}
+{
+  "seed": 222683338039463950,
+  "steps": 38,
+  "total_reward": 69.15,
+  "chase_count": 4,
+  "samples": 38,
+  "episode": 1050,
+  "replay_size": 20000,
+  "loss": 0.8603904247283936,
+  "policy_loss": 0.8588741719722748,
+  "value_loss": 0.0015162467607297003
+}
+{
+  "seed": 97838049408472560,
+  "steps": 25,
+  "total_reward": 82.48,
+  "chase_count": 5,
+  "samples": 25,
+  "episode": 1051,
+  "replay_size": 20000,
+  "loss": 0.9046461582183838,
+  "policy_loss": 0.9037676453590393,
+  "value_loss": 0.0008785033132880926
+}
+{
+  "seed": 6516213728040785609,
+  "steps": 35,
+  "total_reward": 72.54,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1052,
+  "replay_size": 20000,
+  "loss": 0.9090093076229095,
+  "policy_loss": 0.9076986312866211,
+  "value_loss": 0.001310663647018373
+}
+{
+  "seed": 4817947020621909347,
+  "steps": 32,
+  "total_reward": 76.06000000000002,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1053,
+  "replay_size": 20000,
+  "loss": 0.9513540863990784,
+  "policy_loss": 0.9501417577266693,
+  "value_loss": 0.0012123396154493093
+}
+{
+  "seed": 6408726845567817899,
+  "steps": 31,
+  "total_reward": 83.5,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1054,
+  "replay_size": 20000,
+  "loss": 0.8316062986850739,
+  "policy_loss": 0.8305124342441559,
+  "value_loss": 0.0010938512277789414
+}
+{
+  "seed": 922402858080297386,
+  "steps": 32,
+  "total_reward": 103.31,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1055,
+  "replay_size": 20000,
+  "loss": 0.9407588541507721,
+  "policy_loss": 0.939588874578476,
+  "value_loss": 0.0011699814349412918
+}
+{
+  "seed": 2875626505929062225,
+  "steps": 23,
+  "total_reward": 87.65,
+  "chase_count": 5,
+  "samples": 23,
+  "episode": 1056,
+  "replay_size": 20000,
+  "loss": 0.7722006142139435,
+  "policy_loss": 0.7712011933326721,
+  "value_loss": 0.0009994258580263704
+}
+{
+  "seed": 5544605827834402728,
+  "steps": 26,
+  "total_reward": 79.88,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1057,
+  "replay_size": 20000,
+  "loss": 0.8427392840385437,
+  "policy_loss": 0.8411995768547058,
+  "value_loss": 0.0015396996750496328
+}
+{
+  "seed": 5267154388474460623,
+  "steps": 29,
+  "total_reward": 95.32999999999998,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1058,
+  "replay_size": 20000,
+  "loss": 0.7337229549884796,
+  "policy_loss": 0.7325868606567383,
+  "value_loss": 0.0011360921198502183
+}
+{
+  "seed": 1985340643178171844,
+  "steps": 28,
+  "total_reward": 61.58,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1059,
+  "replay_size": 20000,
+  "loss": 0.7546879649162292,
+  "policy_loss": 0.7533177733421326,
+  "value_loss": 0.0013702026917599142
+}
+{
+  "seed": 8884948488422958416,
+  "steps": 31,
+  "total_reward": 83.13000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1060,
+  "replay_size": 20000,
+  "loss": 0.913379967212677,
+  "policy_loss": 0.9121555984020233,
+  "value_loss": 0.0012243706732988358
+}
+{
+  "seed": 6045094164750845456,
+  "steps": 37,
+  "total_reward": 98.87000000000002,
+  "chase_count": 5,
+  "samples": 37,
+  "episode": 1061,
+  "replay_size": 20000,
+  "loss": 1.0335520803928375,
+  "policy_loss": 1.0325836539268494,
+  "value_loss": 0.0009684305696282536
+}
+{
+  "seed": 3727829093408713740,
+  "steps": 32,
+  "total_reward": 104.92000000000004,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1062,
+  "replay_size": 20000,
+  "loss": 0.8302268981933594,
+  "policy_loss": 0.82917919754982,
+  "value_loss": 0.0010476930474396795
+}
+{
+  "seed": 3849412128775572562,
+  "steps": 33,
+  "total_reward": 80.88000000000002,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1063,
+  "replay_size": 20000,
+  "loss": 0.8396609723567963,
+  "policy_loss": 0.8384589552879333,
+  "value_loss": 0.0012020233843941242
+}
+{
+  "seed": 6196421211465655453,
+  "steps": 26,
+  "total_reward": 119.22999999999999,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1064,
+  "replay_size": 20000,
+  "loss": 0.8705694079399109,
+  "policy_loss": 0.8690535724163055,
+  "value_loss": 0.0015158320893533528
+}
+{
+  "seed": 3197177346056176226,
+  "steps": 33,
+  "total_reward": 105.80000000000003,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1065,
+  "replay_size": 20000,
+  "loss": 0.7609357237815857,
+  "policy_loss": 0.7596049308776855,
+  "value_loss": 0.0013307889457792044
+}
+{
+  "seed": 3418675902404131886,
+  "steps": 31,
+  "total_reward": 133.15000000000003,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1066,
+  "replay_size": 20000,
+  "loss": 0.9073145985603333,
+  "policy_loss": 0.905958354473114,
+  "value_loss": 0.0013562279054895043
+}
+{
+  "seed": 9089075021758193336,
+  "steps": 27,
+  "total_reward": 81.05,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1067,
+  "replay_size": 20000,
+  "loss": 0.8557220697402954,
+  "policy_loss": 0.8541475534439087,
+  "value_loss": 0.0015745068667456508
+}
+{
+  "seed": 5214557115586335103,
+  "steps": 31,
+  "total_reward": 95.21000000000002,
+  "chase_count": 4,
+  "samples": 31,
+  "episode": 1068,
+  "replay_size": 20000,
+  "loss": 1.0439414978027344,
+  "policy_loss": 1.0428746044635773,
+  "value_loss": 0.0010668779141269624
+}
+{
+  "seed": 8714135761660965266,
+  "steps": 29,
+  "total_reward": 89.10000000000001,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1069,
+  "replay_size": 20000,
+  "loss": 0.8372858464717865,
+  "policy_loss": 0.8354521691799164,
+  "value_loss": 0.0018336750799790025
+}
+{
+  "seed": 1886347364155296082,
+  "steps": 32,
+  "total_reward": 84.60000000000001,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1070,
+  "replay_size": 20000,
+  "loss": 0.879005640745163,
+  "policy_loss": 0.8776228725910187,
+  "value_loss": 0.0013827469665557146
+}
+{
+  "seed": 2300633536657669634,
+  "steps": 36,
+  "total_reward": 83.48000000000002,
+  "chase_count": 5,
+  "samples": 36,
+  "episode": 1071,
+  "replay_size": 20000,
+  "loss": 0.8287481069564819,
+  "policy_loss": 0.827266663312912,
+  "value_loss": 0.0014814524911344051
+}
+{
+  "seed": 4072315189575817984,
+  "steps": 32,
+  "total_reward": 76.61000000000001,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1072,
+  "replay_size": 20000,
+  "loss": 0.8800201117992401,
+  "policy_loss": 0.8788348436355591,
+  "value_loss": 0.0011852637398988008
+}
+{
+  "seed": 2129658030230418581,
+  "steps": 29,
+  "total_reward": 100.0,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1073,
+  "replay_size": 20000,
+  "loss": 0.8006272912025452,
+  "policy_loss": 0.7994731366634369,
+  "value_loss": 0.0011541456915438175
+}
+{
+  "seed": 6530385984427445680,
+  "steps": 30,
+  "total_reward": 97.20000000000002,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1074,
+  "replay_size": 20000,
+  "loss": 0.8980866968631744,
+  "policy_loss": 0.8962003290653229,
+  "value_loss": 0.0018863675650209188
+}
+{
+  "seed": 2105911362854045048,
+  "steps": 33,
+  "total_reward": 94.35000000000002,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1075,
+  "replay_size": 20000,
+  "loss": 0.8075431883335114,
+  "policy_loss": 0.8064127862453461,
+  "value_loss": 0.0011303859646432102
+}
+{
+  "seed": 5804405897888803912,
+  "steps": 41,
+  "total_reward": 114.88000000000002,
+  "chase_count": 4,
+  "samples": 41,
+  "episode": 1076,
+  "replay_size": 20000,
+  "loss": 0.8727090060710907,
+  "policy_loss": 0.8712285161018372,
+  "value_loss": 0.0014805080136284232
+}
+{
+  "seed": 3051969256004764660,
+  "steps": 26,
+  "total_reward": 97.02000000000002,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1077,
+  "replay_size": 20000,
+  "loss": 0.752068042755127,
+  "policy_loss": 0.7511988282203674,
+  "value_loss": 0.0008692119299666956
+}
+{
+  "seed": 7663144295967085755,
+  "steps": 28,
+  "total_reward": 86.58000000000003,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1078,
+  "replay_size": 20000,
+  "loss": 0.9095227122306824,
+  "policy_loss": 0.9082677066326141,
+  "value_loss": 0.0012550058891065419
+}
+{
+  "seed": 1629941496935670249,
+  "steps": 26,
+  "total_reward": 101.92000000000002,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1079,
+  "replay_size": 20000,
+  "loss": 0.7821902334690094,
+  "policy_loss": 0.7812146842479706,
+  "value_loss": 0.0009755486680660397
+}
+{
+  "seed": 7008509054484333798,
+  "steps": 36,
+  "total_reward": 107.10000000000002,
+  "chase_count": 4,
+  "samples": 36,
+  "episode": 1080,
+  "replay_size": 20000,
+  "loss": 0.8835567235946655,
+  "policy_loss": 0.8824753165245056,
+  "value_loss": 0.0010814086999744177
+}
+{
+  "seed": 7793535860741596540,
+  "steps": 25,
+  "total_reward": 106.75999999999999,
+  "chase_count": 5,
+  "samples": 25,
+  "episode": 1081,
+  "replay_size": 20000,
+  "loss": 0.8298965394496918,
+  "policy_loss": 0.8286148607730865,
+  "value_loss": 0.0012816886883229017
+}
+{
+  "seed": 5592746981180174786,
+  "steps": 34,
+  "total_reward": 88.80000000000001,
+  "chase_count": 4,
+  "samples": 34,
+  "episode": 1082,
+  "replay_size": 20000,
+  "loss": 0.8879572451114655,
+  "policy_loss": 0.8865514099597931,
+  "value_loss": 0.0014058431843295693
+}
+{
+  "seed": 6229085823188117949,
+  "steps": 30,
+  "total_reward": 106.95000000000003,
+  "chase_count": 4,
+  "samples": 30,
+  "episode": 1083,
+  "replay_size": 20000,
+  "loss": 0.7531909644603729,
+  "policy_loss": 0.7518962621688843,
+  "value_loss": 0.0012946902425028384
+}
+{
+  "seed": 7928073390236883765,
+  "steps": 30,
+  "total_reward": 88.52000000000002,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1084,
+  "replay_size": 20000,
+  "loss": 0.7292575240135193,
+  "policy_loss": 0.7279073297977448,
+  "value_loss": 0.0013501780340448022
+}
+{
+  "seed": 6979908335355491488,
+  "steps": 34,
+  "total_reward": 80.08000000000001,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1085,
+  "replay_size": 20000,
+  "loss": 0.8265163004398346,
+  "policy_loss": 0.8252974152565002,
+  "value_loss": 0.001218872785102576
+}
+{
+  "seed": 8611360144943830765,
+  "steps": 32,
+  "total_reward": 91.54000000000002,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1086,
+  "replay_size": 20000,
+  "loss": 0.8694212138652802,
+  "policy_loss": 0.8675650358200073,
+  "value_loss": 0.001856184215284884
+}
+{
+  "seed": 3449964988111751687,
+  "steps": 28,
+  "total_reward": 89.89,
+  "chase_count": 4,
+  "samples": 28,
+  "episode": 1087,
+  "replay_size": 20000,
+  "loss": 0.9399265050888062,
+  "policy_loss": 0.9387302994728088,
+  "value_loss": 0.0011961871641688049
+}
+{
+  "seed": 5802100672235560915,
+  "steps": 26,
+  "total_reward": 83.43,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1088,
+  "replay_size": 20000,
+  "loss": 0.7545812726020813,
+  "policy_loss": 0.7533578276634216,
+  "value_loss": 0.0012234386522322893
+}
+{
+  "seed": 7813047234650458245,
+  "steps": 35,
+  "total_reward": 93.64000000000001,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1089,
+  "replay_size": 20000,
+  "loss": 0.8706811666488647,
+  "policy_loss": 0.8695908188819885,
+  "value_loss": 0.0010903547517955303
+}
+{
+  "seed": 4901858335265277166,
+  "steps": 29,
+  "total_reward": 70.02000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1090,
+  "replay_size": 20000,
+  "loss": 0.7837740778923035,
+  "policy_loss": 0.782525509595871,
+  "value_loss": 0.0012485624756664038
+}
+{
+  "seed": 2226136021623106553,
+  "steps": 31,
+  "total_reward": 71.87,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1091,
+  "replay_size": 20000,
+  "loss": 0.8388508260250092,
+  "policy_loss": 0.8375698029994965,
+  "value_loss": 0.0012810142943635583
+}
+{
+  "seed": 5134673069511826225,
+  "steps": 31,
+  "total_reward": 86.35000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1092,
+  "replay_size": 20000,
+  "loss": 0.850281298160553,
+  "policy_loss": 0.8486180305480957,
+  "value_loss": 0.001663276634644717
+}
+{
+  "seed": 3476609426970187816,
+  "steps": 29,
+  "total_reward": 77.63,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1093,
+  "replay_size": 20000,
+  "loss": 0.8097531795501709,
+  "policy_loss": 0.8086911737918854,
+  "value_loss": 0.0010620028479024768
+}
+{
+  "seed": 7910546130452739967,
+  "steps": 39,
+  "total_reward": 92.68000000000002,
+  "chase_count": 3,
+  "samples": 39,
+  "episode": 1094,
+  "replay_size": 20000,
+  "loss": 0.8086128532886505,
+  "policy_loss": 0.8077207505702972,
+  "value_loss": 0.000892113836016506
+}
+{
+  "seed": 2133697707210740702,
+  "steps": 31,
+  "total_reward": 66.38,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1095,
+  "replay_size": 20000,
+  "loss": 0.8622637689113617,
+  "policy_loss": 0.8609448969364166,
+  "value_loss": 0.0013188684242777526
+}
+{
+  "seed": 4928712017249734397,
+  "steps": 37,
+  "total_reward": 100.25000000000003,
+  "chase_count": 5,
+  "samples": 37,
+  "episode": 1096,
+  "replay_size": 20000,
+  "loss": 0.8699634075164795,
+  "policy_loss": 0.8689635097980499,
+  "value_loss": 0.0009999163448810577
+}
+{
+  "seed": 1786955529961692764,
+  "steps": 33,
+  "total_reward": 77.36000000000001,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1097,
+  "replay_size": 20000,
+  "loss": 0.9985027015209198,
+  "policy_loss": 0.9973678290843964,
+  "value_loss": 0.0011348742118570954
+}
+{
+  "seed": 6492172107148406542,
+  "steps": 30,
+  "total_reward": 91.80000000000004,
+  "chase_count": 4,
+  "samples": 30,
+  "episode": 1098,
+  "replay_size": 20000,
+  "loss": 0.6965810656547546,
+  "policy_loss": 0.6951693892478943,
+  "value_loss": 0.0014116670354269445
+}
+{
+  "seed": 1419940391935555773,
+  "steps": 31,
+  "total_reward": 100.24000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1099,
+  "replay_size": 20000,
+  "loss": 0.8993634581565857,
+  "policy_loss": 0.8982150852680206,
+  "value_loss": 0.0011483552225399762
+}
+{
+  "seed": 5406266287665149837,
+  "steps": 33,
+  "total_reward": 82.94999999999999,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1100,
+  "replay_size": 20000,
+  "loss": 0.77679643034935,
+  "policy_loss": 0.7754586040973663,
+  "value_loss": 0.0013378126313909888
+}
+{
+  "seed": 4814252504584645080,
+  "steps": 28,
+  "total_reward": 64.31,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1101,
+  "replay_size": 20000,
+  "loss": 0.8699968755245209,
+  "policy_loss": 0.8688399493694305,
+  "value_loss": 0.0011569267371669412
+}
+{
+  "seed": 2672479832367089513,
+  "steps": 33,
+  "total_reward": 92.50000000000003,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1102,
+  "replay_size": 20000,
+  "loss": 0.7700765132904053,
+  "policy_loss": 0.7690142691135406,
+  "value_loss": 0.0010622271511238068
+}
+{
+  "seed": 3689718496809710609,
+  "steps": 28,
+  "total_reward": 86.49000000000001,
+  "chase_count": 4,
+  "samples": 28,
+  "episode": 1103,
+  "replay_size": 20000,
+  "loss": 0.9062826335430145,
+  "policy_loss": 0.9046336114406586,
+  "value_loss": 0.0016490049893036485
+}
+{
+  "seed": 7489517402835576612,
+  "steps": 40,
+  "total_reward": 124.24000000000002,
+  "chase_count": 2,
+  "samples": 40,
+  "episode": 1104,
+  "replay_size": 20000,
+  "loss": 0.7476040422916412,
+  "policy_loss": 0.7465636432170868,
+  "value_loss": 0.0010404028580524027
+}
+{
+  "seed": 7338999951962243079,
+  "steps": 36,
+  "total_reward": 112.96000000000002,
+  "chase_count": 4,
+  "samples": 36,
+  "episode": 1105,
+  "replay_size": 20000,
+  "loss": 0.9014784395694733,
+  "policy_loss": 0.9001519083976746,
+  "value_loss": 0.0013265578891150653
+}
+{
+  "seed": 4498319438744143593,
+  "steps": 39,
+  "total_reward": 100.14000000000004,
+  "chase_count": 5,
+  "samples": 39,
+  "episode": 1106,
+  "replay_size": 20000,
+  "loss": 0.9088741540908813,
+  "policy_loss": 0.9075618982315063,
+  "value_loss": 0.001312243053689599
+}
+{
+  "seed": 8524876229221843964,
+  "steps": 31,
+  "total_reward": 112.05000000000001,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1107,
+  "replay_size": 20000,
+  "loss": 0.8146093785762787,
+  "policy_loss": 0.8136227130889893,
+  "value_loss": 0.000986676343018189
+}
+{
+  "seed": 1657161021262492892,
+  "steps": 29,
+  "total_reward": 87.71000000000001,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1108,
+  "replay_size": 20000,
+  "loss": 0.8185009956359863,
+  "policy_loss": 0.8174788653850555,
+  "value_loss": 0.0010221487318631262
+}
+{
+  "seed": 6765750303866837271,
+  "steps": 31,
+  "total_reward": 59.87999999999998,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1109,
+  "replay_size": 20000,
+  "loss": 0.9483441412448883,
+  "policy_loss": 0.9472350180149078,
+  "value_loss": 0.0011091188644059002
+}
+{
+  "seed": 1177460433728172824,
+  "steps": 39,
+  "total_reward": 96.74000000000002,
+  "chase_count": 4,
+  "samples": 39,
+  "episode": 1110,
+  "replay_size": 20000,
+  "loss": 0.9033990800380707,
+  "policy_loss": 0.902157187461853,
+  "value_loss": 0.0012418707483448088
+}
+{
+  "seed": 1212685400945217982,
+  "steps": 30,
+  "total_reward": 102.95000000000003,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1111,
+  "replay_size": 20000,
+  "loss": 1.001043438911438,
+  "policy_loss": 0.9997217655181885,
+  "value_loss": 0.0013216841325629503
+}
+{
+  "seed": 5210689126151421131,
+  "steps": 32,
+  "total_reward": 107.35000000000002,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1112,
+  "replay_size": 20000,
+  "loss": 0.9083462357521057,
+  "policy_loss": 0.9068176448345184,
+  "value_loss": 0.001528576365672052
+}
+{
+  "seed": 6461612184250572757,
+  "steps": 29,
+  "total_reward": 76.15,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1113,
+  "replay_size": 20000,
+  "loss": 0.8052327632904053,
+  "policy_loss": 0.8032829761505127,
+  "value_loss": 0.0019498019246384501
+}
+{
+  "seed": 4921293615558377705,
+  "steps": 29,
+  "total_reward": 82.23,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1114,
+  "replay_size": 20000,
+  "loss": 0.9636049270629883,
+  "policy_loss": 0.9624149799346924,
+  "value_loss": 0.0011899338569492102
+}
+{
+  "seed": 4775190861359660263,
+  "steps": 38,
+  "total_reward": 81.50000000000001,
+  "chase_count": 5,
+  "samples": 38,
+  "episode": 1115,
+  "replay_size": 20000,
+  "loss": 0.8863917291164398,
+  "policy_loss": 0.8850026428699493,
+  "value_loss": 0.0013890794944018126
+}
+{
+  "seed": 4122820743132741011,
+  "steps": 35,
+  "total_reward": 103.10000000000002,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1116,
+  "replay_size": 20000,
+  "loss": 0.8792601823806763,
+  "policy_loss": 0.8778546452522278,
+  "value_loss": 0.0014055143110454082
+}
+{
+  "seed": 2476832035643778637,
+  "steps": 33,
+  "total_reward": 91.78999999999999,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1117,
+  "replay_size": 20000,
+  "loss": 0.8225059509277344,
+  "policy_loss": 0.8211587369441986,
+  "value_loss": 0.0013472058344632387
+}
+{
+  "seed": 3128782598833957382,
+  "steps": 29,
+  "total_reward": 108.27000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1118,
+  "replay_size": 20000,
+  "loss": 0.8909041285514832,
+  "policy_loss": 0.8896872699260712,
+  "value_loss": 0.0012168358662165701
+}
+{
+  "seed": 1041259763771296578,
+  "steps": 24,
+  "total_reward": 98.55,
+  "chase_count": 4,
+  "samples": 24,
+  "episode": 1119,
+  "replay_size": 20000,
+  "loss": 0.7497950494289398,
+  "policy_loss": 0.7482118010520935,
+  "value_loss": 0.0015832608914934099
+}
+{
+  "seed": 7523015967692285933,
+  "steps": 32,
+  "total_reward": 80.67000000000002,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1120,
+  "replay_size": 20000,
+  "loss": 0.897724986076355,
+  "policy_loss": 0.8962240517139435,
+  "value_loss": 0.001500935002695769
+}
+{
+  "seed": 815272987654383643,
+  "steps": 34,
+  "total_reward": 75.35000000000002,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1121,
+  "replay_size": 20000,
+  "loss": 0.8621776103973389,
+  "policy_loss": 0.8610120415687561,
+  "value_loss": 0.0011655851849354804
+}
+{
+  "seed": 2159314983597084120,
+  "steps": 24,
+  "total_reward": 86.39000000000001,
+  "chase_count": 4,
+  "samples": 24,
+  "episode": 1122,
+  "replay_size": 20000,
+  "loss": 0.8828644752502441,
+  "policy_loss": 0.8815969228744507,
+  "value_loss": 0.0012675320613197982
+}
+{
+  "seed": 6189256851857000011,
+  "steps": 31,
+  "total_reward": 96.9,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1123,
+  "replay_size": 20000,
+  "loss": 0.9283877015113831,
+  "policy_loss": 0.9269782900810242,
+  "value_loss": 0.0014094036887399852
+}
+{
+  "seed": 1145237281875806953,
+  "steps": 32,
+  "total_reward": 91.72000000000001,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1124,
+  "replay_size": 20000,
+  "loss": 0.868410050868988,
+  "policy_loss": 0.8670175969600677,
+  "value_loss": 0.0013924631639383733
+}
+{
+  "seed": 5998488861950038480,
+  "steps": 33,
+  "total_reward": 90.21000000000001,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1125,
+  "replay_size": 20000,
+  "loss": 0.8932419419288635,
+  "policy_loss": 0.8918689489364624,
+  "value_loss": 0.0013729913625866175
+}
+{
+  "seed": 1144570539460292017,
+  "steps": 28,
+  "total_reward": 94.26,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1126,
+  "replay_size": 20000,
+  "loss": 0.8485073149204254,
+  "policy_loss": 0.8471599817276001,
+  "value_loss": 0.0013473337749019265
+}
+{
+  "seed": 922522382656065067,
+  "steps": 30,
+  "total_reward": 69.57000000000002,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1127,
+  "replay_size": 20000,
+  "loss": 0.7784328758716583,
+  "policy_loss": 0.7770421802997589,
+  "value_loss": 0.0013906950480304658
+}
+{
+  "seed": 4981279802089075465,
+  "steps": 30,
+  "total_reward": 88.86000000000001,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1128,
+  "replay_size": 20000,
+  "loss": 0.8279704749584198,
+  "policy_loss": 0.8265075385570526,
+  "value_loss": 0.0014629471697844565
+}
+{
+  "seed": 879956780798845718,
+  "steps": 32,
+  "total_reward": 82.73000000000002,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1129,
+  "replay_size": 20000,
+  "loss": 0.8429936468601227,
+  "policy_loss": 0.8414072692394257,
+  "value_loss": 0.0015863938024267554
+}
+{
+  "seed": 489519183635415668,
+  "steps": 39,
+  "total_reward": 89.51000000000002,
+  "chase_count": 5,
+  "samples": 39,
+  "episode": 1130,
+  "replay_size": 20000,
+  "loss": 0.8874540328979492,
+  "policy_loss": 0.8860960006713867,
+  "value_loss": 0.0013580233207903802
+}
+{
+  "seed": 5069878558276959089,
+  "steps": 34,
+  "total_reward": 118.73,
+  "chase_count": 4,
+  "samples": 34,
+  "episode": 1131,
+  "replay_size": 20000,
+  "loss": 0.8759364783763885,
+  "policy_loss": 0.8746214509010315,
+  "value_loss": 0.0013150240993127227
+}
+{
+  "seed": 5644383597014274715,
+  "steps": 32,
+  "total_reward": 81.28000000000003,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1132,
+  "replay_size": 20000,
+  "loss": 0.8173979818820953,
+  "policy_loss": 0.816015213727951,
+  "value_loss": 0.0013827620423398912
+}
+{
+  "seed": 7878691009887720922,
+  "steps": 34,
+  "total_reward": 96.74000000000001,
+  "chase_count": 4,
+  "samples": 34,
+  "episode": 1133,
+  "replay_size": 20000,
+  "loss": 0.8146072030067444,
+  "policy_loss": 0.8134042918682098,
+  "value_loss": 0.0012029019126202911
+}
+{
+  "seed": 7164860326338630882,
+  "steps": 33,
+  "total_reward": 99.01000000000002,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1134,
+  "replay_size": 20000,
+  "loss": 0.7947240471839905,
+  "policy_loss": 0.793473869562149,
+  "value_loss": 0.0012501752353273332
+}
+{
+  "seed": 9148407901389014499,
+  "steps": 32,
+  "total_reward": 92.26,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1135,
+  "replay_size": 20000,
+  "loss": 0.9069812595844269,
+  "policy_loss": 0.9056303203105927,
+  "value_loss": 0.001350946695310995
+}
+{
+  "seed": 2068645552280356600,
+  "steps": 30,
+  "total_reward": 107.92000000000002,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1136,
+  "replay_size": 20000,
+  "loss": 0.7760093212127686,
+  "policy_loss": 0.7748611867427826,
+  "value_loss": 0.0011481472756713629
+}
+{
+  "seed": 561213489722605308,
+  "steps": 27,
+  "total_reward": 82.32000000000002,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1137,
+  "replay_size": 20000,
+  "loss": 0.8883361518383026,
+  "policy_loss": 0.8864873647689819,
+  "value_loss": 0.0018487793277017772
+}
+{
+  "seed": 6165032176720079231,
+  "steps": 32,
+  "total_reward": 66.97,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1138,
+  "replay_size": 20000,
+  "loss": 0.9170996248722076,
+  "policy_loss": 0.9153858423233032,
+  "value_loss": 0.0017137812683358788
+}
+{
+  "seed": 6217329223429835103,
+  "steps": 31,
+  "total_reward": 88.15,
+  "chase_count": 4,
+  "samples": 31,
+  "episode": 1139,
+  "replay_size": 20000,
+  "loss": 0.9006468057632446,
+  "policy_loss": 0.8996998965740204,
+  "value_loss": 0.0009468811913393438
+}
+{
+  "seed": 2627717663679653426,
+  "steps": 40,
+  "total_reward": 98.16000000000003,
+  "chase_count": 4,
+  "samples": 40,
+  "episode": 1140,
+  "replay_size": 20000,
+  "loss": 0.8687933087348938,
+  "policy_loss": 0.8675509989261627,
+  "value_loss": 0.0012423181906342506
+}
+{
+  "seed": 1186916866055316657,
+  "steps": 26,
+  "total_reward": 82.21000000000001,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1141,
+  "replay_size": 20000,
+  "loss": 0.8681640625,
+  "policy_loss": 0.8669106364250183,
+  "value_loss": 0.0012534153647720814
+}
+{
+  "seed": 6091583476626955962,
+  "steps": 33,
+  "total_reward": 103.60000000000001,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1142,
+  "replay_size": 20000,
+  "loss": 0.9003130793571472,
+  "policy_loss": 0.8990994691848755,
+  "value_loss": 0.0012136185541749
+}
+{
+  "seed": 5164377975754029989,
+  "steps": 35,
+  "total_reward": 85.39,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1143,
+  "replay_size": 20000,
+  "loss": 0.8281225264072418,
+  "policy_loss": 0.8268709778785706,
+  "value_loss": 0.0012515453854575753
+}
+{
+  "seed": 8510328332285789244,
+  "steps": 27,
+  "total_reward": 86.60000000000001,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1144,
+  "replay_size": 20000,
+  "loss": 0.8556521534919739,
+  "policy_loss": 0.8545556664466858,
+  "value_loss": 0.0010965100955218077
+}
+{
+  "seed": 5746250767907070092,
+  "steps": 32,
+  "total_reward": 91.25000000000003,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1145,
+  "replay_size": 20000,
+  "loss": 0.8553097248077393,
+  "policy_loss": 0.8542870581150055,
+  "value_loss": 0.0010226662561763078
+}
+{
+  "seed": 1065746875388007366,
+  "steps": 28,
+  "total_reward": 91.31000000000003,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1146,
+  "replay_size": 20000,
+  "loss": 0.824255496263504,
+  "policy_loss": 0.8229661881923676,
+  "value_loss": 0.0012893123202957213
+}
+{
+  "seed": 1398706234874900986,
+  "steps": 26,
+  "total_reward": 95.63,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1147,
+  "replay_size": 20000,
+  "loss": 0.8001218438148499,
+  "policy_loss": 0.7991784811019897,
+  "value_loss": 0.0009433895174879581
+}
+{
+  "seed": 8789189970195306025,
+  "steps": 37,
+  "total_reward": 98.18000000000004,
+  "chase_count": 5,
+  "samples": 37,
+  "episode": 1148,
+  "replay_size": 20000,
+  "loss": 0.7793662250041962,
+  "policy_loss": 0.7782576680183411,
+  "value_loss": 0.00110856001265347
+}
+{
+  "seed": 9217125045244061360,
+  "steps": 29,
+  "total_reward": 92.46000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1149,
+  "replay_size": 20000,
+  "loss": 0.7359031736850739,
+  "policy_loss": 0.7343631684780121,
+  "value_loss": 0.001539995486382395
+}
+{
+  "seed": 2630538366019693806,
+  "steps": 31,
+  "total_reward": 109.80000000000001,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1150,
+  "replay_size": 20000,
+  "loss": 0.9078041017055511,
+  "policy_loss": 0.9055986702442169,
+  "value_loss": 0.0022054269211366773
+}
+{
+  "seed": 7602918300694910257,
+  "steps": 33,
+  "total_reward": 125.40000000000003,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1151,
+  "replay_size": 20000,
+  "loss": 0.8281649053096771,
+  "policy_loss": 0.8267466425895691,
+  "value_loss": 0.0014182551531121135
+}
+{
+  "seed": 8944625581507320617,
+  "steps": 27,
+  "total_reward": 73.06,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1152,
+  "replay_size": 20000,
+  "loss": 0.9418136477470398,
+  "policy_loss": 0.9410417675971985,
+  "value_loss": 0.0007718572160229087
+}
+{
+  "seed": 8626893334204015509,
+  "steps": 29,
+  "total_reward": 80.75999999999999,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1153,
+  "replay_size": 20000,
+  "loss": 0.8486494719982147,
+  "policy_loss": 0.8472817540168762,
+  "value_loss": 0.0013677095994353294
+}
+{
+  "seed": 7342328163138053935,
+  "steps": 30,
+  "total_reward": 68.81,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1154,
+  "replay_size": 20000,
+  "loss": 0.854738861322403,
+  "policy_loss": 0.8535423278808594,
+  "value_loss": 0.001196553959744051
+}
+{
+  "seed": 6045044385997442172,
+  "steps": 34,
+  "total_reward": 112.27000000000002,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1155,
+  "replay_size": 20000,
+  "loss": 0.8136585652828217,
+  "policy_loss": 0.8125333487987518,
+  "value_loss": 0.0011252177646383643
+}
+{
+  "seed": 9200504762718917238,
+  "steps": 30,
+  "total_reward": 115.24000000000001,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1156,
+  "replay_size": 20000,
+  "loss": 0.9503962099552155,
+  "policy_loss": 0.9492299556732178,
+  "value_loss": 0.001166227797511965
+}
+{
+  "seed": 4073506336549081419,
+  "steps": 24,
+  "total_reward": 75.53,
+  "chase_count": 5,
+  "samples": 24,
+  "episode": 1157,
+  "replay_size": 20000,
+  "loss": 0.820208340883255,
+  "policy_loss": 0.818570464849472,
+  "value_loss": 0.0016378824366256595
+}
+{
+  "seed": 1202713356247237116,
+  "steps": 24,
+  "total_reward": 88.47000000000001,
+  "chase_count": 4,
+  "samples": 24,
+  "episode": 1158,
+  "replay_size": 20000,
+  "loss": 0.80741947889328,
+  "policy_loss": 0.8062131106853485,
+  "value_loss": 0.001206371933221817
+}
+{
+  "seed": 6382215913101893332,
+  "steps": 33,
+  "total_reward": 124.53000000000004,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1159,
+  "replay_size": 20000,
+  "loss": 0.706813246011734,
+  "policy_loss": 0.7054949104785919,
+  "value_loss": 0.0013183346018195152
+}
+{
+  "seed": 1840345144614676674,
+  "steps": 30,
+  "total_reward": 75.94000000000003,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1160,
+  "replay_size": 20000,
+  "loss": 0.8453371524810791,
+  "policy_loss": 0.8442048132419586,
+  "value_loss": 0.0011323333310429007
+}
+{
+  "seed": 4314253410883770595,
+  "steps": 33,
+  "total_reward": 84.89000000000001,
+  "chase_count": 3,
+  "samples": 33,
+  "episode": 1161,
+  "replay_size": 20000,
+  "loss": 0.7805629372596741,
+  "policy_loss": 0.7790659964084625,
+  "value_loss": 0.0014969509211368859
+}
+{
+  "seed": 6054030262613372591,
+  "steps": 35,
+  "total_reward": 86.78000000000002,
+  "chase_count": 4,
+  "samples": 35,
+  "episode": 1162,
+  "replay_size": 20000,
+  "loss": 0.9177180826663971,
+  "policy_loss": 0.9164043068885803,
+  "value_loss": 0.0013137710629962385
+}
+{
+  "seed": 3777824352623176115,
+  "steps": 30,
+  "total_reward": 91.92000000000002,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1163,
+  "replay_size": 20000,
+  "loss": 0.8427827656269073,
+  "policy_loss": 0.8415640294551849,
+  "value_loss": 0.001218734949361533
+}
+{
+  "seed": 6613272738394236370,
+  "steps": 36,
+  "total_reward": 62.11999999999999,
+  "chase_count": 5,
+  "samples": 36,
+  "episode": 1164,
+  "replay_size": 20000,
+  "loss": 0.763943612575531,
+  "policy_loss": 0.7627458274364471,
+  "value_loss": 0.0011977971880696714
+}
+{
+  "seed": 7837370109814654201,
+  "steps": 30,
+  "total_reward": 110.79000000000002,
+  "chase_count": 4,
+  "samples": 30,
+  "episode": 1165,
+  "replay_size": 20000,
+  "loss": 0.8861308097839355,
+  "policy_loss": 0.8848153650760651,
+  "value_loss": 0.0013154185144230723
+}
+{
+  "seed": 8749772713980618178,
+  "steps": 28,
+  "total_reward": 83.63000000000001,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1166,
+  "replay_size": 20000,
+  "loss": 0.886918693780899,
+  "policy_loss": 0.8852894306182861,
+  "value_loss": 0.0016292710788547993
+}
+{
+  "seed": 8618884656312078782,
+  "steps": 32,
+  "total_reward": 110.81000000000003,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1167,
+  "replay_size": 20000,
+  "loss": 0.8982468545436859,
+  "policy_loss": 0.8962339758872986,
+  "value_loss": 0.002012880751863122
+}
+{
+  "seed": 1439908870951679424,
+  "steps": 26,
+  "total_reward": 93.07,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1168,
+  "replay_size": 20000,
+  "loss": 0.8379750549793243,
+  "policy_loss": 0.8368525505065918,
+  "value_loss": 0.0011225067428313196
+}
+{
+  "seed": 90785694318186899,
+  "steps": 37,
+  "total_reward": 108.38000000000002,
+  "chase_count": 4,
+  "samples": 37,
+  "episode": 1169,
+  "replay_size": 20000,
+  "loss": 0.9191716015338898,
+  "policy_loss": 0.9177941083908081,
+  "value_loss": 0.0013774933177046478
+}
+{
+  "seed": 1422093809563006262,
+  "steps": 28,
+  "total_reward": 71.97000000000001,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1170,
+  "replay_size": 20000,
+  "loss": 0.9138733744621277,
+  "policy_loss": 0.912842333316803,
+  "value_loss": 0.0010310247307643294
+}
+{
+  "seed": 2044423665093067162,
+  "steps": 31,
+  "total_reward": 100.88,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1171,
+  "replay_size": 20000,
+  "loss": 0.8750656247138977,
+  "policy_loss": 0.8736278116703033,
+  "value_loss": 0.0014378248015418649
+}
+{
+  "seed": 2677856956111858586,
+  "steps": 31,
+  "total_reward": 88.55000000000001,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1172,
+  "replay_size": 20000,
+  "loss": 0.7268852889537811,
+  "policy_loss": 0.7256768047809601,
+  "value_loss": 0.0012084815534763038
+}
+{
+  "seed": 898672502274460313,
+  "steps": 27,
+  "total_reward": 83.1,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1173,
+  "replay_size": 20000,
+  "loss": 0.903813362121582,
+  "policy_loss": 0.9025547802448273,
+  "value_loss": 0.0012585949152708054
+}
+{
+  "seed": 3898557214516617887,
+  "steps": 29,
+  "total_reward": 97.34000000000002,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1174,
+  "replay_size": 20000,
+  "loss": 0.9338226318359375,
+  "policy_loss": 0.9328321516513824,
+  "value_loss": 0.0009904656617436558
+}
+{
+  "seed": 8336753059297493734,
+  "steps": 36,
+  "total_reward": 96.96000000000001,
+  "chase_count": 5,
+  "samples": 36,
+  "episode": 1175,
+  "replay_size": 20000,
+  "loss": 0.82045578956604,
+  "policy_loss": 0.8187806606292725,
+  "value_loss": 0.0016751248040236533
+}
+{
+  "seed": 7163285856202715599,
+  "steps": 33,
+  "total_reward": 72.42999999999998,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1176,
+  "replay_size": 20000,
+  "loss": 0.8917132318019867,
+  "policy_loss": 0.8904200494289398,
+  "value_loss": 0.0012931784149259329
+}
+{
+  "seed": 4596575168148033034,
+  "steps": 36,
+  "total_reward": 95.73000000000002,
+  "chase_count": 4,
+  "samples": 36,
+  "episode": 1177,
+  "replay_size": 20000,
+  "loss": 0.9049156308174133,
+  "policy_loss": 0.9035928845405579,
+  "value_loss": 0.0013227424933575094
+}
+{
+  "seed": 3477009869796354894,
+  "steps": 31,
+  "total_reward": 104.85000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1178,
+  "replay_size": 20000,
+  "loss": 0.9431107342243195,
+  "policy_loss": 0.9422256946563721,
+  "value_loss": 0.0008850400918163359
+}
+{
+  "seed": 719733814465302161,
+  "steps": 31,
+  "total_reward": 83.35000000000001,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1179,
+  "replay_size": 20000,
+  "loss": 0.8509613573551178,
+  "policy_loss": 0.8498567938804626,
+  "value_loss": 0.0011045728460885584
+}
+{
+  "seed": 7838009046206531244,
+  "steps": 33,
+  "total_reward": 93.42999999999998,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1180,
+  "replay_size": 20000,
+  "loss": 0.8180251717567444,
+  "policy_loss": 0.8165964186191559,
+  "value_loss": 0.001428745104931295
+}
+{
+  "seed": 7464209995873364139,
+  "steps": 31,
+  "total_reward": 95.42,
+  "chase_count": 4,
+  "samples": 31,
+  "episode": 1181,
+  "replay_size": 20000,
+  "loss": 0.8300412893295288,
+  "policy_loss": 0.8284283578395844,
+  "value_loss": 0.0016129201976582408
+}
+{
+  "seed": 3881748999433721427,
+  "steps": 30,
+  "total_reward": 95.66999999999999,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1182,
+  "replay_size": 20000,
+  "loss": 0.817975252866745,
+  "policy_loss": 0.8162751793861389,
+  "value_loss": 0.0017000524676404893
+}
+{
+  "seed": 3566727096339757419,
+  "steps": 35,
+  "total_reward": 117.65000000000002,
+  "chase_count": 3,
+  "samples": 35,
+  "episode": 1183,
+  "replay_size": 20000,
+  "loss": 0.8109417259693146,
+  "policy_loss": 0.8098610043525696,
+  "value_loss": 0.0010807185317389667
+}
+{
+  "seed": 4708259389333602695,
+  "steps": 29,
+  "total_reward": 71.94,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1184,
+  "replay_size": 20000,
+  "loss": 0.8078113198280334,
+  "policy_loss": 0.8067320287227631,
+  "value_loss": 0.0010792792309075594
+}
+{
+  "seed": 5610419228756226700,
+  "steps": 34,
+  "total_reward": 92.16000000000001,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1185,
+  "replay_size": 20000,
+  "loss": 0.9060732424259186,
+  "policy_loss": 0.9047179222106934,
+  "value_loss": 0.0013553372991736978
+}
+{
+  "seed": 8391857827878687799,
+  "steps": 31,
+  "total_reward": 99.18000000000004,
+  "chase_count": 3,
+  "samples": 31,
+  "episode": 1186,
+  "replay_size": 20000,
+  "loss": 0.885460615158081,
+  "policy_loss": 0.8844575881958008,
+  "value_loss": 0.0010030402045231313
+}
+{
+  "seed": 3943509114512336325,
+  "steps": 37,
+  "total_reward": 94.22000000000003,
+  "chase_count": 4,
+  "samples": 37,
+  "episode": 1187,
+  "replay_size": 20000,
+  "loss": 0.7875974476337433,
+  "policy_loss": 0.7860591411590576,
+  "value_loss": 0.0015383020509034395
+}
+{
+  "seed": 5184768633108265916,
+  "steps": 37,
+  "total_reward": 114.11000000000003,
+  "chase_count": 4,
+  "samples": 37,
+  "episode": 1188,
+  "replay_size": 20000,
+  "loss": 0.8538991510868073,
+  "policy_loss": 0.8524306416511536,
+  "value_loss": 0.001468511123675853
+}
+{
+  "seed": 6289997986268011250,
+  "steps": 28,
+  "total_reward": 101.18000000000002,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1189,
+  "replay_size": 20000,
+  "loss": 0.8009380400180817,
+  "policy_loss": 0.7998331785202026,
+  "value_loss": 0.0011048554151784629
+}
+{
+  "seed": 1732476502122378380,
+  "steps": 31,
+  "total_reward": 71.23,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1190,
+  "replay_size": 20000,
+  "loss": 0.8237022757530212,
+  "policy_loss": 0.8221953809261322,
+  "value_loss": 0.0015068849897943437
+}
+{
+  "seed": 3913163942959093616,
+  "steps": 35,
+  "total_reward": 108.30000000000003,
+  "chase_count": 4,
+  "samples": 35,
+  "episode": 1191,
+  "replay_size": 20000,
+  "loss": 0.9005159735679626,
+  "policy_loss": 0.8992867171764374,
+  "value_loss": 0.0012292464380152524
+}
+{
+  "seed": 588216029839489318,
+  "steps": 32,
+  "total_reward": 97.00000000000003,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1192,
+  "replay_size": 20000,
+  "loss": 0.890579342842102,
+  "policy_loss": 0.8893543481826782,
+  "value_loss": 0.0012249985884409398
+}
+{
+  "seed": 5448392580999366656,
+  "steps": 35,
+  "total_reward": 95.96000000000002,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1193,
+  "replay_size": 20000,
+  "loss": 0.8195297420024872,
+  "policy_loss": 0.8182390928268433,
+  "value_loss": 0.0012906499905511737
+}
+{
+  "seed": 1622160135309902043,
+  "steps": 31,
+  "total_reward": 66.38,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1194,
+  "replay_size": 20000,
+  "loss": 0.7682772278785706,
+  "policy_loss": 0.7670257687568665,
+  "value_loss": 0.0012514629634097219
+}
+{
+  "seed": 6136222702209377383,
+  "steps": 36,
+  "total_reward": 99.41000000000003,
+  "chase_count": 4,
+  "samples": 36,
+  "episode": 1195,
+  "replay_size": 20000,
+  "loss": 0.8900092244148254,
+  "policy_loss": 0.8882951736450195,
+  "value_loss": 0.0017140500713139772
+}
+{
+  "seed": 7214539043599133241,
+  "steps": 35,
+  "total_reward": 67.79999999999998,
+  "chase_count": 4,
+  "samples": 35,
+  "episode": 1196,
+  "replay_size": 20000,
+  "loss": 0.9518947899341583,
+  "policy_loss": 0.9502988159656525,
+  "value_loss": 0.001595983630977571
+}
+{
+  "seed": 5311684589302813965,
+  "steps": 38,
+  "total_reward": 103.22000000000003,
+  "chase_count": 5,
+  "samples": 38,
+  "episode": 1197,
+  "replay_size": 20000,
+  "loss": 0.9284527003765106,
+  "policy_loss": 0.9267354309558868,
+  "value_loss": 0.001717273669783026
+}
+{
+  "seed": 3642147556965083614,
+  "steps": 29,
+  "total_reward": 83.48,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1198,
+  "replay_size": 20000,
+  "loss": 0.750049501657486,
+  "policy_loss": 0.7490894496440887,
+  "value_loss": 0.0009600638877600431
+}
+{
+  "seed": 5702025279919658990,
+  "steps": 34,
+  "total_reward": 78.15,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1199,
+  "replay_size": 20000,
+  "loss": 0.8537079095840454,
+  "policy_loss": 0.8529025316238403,
+  "value_loss": 0.0008053590427152812
+}
+{
+  "seed": 8689035158694699604,
+  "steps": 35,
+  "total_reward": 124.60999999999999,
+  "chase_count": 3,
+  "samples": 35,
+  "episode": 1200,
+  "replay_size": 20000,
+  "loss": 0.8390600681304932,
+  "policy_loss": 0.8378969430923462,
+  "value_loss": 0.0011631090310402215
+}
+{
+  "seed": 6980048044169434665,
+  "steps": 31,
+  "total_reward": 67.78,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1201,
+  "replay_size": 20000,
+  "loss": 0.7952707409858704,
+  "policy_loss": 0.7937775254249573,
+  "value_loss": 0.0014932159683667123
+}
+{
+  "seed": 2226864788171652021,
+  "steps": 29,
+  "total_reward": 66.7,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1202,
+  "replay_size": 20000,
+  "loss": 0.9075770676136017,
+  "policy_loss": 0.9059410393238068,
+  "value_loss": 0.0016360313165932894
+}
+{
+  "seed": 8010202174214135897,
+  "steps": 31,
+  "total_reward": 85.28000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1203,
+  "replay_size": 20000,
+  "loss": 0.8664385676383972,
+  "policy_loss": 0.8653440475463867,
+  "value_loss": 0.0010945233807433397
+}
+{
+  "seed": 2759340928216040931,
+  "steps": 30,
+  "total_reward": 92.75,
+  "chase_count": 4,
+  "samples": 30,
+  "episode": 1204,
+  "replay_size": 20000,
+  "loss": 0.8040980398654938,
+  "policy_loss": 0.8026653826236725,
+  "value_loss": 0.001432678080163896
+}
+{
+  "seed": 8040242562016049868,
+  "steps": 30,
+  "total_reward": 87.93,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1205,
+  "replay_size": 20000,
+  "loss": 0.8195979595184326,
+  "policy_loss": 0.818555474281311,
+  "value_loss": 0.0010425002546980977
+}
+{
+  "seed": 6767091918679270023,
+  "steps": 40,
+  "total_reward": 116.01000000000002,
+  "chase_count": 4,
+  "samples": 40,
+  "episode": 1206,
+  "replay_size": 20000,
+  "loss": 0.8579725325107574,
+  "policy_loss": 0.8563249707221985,
+  "value_loss": 0.001647587982006371
+}
+{
+  "seed": 2827382607338271077,
+  "steps": 30,
+  "total_reward": 74.63000000000002,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1207,
+  "replay_size": 20000,
+  "loss": 0.8790818154811859,
+  "policy_loss": 0.877417117357254,
+  "value_loss": 0.0016647186130285263
+}
+{
+  "seed": 692895244471442844,
+  "steps": 32,
+  "total_reward": 106.06000000000003,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1208,
+  "replay_size": 20000,
+  "loss": 0.822851836681366,
+  "policy_loss": 0.8216385245323181,
+  "value_loss": 0.0012133114505559206
+}
+{
+  "seed": 3864712553711206839,
+  "steps": 32,
+  "total_reward": 97.54000000000002,
+  "chase_count": 3,
+  "samples": 32,
+  "episode": 1209,
+  "replay_size": 20000,
+  "loss": 0.8550944924354553,
+  "policy_loss": 0.8533845543861389,
+  "value_loss": 0.0017099552205763757
+}
+{
+  "seed": 6239481121164315643,
+  "steps": 29,
+  "total_reward": 94.96000000000001,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1210,
+  "replay_size": 20000,
+  "loss": 0.7875812947750092,
+  "policy_loss": 0.786143571138382,
+  "value_loss": 0.0014377282932400703
+}
+{
+  "seed": 3305857594766884536,
+  "steps": 30,
+  "total_reward": 81.96000000000001,
+  "chase_count": 4,
+  "samples": 30,
+  "episode": 1211,
+  "replay_size": 20000,
+  "loss": 0.8852854371070862,
+  "policy_loss": 0.8838867247104645,
+  "value_loss": 0.0013987080310471356
+}
+{
+  "seed": 2250711378107076797,
+  "steps": 34,
+  "total_reward": 91.28000000000003,
+  "chase_count": 3,
+  "samples": 34,
+  "episode": 1212,
+  "replay_size": 20000,
+  "loss": 0.8149527907371521,
+  "policy_loss": 0.8137341439723969,
+  "value_loss": 0.0012186529929749668
+}
+{
+  "seed": 8051848766489830554,
+  "steps": 30,
+  "total_reward": 95.20000000000002,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1213,
+  "replay_size": 20000,
+  "loss": 0.905836671590805,
+  "policy_loss": 0.9049793779850006,
+  "value_loss": 0.0008573290542699397
+}
+{
+  "seed": 399671656110368907,
+  "steps": 24,
+  "total_reward": 85.95,
+  "chase_count": 5,
+  "samples": 24,
+  "episode": 1214,
+  "replay_size": 20000,
+  "loss": 0.7994173765182495,
+  "policy_loss": 0.7982742190361023,
+  "value_loss": 0.0011431488674134016
+}
+{
+  "seed": 3072719646117363290,
+  "steps": 36,
+  "total_reward": 72.79,
+  "chase_count": 4,
+  "samples": 36,
+  "episode": 1215,
+  "replay_size": 20000,
+  "loss": 0.7489946782588959,
+  "policy_loss": 0.7479811608791351,
+  "value_loss": 0.0010135123739019036
+}
+{
+  "seed": 4472863404968315566,
+  "steps": 31,
+  "total_reward": 73.19999999999999,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1216,
+  "replay_size": 20000,
+  "loss": 0.8451679050922394,
+  "policy_loss": 0.8438184261322021,
+  "value_loss": 0.001349466445390135
+}
+{
+  "seed": 4359717845940355637,
+  "steps": 34,
+  "total_reward": 74.88000000000002,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1217,
+  "replay_size": 20000,
+  "loss": 0.9254686832427979,
+  "policy_loss": 0.9237307906150818,
+  "value_loss": 0.001737889542710036
+}
+{
+  "seed": 5493065787172276601,
+  "steps": 32,
+  "total_reward": 84.75000000000001,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1218,
+  "replay_size": 20000,
+  "loss": 0.8717431724071503,
+  "policy_loss": 0.8703193962574005,
+  "value_loss": 0.0014237759751267731
+}
+{
+  "seed": 5369637462820975705,
+  "steps": 35,
+  "total_reward": 75.34000000000003,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1219,
+  "replay_size": 20000,
+  "loss": 0.8950328230857849,
+  "policy_loss": 0.8939849734306335,
+  "value_loss": 0.0010478321637492627
+}
+{
+  "seed": 4004488995312021825,
+  "steps": 39,
+  "total_reward": 96.60000000000002,
+  "chase_count": 4,
+  "samples": 39,
+  "episode": 1220,
+  "replay_size": 20000,
+  "loss": 0.8165380954742432,
+  "policy_loss": 0.814956933259964,
+  "value_loss": 0.0015811516204848886
+}
+{
+  "seed": 1182634869437655587,
+  "steps": 37,
+  "total_reward": 108.57000000000004,
+  "chase_count": 5,
+  "samples": 37,
+  "episode": 1221,
+  "replay_size": 20000,
+  "loss": 0.8594509661197662,
+  "policy_loss": 0.8578165471553802,
+  "value_loss": 0.0016344139585271478
+}
+{
+  "seed": 1772748113281822185,
+  "steps": 31,
+  "total_reward": 107.64999999999999,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1222,
+  "replay_size": 20000,
+  "loss": 0.8777420222759247,
+  "policy_loss": 0.8766613006591797,
+  "value_loss": 0.0010807248472701758
+}
+{
+  "seed": 2484493190833298448,
+  "steps": 28,
+  "total_reward": 83.74000000000001,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1223,
+  "replay_size": 20000,
+  "loss": 0.8534968197345734,
+  "policy_loss": 0.8523319661617279,
+  "value_loss": 0.0011648357613012195
+}
+{
+  "seed": 7416589986854880801,
+  "steps": 38,
+  "total_reward": 92.22000000000003,
+  "chase_count": 5,
+  "samples": 38,
+  "episode": 1224,
+  "replay_size": 20000,
+  "loss": 0.8950974345207214,
+  "policy_loss": 0.8942221701145172,
+  "value_loss": 0.0008752590510994196
+}
+{
+  "seed": 6907901493724917343,
+  "steps": 29,
+  "total_reward": 83.58000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1225,
+  "replay_size": 20000,
+  "loss": 0.923847496509552,
+  "policy_loss": 0.9222770929336548,
+  "value_loss": 0.0015703891986049712
+}
+{
+  "seed": 4069017270245997832,
+  "steps": 26,
+  "total_reward": 74.65,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1226,
+  "replay_size": 20000,
+  "loss": 0.8223988711833954,
+  "policy_loss": 0.8211866021156311,
+  "value_loss": 0.0012122730258852243
+}
+{
+  "seed": 3193611764068210188,
+  "steps": 29,
+  "total_reward": 98.70000000000002,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1227,
+  "replay_size": 20000,
+  "loss": 0.853137880563736,
+  "policy_loss": 0.8518089950084686,
+  "value_loss": 0.001328906393609941
+}
+{
+  "seed": 800438118264417054,
+  "steps": 29,
+  "total_reward": 82.92000000000002,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1228,
+  "replay_size": 20000,
+  "loss": 0.8199793100357056,
+  "policy_loss": 0.8190745413303375,
+  "value_loss": 0.0009047603816725314
+}
+{
+  "seed": 8187380097458823639,
+  "steps": 30,
+  "total_reward": 84.10000000000002,
+  "chase_count": 4,
+  "samples": 30,
+  "episode": 1229,
+  "replay_size": 20000,
+  "loss": 0.8275360465049744,
+  "policy_loss": 0.8263003826141357,
+  "value_loss": 0.001235641655512154
+}
+{
+  "seed": 7499269690605172683,
+  "steps": 37,
+  "total_reward": 85.51,
+  "chase_count": 4,
+  "samples": 37,
+  "episode": 1230,
+  "replay_size": 20000,
+  "loss": 0.908043622970581,
+  "policy_loss": 0.906651496887207,
+  "value_loss": 0.0013921260251663625
+}
+{
+  "seed": 1950523887343596500,
+  "steps": 33,
+  "total_reward": 106.04,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1231,
+  "replay_size": 20000,
+  "loss": 0.7658332586288452,
+  "policy_loss": 0.7641671299934387,
+  "value_loss": 0.0016661412664689124
+}
+{
+  "seed": 6141733394292509487,
+  "steps": 23,
+  "total_reward": 96.16000000000003,
+  "chase_count": 5,
+  "samples": 23,
+  "episode": 1232,
+  "replay_size": 20000,
+  "loss": 0.8348551392555237,
+  "policy_loss": 0.8330341279506683,
+  "value_loss": 0.0018210293783340603
+}
+{
+  "seed": 8233115326860782054,
+  "steps": 27,
+  "total_reward": 62.36,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1233,
+  "replay_size": 20000,
+  "loss": 0.8614847958087921,
+  "policy_loss": 0.8598766624927521,
+  "value_loss": 0.0016081521171145141
+}
+{
+  "seed": 8468296299769975553,
+  "steps": 37,
+  "total_reward": 75.98000000000002,
+  "chase_count": 3,
+  "samples": 37,
+  "episode": 1234,
+  "replay_size": 20000,
+  "loss": 0.8290878534317017,
+  "policy_loss": 0.8275795876979828,
+  "value_loss": 0.0015082609606906772
+}
+{
+  "seed": 3972838531419535434,
+  "steps": 27,
+  "total_reward": 90.24000000000001,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1235,
+  "replay_size": 20000,
+  "loss": 0.8793167769908905,
+  "policy_loss": 0.8781403303146362,
+  "value_loss": 0.0011764593073166907
+}
+{
+  "seed": 8155523207796175395,
+  "steps": 37,
+  "total_reward": 95.91000000000003,
+  "chase_count": 4,
+  "samples": 37,
+  "episode": 1236,
+  "replay_size": 20000,
+  "loss": 0.8367072641849518,
+  "policy_loss": 0.8357341289520264,
+  "value_loss": 0.0009731126192491502
+}
+{
+  "seed": 2566425842109781481,
+  "steps": 43,
+  "total_reward": 95.37000000000002,
+  "chase_count": 4,
+  "samples": 43,
+  "episode": 1237,
+  "replay_size": 20000,
+  "loss": 0.7591598033905029,
+  "policy_loss": 0.7580217719078064,
+  "value_loss": 0.0011380218202248216
+}
+{
+  "seed": 7978177260018324145,
+  "steps": 29,
+  "total_reward": 87.36000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1238,
+  "replay_size": 20000,
+  "loss": 0.8854819536209106,
+  "policy_loss": 0.8842382431030273,
+  "value_loss": 0.0012437003897503018
+}
+{
+  "seed": 3397381140943019060,
+  "steps": 28,
+  "total_reward": 79.61000000000001,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1239,
+  "replay_size": 20000,
+  "loss": 0.9556037187576294,
+  "policy_loss": 0.9539665579795837,
+  "value_loss": 0.001637175097130239
+}
+{
+  "seed": 1783905362980195122,
+  "steps": 29,
+  "total_reward": 114.81000000000002,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1240,
+  "replay_size": 20000,
+  "loss": 0.8152430653572083,
+  "policy_loss": 0.8142467141151428,
+  "value_loss": 0.0009963676857296377
+}
+{
+  "seed": 564803363203969227,
+  "steps": 32,
+  "total_reward": 87.35,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1241,
+  "replay_size": 20000,
+  "loss": 0.868392676115036,
+  "policy_loss": 0.8671071231365204,
+  "value_loss": 0.0012855330132879317
+}
+{
+  "seed": 791129971372551556,
+  "steps": 28,
+  "total_reward": 93.57000000000001,
+  "chase_count": 4,
+  "samples": 28,
+  "episode": 1242,
+  "replay_size": 20000,
+  "loss": 0.8283231854438782,
+  "policy_loss": 0.826939731836319,
+  "value_loss": 0.0013834562269039452
+}
+{
+  "seed": 5043472068118612484,
+  "steps": 34,
+  "total_reward": 79.65,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1243,
+  "replay_size": 20000,
+  "loss": 0.847939521074295,
+  "policy_loss": 0.8469052612781525,
+  "value_loss": 0.0010342567693442106
+}
+{
+  "seed": 2322508732894440140,
+  "steps": 26,
+  "total_reward": 79.25,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1244,
+  "replay_size": 20000,
+  "loss": 0.9621793031692505,
+  "policy_loss": 0.9609578549861908,
+  "value_loss": 0.001221431331941858
+}
+{
+  "seed": 1805955723630145966,
+  "steps": 28,
+  "total_reward": 88.08000000000001,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1245,
+  "replay_size": 20000,
+  "loss": 0.9039636552333832,
+  "policy_loss": 0.9025311768054962,
+  "value_loss": 0.0014324835792649537
+}
+{
+  "seed": 5179585760111826156,
+  "steps": 32,
+  "total_reward": 98.58000000000003,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1246,
+  "replay_size": 20000,
+  "loss": 0.9228224456310272,
+  "policy_loss": 0.9215132296085358,
+  "value_loss": 0.0013091748987790197
+}
+{
+  "seed": 1377004100911356343,
+  "steps": 29,
+  "total_reward": 87.04000000000002,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1247,
+  "replay_size": 20000,
+  "loss": 0.833362489938736,
+  "policy_loss": 0.8321122229099274,
+  "value_loss": 0.0012502825120463967
+}
+{
+  "seed": 3972313210747316859,
+  "steps": 26,
+  "total_reward": 73.77000000000001,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1248,
+  "replay_size": 20000,
+  "loss": 0.8517528772354126,
+  "policy_loss": 0.8505471050739288,
+  "value_loss": 0.0012057845015078783
+}
+{
+  "seed": 322466127617284371,
+  "steps": 32,
+  "total_reward": 85.77000000000001,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1249,
+  "replay_size": 20000,
+  "loss": 0.9935910105705261,
+  "policy_loss": 0.9919458031654358,
+  "value_loss": 0.0016451861010864377
+}
+{
+  "seed": 5850674517150628083,
+  "steps": 35,
+  "total_reward": 110.59,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1250,
+  "replay_size": 20000,
+  "loss": 0.9019709825515747,
+  "policy_loss": 0.900890439748764,
+  "value_loss": 0.0010805197525769472
+}
+{
+  "seed": 652104795682685941,
+  "steps": 39,
+  "total_reward": 87.44000000000001,
+  "chase_count": 4,
+  "samples": 39,
+  "episode": 1251,
+  "replay_size": 20000,
+  "loss": 0.9097611606121063,
+  "policy_loss": 0.9084413647651672,
+  "value_loss": 0.0013198147062212229
+}
+{
+  "seed": 4620513148012203530,
+  "steps": 29,
+  "total_reward": 90.42,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1252,
+  "replay_size": 20000,
+  "loss": 0.801951676607132,
+  "policy_loss": 0.8005899488925934,
+  "value_loss": 0.0013617196236737072
+}
+{
+  "seed": 1152521565171990822,
+  "steps": 27,
+  "total_reward": 91.82,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1253,
+  "replay_size": 20000,
+  "loss": 0.7615118622779846,
+  "policy_loss": 0.7604712247848511,
+  "value_loss": 0.0010406331857666373
+}
+{
+  "seed": 7666631754477599557,
+  "steps": 36,
+  "total_reward": 88.76000000000003,
+  "chase_count": 4,
+  "samples": 36,
+  "episode": 1254,
+  "replay_size": 20000,
+  "loss": 0.820730447769165,
+  "policy_loss": 0.8195733428001404,
+  "value_loss": 0.0011570850037969649
+}
+{
+  "seed": 8295953632063436748,
+  "steps": 28,
+  "total_reward": 69.24000000000001,
+  "chase_count": 4,
+  "samples": 28,
+  "episode": 1255,
+  "replay_size": 20000,
+  "loss": 0.8209810554981232,
+  "policy_loss": 0.8193773627281189,
+  "value_loss": 0.001603689684998244
+}
+{
+  "seed": 4375965029136122776,
+  "steps": 32,
+  "total_reward": 70.00999999999999,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1256,
+  "replay_size": 20000,
+  "loss": 0.84618079662323,
+  "policy_loss": 0.8450672030448914,
+  "value_loss": 0.0011135987588204443
+}
+{
+  "seed": 4489304715969045824,
+  "steps": 28,
+  "total_reward": 83.19000000000001,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1257,
+  "replay_size": 20000,
+  "loss": 0.8831512629985809,
+  "policy_loss": 0.8816984295845032,
+  "value_loss": 0.0014528107130900025
+}
+{
+  "seed": 7062687956302961060,
+  "steps": 32,
+  "total_reward": 72.66000000000003,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1258,
+  "replay_size": 20000,
+  "loss": 0.9185680747032166,
+  "policy_loss": 0.9171169102191925,
+  "value_loss": 0.0014511611079797149
+}
+{
+  "seed": 2316629079787538885,
+  "steps": 29,
+  "total_reward": 82.17000000000003,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1259,
+  "replay_size": 20000,
+  "loss": 0.8365364372730255,
+  "policy_loss": 0.8352011740207672,
+  "value_loss": 0.0013352659880183637
+}
+{
+  "seed": 9037334834162270513,
+  "steps": 26,
+  "total_reward": 72.89,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1260,
+  "replay_size": 20000,
+  "loss": 0.8334363102912903,
+  "policy_loss": 0.8323858082294464,
+  "value_loss": 0.0010504845413379371
+}
+{
+  "seed": 2556089171242855082,
+  "steps": 33,
+  "total_reward": 112.84000000000003,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1261,
+  "replay_size": 20000,
+  "loss": 0.9191054403781891,
+  "policy_loss": 0.9174792766571045,
+  "value_loss": 0.001626168261282146
+}
+{
+  "seed": 8797064436850466484,
+  "steps": 34,
+  "total_reward": 118.66000000000001,
+  "chase_count": 4,
+  "samples": 34,
+  "episode": 1262,
+  "replay_size": 20000,
+  "loss": 0.8194305896759033,
+  "policy_loss": 0.8183979690074921,
+  "value_loss": 0.0010326248011551797
+}
+{
+  "seed": 98983549427389817,
+  "steps": 35,
+  "total_reward": 84.18,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1263,
+  "replay_size": 20000,
+  "loss": 0.8067414462566376,
+  "policy_loss": 0.8055544197559357,
+  "value_loss": 0.001187013869639486
+}
+{
+  "seed": 1665079248950928688,
+  "steps": 24,
+  "total_reward": 95.59,
+  "chase_count": 4,
+  "samples": 24,
+  "episode": 1264,
+  "replay_size": 20000,
+  "loss": 0.852504551410675,
+  "policy_loss": 0.8514032363891602,
+  "value_loss": 0.0011013034381903708
+}
+{
+  "seed": 1444591265543214711,
+  "steps": 29,
+  "total_reward": 78.72,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1265,
+  "replay_size": 20000,
+  "loss": 0.8420914709568024,
+  "policy_loss": 0.8409200608730316,
+  "value_loss": 0.0011714055144693702
+}
+{
+  "seed": 2303383407959605501,
+  "steps": 29,
+  "total_reward": 95.72,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1266,
+  "replay_size": 20000,
+  "loss": 0.8340418934822083,
+  "policy_loss": 0.832111269235611,
+  "value_loss": 0.0019306335307192057
+}
+{
+  "seed": 5424811824915092245,
+  "steps": 31,
+  "total_reward": 65.78999999999999,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1267,
+  "replay_size": 20000,
+  "loss": 0.8501456081867218,
+  "policy_loss": 0.8491016328334808,
+  "value_loss": 0.0010439603356644511
+}
+{
+  "seed": 4175401848480345019,
+  "steps": 32,
+  "total_reward": 87.60000000000002,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1268,
+  "replay_size": 20000,
+  "loss": 0.9243611693382263,
+  "policy_loss": 0.9234647750854492,
+  "value_loss": 0.0008964109001681209
+}
+{
+  "seed": 1208742087817411260,
+  "steps": 33,
+  "total_reward": 78.41999999999999,
+  "chase_count": 3,
+  "samples": 33,
+  "episode": 1269,
+  "replay_size": 20000,
+  "loss": 0.848978579044342,
+  "policy_loss": 0.8476710617542267,
+  "value_loss": 0.0013075193855911493
+}
+{
+  "seed": 6105046349304334650,
+  "steps": 31,
+  "total_reward": 80.52000000000001,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1270,
+  "replay_size": 20000,
+  "loss": 0.9178591668605804,
+  "policy_loss": 0.9171143472194672,
+  "value_loss": 0.0007448153482982889
+}
+{
+  "seed": 5446105326293100607,
+  "steps": 28,
+  "total_reward": 80.52000000000001,
+  "chase_count": 4,
+  "samples": 28,
+  "episode": 1271,
+  "replay_size": 20000,
+  "loss": 0.8792352080345154,
+  "policy_loss": 0.8777045905590057,
+  "value_loss": 0.001530618465039879
+}
+{
+  "seed": 3161400885299998680,
+  "steps": 28,
+  "total_reward": 74.63,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1272,
+  "replay_size": 20000,
+  "loss": 0.913152813911438,
+  "policy_loss": 0.911882758140564,
+  "value_loss": 0.0012700509978458285
+}
+{
+  "seed": 9009978705538598104,
+  "steps": 32,
+  "total_reward": 88.20000000000002,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1273,
+  "replay_size": 20000,
+  "loss": 0.8243327736854553,
+  "policy_loss": 0.8227192163467407,
+  "value_loss": 0.001613552391063422
+}
+{
+  "seed": 2401206750769609042,
+  "steps": 38,
+  "total_reward": 89.41000000000003,
+  "chase_count": 3,
+  "samples": 38,
+  "episode": 1274,
+  "replay_size": 20000,
+  "loss": 0.868678092956543,
+  "policy_loss": 0.867220550775528,
+  "value_loss": 0.0014575555687770247
+}
+{
+  "seed": 8173172390807935507,
+  "steps": 35,
+  "total_reward": 114.19000000000003,
+  "chase_count": 4,
+  "samples": 35,
+  "episode": 1275,
+  "replay_size": 20000,
+  "loss": 0.8902834355831146,
+  "policy_loss": 0.8887034356594086,
+  "value_loss": 0.0015800106339156628
+}
+{
+  "seed": 2115353327786090657,
+  "steps": 25,
+  "total_reward": 82.76,
+  "chase_count": 5,
+  "samples": 25,
+  "episode": 1276,
+  "replay_size": 20000,
+  "loss": 0.7544262111186981,
+  "policy_loss": 0.7532429099082947,
+  "value_loss": 0.001183309534098953
+}
+{
+  "seed": 8290762503163666469,
+  "steps": 23,
+  "total_reward": 72.14999999999999,
+  "chase_count": 5,
+  "samples": 23,
+  "episode": 1277,
+  "replay_size": 20000,
+  "loss": 0.808544397354126,
+  "policy_loss": 0.8073489367961884,
+  "value_loss": 0.0011954761575907469
+}
+{
+  "seed": 8066395973769472426,
+  "steps": 32,
+  "total_reward": 79.86000000000001,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1278,
+  "replay_size": 20000,
+  "loss": 0.77426478266716,
+  "policy_loss": 0.7726998031139374,
+  "value_loss": 0.0015649773995392025
+}
+{
+  "seed": 9180595962599989739,
+  "steps": 31,
+  "total_reward": 86.51,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1279,
+  "replay_size": 20000,
+  "loss": 0.8471616506576538,
+  "policy_loss": 0.8463462591171265,
+  "value_loss": 0.000815381295979023
+}
+{
+  "seed": 4943825291407758290,
+  "steps": 33,
+  "total_reward": 86.72000000000003,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1280,
+  "replay_size": 20000,
+  "loss": 0.7821087539196014,
+  "policy_loss": 0.7806291878223419,
+  "value_loss": 0.0014795776805840433
+}
+{
+  "seed": 7043203733257440919,
+  "steps": 29,
+  "total_reward": 80.63000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1281,
+  "replay_size": 20000,
+  "loss": 0.918355792760849,
+  "policy_loss": 0.9174603223800659,
+  "value_loss": 0.0008954835793701932
+}
+{
+  "seed": 1617611473736861012,
+  "steps": 27,
+  "total_reward": 84.39000000000001,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1282,
+  "replay_size": 20000,
+  "loss": 0.8316798210144043,
+  "policy_loss": 0.8299620151519775,
+  "value_loss": 0.0017177987610921264
+}
+{
+  "seed": 1919932537263274788,
+  "steps": 26,
+  "total_reward": 74.62,
+  "chase_count": 4,
+  "samples": 26,
+  "episode": 1283,
+  "replay_size": 20000,
+  "loss": 0.905809760093689,
+  "policy_loss": 0.9046294391155243,
+  "value_loss": 0.001180316845420748
+}
+{
+  "seed": 2322155146548434307,
+  "steps": 29,
+  "total_reward": 102.15000000000002,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1284,
+  "replay_size": 20000,
+  "loss": 0.8084028959274292,
+  "policy_loss": 0.80720454454422,
+  "value_loss": 0.0011983679723925889
+}
+{
+  "seed": 8976662408427770882,
+  "steps": 31,
+  "total_reward": 71.96000000000001,
+  "chase_count": 4,
+  "samples": 31,
+  "episode": 1285,
+  "replay_size": 20000,
+  "loss": 0.9727403819561005,
+  "policy_loss": 0.9715489447116852,
+  "value_loss": 0.0011914079077541828
+}
+{
+  "seed": 6654715356053457498,
+  "steps": 36,
+  "total_reward": 76.14000000000001,
+  "chase_count": 5,
+  "samples": 36,
+  "episode": 1286,
+  "replay_size": 20000,
+  "loss": 0.8549176156520844,
+  "policy_loss": 0.8536798655986786,
+  "value_loss": 0.0012377466191537678
+}
+{
+  "seed": 58365842810200548,
+  "steps": 35,
+  "total_reward": 78.18,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1287,
+  "replay_size": 20000,
+  "loss": 0.8439522981643677,
+  "policy_loss": 0.8426520228385925,
+  "value_loss": 0.0013002713094465435
+}
+{
+  "seed": 2118675382663036363,
+  "steps": 37,
+  "total_reward": 85.75000000000001,
+  "chase_count": 5,
+  "samples": 37,
+  "episode": 1288,
+  "replay_size": 20000,
+  "loss": 0.8250594437122345,
+  "policy_loss": 0.823615700006485,
+  "value_loss": 0.0014437490608543158
+}
+{
+  "seed": 7467831735666370522,
+  "steps": 33,
+  "total_reward": 78.01000000000002,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1289,
+  "replay_size": 20000,
+  "loss": 0.7647290527820587,
+  "policy_loss": 0.7629348337650299,
+  "value_loss": 0.001794199866708368
+}
+{
+  "seed": 2032256281998546299,
+  "steps": 34,
+  "total_reward": 86.23000000000002,
+  "chase_count": 4,
+  "samples": 34,
+  "episode": 1290,
+  "replay_size": 20000,
+  "loss": 0.8450632393360138,
+  "policy_loss": 0.8436243534088135,
+  "value_loss": 0.0014389032730832696
+}
+{
+  "seed": 3320754895434804391,
+  "steps": 34,
+  "total_reward": 134.32000000000005,
+  "chase_count": 3,
+  "samples": 34,
+  "episode": 1291,
+  "replay_size": 20000,
+  "loss": 0.876501739025116,
+  "policy_loss": 0.8750535249710083,
+  "value_loss": 0.0014482131809927523
+}
+{
+  "seed": 6002318092231588604,
+  "steps": 30,
+  "total_reward": 85.83,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1292,
+  "replay_size": 20000,
+  "loss": 0.7868502140045166,
+  "policy_loss": 0.7855448722839355,
+  "value_loss": 0.001305326703004539
+}
+{
+  "seed": 8645743307854278301,
+  "steps": 36,
+  "total_reward": 74.94000000000003,
+  "chase_count": 5,
+  "samples": 36,
+  "episode": 1293,
+  "replay_size": 20000,
+  "loss": 0.9001230299472809,
+  "policy_loss": 0.8988448977470398,
+  "value_loss": 0.0012781391269527376
+}
+{
+  "seed": 4367131054601692077,
+  "steps": 31,
+  "total_reward": 90.24000000000001,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1294,
+  "replay_size": 20000,
+  "loss": 0.8469290137290955,
+  "policy_loss": 0.8457931876182556,
+  "value_loss": 0.0011358108895365149
+}
+{
+  "seed": 7656894059734395833,
+  "steps": 31,
+  "total_reward": 94.73000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1295,
+  "replay_size": 20000,
+  "loss": 0.8328220546245575,
+  "policy_loss": 0.8314609825611115,
+  "value_loss": 0.0013610642054118216
+}
+{
+  "seed": 6925016674288820733,
+  "steps": 27,
+  "total_reward": 94.5,
+  "chase_count": 4,
+  "samples": 27,
+  "episode": 1296,
+  "replay_size": 20000,
+  "loss": 0.7939596474170685,
+  "policy_loss": 0.7925701141357422,
+  "value_loss": 0.0013895313022658229
+}
+{
+  "seed": 9011142273030966457,
+  "steps": 33,
+  "total_reward": 92.83000000000003,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1297,
+  "replay_size": 20000,
+  "loss": 0.825446218252182,
+  "policy_loss": 0.8243458271026611,
+  "value_loss": 0.0011004206899087876
+}
+{
+  "seed": 1703312872853473897,
+  "steps": 36,
+  "total_reward": 84.27000000000001,
+  "chase_count": 4,
+  "samples": 36,
+  "episode": 1298,
+  "replay_size": 20000,
+  "loss": 0.8471563458442688,
+  "policy_loss": 0.8458271920681,
+  "value_loss": 0.0013291449286043644
+}
+{
+  "seed": 1219791491507212470,
+  "steps": 29,
+  "total_reward": 82.46000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1299,
+  "replay_size": 20000,
+  "loss": 0.787403404712677,
+  "policy_loss": 0.7858799695968628,
+  "value_loss": 0.001523424405604601
+}
+{
+  "seed": 328920510810041972,
+  "steps": 35,
+  "total_reward": 85.81,
+  "chase_count": 4,
+  "samples": 35,
+  "episode": 1300,
+  "replay_size": 20000,
+  "loss": 0.8959630727767944,
+  "policy_loss": 0.8948332369327545,
+  "value_loss": 0.0011298350000288337
+}
+{
+  "seed": 1251613790539921756,
+  "steps": 28,
+  "total_reward": 68.43,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1301,
+  "replay_size": 20000,
+  "loss": 0.8440327942371368,
+  "policy_loss": 0.84257572889328,
+  "value_loss": 0.001457047590520233
+}
+{
+  "seed": 3666766309374628559,
+  "steps": 35,
+  "total_reward": 90.06000000000003,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1302,
+  "replay_size": 20000,
+  "loss": 0.8728302717208862,
+  "policy_loss": 0.871414989233017,
+  "value_loss": 0.0014152980875223875
+}
+{
+  "seed": 445959177595941138,
+  "steps": 30,
+  "total_reward": 116.23000000000002,
+  "chase_count": 4,
+  "samples": 30,
+  "episode": 1303,
+  "replay_size": 20000,
+  "loss": 0.7400225698947906,
+  "policy_loss": 0.7383596301078796,
+  "value_loss": 0.001662919414229691
+}
+{
+  "seed": 6425602968058572978,
+  "steps": 29,
+  "total_reward": 85.68000000000002,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1304,
+  "replay_size": 20000,
+  "loss": 0.8407765924930573,
+  "policy_loss": 0.8398640155792236,
+  "value_loss": 0.0009125698998104781
+}
+{
+  "seed": 2360789901579313651,
+  "steps": 26,
+  "total_reward": 73.13000000000002,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1305,
+  "replay_size": 20000,
+  "loss": 0.8839867413043976,
+  "policy_loss": 0.8827414810657501,
+  "value_loss": 0.0012452659429982305
+}
+{
+  "seed": 4950791078118600361,
+  "steps": 35,
+  "total_reward": 87.04000000000002,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1306,
+  "replay_size": 20000,
+  "loss": 0.7486846745014191,
+  "policy_loss": 0.7473511695861816,
+  "value_loss": 0.0013335123076103628
+}
+{
+  "seed": 7169278785553451174,
+  "steps": 42,
+  "total_reward": 76.11,
+  "chase_count": 4,
+  "samples": 42,
+  "episode": 1307,
+  "replay_size": 20000,
+  "loss": 0.9204582273960114,
+  "policy_loss": 0.9188864529132843,
+  "value_loss": 0.0015717752976343036
+}
+{
+  "seed": 8102194647640643427,
+  "steps": 24,
+  "total_reward": 79.89,
+  "chase_count": 5,
+  "samples": 24,
+  "episode": 1308,
+  "replay_size": 20000,
+  "loss": 0.885951578617096,
+  "policy_loss": 0.8844775855541229,
+  "value_loss": 0.0014739914331585169
+}
+{
+  "seed": 8811369126928158102,
+  "steps": 28,
+  "total_reward": 76.05000000000001,
+  "chase_count": 4,
+  "samples": 28,
+  "episode": 1309,
+  "replay_size": 20000,
+  "loss": 0.8684276342391968,
+  "policy_loss": 0.8673164546489716,
+  "value_loss": 0.0011111849162261933
+}
+{
+  "seed": 1578772263825815483,
+  "steps": 36,
+  "total_reward": 82.27000000000001,
+  "chase_count": 5,
+  "samples": 36,
+  "episode": 1310,
+  "replay_size": 20000,
+  "loss": 0.7964989840984344,
+  "policy_loss": 0.7952137291431427,
+  "value_loss": 0.0012852379004471004
+}
+{
+  "seed": 2719948826953836475,
+  "steps": 29,
+  "total_reward": 69.45,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1311,
+  "replay_size": 20000,
+  "loss": 0.8662655353546143,
+  "policy_loss": 0.8645889163017273,
+  "value_loss": 0.0016766261542215943
+}
+{
+  "seed": 3350580889824979085,
+  "steps": 27,
+  "total_reward": 78.37,
+  "chase_count": 4,
+  "samples": 27,
+  "episode": 1312,
+  "replay_size": 20000,
+  "loss": 0.9166398644447327,
+  "policy_loss": 0.9153977334499359,
+  "value_loss": 0.0012421266874298453
+}
+{
+  "seed": 7435894782427873525,
+  "steps": 29,
+  "total_reward": 98.50999999999999,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1313,
+  "replay_size": 20000,
+  "loss": 0.9091114401817322,
+  "policy_loss": 0.9084537923336029,
+  "value_loss": 0.0006576488085556775
+}
+{
+  "seed": 562383356137972035,
+  "steps": 35,
+  "total_reward": 99.82000000000004,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1314,
+  "replay_size": 20000,
+  "loss": 0.8347639441490173,
+  "policy_loss": 0.8332715332508087,
+  "value_loss": 0.0014924005954526365
+}
+{
+  "seed": 1351870765856944087,
+  "steps": 45,
+  "total_reward": 111.25000000000003,
+  "chase_count": 3,
+  "samples": 45,
+  "episode": 1315,
+  "replay_size": 20000,
+  "loss": 0.9343409538269043,
+  "policy_loss": 0.933300256729126,
+  "value_loss": 0.001040717208525166
+}
+{
+  "seed": 6085600355295315387,
+  "steps": 31,
+  "total_reward": 101.17000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1316,
+  "replay_size": 20000,
+  "loss": 0.8490401804447174,
+  "policy_loss": 0.8479070961475372,
+  "value_loss": 0.0011330672423355281
+}
+{
+  "seed": 8711295003481154780,
+  "steps": 35,
+  "total_reward": 117.74000000000002,
+  "chase_count": 4,
+  "samples": 35,
+  "episode": 1317,
+  "replay_size": 20000,
+  "loss": 0.8480166494846344,
+  "policy_loss": 0.8466756641864777,
+  "value_loss": 0.0013409653911367059
+}
+{
+  "seed": 5793748569304322850,
+  "steps": 33,
+  "total_reward": 103.00000000000003,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1318,
+  "replay_size": 20000,
+  "loss": 0.769096165895462,
+  "policy_loss": 0.7680841684341431,
+  "value_loss": 0.0010119787184521556
+}
+{
+  "seed": 5548782153603434238,
+  "steps": 32,
+  "total_reward": 80.7,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1319,
+  "replay_size": 20000,
+  "loss": 0.9171241521835327,
+  "policy_loss": 0.9160751104354858,
+  "value_loss": 0.0010490541462786496
+}
+{
+  "seed": 8223043253852812630,
+  "steps": 39,
+  "total_reward": 85.55000000000001,
+  "chase_count": 5,
+  "samples": 39,
+  "episode": 1320,
+  "replay_size": 20000,
+  "loss": 0.7924721837043762,
+  "policy_loss": 0.7909440398216248,
+  "value_loss": 0.001528134976979345
+}
+{
+  "seed": 6272173252090276764,
+  "steps": 29,
+  "total_reward": 95.74000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1321,
+  "replay_size": 20000,
+  "loss": 0.8594270050525665,
+  "policy_loss": 0.8581987619400024,
+  "value_loss": 0.0012282591196708381
+}
+{
+  "seed": 7281635696214069154,
+  "steps": 37,
+  "total_reward": 100.08000000000003,
+  "chase_count": 4,
+  "samples": 37,
+  "episode": 1322,
+  "replay_size": 20000,
+  "loss": 0.9335668981075287,
+  "policy_loss": 0.9321270287036896,
+  "value_loss": 0.0014398758648894727
+}
+{
+  "seed": 1579242497823208659,
+  "steps": 26,
+  "total_reward": 86.61000000000001,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1323,
+  "replay_size": 20000,
+  "loss": 0.7911557257175446,
+  "policy_loss": 0.7899933755397797,
+  "value_loss": 0.001162347849458456
+}
+{
+  "seed": 3893292757381176847,
+  "steps": 30,
+  "total_reward": 69.86,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1324,
+  "replay_size": 20000,
+  "loss": 0.9516467452049255,
+  "policy_loss": 0.9501355588436127,
+  "value_loss": 0.0015111645916476846
+}
+{
+  "seed": 1598437624029016074,
+  "steps": 30,
+  "total_reward": 78.75,
+  "chase_count": 4,
+  "samples": 30,
+  "episode": 1325,
+  "replay_size": 20000,
+  "loss": 0.8671455979347229,
+  "policy_loss": 0.8659887313842773,
+  "value_loss": 0.0011568504269234836
+}
+{
+  "seed": 6188817198493650967,
+  "steps": 34,
+  "total_reward": 99.36000000000003,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1326,
+  "replay_size": 20000,
+  "loss": 0.790190190076828,
+  "policy_loss": 0.7886968851089478,
+  "value_loss": 0.0014932941412553191
+}
+{
+  "seed": 4097958773990858864,
+  "steps": 36,
+  "total_reward": 110.93,
+  "chase_count": 5,
+  "samples": 36,
+  "episode": 1327,
+  "replay_size": 20000,
+  "loss": 0.9224195778369904,
+  "policy_loss": 0.9209485650062561,
+  "value_loss": 0.0014710176619701087
+}
+{
+  "seed": 6982642830804437998,
+  "steps": 39,
+  "total_reward": 86.82000000000002,
+  "chase_count": 4,
+  "samples": 39,
+  "episode": 1328,
+  "replay_size": 20000,
+  "loss": 0.7924358248710632,
+  "policy_loss": 0.7910439968109131,
+  "value_loss": 0.0013918514014221728
+}
+{
+  "seed": 2701627402634381687,
+  "steps": 23,
+  "total_reward": 88.70000000000002,
+  "chase_count": 5,
+  "samples": 23,
+  "episode": 1329,
+  "replay_size": 20000,
+  "loss": 0.8698326647281647,
+  "policy_loss": 0.8684484958648682,
+  "value_loss": 0.001384188886731863
+}
+{
+  "seed": 960826667363953791,
+  "steps": 31,
+  "total_reward": 89.26000000000002,
+  "chase_count": 4,
+  "samples": 31,
+  "episode": 1330,
+  "replay_size": 20000,
+  "loss": 0.806374728679657,
+  "policy_loss": 0.805124819278717,
+  "value_loss": 0.001249896187800914
+}
+{
+  "seed": 755919043369637591,
+  "steps": 28,
+  "total_reward": 80.4,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1331,
+  "replay_size": 20000,
+  "loss": 0.9933516383171082,
+  "policy_loss": 0.9920732975006104,
+  "value_loss": 0.0012783366837538779
+}
+{
+  "seed": 6710608396332410128,
+  "steps": 32,
+  "total_reward": 106.34000000000002,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1332,
+  "replay_size": 20000,
+  "loss": 0.8534647226333618,
+  "policy_loss": 0.8522548675537109,
+  "value_loss": 0.0012098714942112565
+}
+{
+  "seed": 768597072662108562,
+  "steps": 33,
+  "total_reward": 70.73000000000002,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1333,
+  "replay_size": 20000,
+  "loss": 0.91509810090065,
+  "policy_loss": 0.9143311679363251,
+  "value_loss": 0.0007669594488106668
+}
+{
+  "seed": 7952956971758252941,
+  "steps": 35,
+  "total_reward": 91.01,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1334,
+  "replay_size": 20000,
+  "loss": 0.9134764671325684,
+  "policy_loss": 0.9122871160507202,
+  "value_loss": 0.0011893482296727598
+}
+{
+  "seed": 5174832882433767665,
+  "steps": 34,
+  "total_reward": 95.97000000000001,
+  "chase_count": 4,
+  "samples": 34,
+  "episode": 1335,
+  "replay_size": 20000,
+  "loss": 0.8653490245342255,
+  "policy_loss": 0.8639876842498779,
+  "value_loss": 0.0013613521005026996
+}
+{
+  "seed": 4866272866483866870,
+  "steps": 26,
+  "total_reward": 92.87,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1336,
+  "replay_size": 20000,
+  "loss": 0.9195942878723145,
+  "policy_loss": 0.9182098805904388,
+  "value_loss": 0.0013843982596881688
+}
+{
+  "seed": 503180544971639927,
+  "steps": 38,
+  "total_reward": 115.80000000000003,
+  "chase_count": 4,
+  "samples": 38,
+  "episode": 1337,
+  "replay_size": 20000,
+  "loss": 0.8543412685394287,
+  "policy_loss": 0.8527583479881287,
+  "value_loss": 0.001582924509420991
+}
+{
+  "seed": 6380336111309353484,
+  "steps": 40,
+  "total_reward": 125.16000000000001,
+  "chase_count": 5,
+  "samples": 40,
+  "episode": 1338,
+  "replay_size": 20000,
+  "loss": 0.8363426029682159,
+  "policy_loss": 0.8353511989116669,
+  "value_loss": 0.0009913852554745972
+}
+{
+  "seed": 7293688691009594412,
+  "steps": 29,
+  "total_reward": 78.33000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1339,
+  "replay_size": 20000,
+  "loss": 0.8438940346240997,
+  "policy_loss": 0.8426863551139832,
+  "value_loss": 0.0012076785787940025
+}
+{
+  "seed": 1416285488519197959,
+  "steps": 32,
+  "total_reward": 72.66000000000001,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1340,
+  "replay_size": 20000,
+  "loss": 0.8996410071849823,
+  "policy_loss": 0.898434191942215,
+  "value_loss": 0.0012068264186382294
+}
+{
+  "seed": 6241888222358886386,
+  "steps": 31,
+  "total_reward": 133.76000000000005,
+  "chase_count": 3,
+  "samples": 31,
+  "episode": 1341,
+  "replay_size": 20000,
+  "loss": 0.8533290922641754,
+  "policy_loss": 0.8520685434341431,
+  "value_loss": 0.001260564458789304
+}
+{
+  "seed": 3561354842955828536,
+  "steps": 32,
+  "total_reward": 78.4,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1342,
+  "replay_size": 20000,
+  "loss": 0.8150684237480164,
+  "policy_loss": 0.8141461312770844,
+  "value_loss": 0.0009222759399563074
+}
+{
+  "seed": 7018456038359749672,
+  "steps": 32,
+  "total_reward": 97.41000000000003,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1343,
+  "replay_size": 20000,
+  "loss": 0.8715839684009552,
+  "policy_loss": 0.8701270520687103,
+  "value_loss": 0.0014569256454706192
+}
+{
+  "seed": 4146845059425940069,
+  "steps": 28,
+  "total_reward": 82.55000000000001,
+  "chase_count": 4,
+  "samples": 28,
+  "episode": 1344,
+  "replay_size": 20000,
+  "loss": 0.8492817282676697,
+  "policy_loss": 0.8479683995246887,
+  "value_loss": 0.001313312619458884
+}
+{
+  "seed": 1269049839376879903,
+  "steps": 30,
+  "total_reward": 86.42000000000002,
+  "chase_count": 4,
+  "samples": 30,
+  "episode": 1345,
+  "replay_size": 20000,
+  "loss": 0.9704386591911316,
+  "policy_loss": 0.9689902365207672,
+  "value_loss": 0.0014484222047030926
+}
+{
+  "seed": 8780732623631262588,
+  "steps": 29,
+  "total_reward": 89.35000000000002,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1346,
+  "replay_size": 20000,
+  "loss": 0.8869257867336273,
+  "policy_loss": 0.8860667049884796,
+  "value_loss": 0.0008590854122303426
+}
+{
+  "seed": 7887446952755715598,
+  "steps": 32,
+  "total_reward": 98.74000000000001,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1347,
+  "replay_size": 20000,
+  "loss": 0.8843157887458801,
+  "policy_loss": 0.8833501040935516,
+  "value_loss": 0.0009656900947447866
+}
+{
+  "seed": 7393088807552923764,
+  "steps": 28,
+  "total_reward": 80.88000000000002,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1348,
+  "replay_size": 20000,
+  "loss": 0.9106388092041016,
+  "policy_loss": 0.9093896150588989,
+  "value_loss": 0.0012491928355302662
+}
+{
+  "seed": 5590005451515170463,
+  "steps": 36,
+  "total_reward": 91.97000000000001,
+  "chase_count": 5,
+  "samples": 36,
+  "episode": 1349,
+  "replay_size": 20000,
+  "loss": 0.9128397405147552,
+  "policy_loss": 0.9110734462738037,
+  "value_loss": 0.001766290981322527
+}
+{
+  "seed": 4392373578744933074,
+  "steps": 31,
+  "total_reward": 81.93,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1350,
+  "replay_size": 20000,
+  "loss": 0.8834228813648224,
+  "policy_loss": 0.8817048072814941,
+  "value_loss": 0.0017180663417093456
+}
+{
+  "seed": 4944518352912535734,
+  "steps": 34,
+  "total_reward": 111.79000000000002,
+  "chase_count": 4,
+  "samples": 34,
+  "episode": 1351,
+  "replay_size": 20000,
+  "loss": 0.8087740838527679,
+  "policy_loss": 0.8074640333652496,
+  "value_loss": 0.0013100443757139146
+}
+{
+  "seed": 4435690469017695013,
+  "steps": 30,
+  "total_reward": 80.35000000000001,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1352,
+  "replay_size": 20000,
+  "loss": 0.8335247039794922,
+  "policy_loss": 0.8325644731521606,
+  "value_loss": 0.000960216042585671
+}
+{
+  "seed": 8734227827964501666,
+  "steps": 34,
+  "total_reward": 82.94,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1353,
+  "replay_size": 20000,
+  "loss": 0.8608915209770203,
+  "policy_loss": 0.859960287809372,
+  "value_loss": 0.0009312158654211089
+}
+{
+  "seed": 4022802476766639105,
+  "steps": 38,
+  "total_reward": 91.48000000000002,
+  "chase_count": 4,
+  "samples": 38,
+  "episode": 1354,
+  "replay_size": 20000,
+  "loss": 0.8572760224342346,
+  "policy_loss": 0.8557954430580139,
+  "value_loss": 0.0014805630780756474
+}
+{
+  "seed": 8231349282793804667,
+  "steps": 26,
+  "total_reward": 80.87,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1355,
+  "replay_size": 20000,
+  "loss": 0.9014033675193787,
+  "policy_loss": 0.8998235464096069,
+  "value_loss": 0.0015798254171386361
+}
+{
+  "seed": 699273678940208997,
+  "steps": 28,
+  "total_reward": 67.97,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1356,
+  "replay_size": 20000,
+  "loss": 0.9234146773815155,
+  "policy_loss": 0.9219188988208771,
+  "value_loss": 0.001495790493208915
+}
+{
+  "seed": 5857516496132290308,
+  "steps": 34,
+  "total_reward": 107.22000000000003,
+  "chase_count": 4,
+  "samples": 34,
+  "episode": 1357,
+  "replay_size": 20000,
+  "loss": 0.8401820957660675,
+  "policy_loss": 0.8389047086238861,
+  "value_loss": 0.0012773896451108158
+}
+{
+  "seed": 2914201477278276373,
+  "steps": 32,
+  "total_reward": 84.99,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1358,
+  "replay_size": 20000,
+  "loss": 0.8776795566082001,
+  "policy_loss": 0.8765788376331329,
+  "value_loss": 0.0011007323337253183
+}
+{
+  "seed": 5532092264970382263,
+  "steps": 24,
+  "total_reward": 82.76,
+  "chase_count": 5,
+  "samples": 24,
+  "episode": 1359,
+  "replay_size": 20000,
+  "loss": 0.7626602649688721,
+  "policy_loss": 0.7621557116508484,
+  "value_loss": 0.0005045479338150471
+}
+{
+  "seed": 1667021050512332410,
+  "steps": 33,
+  "total_reward": 94.63000000000002,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1360,
+  "replay_size": 20000,
+  "loss": 0.8265406489372253,
+  "policy_loss": 0.8257991671562195,
+  "value_loss": 0.0007414712163154036
+}
+{
+  "seed": 6337929918471116338,
+  "steps": 30,
+  "total_reward": 83.21000000000002,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1361,
+  "replay_size": 20000,
+  "loss": 0.892082005739212,
+  "policy_loss": 0.8907337486743927,
+  "value_loss": 0.0013482595095410943
+}
+{
+  "seed": 309448491758931964,
+  "steps": 24,
+  "total_reward": 84.2,
+  "chase_count": 5,
+  "samples": 24,
+  "episode": 1362,
+  "replay_size": 20000,
+  "loss": 0.7189213633537292,
+  "policy_loss": 0.7177755236625671,
+  "value_loss": 0.0011458225781098008
+}
+{
+  "seed": 3110370662803576371,
+  "steps": 29,
+  "total_reward": 75.36000000000001,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1363,
+  "replay_size": 20000,
+  "loss": 0.7717666923999786,
+  "policy_loss": 0.7704840898513794,
+  "value_loss": 0.0012826016754843295
+}
+{
+  "seed": 995553727052216081,
+  "steps": 32,
+  "total_reward": 93.20000000000002,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1364,
+  "replay_size": 20000,
+  "loss": 0.7852972745895386,
+  "policy_loss": 0.7838899791240692,
+  "value_loss": 0.001407289586495608
+}
+{
+  "seed": 7416815678762724890,
+  "steps": 31,
+  "total_reward": 73.37000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1365,
+  "replay_size": 20000,
+  "loss": 0.8727388083934784,
+  "policy_loss": 0.871621698141098,
+  "value_loss": 0.0011171248625032604
+}
+{
+  "seed": 260136719292212698,
+  "steps": 33,
+  "total_reward": 90.01000000000002,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1366,
+  "replay_size": 20000,
+  "loss": 0.8657367825508118,
+  "policy_loss": 0.8647215366363525,
+  "value_loss": 0.0010152362519875169
+}
+{
+  "seed": 4435384773234995821,
+  "steps": 30,
+  "total_reward": 100.83000000000001,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1367,
+  "replay_size": 20000,
+  "loss": 0.7358900904655457,
+  "policy_loss": 0.734549880027771,
+  "value_loss": 0.0013402161130215973
+}
+{
+  "seed": 6333447897689180966,
+  "steps": 33,
+  "total_reward": 78.51,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1368,
+  "replay_size": 20000,
+  "loss": 0.8724871277809143,
+  "policy_loss": 0.871436595916748,
+  "value_loss": 0.00105053570587188
+}
+{
+  "seed": 3366804898931629836,
+  "steps": 26,
+  "total_reward": 76.75000000000001,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1369,
+  "replay_size": 20000,
+  "loss": 0.8123906850814819,
+  "policy_loss": 0.8108526468276978,
+  "value_loss": 0.0015380168915726244
+}
+{
+  "seed": 1337963476901990088,
+  "steps": 33,
+  "total_reward": 104.59000000000002,
+  "chase_count": 3,
+  "samples": 33,
+  "episode": 1370,
+  "replay_size": 20000,
+  "loss": 0.907261461019516,
+  "policy_loss": 0.9059838354587555,
+  "value_loss": 0.001277634291909635
+}
+{
+  "seed": 6077066117501920747,
+  "steps": 24,
+  "total_reward": 68.33,
+  "chase_count": 4,
+  "samples": 24,
+  "episode": 1371,
+  "replay_size": 20000,
+  "loss": 0.8983963429927826,
+  "policy_loss": 0.8973844349384308,
+  "value_loss": 0.0010119026119355112
+}
+{
+  "seed": 8696458313439758591,
+  "steps": 34,
+  "total_reward": 72.21000000000001,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1372,
+  "replay_size": 20000,
+  "loss": 0.8990556001663208,
+  "policy_loss": 0.8975189924240112,
+  "value_loss": 0.0015365912695415318
+}
+{
+  "seed": 2160372161120017858,
+  "steps": 28,
+  "total_reward": 85.57000000000001,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1373,
+  "replay_size": 20000,
+  "loss": 0.8765066862106323,
+  "policy_loss": 0.8754420876502991,
+  "value_loss": 0.0010645991133060306
+}
+{
+  "seed": 7983695847128561508,
+  "steps": 32,
+  "total_reward": 76.03999999999999,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1374,
+  "replay_size": 20000,
+  "loss": 0.9218063652515411,
+  "policy_loss": 0.9202940165996552,
+  "value_loss": 0.001512340153567493
+}
+{
+  "seed": 2775687441664226174,
+  "steps": 37,
+  "total_reward": 86.58000000000003,
+  "chase_count": 5,
+  "samples": 37,
+  "episode": 1375,
+  "replay_size": 20000,
+  "loss": 0.8316268622875214,
+  "policy_loss": 0.8305388391017914,
+  "value_loss": 0.0010880300251301378
+}
+{
+  "seed": 221200604925373244,
+  "steps": 31,
+  "total_reward": 66.10000000000001,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1376,
+  "replay_size": 20000,
+  "loss": 0.798637181520462,
+  "policy_loss": 0.7973615527153015,
+  "value_loss": 0.0012756063370034099
+}
+{
+  "seed": 4033809931480805452,
+  "steps": 38,
+  "total_reward": 104.21000000000002,
+  "chase_count": 5,
+  "samples": 38,
+  "episode": 1377,
+  "replay_size": 20000,
+  "loss": 0.8437767028808594,
+  "policy_loss": 0.8427116870880127,
+  "value_loss": 0.001065030402969569
+}
+{
+  "seed": 7764559817383982425,
+  "steps": 32,
+  "total_reward": 80.22,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1378,
+  "replay_size": 20000,
+  "loss": 0.8541404604911804,
+  "policy_loss": 0.8526558876037598,
+  "value_loss": 0.0014845973928458989
+}
+{
+  "seed": 1864354794899802379,
+  "steps": 30,
+  "total_reward": 75.34,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1379,
+  "replay_size": 20000,
+  "loss": 0.8425513505935669,
+  "policy_loss": 0.8412173092365265,
+  "value_loss": 0.0013340242439880967
+}
+{
+  "seed": 1034947524507224563,
+  "steps": 33,
+  "total_reward": 102.75000000000003,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1380,
+  "replay_size": 20000,
+  "loss": 0.8243725597858429,
+  "policy_loss": 0.8235494494438171,
+  "value_loss": 0.000823102192953229
+}
+{
+  "seed": 7696801165871445096,
+  "steps": 35,
+  "total_reward": 70.05000000000001,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1381,
+  "replay_size": 20000,
+  "loss": 0.8785068094730377,
+  "policy_loss": 0.8772616982460022,
+  "value_loss": 0.0012451178045012057
+}
+{
+  "seed": 7171234695408983837,
+  "steps": 29,
+  "total_reward": 79.16000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1382,
+  "replay_size": 20000,
+  "loss": 0.8220227062702179,
+  "policy_loss": 0.820730984210968,
+  "value_loss": 0.0012917111162096262
+}
+{
+  "seed": 6750903059556690581,
+  "steps": 36,
+  "total_reward": 92.46000000000001,
+  "chase_count": 3,
+  "samples": 36,
+  "episode": 1383,
+  "replay_size": 20000,
+  "loss": 0.9783982038497925,
+  "policy_loss": 0.977130651473999,
+  "value_loss": 0.0012675565667450428
+}
+{
+  "seed": 7172418649091816067,
+  "steps": 34,
+  "total_reward": 125.84000000000002,
+  "chase_count": 3,
+  "samples": 34,
+  "episode": 1384,
+  "replay_size": 20000,
+  "loss": 0.9357873797416687,
+  "policy_loss": 0.9349187612533569,
+  "value_loss": 0.0008686480869073421
+}
+{
+  "seed": 2187693198220768572,
+  "steps": 35,
+  "total_reward": 85.29000000000002,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1385,
+  "replay_size": 20000,
+  "loss": 0.9166484177112579,
+  "policy_loss": 0.9152936935424805,
+  "value_loss": 0.0013547283015213907
+}
+{
+  "seed": 9010064949664547372,
+  "steps": 30,
+  "total_reward": 101.22000000000003,
+  "chase_count": 4,
+  "samples": 30,
+  "episode": 1386,
+  "replay_size": 20000,
+  "loss": 0.7941294014453888,
+  "policy_loss": 0.7923393249511719,
+  "value_loss": 0.0017900901730172336
+}
+{
+  "seed": 896509599918860137,
+  "steps": 29,
+  "total_reward": 95.65000000000003,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1387,
+  "replay_size": 20000,
+  "loss": 0.9017004072666168,
+  "policy_loss": 0.9005128145217896,
+  "value_loss": 0.0011876028147526085
+}
+{
+  "seed": 8030081953786711439,
+  "steps": 31,
+  "total_reward": 89.91,
+  "chase_count": 4,
+  "samples": 31,
+  "episode": 1388,
+  "replay_size": 20000,
+  "loss": 0.8138641119003296,
+  "policy_loss": 0.8128655850887299,
+  "value_loss": 0.0009985087672248483
+}
+{
+  "seed": 9055262576759234858,
+  "steps": 34,
+  "total_reward": 85.48000000000002,
+  "chase_count": 4,
+  "samples": 34,
+  "episode": 1389,
+  "replay_size": 20000,
+  "loss": 0.8545306026935577,
+  "policy_loss": 0.8534055352210999,
+  "value_loss": 0.0011250763200223446
+}
+{
+  "seed": 5236014719988418832,
+  "steps": 36,
+  "total_reward": 95.67000000000002,
+  "chase_count": 4,
+  "samples": 36,
+  "episode": 1390,
+  "replay_size": 20000,
+  "loss": 0.829229325056076,
+  "policy_loss": 0.8273177146911621,
+  "value_loss": 0.001911610015667975
+}
+{
+  "seed": 4036050910207662562,
+  "steps": 25,
+  "total_reward": 88.44,
+  "chase_count": 5,
+  "samples": 25,
+  "episode": 1391,
+  "replay_size": 20000,
+  "loss": 0.8648240864276886,
+  "policy_loss": 0.8640588819980621,
+  "value_loss": 0.0007652248023077846
+}
+{
+  "seed": 8449551243945669145,
+  "steps": 27,
+  "total_reward": 71.54999999999998,
+  "chase_count": 4,
+  "samples": 27,
+  "episode": 1392,
+  "replay_size": 20000,
+  "loss": 0.9362558126449585,
+  "policy_loss": 0.934930145740509,
+  "value_loss": 0.0013256542151793838
+}
+{
+  "seed": 4432585132430194019,
+  "steps": 31,
+  "total_reward": 64.81,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1393,
+  "replay_size": 20000,
+  "loss": 0.8669039309024811,
+  "policy_loss": 0.8656010031700134,
+  "value_loss": 0.0013029265101067722
+}
+{
+  "seed": 8930883721628960476,
+  "steps": 27,
+  "total_reward": 107.58000000000001,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1394,
+  "replay_size": 20000,
+  "loss": 0.8994608223438263,
+  "policy_loss": 0.8982388973236084,
+  "value_loss": 0.0012219090713188052
+}
+{
+  "seed": 7027823850787659397,
+  "steps": 34,
+  "total_reward": 92.67000000000002,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1395,
+  "replay_size": 20000,
+  "loss": 0.9602417349815369,
+  "policy_loss": 0.9595487415790558,
+  "value_loss": 0.0006930000672582537
+}
+{
+  "seed": 7826064442817257357,
+  "steps": 31,
+  "total_reward": 102.77000000000004,
+  "chase_count": 4,
+  "samples": 31,
+  "episode": 1396,
+  "replay_size": 20000,
+  "loss": 0.8539527058601379,
+  "policy_loss": 0.8525761365890503,
+  "value_loss": 0.0013765502953901887
+}
+{
+  "seed": 4048668689902434769,
+  "steps": 28,
+  "total_reward": 84.85000000000002,
+  "chase_count": 4,
+  "samples": 28,
+  "episode": 1397,
+  "replay_size": 20000,
+  "loss": 0.8197534382343292,
+  "policy_loss": 0.8183095753192902,
+  "value_loss": 0.0014438696089200675
+}
+{
+  "seed": 7877223591921843343,
+  "steps": 29,
+  "total_reward": 93.51000000000002,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1398,
+  "replay_size": 20000,
+  "loss": 0.7685458064079285,
+  "policy_loss": 0.7675820589065552,
+  "value_loss": 0.0009637328330427408
+}
+{
+  "seed": 1215466264593955881,
+  "steps": 32,
+  "total_reward": 76.68,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1399,
+  "replay_size": 20000,
+  "loss": 0.7746536433696747,
+  "policy_loss": 0.7734392285346985,
+  "value_loss": 0.0012144151551183313
+}
+{
+  "seed": 2164098704408029484,
+  "steps": 28,
+  "total_reward": 85.63,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1400,
+  "replay_size": 20000,
+  "loss": 0.825447678565979,
+  "policy_loss": 0.823856383562088,
+  "value_loss": 0.0015912933158688247
+}
+{
+  "seed": 6527401034773567098,
+  "steps": 32,
+  "total_reward": 84.75000000000001,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1401,
+  "replay_size": 20000,
+  "loss": 0.9684696793556213,
+  "policy_loss": 0.9672942757606506,
+  "value_loss": 0.0011754375882446766
+}
+{
+  "seed": 1942940882635043642,
+  "steps": 38,
+  "total_reward": 106.31000000000003,
+  "chase_count": 5,
+  "samples": 38,
+  "episode": 1402,
+  "replay_size": 20000,
+  "loss": 0.9162739515304565,
+  "policy_loss": 0.9149902164936066,
+  "value_loss": 0.0012837332906201482
+}
+{
+  "seed": 7976808582003834788,
+  "steps": 38,
+  "total_reward": 108.08000000000001,
+  "chase_count": 4,
+  "samples": 38,
+  "episode": 1403,
+  "replay_size": 20000,
+  "loss": 0.8637959063053131,
+  "policy_loss": 0.8625934720039368,
+  "value_loss": 0.0012024363968521357
+}
+{
+  "seed": 8992609219097286632,
+  "steps": 29,
+  "total_reward": 110.71000000000001,
+  "chase_count": 3,
+  "samples": 29,
+  "episode": 1404,
+  "replay_size": 20000,
+  "loss": 0.7171753644943237,
+  "policy_loss": 0.7156922817230225,
+  "value_loss": 0.001483087777160108
+}
+{
+  "seed": 6484171321218194639,
+  "steps": 36,
+  "total_reward": 104.74000000000002,
+  "chase_count": 4,
+  "samples": 36,
+  "episode": 1405,
+  "replay_size": 20000,
+  "loss": 0.8383078873157501,
+  "policy_loss": 0.8370659351348877,
+  "value_loss": 0.0012419491540640593
+}
+{
+  "seed": 7248629752767544948,
+  "steps": 32,
+  "total_reward": 109.82000000000001,
+  "chase_count": 3,
+  "samples": 32,
+  "episode": 1406,
+  "replay_size": 20000,
+  "loss": 0.8468272387981415,
+  "policy_loss": 0.8458370566368103,
+  "value_loss": 0.0009901704033836722
+}
+{
+  "seed": 2500374042350954237,
+  "steps": 33,
+  "total_reward": 82.44,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1407,
+  "replay_size": 20000,
+  "loss": 0.8800240159034729,
+  "policy_loss": 0.878718763589859,
+  "value_loss": 0.0013052604044787586
+}
+{
+  "seed": 5593620210517378819,
+  "steps": 34,
+  "total_reward": 97.73000000000002,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1408,
+  "replay_size": 20000,
+  "loss": 0.7947386801242828,
+  "policy_loss": 0.7934295535087585,
+  "value_loss": 0.0013091086293570697
+}
+{
+  "seed": 5476072376064353063,
+  "steps": 35,
+  "total_reward": 93.03000000000002,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1409,
+  "replay_size": 20000,
+  "loss": 0.9275132119655609,
+  "policy_loss": 0.9262624979019165,
+  "value_loss": 0.0012506896164268255
+}
+{
+  "seed": 7411956624765790794,
+  "steps": 25,
+  "total_reward": 88.67999999999999,
+  "chase_count": 5,
+  "samples": 25,
+  "episode": 1410,
+  "replay_size": 20000,
+  "loss": 0.8090911507606506,
+  "policy_loss": 0.8075023293495178,
+  "value_loss": 0.0015888140769675374
+}
+{
+  "seed": 6139417764963618060,
+  "steps": 33,
+  "total_reward": 69.10000000000001,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1411,
+  "replay_size": 20000,
+  "loss": 0.9906850457191467,
+  "policy_loss": 0.9895272552967072,
+  "value_loss": 0.0011577882105484605
+}
+{
+  "seed": 2069395449529123430,
+  "steps": 28,
+  "total_reward": 86.15,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1412,
+  "replay_size": 20000,
+  "loss": 0.7734000086784363,
+  "policy_loss": 0.7723619937896729,
+  "value_loss": 0.0010380216117482632
+}
+{
+  "seed": 3403586621972765235,
+  "steps": 33,
+  "total_reward": 85.16000000000001,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1413,
+  "replay_size": 20000,
+  "loss": 0.861152708530426,
+  "policy_loss": 0.8596605956554413,
+  "value_loss": 0.0014921011752448976
+}
+{
+  "seed": 8413578536399232909,
+  "steps": 28,
+  "total_reward": 90.52000000000001,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1414,
+  "replay_size": 20000,
+  "loss": 0.9131901860237122,
+  "policy_loss": 0.9121378660202026,
+  "value_loss": 0.0010523121454752982
+}
+{
+  "seed": 3484599299106480530,
+  "steps": 32,
+  "total_reward": 67.86000000000001,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1415,
+  "replay_size": 20000,
+  "loss": 0.8500812351703644,
+  "policy_loss": 0.8489867150783539,
+  "value_loss": 0.0010945341200567782
+}
+{
+  "seed": 360766594346977789,
+  "steps": 27,
+  "total_reward": 117.48000000000002,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1416,
+  "replay_size": 20000,
+  "loss": 0.873594731092453,
+  "policy_loss": 0.872490644454956,
+  "value_loss": 0.001104096183553338
+}
+{
+  "seed": 4241226998478371681,
+  "steps": 37,
+  "total_reward": 101.16000000000001,
+  "chase_count": 2,
+  "samples": 37,
+  "episode": 1417,
+  "replay_size": 20000,
+  "loss": 0.7366713285446167,
+  "policy_loss": 0.7345943748950958,
+  "value_loss": 0.0020769555121660233
+}
+{
+  "seed": 3459800735495196238,
+  "steps": 31,
+  "total_reward": 91.86000000000001,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1418,
+  "replay_size": 20000,
+  "loss": 0.798511415719986,
+  "policy_loss": 0.7970495223999023,
+  "value_loss": 0.0014618923305533826
+}
+{
+  "seed": 4841611297432811365,
+  "steps": 29,
+  "total_reward": 108.19,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1419,
+  "replay_size": 20000,
+  "loss": 0.903306394815445,
+  "policy_loss": 0.90226149559021,
+  "value_loss": 0.0010448814718984067
+}
+{
+  "seed": 6210788476274185051,
+  "steps": 32,
+  "total_reward": 85.33000000000003,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1420,
+  "replay_size": 20000,
+  "loss": 0.8716170489788055,
+  "policy_loss": 0.8697616159915924,
+  "value_loss": 0.0018554336274974048
+}
+{
+  "seed": 3888955969728780410,
+  "steps": 30,
+  "total_reward": 85.99000000000001,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1421,
+  "replay_size": 20000,
+  "loss": 0.7652481496334076,
+  "policy_loss": 0.7633428275585175,
+  "value_loss": 0.0019053157302550972
+}
+{
+  "seed": 2390705118488580267,
+  "steps": 32,
+  "total_reward": 82.39000000000001,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1422,
+  "replay_size": 20000,
+  "loss": 0.7901543378829956,
+  "policy_loss": 0.7888437509536743,
+  "value_loss": 0.0013105988036841154
+}
+{
+  "seed": 6738372391281715700,
+  "steps": 30,
+  "total_reward": 114.40000000000003,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1423,
+  "replay_size": 20000,
+  "loss": 0.7983168065547943,
+  "policy_loss": 0.7969631254673004,
+  "value_loss": 0.0013536779442802072
+}
+{
+  "seed": 6621551069398504570,
+  "steps": 33,
+  "total_reward": 120.17000000000002,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1424,
+  "replay_size": 20000,
+  "loss": 0.7653502523899078,
+  "policy_loss": 0.7639358043670654,
+  "value_loss": 0.0014144561137072742
+}
+{
+  "seed": 3417360013450302160,
+  "steps": 28,
+  "total_reward": 79.14000000000001,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1425,
+  "replay_size": 20000,
+  "loss": 0.8261358141899109,
+  "policy_loss": 0.8247708082199097,
+  "value_loss": 0.001365008531138301
+}
+{
+  "seed": 7659340338669535203,
+  "steps": 29,
+  "total_reward": 81.92000000000002,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1426,
+  "replay_size": 20000,
+  "loss": 0.906514048576355,
+  "policy_loss": 0.9051217138767242,
+  "value_loss": 0.0013923176447860897
+}
+{
+  "seed": 4639550199861190297,
+  "steps": 32,
+  "total_reward": 96.53,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1427,
+  "replay_size": 20000,
+  "loss": 0.8947010636329651,
+  "policy_loss": 0.8934365808963776,
+  "value_loss": 0.0012644777598325163
+}
+{
+  "seed": 7840266099504848394,
+  "steps": 48,
+  "total_reward": 91.82000000000002,
+  "chase_count": 5,
+  "samples": 48,
+  "episode": 1428,
+  "replay_size": 20000,
+  "loss": 0.7598647177219391,
+  "policy_loss": 0.7584683299064636,
+  "value_loss": 0.0013963970122858882
+}
+{
+  "seed": 2035547303093219685,
+  "steps": 40,
+  "total_reward": 70.54,
+  "chase_count": 4,
+  "samples": 40,
+  "episode": 1429,
+  "replay_size": 20000,
+  "loss": 0.8411948084831238,
+  "policy_loss": 0.839788407087326,
+  "value_loss": 0.0014063825947232544
+}
+{
+  "seed": 6577881241722592060,
+  "steps": 24,
+  "total_reward": 96.63000000000002,
+  "chase_count": 5,
+  "samples": 24,
+  "episode": 1430,
+  "replay_size": 20000,
+  "loss": 0.8612785339355469,
+  "policy_loss": 0.8597723245620728,
+  "value_loss": 0.0015062150778248906
+}
+{
+  "seed": 4767120490074902112,
+  "steps": 35,
+  "total_reward": 87.78000000000003,
+  "chase_count": 3,
+  "samples": 35,
+  "episode": 1431,
+  "replay_size": 20000,
+  "loss": 0.8278577327728271,
+  "policy_loss": 0.8266789615154266,
+  "value_loss": 0.001178775739390403
+}
+{
+  "seed": 1126810338598936668,
+  "steps": 37,
+  "total_reward": 97.12,
+  "chase_count": 5,
+  "samples": 37,
+  "episode": 1432,
+  "replay_size": 20000,
+  "loss": 0.854432612657547,
+  "policy_loss": 0.8531699180603027,
+  "value_loss": 0.0012627061223611236
+}
+{
+  "seed": 9013209599603462595,
+  "steps": 31,
+  "total_reward": 84.71000000000001,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1433,
+  "replay_size": 20000,
+  "loss": 0.7959202826023102,
+  "policy_loss": 0.7947100102901459,
+  "value_loss": 0.0012102863111067563
+}
+{
+  "seed": 2189444376911344971,
+  "steps": 28,
+  "total_reward": 104.12000000000003,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1434,
+  "replay_size": 20000,
+  "loss": 0.8606775999069214,
+  "policy_loss": 0.8586166501045227,
+  "value_loss": 0.002060942177195102
+}
+{
+  "seed": 6618196389958011541,
+  "steps": 34,
+  "total_reward": 77.72000000000003,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1435,
+  "replay_size": 20000,
+  "loss": 0.882006824016571,
+  "policy_loss": 0.8806101977825165,
+  "value_loss": 0.0013966313563287258
+}
+{
+  "seed": 8196124736166186247,
+  "steps": 25,
+  "total_reward": 84.99000000000001,
+  "chase_count": 5,
+  "samples": 25,
+  "episode": 1436,
+  "replay_size": 20000,
+  "loss": 0.82904252409935,
+  "policy_loss": 0.827382504940033,
+  "value_loss": 0.0016600230592302978
+}
+{
+  "seed": 408038829268993703,
+  "steps": 29,
+  "total_reward": 102.11000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1437,
+  "replay_size": 20000,
+  "loss": 0.8832435309886932,
+  "policy_loss": 0.8821976780891418,
+  "value_loss": 0.0010458676260896027
+}
+{
+  "seed": 780718144971609298,
+  "steps": 33,
+  "total_reward": 90.23000000000002,
+  "chase_count": 3,
+  "samples": 33,
+  "episode": 1438,
+  "replay_size": 20000,
+  "loss": 0.9145572185516357,
+  "policy_loss": 0.9133003354072571,
+  "value_loss": 0.0012568989768624306
+}
+{
+  "seed": 9107698780801830743,
+  "steps": 31,
+  "total_reward": 74.16000000000003,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1439,
+  "replay_size": 20000,
+  "loss": 0.8767678141593933,
+  "policy_loss": 0.8759610056877136,
+  "value_loss": 0.0008068087336141616
+}
+{
+  "seed": 6243183536223725421,
+  "steps": 27,
+  "total_reward": 102.30000000000001,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1440,
+  "replay_size": 20000,
+  "loss": 0.8793492913246155,
+  "policy_loss": 0.877476841211319,
+  "value_loss": 0.0018724302062764764
+}
+{
+  "seed": 2730320724125288309,
+  "steps": 32,
+  "total_reward": 79.12000000000002,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1441,
+  "replay_size": 20000,
+  "loss": 0.8027404844760895,
+  "policy_loss": 0.8016026020050049,
+  "value_loss": 0.001137866172939539
+}
+{
+  "seed": 688894815292605914,
+  "steps": 33,
+  "total_reward": 74.26,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1442,
+  "replay_size": 20000,
+  "loss": 0.8621913194656372,
+  "policy_loss": 0.8611163794994354,
+  "value_loss": 0.0010749379289336503
+}
+{
+  "seed": 3551007582019360750,
+  "steps": 32,
+  "total_reward": 95.90000000000003,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1443,
+  "replay_size": 20000,
+  "loss": 0.9389064311981201,
+  "policy_loss": 0.9376951158046722,
+  "value_loss": 0.0012113127741031349
+}
+{
+  "seed": 4552486125439115754,
+  "steps": 37,
+  "total_reward": 112.10000000000004,
+  "chase_count": 4,
+  "samples": 37,
+  "episode": 1444,
+  "replay_size": 20000,
+  "loss": 0.9437581300735474,
+  "policy_loss": 0.9425223767757416,
+  "value_loss": 0.0012357477680779994
+}
+{
+  "seed": 7880252787310828118,
+  "steps": 29,
+  "total_reward": 103.43,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1445,
+  "replay_size": 20000,
+  "loss": 0.8325594961643219,
+  "policy_loss": 0.8314965069293976,
+  "value_loss": 0.001063008327037096
+}
+{
+  "seed": 7509675416195335055,
+  "steps": 29,
+  "total_reward": 74.56,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1446,
+  "replay_size": 20000,
+  "loss": 0.9151170551776886,
+  "policy_loss": 0.9132754802703857,
+  "value_loss": 0.001841557095758617
+}
+{
+  "seed": 570275105508807675,
+  "steps": 31,
+  "total_reward": 102.64000000000001,
+  "chase_count": 3,
+  "samples": 31,
+  "episode": 1447,
+  "replay_size": 20000,
+  "loss": 0.8317171931266785,
+  "policy_loss": 0.8304100334644318,
+  "value_loss": 0.0013071466237306595
+}
+{
+  "seed": 3444632521979231915,
+  "steps": 28,
+  "total_reward": 105.13,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1448,
+  "replay_size": 20000,
+  "loss": 0.9634259343147278,
+  "policy_loss": 0.9622644484043121,
+  "value_loss": 0.0011614977265708148
+}
+{
+  "seed": 8311490070688984167,
+  "steps": 26,
+  "total_reward": 91.50000000000001,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1449,
+  "replay_size": 20000,
+  "loss": 0.9219929277896881,
+  "policy_loss": 0.9207587540149689,
+  "value_loss": 0.0012341802939772606
+}
+{
+  "seed": 8810900316474859851,
+  "steps": 33,
+  "total_reward": 103.49000000000001,
+  "chase_count": 4,
+  "samples": 33,
+  "episode": 1450,
+  "replay_size": 20000,
+  "loss": 0.9433423578739166,
+  "policy_loss": 0.9420281052589417,
+  "value_loss": 0.001314272521995008
+}
+{
+  "seed": 1344944795121161594,
+  "steps": 21,
+  "total_reward": 73.03,
+  "chase_count": 5,
+  "samples": 21,
+  "episode": 1451,
+  "replay_size": 20000,
+  "loss": 0.8345295190811157,
+  "policy_loss": 0.8331368863582611,
+  "value_loss": 0.001392622129060328
+}
+{
+  "seed": 7034025058159005394,
+  "steps": 31,
+  "total_reward": 101.92000000000002,
+  "chase_count": 4,
+  "samples": 31,
+  "episode": 1452,
+  "replay_size": 20000,
+  "loss": 0.8561371266841888,
+  "policy_loss": 0.8549383282661438,
+  "value_loss": 0.0011988086625933647
+}
+{
+  "seed": 6631429579317312880,
+  "steps": 28,
+  "total_reward": 81.99000000000001,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1453,
+  "replay_size": 20000,
+  "loss": 0.8184534907341003,
+  "policy_loss": 0.8171274662017822,
+  "value_loss": 0.00132604077225551
+}
+{
+  "seed": 7509612427246196330,
+  "steps": 32,
+  "total_reward": 91.00000000000003,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1454,
+  "replay_size": 20000,
+  "loss": 0.8141669929027557,
+  "policy_loss": 0.8125194013118744,
+  "value_loss": 0.0016476112650707364
+}
+{
+  "seed": 713082850735086381,
+  "steps": 42,
+  "total_reward": 106.23000000000002,
+  "chase_count": 5,
+  "samples": 42,
+  "episode": 1455,
+  "replay_size": 20000,
+  "loss": 0.79965540766716,
+  "policy_loss": 0.7986428439617157,
+  "value_loss": 0.0010125786066055298
+}
+{
+  "seed": 2764725470617041047,
+  "steps": 31,
+  "total_reward": 105.73000000000002,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1456,
+  "replay_size": 20000,
+  "loss": 0.8874214291572571,
+  "policy_loss": 0.885758638381958,
+  "value_loss": 0.0016628013690933585
+}
+{
+  "seed": 7642364641320501549,
+  "steps": 27,
+  "total_reward": 88.26,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1457,
+  "replay_size": 20000,
+  "loss": 0.8891682922840118,
+  "policy_loss": 0.8881247043609619,
+  "value_loss": 0.0010435791919007897
+}
+{
+  "seed": 2418699248182494987,
+  "steps": 39,
+  "total_reward": 99.35000000000004,
+  "chase_count": 5,
+  "samples": 39,
+  "episode": 1458,
+  "replay_size": 20000,
+  "loss": 0.8166363537311554,
+  "policy_loss": 0.8150972127914429,
+  "value_loss": 0.0015391552005894482
+}
+{
+  "seed": 4265327711920051523,
+  "steps": 32,
+  "total_reward": 89.53000000000003,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1459,
+  "replay_size": 20000,
+  "loss": 0.8649191558361053,
+  "policy_loss": 0.8640748560428619,
+  "value_loss": 0.0008443036349490285
+}
+{
+  "seed": 8787578033958492134,
+  "steps": 34,
+  "total_reward": 92.89000000000001,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1460,
+  "replay_size": 20000,
+  "loss": 0.8140588700771332,
+  "policy_loss": 0.812957227230072,
+  "value_loss": 0.0011016435455530882
+}
+{
+  "seed": 3560631834089236287,
+  "steps": 27,
+  "total_reward": 84.69,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1461,
+  "replay_size": 20000,
+  "loss": 0.8767984211444855,
+  "policy_loss": 0.8758828639984131,
+  "value_loss": 0.0009155660809483379
+}
+{
+  "seed": 1644682800632709250,
+  "steps": 39,
+  "total_reward": 79.28000000000002,
+  "chase_count": 4,
+  "samples": 39,
+  "episode": 1462,
+  "replay_size": 20000,
+  "loss": 0.817989319562912,
+  "policy_loss": 0.8163681328296661,
+  "value_loss": 0.0016211835900321603
+}
+{
+  "seed": 1062023057193882440,
+  "steps": 28,
+  "total_reward": 108.55000000000001,
+  "chase_count": 4,
+  "samples": 28,
+  "episode": 1463,
+  "replay_size": 20000,
+  "loss": 0.8936411440372467,
+  "policy_loss": 0.8923234343528748,
+  "value_loss": 0.0013177212094888091
+}
+{
+  "seed": 4084479984751633164,
+  "steps": 31,
+  "total_reward": 67.61000000000001,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1464,
+  "replay_size": 20000,
+  "loss": 0.9232728779315948,
+  "policy_loss": 0.9223797023296356,
+  "value_loss": 0.000893168558832258
+}
+{
+  "seed": 5492250413437883260,
+  "steps": 31,
+  "total_reward": 100.41,
+  "chase_count": 5,
+  "samples": 31,
+  "episode": 1465,
+  "replay_size": 20000,
+  "loss": 0.7065207064151764,
+  "policy_loss": 0.7051396369934082,
+  "value_loss": 0.0013810725940857083
+}
+{
+  "seed": 5353085046510530423,
+  "steps": 28,
+  "total_reward": 98.33000000000003,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1466,
+  "replay_size": 20000,
+  "loss": 0.917034775018692,
+  "policy_loss": 0.9158685505390167,
+  "value_loss": 0.0011662102187983692
+}
+{
+  "seed": 2313009048913114995,
+  "steps": 34,
+  "total_reward": 81.30000000000001,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1467,
+  "replay_size": 20000,
+  "loss": 0.7569723427295685,
+  "policy_loss": 0.7555826902389526,
+  "value_loss": 0.0013896510936319828
+}
+{
+  "seed": 8709201114669524337,
+  "steps": 26,
+  "total_reward": 94.07000000000001,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1468,
+  "replay_size": 20000,
+  "loss": 0.8546129763126373,
+  "policy_loss": 0.8529427945613861,
+  "value_loss": 0.0016701914137229323
+}
+{
+  "seed": 4987382642043075641,
+  "steps": 35,
+  "total_reward": 80.42000000000002,
+  "chase_count": 5,
+  "samples": 35,
+  "episode": 1469,
+  "replay_size": 20000,
+  "loss": 0.9201658368110657,
+  "policy_loss": 0.9191611707210541,
+  "value_loss": 0.0010046652751043439
+}
+{
+  "seed": 123690120293838203,
+  "steps": 32,
+  "total_reward": 116.55000000000003,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1470,
+  "replay_size": 20000,
+  "loss": 0.8028925657272339,
+  "policy_loss": 0.8019583523273468,
+  "value_loss": 0.0009342209959868342
+}
+{
+  "seed": 5769353622718818490,
+  "steps": 30,
+  "total_reward": 98.35000000000002,
+  "chase_count": 3,
+  "samples": 30,
+  "episode": 1471,
+  "replay_size": 20000,
+  "loss": 0.7197508811950684,
+  "policy_loss": 0.7183820307254791,
+  "value_loss": 0.0013688451726920903
+}
+{
+  "seed": 5854183144002790505,
+  "steps": 25,
+  "total_reward": 71.69,
+  "chase_count": 4,
+  "samples": 25,
+  "episode": 1472,
+  "replay_size": 20000,
+  "loss": 0.8707287311553955,
+  "policy_loss": 0.869178980588913,
+  "value_loss": 0.0015497571439482272
+}
+{
+  "seed": 4565727044892034340,
+  "steps": 29,
+  "total_reward": 77.33000000000001,
+  "chase_count": 5,
+  "samples": 29,
+  "episode": 1473,
+  "replay_size": 20000,
+  "loss": 0.86448934674263,
+  "policy_loss": 0.863277941942215,
+  "value_loss": 0.0012114165583625436
+}
+{
+  "seed": 6521926663498411734,
+  "steps": 28,
+  "total_reward": 76.5,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1474,
+  "replay_size": 20000,
+  "loss": 0.7831404209136963,
+  "policy_loss": 0.7821863889694214,
+  "value_loss": 0.0009540321480017155
+}
+{
+  "seed": 4844432048269927940,
+  "steps": 30,
+  "total_reward": 101.83000000000001,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1475,
+  "replay_size": 20000,
+  "loss": 0.8240655660629272,
+  "policy_loss": 0.8227936923503876,
+  "value_loss": 0.0012718600337393582
+}
+{
+  "seed": 6914208763219248803,
+  "steps": 30,
+  "total_reward": 82.44000000000003,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1476,
+  "replay_size": 20000,
+  "loss": 0.7774753868579865,
+  "policy_loss": 0.7763941287994385,
+  "value_loss": 0.001081254507880658
+}
+{
+  "seed": 8482972754471268634,
+  "steps": 29,
+  "total_reward": 67.40000000000002,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1477,
+  "replay_size": 20000,
+  "loss": 0.8700465261936188,
+  "policy_loss": 0.8691586852073669,
+  "value_loss": 0.0008878211956471205
+}
+{
+  "seed": 3241495926474745371,
+  "steps": 26,
+  "total_reward": 72.28,
+  "chase_count": 5,
+  "samples": 26,
+  "episode": 1478,
+  "replay_size": 20000,
+  "loss": 0.7839293777942657,
+  "policy_loss": 0.7827100455760956,
+  "value_loss": 0.0012193251168355346
+}
+{
+  "seed": 2266988900966037256,
+  "steps": 27,
+  "total_reward": 95.69000000000001,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1479,
+  "replay_size": 20000,
+  "loss": 0.8644607663154602,
+  "policy_loss": 0.8630141317844391,
+  "value_loss": 0.001446634705644101
+}
+{
+  "seed": 6445367957353262982,
+  "steps": 30,
+  "total_reward": 85.36000000000003,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1480,
+  "replay_size": 20000,
+  "loss": 0.7914638817310333,
+  "policy_loss": 0.7899621725082397,
+  "value_loss": 0.0015016934485174716
+}
+{
+  "seed": 2516754337873919701,
+  "steps": 33,
+  "total_reward": 113.48000000000002,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1481,
+  "replay_size": 20000,
+  "loss": 0.9271052181720734,
+  "policy_loss": 0.9259272515773773,
+  "value_loss": 0.0011779619962908328
+}
+{
+  "seed": 3398728422415932108,
+  "steps": 41,
+  "total_reward": 94.44000000000003,
+  "chase_count": 4,
+  "samples": 41,
+  "episode": 1482,
+  "replay_size": 20000,
+  "loss": 0.9489355683326721,
+  "policy_loss": 0.9480617642402649,
+  "value_loss": 0.0008738059550523758
+}
+{
+  "seed": 1658615237693800798,
+  "steps": 29,
+  "total_reward": 94.23,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1483,
+  "replay_size": 20000,
+  "loss": 0.8373914957046509,
+  "policy_loss": 0.8357875347137451,
+  "value_loss": 0.0016039381735026836
+}
+{
+  "seed": 7422134036193317231,
+  "steps": 27,
+  "total_reward": 68.52,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1484,
+  "replay_size": 20000,
+  "loss": 0.9120944142341614,
+  "policy_loss": 0.9103965759277344,
+  "value_loss": 0.0016978367348201573
+}
+{
+  "seed": 6876757525822307119,
+  "steps": 35,
+  "total_reward": 103.83000000000001,
+  "chase_count": 3,
+  "samples": 35,
+  "episode": 1485,
+  "replay_size": 20000,
+  "loss": 0.8452118933200836,
+  "policy_loss": 0.8437923491001129,
+  "value_loss": 0.001419530890416354
+}
+{
+  "seed": 3519927663038631270,
+  "steps": 28,
+  "total_reward": 82.36,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1486,
+  "replay_size": 20000,
+  "loss": 0.8596889078617096,
+  "policy_loss": 0.8587456345558167,
+  "value_loss": 0.0009432730148546398
+}
+{
+  "seed": 6088109137035369031,
+  "steps": 28,
+  "total_reward": 102.11000000000001,
+  "chase_count": 5,
+  "samples": 28,
+  "episode": 1487,
+  "replay_size": 20000,
+  "loss": 0.8227916955947876,
+  "policy_loss": 0.8212563395500183,
+  "value_loss": 0.0015353639028035104
+}
+{
+  "seed": 2509902527488262769,
+  "steps": 30,
+  "total_reward": 98.78000000000003,
+  "chase_count": 4,
+  "samples": 30,
+  "episode": 1488,
+  "replay_size": 20000,
+  "loss": 0.902729868888855,
+  "policy_loss": 0.9014024138450623,
+  "value_loss": 0.001327425881754607
+}
+{
+  "seed": 6872205175719812162,
+  "steps": 41,
+  "total_reward": 93.44000000000003,
+  "chase_count": 4,
+  "samples": 41,
+  "episode": 1489,
+  "replay_size": 20000,
+  "loss": 0.8999175131320953,
+  "policy_loss": 0.8985233306884766,
+  "value_loss": 0.001394194841850549
+}
+{
+  "seed": 1633234732270487762,
+  "steps": 29,
+  "total_reward": 100.48000000000003,
+  "chase_count": 4,
+  "samples": 29,
+  "episode": 1490,
+  "replay_size": 20000,
+  "loss": 0.7985890805721283,
+  "policy_loss": 0.797076404094696,
+  "value_loss": 0.0015126494690775871
+}
+{
+  "seed": 629226870440917625,
+  "steps": 44,
+  "total_reward": 106.67000000000003,
+  "chase_count": 5,
+  "samples": 44,
+  "episode": 1491,
+  "replay_size": 20000,
+  "loss": 0.9280551373958588,
+  "policy_loss": 0.9266995489597321,
+  "value_loss": 0.0013555762125179172
+}
+{
+  "seed": 5572019342515167721,
+  "steps": 32,
+  "total_reward": 113.88000000000001,
+  "chase_count": 4,
+  "samples": 32,
+  "episode": 1492,
+  "replay_size": 20000,
+  "loss": 0.9318512976169586,
+  "policy_loss": 0.9309036433696747,
+  "value_loss": 0.0009476293053012341
+}
+{
+  "seed": 4489929655692422550,
+  "steps": 30,
+  "total_reward": 108.36000000000001,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1493,
+  "replay_size": 20000,
+  "loss": 0.9800049364566803,
+  "policy_loss": 0.9785324037075043,
+  "value_loss": 0.0014725415385328233
+}
+{
+  "seed": 6514198603708360266,
+  "steps": 30,
+  "total_reward": 94.50000000000003,
+  "chase_count": 5,
+  "samples": 30,
+  "episode": 1494,
+  "replay_size": 20000,
+  "loss": 0.8856443762779236,
+  "policy_loss": 0.8840157687664032,
+  "value_loss": 0.0016286080935969949
+}
+{
+  "seed": 8294157142695678191,
+  "steps": 32,
+  "total_reward": 95.49000000000001,
+  "chase_count": 5,
+  "samples": 32,
+  "episode": 1495,
+  "replay_size": 20000,
+  "loss": 0.8281691670417786,
+  "policy_loss": 0.8269102573394775,
+  "value_loss": 0.00125893484801054
+}
+{
+  "seed": 1819905032622823103,
+  "steps": 25,
+  "total_reward": 103.33000000000001,
+  "chase_count": 5,
+  "samples": 25,
+  "episode": 1496,
+  "replay_size": 20000,
+  "loss": 0.9018115699291229,
+  "policy_loss": 0.9006790220737457,
+  "value_loss": 0.0011325533268973231
+}
+{
+  "seed": 5229837540564051820,
+  "steps": 24,
+  "total_reward": 83.87,
+  "chase_count": 5,
+  "samples": 24,
+  "episode": 1497,
+  "replay_size": 20000,
+  "loss": 0.8070448338985443,
+  "policy_loss": 0.8058573305606842,
+  "value_loss": 0.0011875199270434678
+}
+{
+  "seed": 1979444715577077942,
+  "steps": 33,
+  "total_reward": 94.30000000000001,
+  "chase_count": 5,
+  "samples": 33,
+  "episode": 1498,
+  "replay_size": 20000,
+  "loss": 0.7962198853492737,
+  "policy_loss": 0.7948578596115112,
+  "value_loss": 0.0013620294048450887
+}
+{
+  "seed": 3645005262491403997,
+  "steps": 27,
+  "total_reward": 81.38000000000001,
+  "chase_count": 5,
+  "samples": 27,
+  "episode": 1499,
+  "replay_size": 20000,
+  "loss": 0.8273939788341522,
+  "policy_loss": 0.8258853852748871,
+  "value_loss": 0.0015086012426763773
+}
+{
+  "seed": 8301584968309054454,
+  "steps": 34,
+  "total_reward": 70.04999999999998,
+  "chase_count": 5,
+  "samples": 34,
+  "episode": 1500,
+  "replay_size": 20000,
+  "loss": 0.8133048117160797,
+  "policy_loss": 0.8120044469833374,
+  "value_loss": 0.00130037113558501
+}
+{
+  "checkpoint": "C:\\Users\\wzm52\\Documents\\ChatGPT\\方舟自动化\\artifacts\\blackflow_policy.pt",
+  "simulation_profile": "synthetic",
+  "rules_sha256": "e0b2e231b57984166923cb9f5e3ef967ea52b74ad6235f51918b9810812c0691",
+  "environment_sha256": "7327f79f6c7321ea2d6a6ebb0af304339e967314e4e03e17958773ad60bbbce6"
+}

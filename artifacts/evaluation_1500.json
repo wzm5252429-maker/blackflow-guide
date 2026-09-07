@@ -1,0 +1,24 @@
+{
+  "simulation_profile": "synthetic",
+  "verified_game_rules": false,
+  "results": {
+    "random": {
+      "episodes": 30.0,
+      "mean_reward": 88.11466666666666,
+      "mean_steps": 30.566666666666666,
+      "mean_chases": 4.533333333333333
+    },
+    "heuristic": {
+      "episodes": 30.0,
+      "mean_reward": 139.1116666666667,
+      "mean_steps": 36.1,
+      "mean_chases": 4.3
+    },
+    "mcts": {
+      "episodes": 30.0,
+      "mean_reward": 128.93700000000004,
+      "mean_steps": 40.166666666666664,
+      "mean_chases": 3.3333333333333335
+    }
+  }
+}

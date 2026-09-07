@@ -1,0 +1,459 @@
+{
+  "counts": {
+    "choices": 396,
+    "choiceScenes": 338,
+    "nodeTypeData": 21,
+    "subTypeData": 0,
+    "stages": 105,
+    "relics": 371,
+    "items": 664
+  },
+  "node_types": {
+    "BATTLE_NORMAL": {
+      "name": "作战",
+      "subName": "作战",
+      "description": "大家手里都拿着武器，肯定不是来谈判的。"
+    },
+    "BATTLE_ELITE": {
+      "name": "紧急作战",
+      "subName": "紧急作战",
+      "description": "有些暴力可能会超出你的预期，这很常见。"
+    },
+    "BATTLE_BOSS": {
+      "name": "险路恶敌",
+      "subName": "险路恶敌",
+      "description": "坏人、恶棍、受诅咒之人......你有麻烦了。"
+    },
+    "BATTLE_SHOP": {
+      "name": "诡意行商",
+      "subName": "商店",
+      "description": "不是盟友也不是敌人，有些人喜欢站在中间。"
+    },
+    "REST": {
+      "name": "安全的角落",
+      "subName": "事件",
+      "description": "这里不会有人打扰，食物和水也很充足，别一直紧绷着神经了。"
+    },
+    "INCIDENT": {
+      "name": "不期而遇",
+      "subName": "事件",
+      "description": "新朋友、老对头......奇遇不会老去，陈旧的只有伤疤。"
+    },
+    "WISH": {
+      "name": "得偿所愿",
+      "subName": "事件",
+      "description": "许愿的形式千奇百怪，而愿望本身却大同小异。"
+    },
+    "SACRIFICE": {
+      "name": "失与得",
+      "subName": "事件",
+      "description": "失去的空洞与无措，会被获得的满足与喜悦填充。"
+    },
+    "EXPEDITION": {
+      "name": "先行一步",
+      "subName": "事件",
+      "description": "总有人要走在前头，好为后来的人指明道路。"
+    },
+    "PORTAL": {
+      "name": "误入奇境",
+      "subName": "事件",
+      "description": "枝条旁，叶片外，未探之地就在身边。"
+    },
+    "DUEL": {
+      "name": "狭路相逢",
+      "subName": "事件",
+      "description": "猎物与猎手的对话。"
+    },
+    "STORY": {
+      "name": "命运所指",
+      "subName": "事件",
+      "description": "抉择就在眼前，结果早已注定。"
+    },
+    "STORY_HIDDEN": {
+      "name": "命运所指",
+      "subName": "事件",
+      "description": "抉择就在眼前，结果早已注定。"
+    },
+    "SCRAP_SHOP": {
+      "name": "秘境行商",
+      "subName": "商店",
+      "description": "秘密与路途被摆上天平，摇晃之间价码已被定下。"
+    },
+    "DOOR": {
+      "name": "曲折密道",
+      "subName": "传送",
+      "description": "本地人的杰作。"
+    },
+    "FINAL": {
+      "name": "险路尽头",
+      "subName": "事件",
+      "description": "只是另一场求索的起点。"
+    },
+    "EVACUATE": {
+      "name": "险路小径",
+      "subName": "事件",
+      "description": "嘘，不要把这个秘密告诉别人。"
+    },
+    "EMPLOY": {
+      "name": "应急助力",
+      "subName": "商店",
+      "description": "人手不嫌多，朋友不嫌少。"
+    },
+    "LIGHT": {
+      "name": "羽瞰点",
+      "subName": "视野",
+      "description": "所见并非所得，做好标记后别忘了计算行程。"
+    },
+    "BATTLE_SAVAGE": {
+      "name": "“居民”据点",
+      "subName": "“居民”据点",
+      "description": "平静的生活被打破，也难怪它们怒火中烧。"
+    },
+    "EMPTY": {
+      "name": "林间空地",
+      "subName": "“空白”",
+      "description": "无事发生便是最动人的温柔。"
+    }
+  },
+  "subtypes": [],
+  "scrap_keys": [
+    "scrapItemToType",
+    "scrapTypeData",
+    "moveScrapData",
+    "goodsScrapData",
+    "passiveScrapData",
+    "moveScrapRangeData",
+    "moduleConsts"
+  ],
+  "scrap_types": {
+    "GOODS": {
+      "type": "GOODS",
+      "typeName": "自然物",
+      "typeDesc": "在行商节点售卖时通常能获得更多源石锭",
+      "typeIconId": "rogue6_goods_icon"
+    },
+    "MOVE": {
+      "type": "MOVE",
+      "typeName": "加工品",
+      "typeDesc": "可用于地图移动",
+      "typeIconId": "rogue6_move_icon"
+    },
+    "PASSIVE": {
+      "type": "PASSIVE",
+      "typeName": "概念体",
+      "typeDesc": "移动到特定节点时生效",
+      "typeIconId": "rogue6_passive_icon"
+    }
+  },
+  "goods_scrap_sample": {
+    "rogue_6_scrap_G_01": {
+      "scrapId": "rogue_6_scrap_G_01",
+      "scrapDesc": "可在秘境行商中培育并获得奖励",
+      "sellPrice": 2
+    },
+    "rogue_6_scrap_G_02": {
+      "scrapId": "rogue_6_scrap_G_02",
+      "scrapDesc": "每次作战后估价+2",
+      "sellPrice": 2
+    },
+    "rogue_6_scrap_G_03": {
+      "scrapId": "rogue_6_scrap_G_03",
+      "scrapDesc": "每次揭示节点信息时估价+1",
+      "sellPrice": 2
+    },
+    "rogue_6_scrap_G_04": {
+      "scrapId": "rogue_6_scrap_G_04",
+      "scrapDesc": "每次招募干员时估价+3",
+      "sellPrice": 4
+    },
+    "rogue_6_scrap_G_05": {
+      "scrapId": "rogue_6_scrap_G_05",
+      "scrapDesc": "每次移动后，估价会随机变化",
+      "sellPrice": 3
+    }
+  },
+  "move_scrap_sample": {
+    "rogue_6_scrap_M_01": {
+      "count": 1,
+      "range": "r-6",
+      "rangeType": "RANGE",
+      "node": [
+        "ALL"
+      ],
+      "step": 1,
+      "isRandomMove": false,
+      "scrapId": "rogue_6_scrap_M_01",
+      "scrapDesc": "装载后能够移动至<color=#20b4a1>直线2格内</color>任意节点（可移动1次）",
+      "sellPrice": 1
+    },
+    "rogue_6_scrap_M_02": {
+      "count": 1,
+      "range": "r-2",
+      "rangeType": "RANGE",
+      "node": [
+        "ALL"
+      ],
+      "step": 1,
+      "isRandomMove": false,
+      "scrapId": "rogue_6_scrap_M_02",
+      "scrapDesc": "装载后能够移动至<color=#20b4a1>相邻8格内</color>任意节点（可移动1次）",
+      "sellPrice": 1
+    },
+    "rogue_6_scrap_M_03": {
+      "count": 3,
+      "range": "r-2",
+      "rangeType": "RANGE",
+      "node": [
+        "ALL"
+      ],
+      "step": 1,
+      "isRandomMove": false,
+      "scrapId": "rogue_6_scrap_M_03",
+      "scrapDesc": "装载后能够移动至<color=#20b4a1>相邻8格内</color>任意节点（可移动3次）",
+      "sellPrice": 1
+    },
+    "rogue_6_scrap_M_04": {
+      "count": 1,
+      "range": "r-3",
+      "rangeType": "RANGE",
+      "node": [
+        "ALL"
+      ],
+      "step": 0,
+      "isRandomMove": false,
+      "scrapId": "rogue_6_scrap_M_04",
+      "scrapDesc": "装载后能够移动至<color=#20b4a1>周围12格内</color>任意节点，无需行动力，无法被携带至下一区域（可移动1次）",
+      "sellPrice": 1
+    },
+    "rogue_6_scrap_M_05": {
+      "count": 2,
+      "range": "r-3",
+      "rangeType": "RANGE",
+      "node": [
+        "ALL"
+      ],
+      "step": 1,
+      "isRandomMove": false,
+      "scrapId": "rogue_6_scrap_M_05",
+      "scrapDesc": "装载后能够移动至<color=#20b4a1>周围12格内</color>任意节点（可移动2次）",
+      "sellPrice": 1
+    }
+  },
+  "relic_sample": {
+    "rogue_6_band_1": {
+      "id": "rogue_6_band_1",
+      "buffs": [
+        {
+          "key": "immediate_reward",
+          "blackboard": [
+            {
+              "key": "id",
+              "value": 0.0,
+              "valueStr": "rogue_6_hpmax"
+            },
+            {
+              "key": "count",
+              "value": 2.0,
+              "valueStr": null
+            }
+          ]
+        },
+        {
+          "key": "battle_extra_reward",
+          "blackboard": [
+            {
+              "key": "id",
+              "value": 0.0,
+              "valueStr": "rogue_6_hp"
+            },
+            {
+              "key": "count",
+              "value": 1.0,
+              "valueStr": null
+            }
+          ]
+        }
+      ]
+    },
+    "rogue_6_band_2": {
+      "id": "rogue_6_band_2",
+      "buffs": [
+        {
+          "key": "immediate_reward",
+          "blackboard": [
+            {
+              "key": "id",
+              "value": 0.0,
+              "valueStr": "rogue_6_hpmax"
+            },
+            {
+              "key": "count",
+              "value": 2.0,
+              "valueStr": null
+            }
+          ]
+        },
+        {
+          "key": "battle_extra_reward",
+          "blackboard": [
+            {
+              "key": "id",
+              "value": 0.0,
+              "valueStr": "rogue_6_hp"
+            },
+            {
+              "key": "count",
+              "value": 1.0,
+              "valueStr": null
+            }
+          ]
+        },
+        {
+          "key": "battle_extra_drop",
+          "blackboard": [
+            {
+              "key": "has_less",
+              "value": 5.0,
+              "valueStr": null
+            },
+            {
+              "key": "id",
+              "value": 0.0,
+              "valueStr": "rogue_6_shield"
+            },
+            {
+              "key": "count",
+              "value": 1.0,
+              "valueStr": null
+            }
+          ]
+        }
+      ]
+    },
+    "rogue_6_band_3": {
+      "id": "rogue_6_band_3",
+      "buffs": [
+        {
+          "key": "immediate_reward",
+          "blackboard": [
+            {
+              "key": "id",
+              "value": 0.0,
+              "valueStr": "rogue_6_squad_capacity"
+            },
+            {
+              "key": "count",
+              "value": 2.0,
+              "valueStr": null
+            }
+          ]
+        },
+        {
+          "key": "level_char_limit_add",
+          "blackboard": [
+            {
+              "key": "value",
+              "value": 2.0,
+              "valueStr": null
+            }
+          ]
+        },
+        {
+          "key": "immediate_recruit",
+          "blackboard": [
+            {
+              "key": "char_list",
+              "value": 0.0,
+              "valueStr": "char_504_rguard,char_507_rsnipe,char_505_rcast,char_506_rmedic,char_514_rdfend"
+            }
+          ]
+        }
+      ]
+    },
+    "rogue_6_band_4": {
+      "id": "rogue_6_band_4",
+      "buffs": [
+        {
+          "key": "immediate_reward",
+          "blackboard": [
+            {
+              "key": "id",
+              "value": 0.0,
+              "valueStr": "rogue_6_gold"
+            },
+            {
+              "key": "count",
+              "value": 20.0,
+              "valueStr": null
+            }
+          ]
+        },
+        {
+          "key": "immediate_reward",
+          "blackboard": [
+            {
+              "key": "id",
+              "value": 0.0,
+              "valueStr": "rogue_6_population"
+            },
+            {
+              "key": "count",
+              "value": 2.0,
+              "valueStr": null
+            }
+          ]
+        }
+      ]
+    },
+    "rogue_6_band_5": {
+      "id": "rogue_6_band_5",
+      "buffs": [
+        {
+          "key": "immediate_reward",
+          "blackboard": [
+            {
+              "key": "id",
+              "value": 0.0,
+              "valueStr": "rogue_6_gold"
+            },
+            {
+              "key": "count",
+              "value": 20.0,
+              "valueStr": null
+            }
+          ]
+        },
+        {
+          "key": "immediate_reward",
+          "blackboard": [
+            {
+              "key": "id",
+              "value": 0.0,
+              "valueStr": "rogue_6_population"
+            },
+            {
+              "key": "count",
+              "value": 2.0,
+              "valueStr": null
+            }
+          ]
+        },
+        {
+          "key": "immediate_reward",
+          "blackboard": [
+            {
+              "key": "id",
+              "value": 0.0,
+              "valueStr": "rogue_6_scrap_G_07"
+            },
+            {
+              "key": "count",
+              "value": 1.0,
+              "valueStr": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

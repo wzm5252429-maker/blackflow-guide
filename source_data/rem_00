@@ -1,0 +1,3756 @@
+
+              "relicGroupId": 4,
+              "orderId": "200",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_76": {
+              "relicId": "rogue_2_relic_grace_76",
+              "relicSortId": 25,
+              "relicGroupId": 4,
+              "orderId": "201",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_77": {
+              "relicId": "rogue_2_relic_grace_77",
+              "relicSortId": 26,
+              "relicGroupId": 4,
+              "orderId": "202",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_79": {
+              "relicId": "rogue_2_relic_grace_79",
+              "relicSortId": 27,
+              "relicGroupId": 4,
+              "orderId": "203",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_80": {
+              "relicId": "rogue_2_relic_grace_80",
+              "relicSortId": 28,
+              "relicGroupId": 4,
+              "orderId": "204",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_81": {
+              "relicId": "rogue_2_relic_grace_81",
+              "relicSortId": 29,
+              "relicGroupId": 4,
+              "orderId": "205",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_82": {
+              "relicId": "rogue_2_relic_grace_82",
+              "relicSortId": 30,
+              "relicGroupId": 4,
+              "orderId": "206",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_113": {
+              "relicId": "rogue_2_relic_fight_113",
+              "relicSortId": 31,
+              "relicGroupId": 4,
+              "orderId": "207",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_114": {
+              "relicId": "rogue_2_relic_fight_114",
+              "relicSortId": 32,
+              "relicGroupId": 4,
+              "orderId": "208",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_active_tool_1": {
+              "relicId": "rogue_2_active_tool_1",
+              "relicSortId": 1,
+              "relicGroupId": 5,
+              "orderId": "209",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_active_tool_2": {
+              "relicId": "rogue_2_active_tool_2",
+              "relicSortId": 2,
+              "relicGroupId": 5,
+              "orderId": "210",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_active_tool_3": {
+              "relicId": "rogue_2_active_tool_3",
+              "relicSortId": 3,
+              "relicGroupId": 5,
+              "orderId": "211",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_active_tool_4": {
+              "relicId": "rogue_2_active_tool_4",
+              "relicSortId": 4,
+              "relicGroupId": 5,
+              "orderId": "212",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_active_tool_5": {
+              "relicId": "rogue_2_active_tool_5",
+              "relicSortId": 5,
+              "relicGroupId": 5,
+              "orderId": "213",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_active_tool_6": {
+              "relicId": "rogue_2_active_tool_6",
+              "relicSortId": 6,
+              "relicGroupId": 5,
+              "orderId": "214",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_curse_1": {
+              "relicId": "rogue_2_relic_curse_1",
+              "relicSortId": 1,
+              "relicGroupId": 6,
+              "orderId": "215",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_curse_2": {
+              "relicId": "rogue_2_relic_curse_2",
+              "relicSortId": 2,
+              "relicGroupId": 6,
+              "orderId": "216",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_curse_3": {
+              "relicId": "rogue_2_relic_curse_3",
+              "relicSortId": 3,
+              "relicGroupId": 6,
+              "orderId": "217",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_curse_5": {
+              "relicId": "rogue_2_relic_curse_5",
+              "relicSortId": 5,
+              "relicGroupId": 6,
+              "orderId": "218",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_curse_6": {
+              "relicId": "rogue_2_relic_curse_6",
+              "relicSortId": 6,
+              "relicGroupId": 6,
+              "orderId": "219",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_curse_7": {
+              "relicId": "rogue_2_relic_curse_7",
+              "relicSortId": 7,
+              "relicGroupId": 6,
+              "orderId": "220",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_curse_8": {
+              "relicId": "rogue_2_relic_curse_8",
+              "relicSortId": 8,
+              "relicGroupId": 6,
+              "orderId": "221",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_83": {
+              "relicId": "rogue_2_relic_grace_83",
+              "relicSortId": 1,
+              "relicGroupId": 7,
+              "orderId": "222",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_84": {
+              "relicId": "rogue_2_relic_grace_84",
+              "relicSortId": 2,
+              "relicGroupId": 7,
+              "orderId": "223",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_85": {
+              "relicId": "rogue_2_relic_grace_85",
+              "relicSortId": 3,
+              "relicGroupId": 7,
+              "orderId": "224",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_86": {
+              "relicId": "rogue_2_relic_grace_86",
+              "relicSortId": 4,
+              "relicGroupId": 7,
+              "orderId": "225",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_87": {
+              "relicId": "rogue_2_relic_grace_87",
+              "relicSortId": 5,
+              "relicGroupId": 7,
+              "orderId": "226",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_117": {
+              "relicId": "rogue_2_relic_fight_117",
+              "relicSortId": 1,
+              "relicGroupId": 8,
+              "orderId": "227",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_119": {
+              "relicId": "rogue_2_relic_fight_119",
+              "relicSortId": 2,
+              "relicGroupId": 8,
+              "orderId": "228",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_121": {
+              "relicId": "rogue_2_relic_fight_121",
+              "relicSortId": 3,
+              "relicGroupId": 8,
+              "orderId": "229",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_123": {
+              "relicId": "rogue_2_relic_fight_123",
+              "relicSortId": 4,
+              "relicGroupId": 8,
+              "orderId": "230",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_125": {
+              "relicId": "rogue_2_relic_fight_125",
+              "relicSortId": 5,
+              "relicGroupId": 8,
+              "orderId": "231",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_126": {
+              "relicId": "rogue_2_relic_fight_126",
+              "relicSortId": 6,
+              "relicGroupId": 8,
+              "orderId": "232",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_147": {
+              "relicId": "rogue_2_relic_fight_147",
+              "relicSortId": 7,
+              "relicGroupId": 8,
+              "orderId": "233",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_108": {
+              "relicId": "rogue_2_relic_fight_108",
+              "relicSortId": 8,
+              "relicGroupId": 8,
+              "orderId": "234",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_40": {
+              "relicId": "rogue_2_relic_fight_40",
+              "relicSortId": 9,
+              "relicGroupId": 8,
+              "orderId": "235",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_41": {
+              "relicId": "rogue_2_relic_fight_41",
+              "relicSortId": 10,
+              "relicGroupId": 8,
+              "orderId": "236",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_fight_42": {
+              "relicId": "rogue_2_relic_fight_42",
+              "relicSortId": 11,
+              "relicGroupId": 8,
+              "orderId": "237",
+              "isSpRelic": true,
+              "enrollId": null
+            },
+            "rogue_2_relic_grace_88": {
+              "relicId": "rogue_2_relic_grace_88",
+              "relicSortId": 1,
+              "relicGroupId": 9,
+              "orderId": "238",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_grace_89": {
+              "relicId": "rogue_2_relic_grace_89",
+              "relicSortId": 2,
+              "relicGroupId": 9,
+              "orderId": "239",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_grace_90": {
+              "relicId": "rogue_2_relic_grace_90",
+              "relicSortId": 3,
+              "relicGroupId": 9,
+              "orderId": "240",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_curse_4": {
+              "relicId": "rogue_2_relic_curse_4",
+              "relicSortId": 4,
+              "relicGroupId": 9,
+              "orderId": "241",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_curse_9": {
+              "relicId": "rogue_2_relic_curse_9",
+              "relicSortId": 5,
+              "relicGroupId": 9,
+              "orderId": "242",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_curse_10": {
+              "relicId": "rogue_2_relic_curse_10",
+              "relicSortId": 6,
+              "relicGroupId": 9,
+              "orderId": "243",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_grace_69": {
+              "relicId": "rogue_2_relic_grace_69",
+              "relicSortId": 7,
+              "relicGroupId": 9,
+              "orderId": "244",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_grace_70": {
+              "relicId": "rogue_2_relic_grace_70",
+              "relicSortId": 8,
+              "relicGroupId": 9,
+              "orderId": "245",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_grace_71": {
+              "relicId": "rogue_2_relic_grace_71",
+              "relicSortId": 9,
+              "relicGroupId": 9,
+              "orderId": "246",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_grace_72": {
+              "relicId": "rogue_2_relic_grace_72",
+              "relicSortId": 10,
+              "relicGroupId": 9,
+              "orderId": "247",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_grace_73": {
+              "relicId": "rogue_2_relic_grace_73",
+              "relicSortId": 11,
+              "relicGroupId": 9,
+              "orderId": "248",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_grace_74": {
+              "relicId": "rogue_2_relic_grace_74",
+              "relicSortId": 12,
+              "relicGroupId": 9,
+              "orderId": "249",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_grace_75": {
+              "relicId": "rogue_2_relic_grace_75",
+              "relicSortId": 13,
+              "relicGroupId": 9,
+              "orderId": "250",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_grace_78": {
+              "relicId": "rogue_2_relic_grace_78",
+              "relicSortId": 14,
+              "relicGroupId": 9,
+              "orderId": "251",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_fight_131": {
+              "relicId": "rogue_2_relic_fight_131",
+              "relicSortId": 15,
+              "relicGroupId": 9,
+              "orderId": "252",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_fight_142": {
+              "relicId": "rogue_2_relic_fight_142",
+              "relicSortId": 16,
+              "relicGroupId": 9,
+              "orderId": "253",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_fight_143": {
+              "relicId": "rogue_2_relic_fight_143",
+              "relicSortId": 17,
+              "relicGroupId": 9,
+              "orderId": "254",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_fight_150": {
+              "relicId": "rogue_2_relic_fight_150",
+              "relicSortId": 18,
+              "relicGroupId": 9,
+              "orderId": "255",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_fight_153": {
+              "relicId": "rogue_2_relic_fight_153",
+              "relicSortId": 19,
+              "relicGroupId": 9,
+              "orderId": "256",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_fight_154": {
+              "relicId": "rogue_2_relic_fight_154",
+              "relicSortId": 20,
+              "relicGroupId": 9,
+              "orderId": "257",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_fight_155": {
+              "relicId": "rogue_2_relic_fight_155",
+              "relicSortId": 21,
+              "relicGroupId": 9,
+              "orderId": "258",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_fight_156": {
+              "relicId": "rogue_2_relic_fight_156",
+              "relicSortId": 22,
+              "relicGroupId": 9,
+              "orderId": "259",
+              "isSpRelic": false,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_fight_157": {
+              "relicId": "rogue_2_relic_fight_157",
+              "relicSortId": 23,
+              "relicGroupId": 9,
+              "orderId": "260",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_fight_158": {
+              "relicId": "rogue_2_relic_fight_158",
+              "relicSortId": 24,
+              "relicGroupId": 9,
+              "orderId": "261",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_2"
+            },
+            "rogue_2_relic_fight_159": {
+              "relicId": "rogue_2_relic_fight_159",
+              "relicSortId": 25,
+              "relicGroupId": 9,
+              "orderId": "262",
+              "isSpRelic": true,
+              "enrollId": "rogue_2_enroll_3"
+            }
+          }
+        },
+        "capsule": null,
+        "trap": {
+          "trap": {}
+        },
+        "chat": {
+          "chat": {
+            "month_chat_rogue_2_1": {
+              "sortId": 1,
+              "chatItemList": [
+                {
+                  "floor": 1,
+                  "chatZoneId": "zone_1",
+                  "chatDesc": "“不管你害不害怕它，它都会找上你。”",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_1_1"
+                },
+                {
+                  "floor": 3,
+                  "chatZoneId": "zone_3",
+                  "chatDesc": "深海的教士站在破碎的海岸之上，比起恐惧，所携更多是安宁。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_1_2"
+                },
+                {
+                  "floor": 5,
+                  "chatZoneId": "zone_5",
+                  "chatDesc": "谁又能说清大海是什么颜色？棘刺不能，但他清楚，自己将会拥抱它。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_1_3"
+                }
+              ]
+            },
+            "month_chat_rogue_2_2": {
+              "sortId": 2,
+              "chatItemList": [
+                {
+                  "floor": 1,
+                  "chatZoneId": "zone_1",
+                  "chatDesc": "他们无从知晓面前的人究竟还是不是审判官。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_2_1"
+                },
+                {
+                  "floor": 3,
+                  "chatZoneId": "zone_3",
+                  "chatDesc": "人们只会用自己最习惯的方式去理解战争和敌人。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_2_2"
+                },
+                {
+                  "floor": 5,
+                  "chatZoneId": "zone_5",
+                  "chatDesc": "她将提灯留在身后，孤身迎战海潮。直到战争结束，灯火都没有熄灭。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_2_3"
+                }
+              ]
+            },
+            "month_chat_rogue_2_3": {
+              "sortId": 3,
+              "chatItemList": [
+                {
+                  "floor": 1,
+                  "chatZoneId": "zone_1",
+                  "chatDesc": "旧友的棺柩排列如林，他落寞地等待着漫长的新生。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_3_1"
+                },
+                {
+                  "floor": 3,
+                  "chatZoneId": "zone_3",
+                  "chatDesc": "注视、铭记、传承。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_3_2"
+                },
+                {
+                  "floor": 5,
+                  "chatZoneId": "zone_5",
+                  "chatDesc": "他如约来到永夜中央的灯塔。唯守望者直视风暴，唯他炽热如白昼。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_3_3"
+                }
+              ]
+            },
+            "month_chat_rogue_2_4": {
+              "sortId": 4,
+              "chatItemList": [
+                {
+                  "floor": 1,
+                  "chatZoneId": "zone_1",
+                  "chatDesc": "它的脉搏和呼吸牵动着我的心跳，它是我始终求而不得的救赎。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_4_1"
+                },
+                {
+                  "floor": 3,
+                  "chatZoneId": "zone_3",
+                  "chatDesc": "等到周围那些嘈杂的噪音都被浇灭，我就可以放声唱出最后的歌。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_4_2"
+                },
+                {
+                  "floor": 5,
+                  "chatZoneId": "zone_5",
+                  "chatDesc": "灯塔为迷途的船只照亮回家的路，然而说不定正是因此，它们才会引来恐鱼，在浪潮来临之际最先被摧毁。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_4_3"
+                }
+              ]
+            },
+            "month_chat_rogue_2_5": {
+              "sortId": 5,
+              "chatItemList": [
+                {
+                  "floor": 1,
+                  "chatZoneId": "zone_1",
+                  "chatDesc": "业已遗落的，向何处去寻？",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_5_1"
+                },
+                {
+                  "floor": 3,
+                  "chatZoneId": "zone_3",
+                  "chatDesc": "当追寻之事被刻意埋葬，这场追寻本身是否仍有意义？",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_5_2"
+                },
+                {
+                  "floor": 5,
+                  "chatZoneId": "zone_5",
+                  "chatDesc": "自虚无中解放而出的，又是曾属于谁的面容？",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_5_3"
+                }
+              ]
+            },
+            "month_chat_rogue_2_6": {
+              "sortId": 6,
+              "chatItemList": [
+                {
+                  "floor": 1,
+                  "chatZoneId": "zone_1",
+                  "chatDesc": "去对抗那个起点，对抗那些把自己变成这样的东西。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_6_1"
+                },
+                {
+                  "floor": 3,
+                  "chatZoneId": "zone_3",
+                  "chatDesc": "去对抗那个让自己心神恍惚的影子，对抗那些傲慢与关怀。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_6_2"
+                },
+                {
+                  "floor": 5,
+                  "chatZoneId": "zone_5",
+                  "chatDesc": "去对抗自己，去寻找死亡。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_6_3"
+                }
+              ]
+            },
+            "month_chat_rogue_2_7": {
+              "sortId": 7,
+              "chatItemList": [
+                {
+                  "floor": 1,
+                  "chatZoneId": "zone_1",
+                  "chatDesc": "当斯卡蒂生活在相知相识的世界——",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_7_1"
+                },
+                {
+                  "floor": 3,
+                  "chatZoneId": "zone_3",
+                  "chatDesc": "当斯卡蒂生活在不被认同的世界——",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_7_2"
+                },
+                {
+                  "floor": 5,
+                  "chatZoneId": "zone_5",
+                  "chatDesc": "当斯卡蒂生活在和平的世界......她还会有勇气去认识自己吗？",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_7_3"
+                }
+              ]
+            },
+            "month_chat_rogue_2_8": {
+              "sortId": 8,
+              "chatItemList": [
+                {
+                  "floor": 1,
+                  "chatZoneId": "zone_1",
+                  "chatDesc": "腐化之心也好，不融的冰山也好，蔓延的枝条也好，如今都不复存在了。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_8_1"
+                },
+                {
+                  "floor": 3,
+                  "chatZoneId": "zone_3",
+                  "chatDesc": "水月拒绝那种悔恨与侥幸。祂与祂的力量也并没有什么了不起的。",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_8_2"
+                },
+                {
+                  "floor": 5,
+                  "chatZoneId": "zone_5",
+                  "chatDesc": "是什么样的使命驱使着一部分恐鱼演化出如磐岩般的形态去长久地守望云层？",
+                  "chatStoryId": "Obt/Rogue/rogue_2/MonthRecord/month_chat_rogue_2_8_3"
+                }
+              ]
+            }
+          }
+        },
+        "endbook": {
+          "endbook": {
+            "endbook_rogue_2_1": {
+              "endId": "endbook_rogue_2_1",
+              "endingId": "ro2_ending_1",
+              "sortId": 1,
+              "title": "平凡即是喜乐",
+              "cgId": "pic_rogue_2_48",
+              "backBlurId": "endbook_bgblur_rogue_2_1",
+              "cardId": "endbook_card_rogue_2_1",
+              "hasAvg": true,
+              "avgId": "Obt/Roguelike/RO2/level_rogue2_ending_1",
+              "clientEndbookItemDatas": [
+                {
+                  "endBookId": "endbook_rogue_2_1_1",
+                  "sortId": 1,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "十字路口",
+                  "unlockDesc": "需要触发某个故事",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_1_1"
+                },
+                {
+                  "endBookId": "endbook_rogue_2_1_2",
+                  "sortId": 2,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "窃取神迹",
+                  "unlockDesc": "见证3次“平凡即是喜乐”",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_1_2"
+                },
+                {
+                  "endBookId": "endbook_rogue_2_1_3",
+                  "sortId": 3,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "枯萎之声",
+                  "unlockDesc": "未击破“偏执泡影”的近地悬浮状态下通过结局",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_1_3"
+                }
+              ]
+            },
+            "endbook_rogue_2_2": {
+              "endId": "endbook_rogue_2_2",
+              "endingId": "ro2_ending_2",
+              "sortId": 2,
+              "title": "静谧时代",
+              "cgId": "pic_rogue_2_49",
+              "backBlurId": "endbook_bgblur_rogue_2_2",
+              "cardId": "endbook_card_rogue_2_2",
+              "hasAvg": true,
+              "avgId": "Obt/Roguelike/RO2/level_rogue2_ending_2",
+              "clientEndbookItemDatas": [
+                {
+                  "endBookId": "endbook_rogue_2_2_1",
+                  "sortId": 1,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "最后的城市",
+                  "unlockDesc": "需要触发某个故事",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_2_1"
+                },
+                {
+                  "endBookId": "endbook_rogue_2_2_2",
+                  "sortId": 2,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "挣扎",
+                  "unlockDesc": "见证3次“静谧时代”",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_2_2"
+                },
+                {
+                  "endBookId": "endbook_rogue_2_2_3",
+                  "sortId": 3,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "落叶归根",
+                  "unlockDesc": "碎石未被最后的骑士全部击碎的状态下通过结局",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_2_3"
+                }
+              ]
+            },
+            "endbook_rogue_2_3": {
+              "endId": "endbook_rogue_2_3",
+              "endingId": "ro2_ending_3",
+              "sortId": 3,
+              "title": "息潮的代价",
+              "cgId": "pic_rogue_2_50",
+              "backBlurId": "endbook_bgblur_rogue_2_3",
+              "cardId": "endbook_card_rogue_2_3",
+              "hasAvg": true,
+              "avgId": "Obt/Roguelike/RO2/level_rogue2_ending_3",
+              "clientEndbookItemDatas": [
+                {
+                  "endBookId": "endbook_rogue_2_3_1",
+                  "sortId": 1,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "再会",
+                  "unlockDesc": "需要触发某个故事",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_3_1"
+                },
+                {
+                  "endBookId": "endbook_rogue_2_3_2",
+                  "sortId": 2,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "追忆",
+                  "unlockDesc": "见证3次“息潮的代价”",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_3_2"
+                },
+                {
+                  "endBookId": "endbook_rogue_2_3_3",
+                  "sortId": 3,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "倾诉",
+                  "unlockDesc": "直面伊莎玛拉，腐化之心的斗争之面容时无干员退场",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_3_3"
+                }
+              ]
+            },
+            "endbook_rogue_2_4": {
+              "endId": "endbook_rogue_2_4",
+              "endingId": "ro2_ending_4",
+              "sortId": 4,
+              "title": "如星空般深蓝",
+              "cgId": "pic_rogue_2_55",
+              "backBlurId": "endbook_bgblur_rogue_2_4",
+              "cardId": "endbook_card_rogue_2_4",
+              "hasAvg": true,
+              "avgId": "Obt/Roguelike/RO2/level_rogue2_ending_4",
+              "clientEndbookItemDatas": [
+                {
+                  "endBookId": "endbook_rogue_2_4_1",
+                  "sortId": 1,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "泰拉新生",
+                  "unlockDesc": "需要触发某个故事",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_4_1"
+                },
+                {
+                  "endBookId": "endbook_rogue_2_4_2",
+                  "sortId": 2,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "罗德岛",
+                  "unlockDesc": "见证3次“如星空般深蓝”",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_4_2"
+                },
+                {
+                  "endBookId": "endbook_rogue_2_4_3",
+                  "sortId": 3,
+                  "enrollId": null,
+                  "isLast": false,
+                  "endbookName": "命运的延续",
+                  "unlockDesc": "未让任何单位进入目标点的状态下通过结局",
+                  "textId": "Obt/Rogue/rogue_2/Endbook/endbook_rogue_2_4_3"
+                }
+              ]
+            }
+          }
+        },
+        "buff": {
+          "buff": {
+            "rogue_2_variation_1": {
+              "buffId": "rogue_2_variation_1",
+              "buffGroupIndex": 3,
+              "innerSortId": 1,
+              "name": "回响：探索",
+              "iconId": "pic_rogue_2_variation_1",
+              "usage": "本层+2节点长度，本层灯火降低变为2倍",
+              "desc": "我们不需要界限",
+              "color": "#b43b3b"
+            },
+            "rogue_2_variation_2": {
+              "buffId": "rogue_2_variation_2",
+              "buffGroupIndex": 3,
+              "innerSortId": 2,
+              "name": "回响：争斗",
+              "iconId": "pic_rogue_2_variation_2",
+              "usage": "本层中，所有我方单位和敌方非领袖单位攻速+50，我方单位受到的治疗和生命回复效果-70%",
+              "desc": "威胁我们的便要驱逐",
+              "color": "#b43b3b"
+            },
+            "rogue_2_variation_3": {
+              "buffId": "rogue_2_variation_3",
+              "buffGroupIndex": 3,
+              "innerSortId": 3,
+              "name": "回响：改造",
+              "iconId": "pic_rogue_2_variation_3",
+              "usage": "本层中每次进入非战斗节点都会获得3源石锭，但离开本层时会失去所有在本层获得的源石锭",
+              "desc": "环境理应加入大群",
+              "color": "#b43b3b"
+            },
+            "rogue_2_variation_4": {
+              "buffId": "rogue_2_variation_4",
+              "buffGroupIndex": 3,
+              "innerSortId": 4,
+              "name": "回响：枯荣",
+              "iconId": "pic_rogue_2_variation_4",
+              "usage": "战斗掉落的源石锭+100%；进入一个战斗节点后，立即失去1点目标生命（最多降至1）",
+              "desc": "死亡延续生命，生命成就死亡",
+              "color": "#b43b3b"
+            },
+            "rogue_2_variation_5": {
+              "buffId": "rogue_2_variation_5",
+              "buffGroupIndex": 3,
+              "innerSortId": 5,
+              "name": "回响：给养",
+              "iconId": "pic_rogue_2_variation_5",
+              "usage": "本层战斗后有30%的几率掉落一张招募券；所有敌方单位的法术抗性+15",
+              "desc": "幼子啊，接受馈赠，活下去",
+              "color": "#b43b3b"
+            },
+            "rogue_2_variation_6": {
+              "buffId": "rogue_2_variation_6",
+              "buffGroupIndex": 3,
+              "innerSortId": 6,
+              "name": "回响：众我",
+              "iconId": "pic_rogue_2_variation_6",
+              "usage": "本层我方指挥经验获取+50%；敌方单位的防御力+50%",
+              "desc": "幼子啊，你从不孤单，大群与你同在",
+              "color": "#b43b3b"
+            },
+            "rogue_2_variation_7": {
+              "buffId": "rogue_2_variation_7",
+              "buffGroupIndex": 3,
+              "innerSortId": 7,
+              "name": "回响：徒长",
+              "iconId": "pic_rogue_2_variation_7",
+              "usage": "本层每次战斗结算额外获得1目标生命上限，但损失的护盾值和目标生命提高至2倍",
+              "desc": "进化......代价......",
+              "color": "#b43b3b"
+            },
+            "rogue_2_variation_8": {
+              "buffId": "rogue_2_variation_8",
+              "buffGroupIndex": 3,
+              "innerSortId": 8,
+              "name": "回响：适应",
+              "iconId": "pic_rogue_2_variation_8",
+              "usage": "本层首次进入得偿所愿节点时获得1个随机收藏品。无法看到下一节点以外的节点类型",
+              "desc": "了解异类......了解族群......",
+              "color": "#b43b3b"
+            },
+            "rogue_2_mutation_1": {
+              "buffId": "rogue_2_mutation_1",
+              "buffGroupIndex": 2,
+              "innerSortId": 1,
+              "name": "造血障碍",
+              "iconId": "pic_rogue_2_mutation_1",
+              "usage": "产生排异反应的干员在血量未满时不断流失生命值",
+              "desc": "血细胞凋亡加速，骨髓造血机能受抑制",
+              "color": "#9266b2"
+            },
+            "rogue_2_mutation_2": {
+              "buffId": "rogue_2_mutation_2",
+              "buffGroupIndex": 2,
+              "innerSortId": 2,
+              "name": "专注失调",
+              "iconId": "pic_rogue_2_mutation_2",
+              "usage": "产生排异反应的干员的所有技能自动开启",
+              "desc": "感知机能减弱，丧失协调性，应激机制失控",
+              "color": "#9266b2"
+            },
+            "rogue_2_mutation_3": {
+              "buffId": "rogue_2_mutation_3",
+              "buffGroupIndex": 2,
+              "innerSortId": 3,
+              "name": "神经退行",
+              "iconId": "pic_rogue_2_mutation_3",
+              "usage": "产生排异反应的干员部署后陷入冻结，持续15秒（每名干员退场前只会生效一次）",
+              "desc": "大脑神经元萎缩，反应迟缓，意识游离",
+              "color": "#9266b2"
+            },
+            "rogue_2_mutation_4": {
+              "buffId": "rogue_2_mutation_4",
+              "buffGroupIndex": 2,
+              "innerSortId": 4,
+              "name": "血肉畸变",
+              "iconId": "pic_rogue_2_mutation_4",
+              "usage": "产生排异反应的干员生命上限、防御力、攻击力、部署费用和再部署时间-50%",
+              "desc": "体外细胞进入循环系统，电信号传递异位，体组织全面收缩",
+              "color": "#9266b2"
+            },
+            "rogue_2_mutation_13": {
+              "buffId": "rogue_2_mutation_13",
+              "buffGroupIndex": 2,
+              "innerSortId": 5,
+              "name": "退行与失调",
+              "iconId": "pic_rogue_2_mutation_5",
+              "usage": "产生排异反应的干员的所有技能自动开启、部署后陷入持续15秒的冻结",
+              "desc": "精神全面异化，失去自制力。",
+              "color": "#9266b2"
+            },
+            "rogue_2_mutation_14": {
+              "buffId": "rogue_2_mutation_14",
+              "buffGroupIndex": 2,
+              "innerSortId": 6,
+              "name": "退行与障碍",
+              "iconId": "pic_rogue_2_mutation_6",
+              "usage": "产生排异反应的干员在血量未满时不断流失生命值、部署后陷入持续15秒的冻结",
+              "desc": "体内各结构阻塞，思考无法转化为实践。",
+              "color": "#9266b2"
+            },
+            "rogue_2_mutation_15": {
+              "buffId": "rogue_2_mutation_15",
+              "buffGroupIndex": 2,
+              "innerSortId": 7,
+              "name": "退行与畸变",
+              "iconId": "pic_rogue_2_mutation_7",
+              "usage": "产生排异反应的干员生命上限、防御力、攻击力、部署费用和再部署时间-50%、部署后陷入持续15秒的冻结",
+              "desc": "躯体不可逆老化，极易受到外部伤害。",
+              "color": "#9266b2"
+            },
+            "rogue_2_mutation_16": {
+              "buffId": "rogue_2_mutation_16",
+              "buffGroupIndex": 2,
+              "innerSortId": 8,
+              "name": "失调与障碍",
+              "iconId": "pic_rogue_2_mutation_8",
+              "usage": "产生排异反应的干员的所有技能自动开启、在血量未满时不断流失生命值",
+              "desc": "意识浑浊，判断能力减弱。",
+              "color": "#9266b2"
+            },
+            "rogue_2_mutation_17": {
+              "buffId": "rogue_2_mutation_17",
+              "buffGroupIndex": 2,
+              "innerSortId": 9,
+              "name": "失调与畸变",
+              "iconId": "pic_rogue_2_mutation_9",
+              "usage": "产生排异反应的干员的所有技能自动开启、生命上限、防御力、攻击力、部署费用和再部署时间-50%",
+              "desc": "人体系统紊乱，不适感增强，行动困难。",
+              "color": "#9266b2"
+            },
+            "rogue_2_mutation_18": {
+              "buffId": "rogue_2_mutation_18",
+              "buffGroupIndex": 2,
+              "innerSortId": 10,
+              "name": "障碍与畸变",
+              "iconId": "pic_rogue_2_mutation_10",
+              "usage": "产生排异反应的干员在血量未满时不断流失生命值、生命上限、防御力、攻击力、部署费用和再部署时间-50%",
+              "desc": "肉体萎缩，无力对环境变化做出反应。",
+              "color": "#9266b2"
+            },
+            "rogue_2_virtue_1": {
+              "buffId": "rogue_2_virtue_1",
+              "buffGroupIndex": 1,
+              "innerSortId": 1,
+              "name": "乌萨斯的怒号",
+              "iconId": "pic_rogue_2_virtue_1",
+              "usage": "战斗开始后30秒内，所有敌人攻击力-30%，移动速度-30%",
+              "desc": "“冬雷轰鸣，那是乌萨斯胜利的呼喊。”",
+              "color": "#0098dc"
+            },
+            "rogue_2_virtue_2": {
+              "buffId": "rogue_2_virtue_2",
+              "buffGroupIndex": 1,
+              "innerSortId": 2,
+              "name": "大炎的沧桑",
+              "iconId": "pic_rogue_2_virtue_2",
+              "usage": "场上最大生命值最高的我方干员每秒额外回复2点技力",
+              "desc": "“岁月如梭，织就大炎锦绣山河。”",
+              "color": "#0098dc"
+            },
+            "rogue_2_virtue_3": {
+              "buffId": "rogue_2_virtue_3",
+              "buffGroupIndex": 1,
+              "innerSortId": 3,
+              "name": "哥伦比亚的创想",
+              "iconId": "pic_rogue_2_virtue_3",
+              "usage": "下次战斗结束时额外获得70点指挥等级经验（仅触发一次）",
+              "desc": "“这片大地仍被过往束缚，哥伦比亚已在创造未来。”",
+              "color": "#0098dc"
+            },
+            "rogue_2_virtue_4": {
+              "buffId": "rogue_2_virtue_4",
+              "buffGroupIndex": 1,
+              "innerSortId": 4,
+              "name": "萨米的坚韧",
+              "iconId": "pic_rogue_2_virtue_4",
+              "usage": "场上当前生命比例最低的我方干员获得50点生命回复",
+              "desc": "“只要自然一息尚存，萨米的血脉便不会断绝。”",
+              "color": "#0098dc"
+            },
+            "rogue_2_virtue_5": {
+              "buffId": "rogue_2_virtue_5",
+              "buffGroupIndex": 1,
+              "innerSortId": 5,
+              "name": "维多利亚的荣耀",
+              "iconId": "pic_rogue_2_virtue_5",
+              "usage": "所有友方近战单位获得35%物理和法术闪避",
+              "desc": "“历史见证了维多利亚的崛起，它仍将见证。”",
+              "color": "#0098dc"
+            },
+            "rogue_2_virtue_6": {
+              "buffId": "rogue_2_virtue_6",
+              "buffGroupIndex": 1,
+              "innerSortId": 6,
+              "name": "莱塔尼亚的优雅",
+              "iconId": "pic_rogue_2_virtue_6",
+              "usage": "所有友方远程单位防御力+300，法术抗性+30",
+              "desc": "“如果心中没有艺术与情感，我们与磐蟹又有什么不同？”",
+              "color": "#0098dc"
+            },
+            "rogue_2_virtue_7": {
+              "buffId": "rogue_2_virtue_7",
+              "buffGroupIndex": 1,
+              "innerSortId": 7,
+              "name": "萨尔贡的慷慨",
+              "iconId": "pic_rogue_2_virtue_7",
+              "usage": "获得时随机获得2个收藏品",
+              "desc": "“黄金之城的财富落入风沙，萨尔贡就此闪闪发亮。”",
+              "color": "#0098dc"
+            }
+          }
+        },
+        "totem": null,
+        "chaos": null,
+        "fragment": null,
+        "disaster": null,
+        "wrath": null,
+        "copper": null,
+        "scrap": null,
+        "weather": null
+      },
+      "archiveUnlockCond": {
+        "unlockCondDesc": {
+          "pic_rogue_2_KV2": {
+            "archiveType": "PIC",
+            "description": null
+          },
+          "pic_rogue_2_KV1": {
+            "archiveType": "PIC",
+            "description": null
+          },
+          "pic_rogue_2_1": {
+            "archiveType": "PIC",
+            "description": null
+          },
+          "pic_rogue_2_53": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_3": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_4": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_5": {
+            "archiveType": "PIC",
+            "description": null
+          },
+          "pic_rogue_2_6": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_7": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_8": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_9": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_10": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_11": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_12": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_13": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_14": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_15": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_16": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_17": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_18": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_19": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_20": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_21": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_22": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_23": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_24": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_25": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_26": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_27": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_28": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_29": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_30": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_31": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_32": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_33": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_34": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_35": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_36": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_37": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_38": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_39": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_40": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_41": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_42": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_43": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_45": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_46": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_47": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_56": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_57": {
+            "archiveType": "PIC",
+            "description": "继续探索以解锁"
+          },
+          "pic_rogue_2_48": {
+            "archiveType": "PIC",
+            "description": "需要触发某个故事"
+          },
+          "pic_rogue_2_49": {
+            "archiveType": "PIC",
+            "description": "需要触发某个故事"
+          },
+          "pic_rogue_2_50": {
+            "archiveType": "PIC",
+            "description": "需要触发某个故事"
+          },
+          "pic_rogue_2_51": {
+            "archiveType": "PIC",
+            "description": "需要触发某个故事"
+          },
+          "pic_rogue_2_55": {
+            "archiveType": "PIC",
+            "description": "需要触发某个故事"
+          },
+          "music_rogue_2_1": {
+            "archiveType": "MUSIC",
+            "description": null
+          },
+          "music_rogue_2_2": {
+            "archiveType": "MUSIC",
+            "description": null
+          },
+          "music_rogue_2_3": {
+            "archiveType": "MUSIC",
+            "description": "继续探索以解锁"
+          },
+          "music_rogue_2_4": {
+            "archiveType": "MUSIC",
+            "description": "继续探索以解锁"
+          },
+          "music_rogue_2_5": {
+            "archiveType": "MUSIC",
+            "description": "继续探索以解锁"
+          },
+          "music_rogue_2_6": {
+            "archiveType": "MUSIC",
+            "description": "继续探索以解锁"
+          },
+          "music_rogue_2_7": {
+            "archiveType": "MUSIC",
+            "description": "继续探索以解锁"
+          },
+          "music_rogue_2_8": {
+            "archiveType": "MUSIC",
+            "description": "继续探索以解锁"
+          },
+          "music_rogue_2_9": {
+            "archiveType": "MUSIC",
+            "description": "继续探索以解锁"
+          },
+          "music_rogue_2_10": {
+            "archiveType": "MUSIC",
+            "description": "继续探索以解锁"
+          },
+          "music_rogue_2_11": {
+            "archiveType": "MUSIC",
+            "description": "继续探索以解锁"
+          },
+          "music_rogue_2_12": {
+            "archiveType": "MUSIC",
+            "description": "继续探索以解锁"
+          },
+          "music_rogue_2_13": {
+            "archiveType": "MUSIC",
+            "description": "继续探索以解锁"
+          }
+        },
+        "enroll": {
+          "pic_rogue_2_KV2": {
+            "archiveType": "PIC",
+            "enrollId": "rogue_2_enroll_2"
+          },
+          "pic_rogue_2_KV1": {
+            "archiveType": "PIC",
+            "enrollId": "rogue_2_enroll_2"
+          },
+          "pic_rogue_2_1": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_53": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_3": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_4": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_5": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_6": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_7": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_8": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_9": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_10": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_11": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_12": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_13": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_14": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_15": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_16": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_17": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_18": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_19": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_20": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_21": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_22": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_23": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_24": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_25": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_26": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_27": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_28": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_29": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_30": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_31": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_32": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_33": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_34": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_35": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_36": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_37": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_38": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_39": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_40": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_41": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_42": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_43": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_45": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_46": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_47": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_56": {
+            "archiveType": "PIC",
+            "enrollId": "rogue_2_enroll_2"
+          },
+          "pic_rogue_2_57": {
+            "archiveType": "PIC",
+            "enrollId": "rogue_2_enroll_2"
+          },
+          "pic_rogue_2_48": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_49": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_50": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_51": {
+            "archiveType": "PIC",
+            "enrollId": null
+          },
+          "pic_rogue_2_55": {
+            "archiveType": "PIC",
+            "enrollId": "rogue_2_enroll_2"
+          },
+          "music_rogue_2_1": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_2": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_3": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_4": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_5": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_6": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_7": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_8": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_9": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_10": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_11": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_12": {
+            "archiveType": "MUSIC",
+            "enrollId": null
+          },
+          "music_rogue_2_13": {
+            "archiveType": "MUSIC",
+            "enrollId": "rogue_2_enroll_2"
+          },
+          "endbook_rogue_2_1_1": {
+            "archiveType": "ENDBOOK",
+            "enrollId": null
+          },
+          "endbook_rogue_2_1_2": {
+            "archiveType": "ENDBOOK",
+            "enrollId": null
+          },
+          "endbook_rogue_2_1_3": {
+            "archiveType": "ENDBOOK",
+            "enrollId": null
+          },
+          "endbook_rogue_2_2_1": {
+            "archiveType": "ENDBOOK",
+            "enrollId": null
+          },
+          "endbook_rogue_2_2_2": {
+            "archiveType": "ENDBOOK",
+            "enrollId": null
+          },
+          "endbook_rogue_2_2_3": {
+            "archiveType": "ENDBOOK",
+            "enrollId": null
+          },
+          "endbook_rogue_2_3_1": {
+            "archiveType": "ENDBOOK",
+            "enrollId": null
+          },
+          "endbook_rogue_2_3_2": {
+            "archiveType": "ENDBOOK",
+            "enrollId": null
+          },
+          "endbook_rogue_2_3_3": {
+            "archiveType": "ENDBOOK",
+            "enrollId": null
+          },
+          "endbook_rogue_2_4_1": {
+            "archiveType": "ENDBOOK",
+            "enrollId": "rogue_2_enroll_2"
+          },
+          "endbook_rogue_2_4_2": {
+            "archiveType": "ENDBOOK",
+            "enrollId": "rogue_2_enroll_2"
+          },
+          "endbook_rogue_2_4_3": {
+            "archiveType": "ENDBOOK",
+            "enrollId": "rogue_2_enroll_2"
+          }
+        }
+      },
+      "detailConst": {
+        "playerLevelTable": {
+          "1": {
+            "exp": 0,
+            "populationUp": 0,
+            "squadCapacityUp": 0,
+            "battleCharLimitUp": 0,
+            "maxHpUp": 0
+          },
+          "2": {
+            "exp": 10,
+            "populationUp": 4,
+            "squadCapacityUp": 0,
+            "battleCharLimitUp": 0,
+            "maxHpUp": 0
+          },
+          "3": {
+            "exp": 24,
+            "populationUp": 4,
+            "squadCapacityUp": 0,
+            "battleCharLimitUp": 0,
+            "maxHpUp": 1
+          },
+          "4": {
+            "exp": 36,
+            "populationUp": 5,
+            "squadCapacityUp": 0,
+            "battleCharLimitUp": 0,
+            "maxHpUp": 0
+          },
+          "5": {
+            "exp": 40,
+            "populationUp": 6,
+            "squadCapacityUp": 0,
+            "battleCharLimitUp": 0,
+            "maxHpUp": 0
+          },
+          "6": {
+            "exp": 55,
+            "populationUp": 6,
+            "squadCapacityUp": 1,
+            "battleCharLimitUp": 0,
+            "maxHpUp": 1
+          },
+          "7": {
+            "exp": 65,
+            "populationUp": 6,
+            "squadCapacityUp": 0,
+            "battleCharLimitUp": 0,
+            "maxHpUp": 0
+          },
+          "8": {
+            "exp": 70,
+            "populationUp": 7,
+            "squadCapacityUp": 0,
+            "battleCharLimitUp": 0,
+            "maxHpUp": 0
+          },
+          "9": {
+            "exp": 75,
+            "populationUp": 8,
+            "squadCapacityUp": 1,
+            "battleCharLimitUp": 0,
+            "maxHpUp": 1
+          },
+          "10": {
+            "exp": 80,
+            "populationUp": 8,
+            "squadCapacityUp": 1,
+            "battleCharLimitUp": 0,
+            "maxHpUp": 1
+          },
+          "11": {
+            "exp": 80,
+            "populationUp": 15,
+            "squadCapacityUp": 2,
+            "battleCharLimitUp": 0,
+            "maxHpUp": 5
+          }
+        },
+        "charUpgradeTable": {
+          "0": {
+            "evolvePhase": "PHASE_1",
+            "skillLevel": 7,
+            "skillSpecializeLevel": 0
+          },
+          "1": {
+            "evolvePhase": "PHASE_2",
+            "skillLevel": 7,
+            "skillSpecializeLevel": 3
+          }
+        },
+        "difficultyUpgradeRelicDescTable": {},
+        "predefinedLevelTable": {},
+        "tokenBpId": "rogue_2_token_bp",
+        "tokenOuterBuffId": "rogue_2_token_grow",
+        "spOperatorLockedMessage": null,
+        "previewedRewardsAccordingUpdateId": "update_2",
+        "tipButtonName": "导览信息端口",
+        "collectButtonName": "深蓝记录仪",
+        "bpSystemName": "生态谱系",
+        "autoSetKV": "pic_rogue_2_KV2",
+        "bpPurchaseActiveEnroll": "rogue_2_enroll_2",
+        "defaultExpeditionSelectDesc": "干员{0}将会在本层结束后归来，并带回一些物资。",
+        "gotCharMutationBuffToast": "干员<color=#9266b2>{0}</color>获得了<color=#9266b2>排异反应{1}</color>",
+        "gotCharEvolutionBuffToast": "干员<color=#ddc01d>{0}</color>获得了<color=#ddc01d>{1}</color>",
+        "gotSquadBuffToast": "获得了启示<color=#0098dc>{0}</color>",
+        "loseCharBuffToast": "抑制了<color=#9266b2>{0}</color>的排异反应",
+        "monthTeamSystemName": "追忆映射",
+        "battlePassUpdateName": "谱系延展",
+        "monthCharCardTagName": "映射对象",
+        "monthTeamDescTagName": "映射对象",
+        "outerBuffCompleteText": "认知完备",
+        "outerProgressTextColor": "#59dddc",
+        "challengeTaskTargetName": "探索目标",
+        "challengeTaskConditionName": "探索条件",
+        "challengeTaskRewardName": "探索奖励",
+        "challengeTaskModeName": "深入探索",
+        "challengeTaskName": "探索条目",
+        "outerBuffTokenSum": 112,
+        "needAllFrontNode": true,
+        "showBlurBack": true,
+        "endingIconBorderDifficulty": 2147483647,
+        "endingIconBorderCount": 2147483647,
+        "copySeedModeInfo": null,
+        "copySucceededTextHint": null,
+        "historicalRecordsCount": 0,
+        "historicalRecordsStartTime": -1,
+        "historicalRecordsMode": "NONE"
+      },
+      "init": [
+        {
+          "modeId": "EASY",
+          "modeGrade": 0,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 0,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 1,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 2,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 3,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 4,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 5,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 6,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 7,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 8,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 9,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 10,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 11,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 12,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 13,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 14,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 15,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 16,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 17,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "NORMAL",
+          "modeGrade": 18,
+          "predefinedId": null,
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "MONTH_TEAM",
+          "modeGrade": 0,
+          "predefinedId": "month_team_1",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_9"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_m1"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 3,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "MONTH_TEAM",
+          "modeGrade": 0,
+          "predefinedId": "month_team_2",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_9"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_m2"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 3,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "MONTH_TEAM",
+          "modeGrade": 0,
+          "predefinedId": "month_team_3",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_9"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_m3"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 5,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "MONTH_TEAM",
+          "modeGrade": 0,
+          "predefinedId": "month_team_4",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_9"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_m4"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "MONTH_TEAM",
+          "modeGrade": 0,
+          "predefinedId": "month_team_5",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_9"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_m5"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 3,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "MONTH_TEAM",
+          "modeGrade": 0,
+          "predefinedId": "month_team_6",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_9"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_m6"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 3,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "MONTH_TEAM",
+          "modeGrade": 0,
+          "predefinedId": "month_team_7",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_9"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_m7"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 3,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "MONTH_TEAM",
+          "modeGrade": 0,
+          "predefinedId": "month_team_8",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_9"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_m8"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 5,
+          "initialGold": 6,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_01",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 8,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_02",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 8,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_03",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 32,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_04",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 8,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_05",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 16,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_06",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 8,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_07",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 8,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_08",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 1,
+          "initialPopulation": 6,
+          "initialGold": 8,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 1,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_09",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 8,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_10",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 4,
+          "initialPopulation": 6,
+          "initialGold": 8,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 4,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_11",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 6,
+          "initialPopulation": 6,
+          "initialGold": 8,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 6,
+          "initialKey": 0
+        },
+        {
+          "modeId": "CHALLENGE",
+          "modeGrade": 0,
+          "predefinedId": "rogue_2_challenge_12",
+          "predefinedStyle": null,
+          "initialBandRelic": [
+            "rogue_2_band_11",
+            "rogue_2_band_12",
+            "rogue_2_band_13",
+            "rogue_2_band_14",
+            "rogue_2_band_15",
+            "rogue_2_band_16",
+            "rogue_2_band_17",
+            "rogue_2_band_18",
+            "rogue_2_band_19",
+            "rogue_2_band_20",
+            "rogue_2_band_21",
+            "rogue_2_band_22",
+            "rogue_2_band_1",
+            "rogue_2_band_2",
+            "rogue_2_band_3",
+            "rogue_2_band_4",
+            "rogue_2_band_5",
+            "rogue_2_band_6",
+            "rogue_2_band_7",
+            "rogue_2_band_8",
+            "rogue_2_band_9",
+            "rogue_2_band_10"
+          ],
+          "initialRecruitGroup": [
+            "recruit_group_1",
+            "recruit_group_2",
+            "recruit_group_3",
+            "recruit_group_random"
+          ],
+          "initialHp": 6,
+          "initialPopulation": 6,
+          "initialGold": 16,
+          "initialSquadCapacity": 6,
+          "initialShield": 0,
+          "initialMaxHp": 6,
+          "initialKey": 0
+        }
+      ],
+      "stages": {
+        "ro2_n_1_1": {
+          "id": "ro2_n_1_1",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_1-1",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "蓄水池",
+          "loadingPicId": "loading_SY",
+          "description": "争夺淡水资源分隔了曾经的信任，当淡水不再适合饮用时，恐慌便在所有人之中蔓延。\\n<@rolv.rem>场地内有使敌方变慢并持续流失生命的<深水区>。</>",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_1_2": {
+          "id": "ro2_n_1_2",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_1-2",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "虫群横行",
+          "loadingPicId": "loading_SY",
+          "description": "听说虫群比人类更擅长感知危险，那这群四处乱窜的虫子到底在逃避什么呢？",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_1_3": {
+          "id": "ro2_n_1_3",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_1-3",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "射手部队",
+          "loadingPicId": "loading_SY",
+          "description": "一些射手结伴而行在海岸上捕猎。所有活物都是他们的猎物。",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_1_4": {
+          "id": "ro2_n_1_4",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_1-4",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "共生",
+          "loadingPicId": "loading_SY",
+          "description": "只要能够让集体更好地存活下去，大群会允许一些非海嗣个体栖息在族群中，必要时甚至可以提供帮助。",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_1_5": {
+          "id": "ro2_n_1_5",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_1-5",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "互助",
+          "loadingPicId": "loading_SY",
+          "description": "当整个世界的常理变得支离破碎时，人们只能用最简单的方式来识别敌我——站身边的是朋友，站远方的是敌人。",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_2_1": {
+          "id": "ro2_n_2_1",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_2-1",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "无声呼号",
+          "loadingPicId": "loading_SY",
+          "description": "究竟是什么让一些人类能够使役恐鱼？还是说，这种使役本身只是人类的一厢情愿？\\n<@rolv.rem>场地内有使我方不会成为敌人远程攻击目标的<草丛>。</>",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_2_2": {
+          "id": "ro2_n_2_2",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_2-2",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "海神的信者",
+          "loadingPicId": "loading_SY",
+          "description": "一些深海教徒听闻有位海神如同海上漂移的冰山，便自然而然地将之作为冰雪的象征顶礼膜拜。但他们从未见过，自然也不明白所谓“冰雪”的真正含义。\\n<@rolv.rem>场地中有持续施加【寒冷】效果的源石冰晶。</>",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_2_3": {
+          "id": "ro2_n_2_3",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_2-3",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "病症",
+          "loadingPicId": "loading_SY",
+          "description": "大地的病痛感染不了海洋，但水面上的那些岛屿，仍旧是它手中的玩物。\\n<@rolv.rem>场地中会出现周期性对我军与敌军造成伤害的<源石祭坛>。</>",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_2_4": {
+          "id": "ro2_n_2_4",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_2-4",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "征兆",
+          "loadingPicId": "loading_SY",
+          "description": "深海教徒将一只遵循繁殖本能的恐鱼带到了海岸上。如果不加以处理，不出几日，当地就将出现一轮小型恐鱼潮。",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_2_5": {
+          "id": "ro2_n_2_5",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_2-5",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "回溯",
+          "loadingPicId": "loading_SY",
+          "description": "一些恐鱼遵循着潮起潮落的规律活动，有心的猎人便以此为突破口消灭恐鱼。",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_2_6": {
+          "id": "ro2_n_2_6",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_2-6",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "饥渴",
+          "loadingPicId": "loading_SY",
+          "description": "当大地上没有足够的食粮，自然要去海边饱腹。",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_3_1": {
+          "id": "ro2_n_3_1",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_3-1",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "除暴安良",
+          "loadingPicId": "loading_SY",
+          "description": "流寇无法从恐鱼身上获取财富，便转而对着同胞痛下杀手。这次他们踢到了铁板。",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_3_2": {
+          "id": "ro2_n_3_2",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_3-2",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "原始部落",
+          "loadingPicId": "loading_SY",
+          "description": "他们比萨尔贡的同族更残忍，更顽固，更好斗。所以不要浪费口舌了，举起武器吧。\\n<@rolv.rem>场地中有会损失生命但大幅提升攻击力和攻击速度的<活性源石>。</>",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_3_3": {
+          "id": "ro2_n_3_3",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_3-3",
+          "levelReplaceIds": [],
+          "code": "ISW-NO",
+          "name": "精酿杀手",
+          "loadingPicId": "loading_SY",
+          "description": "眼见订单逾期，车辆抛锚，运送的精酿啤酒还被恐鱼喝了个精光。就此疯癫也算情有可原。",
+          "eliteDesc": null,
+          "isBoss": 0,
+          "isElite": 0,
+          "difficulty": "NORMAL",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null,
+          "redCapsulePool": null,
+          "redCapsuleProb": 0.0
+        },
+        "ro2_n_3_4": {
+          "id": "ro2_n_3_4",
+          "linkedStageId": "",
+          "levelId": "Obt/Roguelike/RO2/level_rogue2_3-4",
+          "levelReplaceIds": [],
+          "code": "I

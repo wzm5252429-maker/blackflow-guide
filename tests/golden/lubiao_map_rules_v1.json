@@ -1,0 +1,1436 @@
+{
+  "artifact_id": "lubiao-map-rules-2026-08-31",
+  "asset_url": "https://www.lubiao.wiki/_nuxt/BmJjpA_n.js",
+  "asset_sha256": "c81eca3fb71af540ba8184ad3200cd253f70e36a71a98c7949e9cdcacf78c9b0",
+  "asset_bytes": 154442,
+  "rules_version": "2026-08-31",
+  "count_fragment_sha256": "0f16b9b7e459197949f4140a8a168b3be6186322b84d181f634efccbc48b2359",
+  "distance_fragment_sha256": "6b8b2d1fce8e499e647c5e267f2dca7c7c7cc2429fc6ed0c540a00379dc618cd",
+  "count_fragment": "ds=[{label:\"起点\",nodeType:\"start\",values:[S(1),S(1),S(1),S(1),S(1)]},{label:\"诡意行商\",nodeType:\"rogue-trader\",values:[S(1,2),S(0,1),S(0,1),S(0,3),S(0,2)]},{label:\"秘境行商\",nodeType:\"secret-trader\",values:[S(0,1),S(0,1),S(0,1),S(0,2),S(0,2)]},{label:\"误入奇境\",nodeType:\"wrong-turn\",values:[null,null,S(0,1),S(0,1),S(0,1)]},{label:\"狭路相逢\",nodeType:\"narrow-meet\",values:[null,null,S(0,1),S(0,2),S(0,1)]},{label:\"林间空地\",values:[S(0,3),S(0,7),S(5,11),S(3,13),S(10,16)]},{label:\"作战\",nodeType:\"combat\",values:[S(1,5),S(1,6),S(0,4),S(0,4),S(0,5)]},{label:\"紧急作战\",nodeType:\"emergency-combat\",values:[S(0,1),S(0,1),S(0,3),S(0,4),S(0,5)]},{label:\"险路恶敌\",nodeType:\"danger-enemy\",values:[null,null,S(1),null,S(1)]},{label:\"“居民”据点\",nodeType:\"settlement\",values:[null,S(0,1),null,S(0,1),S(0,1)]},{label:\"安全的角落\",nodeType:\"safe-corner\",values:[null,S(0,1),S(0,2),S(0,1),S(0,2)]},{label:\"不期而遇\",nodeType:\"encounter\",values:[S(0,2),S(0,2),S(0,4),S(0,3),S(0,4)]},{label:\"得偿所愿\",nodeType:\"wish\",values:[S(0,1),S(0,1),S(0,3),S(0,2),S(0,6)]},{label:\"失与得\",nodeType:\"gain-loss\",values:[null,S(0,1),S(0,1),S(0,1),S(0,2)]},{label:\"先行一步\",nodeType:\"first-step\",values:[null,S(0,1),S(0,1),S(0,1),null]},{label:\"命运所指（二结局）\",values:[null,null,null,null,tn(0,3)]},{label:\"命运所指（非二结局）\",values:[null,null,null,null,null]},{label:\"应急助力\",nodeType:\"emergency-aid\",values:[null,S(0,1),S(0,1),S(0,1),S(0,1)]},{label:\"曲折密道\",nodeType:\"winding-path\",values:[null,null,tn(0,2),tn(0,2),tn(0,2)]},{label:\"羽瞰点\",nodeType:\"overlook\",values:[null,S(0,1),S(0,1),S(1,2),S(1)]},{label:\"险路小径\",nodeType:\"danger-path\",values:[S(0,1),S(0,1),null,S(0,1),null]},{label:\"险路尽头\",nodeType:\"danger-end\",values:[S(1,2),S(1,2),null,S(1,3),null]},{label:\"诡秘类型节点\",values:[S(1,6),S(3,9),S(7,13),S(8,14),S(9,18)]},{label:\"凶戾类型节点\",values:[S(2,6),S(1,7),S(4,7),S(4,8),S(5,11)]},{label:\"流窜“居民”（节点标记）\",values:[null,S(0,3),null,S(0,3),S(0,3)]}]",
+  "distance_fragment": "ps=[{label:\"起点\",nodeType:\"start\",values:[y(0),y(0),y(0),y(0),y(0),y(0)]},{label:\"误入奇境\",nodeType:\"wrong-turn\",values:[null,null,y(5,6),y(5,8),y(5,null),y(3,8)]},{label:\"狭路相逢\",nodeType:\"narrow-meet\",values:[null,null,y(2,4),y(2,null),y(2,null),y(2,4)]},{label:\"诡意行商\",nodeType:\"rogue-trader\",values:[y(2,4),y(3,5),y(3,8),y(2,null),y(2,null),y(1,null)]},{label:\"秘境行商\",nodeType:\"secret-trader\",values:[y(2,4),y(2,6),y(3,6),y(2,6),y(2,6),y(2,null)]},{label:\"林间空地\",values:[y(2,4),y(2,7),y(2,null),y(1,null),y(1,null),y(2,null)]},{label:\"作战\",nodeType:\"combat\",values:[y(1,4),y(1,7),y(1,null),y(1,null),y(1,null),y(1,null)]},{label:\"紧急作战\",nodeType:\"emergency-combat\",values:[y(2,4),y(3,7),y(3,null),y(3,null),y(3,null),y(3,null)]},{label:\"险路恶敌\",nodeType:\"danger-enemy\",values:[null,null,y(5,8),null,null,y(5,null)]},{label:\"“居民”据点\",nodeType:\"settlement\",values:[null,y(4,7),null,y(4,null),y(4,null),y(4,null)]},{label:\"安全的角落\",nodeType:\"safe-corner\",values:[null,y(3,5),y(3,6),y(2,null),y(2,null),y(2,null)]},{label:\"不期而遇\",nodeType:\"encounter\",values:[y(2,5),y(2,7),y(1,null),y(1,null),y(1,null),y(1,null)]},{label:\"得偿所愿\",nodeType:\"wish\",values:[y(2,5),y(4,7),y(4,null),y(4,null),y(4,null),y(1,null)]},{label:\"失与得\",nodeType:\"gain-loss\",values:[null,y(3,5),y(3,6),y(2,4),y(2,4),y(2,null)]},{label:\"先行一步\",nodeType:\"first-step\",values:[null,y(2,4),y(2,4),y(2,4),y(2,4),null]},{label:\"命运所指（二结局）\",values:[null,null,null,null,null,Fl]},{label:\"命运所指（非二结局）\",values:[null,null,null,null,null,null]},{label:\"应急助力\",nodeType:\"emergency-aid\",values:[null,y(2,5),y(4,null),y(2,3),y(2,3),y(3,5)]},{label:\"曲折密道\",nodeType:\"winding-path\",values:[null,null,y(1,null),y(1,null),y(1,null),y(1,null)]},{label:\"羽瞰点\",nodeType:\"overlook\",values:[null,y(3,6),y(4,7),y(3,8),y(3,8),y(5,8)]},{label:\"险路小径\",nodeType:\"danger-path\",values:[y(3,4),y(5,6),null,y(5,null),y(5,null),null]},{label:\"险路尽头\",nodeType:\"danger-end\",values:[y(5),y(3,8),null,y(4,null),y(4,null),null]},{label:\"未知的诡秘\",nodeType:\"unknown-mystery\",values:[y(2,5),y(2,8),y(1,null),y(2,null),y(2,null),y(2,null)]},{label:\"未知的凶戾\",nodeType:\"unknown-ferocity\",values:[y(3,4),y(3,8),y(1,null),y(2,null),y(2,null),y(2,null)]},{label:\"流窜“居民”（节点标记）\",values:[null,y(2,7),null,y(1,null),y(1,null),y(2,null)]}]",
+  "counts": [
+    {
+      "label": "起点",
+      "node_type": "start",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 1
+        }
+      ]
+    },
+    {
+      "label": "诡意行商",
+      "node_type": "rogue-trader",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 2
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 3
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 2
+        }
+      ]
+    },
+    {
+      "label": "秘境行商",
+      "node_type": "secret-trader",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 2
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 2
+        }
+      ]
+    },
+    {
+      "label": "误入奇境",
+      "node_type": "wrong-turn",
+      "values": [
+        null,
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        }
+      ]
+    },
+    {
+      "label": "狭路相逢",
+      "node_type": "narrow-meet",
+      "values": [
+        null,
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 2
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        }
+      ]
+    },
+    {
+      "label": "林间空地",
+      "node_type": null,
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 3
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 7
+        },
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": 11
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 13
+        },
+        {
+          "kind": "range",
+          "minimum": 10,
+          "maximum": 16
+        }
+      ]
+    },
+    {
+      "label": "作战",
+      "node_type": "combat",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 5
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 6
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 5
+        }
+      ]
+    },
+    {
+      "label": "紧急作战",
+      "node_type": "emergency-combat",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 3
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 5
+        }
+      ]
+    },
+    {
+      "label": "险路恶敌",
+      "node_type": "danger-enemy",
+      "values": [
+        null,
+        null,
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 1
+        },
+        null,
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 1
+        }
+      ]
+    },
+    {
+      "label": "“居民”据点",
+      "node_type": "settlement",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        }
+      ]
+    },
+    {
+      "label": "安全的角落",
+      "node_type": "safe-corner",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 2
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 2
+        }
+      ]
+    },
+    {
+      "label": "不期而遇",
+      "node_type": "encounter",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 2
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 2
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 3
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 4
+        }
+      ]
+    },
+    {
+      "label": "得偿所愿",
+      "node_type": "wish",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 3
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 2
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 6
+        }
+      ]
+    },
+    {
+      "label": "失与得",
+      "node_type": "gain-loss",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 2
+        }
+      ]
+    },
+    {
+      "label": "先行一步",
+      "node_type": "first-step",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        null
+      ]
+    },
+    {
+      "label": "命运所指（二结局）",
+      "node_type": null,
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        {
+          "kind": "set",
+          "values": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "label": "命运所指（非二结局）",
+      "node_type": null,
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "label": "应急助力",
+      "node_type": "emergency-aid",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        }
+      ]
+    },
+    {
+      "label": "曲折密道",
+      "node_type": "winding-path",
+      "values": [
+        null,
+        null,
+        {
+          "kind": "set",
+          "values": [
+            0,
+            2
+          ]
+        },
+        {
+          "kind": "set",
+          "values": [
+            0,
+            2
+          ]
+        },
+        {
+          "kind": "set",
+          "values": [
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "label": "羽瞰点",
+      "node_type": "overlook",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 2
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 1
+        }
+      ]
+    },
+    {
+      "label": "险路小径",
+      "node_type": "danger-path",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 1
+        },
+        null
+      ]
+    },
+    {
+      "label": "险路尽头",
+      "node_type": "danger-end",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 2
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 2
+        },
+        null,
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 3
+        },
+        null
+      ]
+    },
+    {
+      "label": "诡秘类型节点",
+      "node_type": null,
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 6
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 9
+        },
+        {
+          "kind": "range",
+          "minimum": 7,
+          "maximum": 13
+        },
+        {
+          "kind": "range",
+          "minimum": 8,
+          "maximum": 14
+        },
+        {
+          "kind": "range",
+          "minimum": 9,
+          "maximum": 18
+        }
+      ]
+    },
+    {
+      "label": "凶戾类型节点",
+      "node_type": null,
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 6
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 7
+        },
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": 7
+        },
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": 8
+        },
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": 11
+        }
+      ]
+    },
+    {
+      "label": "流窜“居民”（节点标记）",
+      "node_type": null,
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 3
+        },
+        null,
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 3
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 3
+        }
+      ]
+    }
+  ],
+  "distances": [
+    {
+      "label": "起点",
+      "node_type": "start",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 0
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 0
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 0
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 0
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 0
+        },
+        {
+          "kind": "range",
+          "minimum": 0,
+          "maximum": 0
+        }
+      ]
+    },
+    {
+      "label": "误入奇境",
+      "node_type": "wrong-turn",
+      "values": [
+        null,
+        null,
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": 6
+        },
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": 8
+        },
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 8
+        }
+      ]
+    },
+    {
+      "label": "狭路相逢",
+      "node_type": "narrow-meet",
+      "values": [
+        null,
+        null,
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        }
+      ]
+    },
+    {
+      "label": "诡意行商",
+      "node_type": "rogue-trader",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 5
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 8
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "秘境行商",
+      "node_type": "secret-trader",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 6
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 6
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 6
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 6
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "林间空地",
+      "node_type": null,
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 7
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "作战",
+      "node_type": "combat",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": 7
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "紧急作战",
+      "node_type": "emergency-combat",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 7
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "险路恶敌",
+      "node_type": "danger-enemy",
+      "values": [
+        null,
+        null,
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": 8
+        },
+        null,
+        null,
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "“居民”据点",
+      "node_type": "settlement",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": 7
+        },
+        null,
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "安全的角落",
+      "node_type": "safe-corner",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 5
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 6
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "不期而遇",
+      "node_type": "encounter",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 5
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 7
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "得偿所愿",
+      "node_type": "wish",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 5
+        },
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": 7
+        },
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "失与得",
+      "node_type": "gain-loss",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 5
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 6
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "先行一步",
+      "node_type": "first-step",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 4
+        },
+        null
+      ]
+    },
+    {
+      "label": "命运所指（二结局）",
+      "node_type": null,
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "kind": "unknown"
+        }
+      ]
+    },
+    {
+      "label": "命运所指（非二结局）",
+      "node_type": null,
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "label": "应急助力",
+      "node_type": "emergency-aid",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 5
+        },
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 3
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 3
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 5
+        }
+      ]
+    },
+    {
+      "label": "曲折密道",
+      "node_type": "winding-path",
+      "values": [
+        null,
+        null,
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "羽瞰点",
+      "node_type": "overlook",
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 6
+        },
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": 7
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 8
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 8
+        },
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": 8
+        }
+      ]
+    },
+    {
+      "label": "险路小径",
+      "node_type": "danger-path",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": 6
+        },
+        null,
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": null
+        },
+        null
+      ]
+    },
+    {
+      "label": "险路尽头",
+      "node_type": "danger-end",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 5,
+          "maximum": 5
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 8
+        },
+        null,
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 4,
+          "maximum": null
+        },
+        null
+      ]
+    },
+    {
+      "label": "未知的诡秘",
+      "node_type": "unknown-mystery",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 5
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 8
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "未知的凶戾",
+      "node_type": "unknown-ferocity",
+      "values": [
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 4
+        },
+        {
+          "kind": "range",
+          "minimum": 3,
+          "maximum": 8
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        }
+      ]
+    },
+    {
+      "label": "流窜“居民”（节点标记）",
+      "node_type": null,
+      "values": [
+        null,
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": 7
+        },
+        null,
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 1,
+          "maximum": null
+        },
+        {
+          "kind": "range",
+          "minimum": 2,
+          "maximum": null
+        }
+      ]
+    }
+  ],
+  "distance_indices": [
+    "I",
+    "II",
+    "III",
+    "IV-standard",
+    "IV-remembrance",
+    "V"
+  ]
+}

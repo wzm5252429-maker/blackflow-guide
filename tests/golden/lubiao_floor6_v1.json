@@ -1,0 +1,12 @@
+{
+  "artifact_id": "lubiao-blackstream-route-2026-08-31",
+  "asset_url": "https://www.lubiao.wiki/_nuxt/BmJjpA_n.js",
+  "asset_sha256": "c81eca3fb71af540ba8184ad3200cd253f70e36a71a98c7949e9cdcacf78c9b0",
+  "asset_bytes": 154442,
+  "rules_version": "2026-08-31",
+  "fragment_offset_zero_based": 48620,
+  "fragment_length": 637,
+  "fragment_sha256": "351a5f78bb6599b6d2d906d21141d94c8dd9a1004bd38cf88718c77b9c8a1be1",
+  "coordinate_transform": "source [x,y] -> local [row=y,col=x]",
+  "raw_fragment": "{id:\"floor-6-01\",sourceId:\"source-confluence-fixed\",layerIndex:5,gridShape:[6,5],occupiedSlots:[[3,0],[2,1],[3,1],[4,1],[0,2],[1,2],[2,2],[3,2],[4,2],[5,2],[2,3],[3,3],[4,3],[3,4]],startSlot:[0,2],terminalSlots:[[3,2]],edges:[[[3,0],[3,1]],[[2,1],[3,1]],[[2,1],[2,2]],[[3,1],[4,1]],[[3,1],[3,2]],[[4,1],[4,2]],[[0,2],[1,2]],[[1,2],[2,2]],[[2,2],[3,2]],[[2,2],[2,3]],[[3,2],[4,2]],[[3,2],[3,3]],[[4,2],[5,2]],[[4,2],[4,3]],[[2,3],[3,3]],[[3,3],[4,3]],[[3,3],[3,4]]],terminalType:\"danger-enemy\",fixedNodes:[{slot:[1,2],type:\"fate-choice\"},{slot:[3,0],type:\"encounter\"},{slot:[3,4],type:\"combat\"},{slot:[5,2],type:\"rogue-trader\"}],action:5}"
+}
