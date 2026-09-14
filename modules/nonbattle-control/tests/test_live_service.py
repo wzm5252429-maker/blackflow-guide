@@ -5,7 +5,9 @@ import threading
 import time
 import unittest
 
-from blackflow_live.service import BridgeServer, SITE_ORIGIN
+from blackflow_live.service import BridgeServer, SITE_ORIGIN, CLIENT_HEADER, LEASE_PROTOCOL
+
+PAGE_ID = 'test-page-000000000001'
 
 
 class FakeEngine:
@@ -94,6 +96,8 @@ class LiveServiceTests(unittest.TestCase):
         self.assertNotIn(self.server.pair_code.encode(), body)
         self.assertEqual(headers['Cache-Control'], 'no-store')
         self.assertEqual(headers['X-Content-Type-Options'], 'nosniff')
+        self.assertEqual(json.loads(body)['version'], 2)
+        self.assertEqual(json.loads(body)['lease_protocol'], LEASE_PROTOCOL)
         self.assertFalse(self.engine.calls)
 
     def test_origin_and_host_are_strict_even_with_correct_bearer(self):
@@ -129,7 +133,8 @@ class LiveServiceTests(unittest.TestCase):
         self.assertEqual(status, 403)
         status, _, _ = self.request('GET', '/v1/status', auth=True)
         self.assertEqual(status, 200)
-        self.assertIn(('status', True), self.engine.calls)
+        self.assertIn(('status', False), self.engine.calls)
+        self.assertNotIn(('status', True), self.engine.calls)
 
     def test_invalid_nonascii_pairing_code_returns_error_without_crashing(self):
         for code in ('', '错误连接码', 123456, True, None, '１２３４５６'):
@@ -177,6 +182,7 @@ class LiveServiceTests(unittest.TestCase):
         self.assertEqual(headers['Access-Control-Allow-Origin'], SITE_ORIGIN)
         self.assertEqual(headers['Access-Control-Allow-Private-Network'], 'true')
         self.assertIn('Authorization', headers['Access-Control-Allow-Headers'])
+        self.assertIn(CLIENT_HEADER, headers['Access-Control-Allow-Headers'])
         for origin in ('https://evil.example', None):
             status, headers, _ = self.request('OPTIONS', '/v1/start', origin=origin)
             self.assertEqual(status, 403)
@@ -194,9 +200,13 @@ class LiveServiceTests(unittest.TestCase):
             ('/v1/observe', {'hwnd': 123}, 200),
         ):
             with self.subTest(path=path, expected=expected):
+                if path in {'/v1/start', '/v1/observe', '/v1/resume'}:
+                    payload = {**payload, 'client_id': PAGE_ID}
                 status, _, _ = self.request('POST', path, payload, auth=True)
                 self.assertEqual(status, expected)
-        self.assertEqual(self.engine.calls, [('start', 123, False), ('pause',), ('resume',), ('stop',), ('start', 123, True)])
+        mutations = [call for call in self.engine.calls if call[0] != 'status']
+        self.assertEqual(mutations, [('start', 123, False), ('pause',), ('resume',), ('stop',), ('start', 123, True)])
+        self.assertNotIn(('status', True), self.engine.calls)
 
     def test_only_first_ending_and_valid_integer_hwnd_accepted(self):
         for data in ({'ending': 'second'}, {'ending': None}, {'hwnd': True}, {'hwnd': -1}, {'hwnd': '123'}, {'hwnd': 1.5}):

@@ -7,6 +7,7 @@ No old map_result.json, simulator state or invented resource default is used.
 """
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from hashlib import sha256
 import json
@@ -179,6 +180,34 @@ class MaaTemplates:
                 scores[max(0,y-th//2):min(scores.shape[0],y+th//2+1), max(0,x-tw//2):min(scores.shape[1],x+tw//2+1)] = -1
         return _suppress(hits, maximum)
 
+    def match_many(self, image: np.ndarray, requests: Iterable[tuple[str, dict[str, Any]]]) -> list[list[TemplateHit]]:
+        """Run independent exact color searches with bounded, short-lived workers.
+
+        Assets are loaded before launching workers. Each search owns its score
+        matrices, while source pixels and templates remain read-only. Ordered
+        map results preserve tie-breaking; any worker error fails the whole frame.
+        """
+        requests = list(requests)
+        for name, _ in requests:
+            self.template(name)
+        if len(requests) < 2:
+            return [self.match(image, name, **options) for name, options in requests]
+
+        def search(request):
+            name, options = request
+            return self.match(image, name, **options)
+
+        with ThreadPoolExecutor(max_workers=min(4, len(requests)), thread_name_prefix='blackflow-template') as executor:
+            return list(executor.map(search, requests))
+
+
+def _match_template_batch(templates, image, requests):
+    # Lightweight injected recognizers may implement only the existing match API.
+    batch = getattr(templates, 'match_many', None)
+    if batch is not None:
+        return batch(image, requests)
+    return [templates.match(image, name, **options) for name, options in requests]
+
 
 def _suppress(hits: list[TemplateHit], maximum: int) -> list[TemplateHit]:
     accepted = []
@@ -312,8 +341,9 @@ class VisionPipeline:
             "movement_preview":"BlackFlow@Roguelike@MovePreviewEnter.png",
             "inventory":"BlackFlow@Roguelike@MovementInventoryCollapse.png",
         }
-        for kind,name in marker_names.items():
-            hits = self.templates.match(image,name,threshold=0.88)
+        marker_hits = _match_template_batch(self.templates, image,
+            [(name, {'threshold': 0.88}) for name in marker_names.values()])
+        for kind,hits in zip(marker_names, marker_hits):
             if hits:
                 markers[kind] = hits[0]
         scene, confidence = "unknown", 0.0
@@ -461,7 +491,7 @@ class VisionPipeline:
             accepted.append(action)
         return accepted
 
-    def _numeric_crop(self,image,rect,*,allow_fraction=False,contrast=False):
+    def _numeric_crop(self,image,rect,*,allow_fraction=False,contrast=False,require_fraction=False):
         x,y,w,h = rect
         left,top = max(0,round(x)),max(0,round(y))
         right,bottom = min(image.shape[1],left+round(w)),min(image.shape[0],top+round(h))
@@ -469,16 +499,68 @@ class VisionPipeline:
             return None
         crop=image[top:bottom,left:right]
         values=[self.ocr.recognize_crop(crop)]
+        if require_fraction:
+            # Current HP is cyan and maximum HP is gray. A high luminance
+            # threshold erases one of them; use the strongest color channel
+            # with low thresholds on the tightly detected fraction instead.
+            cv=_cv()
+            for threshold in (70,100):
+                binary=(crop.max(axis=2)>threshold).astype(np.uint8)*255
+                prepared=cv.copyMakeBorder(255-binary,3,3,5,5,cv.BORDER_CONSTANT,value=255)
+                values.append(self.ocr.recognize_crop(cv.cvtColor(prepared,cv.COLOR_GRAY2BGR)))
         if contrast:
             cv=_cv()
             gray=cv.cvtColor(crop,cv.COLOR_BGR2GRAY)
             binary=cv.cvtColor((gray>150).astype(np.uint8)*255,cv.COLOR_GRAY2BGR)
             values.append(self.ocr.recognize_crop(cv.copyMakeBorder(binary,3,3,5,5,cv.BORDER_CONSTANT)))
+            # White HUD digits sit over textured gray icons. Isolate complete
+            # bright strokes before recognition; enlarging the original crop
+            # also enlarges that texture and does not solve the ambiguity.
+            for threshold in (150,210):
+                mask=(gray>threshold).astype(np.uint8)*255
+                count,components,stats,_=cv.connectedComponentsWithStats(mask)
+                keep=[i for i in range(1,count)
+                      if stats[i,cv.CC_STAT_HEIGHT]>=max(6,crop.shape[0]*.32)
+                      and stats[i,cv.CC_STAT_AREA]>=max(4,crop.shape[0]*.25)]
+                if not keep or len(keep)>3:
+                    continue
+                ys,xs=np.nonzero(np.isin(components,keep))
+                left_glyph,right_glyph=int(xs.min()),int(xs.max())+1
+                top_glyph,bottom_glyph=int(ys.min()),int(ys.max())+1
+                # A cut-off stroke cannot establish a complete number.
+                if left_glyph==0 or top_glyph==0 or right_glyph==crop.shape[1] or bottom_glyph==crop.shape[0]:
+                    continue
+                glyph=(np.isin(components[top_glyph:bottom_glyph,left_glyph:right_glyph],keep)*255).astype(np.uint8)
+                gh=glyph.shape[0]
+                for vertical,horizontal in ((max(2,round(gh*.25)),max(4,round(gh*.5))),
+                                            (max(4,round(gh*.8)),max(8,round(gh*1.1)))):
+                    prepared=cv.copyMakeBorder(255-glyph,vertical,vertical,horizontal,horizontal,cv.BORDER_CONSTANT,value=255)
+                    values.append(self.ocr.recognize_crop(cv.cvtColor(prepared,cv.COLOR_GRAY2BGR)))
+        accepted=set()
+        pattern=(r"\d{1,3}[/／]\d{1,3}" if require_fraction else
+                 r"\d{1,3}(?:[/／]\d{1,3})?" if allow_fraction else r"\d{1,3}")
         for value,confidence in values:
             value=value.strip().translate(str.maketrans({"Ⅰ":"1","Ｏ":"0","O":"0","o":"0"}))
-            if confidence>=0.87 and re.fullmatch(r"\d{1,3}(?:[/／]\d{1,3})?" if allow_fraction else r"\d{1,3}",value):
-                return tuple(int(p) for p in re.split(r"[/／]",value))
-        return None
+            if confidence>=0.87 and re.fullmatch(pattern,value):
+                accepted.add(tuple(int(p) for p in re.split(r"[/／]",value)))
+        # Disagreeing preprocessing results are evidence of ambiguity, never
+        # grounds for choosing whichever value happens to appear first.
+        return next(iter(accepted)) if len(accepted)==1 else None
+
+    @staticmethod
+    def _numeric_span(spans,rect,*,fraction=False):
+        """Use a complete OCR number only when bound to a nearby HUD label."""
+        x,y,w,h=rect
+        values=set()
+        pattern=r"\d{1,3}[/／]\d{1,3}" if fraction else r"\d{1,3}"
+        for span in spans:
+            bx,by,bw,bh=span.bbox
+            value=re.sub(r"\s", "",span.text)
+            if span.confidence<.90 or not re.fullmatch(pattern,value):
+                continue
+            if x<=bx and y<=by and bx+bw<=x+w and by+bh<=y+h:
+                values.add(tuple(int(p) for p in re.split(r"[/／]",value)))
+        return next(iter(values)) if len(values)==1 else None
 
     def _hud_resources(self,image,spans):
         """Locate HUD labels/icons, then read their neighboring *current* values.
@@ -494,11 +576,28 @@ class VisionPipeline:
             if span.confidence<0.9:
                 continue
             if label in {"目标生命值","目标生命","生命值"} and y<height*.2:
-                rect=(x-2,y+h*.95,w*.65,h*1.7)
-                value=self._numeric_crop(image,rect,allow_fraction=True)
-                if value:
+                # DB already separates the small fraction in many frames. Do
+                # not discard that high-confidence reading by recropping the
+                # blue label underline into the numerator (4/4 became 474).
+                region=(x-w*.1,y+h*.7,w*.9,h*2.4)
+                value=self._numeric_span(spans,region,fraction=True)
+                if value is None:
+                    rx,ry,rw,rh=region
+                    readings=set()
+                    for number in spans:
+                        nx,ny,nw,nh=number.bbox
+                        if (number.confidence>=.65 and re.fullmatch(r"\d{1,3}(?:[/／]\d{1,3})?",number.text.strip())
+                            and rx<=nx and ry<=ny and nx+nw<=rx+rw and ny+nh<=ry+rh):
+                            reading=self._numeric_crop(image,number.bbox,require_fraction=True)
+                            if reading:
+                                readings.add(reading)
+                    if len(readings)==1:
+                        value=next(iter(readings))
+                if value is None:
+                    value=self._numeric_crop(image,(x-w*.05,y+h*1.2,w*.75,h*1.8),require_fraction=True)
+                if value and len(value)==2 and value[0]<=value[1]:
                     resources["hp"]=value[0]
-                    if len(value)>1 and value[1]>=value[0]: resources["max_hp"]=value[1]
+                    resources["max_hp"]=value[1]
             elif label=="行动力" and x>width*.6 and y<height*.35:
                 value=self._numeric_crop(image,(x-w*.4,y+h*1.5,w*1.3,h*3.5))
                 if value: resources["action_points"]=value[0]
@@ -506,7 +605,10 @@ class VisionPipeline:
                 value=self._numeric_crop(image,(x-w*.20,y+h,w*1.55,h*1.90),allow_fraction=True)
                 if value: resources["parts"]=value[0]
             elif label in {"收藏品","藏品"} and y>height*.7:
-                value=self._numeric_crop(image,(x+w*.22,y-h*1.35,w*.59,h*1.35),contrast=True)
+                rect=(x+w*.22,y-h*1.35,w*.59,h*1.35)
+                value=self._numeric_span(spans,rect)
+                if value is None:
+                    value=self._numeric_crop(image,rect,contrast=True)
                 if value: resources["relics"]=value[0]
         for field in ("hope","gold"):
             hits=self.templates.match(image,field+"_icon.png",threshold=.88)
@@ -518,17 +620,46 @@ class VisionPipeline:
             if value: resources[field]=value[0]
         return resources
 
+    def _node_label_span(self, image: np.ndarray, span: OCRSpan):
+        """Re-read a clipped node title from this image; never complete a prefix.
+
+        DB can include all glyphs in a tight box while CTC drops the last glyph.
+        A small symmetric context margin restores recognition without changing
+        the detected label's center used to locate its node. Occluded words that
+        still cannot be read as a complete manifest label remain unrecognized.
+        """
+        label = _clean(span.text)
+        if label in self.templates.labels:
+            return span
+        candidates = {name for name in self.templates.labels
+                      if len(label) >= 3 and name.startswith(label) and 1 <= len(name)-len(label) <= 2}
+        if not candidates or span.confidence < .84 or not hasattr(self.ocr, 'recognize_crop'):
+            return None
+        x,y,w,h = span.bbox
+        if not all(math.isfinite(value) for value in span.bbox) or w <= 0 or h <= 0:
+            return None
+        margin_x,margin_y = max(2, round(h*.30)),max(2, round(h*.23))
+        left,top = max(0, round(x)-margin_x),max(0, round(y)-margin_y)
+        right,bottom = min(image.shape[1], round(x+w)+margin_x),min(image.shape[0], round(y+h)+margin_y)
+        if right <= left or bottom <= top:
+            return None
+        text,confidence = self.ocr.recognize_crop(image[top:bottom, left:right])
+        if _clean(text) in candidates and math.isfinite(confidence) and confidence >= .90:
+            return OCRSpan(text, confidence, span.bbox)
+        return None
+
     def _map(self,image: np.ndarray,spans: tuple[OCRSpan,...]):
         height,width = image.shape[:2]
         candidates: list[tuple[str,tuple[float,float,float,float],float]] = []
         scales = []
-        for spec in self.templates.node_specs:
-            role = spec.get("role", "ordinary")
-            if role not in {"empty","special","current_marker"}:
-                continue
-            if role == "current_marker":
-                continue
-            hits = self.templates.match(image,spec["file"],threshold=max(0.78,float(spec.get("threshold",0.8))),maximum=60)
+        node_specs = [spec for spec in self.templates.node_specs if spec.get('role', 'ordinary') in {'empty', 'special'}]
+        marker_spec = next((s for s in self.templates.node_specs if s.get('role') == 'current_marker'), None)
+        requests = [(spec['file'], {'threshold': max(0.78, float(spec.get('threshold', 0.8))), 'maximum': 60})
+                    for spec in node_specs]
+        if marker_spec:
+            requests.append((marker_spec['file'], {'threshold': 0.8, 'maximum': 2}))
+        node_hits = _match_template_batch(self.templates, image, requests)
+        for spec,hits in zip(node_specs, node_hits):
             for hit in hits:
                 x,y,w,h = hit.bbox
                 if height*0.08 < y+h/2 < height*0.87:
@@ -537,9 +668,12 @@ class VisionPipeline:
         map_scale = float(np.median(scales)) if scales else min(width/1280,height/720)
         # Ordinary map nodes use the visible node title, as in MAA's manifest.
         for span in spans:
-            node_type = self.templates.labels.get(_clean(span.text))
             x,y,w,h = span.bbox
-            if node_type and span.confidence >= 0.84 and height*0.09 < y < height*0.82 and x < width*0.88:
+            if span.confidence < .84 or not (height*.09 < y < height*.82 and 0 <= x < width*.88):
+                continue
+            span = self._node_label_span(image, span)
+            if span is not None:
+                node_type = self.templates.labels[_clean(span.text)]
                 size = 42*map_scale
                 center = (x+w/2,y+h/2-29*map_scale)
                 candidates.append((node_type,(center[0]-size/2,center[1]-size/2,size,size),span.confidence))
@@ -573,10 +707,9 @@ class VisionPipeline:
         # Duplicate/overlapping grid assignments make a route unsafe to execute.
         if len({n.node_id for n in nodes}) != len(nodes):
             return tuple(nodes),(),None,["ambiguous_map_grid"]
-        marker_spec = next((s for s in self.templates.node_specs if s.get("role")=="current_marker"),None)
         current = None
         if marker_spec:
-            hits = self.templates.match(image,marker_spec["file"],threshold=0.8,maximum=2)
+            hits = node_hits[-1]
             if len(hits) == 1:
                 x,y,w,h = hits[0].bbox
                 closest = sorted(nodes,key=lambda n:math.dist((x+w/2,y+h/2),(n.bbox[0]+n.bbox[2]/2,n.bbox[1]+n.bbox[3]/2)))

@@ -7,11 +7,13 @@ import { Input } from "@/components/ui/input";
 
 const BRIDGE = "http://127.0.0.1:19761";
 const TOKEN_KEY = "blackflow-live-token";
+const LEASE_PROTOCOL = "page-owner-v1";
 type WindowGeometry = { hwnd: number; title: string; dpi: number; client_rect: { width: number; height: number } };
 type GameWindow = Omit<WindowGeometry, "dpi" | "client_rect"> & Partial<Pick<WindowGeometry, "dpi" | "client_rect">> & { state?: "visible" | "minimized" | "hidden" };
 type Action = { action_id: string; label: string; bbox: number[] };
 type Status = {
   state: string; message: string; clicks: number; has_preview: boolean; observe_only?: boolean;
+  lease?: { protocol: string; has_owner: boolean; is_owner: boolean };
   window?: WindowGeometry;
   observation?: { scene: string; floor: number | null; confidence: number; captured_at: number;
     resources: Record<string, number | null>; nodes: unknown[]; edges: unknown[];
@@ -47,6 +49,9 @@ export default function LiveRouteControl() {
   const [connectionError, setConnectionError] = useState("");
   const pendingStart = useRef(false);
   const commandLock = useRef(false);
+  const commandGeneration = useRef(0);
+  // Deliberately not stored: a duplicated tab must never inherit control ownership.
+  const clientId = useRef("");
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -65,6 +70,7 @@ export default function LiveRouteControl() {
 
   useEffect(() => {
     mounted.current = true;
+    if (!clientId.current) clientId.current = crypto.randomUUID();
     // The launcher passes this secret only in the fragment; never in a request URL.
     const fragment = window.location.hash;
     const params = new URLSearchParams(fragment.includes("?") ? fragment.split("?")[1] : "");
@@ -76,19 +82,27 @@ export default function LiveRouteControl() {
 
   const request = useCallback(async (path: string, body?: object, overrideToken?: string) => {
     const auth = overrideToken ?? tokenRef.current;
+    const generation = commandGeneration.current;
     const response = await fetch(BRIDGE + path, {
       method: body === undefined ? "GET" : "POST",
-      headers: { ...(auth ? { Authorization: "Bearer " + auth } : {}), ...(body === undefined ? {} : { "Content-Type": "application/json" }) },
+      headers: { ...(auth ? { Authorization: "Bearer " + auth } : {}), ...(path === "/v1/status" ? { "X-Blackflow-Client-Id": clientId.current } : {}), ...(body === undefined ? {} : { "Content-Type": "application/json" }) },
       ...(body === undefined ? {} : { body: JSON.stringify(body) }),
       cache: "no-store", credentials: "omit", signal: AbortSignal.timeout(7000),
     });
     const result = await response.json();
     if (!response.ok) {
-      if (response.status === 401) { saveToken(""); setPairing(true); setStatus(null); }
+      if (response.status === 401 && generation === commandGeneration.current && auth === tokenRef.current) { saveToken(""); setPairing(true); setStatus(null); }
       throw new Error(result.error || "本机接管器未响应");
     }
     return result;
   }, [saveToken]);
+
+  const checkProtocol = useCallback(async () => {
+    const health = await request("/v1/health");
+    if (health.version !== 2 || health.lease_protocol !== LEASE_PROTOCOL) {
+      throw new Error("本机接管器版本过旧。请下载最新版，关闭旧启动器后重新运行；更新前不会启动或保持自动执行。");
+    }
+  }, [request]);
 
   useEffect(() => {
     if (!token) return;
@@ -96,31 +110,38 @@ export default function LiveRouteControl() {
     let timer: ReturnType<typeof setTimeout>;
     let lastFrame = 0;
     const poll = async () => {
+      const generation = commandGeneration.current;
+      const current = () => !cancelled && generation === commandGeneration.current && !commandLock.current;
       try {
+        if (!current()) return;
+        // Old bridges count every status request as a heartbeat. Check before
+        // polling so an observer tab cannot keep an obsolete session alive.
+        await checkProtocol();
+        if (!current()) return;
         const next: Status = await request("/v1/status");
-        if (cancelled) return;
+        if (!current()) return;
         setStatus(next); setConnectionError(""); setConnectionLost(false);
         if (next.has_preview && (next.observation?.captured_at || 0) !== lastFrame) {
           try {
           const response = await fetch(BRIDGE + "/v1/frame", { headers: { Authorization: "Bearer " + token }, cache: "no-store", signal: AbortSignal.timeout(5000) });
           if (response.ok) {
             const blob = await response.blob();
-            if (!cancelled) {
+            if (current()) {
               const url = URL.createObjectURL(blob);
               if (imageUrl.current) URL.revokeObjectURL(imageUrl.current);
               imageUrl.current = url; setPreview(url); setFrameError("");
               lastFrame = next.observation?.captured_at || 0;
             }
-          } else if (!cancelled) setFrameError("画面暂时无法加载，正在重试；执行状态仍正常连接。");
-          } catch { if (!cancelled) setFrameError("画面暂时无法加载，正在重试；执行状态仍正常连接。"); }
+          } else if (current()) setFrameError("画面暂时无法加载，正在重试；执行状态仍正常连接。");
+          } catch { if (current()) setFrameError("画面暂时无法加载，正在重试；执行状态仍正常连接。"); }
         }
       } catch (err) {
-        if (!cancelled) { setConnectionLost(true); setConnectionError(err instanceof TypeError ? "无法连接本机接管器。请确认启动器正在运行，并允许浏览器连接本机。连接丢失后会自动暂停点击。" : String((err as Error).message)); }
+        if (current()) { setConnectionLost(true); setConnectionError(err instanceof TypeError ? "无法连接本机接管器。请确认启动器正在运行，并允许浏览器连接本机。连接丢失后会自动暂停点击。" : String((err as Error).message)); }
       } finally { if (!cancelled) timer = setTimeout(poll, 1500); }
     };
     void poll();
     return () => { cancelled = true; clearTimeout(timer); };
-  }, [token, request]);
+  }, [token, request, checkProtocol]);
 
   // Games can be opened or restarted after the page connects. Refresh client
   // identities while idle; this endpoint reads metadata and never captures or
@@ -156,6 +177,7 @@ export default function LiveRouteControl() {
   }
 
   async function executeStart(auth?: string) {
+    await checkProtocol();
     // A read-only session from an older page must not turn "continue" into a
     // no-op. Replace it with an explicitly requested execution session.
     if (status?.observe_only && active) await request("/v1/stop", {} , auth);
@@ -163,7 +185,7 @@ export default function LiveRouteControl() {
     // Retry only that explicit rejection; never retry an ambiguous transport error.
     for (let attempt = 0; mounted.current; attempt += 1) {
       try {
-        const next = await request("/v1/start", { ending: "first", ...(hwnd ? { hwnd: Number(hwnd) } : {}) }, auth);
+        const next = await request("/v1/start", { ending: "first", client_id: clientId.current, ...(hwnd ? { hwnd: Number(hwnd) } : {}) }, auth);
         setStatus(next);
         return;
       } catch (err) {
@@ -187,27 +209,32 @@ export default function LiveRouteControl() {
   async function command(name: string) {
     if (commandLock.current) return;
     commandLock.current = true;
+    commandGeneration.current += 1;
     setBusy(true); setError("");
     try {
       if (!tokenRef.current) {
-        await request("/v1/health");
+        await checkProtocol();
         pendingStart.current = name === "start";
         setPairing(true);
         return;
       }
       pendingStart.current = name === "start";
       if (name === "start") await executeStart();
+      else if (name === "connect") { await checkProtocol(); setStatus(await request("/v1/status")); }
+      else if (name === "resume") { await checkProtocol(); setStatus(await request("/v1/resume", { client_id: clientId.current })); }
       else setStatus(await request("/v1/" + name, {}));
       pendingStart.current = false;
     } catch (err) { reportCommandError(err); }
-    finally { commandLock.current = false; setBusy(false); }
+    finally { commandGeneration.current += 1; commandLock.current = false; setBusy(false); }
   }
 
   async function pair() {
     if (commandLock.current) return;
     commandLock.current = true;
+    commandGeneration.current += 1;
     setBusy(true); setError("");
     try {
+      await checkProtocol();
       const result = await request("/v1/pair", { code }, "");
       saveToken(result.token); setPairing(false); setCode("");
       const startRequested = pendingStart.current;
@@ -215,7 +242,7 @@ export default function LiveRouteControl() {
       if (startRequested) await executeStart(result.token);
       else setStatus(await request("/v1/status", undefined, result.token));
     } catch (err) { reportCommandError(err); }
-    finally { commandLock.current = false; setBusy(false); }
+    finally { commandGeneration.current += 1; commandLock.current = false; setBusy(false); }
   }
 
   const obs = status?.observation;
@@ -252,6 +279,7 @@ export default function LiveRouteControl() {
     </form>}
     {showSetup && <div className="live-setup" id="live-setup">
       <div><h2>首次在游戏电脑上连接</h2><a className="live-download" href="/downloads/blackflow-live-connector.zip" download><Download size={18} />下载 Windows 本机接管器</a></div>
+      <Button variant="outline" disabled={busy} onClick={() => void command("connect")}><Link2 />连接本机</Button>
       <ol><li><strong>准备本机环境。</strong>解压下载包，按包内说明安装 Python 3.13 和依赖，并准备 BFMapRecognizer / MAA 资源。</li><li><strong>双击启动。</strong>运行包内 <code>tools/Start-BlackflowLive.cmd</code>，会自动打开本站并连接。手动打开本站时，可输入启动器的连接码。</li><li><strong>一键开始。</strong>进入游戏的完整地图，保持窗口可见且未最小化，点击「一键启动自动执行」。浏览器询问本机网络访问时，请允许。</li></ol>
       <p>网页需要本机接管器才能读取和操作游戏，无法直接启动电脑程序。下载包包含神经网络权重和推理代码，MAA 资源需在本机另行准备。</p>
     </div>}
@@ -270,7 +298,8 @@ export default function LiveRouteControl() {
         {obs && <div className="live-resource-grid">{Object.entries(RESOURCES).map(([key, label]) => <div key={key}><span>{label}</span><strong>{obs.resources[key] ?? "未识别"}</strong></div>)}</div>}
         {status?.decision?.neural && <p className="live-choice">神经网络选择：{target?.label || "等待下一帧"}</p>}
         {!!status?.events?.length && <ol className="live-events">{status.events.slice(-3).reverse().map((e, i) => <li key={`${e.time}-${i}`}><time>{new Date(e.time * 1000).toLocaleTimeString("zh-CN", { hour12: false })}</time>{friendly(e.message)}</li>)}</ol>}
-        <p className="live-stop-hint">按 Esc 或将鼠标移至桌面左上角可暂停。关闭页面或断连超过 20 秒也会暂停。</p>
+        {status?.lease?.has_owner && !status.lease.is_owner && <p role="status">此页正在旁观。自动执行由另一页面控制；需要切换时，请先暂停，再在此页继续。</p>}
+        <p className="live-stop-hint">按 Esc 或将鼠标移至桌面左上角可暂停。关闭控制页面或断连超过 20 秒也会暂停，其他旁观页面不会延长执行。</p>
       </div>
     </div>
     <section className="live-capabilities" aria-labelledby="live-capability-title">

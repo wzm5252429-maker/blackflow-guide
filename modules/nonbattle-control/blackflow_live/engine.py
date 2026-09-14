@@ -32,15 +32,23 @@ def _stable_metadata(value):
 
 
 def observation_key(obs: LiveObservation) -> str:
-    """Ignore animations and frame timestamps when waiting for an action result."""
+    """Compare observed semantics independently of detector enumeration order."""
+    nodes = sorted((n.node_id, n.node_type, n.row, n.col, n.revealed, n.completed) for n in obs.nodes)
+    # The encoder treats every corridor as undirected. Confidence ordering can
+    # reverse both endpoint order and edge enumeration in a later screenshot.
+    edges = sorted(tuple(sorted(edge)) for edge in obs.edges)
+    actions = [(a.label, a.kind, a.enabled, a.target_node_id, _stable_metadata(a.metadata))
+               for a in obs.actions]
+    actions.sort(key=lambda item: json.dumps(item, sort_keys=True, ensure_ascii=False))
+    # Sort without deduplication: additions, removals and duplicate detections
+    # still change the state. Action IDs remain transient pixel-based handles;
+    # _step independently re-grounds the selected action in the fresh frame.
     return json.dumps({
         'scene': obs.scene, 'floor': obs.floor, 'current': obs.current_node_id,
         'resources': obs.resources,
-        'nodes': [(n.node_id, n.node_type, n.row, n.col, n.revealed, n.completed) for n in obs.nodes],
-        'edges': obs.edges,
-        'actions': [(a.label, a.kind, a.enabled, a.target_node_id,
-                     _stable_metadata(a.metadata))
-                    for a in obs.actions],
+        'nodes': nodes,
+        'edges': edges,
+        'actions': actions,
         # OCR boxes/confidences are diagnostic and can jitter while the same
         # screen is visible. These fields actually affect frozen policy inputs.
         'metadata': _stable_metadata({key: value for key, value in obs.metadata.items()
@@ -161,6 +169,12 @@ class LiveEngine:
     def _fresh(self, obs):
         return bool(obs.frame_id) and 0 <= time.time() - obs.captured_at <= self.max_frame_age
 
+    def _expired_message(self, obs):
+        duration = obs.metadata.get('timing_ms', {}).get('total')
+        if isinstance(duration, (int, float)) and math.isfinite(duration) and duration >= self.max_frame_age * 1000:
+            return f'本次识别耗时 {duration / 1000:.1f} 秒，截图已过期；正在重新获取'
+        return '截图已过期，正在重新获取'
+
     def _run(self, hwnd, observe_only):
         try:
             self._runtime = self.runtime_factory(hwnd)
@@ -185,7 +199,7 @@ class LiveEngine:
                     continue
                 self._record_observation(obs, frame)
                 if not self._fresh(obs):
-                    self._set('waiting_observation', '截图已过期，正在重新获取')
+                    self._set('waiting_observation', self._expired_message(obs))
                 elif obs.scene in BATTLE_SCENES:
                     self._set('waiting_battle', '请手动开始并完成战斗；战后将重新识别并继续')
                 elif obs.ending_first_confirmed and obs.scene == 'ending_complete' and obs.confidence >= .95:
@@ -259,6 +273,11 @@ class LiveEngine:
             if self._runtime.emergency_stop():
                 self._paused = True
                 self._set('paused', '已通过紧急暂停停止输入')
+                return
+            # The frame may have expired during state comparison or while waiting
+            # for this lock. Keep the original capture deadline through input.
+            if not self._fresh(fresh):
+                self._set('waiting_observation', '点击前截图已过期，正在重新识别')
                 return
             self._runtime.click(found, fresh_frame)
             self._last_clicked_key = key

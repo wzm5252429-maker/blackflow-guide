@@ -1,0 +1,24 @@
+{
+  "source": "User supplied screenshot 2026-09-14 of live website game preview",
+  "source_sha256": "a0d5c9d805409ab9110debf3d167e2f51254323c1d5de7031ab8105fe599c6e4",
+  "crop_in_source": [
+    133,
+    413,
+    1499,
+    866
+  ],
+  "normalized_size": [
+    1246,
+    720
+  ],
+  "fixture_note": "Real game HUD pixels retained at y<160 and y>=640; map interior replaced by black solely to isolate HUD recognition tests. Browser chrome and user browsing information excluded. Not a complete game screenshot or a policy input.",
+  "expected": {
+    "hp": 4,
+    "max_hp": 4,
+    "action_points": 6,
+    "gold": 25,
+    "hope": 6,
+    "parts": 2,
+    "relics": 1
+  }
+}

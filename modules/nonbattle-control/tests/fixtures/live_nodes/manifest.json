@@ -1,0 +1,89 @@
+{
+  "source": "Read-only native map frames captured 2026-09-15; no game input",
+  "cases": [
+    {
+      "image": "clipped_title_1.png",
+      "span": {
+        "text": "未知的凶戾",
+        "confidence": 0.9995471835136414,
+        "bbox": [
+          13,
+          12,
+          65,
+          13
+        ]
+      },
+      "expected": "未知的凶戾",
+      "source_frame_id": "9afee430c9a143288987cb0e0b64dde6",
+      "source_rect": [
+        478,
+        248,
+        92,
+        38
+      ]
+    },
+    {
+      "image": "clipped_title_2.png",
+      "span": {
+        "text": "未知的凶戾",
+        "confidence": 0.9995471835136414,
+        "bbox": [
+          13,
+          12,
+          65,
+          13
+        ]
+      },
+      "expected": "未知的凶戾",
+      "source_frame_id": "b0ce2f946ec945259cab7df2cd763929",
+      "source_rect": [
+        478,
+        248,
+        92,
+        38
+      ]
+    },
+    {
+      "image": "clipped_title_3.png",
+      "span": {
+        "text": "未知的凶",
+        "confidence": 0.9046540260314941,
+        "bbox": [
+          12,
+          12,
+          66,
+          13
+        ]
+      },
+      "expected": "未知的凶戾",
+      "source_frame_id": "a2f794f863ad41eca5e6e0bc29b96581",
+      "source_rect": [
+        478,
+        248,
+        92,
+        38
+      ]
+    },
+    {
+      "image": "cursor_occlusion_3.png",
+      "span": {
+        "text": "未知的",
+        "confidence": 0.9982190132141113,
+        "bbox": [
+          16,
+          13,
+          41,
+          15
+        ]
+      },
+      "expected": null,
+      "source_frame_id": "a2f794f863ad41eca5e6e0bc29b96581",
+      "source_rect": [
+        575,
+        347,
+        100,
+        50
+      ]
+    }
+  ]
+}

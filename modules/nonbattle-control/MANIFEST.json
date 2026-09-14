@@ -54,8 +54,8 @@
     },
     {
       "path": "blackflow_live/engine.py",
-      "sha256": "acb59c112f9a209f14682c5881fcfdd980b8972868949c53d05a74992dc2c98a",
-      "bytes": 12551
+      "sha256": "2982763a5ff39b58f67d562b372dee95be12abf4dfed8ff19d7586c3bd6011fa",
+      "bytes": 13797
     },
     {
       "path": "blackflow_live/geometry.py",
@@ -74,18 +74,18 @@
     },
     {
       "path": "blackflow_live/runtime.py",
-      "sha256": "fc8dcedc9f4a1a716a3565d6ca3422a82d7281333f96759e9e17022795495350",
-      "bytes": 2182
+      "sha256": "48ec564066bf60f75470ab7e71c287e99998d57294f2ea01af0c999d3513f89c",
+      "bytes": 2892
     },
     {
       "path": "blackflow_live/service.py",
-      "sha256": "7e89ba1c4fea23bc8e3f701ca608c47e9d9fd117e48945979aa3e99f632ac35b",
-      "bytes": 9463
+      "sha256": "1040b3e1fac46b89df8827c8aa378b93d9af588792740c1005de8afadfa6ddbb",
+      "bytes": 13053
     },
     {
       "path": "blackflow_live/vision.py",
-      "sha256": "d5571d87853c09ee603f915d6bf1bf974b04b6e255cf767972708e8611aeb201",
-      "bytes": 35387
+      "sha256": "135ac71687f32ec15b14920e6057b6b7cfd53f33d57246e39982a61ba649fda9",
+      "bytes": 42979
     },
     {
       "path": "blackflow_rl/__init__.py",
@@ -649,13 +649,13 @@
     },
     {
       "path": "docs/live-vision-coverage.md",
-      "sha256": "e66d3f14da9cb98ba9c31fbb4755efc264748c262f077f565b72c9a65dbf22dd",
-      "bytes": 3848
+      "sha256": "6f9d279dae06219a63f7e552e8ff681804837e56df6e2acc33cea0fcd4bf83dd",
+      "bytes": 4437
     },
     {
       "path": "docs/nonbattle-control.md",
-      "sha256": "e5bf2cde4388a1b6e76447fb80b9cb060a563e05d1d8b14b291887d2ca238f25",
-      "bytes": 6158
+      "sha256": "189d5a68d4b15bcaf433acf5bc9ab68d14c43999143e7e089eb5b7679942700f",
+      "bytes": 7755
     },
     {
       "path": "requirements-core.txt",
@@ -669,8 +669,53 @@
     },
     {
       "path": "scripts/package_live_connector.py",
-      "sha256": "fabe2f1ed862189ced5f8b64bf9709cc4a00f36237cbfc0f9b59a19f10dd8851",
-      "bytes": 3573
+      "sha256": "e4dd3f12d7e4dcc694a581aac3341564c68f27ee29b2694e293a029e7422906e",
+      "bytes": 3724
+    },
+    {
+      "path": "tests/fixtures/live_hud/fullscreen_hud.json",
+      "sha256": "b0b8da393d76733ce88a0e16ba09a1398e91f663b72943a990634455e584b324",
+      "bytes": 690
+    },
+    {
+      "path": "tests/fixtures/live_hud/fullscreen_hud.png",
+      "sha256": "b9bae76a3d03a80bca345b540af051d9bdf72a892029bedfc0fd61bc65b0dc6f",
+      "bytes": 319203
+    },
+    {
+      "path": "tests/fixtures/live_hud/native_fullscreen_hud.json",
+      "sha256": "7d067b4174383751899a40eba15f6ee9988251e75003864e6d5f17c7c6737a09",
+      "bytes": 591
+    },
+    {
+      "path": "tests/fixtures/live_hud/native_fullscreen_hud.png",
+      "sha256": "fb112c6b4beb96bdcba2a7dfec66fc4f640b884543f272c0e363623613e658a7",
+      "bytes": 338079
+    },
+    {
+      "path": "tests/fixtures/live_nodes/clipped_title_1.png",
+      "sha256": "47612480390a6a81979262e3282ed1de2d325aa33798d533f70b3be3090035ef",
+      "bytes": 6333
+    },
+    {
+      "path": "tests/fixtures/live_nodes/clipped_title_2.png",
+      "sha256": "b74daac7f84c1fbf73b5707e933fb57be9357016c5786aeaa3f274d76a2cb52f",
+      "bytes": 6327
+    },
+    {
+      "path": "tests/fixtures/live_nodes/clipped_title_3.png",
+      "sha256": "39bb24f26de84903dcdf2d3699e42fa4979d923c33c9e6f432597c198761357d",
+      "bytes": 6325
+    },
+    {
+      "path": "tests/fixtures/live_nodes/cursor_occlusion_3.png",
+      "sha256": "8909cb1179ffa39401e6fb3cb7124cd687881b54027da9a381153768e5f76f35",
+      "bytes": 9539
+    },
+    {
+      "path": "tests/fixtures/live_nodes/manifest.json",
+      "sha256": "5696a818408f4770a18e1b7fa7de5cada529235e69fb305c169122b2285d0283",
+      "bytes": 1825
     },
     {
       "path": "tests/test_live_controller.py",
@@ -688,6 +733,26 @@
       "bytes": 6963
     },
     {
+      "path": "tests/test_live_hud.py",
+      "sha256": "de440b97bfd635e896cecea381dd49ccebb16a030c383763cbff5110874c9058",
+      "bytes": 3552
+    },
+    {
+      "path": "tests/test_live_latency.py",
+      "sha256": "8762679eec0496c9b5484e2c972adec2b25658c81c1fc04fb8a8f23118bf3b06",
+      "bytes": 4842
+    },
+    {
+      "path": "tests/test_live_node_labels.py",
+      "sha256": "e38de20f2d65b46559aab8db6f52942b5da06ffb5e93b165236c83943dcefa2b",
+      "bytes": 3856
+    },
+    {
+      "path": "tests/test_live_observation_order.py",
+      "sha256": "dff7af81c5851567dcd70800a313d4e56598bfe11f0a12899e57f8cbbba7d25b",
+      "bytes": 4954
+    },
+    {
       "path": "tests/test_live_policy.py",
       "sha256": "c7ad4292ea4ef50d23ff37025e3897cb5807729a239d2a438d87f4e583565f60",
       "bytes": 13072
@@ -699,8 +764,18 @@
     },
     {
       "path": "tests/test_live_service.py",
-      "sha256": "80e8624e4f0c810dc38bf7acfd47dcb1d49dbae8f4848ef7a95151544f6cb898",
-      "bytes": 11436
+      "sha256": "645cb1a5cb077e70daec7476c0ba8938de640ae2d0cf832bafc15d7d064f784d",
+      "bytes": 12047
+    },
+    {
+      "path": "tests/test_live_service_lease.py",
+      "sha256": "3e71b7887547bec8fb90460ba9481e2680a929dee4cbace4a61a7e8078a20cc9",
+      "bytes": 10697
+    },
+    {
+      "path": "tests/test_live_template_parallel.py",
+      "sha256": "8f8d9acd241f3ac69988a2514ffa94b2e37ded676036a0e30e818a6eabe93ff0",
+      "bytes": 4057
     },
     {
       "path": "tests/test_live_vision.py",
