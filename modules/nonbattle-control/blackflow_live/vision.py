@@ -8,7 +8,7 @@ No old map_result.json, simulator state or invented resource default is used.
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from hashlib import sha256
 import json
 import math
@@ -386,6 +386,12 @@ class VisionPipeline:
             scene,confidence = "event",0.91
         elif ("黑流树海" in clean_text and any(_clean(span.text) in _OPERATIONS for span in spans if span.confidence >= 0.9)):
             scene,confidence = "dialog",0.9
+        shop_dialog = None
+        if scene not in {'battle', 'battle_start', 'ending', 'ending_complete', 'failed'}:
+            from .shop_vision import detect_shop_dialog
+            shop_dialog = detect_shop_dialog(image, spans, ocr=self.ocr, item_names=self.item_names)
+            if shop_dialog is not None:
+                scene,confidence = 'shop',shop_dialog.confidence
         nodes,edges,current = (),(),None
         actions: list[ObservedAction] = []
         if scene in {"map","shop","recruitment","inventory","reward","movement_preview"}:
@@ -401,12 +407,17 @@ class VisionPipeline:
             if "map_zoom" in markers:
                 hit = markers["map_zoom"]
                 actions = [ObservedAction("map:zoom_out","缩小地图","ui",hit.bbox,hit.confidence,metadata={"operation":"event_advance","source":"maa_template","grounded":True})]
-        if scene not in {"battle", "battle_start", "ending", "ending_complete", "unknown", "failed"}:
+        if shop_dialog is not None:
+            actions = shop_dialog.grounded_actions(resources)
+            diagnostics.extend(shop_dialog.diagnostics)
+        elif scene not in {"battle", "battle_start", "ending", "ending_complete", "unknown", "failed"}:
             actions.extend(self._actions(spans,scene,image.shape[1],image.shape[0]))
             if scene=="movement_preview":
                 hit=markers["movement_preview"]
                 actions.append(ObservedAction("map:enter_preview","进入节点","ui",hit.bbox,hit.confidence,metadata={"operation":"event_advance","grounded":True,"source":"maa_template"}))
             actions.extend(self._catalog_actions(spans,scene,image.shape[1],image.shape[0]))
+            if scene == "reward":
+                actions = self._reward_card_actions(actions, spans, image.shape[1], image.shape[0])
             actions=self._unique_actions(actions)
         for action in actions:
             action.metadata["source_frame_id"]=frame_id
@@ -481,6 +492,56 @@ class VisionPipeline:
             key=sha256((kind+text+str(span.bbox)).encode()).hexdigest()[:14]
             actions.append(ObservedAction("catalog:"+key,span.text,kind,span.bbox,span.confidence,metadata=metadata))
         return actions
+
+    def _reward_card_actions(self, actions, spans, width, height):
+        """Attach a claim button to its visible card, without borrowing a neighbor.
+
+        Card titles are farther above their buttons than generic nearby prose.
+        An exact, high-confidence title in the same column supplies identity;
+        hidden rewards, amounts and post-claim inventory remain unobserved.
+        """
+        claims = [(index, action) for index, action in enumerate(actions)
+                  if action.metadata.get("operation") == "take"
+                  and _clean(action.label) in {"收下", "领取"}]
+        def card_owner(box):
+            x, y, w, h = box
+            candidates = []
+            for index, action in claims:
+                bx, by, bw, bh = action.bbox
+                distance = abs(x+w/2-(bx+bw/2))
+                if (distance <= max(bw*1.5, width*.045)
+                        and by-height*.38 <= y+h/2 <= by-height*.04):
+                    candidates.append((distance, index))
+            candidates.sort()
+            # Narrow windows can put two claim columns inside the same title
+            # search band. A title belongs only to its uniquely nearest column;
+            # a tie within OCR rounding uncertainty belongs to neither.
+            if not candidates or (len(candidates) > 1 and candidates[1][0]-candidates[0][0] <= 2):
+                return None
+            return candidates[0][1]
+        names_by_card = {}
+        for span in spans:
+            if span.confidence < .90 or _clean(span.text) not in self.item_names:
+                continue
+            owner = card_owner(span.bbox)
+            if owner is not None:
+                names_by_card.setdefault(owner, set()).add(self.item_names[_clean(span.text)])
+        bound = {}
+        result = []
+        for index, action in enumerate(actions):
+            names = names_by_card.get(index, set())
+            if len(names) == 1:
+                name = next(iter(names))
+                action = replace(action, metadata={**action.metadata, "item_name": name,
+                    "selection_stage": "reward_claim", "identity_source": "same_card_title"})
+                bound[index] = name
+            result.append(action)
+        # The model should choose the visible claim action for an identified
+        # card, instead of separately selecting its already visible title.
+        return [action for action in result if not (
+            action.kind == "item_preview"
+            and card_owner(action.bbox) in bound
+            and bound[card_owner(action.bbox)] == action.metadata.get("item_name"))]
 
     @staticmethod
     def _unique_actions(actions):

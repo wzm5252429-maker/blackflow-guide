@@ -94,6 +94,7 @@ class LiveEngine:
         self._thread = None
         self._runtime = None
         self._paused = False
+        self._epoch = 0
         self._focus_requested = False
         self._lease = time.monotonic()
         self._events = deque(maxlen=80)
@@ -125,9 +126,11 @@ class LiveEngine:
             if self._thread and self._thread.is_alive():
                 raise ValueError('已有接管会话；请先停止后重试')
             self._stop.clear()
+            self._epoch += 1
             self._paused = False
             self._lease = time.monotonic()
             self._last_clicked_key = None
+            self._last_click_at = 0.
             self._focus_requested = not observe_only
             self._set('starting', '正在连接游戏窗口和识别模型', clicks=0, observe_only=observe_only)
             self._thread = threading.Thread(target=self._run, args=(hwnd, observe_only), daemon=True,
@@ -137,17 +140,29 @@ class LiveEngine:
 
     def pause(self, reason='已暂停接管'):
         with self._input_lock:
-            self._paused = True
-            self._set('paused', reason)
+            self._pause_locked(reason)
         return self.status()
+
+    def _pause_locked(self, reason):
+        self._epoch += 1
+        self._paused = True
+        self._set('paused', reason)
 
     def resume(self):
         with self._input_lock:
             if not self._thread or not self._thread.is_alive() or self._stop.is_set():
-                raise ValueError('会话已结束，请重新点击自动路线决策')
+                raise ValueError('会话已结束，请重新点击一键启动自动执行')
+            if not self._paused:
+                raise ValueError('只能继续已暂停的会话')
+            self._epoch += 1
             self._paused = False
             self._focus_requested = not self._state.get('observe_only')
             self._lease = time.monotonic()
+            # A deliberate resume permits one newly decided retry, including on
+            # an unchanged screen. A successful retry sets the duplicate guard
+            # again; the engine must never retry automatically without consent.
+            self._last_clicked_key = None
+            self._last_click_at = 0.
             self._set('running', '正在重新识别当前画面')
         return self.status()
 
@@ -155,16 +170,35 @@ class LiveEngine:
         # Mark cancelled before waiting for the atomic input section.
         self._stop.set()
         with self._input_lock:
+            self._epoch += 1
             self._paused = True
             self._set('stopped', '接管已停止')
         return self.status()
 
-    def _record_observation(self, obs, frame):
+    def _epoch_current(self, epoch):
+        return epoch == self._epoch and not self._stop.is_set() and not self._paused
+
+    def _set_for_epoch(self, epoch, state, message, **extra):
+        with self._input_lock:
+            if not self._epoch_current(epoch):
+                return False
+            self._set(state, message, **extra)
+            return True
+
+    def _record_observation(self, obs, frame, epoch):
         preview = self._runtime.preview(frame)
-        with self._lock:
-            self._preview = preview
-            self._state['observation'] = asdict(obs)
-            self._state['window'] = self._runtime.window_info(frame)
+        if not self._epoch_current(epoch):
+            return False
+        window = self._runtime.window_info(frame)
+        observation = asdict(obs)
+        with self._input_lock:
+            if not self._epoch_current(epoch):
+                return False
+            with self._lock:
+                self._preview = preview
+                self._state['observation'] = observation
+                self._state['window'] = window
+            return True
 
     def _fresh(self, obs):
         return bool(obs.frame_id) and 0 <= time.time() - obs.captured_at <= self.max_frame_age
@@ -182,40 +216,58 @@ class LiveEngine:
                 if self._paused:
                     self._stop.wait(.1)
                     continue
-                if time.monotonic() - self._lease > self.lease_seconds:
-                    self.pause('网站连接中断，接管已暂停')
-                    continue
-                if self._runtime.emergency_stop():
-                    self.pause('检测到 Esc 或鼠标移至左上角，接管已暂停')
-                    continue
-                if self._focus_requested:
+                epoch = self._epoch
+                try:
                     with self._input_lock:
-                        if self._stop.is_set() or self._paused:
+                        if not self._epoch_current(epoch):
                             continue
-                        self._runtime.focus()
-                        self._focus_requested = False
-                obs, frame = self._runtime.observe()
-                if self._stop.is_set() or self._paused:
-                    continue
-                self._record_observation(obs, frame)
-                if not self._fresh(obs):
-                    self._set('waiting_observation', self._expired_message(obs))
-                elif obs.scene in BATTLE_SCENES:
-                    self._set('waiting_battle', '请手动开始并完成战斗；战后将重新识别并继续')
-                elif obs.ending_first_confirmed and obs.scene == 'ending_complete' and obs.confidence >= .95:
-                    confirm, confirm_frame = self._runtime.observe()
+                        if time.monotonic() - self._lease > self.lease_seconds:
+                            self._pause_locked('网站连接中断，接管已暂停')
+                            continue
+                    emergency = self._runtime.emergency_stop()
                     with self._input_lock:
-                        if self._stop.is_set() or self._paused or time.monotonic() - self._lease > self.lease_seconds:
+                        if not self._epoch_current(epoch):
                             continue
-                        if (self._fresh(confirm) and confirm.frame_id != obs.frame_id
-                            and confirm.frame_id == confirm_frame.frame_id
-                            and confirm.ending_first_confirmed and confirm.scene == 'ending_complete' and confirm.confidence >= .95):
-                            self._set('completed', '已识别到一结局通关画面，接管结束')
-                            break
-                elif observe_only:
-                    self._set('observing', '仅识别预览；未启用点击')
-                else:
-                    self._step(obs, frame)
+                        if emergency:
+                            self._pause_locked('检测到 Esc 或鼠标移至左上角，接管已暂停')
+                            continue
+                        if self._focus_requested:
+                            self._runtime.focus()
+                            if not self._epoch_current(epoch):
+                                continue
+                            self._focus_requested = False
+                    obs, frame = self._runtime.observe()
+                    if not self._epoch_current(epoch):
+                        continue
+                    if not self._record_observation(obs, frame, epoch):
+                        continue
+                    if not self._fresh(obs):
+                        self._set_for_epoch(epoch, 'waiting_observation', self._expired_message(obs))
+                    elif obs.scene in BATTLE_SCENES:
+                        self._set_for_epoch(epoch, 'waiting_battle', '请手动开始并完成战斗；战后将重新识别并继续')
+                    elif obs.ending_first_confirmed and obs.scene == 'ending_complete' and obs.confidence >= .95:
+                        confirm, confirm_frame = self._runtime.observe()
+                        with self._input_lock:
+                            if not self._epoch_current(epoch) or time.monotonic() - self._lease > self.lease_seconds:
+                                continue
+                            if (self._fresh(confirm) and confirm.frame_id != obs.frame_id
+                                and confirm.frame_id == confirm_frame.frame_id
+                                and confirm.ending_first_confirmed and confirm.scene == 'ending_complete' and confirm.confidence >= .95):
+                                self._set('completed', '已识别到一结局通关画面，接管结束')
+                                break
+                    elif observe_only:
+                        self._set_for_epoch(epoch, 'observing', '仅识别预览；未启用点击')
+                    else:
+                        self._step(obs, frame, epoch=epoch)
+                except Exception as exc:
+                    with self._input_lock:
+                        if not self._epoch_current(epoch):
+                            # A cancelled OCR/preview/inference may finish or fail
+                            # after resume. It belongs to the old execution, and
+                            # cannot end the resumed session or overwrite its UI.
+                            continue
+                        self._set('error', str(exc))
+                    break
                 self._stop.wait(self.interval)
         except Exception as exc:
             if not self._stop.is_set():
@@ -228,29 +280,39 @@ class LiveEngine:
                     pass
             self._runtime = None
 
-    def _step(self, obs, frame):
-        key = observation_key(obs)
-        if key == self._last_clicked_key:
-            if time.monotonic() - self._last_click_at > 18:
-                self.pause('点击后未确认界面变化，请检查游戏画面再继续')
-            else:
-                self._set('running', '正在等待上一步操作结果')
+    def _step(self, obs, frame, *, epoch=None):
+        epoch = self._epoch if epoch is None else epoch
+        if not self._epoch_current(epoch):
             return
+        key = observation_key(obs)
+        with self._input_lock:
+            if not self._epoch_current(epoch):
+                return
+            if key == self._last_clicked_key:
+                if time.monotonic() - self._last_click_at > 18:
+                    self._pause_locked('点击后未确认界面变化，请检查游戏画面再继续')
+                else:
+                    self._set('running', '正在等待上一步操作结果')
+                return
         decision = self._runtime.policy.select(obs)
-        with self._lock:
-            self._state['decision'] = asdict(decision)
+        with self._input_lock:
+            if not self._epoch_current(epoch):
+                return
+            with self._lock:
+                self._state['decision'] = asdict(decision)
         action = decision.action
         if action is None:
-            self._set('waiting_observation', decision.reason)
+            self._set_for_epoch(epoch, 'waiting_observation', decision.reason)
             return
         if not action_is_grounded(action, obs):
-            self._set('waiting_observation', '当前动作缺少可靠的画面依据，正在重新识别')
+            self._set_for_epoch(epoch, 'waiting_observation', '当前动作缺少可靠的画面依据，正在重新识别')
             return
         # Network inference and OCR can take time: reacquire, re-ground, then act.
         fresh, fresh_frame = self._runtime.observe()
-        if self._stop.is_set() or self._paused:
+        if not self._epoch_current(epoch):
             return
-        self._record_observation(fresh, fresh_frame)
+        if not self._record_observation(fresh, fresh_frame, epoch):
+            return
         found = next((a for a in fresh.actions if a.action_id == action.action_id), None)
         if found is None:
             matches = [a for a in fresh.actions if (a.label, a.kind, a.target_node_id) ==
@@ -259,20 +321,19 @@ class LiveEngine:
                 found = matches[0]
         if (not self._fresh(fresh) or fresh.frame_id != fresh_frame.frame_id or fresh.frame_id == obs.frame_id
             or fresh.scene != obs.scene or found is None or not action_is_grounded(found, fresh)):
-            self._set('waiting_observation', '画面已经变化，正在重新决策')
+            self._set_for_epoch(epoch, 'waiting_observation', '画面已经变化，正在重新决策')
             return
         if observation_key(fresh) != key or found.label != action.label or found.kind != action.kind:
-            self._set('waiting_observation', '状态已更新，正在重新决策')
+            self._set_for_epoch(epoch, 'waiting_observation', '状态已更新，正在重新决策')
             return
         if any(abs(a-b) > 6 for a, b in zip(found.bbox, action.bbox)):
-            self._set('waiting_observation', '目标位置仍在移动，等待画面稳定')
+            self._set_for_epoch(epoch, 'waiting_observation', '目标位置仍在移动，等待画面稳定')
             return
         with self._input_lock:
-            if self._stop.is_set() or self._paused or time.monotonic() - self._lease > self.lease_seconds:
+            if not self._epoch_current(epoch) or time.monotonic() - self._lease > self.lease_seconds:
                 return
             if self._runtime.emergency_stop():
-                self._paused = True
-                self._set('paused', '已通过紧急暂停停止输入')
+                self._pause_locked('已通过紧急暂停停止输入')
                 return
             # The frame may have expired during state comparison or while waiting
             # for this lock. Keep the original capture deadline through input.

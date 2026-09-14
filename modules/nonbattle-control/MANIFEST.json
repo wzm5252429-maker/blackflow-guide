@@ -54,8 +54,8 @@
     },
     {
       "path": "blackflow_live/engine.py",
-      "sha256": "2982763a5ff39b58f67d562b372dee95be12abf4dfed8ff19d7586c3bd6011fa",
-      "bytes": 13797
+      "sha256": "7c673e625a8c4cd597e2a0f5400866e90ae0f42f1fb620e67dc851077c2d45c3",
+      "bytes": 16666
     },
     {
       "path": "blackflow_live/geometry.py",
@@ -83,9 +83,14 @@
       "bytes": 13053
     },
     {
+      "path": "blackflow_live/shop_vision.py",
+      "sha256": "b776ca11989a29680ab0218505dd1893760faae0abf5e929c5fc073a68aa1606",
+      "bytes": 9988
+    },
+    {
       "path": "blackflow_live/vision.py",
-      "sha256": "135ac71687f32ec15b14920e6057b6b7cfd53f33d57246e39982a61ba649fda9",
-      "bytes": 42979
+      "sha256": "5a01fcb196f1c9359149423e7227c9b0d88ea80ab2e749ea434c45e385679987",
+      "bytes": 46266
     },
     {
       "path": "blackflow_rl/__init__.py",
@@ -644,18 +649,18 @@
     },
     {
       "path": "docs/live-policy-coverage.md",
-      "sha256": "f3046d4a91c8c9c0f8fa20aec26faee7c8032deddab188644d90e3ae599e92f1",
-      "bytes": 9991
+      "sha256": "2d8f03ecc3c3c0844c2917537b89791e6a3c7b62ebba24b3a455c0a46495c3e5",
+      "bytes": 10531
     },
     {
       "path": "docs/live-vision-coverage.md",
-      "sha256": "6f9d279dae06219a63f7e552e8ff681804837e56df6e2acc33cea0fcd4bf83dd",
-      "bytes": 4437
+      "sha256": "7a75993a8730a85d388066c8ded0653ee612055b2cb3cc8c247710e5ba7c7769",
+      "bytes": 5667
     },
     {
       "path": "docs/nonbattle-control.md",
-      "sha256": "189d5a68d4b15bcaf433acf5bc9ab68d14c43999143e7e089eb5b7679942700f",
-      "bytes": 7755
+      "sha256": "4ffee755e530cc0c4696a572a687713170a1bf8959ec14466466747c8864ca6b",
+      "bytes": 8192
     },
     {
       "path": "requirements-core.txt",
@@ -669,8 +674,8 @@
     },
     {
       "path": "scripts/package_live_connector.py",
-      "sha256": "e4dd3f12d7e4dcc694a581aac3341564c68f27ee29b2694e293a029e7422906e",
-      "bytes": 3724
+      "sha256": "1d05b7d58cf1ee1c735a3e7f1ea7fe13699cbd5d016a04d9906db8fe9659d4c7",
+      "bytes": 3767
     },
     {
       "path": "tests/fixtures/live_hud/fullscreen_hud.json",
@@ -718,6 +723,31 @@
       "bytes": 1825
     },
     {
+      "path": "tests/fixtures/live_rewards/manifest.json",
+      "sha256": "a3475b2e7d82398ff87300d68623d92e0d36bd43aff3ca454a293d2d8d3fcad8",
+      "bytes": 985
+    },
+    {
+      "path": "tests/fixtures/live_rewards/two_card_rewards.png",
+      "sha256": "697bab5777a3a59dbb318e63b96fe6a2c71621f80d42eb5b2d83f2c6b88c8a00",
+      "bytes": 753864
+    },
+    {
+      "path": "tests/fixtures/live_shop_dialog/manifest.json",
+      "sha256": "ead9d467a2033a541a0212514ac106d410209e035c7e25f57205377da89c801c",
+      "bytes": 1167
+    },
+    {
+      "path": "tests/fixtures/live_shop_dialog/purchase_transition_360p.jpg",
+      "sha256": "7c72dfadc6b5ae0cbef16c66ac759020ce6aa6fa96b6b58e558ef1b775d333ea",
+      "bytes": 83403
+    },
+    {
+      "path": "tests/fixtures/live_shop_dialog/sell_confirm_360p.jpg",
+      "sha256": "ae01b0b4f073e08df49dafb9d0eb9f229e7cddc51ded3c8ed3bb76454b8b8d7b",
+      "bytes": 79387
+    },
+    {
       "path": "tests/test_live_controller.py",
       "sha256": "70e845becbb1288e6cafd9596462495890b989edc34bb8566049bc94e8d33cd0",
       "bytes": 6251
@@ -739,8 +769,8 @@
     },
     {
       "path": "tests/test_live_latency.py",
-      "sha256": "8762679eec0496c9b5484e2c972adec2b25658c81c1fc04fb8a8f23118bf3b06",
-      "bytes": 4842
+      "sha256": "558497cb7c46064c4de8abfe359d6bae1bcdec3e0ec2bb748de4282f53455f0a",
+      "bytes": 5647
     },
     {
       "path": "tests/test_live_node_labels.py",
@@ -758,6 +788,16 @@
       "bytes": 13072
     },
     {
+      "path": "tests/test_live_resume.py",
+      "sha256": "75755e0dab62fb6f43f49434149ff75100e3629806a14323c07fb03fd0adaba3",
+      "bytes": 15838
+    },
+    {
+      "path": "tests/test_live_rewards.py",
+      "sha256": "4e6cbba35468677935a11a1a0ffb75213bece59b46d1eac9df54c6922424f177",
+      "bytes": 4552
+    },
+    {
       "path": "tests/test_live_runtime.py",
       "sha256": "f1c88ca6e450b4548e1d6245bddc59a93304a48fe0bf3544911f0371387cf198",
       "bytes": 1471
@@ -771,6 +811,11 @@
       "path": "tests/test_live_service_lease.py",
       "sha256": "3e71b7887547bec8fb90460ba9481e2680a929dee4cbace4a61a7e8078a20cc9",
       "bytes": 10697
+    },
+    {
+      "path": "tests/test_live_shop_dialog.py",
+      "sha256": "2d657e8fb983669856325dd6fd671b041554a34f4d6ca9b9f4c26fd05ce81d06",
+      "bytes": 10835
     },
     {
       "path": "tests/test_live_template_parallel.py",

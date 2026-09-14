@@ -33,8 +33,8 @@ def build(output: Path):
             raise ValueError(f'Selected {field} does not match its pinned hash')
         files.append(path)
     files += list((ROOT/'tests').glob('test_live_*.py'))
-    for fixture in ('live_hud', 'live_nodes'):
-        files += [p for p in (ROOT/'tests/fixtures'/fixture).glob('*') if p.suffix in {'.png','.json'}]
+    for fixture in ('live_hud', 'live_nodes', 'live_rewards', 'live_shop_dialog'):
+        files += [p for p in (ROOT/'tests/fixtures'/fixture).glob('*') if p.suffix in {'.png','.jpg','.json'}]
     files += [ROOT/p for p in ('requirements-core.txt','requirements-live.txt','tools/Start-BlackflowLive.cmd',
         'docs/nonbattle-control.md','docs/live-policy-coverage.md','scripts/package_live_connector.py')]
     vision_docs = ROOT/'docs/live-vision-coverage.md'

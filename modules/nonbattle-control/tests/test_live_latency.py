@@ -14,9 +14,17 @@ from blackflow_live.runtime import GameRuntime
 class _AdvancingLock:
     def __init__(self, enter):
         self.enter = enter
+        self.armed = False
+        self.waits = 0
+
+    def arm(self):
+        self.armed = True
 
     def __enter__(self):
-        self.enter()
+        if self.armed:
+            self.armed = False
+            self.waits += 1
+            self.enter()
 
     def __exit__(self, *_):
         return False
@@ -68,9 +76,23 @@ class LiveLatencyTests(unittest.TestCase):
         )
         engine = LiveEngine(lambda _: runtime)
         engine._runtime = runtime
-        engine._input_lock = _AdvancingLock(lambda: clock.__setitem__(0, clock[0] + lock_delay))
-        with patch('blackflow_live.engine.time.time', side_effect=lambda: clock[0]):
+        input_lock = _AdvancingLock(lambda: clock.__setitem__(0, clock[0] + lock_delay))
+        engine._input_lock = input_lock
+        initial_key = observation_key(initial)
+
+        def checked_key(obs):
+            key = observation_key(obs)
+            # Only simulate waiting to submit the already validated, stable
+            # confirmation. Earlier lifecycle/preview locks must not consume
+            # time, regardless of how many the engine needs for cancellation.
+            if obs is fresh and key == initial_key:
+                input_lock.arm()
+            return key
+
+        with patch('blackflow_live.engine.time.time', side_effect=lambda: clock[0]), \
+             patch('blackflow_live.engine.observation_key', side_effect=checked_key):
             engine._step(initial, object())
+        self.assertEqual(input_lock.waits, 1)
         return engine, runtime
 
     def test_expiry_while_waiting_for_input_lock_blocks_click(self):
