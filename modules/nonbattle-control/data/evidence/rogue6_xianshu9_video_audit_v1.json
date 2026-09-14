@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-09-10T02:30:48.138735+00:00",
+  "status": "MANUALLY_REVIEWED_SAMPLED_VIDEO_FRAMES_NOT_FULL_TRANSCRIPTS",
+  "map_observations": [
+    {
+      "id": "XS9-MAP-1",
+      "bvid": "BV12utf6EEzr",
+      "seconds": [
+        480,
+        600
+      ],
+      "floor": 1,
+      "occupied_slots": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "start": [
+        1,
+        2
+      ],
+      "scope": "Visible occupied coordinates and start; obscured edges and hidden node identities not inferred.",
+      "matching_templates": [
+        "1c"
+      ],
+      "compatible": true
+    },
+    {
+      "id": "XS9-MAP-2",
+      "bvid": "BV12utf6EEzr",
+      "seconds": [
+        1080,
+        1800
+      ],
+      "floor": 2,
+      "occupied_slots": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "start": [
+        3,
+        0
+      ],
+      "final_slots": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "scope": "Visible occupied coordinates, start and exits; not a claim about type frequencies or every edge.",
+      "matching_templates": [
+        "2d"
+      ],
+      "compatible": true
+    }
+  ],
+  "rule_findings": [
+    {
+      "id": "XS9-RNG-SELF",
+      "bvid": "BV1sr4y6TEnY",
+      "seconds": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "observation": "At FINAL, equip remaining M_07, activate; toast names FINAL again and the same exit menu returns. Item consumed, AP remains 4.",
+      "before": "Simulator, heuristic expectation and route search exclude current node.",
+      "correction": "Include current noncombat node in candidate support; retain unknown-first priority.",
+      "evidence_grade": "DIRECT_UI_SEQUENCE_PLUS_CLIENT_ITEM_DESCRIPTION",
+      "probability_status": "No frequency estimate; uniform fallback remains synthetic."
+    },
+    {
+      "id": "XS9-NODE-TRADE",
+      "bvid": "BV1XEtZ6WEkZ",
+      "seconds": [
+        20,
+        25,
+        30,
+        45,
+        50,
+        65,
+        70,
+        80,
+        85,
+        90
+      ],
+      "observation": "Repeated purchases/sales within yellow shop; movement gear acquired while natural-object capital is converted. A multi-moss sale quote is 7 at 70s.",
+      "status": "SUPPORTS_EXISTING_ECONOMY_ACTIONS_AND_CONDITIONAL_POLICY_NOT_A_NEW_REWARD_RATE"
+    },
+    {
+      "id": "XS9-WAVE",
+      "bvid": "BV1Uv3i65EgF",
+      "seconds": [
+        10,
+        20,
+        25,
+        30,
+        40,
+        45,
+        50
+      ],
+      "observation": "Natural-object displayed appraisal and gold change during movement and vantage-point route demonstration.",
+      "status": "PARTIAL_OBSERVATION",
+      "unresolved": "Full inventory and every intervening trigger not isolated. Existing unobserved -6/+8 wave outcome is NOT filled with guessed probability."
+    },
+    {
+      "id": "XS9-EXCHANGE",
+      "bvid": "BV1bj3t6xEXA",
+      "seconds": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45
+      ],
+      "observation": "Player favors predictable movement alternatives and says high-rarity exchanges can lose rarity.",
+      "status": "PLAYER_COMMENTARY_NOT_OBSERVED_EXCHANGE_DISTRIBUTION"
+    },
+    {
+      "id": "XS9-REVIEW-MOBILITY",
+      "bvid": "BV1eEtU6aEp5",
+      "seconds": [
+        85,
+        95,
+        100,
+        105,
+        120,
+        125,
+        135,
+        145,
+        150,
+        155,
+        165,
+        180,
+        195,
+        210,
+        215
+      ],
+      "observation": "Post-match review compares a combat route with shop access, early strength and the consequences of running out of movement.",
+      "status": "STRATEGY_HYPOTHESIS_BATTLE_RISK_NOT_CALIBRATED"
+    }
+  ],
+  "limitations": [
+    "Two observed layouts cannot establish all generation constraints, true frequencies or resolve the existing 26 source conflicts.",
+    "A game score, total acquired items, current relic count, and tournament adjusted score are different metrics.",
+    "No claim to have watched all 23 matches or all practice archives.",
+    "Contestant comments, commentator opinions, subtitle paraphrases and UI outcomes retain distinct evidence grades."
+  ]
+}

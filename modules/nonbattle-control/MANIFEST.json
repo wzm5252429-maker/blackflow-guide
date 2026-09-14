@@ -1,0 +1,714 @@
+{
+  "schema_version": 1,
+  "policy": "opportunity_weighted_002",
+  "files": [
+    {
+      "path": "artifacts/strategy_generalization_20260910/coverage/checkpoint_epoch_006.pt",
+      "sha256": "a19d8d424d8d61d0f42cfb0f211fb0d91d3387e3c5230382a0c4d89a7ede4053",
+      "bytes": 5771222
+    },
+    {
+      "path": "artifacts/strategy_route_refinement_20260911/opportunity_weighted/checkpoint_002.pt",
+      "sha256": "f8b4f384f8b18773fff98553b472b9951139bfa8c0417461fc5de43430feba99",
+      "bytes": 2521546
+    },
+    {
+      "path": "artifacts/xianshu9_round2_training_20260910/profiles/core.json",
+      "sha256": "5412c7a2378f54e14cc6487f0700fb6193e3bfd45a8a04a28d6ecb21f8ee5054",
+      "bytes": 309
+    },
+    {
+      "path": "blackflow_live/__init__.py",
+      "sha256": "1789c4d121d63dbe5149bac127dd5f8bc7d2caebb0c377f2234f548542143e00",
+      "bytes": 101
+    },
+    {
+      "path": "blackflow_live/__main__.py",
+      "sha256": "6e049d4272cb2183ebad6e66565360a7710b2b7677218b0a2895f78a406a8867",
+      "bytes": 34
+    },
+    {
+      "path": "blackflow_live/assets/gold_icon.png",
+      "sha256": "14b5fdf75314d051c5de221ccff3867b068a839fdec63eddc5c4204727d2c92a",
+      "bytes": 2123
+    },
+    {
+      "path": "blackflow_live/assets/hope_icon.png",
+      "sha256": "0d18aaa7ce501c231586e0064eaf51ccb5f03ef4f06cca1cb2660b18ea556240",
+      "bytes": 2361
+    },
+    {
+      "path": "blackflow_live/assets/hud_icons.json",
+      "sha256": "ae69841b6167cc8dc574aa40a42780364f6ee7a119ffda96850aecfa112e69f1",
+      "bytes": 586
+    },
+    {
+      "path": "blackflow_live/capture.py",
+      "sha256": "f269d8799b63033eb4925f0c4049c512a1ba9d2b60fd5178d383afcc79ea0d15",
+      "bytes": 12406
+    },
+    {
+      "path": "blackflow_live/controller.py",
+      "sha256": "aa5a7bdc7ae5fd7b91555b5f39367112508d7713301a5ddb97b93b3a8ee1a49e",
+      "bytes": 6148
+    },
+    {
+      "path": "blackflow_live/engine.py",
+      "sha256": "acb59c112f9a209f14682c5881fcfdd980b8972868949c53d05a74992dc2c98a",
+      "bytes": 12551
+    },
+    {
+      "path": "blackflow_live/geometry.py",
+      "sha256": "f5203912d193f071e677e2c4522d0850200aa7fe08f3f35dcbb691628a832ca0",
+      "bytes": 8421
+    },
+    {
+      "path": "blackflow_live/models.py",
+      "sha256": "e3b2e6aae0c3f203bd1a9ffd2b50427aeb67f2b42a9405124fbc400d35f3ec93",
+      "bytes": 1846
+    },
+    {
+      "path": "blackflow_live/policy.py",
+      "sha256": "e0741edf1a08a42b83fd70d4b5473a8c9e572f73efbbabd5091f0185b6651a4e",
+      "bytes": 36581
+    },
+    {
+      "path": "blackflow_live/runtime.py",
+      "sha256": "284810d585e45e07f9e3f30cb62274e94fe3edd4ec33941191aeedc0c13da7bc",
+      "bytes": 1957
+    },
+    {
+      "path": "blackflow_live/service.py",
+      "sha256": "7e89ba1c4fea23bc8e3f701ca608c47e9d9fd117e48945979aa3e99f632ac35b",
+      "bytes": 9463
+    },
+    {
+      "path": "blackflow_live/vision.py",
+      "sha256": "d5571d87853c09ee603f915d6bf1bf974b04b6e255cf767972708e8611aeb201",
+      "bytes": 35387
+    },
+    {
+      "path": "blackflow_rl/__init__.py",
+      "sha256": "ea7930e28cc35f6ecad93eff423755a0ce8471137cfc7da6cbd50d788b5a88c9",
+      "bytes": 737
+    },
+    {
+      "path": "blackflow_rl/__main__.py",
+      "sha256": "3d2438ae92f4746e9ffaa1f837b1fe803f6281091d1f31f8c95643716f257d9a",
+      "bytes": 80
+    },
+    {
+      "path": "blackflow_rl/agents.py",
+      "sha256": "3a994c84cf98735fb960682226eb756cbcf03fd75df9a4031ac1b487081a0f4f",
+      "bytes": 115720
+    },
+    {
+      "path": "blackflow_rl/bank_entry_variant.py",
+      "sha256": "70319936818aa4d81c2fdea99d3d950182ab37f7211e78802196186ed9b37d4d",
+      "bytes": 6786
+    },
+    {
+      "path": "blackflow_rl/battle_loot.py",
+      "sha256": "566bc3e8d0aff1fb4edd9dc27b608dd0791317477a48c156d2ad982db36521ce",
+      "bytes": 4780
+    },
+    {
+      "path": "blackflow_rl/catalog.py",
+      "sha256": "28af6cee4edc9a508cbd87366373d15ac5b9eb061766ee668c45c769db7294ef",
+      "bytes": 7207
+    },
+    {
+      "path": "blackflow_rl/cli.py",
+      "sha256": "570594fc96a2c5ee2e75a7a57eeb85ae187c10466fd132baa1f4cba02758d346",
+      "bytes": 18143
+    },
+    {
+      "path": "blackflow_rl/client_data.py",
+      "sha256": "5f6dca6a4f15b2a54366c1bf05fa76010da340c2934529b52c78cd7a121ad93e",
+      "bytes": 4068
+    },
+    {
+      "path": "blackflow_rl/corn_capacity_teacher.py",
+      "sha256": "be253964abba6b7ead79eedf5b3b02bc9e981856191ee9541b30dfb99f636eed",
+      "bytes": 5577
+    },
+    {
+      "path": "blackflow_rl/domain.py",
+      "sha256": "7ae5e8109343440a5a1f4ccb4dde6cc277063b0df9d5df6c797ec2e692943a66",
+      "bytes": 14997
+    },
+    {
+      "path": "blackflow_rl/duel_rewards.py",
+      "sha256": "83761fd5fed97cd82872fcf09f57b402751714e2df4ee919cafd3840e1ec6df0",
+      "bytes": 11763
+    },
+    {
+      "path": "blackflow_rl/economic_sampling.py",
+      "sha256": "d4aa0a50c9a298994cac798fa4485b0a12230bf948ad61cfba99d56f32b2b037",
+      "bytes": 6499
+    },
+    {
+      "path": "blackflow_rl/economy.py",
+      "sha256": "04e2a91142088b70747b05e6197223a94e2dae89e31e2303f546e2d7aecf2c2e",
+      "bytes": 121813
+    },
+    {
+      "path": "blackflow_rl/employment.py",
+      "sha256": "cb8821b6a61ee297918bf869b6ffe83511881d35852acc20d9d13e2b0c71a910",
+      "bytes": 13937
+    },
+    {
+      "path": "blackflow_rl/ending_rules.py",
+      "sha256": "054c95a017bf5d1ab23a45a33310a3dd9ee31730f4da5030611919a9958c136e",
+      "bytes": 6985
+    },
+    {
+      "path": "blackflow_rl/events.py",
+      "sha256": "067e9f8415afd01d6be8f446ff8a6ef4063738778734fad66705ca9b83032418",
+      "bytes": 27899
+    },
+    {
+      "path": "blackflow_rl/evidence.py",
+      "sha256": "83d2ace3e3e134cfc3548cdc37c509e02a49e76a954aa8f30cc4bcfaca1915ac",
+      "bytes": 7301
+    },
+    {
+      "path": "blackflow_rl/fate_nodes.py",
+      "sha256": "af17a661fac8ee29b01a4528074ac33f4fa8806d637acb162cc3c4db228edbda",
+      "bytes": 10139
+    },
+    {
+      "path": "blackflow_rl/features.py",
+      "sha256": "a6bfb33f4902c9963c5c107efb6f9a95d25bdef3301dd384d42a518849857037",
+      "bytes": 31135
+    },
+    {
+      "path": "blackflow_rl/frozen_simulator_cache.py",
+      "sha256": "eab36e31a3befa92c0b3da6453a363497d6d30f7e2c9443a35c18f67e63e4f44",
+      "bytes": 3086
+    },
+    {
+      "path": "blackflow_rl/frozen_teacher_value_cache.py",
+      "sha256": "31aa832c6131366bd0b1e4278e2b0f197b830f5a3bead5649348ca9f5985b291",
+      "bytes": 1558
+    },
+    {
+      "path": "blackflow_rl/future_economy.py",
+      "sha256": "39932dfd8d9897189d8cffb54436cbe2891b4829a84bd569857a25f234454121",
+      "bytes": 7407
+    },
+    {
+      "path": "blackflow_rl/gating.py",
+      "sha256": "203e64db8318ac6978e5169b15919533cc6854c5ffdeef018961864ca748f39d",
+      "bytes": 15866
+    },
+    {
+      "path": "blackflow_rl/health_planning.py",
+      "sha256": "e8dab4e86118a09d00e176b24acc60f9f1191900e1b2a2d1503edc8eeda3e333",
+      "bytes": 2583
+    },
+    {
+      "path": "blackflow_rl/m07_observation_transaction.py",
+      "sha256": "70347a332ec1b835876481f10be9e6ae95bacef08f9582125f382f8fa13d2c59",
+      "bytes": 7947
+    },
+    {
+      "path": "blackflow_rl/m07_surprise.py",
+      "sha256": "2d69a4a0e73db69e28d07261f4a193c38ca153956310e8dc4e7d10caa506dd28",
+      "bytes": 14848
+    },
+    {
+      "path": "blackflow_rl/map_templates.py",
+      "sha256": "6798bd0d40f8eb6c82904bd4bdac7824354acf630965fc25204d2f3bec56ae71",
+      "bytes": 18348
+    },
+    {
+      "path": "blackflow_rl/mapgen.py",
+      "sha256": "294ab11e32d6bc0677c422d349d77c20ee9fc92d2cd287831a9f38b0002dc9f6",
+      "bytes": 67787
+    },
+    {
+      "path": "blackflow_rl/mcts.py",
+      "sha256": "d45e70f0c792df799b95097c96e20fa8b9ea3e0bdf36d121df3a1c03213f1a73",
+      "bytes": 21339
+    },
+    {
+      "path": "blackflow_rl/network.py",
+      "sha256": "65cea067d851ea7332493776c8ddad8e7e3316c1c69355e50466e37b719086a9",
+      "bytes": 25419
+    },
+    {
+      "path": "blackflow_rl/neural_attentive_route.py",
+      "sha256": "6e9cd947f7d718fa551d017813016da5bf58188397c12bc27cab528aa5a81461",
+      "bytes": 10591
+    },
+    {
+      "path": "blackflow_rl/neural_commit.py",
+      "sha256": "029fadd8eec5468c0c92b3764061394fb05b773647c28090d5eddff5180ca227",
+      "bytes": 1924
+    },
+    {
+      "path": "blackflow_rl/neural_concept_adapter.py",
+      "sha256": "7f27b4bf8bd9d79d3d3728b3d679b8cabc1feba71fa32412329c9ab07e497b61",
+      "bytes": 9729
+    },
+    {
+      "path": "blackflow_rl/neural_context_mobility.py",
+      "sha256": "b56d2153203d1f723f93ba6fdd79f195cc5efaaa8926c8010b2c93b0abd26b3d",
+      "bytes": 4248
+    },
+    {
+      "path": "blackflow_rl/neural_equipment_commit_v2.py",
+      "sha256": "a93e36f86232013e8d4c02940b04ef19c84e24a0b12f1e2267612b03cb9ff1ca",
+      "bytes": 1966
+    },
+    {
+      "path": "blackflow_rl/neural_geometry_adapter.py",
+      "sha256": "f745fc12909bb87d2b5b3c879e83a3728188e754e2554ac460a274236c8b66bf",
+      "bytes": 8895
+    },
+    {
+      "path": "blackflow_rl/neural_macro_route.py",
+      "sha256": "9a8a72b5d5cc0f289008653d27d91c242e941b4ed1fe2a251e34a5b3531fd33c",
+      "bytes": 13453
+    },
+    {
+      "path": "blackflow_rl/neural_memory.py",
+      "sha256": "683b5ef66019b56a606a245dbdb7cd3bc6dfb4176e1b9c20df828a67bf7a12ee",
+      "bytes": 2348
+    },
+    {
+      "path": "blackflow_rl/neural_memory_v2.py",
+      "sha256": "d5d4d475a6e24deaa81939915af16941c9df971c14831b6236efd699c27c4afa",
+      "bytes": 4443
+    },
+    {
+      "path": "blackflow_rl/neural_mobility_route.py",
+      "sha256": "080c2f3ac3c0efce70a954129f6003f883221044ec2b98d6a0ffab32500eae53",
+      "bytes": 8377
+    },
+    {
+      "path": "blackflow_rl/neural_route_adapter.py",
+      "sha256": "37bb4571263ce6942d2f39d2d4bfb8668129844c05076484b2b7c0c4390893ff",
+      "bytes": 7071
+    },
+    {
+      "path": "blackflow_rl/notebook_observation.py",
+      "sha256": "44629570c5ab5989b40b3ff96da6a6a7f74a4950a7fc31e7afc5138a2bdbadcf",
+      "bytes": 6098
+    },
+    {
+      "path": "blackflow_rl/observed_operator_bridge.py",
+      "sha256": "dfa05b72826b8022f4ab6545d049266ebef0f1cc04635b8a57fd79b89f7b57ea",
+      "bytes": 10332
+    },
+    {
+      "path": "blackflow_rl/operator_economy.py",
+      "sha256": "e21391e5af168671ebb33169a08b0339022d9c91f15c2a4f390e8f6184eb7fbe",
+      "bytes": 3597
+    },
+    {
+      "path": "blackflow_rl/policy_cache.py",
+      "sha256": "7140379cf304fed04303a055ab3d87270080ecbd45fe89b9d24555cc073a7091",
+      "bytes": 2831
+    },
+    {
+      "path": "blackflow_rl/policy_constraints.py",
+      "sha256": "e6697cace8b8655bc4cbcd993b7035162b22a0233afd93f22260c2d12d053fa9",
+      "bytes": 29441
+    },
+    {
+      "path": "blackflow_rl/portal.py",
+      "sha256": "d76e05f6439375bb595d3079b0116e2597962ca08518cee6deff2ed9c88484aa",
+      "bytes": 12169
+    },
+    {
+      "path": "blackflow_rl/ppo.py",
+      "sha256": "dd0c34e7ef1f8a3bab520bc1870261453fa0f135eed4844ebb7a7c4115808a68",
+      "bytes": 23410
+    },
+    {
+      "path": "blackflow_rl/ppo_potential.py",
+      "sha256": "8275d9d6e3fa1008ef0de6658e355a956394509de13350953cb0200d160f3045",
+      "bytes": 3472
+    },
+    {
+      "path": "blackflow_rl/progression.py",
+      "sha256": "f229bba293fead0d410106c4a6c7d2575db093a346b9a9932f2516b70a7e6e2f",
+      "bytes": 2462
+    },
+    {
+      "path": "blackflow_rl/recruitment.py",
+      "sha256": "7ef213f1de85290729aad0361d8c4cb455dba83ebba4c20c29b2bdbea8911497",
+      "bytes": 12964
+    },
+    {
+      "path": "blackflow_rl/recruitment_candidates.py",
+      "sha256": "d14c98f117222f5ea4db7fdd9b8a68eb9f1e0874bf438a321a85df8245104ff2",
+      "bytes": 11951
+    },
+    {
+      "path": "blackflow_rl/relic_effects.py",
+      "sha256": "bbe6b17ede6dbdcac0d2d369eb86d59c3b6080182ff6c7056ab566aabb6ac611",
+      "bytes": 14628
+    },
+    {
+      "path": "blackflow_rl/residents.py",
+      "sha256": "4b6c4d632000143bc1375c0582284f54611a9839c67379ef41078c0580698ee3",
+      "bytes": 11161
+    },
+    {
+      "path": "blackflow_rl/rewind.py",
+      "sha256": "72b141458e5b29142b4fa3d98751bd01066d1885104fb38394b1d5071b969f9e",
+      "bytes": 4327
+    },
+    {
+      "path": "blackflow_rl/route_average_targets.py",
+      "sha256": "74a53543f37f4887cb9f2e998e9ac30515443a53db4f2e5a5c7bd215fc0313af",
+      "bytes": 1745
+    },
+    {
+      "path": "blackflow_rl/route_planner.py",
+      "sha256": "05b9599e21d0638c80584ff12bc72d04040eeb2a8abccf47290d52f33a980162",
+      "bytes": 45364
+    },
+    {
+      "path": "blackflow_rl/route_priority_weights.py",
+      "sha256": "efb708e835f3508db7f848ef968b90166751b6c969ed4cf971227ccd664fa235",
+      "bytes": 1112
+    },
+    {
+      "path": "blackflow_rl/route_return_targets.py",
+      "sha256": "95bbf7b8e4716743fd2a14816e9a8ae56dd320e768b7d00c88e0f06f27a5314e",
+      "bytes": 3869
+    },
+    {
+      "path": "blackflow_rl/rules.py",
+      "sha256": "b5a1f5a47197537187814d970ba40cea9aa808844f5797d57dd5bbdeae3a2bdd",
+      "bytes": 7638
+    },
+    {
+      "path": "blackflow_rl/shop_recruit_teacher.py",
+      "sha256": "0904cb43626a4870b66ef284f9af9b42150d5a3c84c249e9835f1b742dd8c113",
+      "bytes": 2782
+    },
+    {
+      "path": "blackflow_rl/shop_recruit_variant.py",
+      "sha256": "83460e1b92bc4533765f36e09dc4225c48ff41a3bd5255c9c6a0f1db29e8a478",
+      "bytes": 8682
+    },
+    {
+      "path": "blackflow_rl/simulator.py",
+      "sha256": "f0d2e060bc426339a42969ce260710b7e643297b761bcb96dd45e14053dea67e",
+      "bytes": 47477
+    },
+    {
+      "path": "blackflow_rl/source_mobility_teacher.py",
+      "sha256": "164ae192d2e2c1ecb3dc9cd5f1ecdd7e01e7bc3d921fae5db10db202d7663016",
+      "bytes": 2993
+    },
+    {
+      "path": "blackflow_rl/temporary_recruitment.py",
+      "sha256": "5c4e9f4512da432ee41029023643e182358ae326d774604bfa12923f08647c55",
+      "bytes": 11975
+    },
+    {
+      "path": "blackflow_rl/training.py",
+      "sha256": "fae75cbd8d04fdeeb4e2f805bb7475b4728d6204602ec06e48a1b4e4b490de49",
+      "bytes": 27064
+    },
+    {
+      "path": "blackflow_rl/training_environment.py",
+      "sha256": "2f67531b4656f71b84284d81dd16a2a68ee704ad5f0fd5aec18cb52171c190d2",
+      "bytes": 4556
+    },
+    {
+      "path": "blackflow_rl/training_strategy.py",
+      "sha256": "5a51f2dddbaa53767b88538cdbab6067433c7c10f8d4318ea5e06798f6063b2d",
+      "bytes": 4936
+    },
+    {
+      "path": "blackflow_rl/upgrade_ticket_actions.py",
+      "sha256": "a7b9b70b55b003de5013fec3f5406de6c1cc5209aae212ca7227c7544bc2fa60",
+      "bytes": 2365
+    },
+    {
+      "path": "blackflow_rl/utopia_economy.py",
+      "sha256": "cd48fd4768512da94491b5b2691521b78e1ac1db2966107c8dc14421a6802fcf",
+      "bytes": 6845
+    },
+    {
+      "path": "blackflow_rl/wave_model.py",
+      "sha256": "377d8eb994a349331df2ba1f5c6e4a5d43928085279b65b26b8e82fe8e4f0727",
+      "bytes": 2380
+    },
+    {
+      "path": "data/evidence/map_rule_conflicts_v1.json",
+      "sha256": "2a2f612e99461de4b1ae3f9d1015214ee984bb6a3c42b775689c87ae026816ed",
+      "bytes": 3311
+    },
+    {
+      "path": "data/evidence/rogue6_bank_reentry_video_v2.json",
+      "sha256": "bb0ecba96b4a2c6b862e9ce635fc557f12b6387751ce88efc38db3c0dc739778",
+      "bytes": 2600
+    },
+    {
+      "path": "data/evidence/rogue6_bank_user_observation_v1.json",
+      "sha256": "68468252eb1ecb6b06588efa60879a558690d2819558dca8a7daf8ebc808b1a5",
+      "bytes": 2002
+    },
+    {
+      "path": "data/evidence/rogue6_battle_recruit_candidates_v1.json",
+      "sha256": "a55150c5c38ef4f8fd6da343f7c0610d7445fbc1730090fefaaaa5deea6d5040",
+      "bytes": 3135
+    },
+    {
+      "path": "data/evidence/rogue6_broker_recruitment_v1.json",
+      "sha256": "a554c008825467e9df4149cdc68d0050cd091bd33d763a7fa7616dbdda109988",
+      "bytes": 12502
+    },
+    {
+      "path": "data/evidence/rogue6_client_choice_snapshot_v1.json",
+      "sha256": "c0dc1f4da2d39108da082cf13c1104d80aca468aedb9d24c5855efea932cf8bf",
+      "bytes": 412293
+    },
+    {
+      "path": "data/evidence/rogue6_difficulty_audit_v1.json",
+      "sha256": "a369c7853d5328da1d60e1822bc006490f21c620082953e0a69c6e577f2e41db",
+      "bytes": 40720
+    },
+    {
+      "path": "data/evidence/rogue6_duel_middle_candidates_v1.json",
+      "sha256": "8266f92dd7425a266c37fc9c318a8d3f1f323b63677668db3631451ebd969b33",
+      "bytes": 21688
+    },
+    {
+      "path": "data/evidence/rogue6_economy_catalog_v1.json",
+      "sha256": "bd38c9a75d205228a344fc4ac2c5ac8cf0128ba07bb04a3b8bac2e1ac348d98f",
+      "bytes": 1194474
+    },
+    {
+      "path": "data/evidence/rogue6_economy_chest_groups_v1.json",
+      "sha256": "9a473c61b6719cbdba1bfd6b077501ee36a9511d7957ada94e7ac9e5391bc3f1",
+      "bytes": 327026
+    },
+    {
+      "path": "data/evidence/rogue6_economy_observations_v1.json",
+      "sha256": "d45868dab1f546b4ba97e136b977db2bacda1dfc17f67530437dbcd88c662f5d",
+      "bytes": 280813
+    },
+    {
+      "path": "data/evidence/rogue6_economy_region_rules_v1.json",
+      "sha256": "59af680be241282ead5b2124e521dd75e74fd865b6e22f98bd2b5336a8a3116c",
+      "bytes": 6076
+    },
+    {
+      "path": "data/evidence/rogue6_employment_corn_user_observation_v1.json",
+      "sha256": "278fc8358a2f4ebf62c9fdbf45df1b056947eaa0f5975970b602a62044b22374",
+      "bytes": 1611
+    },
+    {
+      "path": "data/evidence/rogue6_ending_starting_rules_v1.json",
+      "sha256": "01cf751c3d1e6737b0256f4a8961fde915c693129722f6616fe419d25d9a2dea",
+      "bytes": 35524
+    },
+    {
+      "path": "data/evidence/rogue6_fate_node_rules_v1.json",
+      "sha256": "ddce6b6efcb3fcd7910043cac200e970d9c5ec655caf8c0cd13b1aece1377232",
+      "bytes": 12884
+    },
+    {
+      "path": "data/evidence/rogue6_free_reserve_user_observation_v1.json",
+      "sha256": "04d5ec97893c499bcd3214f5bbdeb4f5aec98ea18ae10b54cf03914e16d08d34",
+      "bytes": 2039
+    },
+    {
+      "path": "data/evidence/rogue6_hide_and_seek_marker_v1.json",
+      "sha256": "ef70d691ffc660bbec4916bfd97a9816fd5778e4ceee2000b0efe42e449d6655",
+      "bytes": 2835
+    },
+    {
+      "path": "data/evidence/rogue6_map_node_audit_2026-09-08.json",
+      "sha256": "5e5e3025cc060cc72cb4e4530a2367c2f149e36eb3c10cabce2f8fb399340f9c",
+      "bytes": 54754
+    },
+    {
+      "path": "data/evidence/rogue6_node_mechanics_2026-09-07.json",
+      "sha256": "c1fc52b084d422c8ec18663cf62d28d846d056c5b08d528b9cf8fa99e33b05f0",
+      "bytes": 3413
+    },
+    {
+      "path": "data/evidence/rogue6_noncombat_event_catalog_v1.json",
+      "sha256": "9f2d56f5c6881bcb893677a542a70f6d23eb68c3449a5074dcca1b3153edade1",
+      "bytes": 47254
+    },
+    {
+      "path": "data/evidence/rogue6_observed_operator_catalog_v1.json",
+      "sha256": "3048a6851e69923fbd0bce042f052716a2b0ce300e9ec7054a85ad54b4d8c0e1",
+      "bytes": 124176
+    },
+    {
+      "path": "data/evidence/rogue6_observed_operator_runtime_v1.json",
+      "sha256": "15f42939df9163054d0e9ba3a38c2efb58b1a7246b7913efc0c3f0189c693e0c",
+      "bytes": 3227
+    },
+    {
+      "path": "data/evidence/rogue6_operator_economy_rules_v1.json",
+      "sha256": "2f8e1c5b083c31948ca682993a57118b0c31781db1d1b2ae42cd13a55f10de5c",
+      "bytes": 66121
+    },
+    {
+      "path": "data/evidence/rogue6_portal_layouts_v1.json",
+      "sha256": "7be9e3bedf961218d1c91166669cdf3975db8bce2d4ebe5ace5e79c33820a0be",
+      "bytes": 57323
+    },
+    {
+      "path": "data/evidence/rogue6_recruit_storage_v1.json",
+      "sha256": "2f37ce541bc9fb1e952dc89f02df31f64d157757498ead9852bef8a0bcc630cc",
+      "bytes": 1382
+    },
+    {
+      "path": "data/evidence/rogue6_region_effect_catalog_v1.json",
+      "sha256": "e89dc6f92feb7da82a67bbd696251eec5f9a154607bc8883b44bcfb0dcb4c770",
+      "bytes": 19400
+    },
+    {
+      "path": "data/evidence/rogue6_reserve_recruitment_v1.json",
+      "sha256": "43d22c5898d02c3faf36cae5436f926ff757d80f1a8948798a47e8f8fc6fb4f6",
+      "bytes": 2208
+    },
+    {
+      "path": "data/evidence/rogue6_resident_rules_v1.json",
+      "sha256": "4983051096dd20c9c4e69a0d4af2be44c9a86cb1e6e24509c3f5055f8e6671eb",
+      "bytes": 7386
+    },
+    {
+      "path": "data/evidence/rogue6_sacrifice_exchange_rules_v1.json",
+      "sha256": "8f63d427cbf4d950df8f160ae9b9e38cf5069ffe06147cc31777a98732254530",
+      "bytes": 2407
+    },
+    {
+      "path": "data/evidence/rogue6_shop_recruit_video_v1.json",
+      "sha256": "abbc77bc1a646565c44018be4e17a37a6cccdf20afb1c872115758d75536ebf1",
+      "bytes": 4027
+    },
+    {
+      "path": "data/evidence/rogue6_shop_video_quotes_2026-09-10.json",
+      "sha256": "1b2aa0746dc2db2fe4e0ca057bdacb4ef0ffe9ee5edc30611863a16d93011156",
+      "bytes": 2572
+    },
+    {
+      "path": "data/evidence/rogue6_upgrade_ticket_rules_v1.json",
+      "sha256": "69de3decbddf35d4509a0762195c4ce81381ebfda53635a703b21c74a0964f3b",
+      "bytes": 19608
+    },
+    {
+      "path": "data/evidence/rogue6_xianshu9_video_audit_v1.json",
+      "sha256": "95c52a7ddbddea0ceed86939201c54534467bb17ebc4ed081685176754abc2e4",
+      "bytes": 5929
+    },
+    {
+      "path": "data/evidence/rogue6_xianshu9_video_audit_v2.json",
+      "sha256": "b69cc32e44e85dd10335e32463eb23b5c020591d16f8281671176a874e59d868",
+      "bytes": 8912
+    },
+    {
+      "path": "data/policies/current_neural_controller.json",
+      "sha256": "8f28da355e2bbb265dbd2ec0beb8b5282b8972e73d1585868f3c8ee313712298",
+      "bytes": 1393
+    },
+    {
+      "path": "data/rules/blackflow_map_templates_v1.json",
+      "sha256": "ad457b9866278d30b39159665f98edc71e87dfd0e4571ca081cd8e684f13a9bf",
+      "bytes": 198839
+    },
+    {
+      "path": "data/rules/blackflow_sim_v1.json",
+      "sha256": "e07b115e8122810e61e2316dad923e4b176bd8666d3a124ab418b86f78fdd64f",
+      "bytes": 10010
+    },
+    {
+      "path": "data/training_environments/baseline.json",
+      "sha256": "7d5379cf86404258500c79f77629b6845f05bfad62598e9ceedab5f73bd86374",
+      "bytes": 196
+    },
+    {
+      "path": "data/training_environments/relic_price_stress.json",
+      "sha256": "8e6382cc84cfc4bd0b609bd2d560d840c049270b71f8e72a9e593c6ff816dbec",
+      "bytes": 318
+    },
+    {
+      "path": "data/training_environments/shop_supply_stress.json",
+      "sha256": "9d354314110b45b22fa3ae29ed2c12deaa180dd15ce8befa344f7d54a786231e",
+      "bytes": 332
+    },
+    {
+      "path": "docs/live-policy-coverage.md",
+      "sha256": "f3046d4a91c8c9c0f8fa20aec26faee7c8032deddab188644d90e3ae599e92f1",
+      "bytes": 9991
+    },
+    {
+      "path": "docs/live-vision-coverage.md",
+      "sha256": "e66d3f14da9cb98ba9c31fbb4755efc264748c262f077f565b72c9a65dbf22dd",
+      "bytes": 3848
+    },
+    {
+      "path": "docs/nonbattle-control.md",
+      "sha256": "775690e71ddbfcd0db6c8d9423235c9ca39ff7b3c947e265cfdfe2e4a4c5e1ab",
+      "bytes": 5155
+    },
+    {
+      "path": "requirements-core.txt",
+      "sha256": "d293b7b6d558060451bf7f4573bc9dc9e1caad8f767c7cb0b2717dadaf12257f",
+      "bytes": 33
+    },
+    {
+      "path": "requirements-live.txt",
+      "sha256": "ef44464bfc5edb2ac54b1ca97b690c6872b96985f66d013efefc652668c27d40",
+      "bytes": 69
+    },
+    {
+      "path": "scripts/package_live_connector.py",
+      "sha256": "fabe2f1ed862189ced5f8b64bf9709cc4a00f36237cbfc0f9b59a19f10dd8851",
+      "bytes": 3573
+    },
+    {
+      "path": "tests/test_live_controller.py",
+      "sha256": "e22ad4a6de42eac4f5b06bf1da980302150e8191ac1bd46b35ae80bc9dd1d52c",
+      "bytes": 4246
+    },
+    {
+      "path": "tests/test_live_engine.py",
+      "sha256": "5b05e6acb46097af2451b5d6affcb5eb6a9f42f91244956939771c28098e9a1b",
+      "bytes": 16818
+    },
+    {
+      "path": "tests/test_live_geometry.py",
+      "sha256": "c08c2377fd406226246498b5156d9e2c0d3f7100999fbfac1cf367d4da22fa42",
+      "bytes": 6963
+    },
+    {
+      "path": "tests/test_live_policy.py",
+      "sha256": "c7ad4292ea4ef50d23ff37025e3897cb5807729a239d2a438d87f4e583565f60",
+      "bytes": 13072
+    },
+    {
+      "path": "tests/test_live_service.py",
+      "sha256": "80e8624e4f0c810dc38bf7acfd47dcb1d49dbae8f4848ef7a95151544f6cb898",
+      "bytes": 11436
+    },
+    {
+      "path": "tests/test_live_vision.py",
+      "sha256": "ae8ee8dad750d4e3356c7f8b3f930b7dbfb0d05f75eef3d50e3edfa7206af73a",
+      "bytes": 8439
+    },
+    {
+      "path": "tools/Start-BlackflowLive.cmd",
+      "sha256": "9f6770ffd98d2691a0876f288d8215dbe59c485be5a41571a38160ccc0522d4c",
+      "bytes": 87
+    }
+  ],
+  "scope": "first ending nonbattle; no claimed complete real-game acceptance",
+  "maa_assets_included": false,
+  "source": "local frozen inference dependency snapshot"
+}

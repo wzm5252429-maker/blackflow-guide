@@ -69,6 +69,7 @@ import {
   type NodeRecord,
 } from "./game-data";
 import { STAGE_DATA, type StageRecord } from "./stage-data";
+import LiveRouteControl from "./live-route-control";
 
 type PlannerResult = {
   route: string[];
@@ -774,6 +775,7 @@ export default function Home() {
       <section id="workspace-tabs" className="workspace">
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <TabsContent value="planner" className="tab-panel">
+            <LiveRouteControl />
             <SectionHeader
               kicker="ROUTE OPTIMIZER"
               title="按结局与背包，重排三条地图路线"

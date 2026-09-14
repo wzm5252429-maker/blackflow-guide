@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "name": "baseline",
+  "rationale": "Existing synthetic assumptions, preserved as the comparison baseline. Not calibrated to real gameplay.",
+  "economy_overrides": {}
+}

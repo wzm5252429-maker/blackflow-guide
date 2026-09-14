@@ -1,0 +1,39 @@
+# 黑流树海非战斗接管
+
+本模块取消截图管线的 16:9 前置限制，并将原始游戏截图、MAA OCR/模板/CorridorNet、当前冻结神经网络和 Windows 点击控制接入网站「路线决策」。默认仅在用户点击「自动路线决策」后启用输入；启动本机服务和打开网页不会开始接管。
+
+目标固定为一结局。「开始战斗」「开始行动」和战斗画面不执行输入；用户手动作战后，循环继续读取战后画面。每次只执行一个同帧真实候选动作，然后重新截图确认结果。未知页面、资源缺失、目标变化或模型不匹配会等待，不补写模拟状态。
+
+## 使用
+
+1. 使用 Windows 10/11 x64、Python 3.13，并保留现有 BFMapRecognizer / MAA 运行资源。
+2. 安装依赖：`py -3.13 -m pip install -r requirements-live.txt`。
+3. 运行 `tools/Start-BlackflowLive.cmd`。它只启动本机服务并打开网站，不点击游戏。
+4. 默认运行资源目录为 `D:/ArknightsAuto/BFMapRecognizer_v1.0.2_Windows/BFMapRecognizer`。其他位置使用 `py -3.13 -m blackflow_live --runtime "你的资源目录" --open-site`，或环境变量 `BLACKFLOW_MAA_RUNTIME`。
+5. 在同一电脑的路线决策页点击「自动路线决策」。从启动器打开时自动配对；单独打开网站时，使用启动器显示的六位一次性连接码。浏览器的本机网络访问权限由用户选择。
+6. 暂停可用网站按钮、Esc 或桌面左上角；停止后必须重新启动会话。窗口切换导致点击目标被遮挡时停止输入。网页连接中断超过 20 秒暂停。
+
+网站通过 `http://127.0.0.1:19761` 与本机通信；截图和网络权重在本机处理，不发送到云端决策服务。公开网站本身不能启动 Windows 应用，因此使用时需要本机接管器保持运行。服务只允许明确的网站来源，并要求配对后的 Bearer 凭证；不开放任意坐标点击接口。
+
+## 分辨率和坐标
+
+`capture.py` 直接使用 MAA FramePool 的原始客户区截图，绕过 MaaCore 的 16:9 截图代理；`geometry.py` 保留完整宽高比，仅移除成对均匀黑边。识别输入按高度缩放，宽度随实际画面变化。模板全图多尺度搜索，点击通过同帧逆变换返回实际客户区和桌面物理像素。每帧及输入提交前检查窗口句柄、进程、尺寸、位置和 DPI。窗口最小化、截图与客户区尺寸不一致时不猜测坐标。
+
+原始 MAA ControlUnit / OpenCV x64 ABI 针对现有 `v6.17.0-beta.6` 资源。更换 MAA 大版本应重新验证 ABI；不能把无关版本 OpenCV DLL 混入现有目录。DLL、MAA OCR、模板和 CorridorNet 不随连接模块再分发，使用本机原有资源及其许可证。
+
+## 实际验证与边界
+
+- 此次曾完成只读实机截图：窗口全屏、2878×1659 客户区、200% DPI。用户明确要求只实现功能后，没有继续操作或接管游戏。
+- 保存的真实地图截图回放：11 节点、11 道路、当前节点、第一层和七项 HUD 资源识别，与既有 MAA 输出一致；识别过程只读截图，没有把旧 JSON 当作识别结果。
+- 网络检查点使用当前选择 `opportunity_weighted_002` 的真实路线与菜单权重，按 SHA-256 和特征签名校验；不回退到随机动作或人工路线评分。
+- 回放与模拟输入测试覆盖宽高比、黑边、DPI、陈旧截图、重复点击、目标变更、战斗屏蔽、两帧结局确认、暂停/停止竞争、断连以及本机接口认证。
+- **尚未达到“除战斗外所有页面均可无人干预直到一结局”的完整实机验收。** 商店、招募、事件、库存及移动确认已有截图候选处理，但真实页面覆盖、滚动/完整背包扫描和通用干员身份特征仍有缺口；遇到未覆盖情形会明确等待。
+- 没有训练新网络，也没有证明模拟环境的成绩可迁移成真实通关率。一结局仅在同帧结算界面出现明确一结局身份、并经独立第二帧确认后标记完成；模糊通关文字不会冒充一结局完成。
+
+详细策略特征覆盖见 `docs/live-policy-coverage.md`；视觉能力以当前检测器和截图回放为准。此版本是可运行、可扩展、具有明确暂停边界的接管实现，不能把尚未覆盖的游戏分支描述为已经完成全自动通关。
+
+## 开发与验证
+
+运行 `py -3.13 -m unittest discover -s tests -p "test_live_*.py" -v`。这些测试不向真实游戏提交输入；真实模型测试只执行本机神经网络前向计算。部署包可用 `py -3.13 scripts/package_live_connector.py --output <目录>` 生成，包含冻结推理依赖和所选权重，避免覆盖研究工程正在进行的训练修改。
+
+浏览器连接依据：[Chrome 本机网络访问说明](https://developer.chrome.com/blog/local-network-access?hl=zh-cn)。物理 DPI 坐标依据：[Microsoft DPI awareness](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setthreaddpiawarenesscontext)。MAA 资源与算法来源：[MaaAssistantArknights](https://github.com/MaaAssistantArknights/MaaAssistantArknights)。

@@ -1,0 +1,272 @@
+{
+  "schema_version": 2,
+  "captured_at": "2026-09-10T03:24:56.792778+00:00",
+  "review_scope": "9 new files, 481 visually inspected sampled timestamps; 8 usable sources; no full audio transcription.",
+  "findings": [
+    {
+      "id": "XS9-R2-WAVE-RANGE",
+      "bvid": "BV11cgC6oEix",
+      "seconds": [
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85
+      ],
+      "grade": "AUTHOR_EMPIRICAL_SUMMARY_ON_SCREEN_NOT_RAW_TRIALS",
+      "observation": "609 observations reported; integer deltas -8..11 with a near-uniform central -6..8 band. Movement excludes changing floors.",
+      "correction": "Observed API accepts every integer -8..11, instead of just -6 or +8. Default missing observations stay unresolved.",
+      "prior": "Explicit experiment only: central integers uniform; independent per-instance draws. Main tail mass 0; sensitivity .0066 with uniform tail allocation. Neither is a verified server law.",
+      "supersedes": "rogue6_xianshu9_video_audit_v1 XS9-WAVE and the endpoint interpretation in economy-catalog-audit-2026-09-08.md",
+      "conflict": "Displayed tail .66% versus a subtitle comparing the five rare outcomes to the former at1/39. If interpreted per-value, this implies5/(15*39+5)=.84746%, not .66%; the antecedent is ambiguous. Raw data unavailable."
+    },
+    {
+      "id": "XS9-R2-WAVE-POLICY",
+      "bvid": "BV11cgC6oEix",
+      "seconds": [
+        90,
+        95,
+        100,
+        105,
+        135,
+        155,
+        175,
+        185,
+        195,
+        205,
+        210
+      ],
+      "grade": "VIDEO_ANALYSIS_TO_PROJECT_AUTHORED_HEURISTIC",
+      "observation": "Holding time and variance matter; take useful incidental movement opportunities; liquidate when appraisal is valuable and cash is needed.",
+      "implementation": "Expected bounded appraisal uses current value and public movement horizon; liquidity and inventory constraints remain. No bonus for unspendable terminal paper growth."
+    },
+    {
+      "id": "XS9-R2-CAPACITY",
+      "bvid": "BV1Ma876gEWG",
+      "seconds": [
+        140,
+        155,
+        175,
+        200,
+        215,
+        225,
+        235,
+        255,
+        275,
+        285
+      ],
+      "grade": "PLAYER_STRATEGY_AND_ITEM_DESCRIPTION",
+      "observation": "Early key income and capacity support natural goods, concepts and mobility; early combat strength supports growth. Self-reported results are not model calibration.",
+      "implementation": "Retain existing capacity and liquidity constraints; wave valuation now competes for that capacity. No unconditional combat multiplier or new cash grant."
+    },
+    {
+      "id": "XS9-R2-BIRD",
+      "bvid": "BV1LR3C6yEPJ",
+      "seconds": [
+        0,
+        20,
+        25,
+        45,
+        65,
+        80,
+        90,
+        95,
+        100
+      ],
+      "grade": "CATALOGUE_UI_AND_PLAYER_OPINION",
+      "observation": "Attack-speed concepts and shield/tree synergy described; not an isolated observed battle trigger.",
+      "implementation": "No unconditional +35% DPS assumption introduced."
+    },
+    {
+      "id": "XS9-R2-START",
+      "bvid": "BV1hagn6MEDg",
+      "seconds": [
+        0,
+        5,
+        10,
+        40,
+        50,
+        55
+      ],
+      "grade": "CONTEST_CONTEXT_PLAYER_OPINION",
+      "observation": "Starting capital/capacity and competition ticket restrictions discussed.",
+      "implementation": "Does not override user-confirmed project scope and ticket-retention rules."
+    },
+    {
+      "id": "XS9-R2-AUTOPSY",
+      "bvid": "BV1G7hg68E1F",
+      "seconds": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        45,
+        50
+      ],
+      "grade": "PLAYER_COMPARISON_NOT_ISOLATED_LOOT_SEQUENCE",
+      "observation": "No universal best floor: weigh experience against emergency rewards and early access to Advance. Commentary says autopsy has no part drop.",
+      "implementation": "No base reward change from this clip; battle in background is a different stage."
+    },
+    {
+      "id": "XS9-R2-CHEST-CONFLICT",
+      "bvid": "BV1os3M67Ew6",
+      "seconds": [
+        45,
+        50,
+        55,
+        60,
+        65,
+        70
+      ],
+      "grade": "MECHANICS_COMMENTARY_CONFLICTS_WITH_PARSED_CLIENT_GROUPS",
+      "observation": "Video explains four independent positions; two chest and two tree opportunities.",
+      "implementation": "Retain parsed two mutually-exclusive random groups with weights 850/105/35/35/15, total1040. Video cannot establish independence; register conflict rather than invent new distribution."
+    },
+    {
+      "id": "XS9-R2-NODE-PRIORS",
+      "bvid": "BV1os3M67Ew6",
+      "seconds": [
+        10,
+        20,
+        30,
+        40,
+        75,
+        85,
+        100,
+        110,
+        120,
+        130,
+        140,
+        155,
+        160
+      ],
+      "grade": "RESEARCH_COMMENTARY_NO_RAW_DENOMINATORS",
+      "observation": "Civilization floor rates, portal contents, conditional page results and shop stock timing discussed.",
+      "implementation": "No frequency overwrite or guaranteed reward derived from these summaries."
+    },
+    {
+      "id": "XS9-R2-MAPS",
+      "bvid": "BV1J5MQ6PEQF",
+      "seconds": [
+        15,
+        30,
+        35,
+        95,
+        100,
+        110,
+        125,
+        140,
+        155,
+        175,
+        190,
+        200,
+        225,
+        235,
+        255,
+        285,
+        305,
+        335,
+        345
+      ],
+      "grade": "AUTHOR_MAP_RESEARCH_SUMMARY_NOT_NEW_REPLAY_LAYOUT_EXTRACTION",
+      "observation": "43 ordinary map templates; counts 4b/4g35,4i28,5c43,5d36. Large templates add many empty nodes; counting conventions and graph distance matter.",
+      "implementation": "Template library has 3+10+10+10+10=43. Listed counts match occupied slots minus start. Keep existing 26 source-rule conflicts; tiny distance table not legible enough to adjudicate.",
+      "reward_caution": "47XP autopsy example explicitly has an XP bonus; do not use as base XP."
+    },
+    {
+      "id": "XS9-R2-JINWU",
+      "bvid": "BV1Yeto6WEn4",
+      "seconds": [
+        1380,
+        1440,
+        1800,
+        2040,
+        2100,
+        2520,
+        2700,
+        3000,
+        3060,
+        5100,
+        5160,
+        6120,
+        6180,
+        6240,
+        7920,
+        7980,
+        8040,
+        8940
+      ],
+      "grade": "SAMPLED_MATCH_UI_NOT_FULL_DECISION_TRANSCRIPT",
+      "observation": "Repeated natural-goods liquidation and replacement of movement items; later green-shop conversion. Bank balance, current cash, physical inventory and total obtained items are distinct.",
+      "implementation": "Supports conditional liquidity hypothesis. No claim of exact return attribution from minute-spaced frames."
+    }
+  ],
+  "map_count_reconciliation": [
+    {
+      "template": "4b",
+      "video_nodes": 35,
+      "library_occupied_including_start": 36,
+      "excluding_start_matches": true
+    },
+    {
+      "template": "4g",
+      "video_nodes": 35,
+      "library_occupied_including_start": 36,
+      "excluding_start_matches": true
+    },
+    {
+      "template": "4i",
+      "video_nodes": 28,
+      "library_occupied_including_start": 29,
+      "excluding_start_matches": true
+    },
+    {
+      "template": "5c",
+      "video_nodes": 43,
+      "library_occupied_including_start": 44,
+      "excluding_start_matches": true
+    },
+    {
+      "template": "5d",
+      "video_nodes": 36,
+      "library_occupied_including_start": 37,
+      "excluding_start_matches": true
+    }
+  ],
+  "exclusions": {
+    "BV1sdtP6bEx1": {
+      "all_seconds": true,
+      "reason": "Static settlement screen without burned subtitles. Spoken mistake review was not transcribed; no strategic reasoning extracted."
+    },
+    "BV1Yeto6WEn4": {
+      "intervals_seconds": [
+        [
+          0,
+          1200
+        ],
+        [
+          9000,
+          9115
+        ]
+      ],
+      "reason": "Pregame and outro are excluded from gameplay evidence."
+    }
+  },
+  "source_catalog": "C:\\Users\\wzm52\\Documents\\ChatGPT\\方舟自动化\\artifacts\\xianshu9_research_round2_20260910\\source_catalog.json",
+  "limits": [
+    "No exact server probability calibration.",
+    "No contestant action trajectories recovered for behavior cloning.",
+    "No complete neural combat model.",
+    "Tutorials may cover later game versions than the tournament; version identity is not proven."
+  ],
+  "follow_up_consistency_check": "artifacts/xianshu9_research_round2_20260910/wave_expectation_consistency.json"
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-09-07",
+  "status": "community_documented_deterministic_mechanics_not_server_generation_parameters",
+  "scope": "Blackflow Tree Sea node behavior and deterministic rewards used to constrain simulator rules",
+  "sources": [
+    {
+      "name": "PRTS Blackflow Tree Sea main page",
+      "url": "https://prts.wiki/w/%E6%B2%89%E6%B2%A6%E8%80%85%E7%9A%84%E9%BB%91%E6%B5%81%E6%A0%91%E6%B5%B7",
+      "revision_id": 424917,
+      "revision_timestamp": "2026-09-06T08:29:51Z",
+      "confidence": "B-community-wiki"
+    },
+    {
+      "name": "PRTS event catalog",
+      "url": "https://prts.wiki/w/%E6%B2%89%E6%B2%A6%E8%80%85%E7%9A%84%E9%BB%91%E6%B5%81%E6%A0%91%E6%B5%B7/%E4%BA%8B%E4%BB%B6%E4%B8%80%E8%A7%88",
+      "revision_id": 422994,
+      "revision_timestamp": "2026-08-29T18:30:23Z",
+      "confidence": "B-community-wiki"
+    },
+    {
+      "name": "PRTS engine parts catalog",
+      "url": "https://prts.wiki/w/%E6%B2%89%E6%B2%A6%E8%80%85%E7%9A%84%E9%BB%91%E6%B5%81%E6%A0%91%E6%B5%B7/%E5%BC%95%E6%93%8E%E9%85%8D%E4%BB%B6%E7%9B%AE%E5%BD%95",
+      "revision_id": 423515,
+      "revision_timestamp": "2026-09-03T16:55:54Z",
+      "confidence": "B-community-wiki"
+    }
+  ],
+  "verified_constraints": [
+    {
+      "node": "REST",
+      "rule": "Three choices are shown from a six-choice pool: max HP +3, squad limit +1, hope +3, advanced supply voucher +1, action points +2, parts-box capacity +1.",
+      "runtime_status": "partially_representable",
+      "unrepresented_resources": [
+        "squad_limit",
+        "advanced_supply_voucher",
+        "parts_box_capacity"
+      ]
+    },
+    {
+      "node": "WISH",
+      "rule": "Choose one of two collectibles for free; four ingots may refresh the pair once, after which only one collectible is still chosen.",
+      "runtime_status": "corrected_refresh_reward_from_two_collectibles_to_one"
+    },
+    {
+      "node": "FINAL",
+      "rule": "Gain one processed item and convert remaining action points to hope at 1:1; stored recruitment vouchers may be used.",
+      "runtime_status": "represented"
+    },
+    {
+      "node": "EVACUATE",
+      "rule": "Carry remaining action points to the next floor and gain one valuable or rare processed item; stored recruitment vouchers cannot be used.",
+      "runtime_status": "partially_representable"
+    },
+    {
+      "node": "DOOR",
+      "rule": "Doors are paired; action points are consumed on entry only. They do not appear on floors I, II, or VI.",
+      "runtime_status": "represented"
+    },
+    {
+      "node": "LIGHT",
+      "rule": "The spawn reveals itself and four adjacent nodes; visiting expands reveal to the surrounding twelve nodes and grants one action point.",
+      "runtime_status": "represented"
+    },
+    {
+      "node": "EMPLOY",
+      "rule": "Up to three promoted operators may be hired. Refresh starts at four ingots, rises by four each time, and is limited to four refreshes. The node is absent on floors I and VI.",
+      "runtime_status": "partially_representable"
+    }
+  ],
+  "explicit_unknowns": [
+    "server-side node generation probabilities",
+    "battle reward distributions",
+    "processed-item rarity probabilities",
+    "event option appearance weights",
+    "map-template selection weights"
+  ],
+  "policy": "Unknown probabilities remain synthetic or NEEDS_OBSERVATION and must not be promoted to evidence-backed status."
+}

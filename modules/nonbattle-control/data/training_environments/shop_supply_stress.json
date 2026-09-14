@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "name": "shop_supply_stress",
+  "rationale": "Hypothetical sensitivity test: reduce the unverified base ordinary relic slots from two to one. Technology and investment bonus slots retain their existing rules. Not a measured layout.",
+  "economy_overrides": {"synthetic_battle_shop_base_relic_slots": 1}
+}

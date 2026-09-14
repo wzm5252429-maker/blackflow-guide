@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-13T16:43:34.944705+00:00",
+  "status": "RESEARCH_VARIANT_VIDEO_PURCHASE_CLIENT_COMMON_ACTION",
+  "source": {
+    "url": "https://www.bilibili.com/video/BV1mWYa6QENi/?p=2",
+    "author": "芜香芋",
+    "video": {
+      "path": "artifacts/student60_20260913/video_sources/BV1mWYa6QENi-p2-c1.mp4",
+      "sha256": "1c3abfa04ab67a1cf91b0e6ec699bce0a57f52cf1e99138474737c25073b521b"
+    },
+    "difficulty_visible": 15,
+    "floor_visible": 5,
+    "reviewed_seconds": [
+      5175,
+      5190,
+      5195,
+      5210,
+      5215,
+      5220,
+      5225,
+      5230,
+      5240,
+      5245,
+      5250,
+      5255
+    ],
+    "observations": [
+      "Displayed ordinary profession tickets cost4 ingots in the observed pages; this is a display quote, not an unconditional tariff.",
+      "Purchasing opens recruitment. Recruit choices and confirmations occur before the shop resumes.",
+      "At87:10 held corn quotes70,46,46,46,28; at87:35 quotes79,55,55,55,37. The formal roster rises44 to47.",
+      "At87:30 a displayed sniper recruit decision has a zero-hope reserve choice.",
+      "The later F6 and final multi-ending score are excluded from first-ending comparisons."
+    ]
+  },
+  "client": {
+    "path": "source_data/roguelike_topic_table_full.json",
+    "sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b"
+  },
+  "ordinary_tickets": {
+    "rogue_6_recruit_ticket_pioneer": {
+      "eligible_reserve_ids": [
+        "char_504_rguard"
+      ],
+      "stashable": true
+    },
+    "rogue_6_recruit_ticket_warrior": {
+      "eligible_reserve_ids": [
+        "char_504_rguard"
+      ],
+      "stashable": true
+    },
+    "rogue_6_recruit_ticket_tank": {
+      "eligible_reserve_ids": [
+        "char_514_rdfend"
+      ],
+      "stashable": true
+    },
+    "rogue_6_recruit_ticket_sniper": {
+      "eligible_reserve_ids": [
+        "char_507_rsnipe"
+      ],
+      "stashable": true
+    },
+    "rogue_6_recruit_ticket_caster": {
+      "eligible_reserve_ids": [
+        "char_505_rcast"
+      ],
+      "stashable": true
+    },
+    "rogue_6_recruit_ticket_support": {
+      "eligible_reserve_ids": [
+        "char_505_rcast"
+      ],
+      "stashable": true
+    },
+    "rogue_6_recruit_ticket_medic": {
+      "eligible_reserve_ids": [
+        "char_506_rmedic"
+      ],
+      "stashable": true
+    },
+    "rogue_6_recruit_ticket_special": {
+      "eligible_reserve_ids": [
+        "char_504_rguard"
+      ],
+      "stashable": true
+    }
+  },
+  "existing_rule_evidence": [
+    {
+      "path": "data/evidence/rogue6_operator_economy_rules_v1.json",
+      "sha256": "2f8e1c5b083c31948ca682993a57118b0c31781db1d1b2ae42cd13a55f10de5c"
+    },
+    {
+      "path": "data/evidence/rogue6_reserve_recruitment_v1.json",
+      "sha256": "43d22c5898d02c3faf36cae5436f926ff757d80f1a8948798a47e8f8fc6fb4f6"
+    },
+    {
+      "path": "data/evidence/rogue6_recruit_storage_v1.json",
+      "sha256": "2f37ce541bc9fb1e952dc89f02df31f64d157757498ead9852bef8a0bcc630cc"
+    }
+  ],
+  "implementation_scope": [
+    "One already offered ordinary shop service ticket, actually purchased from a live unsold slot, grants one finite reserve opportunity.",
+    "No profession frequencies, character identity, promotion or extra shop slots are inferred.",
+    "Each successful actual recruit uses the existing corn+3 callback. Buying, menu opening, retention, decline and refresh do not grow corn.",
+    "Retained ordinary tickets are usable only at FINAL under the existing three-slot storage rule.",
+    "Existing shop layout, slot occurrence, price and refresh priors stay unchanged and unverified where previously marked.",
+    "Variant includes separately verified per-entry bank costs; current student weights and release pointer are not changed.",
+    "This repairs a previously documented missing mechanism; it is not evidence of student training progress."
+  ]
+}

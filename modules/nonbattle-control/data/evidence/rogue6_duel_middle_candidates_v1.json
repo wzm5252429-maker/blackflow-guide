@@ -1,0 +1,770 @@
+{
+  "schema_version": 1,
+  "topic_id": "rogue_6",
+  "node_type": "DUEL",
+  "branch": "middle",
+  "source": {
+    "url": "https://www.lubiao.wiki/data/archives/blackstream.json",
+    "retrieved_at_utc": "2026-09-08T12:24:06.050303+00:00",
+    "archive_sha256": "727c30528f1508d44d364d9c0b0d69d247868244f6d058c9b71f5888152bde14",
+    "official_pool_code": "node_duel_center",
+    "source_references": [
+      {
+        "sourceType": "node",
+        "sourceIds": [
+          "DUEL"
+        ],
+        "description": "狭路相逢节点的中间结果集合；出现率来自人工观测。"
+      }
+    ],
+    "prts_url": "https://prts.wiki/w/沉沦者的黑流树海",
+    "client_metadata_source": {
+      "path": "source_data/roguelike_topic_table_full.json",
+      "sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+      "item_path": "details.rogue_6.items",
+      "category_path": "modules.rogue_6.scrap.scrapItemToType"
+    }
+  },
+  "rules": {
+    "candidate_count": 2,
+    "physical_rewards_selected": 1,
+    "recruit_ticket_count": 2,
+    "ticket_family": "USER_OBSERVED_FREE_RESERVE_OPPORTUNITY_PROFESSION_UNKNOWN",
+    "candidate_count_evidence": "B_COMMUNITY_OBSERVED_TWO_CANDIDATES_SELECT_ONE",
+    "quantities_evidence": "B_PRTS_ONE_PART_AND_TWO_TICKETS"
+  },
+  "item_ids": [
+    "rogue_6_scrap_G_03",
+    "rogue_6_scrap_G_04",
+    "rogue_6_scrap_G_05",
+    "rogue_6_scrap_G_06",
+    "rogue_6_scrap_G_09",
+    "rogue_6_scrap_G_10",
+    "rogue_6_scrap_M_07",
+    "rogue_6_scrap_M_08",
+    "rogue_6_scrap_M_09",
+    "rogue_6_scrap_M_10",
+    "rogue_6_scrap_M_11",
+    "rogue_6_scrap_M_12"
+  ],
+  "member_metadata": {
+    "rogue_6_scrap_G_03": {
+      "name": "雾滚草",
+      "category": "GOODS",
+      "rarity": "NORMAL"
+    },
+    "rogue_6_scrap_G_04": {
+      "name": "回声玉米",
+      "category": "GOODS",
+      "rarity": "RARE"
+    },
+    "rogue_6_scrap_G_05": {
+      "name": "浪花",
+      "category": "GOODS",
+      "rarity": "NORMAL"
+    },
+    "rogue_6_scrap_G_06": {
+      "name": "霜晶树",
+      "category": "GOODS",
+      "rarity": "RARE"
+    },
+    "rogue_6_scrap_G_09": {
+      "name": "板藤",
+      "category": "GOODS",
+      "rarity": "SUPER_RARE"
+    },
+    "rogue_6_scrap_G_10": {
+      "name": "恋家果",
+      "category": "GOODS",
+      "rarity": "SUPER_RARE"
+    },
+    "rogue_6_scrap_M_07": {
+      "name": "小八界",
+      "category": "MOVE",
+      "rarity": "NORMAL"
+    },
+    "rogue_6_scrap_M_08": {
+      "name": "一次性喷气背包",
+      "category": "MOVE",
+      "rarity": "RARE"
+    },
+    "rogue_6_scrap_M_09": {
+      "name": "老妈妈的融雪",
+      "category": "MOVE",
+      "rarity": "RARE"
+    },
+    "rogue_6_scrap_M_10": {
+      "name": "坎诺特的触须",
+      "category": "MOVE",
+      "rarity": "RARE"
+    },
+    "rogue_6_scrap_M_11": {
+      "name": "结构性原理",
+      "category": "MOVE",
+      "rarity": "SUPER_RARE"
+    },
+    "rogue_6_scrap_M_12": {
+      "name": "“简易遥控器”",
+      "category": "MOVE",
+      "rarity": "SUPER_RARE"
+    }
+  },
+  "aggregate_candidate_marginals": {
+    "sampleCount": 1009,
+    "drawCount": 2018,
+    "interpretation": "observedFrequencyOnly",
+    "members": [
+      {
+        "itemId": "rogue_6_scrap_G_03",
+        "occurrenceCount": 379,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.18780971258671952
+      },
+      {
+        "itemId": "rogue_6_scrap_G_04",
+        "occurrenceCount": 380,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.18830525272547077
+      },
+      {
+        "itemId": "rogue_6_scrap_G_05",
+        "occurrenceCount": 100,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.049554013875123884
+      },
+      {
+        "itemId": "rogue_6_scrap_G_06",
+        "occurrenceCount": 304,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.1506442021803766
+      },
+      {
+        "itemId": "rogue_6_scrap_G_09",
+        "occurrenceCount": 87,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.04311199207135778
+      },
+      {
+        "itemId": "rogue_6_scrap_G_10",
+        "occurrenceCount": 98,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.048562933597621406
+      },
+      {
+        "itemId": "rogue_6_scrap_M_07",
+        "occurrenceCount": 61,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.03022794846382557
+      },
+      {
+        "itemId": "rogue_6_scrap_M_08",
+        "occurrenceCount": 191,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.09464816650148662
+      },
+      {
+        "itemId": "rogue_6_scrap_M_09",
+        "occurrenceCount": 214,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.10604558969276512
+      },
+      {
+        "itemId": "rogue_6_scrap_M_10",
+        "occurrenceCount": 190,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.09415262636273539
+      },
+      {
+        "itemId": "rogue_6_scrap_M_11",
+        "occurrenceCount": 8,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.003964321110009911
+      },
+      {
+        "itemId": "rogue_6_scrap_M_12",
+        "occurrenceCount": 6,
+        "totalOccurrenceCount": 2018,
+        "occurrenceRate": 0.002973240832507433
+      }
+    ],
+    "observationSource": "分析群烈焰 + 自动战斗",
+    "notes": "每组二选一的两个候选各计一次；按候选次数计算经验占比，不是最终选走比例或游戏基础权重。"
+  },
+  "paired_observations": {
+    "label": "分析群烈焰",
+    "source": {
+      "label": "分析群烈焰",
+      "fileName": "狭路中_零件OCR统计.xlsx",
+      "sha256": "ad69bececab36abb742a3bf5a9040a42f62b97c8be21232a9e6c5c1f7d600c14",
+      "sheet": "名称汇总",
+      "range": "A5:F34",
+      "detailSheet": "逐图清单",
+      "detailRange": "A6:G460"
+    },
+    "pairs": {
+      "sampleCount": 455,
+      "members": [
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_03",
+            "rogue_6_scrap_G_04"
+          ],
+          "occurrenceCount": 50
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_04",
+            "rogue_6_scrap_G_06"
+          ],
+          "occurrenceCount": 37
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_03",
+            "rogue_6_scrap_G_06"
+          ],
+          "occurrenceCount": 30
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_03",
+            "rogue_6_scrap_M_08"
+          ],
+          "occurrenceCount": 25
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_04",
+            "rogue_6_scrap_M_09"
+          ],
+          "occurrenceCount": 22
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_04",
+            "rogue_6_scrap_M_08"
+          ],
+          "occurrenceCount": 22
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_03",
+            "rogue_6_scrap_M_09"
+          ],
+          "occurrenceCount": 21
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_03",
+            "rogue_6_scrap_M_10"
+          ],
+          "occurrenceCount": 20
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_04",
+            "rogue_6_scrap_M_10"
+          ],
+          "occurrenceCount": 16
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_03",
+            "rogue_6_scrap_G_10"
+          ],
+          "occurrenceCount": 16
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_06",
+            "rogue_6_scrap_M_10"
+          ],
+          "occurrenceCount": 14
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_06",
+            "rogue_6_scrap_M_09"
+          ],
+          "occurrenceCount": 11
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_06",
+            "rogue_6_scrap_M_08"
+          ],
+          "occurrenceCount": 11
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_05",
+            "rogue_6_scrap_G_06"
+          ],
+          "occurrenceCount": 10
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_06",
+            "rogue_6_scrap_G_09"
+          ],
+          "occurrenceCount": 9
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_03",
+            "rogue_6_scrap_G_05"
+          ],
+          "occurrenceCount": 9
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_04",
+            "rogue_6_scrap_G_05"
+          ],
+          "occurrenceCount": 8
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_04",
+            "rogue_6_scrap_G_10"
+          ],
+          "occurrenceCount": 8
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_03",
+            "rogue_6_scrap_M_07"
+          ],
+          "occurrenceCount": 8
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_M_08",
+            "rogue_6_scrap_M_09"
+          ],
+          "occurrenceCount": 8
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_05",
+            "rogue_6_scrap_M_10"
+          ],
+          "occurrenceCount": 7
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_03",
+            "rogue_6_scrap_G_09"
+          ],
+          "occurrenceCount": 7
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_M_08",
+            "rogue_6_scrap_M_10"
+          ],
+          "occurrenceCount": 7
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_04",
+            "rogue_6_scrap_G_09"
+          ],
+          "occurrenceCount": 6
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_M_09",
+            "rogue_6_scrap_M_10"
+          ],
+          "occurrenceCount": 6
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_09",
+            "rogue_6_scrap_M_10"
+          ],
+          "occurrenceCount": 5
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_05",
+            "rogue_6_scrap_M_09"
+          ],
+          "occurrenceCount": 5
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_04",
+            "rogue_6_scrap_M_07"
+          ],
+          "occurrenceCount": 5
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_M_07",
+            "rogue_6_scrap_M_08"
+          ],
+          "occurrenceCount": 5
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_05",
+            "rogue_6_scrap_G_10"
+          ],
+          "occurrenceCount": 4
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_10",
+            "rogue_6_scrap_M_09"
+          ],
+          "occurrenceCount": 4
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_06",
+            "rogue_6_scrap_G_10"
+          ],
+          "occurrenceCount": 4
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_M_07",
+            "rogue_6_scrap_M_09"
+          ],
+          "occurrenceCount": 4
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_06",
+            "rogue_6_scrap_M_07"
+          ],
+          "occurrenceCount": 4
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_10",
+            "rogue_6_scrap_M_10"
+          ],
+          "occurrenceCount": 3
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_09",
+            "rogue_6_scrap_M_09"
+          ],
+          "occurrenceCount": 3
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_M_07",
+            "rogue_6_scrap_M_10"
+          ],
+          "occurrenceCount": 3
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_09",
+            "rogue_6_scrap_M_08"
+          ],
+          "occurrenceCount": 3
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_05",
+            "rogue_6_scrap_M_08"
+          ],
+          "occurrenceCount": 3
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_10",
+            "rogue_6_scrap_M_08"
+          ],
+          "occurrenceCount": 3
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_05",
+            "rogue_6_scrap_M_07"
+          ],
+          "occurrenceCount": 2
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_04",
+            "rogue_6_scrap_M_12"
+          ],
+          "occurrenceCount": 1
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_06",
+            "rogue_6_scrap_M_12"
+          ],
+          "occurrenceCount": 1
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_03",
+            "rogue_6_scrap_M_12"
+          ],
+          "occurrenceCount": 1
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_09",
+            "rogue_6_scrap_M_11"
+          ],
+          "occurrenceCount": 1
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_05",
+            "rogue_6_scrap_G_09"
+          ],
+          "occurrenceCount": 1
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_09",
+            "rogue_6_scrap_M_07"
+          ],
+          "occurrenceCount": 1
+        },
+        {
+          "itemIds": [
+            "rogue_6_scrap_G_10",
+            "rogue_6_scrap_M_07"
+          ],
+          "occurrenceCount": 1
+        }
+      ]
+    },
+    "candidate_marginals": {
+      "schemaVersion": 1,
+      "sampleCount": 455,
+      "drawCount": 910,
+      "totalOccurrenceCount": 910,
+      "interpretation": "observedFrequencyOnly",
+      "observationSource": "分析群烈焰",
+      "members": [
+        {
+          "itemId": "rogue_6_scrap_M_07",
+          "category": "加工品",
+          "occurrenceCount": 33,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.03626373626373627,
+          "leftCount": 12,
+          "rightCount": 21
+        },
+        {
+          "itemId": "rogue_6_scrap_M_08",
+          "category": "加工品",
+          "occurrenceCount": 87,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.0956043956043956,
+          "leftCount": 41,
+          "rightCount": 46
+        },
+        {
+          "itemId": "rogue_6_scrap_M_09",
+          "category": "加工品",
+          "occurrenceCount": 84,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.09230769230769231,
+          "leftCount": 46,
+          "rightCount": 38
+        },
+        {
+          "itemId": "rogue_6_scrap_M_10",
+          "category": "加工品",
+          "occurrenceCount": 81,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.08901098901098901,
+          "leftCount": 45,
+          "rightCount": 36
+        },
+        {
+          "itemId": "rogue_6_scrap_M_11",
+          "category": "加工品",
+          "occurrenceCount": 1,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.001098901098901099,
+          "leftCount": 1,
+          "rightCount": 0
+        },
+        {
+          "itemId": "rogue_6_scrap_M_12",
+          "category": "加工品",
+          "occurrenceCount": 3,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.0032967032967032967,
+          "leftCount": 2,
+          "rightCount": 1
+        },
+        {
+          "itemId": "rogue_6_scrap_G_03",
+          "category": "自然物",
+          "occurrenceCount": 187,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.20549450549450549,
+          "leftCount": 86,
+          "rightCount": 101
+        },
+        {
+          "itemId": "rogue_6_scrap_G_04",
+          "category": "自然物",
+          "occurrenceCount": 175,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.19230769230769232,
+          "leftCount": 98,
+          "rightCount": 77
+        },
+        {
+          "itemId": "rogue_6_scrap_G_05",
+          "category": "自然物",
+          "occurrenceCount": 49,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.05384615384615385,
+          "leftCount": 19,
+          "rightCount": 30
+        },
+        {
+          "itemId": "rogue_6_scrap_G_06",
+          "category": "自然物",
+          "occurrenceCount": 131,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.14395604395604394,
+          "leftCount": 65,
+          "rightCount": 66
+        },
+        {
+          "itemId": "rogue_6_scrap_G_09",
+          "category": "自然物",
+          "occurrenceCount": 36,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.03956043956043956,
+          "leftCount": 13,
+          "rightCount": 23
+        },
+        {
+          "itemId": "rogue_6_scrap_G_10",
+          "category": "自然物",
+          "occurrenceCount": 43,
+          "totalOccurrenceCount": 910,
+          "occurrenceRate": 0.04725274725274725,
+          "leftCount": 27,
+          "rightCount": 16
+        }
+      ],
+      "notes": "狭路中每张图片含两个候选；频次及比例以全部候选为分母。左／右为候选位置，不是狭路左／右池。"
+    },
+    "notes": "原始455组、910个候选频次完整保留；与经维护者确认不重复的自动战斗来源另建合并列。",
+    "pair_ordering": "UNORDERED_PAIR_LIST_ORDER_IS_NOT_OBSERVED_UI_SLOT_ORDER"
+  },
+  "autobattle_candidate_marginals": {
+    "schemaVersion": 1,
+    "sampleCount": 554,
+    "drawCount": 1108,
+    "totalOccurrenceCount": 1108,
+    "interpretation": "observedFrequencyOnly",
+    "observationSource": "自动战斗",
+    "members": [
+      {
+        "itemId": "rogue_6_scrap_G_03",
+        "occurrenceCount": 192,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.17328519855595667
+      },
+      {
+        "itemId": "rogue_6_scrap_G_04",
+        "occurrenceCount": 205,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.18501805054151624
+      },
+      {
+        "itemId": "rogue_6_scrap_G_05",
+        "occurrenceCount": 51,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.046028880866425995
+      },
+      {
+        "itemId": "rogue_6_scrap_G_06",
+        "occurrenceCount": 173,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.15613718411552346
+      },
+      {
+        "itemId": "rogue_6_scrap_G_09",
+        "occurrenceCount": 51,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.046028880866425995
+      },
+      {
+        "itemId": "rogue_6_scrap_G_10",
+        "occurrenceCount": 55,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.04963898916967509
+      },
+      {
+        "itemId": "rogue_6_scrap_M_07",
+        "occurrenceCount": 28,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.02527075812274368
+      },
+      {
+        "itemId": "rogue_6_scrap_M_08",
+        "occurrenceCount": 104,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.09386281588447654
+      },
+      {
+        "itemId": "rogue_6_scrap_M_09",
+        "occurrenceCount": 130,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.11732851985559567
+      },
+      {
+        "itemId": "rogue_6_scrap_M_10",
+        "occurrenceCount": 109,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.0983754512635379
+      },
+      {
+        "itemId": "rogue_6_scrap_M_11",
+        "occurrenceCount": 7,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.00631768953068592
+      },
+      {
+        "itemId": "rogue_6_scrap_M_12",
+        "occurrenceCount": 3,
+        "totalOccurrenceCount": 1108,
+        "occurrenceRate": 0.002707581227436823
+      }
+    ],
+    "notes": "每组二选一的两个候选各计一次；按候选次数计算经验占比，不是最终选走比例或游戏基础权重。"
+  },
+  "autobattle_source": {
+    "auditFile": "data/curated/observations/duel_center_autobattle_20260907.json",
+    "indexSha256": "96befbc0762bf9ea2ce06daed664ccc6cd681c6c5de60d108b1415f1b031578e",
+    "researchSha256": "c9af2b83a13b3fdae8e9aeaecef2f41659cc70cc60df1b22e5dfe6d6add64de1"
+  },
+  "autobattle_notes": "554场原生狭路中二选一；剥离两组希望硕果额外奖励，隔离一个归属冲突节点。全量替换，不累加旧自动战斗批次。",
+  "excluded_historical_column": {
+    "label": "闲聊群相册",
+    "sample_count": 370,
+    "reason": "历史群相册统计；维护者提示准确性有限，保留原始频次供追溯，不与新来源混合。"
+  },
+  "model_boundary": {
+    "sampling": "EMPIRICAL_JOINT_PAIRS_455_SUBSET",
+    "server_probabilities_known": false,
+    "do_not_infer_independent_draws": true,
+    "do_not_award_both_candidates": true,
+    "do_not_derive_joint_pairs_from_aggregate_2018": true,
+    "no_duplicate_pair_observed_is_not_a_server_ban": true,
+    "current_simulator_profile": "FULL_TECH_N15; candidate count in other profiles is not inferred"
+  }
+}
