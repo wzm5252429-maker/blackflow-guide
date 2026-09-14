@@ -1,0 +1,629 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "client": {
+    "path": "source_data\\roguelike_topic_table_full.json",
+    "sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+    "json_path": "details.rogue_6.upgradeTickets + details.rogue_6.items",
+    "upgrade_tickets": {
+      "rogue_6_upgrade_ticket_all": {
+        "id": "rogue_6_upgrade_ticket_all",
+        "profession": 639,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_5star": {
+        "id": "rogue_6_upgrade_ticket_5star",
+        "profession": 639,
+        "rarity": 31,
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ]
+      },
+      "rogue_6_upgrade_ticket_pioneer": {
+        "id": "rogue_6_upgrade_ticket_pioneer",
+        "profession": "PIONEER",
+        "rarity": "ALL",
+        "professionList": [
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_warrior": {
+        "id": "rogue_6_upgrade_ticket_warrior",
+        "profession": "WARRIOR",
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_tank": {
+        "id": "rogue_6_upgrade_ticket_tank",
+        "profession": "TANK",
+        "rarity": "ALL",
+        "professionList": [
+          "TANK"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_sniper": {
+        "id": "rogue_6_upgrade_ticket_sniper",
+        "profession": "SNIPER",
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_caster": {
+        "id": "rogue_6_upgrade_ticket_caster",
+        "profession": "CASTER",
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_support": {
+        "id": "rogue_6_upgrade_ticket_support",
+        "profession": "SUPPORT",
+        "rarity": "ALL",
+        "professionList": [
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_medic": {
+        "id": "rogue_6_upgrade_ticket_medic",
+        "profession": "MEDIC",
+        "rarity": "ALL",
+        "professionList": [
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_special": {
+        "id": "rogue_6_upgrade_ticket_special",
+        "profession": "SPECIAL",
+        "rarity": "ALL",
+        "professionList": [
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_pioneer_from_relic": {
+        "id": "rogue_6_upgrade_ticket_pioneer_from_relic",
+        "profession": "PIONEER",
+        "rarity": "ALL",
+        "professionList": [
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_warrior_from_relic": {
+        "id": "rogue_6_upgrade_ticket_warrior_from_relic",
+        "profession": "WARRIOR",
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_tank_from_relic": {
+        "id": "rogue_6_upgrade_ticket_tank_from_relic",
+        "profession": "TANK",
+        "rarity": "ALL",
+        "professionList": [
+          "TANK"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_sniper_from_relic": {
+        "id": "rogue_6_upgrade_ticket_sniper_from_relic",
+        "profession": "SNIPER",
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_caster_from_relic": {
+        "id": "rogue_6_upgrade_ticket_caster_from_relic",
+        "profession": "CASTER",
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_support_from_relic": {
+        "id": "rogue_6_upgrade_ticket_support_from_relic",
+        "profession": "SUPPORT",
+        "rarity": "ALL",
+        "professionList": [
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_medic_from_relic": {
+        "id": "rogue_6_upgrade_ticket_medic_from_relic",
+        "profession": "MEDIC",
+        "rarity": "ALL",
+        "professionList": [
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      },
+      "rogue_6_upgrade_ticket_special_from_relic": {
+        "id": "rogue_6_upgrade_ticket_special_from_relic",
+        "profession": "SPECIAL",
+        "rarity": "ALL",
+        "professionList": [
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ]
+      }
+    },
+    "items": {
+      "rogue_6_upgrade_ticket_all": {
+        "id": "rogue_6_upgrade_ticket_all",
+        "name": "高级物资配给券",
+        "description": null,
+        "usage": "进阶一个任意干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_all",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_5star": {
+        "id": "rogue_6_upgrade_ticket_5star",
+        "name": "临时物资配给券",
+        "description": null,
+        "usage": "进阶任意一个5星及以下的干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_5star",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_pioneer": {
+        "id": "rogue_6_upgrade_ticket_pioneer",
+        "name": "先锋进阶券",
+        "description": null,
+        "usage": "进阶一个先锋干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_pioneer",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_warrior": {
+        "id": "rogue_6_upgrade_ticket_warrior",
+        "name": "近卫进阶券",
+        "description": null,
+        "usage": "进阶一个近卫干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_warrior",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_tank": {
+        "id": "rogue_6_upgrade_ticket_tank",
+        "name": "重装进阶券",
+        "description": null,
+        "usage": "进阶一个重装干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_tank",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_sniper": {
+        "id": "rogue_6_upgrade_ticket_sniper",
+        "name": "狙击进阶券",
+        "description": null,
+        "usage": "进阶一个狙击干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_sniper",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_caster": {
+        "id": "rogue_6_upgrade_ticket_caster",
+        "name": "术师进阶券",
+        "description": null,
+        "usage": "进阶一个术师干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_caster",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_support": {
+        "id": "rogue_6_upgrade_ticket_support",
+        "name": "辅助进阶券",
+        "description": null,
+        "usage": "进阶一个辅助干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_support",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_medic": {
+        "id": "rogue_6_upgrade_ticket_medic",
+        "name": "医疗进阶券",
+        "description": null,
+        "usage": "进阶一个医疗干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_medic",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_special": {
+        "id": "rogue_6_upgrade_ticket_special",
+        "name": "特种进阶券",
+        "description": null,
+        "usage": "进阶一个特种干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_special",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_pioneer_from_relic": {
+        "id": "rogue_6_upgrade_ticket_pioneer_from_relic",
+        "name": "先锋进阶券",
+        "description": null,
+        "usage": "进阶一个先锋干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_pioneer_from_relic",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_warrior_from_relic": {
+        "id": "rogue_6_upgrade_ticket_warrior_from_relic",
+        "name": "近卫进阶券",
+        "description": null,
+        "usage": "进阶一个近卫干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_warrior_from_relic",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_tank_from_relic": {
+        "id": "rogue_6_upgrade_ticket_tank_from_relic",
+        "name": "重装进阶券",
+        "description": null,
+        "usage": "进阶一个重装干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_tank_from_relic",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_sniper_from_relic": {
+        "id": "rogue_6_upgrade_ticket_sniper_from_relic",
+        "name": "狙击进阶券",
+        "description": null,
+        "usage": "进阶一个狙击干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_sniper_from_relic",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_caster_from_relic": {
+        "id": "rogue_6_upgrade_ticket_caster_from_relic",
+        "name": "术师进阶券",
+        "description": null,
+        "usage": "进阶一个术师干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_caster_from_relic",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_support_from_relic": {
+        "id": "rogue_6_upgrade_ticket_support_from_relic",
+        "name": "辅助进阶券",
+        "description": null,
+        "usage": "进阶一个辅助干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_support_from_relic",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_medic_from_relic": {
+        "id": "rogue_6_upgrade_ticket_medic_from_relic",
+        "name": "医疗进阶券",
+        "description": null,
+        "usage": "进阶一个医疗干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_medic_from_relic",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      },
+      "rogue_6_upgrade_ticket_special_from_relic": {
+        "id": "rogue_6_upgrade_ticket_special_from_relic",
+        "name": "特种进阶券",
+        "description": null,
+        "usage": "进阶一个特种干员（不消耗希望）",
+        "obtainApproach": "在集成战略模式中获得",
+        "iconId": "rogue_6_upgrade_ticket_special_from_relic",
+        "itemIconGroupId": null,
+        "type": "UPGRADE_TICKET",
+        "subType": "NONE",
+        "rarity": "NORMAL",
+        "sortId": 999,
+        "canSacrifice": false,
+        "tinyIconColor": null,
+        "unlockCondDesc": null,
+        "shortUsage": null
+      }
+    }
+  },
+  "confirmed_rule": "UPGRADE_TICKET descriptions explicitly waive hope cost; eligible profession and rarity restrictions still apply.",
+  "mechanist": {
+    "character_id": "char_4230_mcnist",
+    "profession": "TANK",
+    "rarity": "TIER_6",
+    "full_mastery_reward_id": "rogue_6_scrap_M_11",
+    "full_mastery_reward_name": "结构性原理"
+  },
+  "integration_status": "Integrated during the explicit post-baseline modification window; included in the environment fingerprint."
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "name": "relic_price_stress",
+  "rationale": "Hypothetical sensitivity test: increase only unverified relic price priors by 25%. This range is not an observed game distribution and must not be selected to inflate scores.",
+  "economy_overrides": {"synthetic_relic_price_multiplier": 1.25}
+}

@@ -1,0 +1,4951 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "source_url": "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/character_table.json",
+  "catalog": {
+    "characters": [
+      {
+        "char_id": "char_003_kalts",
+        "name": "凯尔希",
+        "rarity": "TIER_6",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_010_chen",
+        "name": "陈",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_017_huang",
+        "name": "煌",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_1011_lava2",
+        "name": "炎狱炎熔",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_1012_skadi2",
+        "name": "浊心斯卡蒂",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_1013_chen2",
+        "name": "假日威龙陈",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_1014_nearl2",
+        "name": "耀骑士临光",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_1015_aglna2",
+        "name": "予愿安洁莉娜",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_1016_agoat2",
+        "name": "纯烬艾雅法拉",
+        "rarity": "TIER_6",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_1019_siege2",
+        "name": "维娜·维多利亚",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_101_sora",
+        "name": "空",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_1020_reed2",
+        "name": "焰影苇草",
+        "rarity": "TIER_6",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_1021_kroos2",
+        "name": "寒芒克洛丝",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_1022_flwr2",
+        "name": "撷英调香师",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_1023_ghost2",
+        "name": "归溟幽灵鲨",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_1024_hbisc2",
+        "name": "濯尘芙蓉",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_1026_gvial2",
+        "name": "百炼嘉维尔",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_1027_greyy2",
+        "name": "承曦格雷伊",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_1028_texas2",
+        "name": "缄默德克萨斯",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_102_texas",
+        "name": "德克萨斯",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_1031_slent2",
+        "name": "淬羽赫默",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_1032_excu2",
+        "name": "圣约送葬人",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_1033_swire2",
+        "name": "琳琅诗怀雅",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_1034_jesca2",
+        "name": "涤火杰西卡",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_1035_wisdel",
+        "name": "维什戴尔",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_1036_fang2",
+        "name": "历阵锐枪芬",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_1038_whitw2",
+        "name": "荒芜拉普兰德",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_1039_thorn2",
+        "name": "引星棘刺",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_103_angel",
+        "name": "能天使",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_1040_blaze2",
+        "name": "烛煌",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_1041_angel2",
+        "name": "新约能天使",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_1042_phatm2",
+        "name": "酒神",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_1043_leizi2",
+        "name": "司霆惊蛰",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_1044_hsgma2",
+        "name": "斩业星熊",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_1045_svash2",
+        "name": "凛御银灰",
+        "rarity": "TIER_6",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_1046_sbell2",
+        "name": "圣聆初雪",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_1047_halo2",
+        "name": "溯光星源",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_1050_chen3",
+        "name": "赤刃明霄陈",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_1051_headb2",
+        "name": "怒潮凛冬",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_1052_kalts2",
+        "name": "凯尔希·思衡托",
+        "rarity": "TIER_6",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_106_franka",
+        "name": "芙兰卡",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_107_liskam",
+        "name": "雷蛇",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_108_silent",
+        "name": "赫默",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_112_siege",
+        "name": "推进之王",
+        "rarity": "TIER_6",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_113_cqbw",
+        "name": "W",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_115_headbr",
+        "name": "凛冬",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_128_plosis",
+        "name": "白面鸮",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_129_bluep",
+        "name": "蓝毒",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_131_flameb",
+        "name": "炎客",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_134_ifrit",
+        "name": "伊芙利特",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_135_halo",
+        "name": "星源",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_136_hsguma",
+        "name": "星熊",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_140_whitew",
+        "name": "拉普兰德",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_143_ghost",
+        "name": "幽灵鲨",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_144_red",
+        "name": "红",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_145_prove",
+        "name": "普罗旺斯",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_147_shining",
+        "name": "闪灵",
+        "rarity": "TIER_6",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_148_nearl",
+        "name": "临光",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_1502_crosly",
+        "name": "弑君者",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_154_morgan",
+        "name": "摩根",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_155_tiger",
+        "name": "因陀罗",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_157_dagda",
+        "name": "达格达",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_158_milu",
+        "name": "守林人",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_163_hpsts",
+        "name": "火神",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_164_nightm",
+        "name": "夜魔",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_166_skfire",
+        "name": "天火",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_171_bldsk",
+        "name": "华法琳",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_172_svrash",
+        "name": "银灰",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_173_slchan",
+        "name": "崖心",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_174_slbell",
+        "name": "初雪",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_179_cgbird",
+        "name": "夜莺",
+        "rarity": "TIER_6",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_180_amgoat",
+        "name": "艾雅法拉",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_188_helage",
+        "name": "赫拉格",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_194_leto",
+        "name": "烈夏",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_195_glassb",
+        "name": "真理",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_197_poca",
+        "name": "早露",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_2012_typhon",
+        "name": "提丰",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_2013_cerber",
+        "name": "刻俄柏",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_2014_nian",
+        "name": "年",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_2015_dusk",
+        "name": "夕",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_201_moeshd",
+        "name": "可颂",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_2023_ling",
+        "name": "令",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_2024_chyue",
+        "name": "重岳",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_2025_shu",
+        "name": "黍",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_2026_yu",
+        "name": "余",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_2027_wang",
+        "name": "望",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_202_demkni",
+        "name": "塞雷娅",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_204_platnm",
+        "name": "白金",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_206_gnosis",
+        "name": "灵知",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_213_mostma",
+        "name": "莫斯提马",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_214_kafka",
+        "name": "卡夫卡",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_215_mantic",
+        "name": "狮蝎",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_218_cuttle",
+        "name": "安哲拉",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_219_meteo",
+        "name": "陨星",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_220_grani",
+        "name": "格拉尼",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_222_bpipe",
+        "name": "风笛",
+        "rarity": "TIER_6",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_225_haak",
+        "name": "阿",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_226_hmau",
+        "name": "吽",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_230_savage",
+        "name": "暴行",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_241_panda",
+        "name": "食铁兽",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_242_otter",
+        "name": "梅尔",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_243_waaifu",
+        "name": "槐琥",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_245_cello",
+        "name": "塑心",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_248_mgllan",
+        "name": "麦哲伦",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_249_mlyss",
+        "name": "缪尔赛思",
+        "rarity": "TIER_6",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_250_phatom",
+        "name": "傀影",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_252_bibeak",
+        "name": "柏喙",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_254_vodfox",
+        "name": "巫恋",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_261_sddrag",
+        "name": "苇草",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_263_skadi",
+        "name": "斯卡蒂",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_264_f12yin",
+        "name": "山",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_265_sophia",
+        "name": "鞭刃",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_274_astesi",
+        "name": "星极",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_275_breeze",
+        "name": "微风",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_279_excu",
+        "name": "送葬人",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_291_aglina",
+        "name": "安洁莉娜",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_293_thorns",
+        "name": "棘刺",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_294_ayer",
+        "name": "断崖",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_297_hamoni",
+        "name": "和弦",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_300_phenxi",
+        "name": "菲亚梅塔",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_304_zebra",
+        "name": "暴雨",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_306_leizi",
+        "name": "惊蛰",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_308_swire",
+        "name": "诗怀雅",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_311_mudrok",
+        "name": "泥岩",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_322_lmlee",
+        "name": "老鲤",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_325_bison",
+        "name": "拜松",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_326_glacus",
+        "name": "格劳克斯",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_332_archet",
+        "name": "空弦",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_333_sidero",
+        "name": "铸铁",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_336_folivo",
+        "name": "稀音",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_338_iris",
+        "name": "爱丽丝",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_340_shwaz",
+        "name": "黑",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_341_sntlla",
+        "name": "寒檀",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_343_tknogi",
+        "name": "月禾",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_344_beewax",
+        "name": "蜜蜡",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_345_folnic",
+        "name": "亚叶",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_346_aosta",
+        "name": "奥斯塔",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_348_ceylon",
+        "name": "锡兰",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_349_chiave",
+        "name": "贾维",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_350_surtr",
+        "name": "史尔特尔",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_356_broca",
+        "name": "布洛卡",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_358_lisa",
+        "name": "铃兰",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_362_saga",
+        "name": "嵯峨",
+        "rarity": "TIER_6",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_363_toddi",
+        "name": "熔泉",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_365_aprl",
+        "name": "四月",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_367_swllow",
+        "name": "灰喉",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_369_bena",
+        "name": "贝娜",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_373_lionhd",
+        "name": "莱恩哈特",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_377_gdglow",
+        "name": "澄闪",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_378_asbest",
+        "name": "石棉",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_379_sesa",
+        "name": "慑砂",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_383_snsant",
+        "name": "雪雉",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_388_mint",
+        "name": "薄绿",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_391_rosmon",
+        "name": "迷迭香",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_394_hadiya",
+        "name": "哈蒂娅",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4006_melnte",
+        "name": "玫拉",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4009_irene",
+        "name": "艾丽妮",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_400_weedy",
+        "name": "温蒂",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_4010_etlchi",
+        "name": "隐德来希",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4011_lessng",
+        "name": "止颂",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4013_kjera",
+        "name": "耶拉",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4014_lunacu",
+        "name": "子月",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4015_spuria",
+        "name": "空构",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_4016_kazema",
+        "name": "风丸",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_4017_puzzle",
+        "name": "谜图",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_401_elysm",
+        "name": "极境",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_4023_rfalcn",
+        "name": "红隼",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_4025_aprot2",
+        "name": "暮落",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4026_vulpis",
+        "name": "忍冬",
+        "rarity": "TIER_6",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_4027_heyak",
+        "name": "霍尔海雅",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_402_tuye",
+        "name": "图耶",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4031_liesel",
+        "name": "复奏",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4032_provs",
+        "name": "但书",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4036_forcer",
+        "name": "见行者",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_4037_demetr",
+        "name": "贝洛内",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4039_horn",
+        "name": "号角",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4040_rockr",
+        "name": "洛洛",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4042_lumen",
+        "name": "流明",
+        "rarity": "TIER_6",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4043_erato",
+        "name": "埃拉托",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4045_heidi",
+        "name": "海蒂",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4046_ebnhlz",
+        "name": "黑键",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4047_pianst",
+        "name": "车尔尼",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4048_doroth",
+        "name": "多萝西",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_4052_surfer",
+        "name": "寻澜",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_4054_malist",
+        "name": "至简",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4055_bgsnow",
+        "name": "鸿雪",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4056_titi",
+        "name": "缇缇",
+        "rarity": "TIER_6",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4058_pepe",
+        "name": "佩佩",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_405_absin",
+        "name": "苦艾",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4064_mlynar",
+        "name": "玛恩纳",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4065_judge",
+        "name": "斥罪",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4066_highmo",
+        "name": "海沫",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4071_peper",
+        "name": "明椒",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4072_ironmn",
+        "name": "白铁",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4078_bdhkgt",
+        "name": "截云",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4079_haini",
+        "name": "海霓",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4080_lin",
+        "name": "林",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4081_warmy",
+        "name": "温米",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4082_qiubai",
+        "name": "仇白",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4083_chimes",
+        "name": "铎铃",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4087_ines",
+        "name": "伊内丝",
+        "rarity": "TIER_6",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_4088_hodrer",
+        "name": "赫德雷",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4098_vvana",
+        "name": "薇薇安娜",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4102_threye",
+        "name": "凛视",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4104_coldst",
+        "name": "冰酿",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4105_almond",
+        "name": "杏仁",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_4106_bryota",
+        "name": "苍苔",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4109_baslin",
+        "name": "深律",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4110_delphn",
+        "name": "戴菲恩",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4114_harold",
+        "name": "哈洛德",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4116_blkkgt",
+        "name": "锏",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4117_ray",
+        "name": "莱伊",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4119_wanqin",
+        "name": "万顷",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_411_tomimi",
+        "name": "特米米",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4121_zuole",
+        "name": "左乐",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4122_grabds",
+        "name": "小满",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4131_odda",
+        "name": "奥达",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4132_ascln",
+        "name": "阿斯卡纶",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_4133_logos",
+        "name": "逻各斯",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4134_cetsyr",
+        "name": "魔王",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4137_udflow",
+        "name": "深巡",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4138_narant",
+        "name": "娜仁图亚",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4139_papyrs",
+        "name": "莎草",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4140_lasher",
+        "name": "衡沙",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4145_ulpia",
+        "name": "乌尔比安",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4146_nymph",
+        "name": "妮芙",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4147_mitm",
+        "name": "渡桥",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_4148_philae",
+        "name": "菲莱",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4151_tinman",
+        "name": "锡人",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_4155_talr",
+        "name": "裁度",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_415_flint",
+        "name": "燧石",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4162_cathy",
+        "name": "凯瑟琳",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4163_rosesa",
+        "name": "瑰盐",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4164_tecno",
+        "name": "特克诺",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4166_varkis",
+        "name": "摆渡人",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_416_zumama",
+        "name": "森蚺",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4171_wulfen",
+        "name": "钼铅",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_4172_xingzh",
+        "name": "行箸",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4173_nowell",
+        "name": "诺威尔",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4177_brigid",
+        "name": "水灯心",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4178_alanna",
+        "name": "阿兰娜",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4179_monstr",
+        "name": "Mon3tr",
+        "rarity": "TIER_6",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4187_graceb",
+        "name": "聆音",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4191_tippi",
+        "name": "蒂比",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_4193_lemuen",
+        "name": "蕾缪安",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4194_rmixer",
+        "name": "信仰搅拌机",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4195_radian",
+        "name": "电弧",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4196_reckpr",
+        "name": "录武官",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4198_christ",
+        "name": "Miss.Christine",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4199_makiri",
+        "name": "松桐",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_4202_haruka",
+        "name": "遥",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4203_kichi",
+        "name": "吉星",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4204_mantra",
+        "name": "真言",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4207_branch",
+        "name": "折桠",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_420_flamtl",
+        "name": "焰尾",
+        "rarity": "TIER_6",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_4211_snhunt",
+        "name": "雪猎",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4212_nasti",
+        "name": "娜斯提",
+        "rarity": "TIER_6",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4213_skybx",
+        "name": "天空盒",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4214_cairn",
+        "name": "响石",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_421_crow",
+        "name": "羽毛笔",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_4221_ju",
+        "name": "矩",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_4222_taraxa",
+        "name": "风絮",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4223_botany",
+        "name": "伯塔尼",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4224_turdus",
+        "name": "乌啾",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_4225_tanya",
+        "name": "裂响",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4226_veen",
+        "name": "维伊",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4228_closur",
+        "name": "可露希尔",
+        "rarity": "TIER_6",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_4229_aphris",
+        "name": "谬因",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_422_aurora",
+        "name": "极光",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4230_mcnist",
+        "name": "机械师",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4234_pedro",
+        "name": "佩德洛",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_4235_thumpy",
+        "name": "珊比",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_4236_tmslot",
+        "name": "时隙",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_4237_jcinta",
+        "name": "嘉辛塔",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_423_blemsh",
+        "name": "瑕光",
+        "rarity": "TIER_6",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_426_billro",
+        "name": "卡涅利安",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_427_vigil",
+        "name": "伺夜",
+        "rarity": "TIER_6",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_430_fartth",
+        "name": "远牙",
+        "rarity": "TIER_6",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_431_ashlok",
+        "name": "灰毫",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_433_windft",
+        "name": "掠风",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_436_whispr",
+        "name": "絮雨",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_437_mizuki",
+        "name": "水月",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_446_aroma",
+        "name": "阿罗玛",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_449_glider",
+        "name": "蜜莓",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_450_necras",
+        "name": "死芒",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_451_robin",
+        "name": "罗宾",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_455_nothin",
+        "name": "乌有",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_464_cement",
+        "name": "洋灰",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_466_qanik",
+        "name": "雪绒",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_472_pasngr",
+        "name": "异客",
+        "rarity": "TIER_6",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_473_mberry",
+        "name": "桑葚",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_474_glady",
+        "name": "歌蕾蒂娅",
+        "rarity": "TIER_6",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_475_akafyu",
+        "name": "赤冬",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_476_blkngt",
+        "name": "夜半",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_478_kirara",
+        "name": "绮良",
+        "rarity": "TIER_5",
+        "profession": "SPECIAL"
+      },
+      {
+        "char_id": "char_479_sleach",
+        "name": "琴柳",
+        "rarity": "TIER_6",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_485_pallas",
+        "name": "帕拉斯",
+        "rarity": "TIER_6",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_486_takila",
+        "name": "龙舌兰",
+        "rarity": "TIER_5",
+        "profession": "WARRIOR"
+      },
+      {
+        "char_id": "char_487_bobb",
+        "name": "波卜",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_488_buildr",
+        "name": "青枳",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_489_serum",
+        "name": "蚀清",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      },
+      {
+        "char_id": "char_492_quercu",
+        "name": "夏栎",
+        "rarity": "TIER_5",
+        "profession": "SUPPORT"
+      },
+      {
+        "char_id": "char_493_firwhl",
+        "name": "火哨",
+        "rarity": "TIER_5",
+        "profession": "TANK"
+      },
+      {
+        "char_id": "char_494_vendla",
+        "name": "刺玫",
+        "rarity": "TIER_5",
+        "profession": "MEDIC"
+      },
+      {
+        "char_id": "char_496_wildmn",
+        "name": "野鬃",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_497_ctable",
+        "name": "晓歌",
+        "rarity": "TIER_5",
+        "profession": "PIONEER"
+      },
+      {
+        "char_id": "char_498_inside",
+        "name": "隐现",
+        "rarity": "TIER_5",
+        "profession": "SNIPER"
+      },
+      {
+        "char_id": "char_499_kaitou",
+        "name": "折光",
+        "rarity": "TIER_5",
+        "profession": "CASTER"
+      }
+    ],
+    "ticket_constraints": [
+      [
+        "rogue_6_recruit_ticket_temp_5_up",
+        [
+          "TIER_5"
+        ],
+        [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ]
+      ],
+      [
+        "rogue_6_recruit_ticket_temp_6_up",
+        [
+          "TIER_6"
+        ],
+        [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ]
+      ]
+    ],
+    "character_sha256": "12030388f7b695062f1e4ce2cab042d8a3be2251d853797bbf74dd2b8b22bcf2",
+    "topic_sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b"
+  },
+  "ordinary_and_exclusive_characters": {
+    "char_285_medic2": {
+      "name": "Lancet-2",
+      "rarity": "TIER_1",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_286_cast3": {
+      "name": "Castle-3",
+      "rarity": "TIER_1",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_376_therex": {
+      "name": "THRM-EX",
+      "rarity": "TIER_1",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4000_jnight": {
+      "name": "正义骑士号",
+      "rarity": "TIER_1",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4077_palico": {
+      "name": "泰拉大陆调查团",
+      "rarity": "TIER_1",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4091_ulika": {
+      "name": "U-Official",
+      "rarity": "TIER_1",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4136_phonor": {
+      "name": "PhonoR-0",
+      "rarity": "TIER_1",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4093_frston": {
+      "name": "Friston-3",
+      "rarity": "TIER_1",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_502_nblade": {
+      "name": "夜刀",
+      "rarity": "TIER_2",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_500_noirc": {
+      "name": "黑角",
+      "rarity": "TIER_2",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_503_rang": {
+      "name": "巡林者",
+      "rarity": "TIER_2",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_501_durin": {
+      "name": "杜林",
+      "rarity": "TIER_2",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_009_12fce": {
+      "name": "12F",
+      "rarity": "TIER_2",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_123_fang": {
+      "name": "芬",
+      "rarity": "TIER_3",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_240_wyvern": {
+      "name": "香草",
+      "rarity": "TIER_3",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_504_rguard": {
+      "name": "预备干员-近战",
+      "rarity": "TIER_3",
+      "profession": "PIONEER",
+      "recruit_type": "THIRD_LOW",
+      "can_be_free": false
+    },
+    "char_192_falco": {
+      "name": "翎羽",
+      "rarity": "TIER_3",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_208_melan": {
+      "name": "玫兰莎",
+      "rarity": "TIER_3",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_283_midn": {
+      "name": "月见夜",
+      "rarity": "TIER_3",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_281_popka": {
+      "name": "泡普卡",
+      "rarity": "TIER_3",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_209_ardign": {
+      "name": "卡缇",
+      "rarity": "TIER_3",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_122_beagle": {
+      "name": "米格鲁",
+      "rarity": "TIER_3",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_514_rdfend": {
+      "name": "预备干员-重装",
+      "rarity": "TIER_3",
+      "profession": "TANK",
+      "recruit_type": "THIRD_LOW",
+      "can_be_free": false
+    },
+    "char_284_spot": {
+      "name": "斑点",
+      "rarity": "TIER_3",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_124_kroos": {
+      "name": "克洛丝",
+      "rarity": "TIER_3",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_211_adnach": {
+      "name": "安德切尔",
+      "rarity": "TIER_3",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_507_rsnipe": {
+      "name": "预备干员-狙击",
+      "rarity": "TIER_3",
+      "profession": "SNIPER",
+      "recruit_type": "THIRD_LOW",
+      "can_be_free": false
+    },
+    "char_282_catap": {
+      "name": "空爆",
+      "rarity": "TIER_3",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_121_lava": {
+      "name": "炎熔",
+      "rarity": "TIER_3",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_120_hibisc": {
+      "name": "芙蓉",
+      "rarity": "TIER_3",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_212_ansel": {
+      "name": "安赛尔",
+      "rarity": "TIER_3",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_506_rmedic": {
+      "name": "预备干员-后勤",
+      "rarity": "TIER_3",
+      "profession": "MEDIC",
+      "recruit_type": "THIRD_LOW",
+      "can_be_free": false
+    },
+    "char_210_stward": {
+      "name": "史都华德",
+      "rarity": "TIER_3",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_505_rcast": {
+      "name": "预备干员-术师",
+      "rarity": "TIER_3",
+      "profession": "CASTER",
+      "recruit_type": "THIRD_LOW",
+      "can_be_free": false
+    },
+    "char_278_orchid": {
+      "name": "梓兰",
+      "rarity": "TIER_3",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_141_nights": {
+      "name": "夜烟",
+      "rarity": "TIER_4",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_109_fmout": {
+      "name": "远山",
+      "rarity": "TIER_4",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_253_greyy": {
+      "name": "格雷伊",
+      "rarity": "TIER_4",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_328_cammou": {
+      "name": "卡达",
+      "rarity": "TIER_4",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_469_indigo": {
+      "name": "深靛",
+      "rarity": "TIER_4",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4004_pudd": {
+      "name": "布丁",
+      "rarity": "TIER_4",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_235_jesica": {
+      "name": "杰西卡",
+      "rarity": "TIER_4",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_126_shotst": {
+      "name": "流星",
+      "rarity": "TIER_4",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_190_clour": {
+      "name": "红云",
+      "rarity": "TIER_4",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_133_mm": {
+      "name": "梅",
+      "rarity": "TIER_4",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_118_yuki": {
+      "name": "白雪",
+      "rarity": "TIER_4",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_440_pinecn": {
+      "name": "松果",
+      "rarity": "TIER_4",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_302_glaze": {
+      "name": "安比尔",
+      "rarity": "TIER_4",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_366_acdrop": {
+      "name": "酸糖",
+      "rarity": "TIER_4",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4062_totter": {
+      "name": "铅踝",
+      "rarity": "TIER_4",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4100_caper": {
+      "name": "跃跃",
+      "rarity": "TIER_4",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_198_blackd": {
+      "name": "讯使",
+      "rarity": "TIER_4",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_149_scave": {
+      "name": "清道夫",
+      "rarity": "TIER_4",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_290_vigna": {
+      "name": "红豆",
+      "rarity": "TIER_4",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_151_myrtle": {
+      "name": "桃金娘",
+      "rarity": "TIER_4",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_452_bstalk": {
+      "name": "豆苗",
+      "rarity": "TIER_4",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_130_doberm": {
+      "name": "杜宾",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_289_gyuki": {
+      "name": "缠丸",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_159_peacok": {
+      "name": "断罪者",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_193_frostl": {
+      "name": "霜叶",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_271_spikes": {
+      "name": "芳汀",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4067_lolxh": {
+      "name": "罗小黑",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_127_estell": {
+      "name": "艾丝黛尔",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_185_frncat": {
+      "name": "慕斯",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_137_brownb": {
+      "name": "猎蜂",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_347_jaksel": {
+      "name": "杰克",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_301_cutter": {
+      "name": "刻刀",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_337_utage": {
+      "name": "宴",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4063_quartz": {
+      "name": "石英",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_491_humus": {
+      "name": "休谟斯",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_237_gravel": {
+      "name": "砾",
+      "rarity": "TIER_4",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_272_strong": {
+      "name": "孑",
+      "rarity": "TIER_4",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_236_rope": {
+      "name": "暗索",
+      "rarity": "TIER_4",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_117_myrrh": {
+      "name": "末药",
+      "rarity": "TIER_4",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_187_ccheal": {
+      "name": "嘉维尔",
+      "rarity": "TIER_4",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_298_susuro": {
+      "name": "苏苏洛",
+      "rarity": "TIER_4",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_181_flower": {
+      "name": "调香师",
+      "rarity": "TIER_4",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_385_finlpp": {
+      "name": "清流",
+      "rarity": "TIER_4",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4041_chnut": {
+      "name": "褐果",
+      "rarity": "TIER_4",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_199_yak": {
+      "name": "角峰",
+      "rarity": "TIER_4",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_150_snakek": {
+      "name": "蛇屠箱",
+      "rarity": "TIER_4",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_381_bubble": {
+      "name": "泡泡",
+      "rarity": "TIER_4",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_196_sunbr": {
+      "name": "古米",
+      "rarity": "TIER_4",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_260_durnar": {
+      "name": "坚雷",
+      "rarity": "TIER_4",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4130_luton": {
+      "name": "露托",
+      "rarity": "TIER_4",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_110_deepcl": {
+      "name": "深海色",
+      "rarity": "TIER_4",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_183_skgoat": {
+      "name": "地灵",
+      "rarity": "TIER_4",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_258_podego": {
+      "name": "波登可",
+      "rarity": "TIER_4",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_484_robrta": {
+      "name": "罗比菈塔",
+      "rarity": "TIER_4",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_355_ethan": {
+      "name": "伊桑",
+      "rarity": "TIER_4",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_277_sqrrel": {
+      "name": "阿消",
+      "rarity": "TIER_4",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4107_vrdant": {
+      "name": "维荻",
+      "rarity": "TIER_4",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_128_plosis": {
+      "name": "白面鸮",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_275_breeze": {
+      "name": "微风",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_115_headbr": {
+      "name": "凛冬",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_102_texas": {
+      "name": "德克萨斯",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_349_chiave": {
+      "name": "贾维",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_488_buildr": {
+      "name": "青枳",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4023_rfalcn": {
+      "name": "红隼",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_513_apionr": {
+      "name": "郁金香",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "THIRD",
+      "can_be_free": false
+    },
+    "char_220_grani": {
+      "name": "格拉尼",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_261_sddrag": {
+      "name": "苇草",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_496_wildmn": {
+      "name": "野鬃",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1036_fang2": {
+      "name": "历阵锐枪芬",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_401_elysm": {
+      "name": "极境",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4119_wanqin": {
+      "name": "万顷",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_476_blkngt": {
+      "name": "夜半",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_497_ctable": {
+      "name": "晓歌",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4017_puzzle": {
+      "name": "谜图",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_308_swire": {
+      "name": "诗怀雅",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4106_bryota": {
+      "name": "苍苔",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_265_sophia": {
+      "name": "鞭刃",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4125_rdoc": {
+      "name": "医生",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_106_franka": {
+      "name": "芙兰卡",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_131_flameb": {
+      "name": "炎客",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_154_morgan": {
+      "name": "摩根",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_508_aguard": {
+      "name": "Sharp",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "THIRD",
+      "can_be_free": false
+    },
+    "char_155_tiger": {
+      "name": "因陀罗",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_415_flint": {
+      "name": "燧石",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_157_dagda": {
+      "name": "达格达",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_140_whitew": {
+      "name": "拉普兰德",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_294_ayer": {
+      "name": "断崖",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_194_leto": {
+      "name": "烈夏",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_252_bibeak": {
+      "name": "柏喙",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_459_tachak": {
+      "name": "战车",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_143_ghost": {
+      "name": "幽灵鲨",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_356_broca": {
+      "name": "布洛卡",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4126_fuze": {
+      "name": "导火索",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_230_savage": {
+      "name": "暴行",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_274_astesi": {
+      "name": "星极",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_333_sidero": {
+      "name": "铸铁",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_475_akafyu": {
+      "name": "赤冬",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1030_noirc2": {
+      "name": "火龙S黑角",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_421_crow": {
+      "name": "羽毛笔",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4066_highmo": {
+      "name": "海沫",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_486_takila": {
+      "name": "龙舌兰",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4083_chimes": {
+      "name": "铎铃",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4131_odda": {
+      "name": "奥达",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_129_bluep": {
+      "name": "蓝毒",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_204_platnm": {
+      "name": "白金",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_367_swllow": {
+      "name": "灰喉",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_511_asnipe": {
+      "name": "Stormeye",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "THIRD",
+      "can_be_free": false
+    },
+    "char_365_aprl": {
+      "name": "四月",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1021_kroos2": {
+      "name": "寒芒克洛丝",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_498_inside": {
+      "name": "隐现",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_219_meteo": {
+      "name": "陨星",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_379_sesa": {
+      "name": "慑砂",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4078_bdhkgt": {
+      "name": "截云",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_279_excu": {
+      "name": "送葬人",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_346_aosta": {
+      "name": "奥斯塔",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_489_serum": {
+      "name": "蚀清",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_446_aroma": {
+      "name": "阿罗玛",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_002_amiya": {
+      "name": "阿米娅",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_164_nightm": {
+      "name": "夜魔",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_405_absin": {
+      "name": "苦艾",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_411_tomimi": {
+      "name": "特米米",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_466_qanik": {
+      "name": "雪绒",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_166_skfire": {
+      "name": "天火",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_509_acast": {
+      "name": "Pith",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "THIRD",
+      "can_be_free": false
+    },
+    "char_306_leizi": {
+      "name": "惊蛰",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_135_halo": {
+      "name": "星源",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_344_beewax": {
+      "name": "蜜蜡",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_388_mint": {
+      "name": "薄绿",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_338_iris": {
+      "name": "爱丽丝",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_297_hamoni": {
+      "name": "和弦",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4110_delphn": {
+      "name": "戴菲恩",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_373_lionhd": {
+      "name": "莱恩哈特",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1011_lava2": {
+      "name": "炎狱炎熔",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_341_sntlla": {
+      "name": "寒檀",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4013_kjera": {
+      "name": "耶拉",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4040_rockr": {
+      "name": "洛洛",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4054_malist": {
+      "name": "至简",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_499_kaitou": {
+      "name": "折光",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4081_warmy": {
+      "name": "温米",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_242_otter": {
+      "name": "梅尔",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_336_folivo": {
+      "name": "稀音",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_108_silent": {
+      "name": "赫默",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_171_bldsk": {
+      "name": "华法琳",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_345_folnic": {
+      "name": "亚叶",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_402_tuye": {
+      "name": "图耶",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_510_amedic": {
+      "name": "Touch",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "THIRD",
+      "can_be_free": false
+    },
+    "char_348_ceylon": {
+      "name": "锡兰",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_436_whispr": {
+      "name": "絮雨",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_473_mberry": {
+      "name": "桑葚",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_449_glider": {
+      "name": "蜜莓",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4114_harold": {
+      "name": "哈洛德",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1024_hbisc2": {
+      "name": "濯尘芙蓉",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_494_vendla": {
+      "name": "刺玫",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4071_peper": {
+      "name": "明椒",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_148_nearl": {
+      "name": "临光",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_226_hmau": {
+      "name": "吽",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_144_red": {
+      "name": "红",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_243_waaifu": {
+      "name": "槐琥",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_214_kafka": {
+      "name": "卡夫卡",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_455_nothin": {
+      "name": "乌有",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_107_liskam": {
+      "name": "雷蛇",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_201_moeshd": {
+      "name": "可颂",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_325_bison": {
+      "name": "拜松",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_457_blitz": {
+      "name": "闪击",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_304_zebra": {
+      "name": "暴雨",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_163_hpsts": {
+      "name": "火神",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_378_asbest": {
+      "name": "石棉",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_512_aprot": {
+      "name": "暮落",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "THIRD",
+      "can_be_free": false
+    },
+    "char_4025_aprot2": {
+      "name": "暮落",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4047_pianst": {
+      "name": "车尔尼",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_431_ashlok": {
+      "name": "灰毫",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_493_firwhl": {
+      "name": "火哨",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_422_aurora": {
+      "name": "极光",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_464_cement": {
+      "name": "洋灰",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4109_baslin": {
+      "name": "深律",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_145_prove": {
+      "name": "普罗旺斯",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4006_melnte": {
+      "name": "玫拉",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_158_milu": {
+      "name": "守林人",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_218_cuttle": {
+      "name": "安哲拉",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4014_lunacu": {
+      "name": "子月",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_363_toddi": {
+      "name": "熔泉",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4043_erato": {
+      "name": "埃拉托",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1027_greyy2": {
+      "name": "承曦格雷伊",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4104_coldst": {
+      "name": "冰酿",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4015_spuria": {
+      "name": "空构",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_173_slchan": {
+      "name": "崖心",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_383_snsant": {
+      "name": "雪雉",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4105_almond": {
+      "name": "杏仁",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_174_slbell": {
+      "name": "初雪",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_254_vodfox": {
+      "name": "巫恋",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_195_glassb": {
+      "name": "真理",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_326_glacus": {
+      "name": "格劳克斯",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4032_provs": {
+      "name": "但书",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4122_grabds": {
+      "name": "小满",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_433_windft": {
+      "name": "掠风",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_101_sora": {
+      "name": "空",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4045_heidi": {
+      "name": "海蒂",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_343_tknogi": {
+      "name": "月禾",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4019_ncdeer": {
+      "name": "九色鹿",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_492_quercu": {
+      "name": "夏栎",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4102_threye": {
+      "name": "凛视",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_215_mantic": {
+      "name": "狮蝎",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_478_kirara": {
+      "name": "绮良",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_241_panda": {
+      "name": "食铁兽",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4036_forcer": {
+      "name": "见行者",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_451_robin": {
+      "name": "罗宾",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_458_rfrost": {
+      "name": "霜华",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_369_bena": {
+      "name": "贝娜",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4016_kazema": {
+      "name": "风丸",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4124_iana": {
+      "name": "双月",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_103_angel": {
+      "name": "能天使",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_332_archet": {
+      "name": "空弦",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_456_ash": {
+      "name": "灰烬",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_340_shwaz": {
+      "name": "黑",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4055_bgsnow": {
+      "name": "鸿雪",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_430_fartth": {
+      "name": "远牙",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_113_cqbw": {
+      "name": "W",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_300_phenxi": {
+      "name": "菲亚梅塔",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_197_poca": {
+      "name": "早露",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_2012_typhon": {
+      "name": "提丰",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_391_rosmon": {
+      "name": "迷迭香",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1035_wisdel": {
+      "name": "维什戴尔",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1013_chen2": {
+      "name": "假日威龙陈",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4117_ray": {
+      "name": "莱伊",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_112_siege": {
+      "name": "推进之王",
+      "rarity": "TIER_6",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_222_bpipe": {
+      "name": "风笛",
+      "rarity": "TIER_6",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_479_sleach": {
+      "name": "琴柳",
+      "rarity": "TIER_6",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_362_saga": {
+      "name": "嵯峨",
+      "rarity": "TIER_6",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_420_flamtl": {
+      "name": "焰尾",
+      "rarity": "TIER_6",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_427_vigil": {
+      "name": "伺夜",
+      "rarity": "TIER_6",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_249_mlyss": {
+      "name": "缪尔赛思",
+      "rarity": "TIER_6",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4087_ines": {
+      "name": "伊内丝",
+      "rarity": "TIER_6",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_134_ifrit": {
+      "name": "伊芙利特",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_213_mostma": {
+      "name": "莫斯提马",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_180_amgoat": {
+      "name": "艾雅法拉",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_2013_cerber": {
+      "name": "刻俄柏",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4027_heyak": {
+      "name": "霍尔海雅",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4133_logos": {
+      "name": "逻各斯",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_2015_dusk": {
+      "name": "夕",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_472_pasngr": {
+      "name": "异客",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_426_billro": {
+      "name": "卡涅利安",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4080_lin": {
+      "name": "林",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_377_gdglow": {
+      "name": "澄闪",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4046_ebnhlz": {
+      "name": "黑键",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_206_gnosis": {
+      "name": "灵知",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_291_aglina": {
+      "name": "安洁莉娜",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_358_lisa": {
+      "name": "铃兰",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_248_mgllan": {
+      "name": "麦哲伦",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1012_skadi2": {
+      "name": "浊心斯卡蒂",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4134_cetsyr": {
+      "name": "魔王",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1031_slent2": {
+      "name": "淬羽赫默",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_2023_ling": {
+      "name": "令",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4072_ironmn": {
+      "name": "白铁",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_245_cello": {
+      "name": "塑心",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_250_phatom": {
+      "name": "傀影",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1028_texas2": {
+      "name": "缄默德克萨斯",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1029_yato2": {
+      "name": "麒麟R夜刀",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_322_lmlee": {
+      "name": "老鲤",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1033_swire2": {
+      "name": "琳琅诗怀雅",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_400_weedy": {
+      "name": "温蒂",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_225_haak": {
+      "name": "阿",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_474_glady": {
+      "name": "歌蕾蒂娅",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1023_ghost2": {
+      "name": "归溟幽灵鲨",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_437_mizuki": {
+      "name": "水月",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4132_ascln": {
+      "name": "阿斯卡纶",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4048_doroth": {
+      "name": "多萝西",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4123_ela": {
+      "name": "艾拉",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_147_shining": {
+      "name": "闪灵",
+      "rarity": "TIER_6",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_179_cgbird": {
+      "name": "夜莺",
+      "rarity": "TIER_6",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_003_kalts": {
+      "name": "凯尔希",
+      "rarity": "TIER_6",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4042_lumen": {
+      "name": "流明",
+      "rarity": "TIER_6",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1016_agoat2": {
+      "name": "纯烬艾雅法拉",
+      "rarity": "TIER_6",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1020_reed2": {
+      "name": "焰影苇草",
+      "rarity": "TIER_6",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_136_hsguma": {
+      "name": "星熊",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_202_demkni": {
+      "name": "塞雷娅",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_423_blemsh": {
+      "name": "瑕光",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_2025_shu": {
+      "name": "黍",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_2014_nian": {
+      "name": "年",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1034_jesca2": {
+      "name": "涤火杰西卡",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_311_mudrok": {
+      "name": "泥岩",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4065_judge": {
+      "name": "斥罪",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_416_zumama": {
+      "name": "森蚺",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4039_horn": {
+      "name": "号角",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_263_skadi": {
+      "name": "斯卡蒂",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4011_lessng": {
+      "name": "止颂",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_264_f12yin": {
+      "name": "山",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_2024_chyue": {
+      "name": "重岳",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_172_svrash": {
+      "name": "银灰",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_293_thorns": {
+      "name": "棘刺",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4082_qiubai": {
+      "name": "仇白",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_010_chen": {
+      "name": "陈",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4009_irene": {
+      "name": "艾丽妮",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4116_blkkgt": {
+      "name": "锏",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_017_huang": {
+      "name": "煌",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1026_gvial2": {
+      "name": "百炼嘉维尔",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_350_surtr": {
+      "name": "史尔特尔",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4098_vvana": {
+      "name": "薇薇安娜",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_188_helage": {
+      "name": "赫拉格",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4121_zuole": {
+      "name": "左乐",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_485_pallas": {
+      "name": "帕拉斯",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1014_nearl2": {
+      "name": "耀骑士临光",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1032_excu2": {
+      "name": "圣约送葬人",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4064_mlynar": {
+      "name": "玛恩纳",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4088_hodrer": {
+      "name": "赫德雷",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4147_mitm": {
+      "name": "渡桥",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4137_udflow": {
+      "name": "深巡",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4079_haini": {
+      "name": "海霓",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4151_tinman": {
+      "name": "锡人",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4146_nymph": {
+      "name": "妮芙",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4145_ulpia": {
+      "name": "乌尔比安",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4140_lasher": {
+      "name": "衡沙",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4139_papyrs": {
+      "name": "莎草",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4138_narant": {
+      "name": "娜仁图亚",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4058_pepe": {
+      "name": "佩佩",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4144_chilc": {
+      "name": "齐尔查克",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4142_laios": {
+      "name": "莱欧斯",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4143_sensi": {
+      "name": "森西",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4141_marcil": {
+      "name": "玛露西尔",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4162_cathy": {
+      "name": "凯瑟琳",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_487_bobb": {
+      "name": "波卜",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1019_siege2": {
+      "name": "维娜·维多利亚",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4165_ctrail": {
+      "name": "云迹",
+      "rarity": "TIER_4",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4155_talr": {
+      "name": "裁度",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4148_philae": {
+      "name": "菲莱",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1038_whitw2": {
+      "name": "荒芜拉普兰德",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1502_crosly": {
+      "name": "弑君者",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4026_vulpis": {
+      "name": "忍冬",
+      "rarity": "TIER_6",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4163_rosesa": {
+      "name": "瑰盐",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4164_tecno": {
+      "name": "特克诺",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1039_thorn2": {
+      "name": "引星棘刺",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4052_surfer": {
+      "name": "寻澜",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4173_nowell": {
+      "name": "诺威尔",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4172_xingzh": {
+      "name": "行箸",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1040_blaze2": {
+      "name": "烛煌",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_2026_yu": {
+      "name": "余",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4010_etlchi": {
+      "name": "隐德来希",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4177_brigid": {
+      "name": "水灯心",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4171_wulfen": {
+      "name": "钼铅",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_450_necras": {
+      "name": "死芒",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_445_wscoot": {
+      "name": "骋风",
+      "rarity": "TIER_4",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4178_alanna": {
+      "name": "阿兰娜",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4179_monstr": {
+      "name": "Mon3tr",
+      "rarity": "TIER_6",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1041_angel2": {
+      "name": "新约能天使",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4187_graceb": {
+      "name": "聆音",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4188_confes": {
+      "name": "CONFESS-47",
+      "rarity": "TIER_1",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4193_lemuen": {
+      "name": "蕾缪安",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4194_rmixer": {
+      "name": "信仰搅拌机",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4198_christ": {
+      "name": "Miss.Christine",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4191_tippi": {
+      "name": "蒂比",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1042_phatm2": {
+      "name": "酒神",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4195_radian": {
+      "name": "电弧",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4196_reckpr": {
+      "name": "录武官",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1043_leizi2": {
+      "name": "司霆惊蛰",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1044_hsgma2": {
+      "name": "斩业星熊",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4199_makiri": {
+      "name": "松桐",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4203_kichi": {
+      "name": "吉星",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4202_haruka": {
+      "name": "遥",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4185_amoris": {
+      "name": "祐天寺若麦",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4184_dolris": {
+      "name": "三角初华",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4186_tmoris": {
+      "name": "八幡海铃",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4183_mortis": {
+      "name": "若叶睦",
+      "rarity": "TIER_5",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4182_oblvns": {
+      "name": "丰川祥子",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4208_wintim": {
+      "name": "冬时",
+      "rarity": "TIER_4",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4207_branch": {
+      "name": "折桠",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4204_mantra": {
+      "name": "真言",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4051_akkord": {
+      "name": "协律",
+      "rarity": "TIER_4",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1047_halo2": {
+      "name": "溯光星源",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4211_snhunt": {
+      "name": "雪猎",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_394_hadiya": {
+      "name": "哈蒂娅",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1046_sbell2": {
+      "name": "圣聆初雪",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1045_svash2": {
+      "name": "凛御银灰",
+      "rarity": "TIER_6",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4213_skybx": {
+      "name": "天空盒",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4214_cairn": {
+      "name": "响石",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4212_nasti": {
+      "name": "娜斯提",
+      "rarity": "TIER_6",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4166_varkis": {
+      "name": "摆渡人",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1022_flwr2": {
+      "name": "撷英调香师",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4056_titi": {
+      "name": "缇缇",
+      "rarity": "TIER_6",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4222_taraxa": {
+      "name": "风絮",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4221_ju": {
+      "name": "矩",
+      "rarity": "TIER_5",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_2027_wang": {
+      "name": "望",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1050_chen3": {
+      "name": "赤刃明霄陈",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4031_liesel": {
+      "name": "复奏",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4037_demetr": {
+      "name": "贝洛内",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4224_turdus": {
+      "name": "乌啾",
+      "rarity": "TIER_5",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4223_botany": {
+      "name": "伯塔尼",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1051_headb2": {
+      "name": "怒潮凛冬",
+      "rarity": "TIER_6",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4227_gallus": {
+      "name": "GALLUS²",
+      "rarity": "TIER_1",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4225_tanya": {
+      "name": "裂响",
+      "rarity": "TIER_5",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4228_closur": {
+      "name": "可露希尔",
+      "rarity": "TIER_6",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4226_veen": {
+      "name": "维伊",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1052_kalts2": {
+      "name": "凯尔希·思衡托",
+      "rarity": "TIER_6",
+      "profession": "MEDIC",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4215_buddy": {
+      "name": "罗德岛隐秘队",
+      "rarity": "TIER_1",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_1049_catap2": {
+      "name": "雷狼龙S空爆",
+      "rarity": "TIER_5",
+      "profession": "WARRIOR",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_1048_orchd2": {
+      "name": "焰狐龙梓兰",
+      "rarity": "TIER_6",
+      "profession": "SNIPER",
+      "recruit_type": "FREE",
+      "can_be_free": false
+    },
+    "char_4230_mcnist": {
+      "name": "机械师",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4229_aphris": {
+      "name": "谬因",
+      "rarity": "TIER_6",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4234_pedro": {
+      "name": "佩德洛",
+      "rarity": "TIER_5",
+      "profession": "SUPPORT",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_1015_aglna2": {
+      "name": "予愿安洁莉娜",
+      "rarity": "TIER_6",
+      "profession": "SPECIAL",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4235_thumpy": {
+      "name": "珊比",
+      "rarity": "TIER_6",
+      "profession": "TANK",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4236_tmslot": {
+      "name": "时隙",
+      "rarity": "TIER_5",
+      "profession": "CASTER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    },
+    "char_4237_jcinta": {
+      "name": "嘉辛塔",
+      "rarity": "TIER_5",
+      "profession": "PIONEER",
+      "recruit_type": "FREE",
+      "can_be_free": true
+    }
+  },
+  "scope": "Eligibility validation for supplied observed identities only. No appearance probabilities or automatic offer sampling.",
+  "temporary_hope_cost": 0,
+  "temporary_tickets_already_promoted": true,
+  "rule_source": "https://prts.wiki/w/沉沦者的黑流树海"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "xianshu9_round2_core",
+  "rationale": "Video-inspired synthetic integer wave prior; central -6..8 uniform, rare tails uniform. Tail mass is an experimental setting, not verified frequency.",
+  "economy_overrides": {
+    "synthetic_wave_tail_probability": 0.0
+  },
+  "schema_version": 1
+}

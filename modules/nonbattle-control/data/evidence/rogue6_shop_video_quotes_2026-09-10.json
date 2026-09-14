@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "OBSERVED_DISPLAY_QUOTES_NOT_GLOBAL_TARIFF",
+  "source": {
+    "url": "https://www.bilibili.com/video/BV1PTGc6rEUS/?t=116",
+    "author": "柏喙攻略组",
+    "video_id": "BV1PTGc6rEUS",
+    "seconds": [112, 116, 120, 124],
+    "local_video": "artifacts/video-guide-research-2026-09-09/BV1PTGc6rEUS.mp4",
+    "frame": "artifacts/shop-verification-2026-09-10/BV1PTGc6rEUS-116.png",
+    "access_note": "Reviewed frames from the previously fetched public video; the live video page returned HTTP 412 during this recheck. Frame extraction did not alter the image."
+  },
+  "context": {
+    "topic": "rogue_6",
+    "node": "BATTLE_SHOP",
+    "difficulty_visible": 15,
+    "floor_visible": 1,
+    "full_technology_confirmed": false,
+    "cumulative_investment_confirmed": false,
+    "displayed_bank_balance": 771,
+    "discount_context": "No discount marker identified in these frames; the complete run inventory was not audited. Display quotes must not automatically become unconditional base prices."
+  },
+  "quotes": [
+    {"item_id": "rogue_6_relic_legacy_62", "name": "叙拉古人的愤怒", "displayed_gold_price": 16},
+    {"item_id": "rogue_6_relic_legacy_65", "name": "钝爪-百战", "displayed_gold_price": 12},
+    {"item_id": "rogue_6_relic_legacy_32", "name": "特级馥郁咖啡豆", "displayed_gold_price": 12},
+    {"item_id": "rogue_6_active_tool_1", "name": "支援补给站", "displayed_gold_price": 8},
+    {"item_id": "rogue_6_scrap_G_05", "name": "浪花", "displayed_gold_price": 6},
+    {"item_id": null, "name": "辅助招募券", "displayed_gold_price": 4},
+    {"item_id": null, "name": "沙盘β", "displayed_gold_price": 1, "evidence_second": 112}
+  ],
+  "shelf_observation": {
+    "product_positions": 10,
+    "bank_panel_counted_as_product": false,
+    "includes_sold_positions": true,
+    "relic_positions": 7,
+    "part_positions": 1,
+    "recruit_ticket_positions": 1,
+    "active_tool_positions": 1,
+    "bottom_row_price_labels_cropped": true,
+    "generalization": "One observed shop page, not proof of the unmodified slot count or every account configuration."
+  },
+  "runtime_promotion": false,
+  "open_findings": [
+    "The runtime generic service:tool placeholder costs 3 gold and does not encode this observed 8-gold item. This observation must not be generalized to all tactical tools.",
+    "Confirm complete discount context before promoting displayed prices to unconditional base prices.",
+    "Determine base slot layout separately from technology, investment and regional modifiers."
+  ]
+}

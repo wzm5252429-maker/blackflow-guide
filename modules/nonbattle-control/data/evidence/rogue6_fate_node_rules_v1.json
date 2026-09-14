@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-09-08",
+  "status": "client_choices_plus_community_gates_not_server_weights",
+  "client_source": {
+    "repository": "Kengxxiao/ArknightsGameData",
+    "path": "zh_CN/gamedata/excel/roguelike_topic_table.json",
+    "git_blob_sha": "723f15432e989b6d0d402c38548a74a317f2f97c",
+    "sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+    "verified_at": "2026-09-01"
+  },
+  "local_client_sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+  "sources": [
+    {
+      "url": "https://prts.wiki/w/沉沦者的黑流树海",
+      "section": "第二结局流程",
+      "role": "three fate nodes, paid mark gate and true-node conversion"
+    },
+    {
+      "url": "https://www.lubiao.wiki/data/archives/blackstream.json",
+      "local_snapshot": "rogue6_economy_observations_v1.json",
+      "pool_id": "rogue_6:命运所指：好奇心与死",
+      "role": "observed identities and frequencies, not complete server pool"
+    }
+  ],
+  "choices": {
+    "choice_ro6_end1_1": {
+      "id": "choice_ro6_end1_1",
+      "title": "修正结果，必须找到目标",
+      "description": "消耗<@ro6.lose>50</>源石锭，在林间找到投影发出的位置",
+      "lockedCoverDesc": null,
+      "type": "TRADE",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_end1_1",
+      "icon": "unknown",
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "unknown",
+        "itemId": "rogue_6_end_2_trigger_4",
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    "choice_ro6_end1_2": {
+      "id": "choice_ro6_end1_2",
+      "title": "这是什么戏法？",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "lockedCoverDesc": null,
+      "type": "TRADE",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_end1_2",
+      "icon": null,
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "relic",
+        "itemId": null,
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    "choice_ro6_end2_1": {
+      "id": "choice_ro6_end2_1",
+      "title": "保护证据，查缴那些机器！",
+      "description": "找到传出声音的位置\r\n<@ro6.lose>将遭遇险路恶敌</>",
+      "lockedCoverDesc": null,
+      "type": "TRADE",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_end2_2",
+      "icon": "unknown",
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "unknown",
+        "itemId": "rogue_6_end_2_change",
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    "choice_ro6_end2_2": {
+      "id": "choice_ro6_end2_2",
+      "title": "她在说什么疯话？",
+      "description": "多一事不如少一事",
+      "lockedCoverDesc": null,
+      "type": "TRADE",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_end2_1",
+      "icon": "leave",
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "leave",
+        "itemId": "rogue_6_end_2_trigger_2",
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    "choice_ro6_end2_3": {
+      "id": "choice_ro6_end2_3",
+      "title": "你将见证一场毁灭，抑或新生",
+      "description": "遭遇与当前区域首领的决战",
+      "lockedCoverDesc": null,
+      "type": "ZONE_END",
+      "leftDecoType": "NONE",
+      "nextSceneId": null,
+      "icon": "battle",
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "battle",
+        "itemId": null,
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    "choice_ro6_end2_4": {
+      "id": "choice_ro6_end2_4",
+      "title": "保护证据，查缴那些机器！",
+      "description": "找到传出声音的位置\r\n<@ro6.lose>将遭遇险路恶敌</>",
+      "lockedCoverDesc": null,
+      "type": "NEXT",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_end2_2",
+      "icon": "unknown",
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "unknown",
+        "itemId": null,
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    }
+  },
+  "scenes": {
+    "scene_ro6_end1_enter": {
+      "id": "scene_ro6_end1_enter",
+      "title": "好奇心与死",
+      "description": "“我一直在等你。”一只猫？你并不确定它究竟是什么。“但你不太走运。在黑流树海之中，距离和方向并没有实质意义。”你伸出手去触碰，却发现周围的一切事物都变成了虚幻的立体投影。",
+      "background": "pic_rogue_6_36",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    "scene_ro6_end1_1": {
+      "id": "scene_ro6_end1_1",
+      "title": "好奇心与死",
+      "description": "你用手头的物资与这里的电源临时搭建起一个信号发射器，新的坐标在你的终端上浮现。与此同时，这处据点的机器和那只猫的投影都消失了，像是从不曾存在过一般。",
+      "background": "pic_rogue_6_36",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    "scene_ro6_end1_2": {
+      "id": "scene_ro6_end1_2",
+      "title": "好奇心与死",
+      "description": "是那只猫的源石技艺吗？你想要弄个明白，但在你走上前快要抓住它的瞬间，周围的一切都骤然消失了，只剩下一个闪闪发光的物件掉在你的脚边。",
+      "background": "pic_rogue_6_36",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    "scene_ro6_end2_enter": {
+      "id": "scene_ro6_end2_enter",
+      "title": "窥视箱中",
+      "description": "“我一直在等你。”一只......猫？你并不确定她究竟是什么。“不明白也没有关系。我向正在观察我们之人言说，尽管我不知道你是否拥有生命和意识。我邀请你见证必将发生之事。”",
+      "background": "pic_rogue_6_37",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    "scene_ro6_end2_1": {
+      "id": "scene_ro6_end2_1",
+      "title": "窥视箱中",
+      "description": "“你不是来找我的？好吧。”她转过身去，没有回头再对你说什么，环境中只剩下机器持续运作的轻微噪音。为了避免再生事端，你决定离开这个可疑的地方。",
+      "background": "pic_rogue_6_37",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    "scene_ro6_end2_2": {
+      "id": "scene_ro6_end2_2",
+      "title": "窥视箱中",
+      "description": "“你对它们的用途有一些猜测，对吗？”她对你露出了笑容，“不必紧张，它们并不会以你想象的方式运作。但即便我这么说，你仍会尝试阻止我，你也必须这么做。”",
+      "background": "pic_rogue_6_37",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    }
+  },
+  "features": {
+    "rogue_6_end_2_trigger_1": {
+      "id": "rogue_6_end_2_trigger_1",
+      "name": "二结局激活1",
+      "description": "机制物品",
+      "usage": "进入第五层时揭露二结局真命运所指",
+      "obtainApproach": "在集成战略模式中获得",
+      "iconId": "rogue_6_end_2_trigger_1",
+      "itemIconGroupId": null,
+      "type": "FEATURE",
+      "subType": "NONE",
+      "rarity": "NONE",
+      "sortId": 999,
+      "canSacrifice": false,
+      "tinyIconColor": null,
+      "unlockCondDesc": null,
+      "shortUsage": null
+    },
+    "rogue_6_end_2_trigger_2": {
+      "id": "rogue_6_end_2_trigger_2",
+      "name": "二结局激活2",
+      "description": "机制物品",
+      "usage": "选项结束后触发二结局激活3",
+      "obtainApproach": "在集成战略模式中获得",
+      "iconId": "rogue_6_end_2_trigger_2",
+      "itemIconGroupId": null,
+      "type": "FEATURE",
+      "subType": "NONE",
+      "rarity": "NONE",
+      "sortId": 999,
+      "canSacrifice": false,
+      "tinyIconColor": null,
+      "unlockCondDesc": null,
+      "shortUsage": null
+    },
+    "rogue_6_end_2_trigger_3": {
+      "id": "rogue_6_end_2_trigger_3",
+      "name": "二结局激活3",
+      "description": "机制物品",
+      "usage": "揭露本层的二结局真命运所指",
+      "obtainApproach": "在集成战略模式中获得",
+      "iconId": "rogue_6_end_2_trigger_3",
+      "itemIconGroupId": null,
+      "type": "FEATURE",
+      "subType": "NONE",
+      "rarity": "NONE",
+      "sortId": 999,
+      "canSacrifice": false,
+      "tinyIconColor": null,
+      "unlockCondDesc": null,
+      "shortUsage": null
+    },
+    "rogue_6_end_2_trigger_4": {
+      "id": "rogue_6_end_2_trigger_4",
+      "name": "二结局激活4",
+      "description": "机制物品",
+      "usage": "假命运所指选项触发二结局激活3",
+      "obtainApproach": "在集成战略模式中获得",
+      "iconId": "rogue_6_end_2_trigger_4",
+      "itemIconGroupId": null,
+      "type": "FEATURE",
+      "subType": "NONE",
+      "rarity": "NONE",
+      "sortId": 999,
+      "canSacrifice": false,
+      "tinyIconColor": null,
+      "unlockCondDesc": null,
+      "shortUsage": null
+    }
+  },
+  "rules": [
+    "Ordinary floor V has three visually indistinguishable fate nodes: two false 好奇心与死 and one true 窥视箱中, after applying the account/route gate.",
+    "At false fate choose exactly one: pay 50 coins to mark the true location, or receive one collectible.",
+    "The mark is a FEATURE mechanic, not a collectible, movement, or additional reward.",
+    "The paid marking option is unavailable when the true location is already marked. Holding both sandboxes marks the true fate.",
+    "False fate has one settlement per node. Its other same-named node remains independently available.",
+    "True fate protect-evidence changes that same node into the ro6_b_5 boss. Leaving true fate activates its marker feature chain.",
+    "The one-relic false-fate reward has no rarity qualifier in the client. Observed draws include NORMAL, RARE and SUPER_RARE.",
+    "Second-ending fate route requires first-ending completion and at least one of the two sandbox relics. Full technology is not the unlock.",
+    "Leaving the true fate completes but preserves a repeatable marked STORY node; reentry is permitted.",
+    "Protect-evidence commits to the boss; departure is unavailable after node conversion. The subsequent client ZONE_END choice starts the current-region boss.",
+    "The converted true-fate boss does not activate battle-node arrival concepts. The player arrived at a STORY node, not at a newly moved-to battle node.",
+    "Completing the floor-V second-ending boss while holding the beacon continues into floor VI. The second and third route map flags are therefore compatible."
+  ],
+  "unverified": [
+    "Server weights for true-fate position and reward identity.",
+    "Exact false-node icon/type after settlement; the current simulator uses its general completed-node empty convention.",
+    "Account unlock gate must be supplied separately; full technology alone is not proof of second-ending availability."
+  ],
+  "implementation": {
+    "module": "blackflow_rl/fate_nodes.py",
+    "private_state": "FateContext.true_node_id",
+    "public_projection": "fate_belief_context + fate_public_map",
+    "unknown_prior": "unverified_uniform_true_fate_position",
+    "topology_mutations": false
+  }
+}

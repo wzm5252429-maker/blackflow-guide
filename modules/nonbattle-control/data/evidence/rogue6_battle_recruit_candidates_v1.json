@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "ordinary_battle_base": {
+    "evidence_kind": "USER_CONFIRMED_GAMEPLAY_RULE",
+    "source": "User confirmation in the active task, relayed by the coordinating agent.",
+    "observation": "无电台普通战后显示2张，二选一",
+    "node_type": "BATTLE_NORMAL",
+    "candidate_count": 2,
+    "actual_claim_count": 1,
+    "elite_base_candidate_count": null,
+    "boss_base_candidate_count": null
+  },
+  "radio_modifier": {
+    "item_id": "rogue_6_relic_legacy_21",
+    "name": "罗德岛战术电台",
+    "client_source": "source_data/roguelike_topic_table_full.json#/details/rogue_6/relics/rogue_6_relic_legacy_21/buffs",
+    "client_buff": "battle_extra_recruit_ticket",
+    "client_blackboard": {"count": 1},
+    "client_usage": "战斗后掉落招募券时，增加一个可选项",
+    "candidate_count_delta": 1,
+    "actual_claim_count_delta": 0,
+    "prts_url": "https://prts.wiki/w/沉沦者的黑流树海/拟造物质编目#No.189-218_巧用收藏",
+    "prts_scope_note": "狭路相逢胜利后的部分奖励不会受此收藏品增益",
+    "implementation_scope": ["BATTLE_NORMAL", "BATTLE_ELITE", "BATTLE_BOSS"],
+    "excluded_unknown_scope": ["DUEL", "RESIDENT", "CHASE", "SPECIAL_EVENT_BATTLE"]
+  },
+  "selection_and_retention": {
+    "prts_url": "https://prts.wiki/w/沉沦者的黑流树海#招募券留存",
+    "client_source": "source_data/roguelike_topic_table_full.json#/details/rogue_6/gameConst/stashedRecruitEmptyNodeDescription",
+    "client_text": "暂无已留存的招募券。可在干员招募界面留存招募券",
+    "selected_ticket_to_stored_ticket_example": {
+      "ticketId": "rogue_6_recruit_ticket_pioneer",
+      "stashedTicketId": "rogue_6_recruit_ticket_pioneer_candle"
+    },
+    "unselected_candidates_are_inventory": false,
+    "unselected_candidates_can_be_retained": false,
+    "choosing_or_retaining_is_formal_recruitment": false
+  },
+  "unverified_and_modelled": {
+    "elite_and_boss_default_base_count": 1,
+    "elite_and_boss_count_evidence": "UNVERIFIED_BASE_CANDIDATE_COUNT",
+    "candidate_composition": "Existing empirical conditional ticket composition; not server probabilities.",
+    "joint_distribution": "SYNTHETIC_INDEPENDENT_DRAWS_WITH_REPLACEMENT",
+    "duplicate_candidates_observed": null,
+    "composition_selection_bias_known": false
+  },
+  "invariants": [
+    "Each source occurrence generates one fixed candidate group and at most one actually claimable recruitment ticket.",
+    "An extra radio candidate never grants another ticket, free-reserve opportunity, formal recruit, corn-growth trigger or storage slot.",
+    "Choosing one candidate resolves the entire group; the remaining alternatives cannot be recruited or retained.",
+    "After selecting or retaining a ticket, preserve all previously rolled part/relic candidates and other recruitment groups.",
+    "Acquiring or losing radio after a candidate group was displayed must not regenerate that group.",
+    "A recorded observed count may override a specific battle's modelled count; it is not a reward-maximization parameter."
+  ]
+}
