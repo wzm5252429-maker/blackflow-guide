@@ -13,7 +13,10 @@ class GameRuntime:
         from .policy import CurrentNeuralPolicy
         from .vision import VisionPipeline
         self.capture = WindowsGameCapture(runtime=runtime, hwnd=hwnd)
-        self.capture.current_geometry()
+        # Identify the client without requiring capturable geometry yet. An
+        # explicitly started control session may restore it in focus(); preview
+        # still never restores, activates or sends input to a window.
+        self.capture.verified_window()
         self.controller = WindowsController(self.capture)
         self.vision = VisionPipeline(self.capture.runtime)
         self.policy = CurrentNeuralPolicy()

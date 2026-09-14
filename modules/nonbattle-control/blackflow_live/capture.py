@@ -11,6 +11,7 @@ from __future__ import annotations
 from contextlib import contextmanager
 import ctypes as ct
 from ctypes import wintypes as wt
+from dataclasses import asdict, dataclass
 import os
 from pathlib import Path
 import time
@@ -35,6 +36,7 @@ def _user32():
     user.GetWindowThreadProcessId.argtypes = [wt.HWND, ct.POINTER(wt.DWORD)]
     user.GetWindowTextLengthW.argtypes = [wt.HWND]
     user.GetWindowTextW.argtypes = [wt.HWND, wt.LPWSTR, ct.c_int]
+    user.GetClassNameW.argtypes = [wt.HWND, wt.LPWSTR, ct.c_int]
     user.GetDpiForWindow.argtypes = [wt.HWND]
     user.GetDpiForWindow.restype = wt.UINT
     user.SetThreadDpiAwarenessContext.argtypes = [ct.c_void_p]
@@ -58,9 +60,11 @@ def physical_pixel_context():
 def window_geometry(hwnd: int) -> WindowGeometry:
     with physical_pixel_context() as user:
         if not hwnd or not user.IsWindow(hwnd):
-            raise RuntimeError("Selected game window no longer exists")
-        if not user.IsWindowVisible(hwnd) or user.IsIconic(hwnd):
-            raise RuntimeError("Game window is hidden or minimized")
+            raise RuntimeError("所选游戏窗口已关闭，请重新连接游戏窗口")
+        if not user.IsWindowVisible(hwnd):
+            raise RuntimeError("游戏窗口处于隐藏状态，请先显示游戏窗口后重试")
+        if user.IsIconic(hwnd):
+            raise RuntimeError("游戏窗口已最小化，请先恢复游戏窗口后重试识别预览")
         rect, origin, pid = wt.RECT(), wt.POINT(0, 0), wt.DWORD()
         if not user.GetClientRect(hwnd, ct.byref(rect)) or not user.ClientToScreen(hwnd, ct.byref(origin)):
             raise OSError(ct.get_last_error(), "Cannot read game client geometry")
@@ -76,53 +80,145 @@ def window_geometry(hwnd: int) -> WindowGeometry:
         )
 
 
+def _process_snapshot() -> dict[int, str]:
+    """Read executable basenames without opening protected game processes."""
+    class ProcessEntry(ct.Structure):
+        _fields_ = [("dwSize", wt.DWORD), ("cntUsage", wt.DWORD),
+                    ("th32ProcessID", wt.DWORD), ("th32DefaultHeapID", ct.c_size_t),
+                    ("th32ModuleID", wt.DWORD), ("cntThreads", wt.DWORD),
+                    ("th32ParentProcessID", wt.DWORD), ("pcPriClassBase", wt.LONG),
+                    ("dwFlags", wt.DWORD), ("szExeFile", wt.WCHAR * 260)]
+
+    kernel = ct.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateToolhelp32Snapshot.argtypes = [wt.DWORD, wt.DWORD]
+    kernel.CreateToolhelp32Snapshot.restype = wt.HANDLE
+    kernel.Process32FirstW.argtypes = [wt.HANDLE, ct.POINTER(ProcessEntry)]
+    kernel.Process32FirstW.restype = wt.BOOL
+    kernel.Process32NextW.argtypes = [wt.HANDLE, ct.POINTER(ProcessEntry)]
+    kernel.Process32NextW.restype = wt.BOOL
+    kernel.CloseHandle.argtypes = [wt.HANDLE]
+    kernel.CloseHandle.restype = wt.BOOL
+    handle = kernel.CreateToolhelp32Snapshot(0x00000002, 0)  # TH32CS_SNAPPROCESS
+    if not handle or handle == ct.c_void_p(-1).value:
+        return {}
+    try:
+        entry = ProcessEntry()
+        entry.dwSize = ct.sizeof(entry)
+        result = {}
+        present = kernel.Process32FirstW(handle, ct.byref(entry))
+        while present:
+            result[int(entry.th32ProcessID)] = entry.szExeFile.casefold()
+            present = kernel.Process32NextW(handle, ct.byref(entry))
+        return result
+    finally:
+        kernel.CloseHandle(handle)
+
+
 def _process_basename(pid: int) -> str | None:
     kernel = ct.WinDLL("kernel32", use_last_error=True)
     kernel.OpenProcess.argtypes = [wt.DWORD, wt.BOOL, wt.DWORD]
     kernel.OpenProcess.restype = wt.HANDLE
     kernel.QueryFullProcessImageNameW.argtypes = [wt.HANDLE, wt.DWORD, wt.LPWSTR, ct.POINTER(wt.DWORD)]
+    kernel.QueryFullProcessImageNameW.restype = wt.BOOL
     kernel.CloseHandle.argtypes = [wt.HANDLE]
+    kernel.CloseHandle.restype = wt.BOOL
     handle = kernel.OpenProcess(0x1000, False, pid)
-    if not handle:
-        return None
-    try:
-        size = wt.DWORD(32768)
-        name = ct.create_unicode_buffer(size.value)
-        if kernel.QueryFullProcessImageNameW(handle, 0, name, ct.byref(size)):
-            return Path(name.value).name.lower()
-        return None
-    finally:
-        kernel.CloseHandle(handle)
+    if handle:
+        try:
+            size = wt.DWORD(32768)
+            name = ct.create_unicode_buffer(size.value)
+            if kernel.QueryFullProcessImageNameW(handle, 0, name, ct.byref(size)):
+                return name.value.replace("\\", "/").rsplit("/", 1)[-1].casefold()
+        finally:
+            kernel.CloseHandle(handle)
+    # A protected/elevated game may deny an image-path query while Windows'
+    # read-only process snapshot still identifies its executable by PID.
+    return _process_snapshot().get(int(pid))
 
 
-def find_game_windows() -> list[WindowGeometry]:
-    """Return visible game clients; ignore browser pages mentioning Arknights."""
+@dataclass(frozen=True)
+class GameWindowCandidate:
+    """Verified identity and visibility, without requiring capturable geometry."""
+    hwnd: int
+    pid: int
+    title: str
+    class_name: str
+    visible: bool
+    minimized: bool
+    executable: str = "arknights.exe"
+
+    @property
+    def state(self):
+        if not self.visible:
+            return "hidden"
+        return "minimized" if self.minimized else "visible"
+
+    def to_dict(self):
+        return {**asdict(self), "state": self.state}
+
+
+def find_game_candidates() -> list[GameWindowCandidate]:
+    """Find verified Unity game clients, including minimized/hidden clients.
+
+    Titles are descriptive only: browser titles and the game's hidden Qt
+    helpers are never accepted as render clients. This function reads metadata
+    only; it never restores, focuses, captures, or sends input to a window.
+    """
     user = _user32()
     matches = []
-    callback_type = ct.WINFUNCTYPE(wt.BOOL, wt.HWND, wt.LPARAM)
+    processes = {}
+    callback_type = getattr(ct, "WINFUNCTYPE", ct.CFUNCTYPE)(wt.BOOL, wt.HWND, wt.LPARAM)
 
     @callback_type
     def visit(hwnd, _):
-        if not user.IsWindowVisible(hwnd) or user.IsIconic(hwnd):
-            return True
         try:
-            item = window_geometry(int(hwnd))
-            title = item.title.strip()
-            # Restrict title fallback: websites and Codex tasks often mention
-            # Arknights but are never eligible automation targets.
-            title_matches = title == "明日方舟" or title.casefold() == "arknights"
-            if title_matches:
-                executable = _process_basename(item.pid)
-                if executable is None or executable == "arknights.exe":
-                    matches.append(item)
+            if not user.IsWindow(hwnd):
+                return True
+            class_name = ct.create_unicode_buffer(256)
+            if not user.GetClassNameW(hwnd, class_name, len(class_name)) or class_name.value != "UnityWndClass":
+                return True
+            pid = wt.DWORD()
+            if not user.GetWindowThreadProcessId(hwnd, ct.byref(pid)) or not pid.value:
+                return True
+            process_id = int(pid.value)
+            if process_id not in processes:
+                processes[process_id] = _process_basename(process_id)
+            executable = processes[process_id]
+            if executable != "arknights.exe":
+                return True
+            title = ct.create_unicode_buffer(user.GetWindowTextLengthW(hwnd) + 1)
+            user.GetWindowTextW(hwnd, title, len(title))
+            # The HWND may have disappeared/reused while reading its process.
+            if not user.GetWindowThreadProcessId(hwnd, ct.byref(pid)) or pid.value != process_id:
+                return True
+            matches.append(GameWindowCandidate(
+                int(hwnd), process_id, title.value, class_name.value,
+                bool(user.IsWindowVisible(hwnd)), bool(user.IsIconic(hwnd)), executable,
+            ))
         except (OSError, RuntimeError, ValueError):
             pass
         return True
 
     user.EnumWindows.argtypes = [callback_type, wt.LPARAM]
+    user.EnumWindows.restype = wt.BOOL
     if not user.EnumWindows(visit, 0):
         raise OSError(ct.get_last_error(), "Cannot enumerate game windows")
     return sorted(matches, key=lambda item: (item.pid, item.hwnd))
+
+
+def find_game_windows() -> list[WindowGeometry]:
+    """Compatibility view containing only verified, currently usable clients."""
+    matches = []
+    for item in find_game_candidates():
+        if not item.visible or item.minimized:
+            continue
+        try:
+            geometry = window_geometry(item.hwnd)
+            if geometry.pid == item.pid:
+                matches.append(geometry)
+        except (OSError, RuntimeError, ValueError):
+            pass
+    return matches
 
 
 def assert_geometry_current(snapshot: WindowGeometry) -> WindowGeometry:
@@ -223,27 +319,68 @@ class WindowsGameCapture:
     def __init__(self, runtime=None, hwnd: int | None = None):
         self.runtime = resolve_runtime(runtime)
         self.hwnd = int(hwnd) if hwnd else None
+        self._selected_pid = None
         self._native = None
 
     @staticmethod
     def discover_windows():
-        return [item.to_dict() for item in find_game_windows()]
+        result = []
+        for candidate in find_game_candidates():
+            item = candidate.to_dict()
+            if candidate.visible and not candidate.minimized:
+                try:
+                    geometry = window_geometry(candidate.hwnd)
+                    if geometry.pid != candidate.pid:
+                        continue
+                    item.update(geometry.to_dict())
+                except (OSError, RuntimeError, ValueError):
+                    # Keep the verified identity for a useful state/error in the
+                    # next attempt; do not invent geometry for an unavailable frame.
+                    pass
+            result.append(item)
+        return result
 
     def select_window(self, hwnd: int):
-        candidates = {item.hwnd: item for item in find_game_windows()}
+        candidates = {item.hwnd: item for item in find_game_candidates()}
         if int(hwnd) not in candidates:
-            raise RuntimeError("Selected HWND is not a visible Arknights game client")
+            raise RuntimeError("所选窗口不是已验证的明日方舟游戏画面窗口，请重新选择")
         self.close()
         self.hwnd = int(hwnd)
+        self._selected_pid = candidates[self.hwnd].pid
         return candidates[self.hwnd]
 
-    def current_geometry(self):
+    def verified_window(self) -> GameWindowCandidate:
+        """Select/revalidate identity without requiring or changing visibility."""
+        candidates = find_game_candidates()
         if self.hwnd is None:
-            candidates = find_game_windows()
-            if len(candidates) != 1:
-                raise RuntimeError("Select one game window" if candidates else "Arknights game window not found")
+            if not candidates:
+                if "arknights.exe" in _process_snapshot().values():
+                    raise RuntimeError("检测到明日方舟进程，但未找到游戏画面窗口；请等待客户端加载完成并显示游戏窗口")
+                raise RuntimeError("未找到明日方舟游戏窗口，请先启动游戏客户端并等待游戏画面出现")
+            if len(candidates) > 1:
+                raise RuntimeError("检测到多个明日方舟游戏窗口，请先在网页中选择一个窗口")
             self.hwnd = candidates[0].hwnd
-        return window_geometry(self.hwnd)
+        candidate = next((item for item in candidates if item.hwnd == self.hwnd), None)
+        if candidate is None:
+            self.close()
+            raise RuntimeError("所选游戏窗口已关闭或身份已改变，请重新连接游戏窗口")
+        if self._selected_pid is not None and candidate.pid != self._selected_pid:
+            self.close()
+            raise RuntimeError("所选游戏窗口的进程已改变，请重新连接游戏窗口")
+        self._selected_pid = candidate.pid
+        return candidate
+
+    def current_geometry(self):
+        candidate = self.verified_window()
+        if not candidate.visible:
+            raise RuntimeError("游戏窗口处于隐藏状态，请先显示游戏窗口后重试")
+        if candidate.minimized:
+            raise RuntimeError("游戏窗口已最小化，请先恢复游戏窗口后重试识别预览")
+        geometry = window_geometry(candidate.hwnd)
+        if geometry.pid != candidate.pid:
+            self.close()
+            raise RuntimeError("读取期间游戏窗口的进程已改变，请重新连接游戏窗口")
+        return geometry
 
     def capture(self) -> CapturedFrame:
         # Re-read before/after every frame. Moving the game while the capture is
@@ -251,9 +388,8 @@ class WindowsGameCapture:
         for _ in range(3):
             before = self.current_geometry()
             if self._native is None:
-                # Validate an explicitly supplied HWND against game discovery too.
-                if self.hwnd not in {item.hwnd for item in find_game_windows()}:
-                    raise RuntimeError("Capture target is not a verified Arknights game window")
+                # current_geometry verifies both explicit HWNDs and the pinned
+                # process before any native controller can be created.
                 with physical_pixel_context():
                     self._native = MaaWindowCapture(self.runtime, self.hwnd)
             captured_at = time.time()
@@ -272,6 +408,9 @@ class WindowsGameCapture:
         return self.capture().normalize(target_size, **kwargs)
 
     def assert_geometry_current(self, snapshot):
+        candidate = self.verified_window()
+        if candidate.hwnd != snapshot.hwnd or candidate.pid != snapshot.pid:
+            raise RuntimeError("游戏窗口身份已改变，必须重新截图后才能点击")
         return assert_geometry_current(snapshot)
 
     def close(self):

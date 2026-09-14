@@ -33,9 +33,15 @@ class WindowsController:
             self._focus_physical()
 
     def _focus_physical(self):
-        hwnd = self.capture.current_geometry().hwnd
-        if self.user32.IsIconic(hwnd):
+        window = self.capture.verified_window()
+        hwnd = window.hwnd
+        if not window.visible:
+            raise RuntimeError('明日方舟窗口已隐藏，请先从游戏启动器打开游戏窗口')
+        if window.minimized:
             self.user32.ShowWindow(hwnd, 9)
+        # Restoration changes client coordinates. Verify the selected process
+        # again and read the restored geometry before attempting activation.
+        self.capture.current_geometry()
         self.user32.SetForegroundWindow(hwnd)
         if self.user32.GetAncestor(self.user32.GetForegroundWindow(), 2) != hwnd:
             raise RuntimeError('未能聚焦游戏窗口。请切换到游戏，或以与游戏相同的权限启动接管器')

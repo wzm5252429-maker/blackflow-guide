@@ -44,13 +44,13 @@
     },
     {
       "path": "blackflow_live/capture.py",
-      "sha256": "f269d8799b63033eb4925f0c4049c512a1ba9d2b60fd5178d383afcc79ea0d15",
-      "bytes": 12406
+      "sha256": "d9fae572a5b234155e37202ee3b1c6d43929b10e350a82b1eb9ba66d1bff20da",
+      "bytes": 18991
     },
     {
       "path": "blackflow_live/controller.py",
-      "sha256": "aa5a7bdc7ae5fd7b91555b5f39367112508d7713301a5ddb97b93b3a8ee1a49e",
-      "bytes": 6148
+      "sha256": "a7e89dc975292b77165ebf8568d935d42929a6c66f65aa328e29ebf7be911987",
+      "bytes": 6494
     },
     {
       "path": "blackflow_live/engine.py",
@@ -74,8 +74,8 @@
     },
     {
       "path": "blackflow_live/runtime.py",
-      "sha256": "284810d585e45e07f9e3f30cb62274e94fe3edd4ec33941191aeedc0c13da7bc",
-      "bytes": 1957
+      "sha256": "fc8dcedc9f4a1a716a3565d6ca3422a82d7281333f96759e9e17022795495350",
+      "bytes": 2182
     },
     {
       "path": "blackflow_live/service.py",
@@ -654,8 +654,8 @@
     },
     {
       "path": "docs/nonbattle-control.md",
-      "sha256": "775690e71ddbfcd0db6c8d9423235c9ca39ff7b3c947e265cfdfe2e4a4c5e1ab",
-      "bytes": 5155
+      "sha256": "e5bf2cde4388a1b6e76447fb80b9cb060a563e05d1d8b14b291887d2ca238f25",
+      "bytes": 6158
     },
     {
       "path": "requirements-core.txt",
@@ -674,8 +674,8 @@
     },
     {
       "path": "tests/test_live_controller.py",
-      "sha256": "e22ad4a6de42eac4f5b06bf1da980302150e8191ac1bd46b35ae80bc9dd1d52c",
-      "bytes": 4246
+      "sha256": "70e845becbb1288e6cafd9596462495890b989edc34bb8566049bc94e8d33cd0",
+      "bytes": 6251
     },
     {
       "path": "tests/test_live_engine.py",
@@ -693,6 +693,11 @@
       "bytes": 13072
     },
     {
+      "path": "tests/test_live_runtime.py",
+      "sha256": "f1c88ca6e450b4548e1d6245bddc59a93304a48fe0bf3544911f0371387cf198",
+      "bytes": 1471
+    },
+    {
       "path": "tests/test_live_service.py",
       "sha256": "80e8624e4f0c810dc38bf7acfd47dcb1d49dbae8f4848ef7a95151544f6cb898",
       "bytes": 11436
@@ -701,6 +706,11 @@
       "path": "tests/test_live_vision.py",
       "sha256": "ae8ee8dad750d4e3356c7f8b3f930b7dbfb0d05f75eef3d50e3edfa7206af73a",
       "bytes": 8439
+    },
+    {
+      "path": "tests/test_live_window_discovery.py",
+      "sha256": "e671566b436512e5d4ace0840ad8c8c2bba86fcf772d53009c65eb9eabf94e8c",
+      "bytes": 14889
     },
     {
       "path": "tools/Start-BlackflowLive.cmd",

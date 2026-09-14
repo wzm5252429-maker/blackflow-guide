@@ -65,7 +65,9 @@ class LiveControllerTests(unittest.TestCase):
             self.assertEqual(snapshot, geometry)
         controller = WindowsController.__new__(WindowsController)
         controller.user32 = user
-        controller.capture = SimpleNamespace(current_geometry=lambda: geometry, assert_geometry_current=assert_current)
+        controller.capture = SimpleNamespace(
+            verified_window=lambda: SimpleNamespace(hwnd=123, visible=True, minimized=False),
+            current_geometry=lambda: geometry, assert_geometry_current=assert_current)
         frame = CapturedFrame(np.full((720, 1280, 3), 90, np.uint8), geometry).normalize()
         return controller, frame, context, sent, active
 
@@ -96,6 +98,37 @@ class LiveControllerTests(unittest.TestCase):
                 controller.click(action, frame)
         self.assertFalse(sent)
         self.assertFalse(active[0])
+
+    def test_minimized_client_restored_before_reading_geometry(self):
+        controller, frame, context, sent, _ = self.setup_controller()
+        events = []
+        controller.capture.verified_window = lambda: SimpleNamespace(hwnd=123, visible=True, minimized=True)
+        controller.user32.ShowWindow = Function(lambda hwnd, mode: events.append(('restore', hwnd, mode)))
+        controller.capture.current_geometry = lambda: events.append('geometry') or frame.geometry
+        controller.user32.SetForegroundWindow = Function(lambda hwnd: events.append('focus'))
+        with patch('blackflow_live.controller.physical_pixel_context', context):
+            controller.focus()
+        self.assertEqual(events, [('restore', 123, 9), 'geometry', 'focus'])
+        self.assertFalse(sent)
+
+    def test_hidden_or_changed_client_never_activated(self):
+        controller, _, context, sent, _ = self.setup_controller()
+        events = []
+        controller.user32.ShowWindow = Function(lambda *_: events.append('restore'))
+        controller.user32.SetForegroundWindow = Function(lambda *_: events.append('focus'))
+        controller.capture.verified_window = lambda: SimpleNamespace(hwnd=123, visible=False, minimized=False)
+        with patch('blackflow_live.controller.physical_pixel_context', context):
+            with self.assertRaisesRegex(RuntimeError, '隐藏'):
+                controller.focus()
+        controller.capture.verified_window = lambda: SimpleNamespace(hwnd=123, visible=True, minimized=False)
+        def changed():
+            raise RuntimeError('游戏进程已变化')
+        controller.capture.current_geometry = changed
+        with patch('blackflow_live.controller.physical_pixel_context', context):
+            with self.assertRaisesRegex(RuntimeError, '变化'):
+                controller.focus()
+        self.assertEqual(events, [])
+        self.assertFalse(sent)
 
 
 if __name__ == '__main__':
