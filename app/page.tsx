@@ -1,38 +1,29 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   AlertTriangle,
   Archive,
-  ArrowRight,
   BadgeHelp,
   Biohazard,
   BookOpen,
   Box,
-  Check,
   ChevronRight,
   CircleDot,
-  Compass,
   ExternalLink,
-  Eye,
-  Footprints,
-  Gauge,
   Layers3,
   Map as MapIcon,
   PackageOpen,
   Play,
-  Radar,
   Route as RouteIcon,
   Search,
-  ShieldAlert,
   Skull,
   Sparkles,
   Swords,
   Target,
   Trees,
   WandSparkles,
-  Zap,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -49,7 +40,6 @@ import {
   NativeSelect,
   NativeSelectOption,
 } from "@/components/ui/native-select";
-import { Progress } from "@/components/ui/progress";
 import {
   Tabs,
   TabsContent,
@@ -58,26 +48,22 @@ import {
   BOSS_GUIDES,
   DEVICE_GUIDES,
   ELITE_GUIDES,
-  ENDINGS,
   EVENT_NOTES,
   EVENT_POOLS,
-  LAYER_NODE_POOLS,
   NODE_DATA,
-  PARTS,
   SOURCES,
   UNKNOWN_POOLS,
   type NodeRecord,
 } from "./game-data";
 import { STAGE_DATA, type StageRecord } from "./stage-data";
 import LiveRouteControl from "./live-route-control";
-
-type PlannerResult = {
-  route: string[];
-  score: number;
-  actionCost: number;
-  reasons: string[];
-  originalIndex: number;
-};
+import {
+  BLACKFLOW_POOLS,
+  BLACKFLOW_POOL_ITEMS,
+  BLACKFLOW_POOL_SOURCE,
+  BLACKFLOW_POOL_SYNC_DATE,
+  type BlackflowPool,
+} from "./item-pool-data";
 
 type EnemyType = "普通" | "精英" | "领袖" | "装置";
 
@@ -92,9 +78,24 @@ type EnemyEntry = {
 };
 
 const ROMAN = ["0", "I", "II", "III", "IV", "V", "VI"];
-const NODE_BY_NAME = new Map(NODE_DATA.map((node) => [node.name, node]));
 const BOSS_NAMES = new Set(Object.keys(BOSS_GUIDES));
 const ELITE_NAMES = new Set(Object.keys(ELITE_GUIDES));
+const EXCLUDED_ENEMY_NAMES = new Set(["便符", "受符"]);
+const POOL_ITEM_BY_ID = new Map(
+  BLACKFLOW_POOL_ITEMS.map((item) => [item.id, item]),
+);
+const SITE_TABS = [
+  "planner",
+  "nodes",
+  "items",
+  "stages",
+  "archive",
+] as const;
+type SiteTab = (typeof SITE_TABS)[number];
+
+function isSiteTab(value: string): value is SiteTab {
+  return SITE_TABS.includes(value as SiteTab);
+}
 
 function prtsUrl(name: string) {
   return "https://prts.wiki/w/" + encodeURIComponent(name);
@@ -105,6 +106,42 @@ function bilibiliUrl(name: string) {
     "https://search.bilibili.com/all?keyword=" +
     encodeURIComponent("明日方舟 黑流树海 " + name + " 攻略")
   );
+}
+
+function formatPoolProbability(value: number) {
+  return `${(value * 100).toFixed(2)}%`;
+}
+
+function normalizedPoolType(pool: { name: string; poolType: string }) {
+  if (
+    pool.poolType === "其他" &&
+    /(零件|自然物|加工品|概念体)/.test(pool.name)
+  ) {
+    return "零件池";
+  }
+  return pool.poolType;
+}
+
+function poolItemSummary(pool: BlackflowPool) {
+  let collectibles = 0;
+  let parts = 0;
+  for (const occurrence of pool.items) {
+    const item = POOL_ITEM_BY_ID.get(occurrence.id);
+    if (item?.type === "藏品") collectibles += 1;
+    if (item?.type === "零件") parts += 1;
+  }
+  const labels = [];
+  if (collectibles || normalizedPoolType(pool) === "藏品池") {
+    labels.push(`${collectibles} 个已记录藏品`);
+  }
+  if (parts || normalizedPoolType(pool) === "零件池") {
+    labels.push(`${parts} 个已记录零件`);
+  }
+  return labels.join(" · ");
+}
+
+function poolSourcePaths(pool: BlackflowPool) {
+  return pool.sources.map((source) => source.path.join(" → "));
 }
 
 function classifyEnemy(name: string): EnemyType {
@@ -160,6 +197,7 @@ const ENEMY_INDEX: EnemyEntry[] = (() => {
 
   for (const stage of STAGE_DATA) {
     for (const enemy of stage.enemies) {
+      if (EXCLUDED_ENEMY_NAMES.has(enemy.name)) continue;
       const found = map.get(enemy.name) ?? {
         codes: new Set<string>(),
         icons: new Set<string>(),
@@ -211,177 +249,12 @@ const ENEMY_INDEX: EnemyEntry[] = (() => {
 })();
 
 const EVENT_COUNT = new Set(Object.values(EVENT_POOLS).flat()).size;
-
-function selectFromPool(floor: number, preferred: string[]) {
-  const pool = LAYER_NODE_POOLS[floor] ?? [];
-  const selected = preferred.filter((name) => pool.includes(name));
-  for (const node of pool) {
-    if (selected.length >= 5) break;
-    if (!selected.includes(node)) selected.push(node);
-  }
-  return selected.slice(0, 5);
-}
-
-function makeRoutes(floor: number) {
-  return [
-    selectFromPool(floor, [
-      "不期而遇",
-      "先行一步",
-      "诡意行商",
-      "命运所指",
-      "险路恶敌",
-      "羽瞰点",
-    ]),
-    selectFromPool(floor, [
-      "秘境行商",
-      "误入奇境",
-      "狭路相逢",
-      "失与得",
-      "紧急作战",
-    ]),
-    selectFromPool(floor, [
-      "紧急作战",
-      "得偿所愿",
-      "不期而遇",
-      "应急助力",
-      "险路小径",
-      "险路尽头",
-    ]),
-  ];
-}
-
-function nodeExpectedScore(name: string, floor: number) {
-  if (name === "未知·诡秘" || name === "未知·凶戾") {
-    const pool =
-      name === "未知·诡秘"
-        ? UNKNOWN_POOLS[floor].mystery
-        : UNKNOWN_POOLS[floor].ferocity;
-    if (!pool.length) return 0;
-    return (
-      pool.reduce(
-        (sum, candidate) => sum + (NODE_BY_NAME.get(candidate)?.baseScore ?? 0),
-        0,
-      ) / pool.length
-    );
-  }
-  return NODE_BY_NAME.get(name)?.baseScore ?? 0;
-}
-
-function scoreRoute(
-  route: string[],
-  floor: number,
-  endingId: string,
-  parts: Set<string>,
-  actions: number,
-  originalIndex: number,
-): PlannerResult {
-  const ending = ENDINGS.find((item) => item.id === endingId) ?? ENDINGS[0];
-  let score = 0;
-  let actionCost = 0;
-  const reasons: string[] = [];
-  const thirdGoal = ["3", "normal13", "hunt13", "23"].includes(endingId);
-  const secondGoal = ["2", "23"].includes(endingId);
-
-  for (const name of route) {
-    score += nodeExpectedScore(name, floor);
-    actionCost += name === "羽瞰点" ? 0 : 1;
-
-    if (ending.priority.includes(name)) {
-      score += 3;
-      reasons.push(name + " 命中 " + ending.short + " 目标优先级");
-    }
-
-    if (secondGoal && floor <= 4 && !parts.has("alpha") && name === "不期而遇") {
-      score += 7;
-      reasons.push("缺沙盘α：提高“线人”事件覆盖");
-    }
-    if (secondGoal && floor <= 3 && !parts.has("beta") && name === "诡意行商") {
-      score += 6;
-      reasons.push("缺沙盘β：优先检查坎诺特库存");
-    }
-    if (secondGoal && floor === 5 && name === "命运所指") {
-      score += 12;
-      reasons.push("V层二结局抉择为硬门槛");
-    }
-
-    if (
-      thirdGoal &&
-      floor >= 2 &&
-      floor <= 4 &&
-      !parts.has("beacon") &&
-      name === "先行一步"
-    ) {
-      score += 11;
-      reasons.push("缺怦然信标：先行一步是三结局硬门槛");
-    }
-    if (thirdGoal && !parts.has("key") && name === "失与得") {
-      score += 4;
-      reasons.push("为三结局代价链保留交换窗口");
-    }
-    if (thirdGoal && !parts.has("key") && name === "不期而遇") {
-      score += 3;
-      reasons.push("寻找泪之聚落等三结局代价事件");
-    }
-
-    if (parts.has("seed") && name === "秘境行商") {
-      score += 6;
-      reasons.push("种子可在园圃培育");
-    }
-    if (parts.has("natural") && name === "秘境行商") {
-      score += 3;
-      reasons.push("高估价自然物可在机械师处变现");
-    }
-    if (parts.has("natural") && name === "失与得") {
-      score += 2;
-    }
-    if (parts.has("processed") && name === "误入奇境") {
-      score += 6;
-      reasons.push("有加工品，可支付黑潭入口");
-    }
-    if (parts.has("relic") && name === "失与得") {
-      score += 5;
-      reasons.push("可交换收藏品转化为有效收益");
-    }
-    if (parts.has("cage") && name === "不期而遇") {
-      score += 2.5;
-      reasons.push("笼控器提高“黑诞”事件链价值");
-    }
-    if (parts.has("ticket") && name === "险路尽头") {
-      score += 4;
-      reasons.push("险路尽头可取出留存招募券");
-    }
-    if (parts.has("ingots") && ["诡意行商", "秘境行商", "得偿所愿"].includes(name)) {
-      score += 2;
-      reasons.push("当前锭量支持付费刷新或采购");
-    }
-    if (endingId === "hunt13" && name === "追猎") {
-      score += 8;
-    }
-  }
-
-  if (route.includes("追猎")) {
-    actionCost = actions;
-  }
-
-  if (parts.has("processed")) {
-    actionCost = Math.max(0, actionCost - 1);
-  }
-
-  if (actionCost > actions) {
-    score -= (actionCost - actions) * 9;
-    reasons.push("行动力不足，存在追猎风险");
-  } else {
-    score += Math.min(3, actions - actionCost) * 0.8;
-  }
-
-  return {
-    route,
-    score: Math.round(score * 10) / 10,
-    actionCost,
-    reasons: Array.from(new Set(reasons)).slice(0, 4),
-    originalIndex,
-  };
-}
+const EVENT_CATALOG = Array.from(new Set(Object.values(EVENT_POOLS).flat())).map((name) => ({
+  name,
+  layers: Object.entries(EVENT_POOLS)
+    .filter(([, events]) => events.includes(name))
+    .map(([layer]) => Number(layer)),
+}));
 
 function nodeTone(name: string) {
   if (name.includes("紧急") || name.includes("恶敌") || name.includes("凶戾")) {
@@ -503,59 +376,56 @@ function stageAttention(stage: StageRecord) {
   return notes.slice(0, 4);
 }
 
-function basicPlan(stage: StageRecord) {
-  const boss = stage.enemies.find((enemy) => BOSS_GUIDES[enemy.name]);
-  if (boss) return BOSS_GUIDES[boss.name].plan;
-  const plan = [
-    "开局先建立主路线阻挡与持续输出，保留一个机动位应对支路或随机精英。",
-    "中段按敌人数量最高的一组准备群攻；远程与高机动敌人优先点杀。",
-  ];
-  if (stage.terrain.length) {
-    plan.push("把“" + stage.terrain.map((item) => item.name).join(" / ") + "”作为阵地设计的一部分。");
-  }
-  return plan;
-}
-
 export default function Home() {
-  const [activeTab, setActiveTab] = useState("planner");
-  const [floor, setFloor] = useState(3);
-  const [ending, setEnding] = useState("3");
-  const [actions, setActions] = useState(6);
-  const [ownedParts, setOwnedParts] = useState<Set<string>>(
-    new Set(["processed"]),
-  );
-  const [routes, setRoutes] = useState<string[][]>(() => makeRoutes(3));
-  const [plannerRun, setPlannerRun] = useState(1);
+  const [activeTab, setActiveTab] = useState<SiteTab>("planner");
   const [nodeQuery, setNodeQuery] = useState("");
   const [nodeKind, setNodeKind] = useState("全部");
   const [nodeFloor, setNodeFloor] = useState(0);
   const [selectedNode, setSelectedNode] = useState<NodeRecord | null>(null);
-  const [unknownFloor, setUnknownFloor] = useState(4);
-  const [unknownType, setUnknownType] = useState<"mystery" | "ferocity">(
-    "mystery",
-  );
   const [stageQuery, setStageQuery] = useState("");
   const [stageKind, setStageKind] = useState("全部");
   const [selectedStage, setSelectedStage] = useState<StageRecord | null>(null);
   const [enemyQuery, setEnemyQuery] = useState("");
   const [enemyType, setEnemyType] = useState("全部");
   const [enemyLimit, setEnemyLimit] = useState(48);
+  const [itemPoolQuery, setItemPoolQuery] = useState("");
+  const [poolTypeFilter, setPoolTypeFilter] = useState("全部");
+  const [selectedPoolId, setSelectedPoolId] = useState<string | null>(null);
   const [selectedEnemy, setSelectedEnemy] = useState<EnemyEntry>(
     ENEMY_INDEX.find((enemy) => enemy.name === "卡德霍，黑流之源") ??
       ENEMY_INDEX[0],
   );
 
-  const endingData = ENDINGS.find((item) => item.id === ending) ?? ENDINGS[0];
+  useEffect(() => {
+    const tabFromLocation = () => {
+      const historyTab = window.history.state?.blackflowTab;
+      const hashTab = window.location.hash.replace(/^#/, "");
+      if (typeof historyTab === "string" && isSiteTab(historyTab)) {
+        return historyTab;
+      }
+      return isSiteTab(hashTab) ? hashTab : "planner";
+    };
+    const initialTab = tabFromLocation();
+    setActiveTab(initialTab);
+    window.history.replaceState(
+      { ...window.history.state, blackflowTab: initialTab },
+      "",
+      window.location.href,
+    );
+    const handlePopState = () => setActiveTab(tabFromLocation());
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
-  const plannerResults = useMemo(
-    () =>
-      routes
-        .map((route, index) =>
-          scoreRoute(route, floor, ending, ownedParts, actions, index),
-        )
-        .sort((a, b) => b.score - a.score),
-    [routes, floor, ending, ownedParts, actions],
-  );
+  function navigateTab(nextTab: SiteTab) {
+    if (nextTab === activeTab) return;
+    window.history.pushState(
+      { ...window.history.state, blackflowTab: nextTab },
+      "",
+      `#${nextTab}`,
+    );
+    setActiveTab(nextTab);
+  }
 
   const filteredNodes = useMemo(
     () =>
@@ -571,9 +441,6 @@ export default function Home() {
       }),
     [nodeQuery, nodeKind, nodeFloor],
   );
-
-  const unknownCandidates =
-    UNKNOWN_POOLS[unknownFloor]?.[unknownType] ?? [];
 
   const filteredStages = useMemo(
     () =>
@@ -602,30 +469,98 @@ export default function Home() {
     [enemyQuery, enemyType],
   );
 
-  function togglePart(id: string) {
-    setOwnedParts((current) => {
-      const next = new Set(current);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
-  }
+  const itemPoolResults = useMemo(() => {
+    const query = itemPoolQuery.trim().toLocaleLowerCase();
+    if (!query) return [];
+    return BLACKFLOW_POOL_ITEMS.map((item) => {
+        const nameMatched = item.name.toLocaleLowerCase().includes(query);
+        const pools = BLACKFLOW_POOLS.flatMap((pool) => {
+          const occurrence = pool.items.find((entry) => entry.id === item.id);
+          return occurrence ? [{ pool, occurrence }] : [];
+        }).sort((a, b) => {
+          if (
+            a.occurrence.probability === null &&
+            b.occurrence.probability === null
+          ) {
+            return a.pool.name.localeCompare(b.pool.name, "zh-CN");
+          }
+          if (a.occurrence.probability === null) return 1;
+          if (b.occurrence.probability === null) return -1;
+          return b.occurrence.probability - a.occurrence.probability;
+        });
+        const matchedSourcePools = pools.filter(({ pool }) =>
+          pool.sources.some((source) =>
+            source.path.some((part) => part.toLocaleLowerCase().includes(query)),
+          ),
+        );
+        const generatedPools = BLACKFLOW_POOLS.filter((pool) =>
+          pool.sources.some((source) => source.sourceItemId === item.id),
+        );
+        return {
+          item,
+          pools,
+          generatedPools,
+          nameMatched,
+          matchedBySource: !nameMatched && matchedSourcePools.length > 0,
+        };
+      })
+      .filter(({ nameMatched, matchedBySource }) => nameMatched || matchedBySource)
+      .sort((a, b) =>
+        Number(b.nameMatched) - Number(a.nameMatched) ||
+        a.item.name.localeCompare(b.item.name, "zh-CN"),
+      )
+      .map((result) => ({
+        ...result,
+        generatedPools: result.generatedPools.map((pool) => ({
+          pool,
+          items: pool.items
+            .map((occurrence) => POOL_ITEM_BY_ID.get(occurrence.id))
+            .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry)),
+        })),
+      }))
+      .slice(0, 24);
+  }, [itemPoolQuery]);
 
-  function updateRoute(routeIndex: number, stepIndex: number, value: string) {
-    setRoutes((current) =>
-      current.map((route, index) =>
-        index === routeIndex
-          ? route.map((node, step) => (step === stepIndex ? value : node))
-          : route,
+  const visiblePools = useMemo(
+    () =>
+      BLACKFLOW_POOLS.filter(
+        (pool) =>
+          poolTypeFilter === "全部" ||
+          normalizedPoolType(pool) === poolTypeFilter,
       ),
-    );
-  }
+    [poolTypeFilter],
+  );
+
+  const selectedPool = selectedPoolId
+    ? BLACKFLOW_POOLS.find((pool) => pool.id === selectedPoolId) ?? null
+    : null;
+
+  const selectedPoolItems = useMemo(() => {
+    if (!selectedPool) return [];
+    return selectedPool.items
+      .flatMap((occurrence) => {
+        const item = POOL_ITEM_BY_ID.get(occurrence.id);
+        return item ? [{ item, occurrence }] : [];
+      })
+      .sort((a, b) => {
+        if (
+          a.occurrence.probability !== null &&
+          b.occurrence.probability !== null
+        ) {
+          return b.occurrence.probability - a.occurrence.probability;
+        }
+        if (a.occurrence.probability !== null) return -1;
+        if (b.occurrence.probability !== null) return 1;
+        return a.item.type.localeCompare(b.item.type, "zh-CN") ||
+          a.item.name.localeCompare(b.item.name, "zh-CN");
+      });
+  }, [selectedPool]);
 
   function openEnemyFromStage(name: string) {
     const enemy = ENEMY_INDEX.find((item) => item.name === name);
     if (enemy) setSelectedEnemy(enemy);
     setEnemyQuery(name);
-    setActiveTab("archive");
+    navigateTab("archive");
     setSelectedStage(null);
     window.setTimeout(
       () =>
@@ -639,7 +574,15 @@ export default function Home() {
   return (
     <main className="site-shell">
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="黑流树海路线参谋首页">
+        <a
+          className="brand"
+          href="#planner"
+          aria-label="黑流树海路线参谋首页"
+          onClick={(event) => {
+            event.preventDefault();
+            navigateTab("planner");
+          }}
+        >
           <span className="brand-mark">
             <Trees />
           </span>
@@ -649,11 +592,11 @@ export default function Home() {
           </span>
         </a>
         <nav className="top-links" aria-label="功能索引">
-          <button className={activeTab === "planner" ? "active" : ""} aria-current={activeTab === "planner" ? "page" : undefined} onClick={() => setActiveTab("planner")}><RouteIcon />路线决策</button>
-          <button className={activeTab === "nodes" ? "active" : ""} aria-current={activeTab === "nodes" ? "page" : undefined} onClick={() => setActiveTab("nodes")}><Layers3 />节点图鉴</button>
-          <button className={activeTab === "unknown" ? "active" : ""} aria-current={activeTab === "unknown" ? "page" : undefined} onClick={() => setActiveTab("unknown")}><Radar />未知反查</button>
-          <button className={activeTab === "stages" ? "active" : ""} aria-current={activeTab === "stages" ? "page" : undefined} onClick={() => setActiveTab("stages")}><Swords />作战检索</button>
-          <button className={activeTab === "archive" ? "active" : ""} aria-current={activeTab === "archive" ? "page" : undefined} onClick={() => setActiveTab("archive")}><Archive />敌人档案馆</button>
+          <button className={activeTab === "planner" ? "active" : ""} aria-current={activeTab === "planner" ? "page" : undefined} onClick={() => navigateTab("planner")}><RouteIcon />路线决策</button>
+          <button className={activeTab === "nodes" ? "active" : ""} aria-current={activeTab === "nodes" ? "page" : undefined} onClick={() => navigateTab("nodes")}><Layers3 />节点图鉴</button>
+          <button className={activeTab === "items" ? "active" : ""} aria-current={activeTab === "items" ? "page" : undefined} onClick={() => navigateTab("items")}><PackageOpen />藏品检索</button>
+          <button className={activeTab === "stages" ? "active" : ""} aria-current={activeTab === "stages" ? "page" : undefined} onClick={() => navigateTab("stages")}><Swords />作战检索</button>
+          <button className={activeTab === "archive" ? "active" : ""} aria-current={activeTab === "archive" ? "page" : undefined} onClick={() => navigateTab("archive")}><Archive />敌人档案馆</button>
         </nav>
         <div className="live-pill">
           <span />
@@ -661,362 +604,13 @@ export default function Home() {
         </div>
       </header>
 
-      {activeTab === "planner" && <section id="top" className="hero">
-        <div className="hero-grid" />
-        <div className="hero-orbit orbit-one" />
-        <div className="hero-orbit orbit-two" />
-        <div className="hero-copy">
-          <span className="eyebrow">IS-6 // 沉沦者的黑流树海</span>
-          <h1>
-            把未知节点
-            <br />
-            变成<span>可计算路线</span>
-          </h1>
-          <p>
-            输入结局目标、层数、行动力与背包零件，比较地图上的候选线路。
-            同时反查诡秘/凶戾节点，搜索全关卡编成与敌人机制。
-          </p>
-          <div className="hero-actions">
-            <Button
-              size="lg"
-              className="primary-cta"
-              onClick={() => {
-                setActiveTab("planner");
-                document
-                  .getElementById("workspace-tabs")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              <RouteIcon />
-              开始规划
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="ghost-cta"
-              onClick={() => {
-                setActiveTab("unknown");
-                document
-                  .getElementById("workspace-tabs")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              <BadgeHelp />
-              反查未知节点
-            </Button>
-          </div>
-        </div>
-
-        <div className="hero-console">
-          <div className="console-top">
-            <span>ACTIVE RECOMMENDATION</span>
-            <span className="console-signal">SIGNAL 98%</span>
-          </div>
-          <div className="console-target">
-            <span>当前目标</span>
-            <strong>{endingData.name}</strong>
-          </div>
-          <div className="mini-route">
-            {plannerResults[0]?.route.slice(0, 4).map((node, index) => (
-              <div className="mini-route-step" key={node + index}>
-                <NodeGlyph node={node} />
-                <small>{node}</small>
-                {index < 3 && <ChevronRight className="route-chevron" />}
-              </div>
-            ))}
-          </div>
-          <div className="console-score">
-            <div>
-              <span>期望收益</span>
-              <strong>{plannerResults[0]?.score.toFixed(1)}</strong>
-            </div>
-            <div>
-              <span>行动消耗</span>
-              <strong>{plannerResults[0]?.actionCost}</strong>
-            </div>
-            <div>
-              <span>当前层</span>
-              <strong>{ROMAN[floor]}</strong>
-            </div>
-          </div>
-          <Progress
-            value={Math.min(100, (plannerResults[0]?.score ?? 0) * 3.4)}
-            className="console-progress"
-          />
-          <p className="console-note">
-            基于“所有作战均可通过”的收益模型；随机事件按当前层事件池估值。
-          </p>
-        </div>
-      </section>}
-
-      <section className="metric-strip">
-        <div>
-          <strong>{NODE_DATA.length}</strong>
-          <span>节点类别</span>
-        </div>
-        <div>
-          <strong>{EVENT_COUNT}</strong>
-          <span>不期而遇事件</span>
-        </div>
-        <div>
-          <strong>{STAGE_DATA.length}</strong>
-          <span>作战档案</span>
-        </div>
-        <div>
-          <strong>{ENEMY_INDEX.filter((item) => item.type !== "装置").length}</strong>
-          <span>敌方单位索引</span>
-        </div>
-        <div>
-          <strong>{DEVICE_GUIDES.length}</strong>
-          <span>核心装置机制</span>
-        </div>
-      </section>
-
       <section id="workspace-tabs" className="workspace">
-        <Tabs value={activeTab} onValueChange={setActiveTab}>
-          <TabsContent value="planner" className="tab-panel">
+        <Tabs
+          value={activeTab}
+          onValueChange={(value) => isSiteTab(value) && navigateTab(value)}
+        >
+          <TabsContent value="planner" className="tab-panel" forceMount hidden={activeTab !== "planner"}>
             <LiveRouteControl />
-            <SectionHeader
-              kicker="ROUTE OPTIMIZER"
-              title="按结局与背包，重排三条地图路线"
-              copy="把你在游戏地图上看到的节点依次填入。评分包含结局硬门槛、零件变现、行动力与未知节点期望。"
-            />
-
-            <div className="planner-layout">
-              <aside className="control-panel">
-                <div className="panel-title">
-                  <Gauge />
-                  <div>
-                    <span>INPUT MATRIX</span>
-                    <strong>探索状态</strong>
-                  </div>
-                </div>
-
-                <label className="control-label">
-                  <span>目标结局</span>
-                  <NativeSelect
-                    value={ending}
-                    onChange={(event) => setEnding(event.target.value)}
-                    className="control-select"
-                  >
-                    {ENDINGS.map((item) => (
-                      <NativeSelectOption value={item.id} key={item.id}>
-                        {item.name}
-                      </NativeSelectOption>
-                    ))}
-                  </NativeSelect>
-                </label>
-
-                <div className="control-row">
-                  <label className="control-label">
-                    <span>当前层</span>
-                    <NativeSelect
-                      value={String(floor)}
-                      onChange={(event) => {
-                        const nextFloor = Number(event.target.value);
-                        setFloor(nextFloor);
-                        setRoutes(makeRoutes(nextFloor));
-                      }}
-                      className="control-select"
-                    >
-                      {[1, 2, 3, 4, 5, 6].map((value) => (
-                        <NativeSelectOption value={String(value)} key={value}>
-                          {ROMAN[value]} 层
-                        </NativeSelectOption>
-                      ))}
-                    </NativeSelect>
-                  </label>
-                  <label className="control-label">
-                    <span>剩余行动力</span>
-                    <Input
-                      type="number"
-                      min={0}
-                      max={20}
-                      value={actions}
-                      onChange={(event) =>
-                        setActions(Math.max(0, Number(event.target.value)))
-                      }
-                      className="control-input"
-                    />
-                  </label>
-                </div>
-
-                <div className="hard-gates">
-                  <span className="control-caption">当前目标硬门槛</span>
-                  {endingData.must.map((item) => (
-                    <div key={item}>
-                      <Check />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="part-control">
-                  <span className="control-caption">背包 / 关键状态</span>
-                  <div className="part-grid">
-                    {PARTS.map((part) => {
-                      const active = ownedParts.has(part.id);
-                      return (
-                        <button
-                          type="button"
-                          key={part.id}
-                          className={active ? "part-chip active" : "part-chip"}
-                          onClick={() => togglePart(part.id)}
-                          title={part.helps}
-                        >
-                          {active ? <Check /> : <PackageOpen />}
-                          {part.label}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <Button
-                  className="planner-button"
-                  onClick={() => setPlannerRun((value) => value + 1)}
-                >
-                  <Zap />
-                  重算收益排序
-                </Button>
-                <p className="run-stamp">
-                  SCORE PASS #{String(plannerRun).padStart(3, "0")}
-                </p>
-              </aside>
-
-              <div className="route-workbench">
-                <div className="route-editor-head">
-                  <div>
-                    <span className="control-caption">地图候选线路</span>
-                    <p>每一格选择实际可见节点；未知节点可直接保留为占位。</p>
-                  </div>
-                  <Badge variant="outline">作战胜率假设：100%</Badge>
-                </div>
-
-                <div className="route-editors">
-                  {routes.map((route, routeIndex) => (
-                    <div className="route-editor" key={routeIndex}>
-                      <div className="route-label">
-                        <strong>路线 {String.fromCharCode(65 + routeIndex)}</strong>
-                        <span>
-                          当前 #{plannerResults.findIndex(
-                            (item) => item.originalIndex === routeIndex,
-                          ) + 1}
-                        </span>
-                      </div>
-                      <div className="route-node-row">
-                        {route.map((node, stepIndex) => (
-                          <div className="route-node-select" key={stepIndex}>
-                            <NodeGlyph node={node} />
-                            <NativeSelect
-                              value={node}
-                              onChange={(event) =>
-                                updateRoute(
-                                  routeIndex,
-                                  stepIndex,
-                                  event.target.value,
-                                )
-                              }
-                              className="node-select"
-                            >
-                              <NativeSelectOption value="未知·诡秘">
-                                未知·诡秘
-                              </NativeSelectOption>
-                              <NativeSelectOption value="未知·凶戾">
-                                未知·凶戾
-                              </NativeSelectOption>
-                              {floor <= 5 && (
-                                <NativeSelectOption value="追猎">
-                                  追猎（节点外）
-                                </NativeSelectOption>
-                              )}
-                              {(LAYER_NODE_POOLS[floor] ?? []).map((option) => (
-                                <NativeSelectOption value={option} key={option}>
-                                  {option}
-                                </NativeSelectOption>
-                              ))}
-                            </NativeSelect>
-                            {stepIndex < route.length - 1 && (
-                              <ArrowRight className="editor-arrow" />
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="result-stack">
-                  {plannerResults.map((result, rank) => (
-                    <article
-                      className={rank === 0 ? "result-card winner" : "result-card"}
-                      key={result.originalIndex}
-                    >
-                      <div className="result-rank">
-                        <span>{rank === 0 ? "推荐" : "备选"}</span>
-                        <strong>0{rank + 1}</strong>
-                      </div>
-                      <div className="result-main">
-                        <div className="result-title">
-                          <div>
-                            <strong>
-                              路线 {String.fromCharCode(65 + result.originalIndex)}
-                            </strong>
-                            {rank === 0 && (
-                              <Badge className="best-badge">最高期望</Badge>
-                            )}
-                          </div>
-                          <span>行动 {result.actionCost} / {actions}</span>
-                        </div>
-                        <div className="result-path">
-                          {result.route.map((node, index) => (
-                            <span key={node + index}>
-                              {node}
-                              {index < result.route.length - 1 && (
-                                <ChevronRight />
-                              )}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="reason-list">
-                          {result.reasons.length ? (
-                            result.reasons.map((reason) => (
-                              <span key={reason}>
-                                <CircleDot />
-                                {reason}
-                              </span>
-                            ))
-                          ) : (
-                            <span>
-                              <CircleDot />
-                              以基础节点收益与行动力余量排序
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      <div className="result-score">
-                        <span>EV SCORE</span>
-                        <strong>{result.score.toFixed(1)}</strong>
-                        <small>
-                          {result.actionCost <= actions ? "可达" : "追猎风险"}
-                        </small>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="model-note">
-              <AlertTriangle />
-              <div>
-                <strong>模型边界</strong>
-                <p>
-                  这是路线选择器，不是地图识别器。节点连通性由你录入的候选线路保证；
-                  分数是可解释的收益权重，不会虚构游戏内精确概率。未知节点按该层合法候选的平均值计算。
-                </p>
-              </div>
-            </div>
           </TabsContent>
 
           <TabsContent value="nodes" className="tab-panel">
@@ -1110,156 +704,214 @@ export default function Home() {
                 </div>
                 <span>{EVENT_COUNT} 个独立事件名</span>
               </div>
-              <div className="event-columns">
-                {Object.entries(EVENT_POOLS).map(([eventFloor, events]) => (
-                  <div className="event-column" key={eventFloor}>
-                    <div className="event-floor">
-                      <strong>{ROMAN[Number(eventFloor)]}</strong>
-                      <span>{events.length} possibilities</span>
+              <div className="event-catalog">
+                {EVENT_CATALOG.map((event) => (
+                  <div className="event-catalog-row" key={event.name}>
+                    <div className="event-catalog-title">
+                      <strong>{event.name}</strong>
+                      <span>
+                        {event.layers.map((layer) => (
+                          <b key={layer}>{ROMAN[layer]}</b>
+                        ))}
+                      </span>
                     </div>
-                    {events.map((event) => (
-                      <div className="event-row" key={event}>
-                        <span>{event}</span>
-                        <small>
-                          {EVENT_NOTES[event] ?? "事件选项随前置、资源与已持有物变化。"}
-                        </small>
-                      </div>
-                    ))}
+                    <p>{EVENT_NOTES[event.name]}</p>
                   </div>
                 ))}
               </div>
             </div>
           </TabsContent>
 
-          <TabsContent value="unknown" className="tab-panel">
+          <TabsContent value="items" className="tab-panel">
             <SectionHeader
-              kicker="FOG REVERSE LOOKUP"
-              title="未知诡秘 / 未知凶戾候选反查"
-              copy="先按层数排除不合法节点，再结合立即揭示、固定出口与居民据点状态做人工二次缩小。"
+              kicker="ITEM & POOL INDEX"
+              title="藏品与零件来源检索"
+              copy="输入藏品、零件或上游来源名称，检索直接池与间接产出链。已公开的经验概率按高到低排列，未公开概率统一放在最后。"
             />
 
-            <div className="unknown-console">
-              <aside className="unknown-controls">
-                <div className="panel-title">
-                  <Eye />
-                  <div>
-                    <span>OBSERVATION</span>
-                    <strong>观测条件</strong>
-                  </div>
-                </div>
-                <label className="control-label">
-                  <span>节点所在层</span>
-                  <NativeSelect
-                    value={String(unknownFloor)}
-                    onChange={(event) =>
-                      setUnknownFloor(Number(event.target.value))
-                    }
-                    className="control-select"
-                  >
-                    {[1, 2, 3, 4, 5, 6].map((value) => (
-                      <NativeSelectOption value={String(value)} key={value}>
-                        {ROMAN[value]} 层
-                      </NativeSelectOption>
-                    ))}
-                  </NativeSelect>
-                </label>
-                <div className="unknown-toggle">
-                  <button
-                    type="button"
-                    className={unknownType === "mystery" ? "active" : ""}
-                    onClick={() => setUnknownType("mystery")}
-                  >
-                    <Sparkles />
-                    <span>未知的诡秘</span>
-                    <small>事件 / 商店 / 视野</small>
-                  </button>
-                  <button
-                    type="button"
-                    className={unknownType === "ferocity" ? "active" : ""}
-                    onClick={() => setUnknownType("ferocity")}
-                  >
-                    <ShieldAlert />
-                    <span>未知的凶戾</span>
-                    <small>作战 / 居民 / 恶敌</small>
-                  </button>
-                </div>
-                <div className="deduction-note">
-                  <Radar />
-                  <p>
-                    固定揭示的出口、曲折密道等通常不应继续保留为未知候选；
-                    据点和流窜居民还受保密等级与本层据点生成状态约束。
-                  </p>
-                </div>
-              </aside>
-
-              <div className="candidate-panel">
-                <div className="candidate-head">
-                  <div>
-                    <span>CANDIDATE SET</span>
-                    <h3>
-                      {ROMAN[unknownFloor]} 层 ·
-                      {unknownType === "mystery" ? " 未知的诡秘" : " 未知的凶戾"}
-                    </h3>
-                  </div>
-                  <strong>{unknownCandidates.length}</strong>
-                </div>
-
-                {unknownCandidates.length ? (
-                  <div className="candidate-grid">
-                    {unknownCandidates.map((name, index) => {
-                      const node = NODE_BY_NAME.get(name);
-                      return (
-                        <button
-                          type="button"
-                          key={name}
-                          className="candidate-card"
-                          onClick={() => node && setSelectedNode(node)}
-                        >
-                          <span className="candidate-index">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-                          <NodeGlyph node={name} />
-                          <div>
-                            <h4>{name}</h4>
-                            <p>{node?.summary ?? "受特殊标记影响的节点"}</p>
-                          </div>
-                          <span className="candidate-score">
-                            EV {(node?.baseScore ?? 0).toFixed(1)}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                ) : (
-                  <div className="empty-state">
-                    <BadgeHelp />
-                    <strong>本层没有可归入该观测类型的常规候选</strong>
-                    <p>检查是否为剧情节点、固定出口或特殊层标记。</p>
-                  </div>
-                )}
-
-                <div className="deduction-rules">
-                  <div>
-                    <strong>01 · 层数排除</strong>
-                    <p>狭路相逢与误入奇境仅III—V层；先行一步仅II—IV层。</p>
-                  </div>
-                  <div>
-                    <strong>02 · 据点条件</strong>
-                    <p>“居民”据点仅保密等级4+；流窜居民必须由据点生成。</p>
-                  </div>
-                  <div>
-                    <strong>03 · 结局条件</strong>
-                    <p>命运所指只在V层二结局链出现；险路恶敌集中于III / V / VI层。</p>
-                  </div>
-                </div>
+            <div className="pool-source-note">
+              <div>
+                <PackageOpen />
+                <p>
+                  当前收录 <strong>{BLACKFLOW_POOL_ITEMS.length}</strong> 个可检索条目、
+                  <strong>{BLACKFLOW_POOLS.length}</strong> 个池子。概率来自路标档案馆公开样本，
+                  是经验频率，不等同于游戏源码权重。池表同步于 {BLACKFLOW_POOL_SYNC_DATE}。
+                </p>
               </div>
+              <a href={BLACKFLOW_POOL_SOURCE} target="_blank" rel="noreferrer">
+                查看路标原始池表 <ExternalLink />
+              </a>
             </div>
+
+            <section className="item-pool-search" aria-labelledby="item-pool-search-title">
+              <div className="pool-block-heading">
+                <div>
+                  <span>01 / REVERSE LOOKUP</span>
+                  <h3 id="item-pool-search-title">按名称或上游来源检索</h3>
+                </div>
+                <span>{itemPoolResults.length} 个匹配条目</span>
+              </div>
+              <div className="pool-search-box search-box">
+                <Search />
+                <Input
+                  value={itemPoolQuery}
+                  onChange={(event) => setItemPoolQuery(event.target.value)}
+                  placeholder="输入名称，例如：板藤、迷藏、复得之轮"
+                />
+              </div>
+
+              {!itemPoolQuery.trim() ? (
+                <div className="pool-search-placeholder">
+                  <Search />
+                  <strong>输入名称后开始检索</strong>
+                  <p>支持部分名称；结果会列出全部池子、上游藏品/零件、完整产出链及公开概率。</p>
+                </div>
+              ) : itemPoolResults.length ? (
+                <div className="item-pool-results">
+                  {itemPoolResults.map(({ item, pools, generatedPools, matchedBySource }) => (
+                    <article className="item-pool-result" key={item.id}>
+                      <header>
+                        <Badge variant="outline">{item.type}</Badge>
+                        <div>
+                          <h4>{item.name}</h4>
+                          <p>
+                            {pools.length} 个可能来源池
+                            {generatedPools.length > 0 && ` · 可产出 ${generatedPools.length} 个池`}
+                            {matchedBySource && " · 由上游来源命中"}
+                          </p>
+                        </div>
+                      </header>
+                      {pools.length ? (
+                        <div className="pool-occurrence-list">
+                          {pools.map(({ pool, occurrence }) => (
+                            <button
+                              type="button"
+                              className="pool-occurrence-row"
+                              key={pool.id}
+                              onClick={() => setSelectedPoolId(pool.id)}
+                              aria-label={`查看${pool.name}的具体内容`}
+                            >
+                              <div>
+                                <strong>{pool.name}</strong>
+                                <p>
+                                  {occurrence.subpool && <span>{occurrence.subpool}</span>}
+                                  {pool.officialCode || pool.poolType}
+                                </p>
+                                <p className="pool-source-path">
+                                  {pool.sources.length > 0
+                                    ? `完整来源：${poolSourcePaths(pool).join(" / ")}`
+                                    : `直接来源：${pool.name}`}
+                                </p>
+                              </div>
+                              {occurrence.probability !== null ? (
+                                <div className="known-probability">
+                                  <strong>{formatPoolProbability(occurrence.probability)}</strong>
+                                  <span>
+                                    经验概率
+                                    {occurrence.sampleCount
+                                      ? ` · 样本 ${occurrence.sampleCount}`
+                                      : ""}
+                                  </span>
+                                </div>
+                              ) : (
+                                <div className="unknown-probability">
+                                  <strong>概率不详</strong>
+                                  <span>该池仅确认成员范围</span>
+                                </div>
+                              )}
+                            </button>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="pool-no-membership">当前池表未记录可用来源。</p>
+                      )}
+                      {generatedPools.length > 0 && (
+                        <div className="generated-pool-list">
+                          <div className="generated-pool-heading">
+                            <Sparkles />
+                            <strong>{item.name} 能带来的藏品/零件收益</strong>
+                          </div>
+                          {generatedPools.map(({ pool, items }) => (
+                            <button
+                              type="button"
+                              key={pool.id}
+                              onClick={() => setSelectedPoolId(pool.id)}
+                              aria-label={`查看${item.name}产出的${pool.name}`}
+                            >
+                              <span>{poolSourcePaths(pool).join(" / ")}</span>
+                              <p>{items.map((entry) => entry.name).join("、")}</p>
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </article>
+                  ))}
+                </div>
+              ) : (
+                <div className="empty-state">
+                  <BadgeHelp />
+                  <strong>没有找到对应的藏品或零件</strong>
+                  <p>请尝试缩短关键词，或在下方池子目录中浏览全部来源。</p>
+                </div>
+              )}
+            </section>
+
+            <section className="pool-directory" aria-labelledby="pool-directory-title">
+              <div className="pool-block-heading">
+                <div>
+                  <span>02 / POOL DIRECTORY</span>
+                  <h3 id="pool-directory-title">黑流树海池子总目录</h3>
+                </div>
+                <span>{visiblePools.length} / {BLACKFLOW_POOLS.length}</span>
+              </div>
+              <div className="pool-filter-tabs" aria-label="池子类型筛选">
+                {["全部", "藏品池", "零件池", "混合池"].map((type) => (
+                  <button
+                    type="button"
+                    key={type}
+                    className={poolTypeFilter === type ? "active" : ""}
+                    onClick={() => setPoolTypeFilter(type)}
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
+              <div className="pool-directory-grid">
+                {visiblePools.map((pool, index) => (
+                  <button
+                    type="button"
+                    className="pool-directory-card"
+                    key={pool.id}
+                    onClick={() => setSelectedPoolId(pool.id)}
+                    aria-label={`查看${pool.name}的具体内容`}
+                  >
+                    <span className="pool-directory-index">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <div className="pool-directory-title">
+                        <h4>{pool.name}</h4>
+                        <Badge variant="outline">{normalizedPoolType(pool)}</Badge>
+                      </div>
+                      <p>{pool.officialCode || "暂无公开代码"}</p>
+                      <div className="pool-directory-meta">
+                        <span>{poolItemSummary(pool)}</span>
+                        <span>{pool.displayCategory === "node" ? "节点来源" : "独立池"}</span>
+                      </div>
+                      {pool.usage.length > 0 && (
+                        <p className="pool-usage">触发：{pool.usage.join(" / ")}</p>
+                      )}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </section>
           </TabsContent>
 
           <TabsContent value="stages" className="tab-panel">
             <SectionHeader
               kicker="COMBAT DATABASE"
-              title="输入作战名，查看编成与打法入口"
+              title="输入作战名，查看敌人信息、动态路线和攻略"
               copy="普通、紧急、追猎、居民、商店战、狭路和全部Boss关统一检索；也可以反向搜索敌人名。"
             />
 
@@ -1319,13 +971,13 @@ export default function Home() {
                         <span>{stage.kind}</span>
                         <h3>{stage.name}</h3>
                       </div>
-                      <p>{stage.intro || "特殊作战资料已收录，打开查看敌人编成与路线入口。"}</p>
+                      <p>{stage.intro || "特殊作战资料已收录，打开查看敌人信息与动态路线。"}</p>
                       <div className="stage-facts">
                         <span>
                           <Target /> {stage.total || "动态"} 敌人
                         </span>
                         <span>
-                          <Footprints /> {stage.enemies.length} 种编成
+                          <Biohazard /> {stage.enemies.length} 种敌人
                         </span>
                         <span>
                           <MapIcon /> {stage.map ? "路线图" : "特殊规则"}
@@ -1355,7 +1007,7 @@ export default function Home() {
             <SectionHeader
               kicker="ENEMY ARCHIVE"
               title="黑流树海敌人档案馆"
-              copy="从全部作战编成中汇总敌方单位；关卡内点击敌人图像会直接定位到这里。Boss档案包含机制拆解与打法摘要。"
+              copy="从全部作战数据中汇总敌方单位；关卡内点击敌人图像会直接定位到这里。Boss档案包含机制拆解与打法摘要。"
             />
 
             <div className="archive-layout">
@@ -1389,20 +1041,9 @@ export default function Home() {
                   <span>机制摘要</span>
                   <p>{selectedEnemy.mechanic}</p>
                 </div>
-                <div className="detail-section accent">
-                  <span>{selectedEnemy.type === "领袖" || selectedEnemy.type === "精英" ? "实战处理" : "必要提醒"}</span>
-                  {BOSS_GUIDES[selectedEnemy.name] || ELITE_GUIDES[selectedEnemy.name] ? (
-                    (BOSS_GUIDES[selectedEnemy.name] || ELITE_GUIDES[selectedEnemy.name]).plan.map((plan) => (
-                      <p key={plan}>• {plan}</p>
-                    ))
-                  ) : (
-                    <p>{selectedEnemy.tip}</p>
-                  )}
-                </div>
-
                 {(BOSS_GUIDES[selectedEnemy.name] || ELITE_GUIDES[selectedEnemy.name]) && (
                   <div className="detail-section mechanics">
-                    <span>完整机制（通俗整理）</span>
+                    <span>完整机制</span>
                     {(BOSS_GUIDES[selectedEnemy.name] || ELITE_GUIDES[selectedEnemy.name]).mechanic.map((item) => (
                       <p key={item}>— {item}</p>
                     ))}
@@ -1563,6 +1204,101 @@ export default function Home() {
       </footer>
 
       <Dialog
+        open={Boolean(selectedPool)}
+        onOpenChange={(open) => !open && setSelectedPoolId(null)}
+      >
+        <DialogContent className="data-dialog pool-detail-dialog">
+          {selectedPool && (
+            <>
+              <DialogHeader>
+                <div className="dialog-kicker">
+                  <PackageOpen />
+                  <span>
+                    {normalizedPoolType(selectedPool)} / {selectedPool.displayCategory === "node" ? "节点来源" : "独立池"}
+                  </span>
+                </div>
+                <DialogTitle>{selectedPool.name}</DialogTitle>
+                <DialogDescription>
+                  {poolItemSummary(selectedPool)}。有公开经验概率的条目按概率降序排列，
+                  其余条目仅确认属于该池。
+                </DialogDescription>
+              </DialogHeader>
+
+              <div className="pool-detail-meta">
+                <span>{selectedPool.officialCode || "暂无公开代码"}</span>
+                {selectedPool.usage.length > 0 && (
+                  <span>上游：{selectedPool.usage.join(" / ")}</span>
+                )}
+                <Button variant="outline" asChild>
+                  <a
+                    href={`${BLACKFLOW_POOL_SOURCE}?pool=${encodeURIComponent(selectedPool.id)}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    在路标查看原始池表 <ExternalLink />
+                  </a>
+                </Button>
+              </div>
+
+              {selectedPool.sources.length > 0 && (
+                <div className="pool-source-chain-list">
+                  {selectedPool.sources.map((source) => (
+                    <div key={`${source.id}-${source.path.join("-")}`}>
+                      <strong>{source.path.join(" → ")}</strong>
+                      <span>{source.sourceType}</span>
+                      {source.effect && <p>{source.effect}</p>}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {selectedPoolItems.length ? (
+                <div className="pool-detail-list">
+                  {selectedPoolItems.map(({ item, occurrence }, index) => (
+                    <div className="pool-detail-item" key={occurrence.id}>
+                      <span className="pool-detail-index">
+                        {String(index + 1).padStart(3, "0")}
+                      </span>
+                      <Badge variant="outline">{item.type}</Badge>
+                      <div>
+                        <strong>{item.name}</strong>
+                        <p>
+                          {occurrence.subpool ||
+                            (item.type === "藏品" ? "收藏品池" : "零件池")}
+                        </p>
+                      </div>
+                      {occurrence.probability !== null ? (
+                        <div className="pool-detail-probability known">
+                          <strong>{formatPoolProbability(occurrence.probability)}</strong>
+                          <span>
+                            经验概率
+                            {occurrence.sampleCount
+                              ? ` · 样本 ${occurrence.sampleCount}`
+                              : ""}
+                          </span>
+                        </div>
+                      ) : (
+                        <div className="pool-detail-probability">
+                          <strong>概率不详</strong>
+                          <span>已确认属于该池</span>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="empty-state pool-detail-empty">
+                  <BadgeHelp />
+                  <strong>当前没有可列出的藏品或零件</strong>
+                  <p>路标池表仅保留了池名称，尚未公开具体条目。</p>
+                </div>
+              )}
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      <Dialog
         open={Boolean(selectedNode)}
         onOpenChange={(open) => !open && setSelectedNode(null)}
       >
@@ -1639,7 +1375,7 @@ export default function Home() {
                 </div>
                 <div>
                   <span>敌人种类</span>
-                  <strong>{selectedStage.enemies.length}</strong>
+                  <strong>{selectedStage.enemies.filter((enemy) => !EXCLUDED_ENEMY_NAMES.has(enemy.name)).length}</strong>
                 </div>
                 <div>
                   <span>部署上限</span>
@@ -1726,12 +1462,12 @@ export default function Home() {
                   <div className="subhead">
                     <Biohazard />
                     <div>
-                      <span>敌方编成</span>
+                      <span>敌人信息</span>
                       <strong>点击图像进入敌人档案</strong>
                     </div>
                   </div>
                   <div className="stage-enemy-list">
-                    {selectedStage.enemies.map((enemy, index) => {
+                    {selectedStage.enemies.filter((enemy) => !EXCLUDED_ENEMY_NAMES.has(enemy.name)).map((enemy, index) => {
                       const type = classifyEnemy(enemy.name);
                       return (
                         <div key={enemy.name + enemy.code + index}>
@@ -1757,20 +1493,12 @@ export default function Home() {
                 </section>
               </div>
 
-              <div className="combat-brief">
+              <div className="combat-brief single">
                 <section>
                   <span>
                     <AlertTriangle /> 特别注意
                   </span>
                   {stageAttention(selectedStage).map((item) => (
-                    <p key={item}>• {item}</p>
-                  ))}
-                </section>
-                <section>
-                  <span>
-                    <Compass /> 基本打法
-                  </span>
-                  {basicPlan(selectedStage).map((item) => (
                     <p key={item}>• {item}</p>
                   ))}
                 </section>
