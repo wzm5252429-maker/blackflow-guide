@@ -375,33 +375,27 @@ class VisionPipeline:
         for kind,hits in zip(marker_names, marker_hits):
             if hits:
                 markers[kind] = hits[0]
-        if 'ending' in markers and 'recruitment' in markers:
-            # The small ending-confirm asset is a reused check icon. When it
-            # lies inside the full recruitment button and that same button
-            # reads 确认招募, it is not independent evidence of a result screen.
-            rx,ry,rw,rh = markers['recruitment'].bbox
-            def inside_recruit_button(box):
-                bx,by,bw,bh = box
-                return rx<=bx and ry<=by and bx+bw<=rx+rw and by+bh<=ry+rh
-            if (inside_recruit_button(markers['ending'].bbox)
-                and any(span.confidence>=.75 and _clean(span.text)=='确认招募'
-                        and inside_recruit_button(span.bbox) for span in spans)):
-                markers.pop('ending')
-                diagnostics.append('shared_confirmation_icon_bound_to_recruitment')
+        if 'ending' in markers:
+            # GamePassTheEndConfirm is only a shared checkmark. Real recorded
+            # recruitment frames match it even when the cursor hides the text
+            # and the larger recruitment template. It cannot establish a
+            # result scene or contribute to proving first-ending completion.
+            markers['confirmation_icon'] = markers.pop('ending')
+            diagnostics.append('shared_confirmation_icon_not_result_evidence')
         scene, confidence = "unknown", 0.0
         first_ending = False
         if any(word in clean_text for word in _BATTLE_WORDS) or "battle_start" in markers:
             scene,confidence = "battle_start", max([markers.get("battle_start",TemplateHit("",0,(),1)).confidence,0.97 if any(word in clean_text for word in _BATTLE_WORDS) else 0])
         elif "battle" in markers or ("撤退" in clean_text and ("费用" in clean_text or "敌方" in clean_text)):
             scene,confidence = "battle",0.97
-        elif "ending" in markers or "game_pass" in markers or "探索完成" in clean_text or "旅途结束" in clean_text:
-            scene,confidence = "ending",max([0.9]+[h.confidence for k,h in markers.items() if k in {"ending","game_pass"}])
+        elif "game_pass" in markers or "探索完成" in clean_text or "旅途结束" in clean_text:
+            scene,confidence = "ending",max([0.9]+[h.confidence for k,h in markers.items() if k == "game_pass"])
             # Boss/ending text alone is never sufficient. Require result UI and
             # an explicit first-ending identity visible in this same screenshot.
             # ro6_ending_1.name is pinned as 强制重启 in
             # data/evidence/rogue6_ending_starting_rules_v1.json.
             first_identity=[s for s in spans if s.confidence>=.95 and any(word in _clean(s.text) for word in ("结局一","结局1","强制重启"))]
-            result_confidence=max([0.0]+[s.confidence for s in spans if any(word in _clean(s.text) for word in ("探索完成","旅途结束","通关","结局达成"))]+[h.confidence for k,h in markers.items() if k in {"ending","game_pass"}])
+            result_confidence=max([0.0]+[s.confidence for s in spans if any(word in _clean(s.text) for word in ("探索完成","旅途结束","通关","结局达成"))]+[h.confidence for k,h in markers.items() if k == "game_pass"])
             first_ending = bool(first_identity and result_confidence>=.95)
             if first_ending:
                 scene = "ending_complete"

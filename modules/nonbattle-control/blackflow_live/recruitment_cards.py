@@ -87,21 +87,26 @@ def _blue_fraction(image):
 def _patch_hit(image, name, scale, *, yellow=False, threshold=.90):
     """Match within a caller-owned visual region, never across another card."""
     import cv2
-    template = _template(name)
-    size = (max(3,round(template.shape[1]*scale)),max(3,round(template.shape[0]*scale)))
-    if image.shape[1] < size[0] or image.shape[0] < size[1]:
+    original = _template(name)
+    if not image.size or not math.isfinite(scale) or scale <= 0:
         return None
-    template = cv2.resize(template,size,interpolation=cv2.INTER_LINEAR)
-    if yellow:
-        target,template = _yellow(image),_yellow(template)
-    else:
-        target = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-        template = cv2.cvtColor(template,cv2.COLOR_BGR2GRAY)
-    scores = cv2.matchTemplate(target,template,cv2.TM_CCOEFF_NORMED)
-    _,score,_,(x,y) = cv2.minMaxLoc(scores)
-    if not math.isfinite(score) or score < threshold:
-        return None
-    return (x,y,*size),float(score)
+    target = _yellow(image) if yellow else cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+    # OCR text boxes fluctuate by a pixel while the actual UI stays unchanged.
+    # Treat their height as an estimate, then measure the best visual scale.
+    # Keep the same appearance threshold and stay inside the caller's ROI.
+    best,seen = None,set()
+    for ratio in (1., .98, 1.02, .96, 1.04, .94, 1.06, .92, 1.08):
+        size = (max(3,round(original.shape[1]*scale*ratio)),max(3,round(original.shape[0]*scale*ratio)))
+        if size in seen or image.shape[1] < size[0] or image.shape[0] < size[1]:
+            continue
+        seen.add(size)
+        template = cv2.resize(original,size,interpolation=cv2.INTER_LINEAR)
+        template = _yellow(template) if yellow else cv2.cvtColor(template,cv2.COLOR_BGR2GRAY)
+        scores = cv2.matchTemplate(target,template,cv2.TM_CCOEFF_NORMED)
+        _,score,_,(x,y) = cv2.minMaxLoc(scores)
+        if math.isfinite(score) and score >= threshold and (best is None or score > best[1]):
+            best = (x,y,*size),float(score)
+    return best
 
 
 def _operator(span, image, ocr, operators):
@@ -135,18 +140,27 @@ def _cost(image, box, ocr, spans=()):
     crop = _crop(image,box)
     if not crop.size:
         return None
-    prepared = cv2.cvtColor(255-((crop.min(axis=2)>80)*255).astype(np.uint8),cv2.COLOR_GRAY2BGR)
-    readings = [ocr.recognize_crop(crop),ocr.recognize_crop(prepared)]
+    readings = [ocr.recognize_crop(crop)]
+    for cutoff in (65,80):
+        prepared = cv2.cvtColor(255-((crop.min(axis=2)>cutoff)*255).astype(np.uint8),cv2.COLOR_GRAY2BGR)
+        readings.append(ocr.recognize_crop(prepared))
     x,y,w,h = box
     reading_region = (x-h*.15,y-h*.1,w+h*.3,h*1.2)
     readings.extend((span.text,span.confidence) for span in spans
-                    if _valid(span,image) and _inside(span.bbox,reading_region))
-    accepted = set()
+                    if _valid(span,image,.75) and _inside(span.bbox,reading_region))
+    accepted = []
+    plausible = set()
     for text,confidence in readings:
         text = text.strip().translate(str.maketrans({'O':'0','o':'0','Ｏ':'0'}))
-        if math.isfinite(confidence) and confidence >= .90 and re.fullmatch(r'\d{1,2}',text):
-            accepted.add(int(text))
-    return next(iter(accepted)) if len(accepted)==1 else None
+        if not math.isfinite(confidence) or not re.fullmatch(r'\d{1,2}',text):
+            continue
+        if confidence >= .75:
+            plausible.add(int(text))
+        if confidence >= .90:
+            accepted.append(int(text))
+    # A selected-card zero can be confidently misread as 3 in one color crop.
+    # Require corroboration, and do not hide a plausible conflicting reading.
+    return accepted[0] if len(accepted)>=2 and len(plausible)==1 else None
 
 
 def _full_card_title(image, box, ocr, operators):

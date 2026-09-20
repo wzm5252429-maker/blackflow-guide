@@ -4,13 +4,14 @@ from hashlib import sha256
 import json
 from pathlib import Path
 import unittest
+from unittest.mock import Mock
 
 import cv2
 import numpy as np
 
 from blackflow_live.models import LiveObservation
 from blackflow_live.policy import ObservedMenuMetadataAdapter, action_is_safe
-from blackflow_live.recruitment_cards import detect_recruitment_cards, _displayed_hope
+from blackflow_live.recruitment_cards import detect_recruitment_cards, _displayed_hope, _cost
 from blackflow_live.vision import OCRSpan, _merge_operator_names
 
 
@@ -84,6 +85,35 @@ class RecruitmentCardsTests(unittest.TestCase):
         self.assertTrue(action_is_safe(action,obs))
         self.assertFalse(action_is_safe(action,replace(obs,frame_id='new-frame')))
         self.assertFalse(action_is_safe(action,replace(obs,resources={})))
+
+    def test_one_pixel_text_height_jitter_does_not_move_the_hope_header(self):
+        image,spans,ocr=self.frame(10.4)
+        self.assertEqual(next(s.bbox[3] for s in spans if s.text=='确认招募'),23)
+        result=self.detect(image,spans,ocr)
+        self.assertEqual(result.evidence['hope_display']['header_bbox'],[404,4,76,37])
+        self.assertEqual(result.evidence['hope_display']['displayed_hope'],0)
+        # The original pixels do not prove this card's cost or complete title.
+        # Improved header recognition must not turn it into a confirmation.
+        selected=[c for c in result.evidence['cards'] if c['highlighted']]
+        self.assertEqual(len(selected),1)
+        self.assertIsNone(selected[0]['hope_cost'])
+        self.assertFalse(self.confirmations(result))
+
+    def test_unconfirmed_or_conflicting_cost_digit_is_unknown(self):
+        image=np.full((24,24,3),128,np.uint8)
+        for readings in ((('3',.9216),('',0),('',0)), (('0',.99),('0',.99),('6',.80)),
+                         (('0',.99),('0',float('nan')),('',0))):
+            ocr=Mock()
+            ocr.recognize_crop.side_effect=readings
+            self.assertIsNone(_cost(image,(0,0,20,20),ocr))
+        ocr=Mock()
+        ocr.recognize_crop.side_effect=[('6',.99),('6',.98),('6',.97)]
+        self.assertEqual(_cost(image,(0,0,20,20),ocr),6)
+        for confidence in (.75,.80,.89,.90):
+            ocr=Mock()
+            ocr.recognize_crop.side_effect=[('0',.99)]*3
+            span=OCRSpan('3',confidence,(5,5,5,10))
+            self.assertIsNone(_cost(image,(0,0,20,20),ocr,[span]))
 
     def test_unselected_screen_provides_real_card_previews_and_no_confirmation(self):
         result = self.detect(*self.frame(10))

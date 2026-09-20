@@ -96,6 +96,25 @@ class LiveVisionTests(unittest.TestCase):
         self.assertGreaterEqual(obs.confidence,.95)
         self.assertFalse(obs.actions)
 
+    def test_shared_checkmark_without_result_ui_never_proves_an_ending(self):
+        name='BlackFlow@Roguelike@GamePassTheEndConfirm.png'
+        templates=Templates({name:[TemplateHit(name,.99,(1114,667,29,31),1)]})
+        for spans in ([],[OCRSpan('强制重启',.99,(400,200,100,30))]):
+            obs=self.analyze(spans,templates)
+            self.assertEqual(obs.scene,'unknown')
+            self.assertFalse(obs.ending_first_confirmed)
+            self.assertFalse(obs.actions)
+            self.assertIn('confirmation_icon',obs.metadata['markers'])
+
+    def test_cursor_obscured_recruitment_text_does_not_restore_false_ending(self):
+        name='BlackFlow@Roguelike@GamePassTheEndConfirm.png'
+        recruit='BlackFlow@Roguelike@ChooseOperConfirm.png'
+        templates=Templates({name:[TemplateHit(name,.92,(1114,667,29,31),1)],
+                            recruit:[TemplateHit(recruit,.93,(1080,660,179,45),1)]})
+        obs=self.analyze([OCRSpan('确认招',.99,(1154,666,84,24))],templates)
+        self.assertEqual(obs.scene,'recruitment')
+        self.assertFalse(obs.ending_first_confirmed)
+
     def test_client_first_ending_name_matches_only_result_ui(self):
         spans=[OCRSpan("探索完成",.99,(400,180,150,40)),OCRSpan("强制重启",.98,(400,300,180,40))]
         self.assertTrue(self.analyze(spans).ending_first_confirmed)

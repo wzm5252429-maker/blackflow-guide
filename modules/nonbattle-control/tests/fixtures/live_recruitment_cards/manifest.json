@@ -497,6 +497,114 @@
           ],
           "text": "新约能天使",
           "confidence": 0.9957844018936157
+        },
+        "afe87dd12893a04677a7ca161c69bb4ff04e7b212bdd6d3338a8b610f856f942": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9635630249977112
+        },
+        "9e4a075ec8da0ea669b1cdcd5d741fad0d1f6b7f26f4b4e6ad4e02dfe4c153a8": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9741213321685791
+        },
+        "e5f1016a76be966c041c4204a62c8846e419b6b4595a9a253745f3d368a07bee": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9727953672409058
+        },
+        "1d2bf33d8c486048411f8d6a82206cc1123641ca82acd9af4de37a9f86e5114f": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9998695850372314
+        },
+        "01ea12392b3ee0507474e80e5fd8b9f2e9670fff164db4efc0dda2b1dfb1b045": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.985614001750946
+        },
+        "39b33981fa02b8e50c5d6941593caef5eb15fb910550613fbfbbefcecd4aafae": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9947301149368286
+        },
+        "ed700ec6887dda4e57e5ea5b6643ec62e1188624804d6a6aaf9862e712bdec7b": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9659951329231262
+        },
+        "a4bdd169729e3f5aa918a751921d20806a2592b18669513265bcf1e859fcde8a": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "G",
+          "confidence": 0.6041755080223083
+        },
+        "741a0a563f18a5361fe2351e67814211d767cf16f32a121ba87b24a45e3c3f7a": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9534357190132141
+        },
+        "39a1d607feb55bfec811ba5dcc2164df7e7e453bcb07716386ff457387c9842e": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9991156458854675
+        },
+        "9f23976b7f9bdb58de0caf1fa6db540301709c0cd6876b4fb85b2ffeca738771": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.8119931817054749
+        },
+        "f8a09baa35e169b97c81a9f1b52f53b7e2db2278d2099d9a872e7e3306452ff3": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "c",
+          "confidence": 0.3481113016605377
         }
       },
       "expected": {
@@ -1333,6 +1441,222 @@
           ],
           "text": "新约能天使",
           "confidence": 0.9949019551277161
+        },
+        "69df82a0f8fad1c50c269bf172680f8b7807e8cb84db4891a020fa78efbd2c87": {
+          "shape": [
+            19,
+            21,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9048082232475281
+        },
+        "ebd9b7a3ba338878618fa2bcb1235f1cb49dae1cafe6cee3ce21555020edec75": {
+          "shape": [
+            19,
+            21,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9993029832839966
+        },
+        "7d450d76d0f484d478ada7b4701e40ddb70495897d14c0b0e82ea0c220305912": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9862053990364075
+        },
+        "4cd5dbf67b03e0b183e27a44c8879b9e4440ae7958a0cc575448c896c9760979": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.7108467221260071
+        },
+        "3b686648873138febac9322fbc220d0e1c943ed097d4dddfcef7f61be73e9ed7": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9997590184211731
+        },
+        "278cd0af7e25bfa6646f9896e178cd75301d40e213a09b9416afe9cf2dcd64c3": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9999256134033203
+        },
+        "d66bc755ea9b22a7ac4221fe7df90fd24ce54e637d3a2a58041681c1cd748644": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9979088306427002
+        },
+        "b6fc2e7ba84d0aed458d365ddcf1867efe83f434461a928e54154de26e65587f": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9996416568756104
+        },
+        "9bf63edf0f56177a8a47caccf12b5ab2241fa645f422796c2109bdfb5bbb70a5": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9766546487808228
+        },
+        "6641f0d755cfe187cda35b49157a2a507060375ad39586ff0fd2fed179b0ad32": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.99991774559021
+        },
+        "1dd0b9a8fb5eff6f3ef14814ef4252416873608b7e813c7c723cd959ede6b901": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9690679907798767
+        },
+        "55a36627f89ddb9ece0c35117a07641eb8942ba02991a2fec845ee2f54abdd1d": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9919107556343079
+        },
+        "b2251f756939fbe95ee4d4c56864984b6a92dc7ec712117cf0a1ce4b9fe53b2d": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9942153096199036
+        },
+        "a7f229f82d39d30543d7bbe9d84d71a4d8aea19241489db99006e49da9305510": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.999761164188385
+        },
+        "5e407f3daf52b2dfcb674af003fcd9b9294aa201e9b7eefd6b753ff656b9054c": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9755944609642029
+        },
+        "3100f5ff735f25bf480ce09dc391069ae064443fe3b877c9ca4be4dd887e4804": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.950918436050415
+        },
+        "0a38318bc76e6421277de6b325605cbd1ad8714e9291025b967489457a3d6b8e": {
+          "shape": [
+            19,
+            21,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9993901252746582
+        },
+        "31a184b99535790be112e76a37ad9f22ee3dbb9645eb128e7d193828666dc543": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "c",
+          "confidence": 0.597771167755127
+        },
+        "c432b40e671e7c875ee5ca711c93e45c220dbe11a7c4d0e72a7a607dc9438416": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9925992488861084
+        },
+        "b351715f0be898d68b30fda4707e79e2720606205f9386252ba564efcc2d1941": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.9920403361320496
+        },
+        "48efe238447d7d4a9e9c04daa827f4aeaa8681ed795c3492933a73c28e9138cf": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.7463383674621582
+        },
+        "c5ce57c1ec403546d07e5cd8aa4f9b20b219d1c5ea88b178f11dda461f605058": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "6",
+          "confidence": 0.933961033821106
+        },
+        "d6b7292a2e2c1bd1772b6546543fda15af7d935161fffffee3db3415ba02ff2d": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "$",
+          "confidence": 0.26186373829841614
+        },
+        "8a750557a0a0c2c7c3357bad8eb72e245d74a4c6a5f9937c23f621f02439a8a2": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "",
+          "confidence": 0.0
         }
       },
       "expected": {
@@ -2102,6 +2426,177 @@
           ],
           "text": "—",
           "confidence": 0.6386873722076416
+        },
+        "688772e09f9a946085dfa045f24508c6ea22da74f36118af94206b551b8d5616": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.37880316376686096
+        },
+        "78d8548ad5d5dca40ead22aa5f42157e86c3a0aa05247b6bc4fb5db881a97f46": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.623134434223175
+        },
+        "2d8809dc86aeea2155988ec5c3309a0c1f746e79231a8e73c8cdf53736970bfc": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.8793964982032776
+        },
+        "bbdb226826df806934fdf241a0b61eedaeb18e9ca523a5ef58da1491dde1871e": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "。",
+          "confidence": 0.32792928814888
+        },
+        "9dcd8e27394ec2ad3e1a99d67a1e66c0f9dd556d411d830a474e9efcb3be4c7e": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9370850324630737
+        },
+        "dd1b661eff4c3d4496e166eb920723805c74e6c0ca133551b1ae990bc637822e": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9310591220855713
+        },
+        "be45a74d33a7015805fe10db0589b32dde3c55190450aad2aa97a7f685cf06c5": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.8006904721260071
+        },
+        "389bd4c0458e5b4b2dfecd40cb80bbf4d11a86dc1f163a0b2be1b1574362c021": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.4542911648750305
+        },
+        "c329ed1ff91f1ec9b0d2bc8435df17a3502fcd8867e65a33a6c48ee4233a7251": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9860407710075378
+        },
+        "fe70c7a6ef36cfdaf544d1c2bd22bcd414828fce3b4d2940688480c8ba47f4b8": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.7726749777793884
+        },
+        "5092321de5f934c6f7f286a65b8bfd9ebf41a68787ee82f13cc5e82977d2c8d8": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.7829880118370056
+        },
+        "e57eee8a1f8a59e26b887ae5a419f72a2397c9cda1ab768c53ba12408ecb9748": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "D",
+          "confidence": 0.8340579867362976
+        },
+        "73e659e89c6c7b1af791d6a4ff3f5ff72f8b72354c9e8bfc178c510fe137743e": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.6270697712898254
+        },
+        "a8a6f582e02f07c0efb3087478a6ab2d86cb3319ead67d1c19b487bcb3bf5404": {
+          "shape": [
+            20,
+            22,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.950054407119751
+        },
+        "234f6f53d7b2353c816609c6b7b583b39e995f8e67be7398ac9727cf9c199c52": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.8254786133766174
+        },
+        "b4aafbc23876fd9d8ca825637f3a344c546e633557e193ee8687474c776087fa": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9126465320587158
+        },
+        "368a5ddc3cada539815c820b1ef4ac35dc19fb8e8f6363a3dd98dc8b40e8bc80": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.8520687222480774
+        },
+        "550132af832f096e1b4edda38ad1ff39f98cd970f50548ffd29e89a96505addb": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.5197318196296692
+        },
+        "ada4b5bf0b8c8544f9e0c6eceb255a58f178abf93d9525b6206027653fe97280": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.7077254056930542
         }
       },
       "expected": {
@@ -2826,6 +3321,204 @@
           ],
           "text": "红豆",
           "confidence": 0.9991832971572876
+        },
+        "690a7d902197b8b32fdf05c72cc211b625d0e72ab5c15d394c21a1e5796b3bb9": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.6841907501220703
+        },
+        "25643e5eda3b799a0e0d0ed937009f5e5bda3276088f060a045984b4a1cd7741": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "。",
+          "confidence": 0.4917014241218567
+        },
+        "b7dd48c011ebd5da1b4ae9f2b1c269cb80a6d818089ce47fec77e6ab71b0cd20": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "。",
+          "confidence": 0.7247143983840942
+        },
+        "7c434e1aff0f737a0e3438f8c9efc693330a24e1134bd91a2a48f61cbe1cf2c8": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9020631313323975
+        },
+        "a9781c4ef13367bf1fd241e5fb2c74aaed399fa1c9a85f752e2574541611bf69": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.9655593633651733
+        },
+        "c8e699c78a660f65c4dd09d8a68ddd5ae8512a0073e196290cbdab928a121fd0": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "。",
+          "confidence": 0.5591089725494385
+        },
+        "ef87f9f961a81b6ce1eee0e7e6a0c3ba2745bbb87e5183d2ba455fbedda92c58": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9878732562065125
+        },
+        "7b92474c431d161c077b844dae507c75c9ca95c9ac790cc1c46199f44c537387": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9084886312484741
+        },
+        "27eb4f3ea74f8054f85fdb79b26b57ec6791635b27f6137fb9a00be95359ad1a": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.8484288454055786
+        },
+        "de7dfa6415213ab668fd9b60ad82162c93148db9a9b88c19677a8e466015f146": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.8835440278053284
+        },
+        "8263308bb1ad53e632b693519e91f76e4b82209a132f5b2a26789331f7b1d0c9": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9702712297439575
+        },
+        "f6db8d223b765652cee935b6a79aabf627c1098604d235400afb1e3252b877ab": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9940016865730286
+        },
+        "f059de9b55554e0d63a4ede30d0f61f3ab85f2c2564beaea435dece208911f8e": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.7142150402069092
+        },
+        "fdc74a4813f433fd1df98ab4fcb5e9618cac27c95f588da28d2261f730d94ee1": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.7121581435203552
+        },
+        "430da8a770cf9b73a108a26d3151367f37b3b053c7c5f5e26f6190389b4b4644": {
+          "shape": [
+            20,
+            22,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.3962578773498535
+        },
+        "54d13c552af2107f0432748f3553cf4054a522e8dde8e64c2be2ac6aa0331144": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "Q",
+          "confidence": 0.4708303213119507
+        },
+        "0a6324bd252a0570d4f43fda9551db290bcbfd826a5be50d78fc31b3f90eaeed": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.977279543876648
+        },
+        "6774215583c23ba7a8ae4ce59e664e84542ce6eb5db91406867cea2985f5e43a": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.4681128263473511
+        },
+        "8b21b17ed817cd3ad7f8ddb33b2ba6cf81dfa464e475a2bea764fc3cdb019f23": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9251816272735596
+        },
+        "9052b8db3844949d773a0514dd12b4eff971da942414ed685148a87ba4ba28dc": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.6431859135627747
+        },
+        "ed95ef6a4308545dd8a49d53d60ae0616b60934a3b750489f010ea98388b7bad": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.6834695339202881
+        },
+        "9cbe8e96b8bc6502947ccb589f7b127e29e321f14720d39c8f297b28d17fe7a7": {
+          "shape": [
+            22,
+            24,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.8292423486709595
         }
       },
       "expected": {
@@ -2833,6 +3526,771 @@
         "diagnostics": [
           "recruitment_selection_not_verified"
         ]
+      }
+    },
+    {
+      "second": 10.4,
+      "frame_index_after_read": 313.0,
+      "image": "initial-010.4.png",
+      "sha256": "6ecad58720542b618249ebf2a1e3c19eb614dfe86268389e3071c017c444e3d5",
+      "ocr_image_size": [
+        1280,
+        720
+      ],
+      "spans": [
+        {
+          "text": "希望■",
+          "confidence": 0.9034357070922852,
+          "bbox": [
+            402,
+            14,
+            116,
+            27
+          ]
+        },
+        {
+          "text": "6",
+          "confidence": 0.9998102784156799,
+          "bbox": [
+            598,
+            21,
+            21,
+            18
+          ]
+        },
+        {
+          "text": "桃金娘",
+          "confidence": 0.9982216954231262,
+          "bbox": [
+            10,
+            80,
+            67,
+            24
+          ]
+        },
+        {
+          "text": "6o",
+          "confidence": 0.7323857545852661,
+          "bbox": [
+            69,
+            128,
+            57,
+            29
+          ]
+        },
+        {
+          "text": "/6O",
+          "confidence": 0.8157455921173096,
+          "bbox": [
+            189,
+            134,
+            48,
+            25
+          ]
+        },
+        {
+          "text": "招募",
+          "confidence": 0.9303555488586426,
+          "bbox": [
+            569,
+            150,
+            33,
+            19
+          ]
+        },
+        {
+          "text": "招募",
+          "confidence": 0.9477828145027161,
+          "bbox": [
+            920,
+            150,
+            33,
+            19
+          ]
+        },
+        {
+          "text": "0",
+          "confidence": 0.9883049726486206,
+          "bbox": [
+            591,
+            172,
+            16,
+            12
+          ]
+        },
+        {
+          "text": "o",
+          "confidence": 0.8700845837593079,
+          "bbox": [
+            943,
+            172,
+            14,
+            12
+          ]
+        },
+        {
+          "text": "口世",
+          "confidence": 0.9280544519424438,
+          "bbox": [
+            221,
+            192,
+            33,
+            20
+          ]
+        },
+        {
+          "text": "42",
+          "confidence": 0.9960619211196899,
+          "bbox": [
+            133,
+            193,
+            50,
+            18
+          ]
+        },
+        {
+          "text": "冬时",
+          "confidence": 0.8677517175674438,
+          "bbox": [
+            903,
+            193,
+            44,
+            19
+          ]
+        },
+        {
+          "text": "迸夫",
+          "confidence": 0.873062252998352,
+          "bbox": [
+            559,
+            194,
+            52,
+            18
+          ]
+        },
+        {
+          "text": "98",
+          "confidence": 0.8615114688873291,
+          "bbox": [
+            221,
+            209,
+            28,
+            21
+          ]
+        },
+        {
+          "text": "436",
+          "confidence": 0.9743825793266296,
+          "bbox": [
+            132,
+            210,
+            46,
+            21
+          ]
+        },
+        {
+          "text": "327",
+          "confidence": 0.6794285178184509,
+          "bbox": [
+            131,
+            228,
+            47,
+            24
+          ]
+        },
+        {
+          "text": "招募",
+          "confidence": 0.8945138454437256,
+          "bbox": [
+            920,
+            273,
+            33,
+            20
+          ]
+        },
+        {
+          "text": "技彪",
+          "confidence": 0.8530077934265137,
+          "bbox": [
+            59,
+            285,
+            40,
+            24
+          ]
+        },
+        {
+          "text": "分支+",
+          "confidence": 0.998244047164917,
+          "bbox": [
+            214,
+            286,
+            48,
+            23
+          ]
+        },
+        {
+          "text": ".",
+          "confidence": 0.7817427515983582,
+          "bbox": [
+            913,
+            295,
+            15,
+            11
+          ]
+        },
+        {
+          "text": "豆苗",
+          "confidence": 0.9346592426300049,
+          "bbox": [
+            912,
+            319,
+            34,
+            16
+          ]
+        },
+        {
+          "text": "8",
+          "confidence": 0.907204806804657,
+          "bbox": [
+            179,
+            338,
+            116,
+            18
+          ]
+        },
+        {
+          "text": "停止攻击，持从时用内用复总",
+          "confidence": 0.8322781324386597,
+          "bbox": [
+            111,
+            359,
+            188,
+            19
+          ]
+        },
+        {
+          "text": "-",
+          "confidence": 0.8903824090957642,
+          "bbox": [
+            1126,
+            373,
+            13,
+            10
+          ]
+        },
+        {
+          "text": "并14点部柔用",
+          "confidence": 0.8264323472976685,
+          "bbox": [
+            111,
+            377,
+            103,
+            18
+          ]
+        },
+        {
+          "text": "10+",
+          "confidence": 0.8113864064216614,
+          "bbox": [
+            18,
+            385,
+            67,
+            22
+          ]
+        },
+        {
+          "text": "招募",
+          "confidence": 0.7986871004104614,
+          "bbox": [
+            920,
+            396,
+            33,
+            21
+          ]
+        },
+        {
+          "text": "超募",
+          "confidence": 0.9309786558151245,
+          "bbox": [
+            569,
+            397,
+            32,
+            20
+          ]
+        },
+        {
+          "text": "9",
+          "confidence": 0.741097092628479,
+          "bbox": [
+            909,
+            416,
+            23,
+            17
+          ]
+        },
+        {
+          "text": "0",
+          "confidence": 0.7375144958496094,
+          "bbox": [
+            589,
+            418,
+            17,
+            13
+          ]
+        },
+        {
+          "text": "o",
+          "confidence": 0.9664708971977234,
+          "bbox": [
+            943,
+            418,
+            15,
+            13
+          ]
+        },
+        {
+          "text": "讯使",
+          "confidence": 0.9940611720085144,
+          "bbox": [
+            560,
+            441,
+            36,
+            17
+          ]
+        },
+        {
+          "text": ":",
+          "confidence": 0.96962970495224,
+          "bbox": [
+            1270,
+            445,
+            6,
+            9
+          ]
+        },
+        {
+          "text": "停止攻击，持拱时闹内图复8",
+          "confidence": 0.8116747140884399,
+          "bbox": [
+            110,
+            473,
+            189,
+            18
+          ]
+        },
+        {
+          "text": "共6点部署或用并每梦治",
+          "confidence": 0.6561869978904724,
+          "bbox": [
+            112,
+            492,
+            186,
+            16
+          ]
+        },
+        {
+          "text": "周围一名友方单位相当于材金",
+          "confidence": 0.8845805525779724,
+          "bbox": [
+            111,
+            509,
+            188,
+            17
+          ]
+        },
+        {
+          "text": "招募",
+          "confidence": 0.9673430323600769,
+          "bbox": [
+            920,
+            519,
+            33,
+            20
+          ]
+        },
+        {
+          "text": "招募",
+          "confidence": 0.9078647494316101,
+          "bbox": [
+            569,
+            521,
+            33,
+            18
+          ]
+        },
+        {
+          "text": "z",
+          "confidence": 0.7138251662254333,
+          "bbox": [
+            24,
+            523,
+            38,
+            15
+          ]
+        },
+        {
+          "text": "象攻击力35%的生命",
+          "confidence": 0.8811214566230774,
+          "bbox": [
+            111,
+            527,
+            131,
+            16
+          ]
+        },
+        {
+          "text": "0",
+          "confidence": 0.656604528427124,
+          "bbox": [
+            587,
+            539,
+            22,
+            19
+          ]
+        },
+        {
+          "text": "0",
+          "confidence": 0.8414963483810425,
+          "bbox": [
+            1109,
+            558,
+            21,
+            21
+          ]
+        },
+        {
+          "text": "翎羽",
+          "confidence": 0.8306533098220825,
+          "bbox": [
+            913,
+            563,
+            34,
+            20
+          ]
+        },
+        {
+          "text": "红豆",
+          "confidence": 0.9873837232589722,
+          "bbox": [
+            562,
+            565,
+            34,
+            16
+          ]
+        },
+        {
+          "text": "о",
+          "confidence": 0.6757171154022217,
+          "bbox": [
+            165,
+            619,
+            68,
+            17
+          ]
+        },
+        {
+          "text": "确认招募",
+          "confidence": 0.9944085478782654,
+          "bbox": [
+            1152,
+            670,
+            78,
+            23
+          ]
+        },
+        {
+          "text": "放弃",
+          "confidence": 0.9997125864028931,
+          "bbox": [
+            982,
+            671,
+            41,
+            22
+          ]
+        },
+        {
+          "text": "2",
+          "confidence": 0.9964148998260498,
+          "bbox": [
+            219,
+            672,
+            19,
+            24
+          ]
+        },
+        {
+          "text": "干员",
+          "confidence": 0.9992945790290833,
+          "bbox": [
+            141,
+            686,
+            42,
+            27
+          ]
+        }
+      ],
+      "crop_ocr": {
+        "39dc76f0ad3892a8f735af939ed32bc314b55cd379ff8df97c3a31a411c968a1": {
+          "shape": [
+            26,
+            123,
+            3
+          ],
+          "text": "淆迸夫",
+          "confidence": 0.6243759989738464
+        },
+        "6c722224107a90af8fd5a958e4242dc03571167619da9d7e1e33e571c14b9417": {
+          "shape": [
+            26,
+            123,
+            3
+          ],
+          "text": "清迸夫",
+          "confidence": 0.6758498549461365
+        },
+        "73eee336f22f0981906c124afa02009d52fa0e5e9575485a008269e2040488ef": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9573407173156738
+        },
+        "552bdd94f6e4dde64d5a92946271179b61d5a559480e47cc8fba5eadba66332e": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.8785229325294495
+        },
+        "660f361d2e541cfa67b103986e7d3ca34d8412e1257493088371417c924c55fb": {
+          "shape": [
+            19,
+            44,
+            3
+          ],
+          "text": "冬时",
+          "confidence": 0.8677517175674438
+        },
+        "92a3c7b535f9713f2e632b14f501e6142ecb786cb1bff3f96df78cf6e1dd27f5": {
+          "shape": [
+            19,
+            44,
+            3
+          ],
+          "text": "冬时",
+          "confidence": 0.8449589014053345
+        },
+        "549b28be688e9903de96a59cd7ada11bc8fc4ffce98a46856ae83f5f341df7b5": {
+          "shape": [
+            26,
+            123,
+            3
+          ],
+          "text": "冬时",
+          "confidence": 0.6792643070220947
+        },
+        "8a7a44fc6e5d28d88c1c56d6b5f4cc37dbd52b58facbaa4ffb2dcaa78c8bb470": {
+          "shape": [
+            26,
+            123,
+            3
+          ],
+          "text": "冬时",
+          "confidence": 0.6855634450912476
+        },
+        "833a2ad5673d2f8e597812f8a4d486def11b07bcd81f1829a5872ebabbf33b74": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.5706278085708618
+        },
+        "55c6db3eeb3a591f2bd3e2882f9c54d0c919ee7ee0897db087321112c20aa556": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.4038650393486023
+        },
+        "787839e4855d2973264b80438ecfa93dc6dfe78ace38055243065aa44c3ced7b": {
+          "shape": [
+            27,
+            123,
+            3
+          ],
+          "text": "整",
+          "confidence": 0.26373860239982605
+        },
+        "5ef4494154595135ced1ba13a35d0d968f89dc02956c82008ad862b1bea1c1da": {
+          "shape": [
+            27,
+            123,
+            3
+          ],
+          "text": "",
+          "confidence": 0.0
+        },
+        "aac4ae15c8ff1c79dbbc53db29d1fc1f54425ffaea43daf4260a8ab042f6bcd6": {
+          "shape": [
+            20,
+            22,
+            3
+          ],
+          "text": "3",
+          "confidence": 0.9216387867927551
+        },
+        "d1f939e29ea3b501d3dc8f8c879b1a0f44bf69d59083380b88088520e0bd0136": {
+          "shape": [
+            20,
+            22,
+            3
+          ],
+          "text": "",
+          "confidence": 0.0
+        },
+        "1614913e5253456beaafda1a5d4377381aa324542492fb4a74cbc2386eb59ca5": {
+          "shape": [
+            26,
+            123,
+            3
+          ],
+          "text": "芬",
+          "confidence": 0.999818742275238
+        },
+        "75d338703521195744394d307b30ca5b0f603ff8f169318423679eaa3c0c4dc4": {
+          "shape": [
+            26,
+            123,
+            3
+          ],
+          "text": "芬",
+          "confidence": 0.9997990727424622
+        },
+        "4165f2de988d726be2cf89069a59101e0be8214c15ebea964e1477fb8e8fbfe2": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.9110393524169922
+        },
+        "f0743ae519de020e3d96781a28f2da568bda2d03265f70b173a0b52fa5955b55": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.8498150706291199
+        },
+        "4208e7c64121827fb28e1fbe3d7a28a44bb8577edd16c637ca18a8340d094734": {
+          "shape": [
+            20,
+            34,
+            3
+          ],
+          "text": "翎羽",
+          "confidence": 0.8306533098220825
+        },
+        "f2d82c74542d28e5eb0e7c597919f82af7647543f1a8acb79e118da59cd171e1": {
+          "shape": [
+            20,
+            34,
+            3
+          ],
+          "text": "翎羽",
+          "confidence": 0.8260478973388672
+        },
+        "27b4fbfda83aa45d817c6a0d94b2ab5af055f7c6bb808ecf156435bcb4ba292c": {
+          "shape": [
+            26,
+            123,
+            3
+          ],
+          "text": "翎",
+          "confidence": 0.8471473455429077
+        },
+        "179b29d8b897f312c32333960d306416ab0eaaa082b617f9323480adfc575594": {
+          "shape": [
+            26,
+            123,
+            3
+          ],
+          "text": "翎",
+          "confidence": 0.8614925742149353
+        },
+        "48b5e1c7382f67e5459bd15edbcde673a9aef7d0b26abc2bcdadf31b13e872d5": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.7582012414932251
+        },
+        "a2ed0e620ebbda0a312e58d3f2c0e4404bb198e08a326e37ca5881b44aeb4e7b": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.2946852147579193
+        },
+        "93b0e90dfea58d4724d4c6573152d909f21a7a4e0c9fbb5b522f412a366dfab3": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.3381083011627197
+        },
+        "91b49b2ea0b574251b5523c9f2fb3d6751e2731dac0efec77bccae10bb548473": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "Q",
+          "confidence": 0.7983664274215698
+        },
+        "1b0cdfbf4485c391f93224f37e6cdde653bcdfda06139e905f7f2fe9b5462b48": {
+          "shape": [
+            20,
+            22,
+            3
+          ],
+          "text": "",
+          "confidence": 0.0
+        },
+        "26e8e715e2bf29ac6dd2149ac1ee7a97fb108bcada5205da32f83ed8ad93608a": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "0",
+          "confidence": 0.5017538070678711
+        },
+        "74969149ee5fac28422924d118be7ab03d57d0a88675a84bd26cff4a83c0022e": {
+          "shape": [
+            21,
+            23,
+            3
+          ],
+          "text": "o",
+          "confidence": 0.7528641819953918
+        }
       }
     }
   ],
@@ -3388,5 +4846,6 @@
       },
       "observed_semantic": "Animated displayed hope intermediate digit 2, not zero; never an available-balance label."
     }
-  ]
+  ],
+  "crop_refresh_reason": "Fresh MAA OCR on identical original pixels after local multi-scale template matching; no input."
 }
