@@ -19,7 +19,10 @@ def build(output: Path):
     stage.mkdir()
     files = list((ROOT/'blackflow_live').glob('*.py'))
     files += list((ROOT/'blackflow_live/assets').glob('*'))
-    files += list((ROOT/'blackflow_rl').glob('*.py'))
+    # These independent research modules are not used by the selected frozen
+    # inference stack and must not enter a live release merely by sharing a folder.
+    research_only = {'evidence_environment.py', 'neural_joint_attention.py'}
+    files += [p for p in (ROOT/'blackflow_rl').glob('*.py') if p.name not in research_only]
     for folder in ('data/rules', 'data/evidence', 'data/training_environments'):
         files += list((ROOT/folder).glob('*.json'))
     selection_path = ROOT/'data/policies/current_neural_controller.json'
@@ -33,7 +36,7 @@ def build(output: Path):
             raise ValueError(f'Selected {field} does not match its pinned hash')
         files.append(path)
     files += list((ROOT/'tests').glob('test_live_*.py'))
-    for fixture in ('live_hud', 'live_nodes', 'live_rewards', 'live_shop_dialog'):
+    for fixture in ('live_hud', 'live_nodes', 'live_rewards', 'live_shop_dialog', 'live_recruitment'):
         files += [p for p in (ROOT/'tests/fixtures'/fixture).glob('*') if p.suffix in {'.png','.jpg','.json'}]
     files += [ROOT/p for p in ('requirements-core.txt','requirements-live.txt','tools/Start-BlackflowLive.cmd',
         'docs/nonbattle-control.md','docs/live-policy-coverage.md','scripts/package_live_connector.py')]

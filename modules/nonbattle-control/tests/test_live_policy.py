@@ -62,7 +62,9 @@ class LiveScopeTests(unittest.TestCase):
         action=button(operation="event",preview_only=True,hope_cost=5)
         self.assertTrue(action_is_safe(action,observation(actions=(action,))))
         self.assertFalse(action_is_safe(replace(action,metadata={"operation":"recruit_reserve","hope_cost":5}),observation()))
-        self.assertTrue(action_is_safe(replace(action,metadata={"operation":"recruit_temporary","hope_cost":0}),observation()))
+        # Zero cost alone does not prove an operator selection or a usable
+        # confirmation button, and must not authorize recruitment.
+        self.assertFalse(action_is_safe(replace(action,metadata={"operation":"recruit_temporary","hope_cost":0}),observation()))
 
     def test_battle_and_confirmed_first_ending_stop_before_loading_weights(self):
         policy = CurrentNeuralPolicy()
@@ -172,7 +174,11 @@ class CurrentWeightInferenceTests(unittest.TestCase):
         layout=self.policy.encoder.layout
         adapter=self.policy.encoder.metadata_adapter
         operator=adapter.operators["char_4230_mcnist"]["name"]
-        action=button(operation="recruit_temporary",operator_name=operator,hope_cost=2)
+        # Actual recruitment requires current selection/button evidence in
+        # addition to the operator name and observed affordability.
+        action=button(operation="recruit_temporary",operator_name=operator,hope_cost=2,
+                      source_frame_id="test-frame",grounded=True,selection_stage="operator_confirm",
+                      selected_operator_id="char_4230_mcnist",button_enabled_observed=True)
         obs=observation("recruitment",(action,),resources={"hope":3})
         encoded,_,_=self.policy.encoder.encode(obs,obs.actions)
         physical=layout.option_feature_dim-len(layout.item_identities)-12

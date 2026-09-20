@@ -25,6 +25,10 @@ BLOCKED_SCENES = frozenset({"battle", "battle_start", "battle_prepare", "squad",
 BLOCKED_OPERATIONS = frozenset({"battle", "battle_start", "start_battle", "special_battle", "fate_battle", "combat", "surrender", "restart", "abandon_run", "expedition_source"})
 BLOCKED_LABELS = ("开始战斗", "开始作战", "进入战斗", "作战开始", "开始行动", "放弃探索", "放弃本次", "重新开始", "start battle", "start operation")
 OTHER_ENDING_LABELS = ("二结局", "三结局", "四结局", "结局二", "结局三", "结局四", "第二结局", "第三结局", "第四结局")
+RECRUIT_OPERATIONS = frozenset({"recruit", "recruit_reserve", "recruit_temporary", "emergency_hire"})
+RECRUIT_CONFIRM_LABELS = frozenset({"招募", "确认招募", "临时招募", "雇佣", "确认雇佣"})
+TICKET_PROFESSIONS = {"先锋": "PIONEER", "近卫": "WARRIOR", "重装": "TANK", "狙击": "SNIPER",
+                      "术师": "CASTER", "医疗": "MEDIC", "辅助": "SUPPORT", "特种": "SPECIAL"}
 
 
 def _number(value: Any) -> bool:
@@ -53,14 +57,63 @@ class ObservedMenuMetadataAdapter:
         self.names: dict[str,set[str]] = {}
         for definition in catalog.items.values():
             self.names.setdefault(_identity_label(definition.name),set()).add(definition.canonical_id)
-        source = (evidence_root or ROOT/"data/evidence")/"rogue6_observed_operator_catalog_v1.json"
+        evidence = evidence_root or ROOT/"data/evidence"
+        source = evidence/"rogue6_observed_operator_catalog_v1.json"
         self.operators = json.loads(source.read_text(encoding="utf-8"))["ordinary_and_exclusive_characters"] if source.is_file() else {}
+        tickets = evidence/"rogue6_operator_economy_rules_v1.json"
+        self.recruit_tickets = json.loads(tickets.read_text(encoding="utf-8"))["client"]["recruit_tickets"] if tickets.is_file() else {}
         self.operator_names: dict[str,set[str]] = {}
         for identity, record in self.operators.items():
             self.operator_names.setdefault(_identity_label(record["name"]),set()).add(identity)
 
+    def _ticket_metadata(self, metadata):
+        """Keep same-name variants unresolved and encode only their shared facts."""
+        for key in ("candidate_item_ids", "identity_ambiguous", "ticket_identity_verified",
+                    "ticket_professions", "ticket_rarities", "ticket_mechanist_eligible", "ticket_catalog_rarity"):
+            metadata.pop(key, None)
+        name = metadata.get("ticket_name") or metadata.get("item_name")
+        matches = self.names.get(_identity_label(name), set()) if name else set()
+        if name and metadata.get("item_name") and _identity_label(name) != _identity_label(metadata["item_name"]):
+            metadata["identity_conflict"] = True
+        identity = metadata.get("item_id")
+        if identity:
+            if name and identity not in matches:
+                metadata["identity_conflict"] = True
+            matches = {identity} if identity in self.catalog.items else set()
+        if not matches or any(self.catalog.items[key].category != "RECRUIT_TICKET" for key in matches):
+            metadata["identity_unrecognized"] = True
+            return
+        metadata["ticket_identity_verified"] = True
+        metadata["candidate_item_ids"] = sorted(matches)
+        metadata["category"] = "RECRUIT_TICKET"
+        if len(matches) > 1:
+            metadata["identity_ambiguous"] = True
+            metadata["identity_source"] = "exact_observed_ticket_name_ambiguous"
+        elif not identity:
+            metadata["item_id"] = next(iter(matches))
+            metadata["identity_source"] = "exact_observed_ticket_name"
+        rarities = {self.catalog.items[key].rarity for key in matches}
+        if len(rarities) == 1:
+            metadata["ticket_catalog_rarity"] = next(iter(rarities))
+        records = [self.recruit_tickets.get(key) for key in matches]
+        if not all(records):
+            metadata["ticket_identity_verified"] = False
+            return
+        professions = set.intersection(*(set(record["professionList"]) for record in records))
+        tiers = set.intersection(*(set(record["rarityList"]) for record in records))
+        metadata["ticket_professions"] = sorted(professions)
+        metadata["ticket_rarities"] = sorted(tiers)
+        if metadata.get("ticket_profession"):
+            profession = TICKET_PROFESSIONS.get(_identity_label(metadata["ticket_profession"]))
+            if profession is None or profession not in professions:
+                metadata["identity_conflict"] = True
+        metadata["ticket_mechanist_eligible"] = "TANK" in professions and "TIER_6" in tiers
+
     def adapt(self, action: ObservedAction) -> dict[str,Any]:
         metadata = dict(action.metadata)
+        metadata.pop("operator_identity_verified", None)
+        if metadata.get("operation", action.kind) == "select_recruit_ticket":
+            self._ticket_metadata(metadata)
         identity = metadata.get("item_id")
         item_name = metadata.get("item_name")
         if not identity and item_name:
@@ -87,6 +140,8 @@ class ObservedMenuMetadataAdapter:
                 metadata["identity_unrecognized"] = True
             elif metadata.get("operator_name") and operator not in self.operator_names.get(_identity_label(metadata["operator_name"]),set()):
                 metadata["identity_conflict"] = True
+            else:
+                metadata["operator_identity_verified"] = True
             # Existing recruit/temporary/hire option semantics place the actual
             # displayed operator in item_id. Keep ticket identity separately.
             metadata.setdefault("ticket_item_id",identity)
@@ -103,6 +158,33 @@ class ObservedMenuMetadataAdapter:
             delta.setdefault("hope",-metadata["hope_cost"])
         metadata["resource_delta"] = delta
         return metadata
+
+
+def _recruitment_confirmation_safe(metadata, observation):
+    if (observation.scene != "recruitment" or metadata.get("preview_only")
+        or metadata.get("selection_stage") != "operator_confirm"
+        or metadata.get("grounded") is not True
+        or metadata.get("source_frame_id") != observation.frame_id
+        or metadata.get("operator_identity_verified") is not True
+        or not metadata.get("operator_id")
+        or metadata.get("selected_operator_id") != metadata.get("operator_id")
+        or metadata.get("button_enabled_observed") is not True):
+        return False
+    costs = metadata.get("resource_costs", {})
+    if not isinstance(costs, dict):
+        return False
+    costs = dict(costs)
+    if "hope_cost" in metadata:
+        hope_cost = metadata["hope_cost"]
+        if not _number(hope_cost) or ("hope" in costs and costs["hope"] != hope_cost):
+            return False
+        costs["hope"] = hope_cost
+    if not costs:
+        return False
+    # A free confirmation still needs explicitly observed zero cost and a
+    # same-frame balance. No known catalogue/default recruitment price is used.
+    return all(_number(cost) and cost >= 0 and _number(observation.resources.get(resource))
+               and observation.resources[resource] >= cost for resource, cost in costs.items())
 
 
 def action_is_safe(action: ObservedAction, observation: LiveObservation, *, threshold: float = 0.85) -> bool:
@@ -141,6 +223,21 @@ def action_is_safe(action: ObservedAction, observation: LiveObservation, *, thre
     target = next((node for node in observation.nodes if node.node_id == action.target_node_id), None)
     if target is not None and target.node_type in {"STORY", "STORY_HIDDEN", "DOOR"} and not target.completed:
         return False
+    if operation == "select_recruit_ticket":
+        if (observation.scene != "recruitment" or metadata.get("selection_stage") != "ticket_preview"
+            or metadata.get("preview_only") is not True or metadata.get("grounded") is not True
+            or metadata.get("source_frame_id") != observation.frame_id
+            or metadata.get("ticket_identity_verified") is not True):
+            return False
+    elif operation in RECRUIT_OPERATIONS or _identity_label(action.label) in RECRUIT_CONFIRM_LABELS:
+        if operation not in RECRUIT_OPERATIONS or not _recruitment_confirmation_safe(metadata, observation):
+            return False
+    if metadata.get("selection_stage") == "operator_preview" or action.kind == "operator_preview":
+        if (observation.scene != "recruitment" or operation != "event" or action.kind != "operator_preview"
+            or metadata.get("selection_stage") != "operator_preview" or metadata.get("preview_only") is not True
+            or metadata.get("grounded") is not True or metadata.get("source_frame_id") != observation.frame_id
+            or metadata.get("operator_identity_verified") is not True):
+            return False
     if operation == "purchase":
         price = metadata.get("price")
         gold = observation.resources.get("gold")
@@ -316,7 +413,8 @@ class ObservedFeatureEncoder:
             row[physical_start+9] = metadata.get("item_id")=="char_4230_mcnist"
             if operation=="select_recruit_ticket":
                 from blackflow_rl.operator_economy import mechanist_eligible_ticket_ids
-                row[physical_start+10] = metadata.get("item_id") in mechanist_eligible_ticket_ids()
+                row[physical_start+10] = (metadata.get("item_id") in mechanist_eligible_ticket_ids()
+                                          or metadata.get("ticket_mechanist_eligible") is True)
             row[physical_start+11] = category=="UPGRADE_TICKET"
             if definition:
                 row[physical_start+2] = {"NORMAL":1,"RARE":2,"SUPER_RARE":3,"SPECIAL":4}.get(definition.rarity,0)/4
@@ -325,6 +423,11 @@ class ObservedFeatureEncoder:
                 row[physical_start+3] = (definition.base_buy_price or 0)/30
                 row[physical_start+4] = (definition.sell_price or 0)/30
                 row[-len(layout.item_identities):] = layout._item_identity_features(metadata.get("item_id"))
+            elif metadata.get("ticket_identity_verified"):
+                # An ambiguous ordinary/candle title has no exact identity
+                # one-hot. Only properties shared by every matching ticket may
+                # fill the existing frozen feature layout.
+                row[physical_start+2] = {"NORMAL":1,"RARE":2,"SUPER_RARE":3,"SPECIAL":4}.get(metadata.get("ticket_catalog_rarity"),0)/4
 
         resources = observation.resources
         if observation.floor:
@@ -400,6 +503,8 @@ class ObservedFeatureEncoder:
             "identified_item_actions":sum(bool(self.metadata_for(a).get("item_id")) for a in options),
             "displayed_action_count":len(options),
             "operator_embedding_scope":"mechanist_identity_and_observed_costs_only",
+            "ticket_embedding_scope":"operation_shared_rarity_and_mechanist_eligibility_only",
+            "ambiguous_ticket_actions":sum(bool(self.metadata_for(a).get("identity_ambiguous")) for a in options),
             "cross_frame_resource_reuse":False,
         }
         return EncodedState(node_features, adjacency, node_mask, globals_, option_features, option_mask, action_mask), action_index, node_index
@@ -428,6 +533,7 @@ class CurrentNeuralPolicy:
             "last_observation_coverage":getattr(getattr(self,"encoder",None),"last_coverage",{}),
             "limitations":["Unobserved inventory, counters and shop history are not reconstructed.",
                 "The frozen network has no general per-operator identity embedding.",
+                "The frozen layout has no ticket category, profession or exact identity embedding; only ticket operation, shared rarity and mechanist eligibility are encoded.",
                 "Purchases need an observed actual price and balance; costs are never sampled.",
                 "No complete real-game first-ending run has been established by these unit tests."]}
 

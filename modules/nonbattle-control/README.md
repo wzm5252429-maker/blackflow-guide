@@ -53,6 +53,10 @@
 
 ## 开发与验证
 
+2026-09-20 更新：初始招募页可从同列完整标题识别三张职业招募券，应急招募页可识别干员预览与离开。弱文字或叠影仍按招募覆盖层处理，不能点击背后的地图。实际招募要求同帧完整身份、选中状态、可用按钮、明确费用及余额；目前详情页视觉尚未提供完整证据，因此不会仅凭“雇佣”二字确认招募。此更新已用保存录像像素回放，不代表当前游戏完成了招募。
+
+原网络对先锋、辅助、特种券的现有特征相同，三者回放概率均为 1/3；不能将这一选择描述为学会了职业偏好。初始招募完成页、助战详情和连续招募闭环仍需补齐。
+
 运行 `py -3.13 -m unittest discover -s tests -p "test_live_*.py" -v`。这些测试不向真实游戏提交输入；真实模型测试只执行本机神经网络前向计算。部署包可用 `py -3.13 scripts/package_live_connector.py --output <目录>` 生成，包含冻结推理依赖和所选权重，避免覆盖研究工程正在进行的训练修改。
 
 浏览器连接依据：[Chrome 本机网络访问说明](https://developer.chrome.com/blog/local-network-access?hl=zh-cn)。物理 DPI 坐标依据：[Microsoft DPI awareness](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setthreaddpiawarenesscontext)。MAA 资源与算法来源：[MaaAssistantArknights](https://github.com/MaaAssistantArknights/MaaAssistantArknights)。

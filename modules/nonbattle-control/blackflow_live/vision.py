@@ -53,6 +53,27 @@ def _clean(text: str) -> str:
     return re.sub(r"[\s“”\"‘’·•:：，,。.!！?？<>/\\]", "", re.sub(r"<[^>]+>", "", text))
 
 
+def _merge_operator_names(operators, snapshot):
+    """Add exact catalog identities, keeping conflicting names unavailable."""
+    merged = dict(operators)
+    conflicts = set()
+    for identity, record in snapshot.items():
+        if not isinstance(identity, str) or not identity.startswith('char_') or not isinstance(record, dict):
+            continue
+        if not isinstance(record.get('name'), str):
+            continue
+        name = _clean(record['name'])
+        if not name or name in conflicts:
+            continue
+        previous = merged.get(name)
+        if previous is not None and previous.get('id') not in (None, identity):
+            merged.pop(name)
+            conflicts.add(name)
+            continue
+        merged[name] = {**(previous or {}), **record, 'id': identity}
+    return merged
+
+
 def _box(points: np.ndarray) -> tuple[float, float, float, float]:
     low, high = points.min(axis=0), points.max(axis=0)
     return tuple(float(x) for x in (*low, *(high - low)))
@@ -305,6 +326,14 @@ class VisionPipeline:
         if recruitment.is_file():
             for operator in json.loads(recruitment.read_text(encoding="utf-8")).get("operators",[]):
                 self.operators[_clean(operator["name"])]=operator
+        # The MAA recruitment dictionary omits expedition-exclusive operators.
+        # Merge the pinned character snapshot by exact name and id; a name/id
+        # disagreement is not resolved by preferring whichever source is last.
+        operator_snapshot = evidence/"rogue6_observed_operator_catalog_v1.json"
+        if operator_snapshot.is_file():
+            snapshot = json.loads(operator_snapshot.read_text(encoding="utf-8"))
+            self.operators = _merge_operator_names(self.operators,
+                snapshot.get("ordinary_and_exclusive_characters", {}))
 
     def observe(self, frame, *, frame_id: str | None = None, captured_at: float | None = None) -> LiveObservation:
         image = frame.image if hasattr(frame,"image") else frame
@@ -387,11 +416,17 @@ class VisionPipeline:
         elif ("黑流树海" in clean_text and any(_clean(span.text) in _OPERATIONS for span in spans if span.confidence >= 0.9)):
             scene,confidence = "dialog",0.9
         shop_dialog = None
+        recruitment_screen = None
         if scene not in {'battle', 'battle_start', 'ending', 'ending_complete', 'failed'}:
             from .shop_vision import detect_shop_dialog
             shop_dialog = detect_shop_dialog(image, spans, ocr=self.ocr, item_names=self.item_names)
             if shop_dialog is not None:
                 scene,confidence = 'shop',shop_dialog.confidence
+            else:
+                from .recruitment_vision import detect_recruitment_screen
+                recruitment_screen = detect_recruitment_screen(image, spans, ocr=self.ocr, operators=self.operators)
+                if recruitment_screen is not None:
+                    scene,confidence = 'recruitment',recruitment_screen.confidence
         nodes,edges,current = (),(),None
         actions: list[ObservedAction] = []
         if scene in {"map","shop","recruitment","inventory","reward","movement_preview"}:
@@ -410,6 +445,9 @@ class VisionPipeline:
         if shop_dialog is not None:
             actions = shop_dialog.grounded_actions(resources)
             diagnostics.extend(shop_dialog.diagnostics)
+        elif recruitment_screen is not None:
+            actions = list(recruitment_screen.actions)
+            diagnostics.extend(recruitment_screen.diagnostics)
         elif scene not in {"battle", "battle_start", "ending", "ending_complete", "unknown", "failed"}:
             actions.extend(self._actions(spans,scene,image.shape[1],image.shape[0]))
             if scene=="movement_preview":

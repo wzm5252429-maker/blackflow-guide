@@ -69,8 +69,13 @@
     },
     {
       "path": "blackflow_live/policy.py",
-      "sha256": "e0741edf1a08a42b83fd70d4b5473a8c9e572f73efbbabd5091f0185b6651a4e",
-      "bytes": 36581
+      "sha256": "38c58401e4332108668d217265474dfdd3601d866b606545dacd087802d4e979",
+      "bytes": 43437
+    },
+    {
+      "path": "blackflow_live/recruitment_vision.py",
+      "sha256": "95891e483ee114a7ac5f48cd947be27f15b6e4bf7fc52e555fe4d1cab4eb8d54",
+      "bytes": 10421
     },
     {
       "path": "blackflow_live/runtime.py",
@@ -89,8 +94,8 @@
     },
     {
       "path": "blackflow_live/vision.py",
-      "sha256": "5a01fcb196f1c9359149423e7227c9b0d88ea80ab2e749ea434c45e385679987",
-      "bytes": 46266
+      "sha256": "21dddc164a390f97578cdc7b127afe89946a5404af5f220c5b1ad704a0625ec3",
+      "bytes": 48198
     },
     {
       "path": "blackflow_rl/__init__.py",
@@ -649,18 +654,18 @@
     },
     {
       "path": "docs/live-policy-coverage.md",
-      "sha256": "2d8f03ecc3c3c0844c2917537b89791e6a3c7b62ebba24b3a455c0a46495c3e5",
-      "bytes": 10531
+      "sha256": "1af813924c2cee18384f10b3c82ee9da7323d24d5870ffc11109c4fde92e1182",
+      "bytes": 11373
     },
     {
       "path": "docs/live-vision-coverage.md",
-      "sha256": "7a75993a8730a85d388066c8ded0653ee612055b2cb3cc8c247710e5ba7c7769",
-      "bytes": 5667
+      "sha256": "494cf03ac80e27c0a90cacc06b9f075c7a4b26b752bb18d410b48a55ad85e95f",
+      "bytes": 6517
     },
     {
       "path": "docs/nonbattle-control.md",
-      "sha256": "4ffee755e530cc0c4696a572a687713170a1bf8959ec14466466747c8864ca6b",
-      "bytes": 8192
+      "sha256": "7afd6293cd718e276136d07696d400628bea6cedd2df209b54e119886bfdee9a",
+      "bytes": 8904
     },
     {
       "path": "requirements-core.txt",
@@ -674,8 +679,8 @@
     },
     {
       "path": "scripts/package_live_connector.py",
-      "sha256": "1d05b7d58cf1ee1c735a3e7f1ea7fe13699cbd5d016a04d9906db8fe9659d4c7",
-      "bytes": 3767
+      "sha256": "11b024e25184fa557ac8b61f64cba3e4244a838ae65b9826c1457915953c8d30",
+      "bytes": 4063
     },
     {
       "path": "tests/fixtures/live_hud/fullscreen_hud.json",
@@ -721,6 +726,21 @@
       "path": "tests/fixtures/live_nodes/manifest.json",
       "sha256": "5696a818408f4770a18e1b7fa7de5cada529235e69fb305c169122b2285d0283",
       "bytes": 1825
+    },
+    {
+      "path": "tests/fixtures/live_recruitment/emergency_hire_290p.jpg",
+      "sha256": "6c62e1d2a8d2220d411418fd18b25bb68f6e41f8a1cd053220a59f240eba9ca9",
+      "bytes": 84556
+    },
+    {
+      "path": "tests/fixtures/live_recruitment/initial_three_tickets_360p.jpg",
+      "sha256": "8d06cd24ebfe606715803f44bd9240cab1e3c8b80697a29485448b95f303af8c",
+      "bytes": 61731
+    },
+    {
+      "path": "tests/fixtures/live_recruitment/manifest.json",
+      "sha256": "8df6853c433a438125306d293b482e8ead71be211a3a64459489f85868ee6c4b",
+      "bytes": 1469
     },
     {
       "path": "tests/fixtures/live_rewards/manifest.json",
@@ -783,9 +803,24 @@
       "bytes": 4954
     },
     {
+      "path": "tests/test_live_operator_catalog.py",
+      "sha256": "9bb2328167dc2f5d4291b17e7ff0bf5c23c3a8f57f3165fe78f9c920618e2433",
+      "bytes": 1967
+    },
+    {
       "path": "tests/test_live_policy.py",
-      "sha256": "c7ad4292ea4ef50d23ff37025e3897cb5807729a239d2a438d87f4e583565f60",
-      "bytes": 13072
+      "sha256": "93de78e07500b65e93f988cbbc900815a5408379dcc04730524fa06c1a5b6363",
+      "bytes": 13551
+    },
+    {
+      "path": "tests/test_live_recruitment.py",
+      "sha256": "9d9dc74d4ba4c5bf2be4bc81cc17eb7714c63b262aa2dfbbf5cf937ca6cae09a",
+      "bytes": 10833
+    },
+    {
+      "path": "tests/test_live_recruitment_policy.py",
+      "sha256": "51fb093fd7b730a9948cbb0b77515e9e61f0beea28820998f4f7e0e772f5f74e",
+      "bytes": 13060
     },
     {
       "path": "tests/test_live_resume.py",
