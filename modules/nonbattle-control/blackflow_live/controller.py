@@ -4,6 +4,7 @@ from __future__ import annotations
 import ctypes as ct
 from ctypes import wintypes as wt
 import os
+import time
 
 from .capture import physical_pixel_context
 
@@ -33,6 +34,7 @@ class WindowsController:
             self._focus_physical()
 
     def _focus_physical(self):
+        self.cancel_pointer_cleanup()
         window = self.capture.verified_window()
         hwnd = window.hwnd
         if not window.visible:
@@ -68,6 +70,7 @@ class WindowsController:
             self._click_physical(action, frame)
 
     def _click_physical(self, action, frame):
+        self.cancel_pointer_cleanup()
         self.capture.assert_geometry_current(frame.geometry)
         hwnd = frame.geometry.hwnd
         if self.user32.GetAncestor(self.user32.GetForegroundWindow(), 2) != hwnd:
@@ -121,3 +124,77 @@ class WindowsController:
             release = Input(0, InputUnion(mi=MouseInput(0, 0, 0, 4, 0, 0)))
             send(1, ct.byref(release), ct.sizeof(Input))
             raise RuntimeError('Windows 拒绝输入，请使用与游戏相同的运行权限')
+        # Do not append a move to this click batch. Unity can sample the mouse
+        # position on its next frame instead of consuming every event position.
+        def move_only(px, py, desktop):
+            dl,dt,dw,dh = desktop
+            motion=MouseInput(round((px-dl)*65535/(dw-1)),round((py-dt)*65535/(dh-1)),
+                              0,0x8000 | 0x4000 | 0x0001,0,0)
+            batch=(Input * 1)(Input(0,InputUnion(mi=motion)))
+            return send(1,batch,ct.sizeof(Input)) == 1
+        self._pointer_cleanup = (frame.geometry,(sx,sy),time.monotonic(),time.time(),move_only)
+
+    def cancel_pointer_cleanup(self):
+        """Forget a deferred move without interacting with Windows."""
+        self._pointer_cleanup = None
+
+    def clear_pointer(self, frame, *, still_active=None):
+        """Best-effort MOVE-only cleanup after a new nonbattle observation.
+
+        The engine owns the active-session/scene checks. Preview never calls
+        this method. A rejected cleanup does not undo a successful click.
+        """
+        with physical_pixel_context():
+            pending=getattr(self,'_pointer_cleanup',None)
+            if pending is None:
+                return False
+            geometry,clicked,submitted,wall_time,move_only=pending
+            elapsed=time.monotonic()-submitted
+            if 0 <= elapsed < .15:
+                return False
+            self.cancel_pointer_cleanup()
+            if still_active is not None and not still_active():
+                return False
+            if elapsed < 0 or elapsed > 15 or frame.captured_at <= wall_time:
+                return False
+            if frame.geometry.identity != geometry.identity:
+                return False
+            try:
+                def unchanged_pointer():
+                    if self._emergency_stop_physical():
+                        return False
+                    # MOVE with a user-held button would become a drag.
+                    if any(self.user32.GetAsyncKeyState(key)&0x8000 for key in (1,2,4,5,6)):
+                        return False
+                    point=wt.POINT()
+                    return bool(self.user32.GetCursorPos(ct.byref(point))
+                                and abs(point.x-clicked[0]) <= 3 and abs(point.y-clicked[1]) <= 3)
+                if not unchanged_pointer():
+                    return False
+                self.capture.assert_geometry_current(geometry)
+                hwnd=geometry.hwnd
+                if self.user32.GetAncestor(self.user32.GetForegroundWindow(),2) != hwnd:
+                    return False
+                left,top=self.user32.GetSystemMetrics(76),self.user32.GetSystemMetrics(77)
+                width,height=self.user32.GetSystemMetrics(78),self.user32.GetSystemMetrics(79)
+                if width < 2 or height < 2:
+                    return False
+                rect=geometry.client_rect
+                px,py=int(min(rect.right,left+width))-1,int(min(rect.bottom,top+height))-1
+                if not rect.contains(px,py) or not (left<=px<left+width and top<=py<top+height):
+                    return False
+                if self.user32.GetAncestor(self.user32.WindowFromPoint(wt.POINT(px,py)),2) != hwnd:
+                    return False
+                self.capture.assert_geometry_current(geometry)
+                if (self.user32.GetAncestor(self.user32.GetForegroundWindow(),2) != hwnd
+                    or not unchanged_pointer()):
+                    return False
+                if self.user32.GetAncestor(self.user32.WindowFromPoint(wt.POINT(px,py)),2) != hwnd:
+                    return False
+                if still_active is not None and not still_active():
+                    return False
+                if tuple(self.user32.GetSystemMetrics(index) for index in (76,77,78,79)) != (left,top,width,height):
+                    return False
+                return move_only(px,py,(left,top,width,height))
+            except (OSError,RuntimeError):
+                return False

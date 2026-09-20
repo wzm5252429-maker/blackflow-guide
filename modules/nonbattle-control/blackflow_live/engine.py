@@ -111,6 +111,9 @@ class LiveEngine:
         self._preview = None
         self._last_clicked_key = None
         self._last_click_at = 0.
+        self._last_clicked_action = None
+        self._last_clicked_scene = None
+        self._pointer_cleanup_guard = False
 
     def _set(self, state, message, **extra):
         with self._lock:
@@ -139,6 +142,9 @@ class LiveEngine:
             self._lease = time.monotonic()
             self._last_clicked_key = None
             self._last_click_at = 0.
+            self._last_clicked_action = None
+            self._last_clicked_scene = None
+            self._pointer_cleanup_guard = False
             self._focus_requested = not observe_only
             self._set('starting', '正在连接游戏窗口和识别模型', clicks=0, observe_only=observe_only)
             self._thread = threading.Thread(target=self._run, args=(hwnd, observe_only), daemon=True,
@@ -154,7 +160,14 @@ class LiveEngine:
     def _pause_locked(self, reason):
         self._epoch += 1
         self._paused = True
+        self._cancel_pointer_cleanup_locked()
         self._set('paused', reason)
+
+    def _cancel_pointer_cleanup_locked(self):
+        cancel=getattr(self._runtime,'cancel_pointer_cleanup',None)
+        if cancel is not None:
+            cancel()
+        self._pointer_cleanup_guard=False
 
     def resume(self):
         with self._input_lock:
@@ -171,6 +184,7 @@ class LiveEngine:
             # again; the engine must never retry automatically without consent.
             self._last_clicked_key = None
             self._last_click_at = 0.
+            self._cancel_pointer_cleanup_locked()
             self._set('running', '正在重新识别当前画面')
         return self.status()
 
@@ -180,6 +194,7 @@ class LiveEngine:
         with self._input_lock:
             self._epoch += 1
             self._paused = True
+            self._cancel_pointer_cleanup_locked()
             self._set('stopped', '接管已停止')
         return self.status()
 
@@ -249,6 +264,10 @@ class LiveEngine:
                         continue
                     if not self._record_observation(obs, frame, epoch):
                         continue
+                    if obs.scene in BATTLE_SCENES | {'ending','ending_complete','failed'}:
+                        with self._input_lock:
+                            if self._epoch_current(epoch):
+                                self._cancel_pointer_cleanup_locked()
                     if not self._fresh(obs):
                         self._set_for_epoch(epoch, 'waiting_observation', self._expired_message(obs))
                     elif obs.scene in BATTLE_SCENES:
@@ -266,7 +285,10 @@ class LiveEngine:
                     elif observe_only:
                         self._set_for_epoch(epoch, 'observing', '仅识别预览；未启用点击')
                     else:
-                        self._step(obs, frame, epoch=epoch)
+                        if self._prepare_observation(obs,frame,epoch):
+                            self._set_for_epoch(epoch,'running','已移开鼠标，正在重新获取画面')
+                        else:
+                            self._step(obs, frame, epoch=epoch)
                 except Exception as exc:
                     with self._input_lock:
                         if not self._epoch_current(epoch):
@@ -287,6 +309,47 @@ class LiveEngine:
                 except Exception:
                     pass
             self._runtime = None
+
+    def _prepare_observation(self,obs,frame,epoch):
+        with self._input_lock:
+            if (not self._epoch_current(epoch) or not self._fresh(obs)
+                or self._state.get('observe_only') or obs.frame_id != frame.frame_id):
+                return False
+            if obs.scene in BATTLE_SCENES | {'ending','ending_complete','failed'}:
+                self._cancel_pointer_cleanup_locked()
+                return False
+            if time.monotonic()-self._lease > self.lease_seconds:
+                self._pause_locked('网站连接中断，接管已暂停')
+                return False
+            if self._runtime.emergency_stop():
+                self._pause_locked('已通过紧急暂停停止输入')
+                return False
+            prepare=getattr(self._runtime,'prepare_observation',None)
+            if prepare is None or not prepare(obs,frame,still_active=lambda:
+                    self._epoch_current(epoch) and time.monotonic()-self._lease <= self.lease_seconds):
+                return False
+            # Moving the cursor is not proof that the preceding click worked.
+            # Do not retry that same target merely because more OCR appeared.
+            self._pointer_cleanup_guard=True
+            return True
+
+    def _same_clicked_target(self,action,obs):
+        old=self._last_clicked_action
+        if old is None or self._last_clicked_scene != (obs.scene,obs.floor):
+            return False
+        fields=('operation','operator_id','selected_operator_id','item_id',
+                'selection_stage','choice_id')
+        if ((action.label,action.kind,action.target_node_id) != (old.label,old.kind,old.target_node_id)
+                or any(action.metadata.get(key)!=old.metadata.get(key) for key in fields)):
+            return False
+        # Newly revealed prices and wider OCR boxes are not evidence that the
+        # preceding click advanced the UI. Compare stable identity and location.
+        x,y,w,h=action.bbox
+        ox,oy,ow,oh=old.bbox
+        same_center=abs(x+w/2-ox-ow/2)<=6 and abs(y+h/2-oy-oh/2)<=6
+        overlap=max(0,min(x+w,ox+ow)-max(x,ox))*max(0,min(y+h,oy+oh)-max(y,oy))
+        smaller_area=min(w*h,ow*oh)
+        return same_center or (smaller_area>0 and overlap/smaller_area>=.8)
 
     def _step(self, obs, frame, *, epoch=None):
         epoch = self._epoch if epoch is None else epoch
@@ -319,6 +382,12 @@ class LiveEngine:
         if not action_is_grounded(action, obs):
             self._set_for_epoch(epoch, 'waiting_observation', '当前动作缺少可靠的画面依据，正在重新识别')
             return
+        with self._input_lock:
+            if not self._epoch_current(epoch):
+                return
+            if self._pointer_cleanup_guard and self._same_clicked_target(action,obs):
+                self._pause_locked('鼠标移开后仍选择上次目标，尚未确认点击生效；请检查后继续')
+                return
         # Network inference and OCR can take time: reacquire, re-ground, then act.
         fresh, fresh_frame = self._runtime.observe()
         if not self._epoch_current(epoch):
@@ -355,4 +424,7 @@ class LiveEngine:
             self._runtime.click(found, fresh_frame)
             self._last_clicked_key = key
             self._last_click_at = time.monotonic()
+            self._last_clicked_action = found
+            self._last_clicked_scene = (fresh.scene,fresh.floor)
+            self._pointer_cleanup_guard = False
             self._set('running', f'已点击：{found.label}', clicks=self._state['clicks'] + 1)

@@ -55,6 +55,17 @@ class GameRuntime:
     def click(self, action, frame):
         self.controller.click(action, frame)
 
+    def cancel_pointer_cleanup(self):
+        self.controller.cancel_pointer_cleanup()
+
+    def prepare_observation(self, observation, frame, *, still_active=None):
+        if (observation.frame_id != frame.frame_id or observation.scene in {
+                'battle','battle_start','battle_prepare','squad','combat',
+                'ending','ending_complete','failed'}):
+            self.cancel_pointer_cleanup()
+            return False
+        return self.controller.clear_pointer(frame,still_active=still_active)
+
     def preview(self, frame):
         import cv2
         ok, encoded = cv2.imencode('.jpg', frame.image, [cv2.IMWRITE_JPEG_QUALITY, 80])
@@ -68,4 +79,5 @@ class GameRuntime:
         return result
 
     def close(self):
+        self.cancel_pointer_cleanup()
         self.capture.close()

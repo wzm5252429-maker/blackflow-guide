@@ -64,13 +64,13 @@
     },
     {
       "path": "blackflow_live/controller.py",
-      "sha256": "a7e89dc975292b77165ebf8568d935d42929a6c66f65aa328e29ebf7be911987",
-      "bytes": 6494
+      "sha256": "b9e2a6bba74555aa350fa0c7133929efb8a3d8a3bf469636b4e3f96e16878a79",
+      "bytes": 10564
     },
     {
       "path": "blackflow_live/engine.py",
-      "sha256": "017210c855520b5b19f48eb1846fc5e7f9efec46b4fd2ccc7566275680da9218",
-      "bytes": 17690
+      "sha256": "3dd1da8fb16a83fa5946e1e7dd386d78d8bfb7d1e634331a4f849950b6487a09",
+      "bytes": 21549
     },
     {
       "path": "blackflow_live/geometry.py",
@@ -99,8 +99,8 @@
     },
     {
       "path": "blackflow_live/runtime.py",
-      "sha256": "48ec564066bf60f75470ab7e71c287e99998d57294f2ea01af0c999d3513f89c",
-      "bytes": 2892
+      "sha256": "a355b2d3cf5101e5d79c4c5fa4b9f79c8c4f826921c1c46577ade841915d6a05",
+      "bytes": 3448
     },
     {
       "path": "blackflow_live/service.py",
@@ -679,8 +679,8 @@
     },
     {
       "path": "docs/live-vision-coverage.md",
-      "sha256": "50be38ce43c0f47e2e4ca292f75639c3c3c4bad25c2f6d7a531635fbbcdc8a4c",
-      "bytes": 8870
+      "sha256": "8fa09a62c48ccff65859d683cbeb66f93b91bf3d9e7c21bb5974cfb1df08f185",
+      "bytes": 9476
     },
     {
       "path": "docs/nonbattle-control.md",
@@ -891,6 +891,11 @@
       "path": "tests/test_live_operator_catalog.py",
       "sha256": "9bb2328167dc2f5d4291b17e7ff0bf5c23c3a8f57f3165fe78f9c920618e2433",
       "bytes": 1967
+    },
+    {
+      "path": "tests/test_live_pointer_cleanup.py",
+      "sha256": "e37ecd5bec40e66aeeb9f96c572507ab59e6fb883c5d9ee24561d852131eb54a",
+      "bytes": 9638
     },
     {
       "path": "tests/test_live_policy.py",
