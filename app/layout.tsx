@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "黑流树海路线参谋",
   description:
-    "沉沦者的黑流树海路线优化、节点反查、作战检索与敌人档案馆。",
+    "黑流树海神经网络自动执行：连接本机后，一键启动一结局非战斗路线辅助。含能力说明、节点图鉴与作战资料。",
   other: {
     "codex-preview": "development",
   },

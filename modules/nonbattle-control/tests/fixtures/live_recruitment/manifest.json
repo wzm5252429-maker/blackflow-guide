@@ -1,0 +1,72 @@
+{
+  "video_sources_only": true,
+  "current_user_native_capture": false,
+  "cases": [
+    {
+      "image": "initial_three_tickets_360p.jpg",
+      "video_id": "BV1mWYa6QENi-p2-c1",
+      "source_image": "artifacts\\student60_20260913\\video_frames\\BV1mWYa6QENi-p2-c1\\fullgame-overview-00000.00.jpg",
+      "source_manifest": "artifacts\\student60_20260913\\video_frames\\BV1mWYa6QENi-p2-c1\\fullgame-overview-manifest.json",
+      "source_second": 0.0,
+      "sha256": "8d06cd24ebfe606715803f44bd9240cab1e3c8b80697a29485448b95f303af8c",
+      "expected_labels": [
+        "先锋招募券",
+        "辅助招募券",
+        "特种招募券"
+      ],
+      "recording_overlays": [
+        "video uploader watermark at upper right"
+      ]
+    },
+    {
+      "image": "emergency_hire_290p.jpg",
+      "video_id": "BV16LMk6rEnp",
+      "source_image": "artifacts\\strategy_materials_20260913\\frames\\BV16LMk6rEnp\\defer_sacrifice-00438.00.jpg",
+      "source_manifest": "artifacts\\strategy_materials_20260913\\frames\\BV16LMk6rEnp\\defer_sacrifice-manifest.json",
+      "source_second": 438.0,
+      "sha256": "6c62e1d2a8d2220d411418fd18b25bb68f6e41f8a1cd053220a59f240eba9ca9",
+      "expected_labels": [
+        "帕拉斯",
+        "Pith",
+        "离开"
+      ],
+      "recording_overlays": [
+        "video uploader watermark at upper left/right",
+        "burned-in Chinese subtitle near lower center"
+      ]
+    },
+    {
+      "image": "initial_complete_360p.png",
+      "video_id": "BV1mWYa6QENi-p2-c1",
+      "source_image": "artifacts\\live-recruitment-detail\\initial-012.png",
+      "source_manifest": "artifacts\\live-recruitment-detail\\manifest.json",
+      "source_video": "C:\\Users\\wzm52\\Documents\\ChatGPT\\方舟自动化\\artifacts\\student60_20260913\\video_sources\\BV1mWYa6QENi-p2-c1.mp4",
+      "source_second": 12,
+      "sha256": "797bd6b6ced197e2611dda49455006ea9dc31648b6cf1584afa20688864424cf",
+      "expected_labels": [
+        "沉沦于树海"
+      ],
+      "recording_overlays": [
+        "Uploader name/bilibili watermark at upper right, not game UI"
+      ],
+      "marker_source": "MAA resource/template/Roguelike/BlackFlow/BlackFlow@Roguelike@EnterAfterRecruit.png"
+    },
+    {
+      "image": "support_detail_360p.png",
+      "video_id": "BV1mWYa6QENi-p2-c1",
+      "source_image": "artifacts\\live-recruitment-detail\\initial-006.png",
+      "source_manifest": "artifacts\\live-recruitment-detail\\manifest.json",
+      "source_video": "C:\\Users\\wzm52\\Documents\\ChatGPT\\方舟自动化\\artifacts\\student60_20260913\\video_sources\\BV1mWYa6QENi-p2-c1.mp4",
+      "source_second": 6,
+      "sha256": "cac0124702c2bf6b0a1fadf8bcdd491b1b5a2c0fe22f8b48adf4fb7c082252ef",
+      "expected_labels": [
+        "返回"
+      ],
+      "recording_overlays": [
+        "Uploader name/bilibili watermark at upper right, not game UI"
+      ],
+      "marker_source": "MAA resource/template/ReturnButton/Return.png",
+      "limitation": "Full operator identity and actual balance unverified; only return is actionable."
+    }
+  ]
+}

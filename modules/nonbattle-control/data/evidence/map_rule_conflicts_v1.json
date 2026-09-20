@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "artifact_id": "blackflow-map-rule-conflicts-v1",
+  "status": "UNRESOLVED",
+  "scope": "Only differences that remain material within the physical maximum depth of the floor templates are listed.",
+  "sources": {
+    "lubiao": {
+      "url": "https://www.lubiao.wiki/_nuxt/BmJjpA_n.js",
+      "version": "2026-08-31",
+      "sha256": "c81eca3fb71af540ba8184ad3200cd253f70e36a71a98c7949e9cdcacf78c9b0"
+    },
+    "arkrog": {
+      "url": "https://arkrog.com/assets-v2/index-vH8QjlfX.js.map",
+      "sha256": "89b6d746f59b4957a41c6b5b60626ef03e06b62aa685b51f5a9707bd1e9f6c5e",
+      "map_data_path": "../../../app/modules/Tool/BlackFlowMap/mapData.tsx",
+      "map_data_sha256": "e2df5543634f8fb52051843feec95bcc8aca726ffd75a7d218f1cdba425d93e"
+    }
+  },
+  "active_compatibility_profile": "lubiao-2026-08-31",
+  "official_client_rule_available": false,
+  "resolution_policy": "Do not merge these values into an 'official' profile. Resolve with pinned real-run observations.",
+  "conflicts": [
+    {"node_type":"BATTLE_NORMAL","floor":2,"field":"max_count","lubiao":6,"arkrog":5},
+    {"node_type":"BATTLE_NORMAL","floor":3,"field":"max_count","lubiao":4,"arkrog":6},
+    {"node_type":"BATTLE_NORMAL","floor":3,"field":"max_distance","lubiao":"unbounded","arkrog":13},
+    {"node_type":"BATTLE_NORMAL","floor":4,"field":"max_count","lubiao":4,"arkrog":5},
+    {"node_type":"BATTLE_NORMAL","floor":4,"field":"max_distance","lubiao":"unbounded","arkrog":13},
+    {"node_type":"BATTLE_ELITE","floor":4,"field":"max_count","lubiao":4,"arkrog":3},
+    {"node_type":"BATTLE_ELITE","floor":4,"field":"max_distance","lubiao":"unbounded","arkrog":12},
+    {"node_type":"BATTLE_SHOP","floor":2,"field":"max_distance","lubiao":5,"arkrog":6},
+    {"node_type":"BATTLE_SHOP","floor":3,"field":"max_distance","lubiao":8,"arkrog":6},
+    {"node_type":"BATTLE_SHOP","floor":4,"field":"max_distance","lubiao":"unbounded","arkrog":13},
+    {"node_type":"BATTLE_SHOP","floor":5,"field":"max_count","lubiao":2,"arkrog":3},
+    {"node_type":"EMPLOY","floor":3,"field":"max_distance","lubiao":"unbounded","arkrog":14},
+    {"node_type":"INCIDENT","floor":2,"field":"max_count","lubiao":2,"arkrog":3},
+    {"node_type":"INCIDENT","floor":4,"field":"max_count","lubiao":3,"arkrog":4},
+    {"node_type":"REST","floor":4,"field":"max_count","lubiao":1,"arkrog":2},
+    {"node_type":"WISH","floor":3,"field":"max_distance","lubiao":"unbounded","arkrog":14},
+    {"node_type":"WISH","floor":4,"field":"max_count","lubiao":2,"arkrog":3},
+    {"node_type":"WISH","floor":4,"field":"max_distance","lubiao":"unbounded","arkrog":13},
+    {"node_type":"WISH","floor":5,"field":"max_count","lubiao":6,"arkrog":7},
+    {"node_type":"SACRIFICE","floor":5,"field":"max_distance","lubiao":"unbounded","arkrog":12},
+    {"node_type":"DUEL","floor":4,"field":"max_distance","lubiao":"unbounded","arkrog":13},
+    {"node_type":"DUEL","floor":5,"field":"max_count","lubiao":1,"arkrog":2},
+    {"node_type":"EVACUATE","floor":1,"field":"min_distance","lubiao":3,"arkrog":2},
+    {"node_type":"EVACUATE","floor":2,"field":"max_distance","lubiao":6,"arkrog":7},
+    {"node_type":"PORTAL","floor":3,"field":"max_distance","lubiao":6,"arkrog":8},
+    {"node_type":"PORTAL","floor":4,"field":"max_distance","lubiao":8,"arkrog":9}
+  ]
+}

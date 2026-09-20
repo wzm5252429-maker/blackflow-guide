@@ -29,5 +29,10 @@ test("renders development preview metadata", async () => {
     response.headers.get("content-type") ?? "",
     /^text\/html\b/i,
   );
-  assert.match(await response.text(), developmentPreviewMeta);
+  const html = await response.text();
+  assert.match(html, developmentPreviewMeta);
+  assert.match(html, /神经网络自动执行/);
+  assert.match(html, /一键启动自动执行/);
+  assert.match(html, /尚未完成整局实机验收/);
+  assert.doesNotMatch(html, /重算收益排序|地图候选线路|ACTIVE RECOMMENDATION|SCORE PASS/);
 });

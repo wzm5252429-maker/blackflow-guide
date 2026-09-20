@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-09-08",
+  "status": "client stage fields plus PRTS movement rules; loot presence and movement distribution unverified",
+  "client_source": {
+    "path": "source_data\\roguelike_topic_table_full.json",
+    "sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b"
+  },
+  "sources": [
+    {
+      "url": "https://prts.wiki/w/沉沦者的黑流树海",
+      "role": "B-community combat gold/experience and stronghold completion"
+    },
+    {
+      "url": "https://prts.wiki/w/沉沦者的黑流树海/黑流数据库",
+      "role": "B-community roaming marker constraints"
+    },
+    {
+      "path": "data/evidence/rogue6_economy_chest_groups_v1.json",
+      "role": "A-client concrete level chest groups; resident stages have none"
+    },
+    {
+      "path": "data/evidence/rogue6_economy_observations_v1.json",
+      "role": "C-observed stronghold relic pool; not proof of drop presence"
+    }
+  ],
+  "rules": {
+    "ordinary_spawn_cap": 3,
+    "ordinary_spawn_count": "min(cap, eligible_native_empty_nodes)",
+    "ordinary_spawn_radius_edges": 5,
+    "remembrance_spawn_caps": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "green_pond_spawn_count": 6,
+    "movement_edges_per_player_move": 1,
+    "movement_excluded_node_types": [
+      "BATTLE_SHOP",
+      "SCRAP_SHOP",
+      "FINAL",
+      "EVACUATE",
+      "DOOR",
+      "STORY",
+      "STORY_HIDDEN",
+      "BATTLE_SAVAGE"
+    ],
+    "cannot_enter_player_created_empty": true,
+    "temporary_occupation_changes_concept_type": false,
+    "temporary_light_occupation_preserves_ap": true,
+    "walking_may_end_but_not_cross_occupied": true,
+    "roamer_victory_destroys_underlying_node": true,
+    "stronghold_victory_clears_all_roamers": true,
+    "resident_regrowth_proved": false
+  },
+  "client_stages": [
+    {
+      "id": "ro6_t_8",
+      "name": "强买强卖",
+      "isElite": 0,
+      "isBoss": 0,
+      "difficulty": "NORMAL",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-8",
+      "capsulePool": null,
+      "capsuleProb": 0.0,
+      "redCapsulePool": null,
+      "redCapsuleProb": 0.0,
+      "boxProb": [
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "id": "ro6_t_8_b",
+      "name": "强买强卖",
+      "isElite": 0,
+      "isBoss": 0,
+      "difficulty": "NORMAL",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-8-b",
+      "capsulePool": null,
+      "capsuleProb": 0.0,
+      "redCapsulePool": null,
+      "redCapsuleProb": 0.0,
+      "boxProb": [
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "id": "ro6_t_8_c",
+      "name": "强买强卖",
+      "isElite": 0,
+      "isBoss": 0,
+      "difficulty": "NORMAL",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-8-c",
+      "capsulePool": null,
+      "capsuleProb": 0.0,
+      "redCapsulePool": null,
+      "redCapsuleProb": 0.0,
+      "boxProb": [
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "id": "ro6_t_9",
+      "name": "进退趋同",
+      "isElite": 0,
+      "isBoss": 0,
+      "difficulty": "NORMAL",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-9",
+      "capsulePool": null,
+      "capsuleProb": 0.0,
+      "redCapsulePool": null,
+      "redCapsuleProb": 0.0,
+      "boxProb": [
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "id": "ro6_t_9_b",
+      "name": "进退趋同",
+      "isElite": 0,
+      "isBoss": 0,
+      "difficulty": "NORMAL",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-9-b",
+      "capsulePool": null,
+      "capsuleProb": 0.0,
+      "redCapsulePool": null,
+      "redCapsuleProb": 0.0,
+      "boxProb": [
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "id": "ro6_t_9_c",
+      "name": "进退趋同",
+      "isElite": 0,
+      "isBoss": 0,
+      "difficulty": "NORMAL",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-9-c",
+      "capsulePool": null,
+      "capsuleProb": 0.0,
+      "redCapsulePool": null,
+      "redCapsuleProb": 0.0,
+      "boxProb": [
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "id": "ro6_t_10",
+      "name": "枯枝",
+      "isElite": 0,
+      "isBoss": 0,
+      "difficulty": "NORMAL",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-10",
+      "capsulePool": null,
+      "capsuleProb": 0.0,
+      "redCapsulePool": null,
+      "redCapsuleProb": 0.0,
+      "boxProb": [
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "id": "ro6_t_11",
+      "name": "败叶",
+      "isElite": 0,
+      "isBoss": 0,
+      "difficulty": "NORMAL",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-11",
+      "capsulePool": null,
+      "capsuleProb": 0.0,
+      "redCapsulePool": null,
+      "redCapsuleProb": 0.0,
+      "boxProb": [
+        0.2,
+        0.2
+      ]
+    }
+  ],
+  "base_rewards": {
+    "ro6_t_8": {
+      "stage_id": "ro6_t_8",
+      "name": "强买强卖",
+      "gold": 3,
+      "command_exp": 15,
+      "stronghold": false,
+      "relic_pool": null,
+      "relic_reward_count": null,
+      "part_reward_count": null
+    },
+    "ro6_t_8_b": {
+      "stage_id": "ro6_t_8_b",
+      "name": "强买强卖",
+      "gold": 3,
+      "command_exp": 15,
+      "stronghold": false,
+      "relic_pool": null,
+      "relic_reward_count": null,
+      "part_reward_count": null
+    },
+    "ro6_t_8_c": {
+      "stage_id": "ro6_t_8_c",
+      "name": "强买强卖",
+      "gold": 3,
+      "command_exp": 15,
+      "stronghold": false,
+      "relic_pool": null,
+      "relic_reward_count": null,
+      "part_reward_count": null
+    },
+    "ro6_t_9": {
+      "stage_id": "ro6_t_9",
+      "name": "进退趋同",
+      "gold": 5,
+      "command_exp": 18,
+      "stronghold": false,
+      "relic_pool": null,
+      "relic_reward_count": null,
+      "part_reward_count": null
+    },
+    "ro6_t_9_b": {
+      "stage_id": "ro6_t_9_b",
+      "name": "进退趋同",
+      "gold": 5,
+      "command_exp": 18,
+      "stronghold": false,
+      "relic_pool": null,
+      "relic_reward_count": null,
+      "part_reward_count": null
+    },
+    "ro6_t_9_c": {
+      "stage_id": "ro6_t_9_c",
+      "name": "进退趋同",
+      "gold": 5,
+      "command_exp": 18,
+      "stronghold": false,
+      "relic_pool": null,
+      "relic_reward_count": null,
+      "part_reward_count": null
+    },
+    "ro6_t_10": {
+      "stage_id": "ro6_t_10",
+      "name": "枯枝",
+      "gold": 5,
+      "command_exp": 25,
+      "stronghold": true,
+      "relic_pool": "rogue_6:居民据点",
+      "relic_reward_count": null,
+      "part_reward_count": null
+    },
+    "ro6_t_11": {
+      "stage_id": "ro6_t_11",
+      "name": "败叶",
+      "gold": 5,
+      "command_exp": 30,
+      "stronghold": true,
+      "relic_pool": "rogue_6:居民据点",
+      "relic_reward_count": null,
+      "part_reward_count": null
+    }
+  },
+  "unresolved": [
+    "resident direction probabilities",
+    "simultaneous marker collisions and moves onto player position",
+    "stage floor gates and occurrence weights",
+    "general relic/part/ticket presence and frequency",
+    "stronghold relic pool is observed membership, not a count or server probability"
+  ],
+  "runtime_files": [
+    "blackflow_rl/residents.py",
+    "tests/test_residents.py"
+  ]
+}

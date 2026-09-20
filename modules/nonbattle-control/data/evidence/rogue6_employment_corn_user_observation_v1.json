@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-09",
+  "evidence_kind": "USER_CONFIRMED_GAMEPLAY_RULE",
+  "source": "User confirmation in the active task, relayed by the coordinating agent on 2026-09-09; no external source is claimed to independently establish the emergency-hire trigger.",
+  "observed_rule": {
+    "node": "EMPLOY",
+    "node_name": "应急助力",
+    "trigger": "each successful actual emergency hire",
+    "item_id": "rogue_6_scrap_G_04",
+    "item_name": "回声玉米",
+    "appraisal_delta_per_currently_held_instance": 3,
+    "applies_to_all_currently_held_instances": true,
+    "retroactive_for_later_acquired_instances": false
+  },
+  "implementation_boundaries": [
+    "Apply after the actual observed offer is validated, the displayed price is paid, and the hire transaction is committed exactly once.",
+    "Entering the node, observing candidates, refreshing offers, failed transactions, and replaying an expired or already consumed offer do not grow corn.",
+    "Emergency operators remain in the emergency roster; do not create formal operators, recruit tickets, or additional hires from this rule.",
+    "No automatic employment identity distribution or free three-operator outcome is inferred; observed candidate identities and displayed prices are still required.",
+    "The existing emergency deployment, departure, and formal-operation restrictions remain in force."
+  ],
+  "related_client_record": {
+    "scrapId": "rogue_6_scrap_G_04",
+    "scrapDesc": "每次招募干员时估价+3",
+    "sellPrice": 4,
+    "emergency_trigger_script_available_in_export": false
+  }
+}

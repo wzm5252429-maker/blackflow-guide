@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "source": "https://prts.wiki/w/沉沦者的黑流树海/引擎配件目录#零件交换规则",
+  "source_page_sha256": "5db56cbb5411fbb47410c8729180f9886478599effaa0066e5d0b474f571b2da",
+  "source_kind": "PRTS_MECHANIC_SUMMARY_WITH_VIDEO_FOOTNOTE",
+  "source_footnote": "里雪りあ，万物汇集#30，零件机制分析：为什么狭路相逢是黑流树海最强节点？",
+  "rules": {
+    "NORMAL": "May output NORMAL parts only.",
+    "RARE": "May output RARE parts only.",
+    "SUPER_RARE": "May output SUPER_RARE parts except cage controller, or downgrade to the four listed RARE parts.",
+    "super_rare_exclusion": "rogue_6_scrap_G_12",
+    "super_rare_downgrade_item_ids": ["rogue_6_scrap_M_08", "rogue_6_scrap_P_04", "rogue_6_scrap_P_05", "rogue_6_scrap_P_06"],
+    "same_item_output_allowed": true,
+    "actual_output_quantity": 1
+  },
+  "user_observed_resolution": {
+    "evidence": "USER_OBSERVED_RULE",
+    "date": "2026-09-08",
+    "input": "SR 零件",
+    "immediate_random_output_quantity": 1,
+    "same_or_lower_rarity_possible": true,
+    "undo_after_resolution": false,
+    "preview_then_reselect": false
+  },
+  "conditional_observations": {
+    "source_file": "data/evidence/rogue6_economy_catalog_v1.json",
+    "pool_id": "rogue_6:失与得：SR零件输出",
+    "sample_count": 77,
+    "weight_evidence": "EMPIRICAL_CONDITIONAL_OUTPUT_COMPOSITION_NOT_SERVER_PROBABILITY",
+    "item_weights": {
+      "rogue_6_scrap_M_12": 12,
+      "rogue_6_scrap_G_10": 11,
+      "rogue_6_scrap_G_11": 11,
+      "rogue_6_scrap_M_11": 11,
+      "rogue_6_scrap_G_09": 7,
+      "rogue_6_scrap_P_05": 9,
+      "rogue_6_scrap_P_06": 7,
+      "rogue_6_scrap_M_08": 5,
+      "rogue_6_scrap_P_04": 4
+    },
+    "rarity_weight_totals": {"SUPER_RARE": 52, "RARE": 25}
+  },
+  "implementation": "The existing engine already consumes the actual input instance and grants one random member of the full observed output pool immediately. This audit adds regressions and evidence without changing output frequencies.",
+  "unverified": [
+    "The 77 observations are not exact server probabilities and do not prove dependence or independence from a particular SR input item.",
+    "PRTS mentions a previous-step button during exchange; the user rules out returning after random SR resolution. No reward preview or post-resolution undo is modeled."
+  ]
+}
