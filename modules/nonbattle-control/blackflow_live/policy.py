@@ -25,7 +25,7 @@ BLOCKED_SCENES = frozenset({"battle", "battle_start", "battle_prepare", "squad",
 BLOCKED_OPERATIONS = frozenset({"battle", "battle_start", "start_battle", "special_battle", "fate_battle", "combat", "surrender", "restart", "abandon_run", "expedition_source"})
 BLOCKED_LABELS = ("开始战斗", "开始作战", "进入战斗", "作战开始", "开始行动", "放弃探索", "放弃本次", "重新开始", "start battle", "start operation")
 OTHER_ENDING_LABELS = ("二结局", "三结局", "四结局", "结局二", "结局三", "结局四", "第二结局", "第三结局", "第四结局")
-RECRUIT_OPERATIONS = frozenset({"recruit", "recruit_reserve", "recruit_temporary", "emergency_hire"})
+RECRUIT_OPERATIONS = frozenset({"recruit", "recruit_reserve", "recruit_temporary", "emergency_hire", "confirm_normal_recruitment"})
 RECRUIT_CONFIRM_LABELS = frozenset({"招募", "确认招募", "临时招募", "雇佣", "确认雇佣"})
 TICKET_PROFESSIONS = {"先锋": "PIONEER", "近卫": "WARRIOR", "重装": "TANK", "狙击": "SNIPER",
                       "术师": "CASTER", "医疗": "MEDIC", "辅助": "SUPPORT", "特种": "SPECIAL"}
@@ -174,6 +174,8 @@ def _recruitment_confirmation_safe(metadata, observation):
     if not isinstance(costs, dict):
         return False
     costs = dict(costs)
+    if any(not _number(cost) or cost < 0 for cost in costs.values()):
+        return False
     if "hope_cost" in metadata:
         hope_cost = metadata["hope_cost"]
         if not _number(hope_cost) or ("hope" in costs and costs["hope"] != hope_cost):
@@ -185,6 +187,45 @@ def _recruitment_confirmation_safe(metadata, observation):
     # same-frame balance. No known catalogue/default recruitment price is used.
     return all(_number(cost) and cost >= 0 and _number(observation.resources.get(resource))
                and observation.resources[resource] >= cost for resource, cost in costs.items())
+
+
+def card_inspection_safe(action,observation):
+    """Only open a visually proven recruitment card with an unreadable name."""
+    metadata=action.metadata
+    if (observation.scene!='recruitment' or action.kind!='recruitment_card_inspect' or action.label!='查看干员详情'
+            or metadata.get('selection_stage')!='card_inspect' or metadata.get('operation')!='event'
+            or metadata.get('source')!='regular_recruitment_cards' or metadata.get('grounded') is not True
+            or metadata.get('preview_only') is not True or metadata.get('source_frame_id')!=observation.frame_id
+            or metadata.get('operator_id') is not None or metadata.get('operator_name') is not None
+            or metadata.get('selected_operator_id') is not None or metadata.get('resource_delta') not in (None,{})
+            or metadata.get('battle') or metadata.get('starts_battle')
+            or any(key in metadata for key in ('resource_costs','hope_cost','add_items','remove_items','item_id','item_name'))):
+        return False
+    width,height=observation.metadata.get('image_width'),observation.metadata.get('image_height')
+    def valid(box):
+        return (isinstance(box,(list,tuple)) and len(box)==4 and all(_number(v) for v in box)
+            and box[0]>=0 and box[1]>=0 and box[2]>0 and box[3]>0 and _number(width) and _number(height)
+            and box[0]+box[2]<=width and box[1]+box[3]<=height)
+    card=metadata.get('card_bbox');marker=metadata.get('card_marker_bbox')
+    confirm=metadata.get('confirm_footer_bbox');abandon=metadata.get('abandon_footer_bbox')
+    if not all(valid(b) for b in (card,marker,confirm,abandon,action.bbox)):
+        return False
+    state=observation.metadata.get('recruitment_state')
+    if (not isinstance(state,dict) or state.get('source_frame_id')!=observation.frame_id
+            or not isinstance(state.get('visible_offers'),list)):
+        return False
+    matches=[offer for offer in state['visible_offers'] if isinstance(offer,dict)
+             and offer.get('preview_action_id')==action.action_id]
+    if (len(matches)!=1 or matches[0].get('card_bbox')!=list(card)
+            or matches[0].get('identity_observed') is not False or matches[0].get('operator_id') is not None
+            or matches[0].get('highlighted') is not False or matches[0].get('selected_identity_verified') is not False):
+        return False
+    def inside(inner,outer):
+        return inner[0]>=outer[0] and inner[1]>=outer[1] and inner[0]+inner[2]<=outer[0]+outer[2] and inner[1]+inner[3]<=outer[1]+outer[3]
+    score=metadata.get('card_marker_confidence')
+    return (inside(marker,card) and inside(action.bbox,card) and _number(score) and .90<=score<=1
+        and card[1]+card[3]<min(confirm[1],abandon[1])
+        and confirm[0]>abandon[0] and abs((confirm[1]+confirm[3]/2)-(abandon[1]+abandon[3]/2))<max(confirm[3],abandon[3]))
 
 
 def action_is_safe(action: ObservedAction, observation: LiveObservation, *, threshold: float = 0.85) -> bool:
@@ -223,7 +264,10 @@ def action_is_safe(action: ObservedAction, observation: LiveObservation, *, thre
     target = next((node for node in observation.nodes if node.node_id == action.target_node_id), None)
     if target is not None and target.node_type in {"STORY", "STORY_HIDDEN", "DOOR"} and not target.completed:
         return False
-    if operation == "select_recruit_ticket":
+    if action.kind == 'recruitment_card_inspect' or metadata.get('selection_stage') == 'card_inspect':
+        if not card_inspection_safe(action,observation):
+            return False
+    elif operation == "select_recruit_ticket":
         if (observation.scene != "recruitment" or metadata.get("selection_stage") != "ticket_preview"
             or metadata.get("preview_only") is not True or metadata.get("grounded") is not True
             or metadata.get("source_frame_id") != observation.frame_id
@@ -231,6 +275,8 @@ def action_is_safe(action: ObservedAction, observation: LiveObservation, *, thre
             return False
     elif operation in RECRUIT_OPERATIONS or _identity_label(action.label) in RECRUIT_CONFIRM_LABELS:
         if operation not in RECRUIT_OPERATIONS or not _recruitment_confirmation_safe(metadata, observation):
+            return False
+        if operation == "confirm_normal_recruitment" and metadata.get("recruitment_contract") != "normal":
             return False
     if metadata.get("selection_stage") == "operator_preview" or action.kind == "operator_preview":
         if (observation.scene != "recruitment" or operation != "event" or action.kind != "operator_preview"

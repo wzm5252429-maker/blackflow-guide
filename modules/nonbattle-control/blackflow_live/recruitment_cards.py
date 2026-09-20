@@ -309,7 +309,8 @@ def detect_recruitment_cards(image: np.ndarray, spans, *, ocr, operators) -> Rec
             if _inside(price_box,box):
                 cost = _cost(image,price_box,ocr,spans)
         blue = _blue_fraction(_crop(image,(x,y+h*.65,w,h*.30)))
-        cards.append({'bbox':box,'name':name,'cost':cost,'icon_bbox':icon_box,'highlighted':blue>.25,
+        cards.append({'bbox':box,'name':name,'cost':cost,'icon_bbox':icon_box,
+                      'icon_confidence':icon_shape[1] if icon is not None else None,'highlighted':blue>.25,
                       'lower_card_blue_fraction':blue})
     evidence['cards'] = [{'bbox':list(c['bbox']),'operator_id':c['name'][1][0]['id'] if c['name'] else None,
                            'hope_cost':c['cost'],'hope_icon_bbox':c['icon_bbox'],
@@ -323,7 +324,22 @@ def detect_recruitment_cards(image: np.ndarray, spans, *, ocr, operators) -> Rec
             selected = card
     actions = []
     for card in cards:
-        if not card['name'] or card is selected:
+        if not card['name']:
+            # A full card plus its own hope icon and the paired recruitment
+            # footer can ground opening details without guessing a tiny name.
+            # This is a separate non-spending inspect action, never a recruit.
+            if (not card['highlighted'] and card['icon_bbox'] is not None
+                    and min(confirm.confidence,abandon.confidence,card['icon_confidence'])>=.90):
+                x,y,w,h=card['bbox']
+                target=(x+w*.55,y+h*.2,w*.4,h*.65)
+                actions.append(_action('查看干员详情','recruitment_card_inspect',target,
+                    min(confirm.confidence,abandon.confidence,card['icon_confidence']),{
+                        'operation':'event','preview_only':True,'selection_stage':'card_inspect',
+                        'operator_id':None,'card_bbox':list(card['bbox']),
+                        'card_marker_bbox':list(card['icon_bbox']),'card_marker_confidence':card['icon_confidence'],
+                        'confirm_footer_bbox':list(confirm.bbox),'abandon_footer_bbox':list(abandon.bbox)}))
+            continue
+        if card is selected:
             continue
         span,(operator,confidence) = card['name']
         actions.append(_action(operator['name'],'operator_preview',span.bbox,confidence,{
@@ -361,3 +377,40 @@ def detect_recruitment_cards(image: np.ndarray, spans, *, ocr, operators) -> Rec
             diagnostics.append('recruitment_hope_display_may_be_post_selection')
     return RecruitmentCardsScreen(min(.96,confirm.confidence,abandon.confidence),tuple(actions),resources,
                                   tuple(diagnostics),evidence)
+
+
+def observed_recruitment_state(screen: RecruitmentCardsScreen, frame_id: str) -> dict:
+    """Preserve all visible offers, including unreadable ones, for intent input.
+
+    A prospective hope display is not a pre-selection balance. A highlighted
+    card, its left detail, and a verified confirmation are separate facts.
+    None of these observations add an operator to the formal roster.
+    """
+    evidence=screen.evidence
+    confirms={(a.metadata.get('operator_id'),tuple(a.metadata.get('card_bbox',()))):a for a in screen.actions
+              if a.metadata.get('selection_stage')=='operator_confirm'}
+    previews={(a.metadata.get('operator_id'),tuple(a.metadata.get('card_bbox',()))):a for a in screen.actions
+              if a.metadata.get('selection_stage') in {'operator_preview','card_inspect'}}
+    offers=[]
+    for card in evidence.get('cards',()):
+        identity=card.get('operator_id')
+        bbox=list(card['bbox'])
+        confirm=confirms.get((identity,tuple(bbox)))
+        preview=previews.get((identity,tuple(bbox)))
+        selected=bool(confirm) or bool(identity and card.get('highlighted')
+            and identity==evidence.get('detail_operator_id')
+            and sum(bool(c.get('highlighted')) for c in evidence.get('cards',()))==1)
+        offers.append({'card_bbox':bbox,'operator_id':identity,
+            'identity_observed':identity is not None,'displayed_hope_cost':card.get('hope_cost'),
+            'highlighted':bool(card.get('highlighted')),'selected_identity_verified':selected,
+            'preview_action_id':preview.action_id if preview else None,
+            'confirmation_action_id':confirm.action_id if confirm else None})
+    hope=evidence.get('hope_display',{})
+    return {'schema_version':1,'source_frame_id':frame_id,'source':'regular_recruitment_cards',
+        'visible_offers':offers,'all_offers_observed':False,
+        'detail_operator_id':evidence.get('detail_operator_id'),
+        'displayed_hope':hope.get('displayed_hope'),
+        'available_hope':screen.resources.get('hope') if hope.get('available_balance_verified') else None,
+        'available_balance_verified':bool(hope.get('available_balance_verified')),
+        'confirm_button_enabled_observed':bool(evidence.get('button_enabled_observed')),
+        'diagnostics':list(screen.diagnostics)}

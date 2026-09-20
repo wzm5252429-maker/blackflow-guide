@@ -84,13 +84,23 @@
     },
     {
       "path": "blackflow_live/policy.py",
-      "sha256": "38c58401e4332108668d217265474dfdd3601d866b606545dacd087802d4e979",
-      "bytes": 43437
+      "sha256": "ef7520c4a5f4e93163eb17c02cfea704404be36ca7e0807f7330eb3bba14adc7",
+      "bytes": 46751
     },
     {
       "path": "blackflow_live/recruitment_cards.py",
-      "sha256": "0e924b629a936191c4dcd23e349b9e52bc141935470688a4ac7b668c727d9e91",
-      "bytes": 16197
+      "sha256": "a50e6fcd8dd70edb1fc56720a8785dfe6d04bb124e57ec2966929622d9dbc34c",
+      "bytes": 19708
+    },
+    {
+      "path": "blackflow_live/recruitment_features.py",
+      "sha256": "ca002467df4c01da373dc6e65bc4d5f2406cddbb1f6a45f77456347a69d3fa37",
+      "bytes": 9769
+    },
+    {
+      "path": "blackflow_live/recruitment_intent.py",
+      "sha256": "6ae1236a5d3e593e4d0a6261359348b8bff67891ba5dd9f3b5c827cc3d0e9649",
+      "bytes": 9944
     },
     {
       "path": "blackflow_live/recruitment_vision.py",
@@ -114,8 +124,8 @@
     },
     {
       "path": "blackflow_live/vision.py",
-      "sha256": "9fed058d9bbeff42f1ac017a1f755389dcf20e85c525210cf9f6c3af2bc7e791",
-      "bytes": 52332
+      "sha256": "251a9c41c073d06f9649929be9b00f0170a19e10ad0b339382b31d5a76e95ff7",
+      "bytes": 52567
     },
     {
       "path": "blackflow_rl/__init__.py",
@@ -674,18 +684,18 @@
     },
     {
       "path": "docs/live-policy-coverage.md",
-      "sha256": "3462c493d5dc3a69da2eb6e542dec1e5b414b20e198d45f0166e0f78fad7989f",
-      "bytes": 12244
+      "sha256": "7bd9774856051c58e9d645115f81972edb71ffffc1e4b4fe5add8a2d178cb1fd",
+      "bytes": 15286
     },
     {
       "path": "docs/live-vision-coverage.md",
-      "sha256": "8fa09a62c48ccff65859d683cbeb66f93b91bf3d9e7c21bb5974cfb1df08f185",
-      "bytes": 9476
+      "sha256": "5ddb1e32ecbfee61187fc052a077b438eb8474278d782394c15a5e37cb46ae33",
+      "bytes": 10249
     },
     {
       "path": "docs/nonbattle-control.md",
-      "sha256": "27cc8a90d7e1fb21b87debbbc958c678bc804c8026f7d9fcf7d17e485b948e9a",
-      "bytes": 9998
+      "sha256": "60a597de37e2f3e41b85043cc05ab534db985d681ac7f241fa313017de83c069",
+      "bytes": 10429
     },
     {
       "path": "requirements-core.txt",
@@ -808,6 +818,16 @@
       "bytes": 310058
     },
     {
+      "path": "tests/fixtures/live_recruitment_cards/initial-007.6.png",
+      "sha256": "55d5f6bf9f492e37b9c3c502b00710ed47cd5a12054ee26924bb77cc72db7ed7",
+      "bytes": 251709
+    },
+    {
+      "path": "tests/fixtures/live_recruitment_cards/initial-007.8.png",
+      "sha256": "824c2065a644c6eeb359e5efea733060cbe1fbd3f836e7d60c8792ddf9c6b802",
+      "bytes": 248003
+    },
+    {
       "path": "tests/fixtures/live_recruitment_cards/initial-008.png",
       "sha256": "e3cfa0a63d91fb018fbdbff4c1a4d9df5e16c295028353e6e5326dda7095b126",
       "bytes": 279478
@@ -824,8 +844,8 @@
     },
     {
       "path": "tests/fixtures/live_recruitment_cards/manifest.json",
-      "sha256": "04a1fc3cfbd5cfa3cac5fd8eb191d1d6e2c4d43a31ff3dcd2761386c9391e825",
-      "bytes": 118100
+      "sha256": "97a452dd9e16d34025299de27739ce1e2f1b7efa2e4f4273ff74df14108ab1a8",
+      "bytes": 147903
     },
     {
       "path": "tests/fixtures/live_rewards/manifest.json",
@@ -851,6 +871,11 @@
       "path": "tests/fixtures/live_shop_dialog/sell_confirm_360p.jpg",
       "sha256": "ae01b0b4f073e08df49dafb9d0eb9f229e7cddc51ded3c8ed3bb76454b8b8d7b",
       "bytes": 79387
+    },
+    {
+      "path": "tests/test_live_card_inspection.py",
+      "sha256": "320b193c74355e963b52de3e980e659e5af659b4f248f86e65e5fab9e7c47ec4",
+      "bytes": 6155
     },
     {
       "path": "tests/test_live_controller.py",
@@ -909,8 +934,18 @@
     },
     {
       "path": "tests/test_live_recruitment_cards.py",
-      "sha256": "e45e26f0618b2ec8842e3af335f6e74b6c0b7218b117cfc9efaf88071ceac038",
-      "bytes": 15082
+      "sha256": "a7dede0957713b5dac5d2086b751a55a222e49df7a57c6039123e9f893a4683d",
+      "bytes": 18130
+    },
+    {
+      "path": "tests/test_live_recruitment_features.py",
+      "sha256": "543e26fd5d07fbd1340d62a1494a86b5acf77ca4161d9d4a426d0cc86e3f3cf6",
+      "bytes": 6148
+    },
+    {
+      "path": "tests/test_live_recruitment_intent.py",
+      "sha256": "1b0e6d463054ca6026989fed74c74ce696239573014b117c7927db0bb5283a32",
+      "bytes": 9985
     },
     {
       "path": "tests/test_live_recruitment_policy.py",

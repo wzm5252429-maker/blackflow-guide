@@ -485,7 +485,11 @@ class VisionPipeline:
             diagnostics.append("unrecognized_scene_no_input")
         if not actions and scene not in {"battle","battle_start","ending","ending_complete"}:
             diagnostics.append("no_grounded_action")
-        return LiveObservation(frame_id,captured_at,scene,confidence,tuple(actions),tuple(nodes),tuple(edges),resources,current,floor,first_ending,tuple(diagnostics),{"image_width":int(image.shape[1]),"image_height":int(image.shape[0]),"ocr":[{"text":s.text,"confidence":s.confidence,"bbox":s.bbox} for s in spans],"markers":{k:{"bbox":v.bbox,"confidence":v.confidence} for k,v in markers.items()},"perception":"maa_paddle_ocr_templates_corridor_v1","first_ending_evidence":first_ending})
+        metadata={"image_width":int(image.shape[1]),"image_height":int(image.shape[0]),"ocr":[{"text":s.text,"confidence":s.confidence,"bbox":s.bbox} for s in spans],"markers":{k:{"bbox":v.bbox,"confidence":v.confidence} for k,v in markers.items()},"perception":"maa_paddle_ocr_templates_corridor_v1","first_ending_evidence":first_ending}
+        if recruitment_cards is not None:
+            from .recruitment_cards import observed_recruitment_state
+            metadata['recruitment_state']=observed_recruitment_state(recruitment_cards,frame_id)
+        return LiveObservation(frame_id,captured_at,scene,confidence,tuple(actions),tuple(nodes),tuple(edges),resources,current,floor,first_ending,tuple(diagnostics),metadata)
 
     def _actions(self, spans: tuple[OCRSpan,...], scene: str, width: int, height: int) -> list[ObservedAction]:
         actions = []

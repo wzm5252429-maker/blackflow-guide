@@ -4,14 +4,14 @@ from hashlib import sha256
 import json
 from pathlib import Path
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 import cv2
 import numpy as np
 
 from blackflow_live.models import LiveObservation
 from blackflow_live.policy import ObservedMenuMetadataAdapter, action_is_safe
-from blackflow_live.recruitment_cards import detect_recruitment_cards, _displayed_hope, _cost
+from blackflow_live.recruitment_cards import detect_recruitment_cards, observed_recruitment_state, _displayed_hope, _cost
 from blackflow_live.vision import OCRSpan, _merge_operator_names
 
 
@@ -117,15 +117,64 @@ class RecruitmentCardsTests(unittest.TestCase):
 
     def test_unselected_screen_provides_real_card_previews_and_no_confirmation(self):
         result = self.detect(*self.frame(10))
-        self.assertEqual({a.label for a in result.actions},{'豆苗','讯使','芬','红豆'})
+        named=[a for a in result.actions if a.kind=='operator_preview']
+        self.assertEqual({a.label for a in named},{'豆苗','讯使','芬','红豆'})
         self.assertFalse(self.confirmations(result))
         self.assertFalse(result.resources)
-        for action in result.actions:
+        for action in named:
             self.assertEqual(action.kind,'operator_preview')
             self.assertEqual(action.metadata['operation'],'event')
             self.assertTrue(action.metadata['preview_only'])
             self.assertNotIn('resource_costs',action.metadata)
             self.assertNotIn('formal_operator_ids',action.metadata)
+        for action in result.actions:
+            if action.kind=='recruitment_card_inspect':
+                self.assertIsNone(action.metadata['operator_id'])
+                self.assertTrue(action.metadata['preview_only'])
+                self.assertNotIn('hope_cost',action.metadata)
+
+    def test_offer_state_keeps_unreadable_cards_and_prospective_balance_distinct(self):
+        result=self.detect(*self.frame(10.4))
+        state=observed_recruitment_state(result,'recorded-10.4')
+        self.assertEqual(state['source_frame_id'],'recorded-10.4')
+        self.assertEqual(len(state['visible_offers']),len(result.evidence['cards']))
+        self.assertFalse(state['all_offers_observed'])
+        self.assertEqual(state['displayed_hope'],0)
+        self.assertIsNone(state['available_hope'])
+        self.assertFalse(state['available_balance_verified'])
+        selected=[offer for offer in state['visible_offers'] if offer['highlighted']]
+        self.assertEqual(len(selected),1)
+        self.assertIsNone(selected[0]['operator_id'])
+        self.assertIsNone(selected[0]['displayed_hope_cost'])
+        self.assertIsNone(selected[0]['confirmation_action_id'])
+        self.assertFalse(selected[0]['selected_identity_verified'])
+
+    def test_verified_zero_confirmation_binds_one_visible_offer_without_claiming_roster(self):
+        result=self.detect(*self.frame(8))
+        state=observed_recruitment_state(result,'recorded-8')
+        confirmed=[offer for offer in state['visible_offers'] if offer['confirmation_action_id']]
+        self.assertEqual(len(confirmed),1)
+        self.assertEqual(confirmed[0]['operator_id'],'char_183_skgoat')
+        self.assertTrue(confirmed[0]['selected_identity_verified'])
+        self.assertEqual(confirmed[0]['displayed_hope_cost'],0)
+        self.assertEqual(state['available_hope'],0)
+        self.assertNotIn('formal_operator_ids',state)
+        self.assertTrue(any(offer['operator_id'] is None for offer in state['visible_offers']))
+
+    def test_pipeline_exposes_same_frame_offers_and_does_not_reuse_them_on_other_pages(self):
+        from tests.test_live_vision import observer
+        result=self.detect(*self.frame(8))
+        pipeline=observer()
+        image=np.zeros((720,1280,3),np.uint8)
+        with patch('blackflow_live.recruitment_cards.detect_recruitment_cards',return_value=result):
+            observation=pipeline.analyze(image,(),frame_id='real-observation-id',captured_at=123)
+        state=observation.metadata['recruitment_state']
+        self.assertEqual(state['source_frame_id'],observation.frame_id)
+        ids={a.action_id for a in observation.actions}
+        self.assertTrue(all(offer['confirmation_action_id'] in ids
+                           for offer in state['visible_offers'] if offer['confirmation_action_id']))
+        next_observation=pipeline.analyze(image,(),frame_id='next-page',captured_at=124)
+        self.assertNotIn('recruitment_state',next_observation.metadata)
 
     def test_paid_selected_card_keeps_displayed_hope_distinct_from_available_balance(self):
         result = self.detect(*self.frame(4))
