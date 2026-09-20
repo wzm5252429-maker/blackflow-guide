@@ -10,7 +10,7 @@ from unittest.mock import Mock
 import numpy as np
 
 from blackflow_live.recruitment_vision import detect_recruitment_screen
-from blackflow_live.vision import OCRSpan, DEFAULT_MAA_ROOT, VisionPipeline, _read_image
+from blackflow_live.vision import OCRSpan, TemplateHit, DEFAULT_MAA_ROOT, VisionPipeline, _read_image
 
 
 FIXTURES = Path(__file__).parent/'fixtures/live_recruitment'
@@ -94,6 +94,138 @@ class RecruitmentEvidenceTests(unittest.TestCase):
         source = tickets()
         source[0] = replace(source[0],bbox=(629,650,78,25))
         self.assertIsNone(self.detect(source))
+
+    def completion(self, *, extra=(), hits=None, button_confidence=.945):
+        source = [tickets()[0],OCRSpan('沉沦于树海',button_confidence,(1083,401,142,32)),*extra]
+        if hits is None:
+            hits = [TemplateHit('BlackFlow@Roguelike@EnterAfterRecruit.png',.923,(1091,320,135,72),.9)]
+        templates = SimpleNamespace(match=lambda image,name,**kwargs: hits
+                                    if name=='BlackFlow@Roguelike@EnterAfterRecruit.png' else [])
+        return source,templates
+
+    def test_initial_completion_requires_exact_enter_text_and_adjacent_marker(self):
+        source,templates = self.completion()
+        result = detect_recruitment_screen(self.image,source,ocr=self.ocr,operators=OPERATORS,templates=templates)
+        self.assertEqual([a.label for a in result.actions],['沉沦于树海'])
+        self.assertEqual(result.actions[0].bbox,source[1].bbox)
+        self.assertEqual(result.actions[0].metadata['operation'],'advance')
+        self.assertEqual(result.actions[0].metadata['selection_stage'],'initial_recruitment_complete')
+        self.assertNotIn('starts_battle',result.actions[0].metadata)
+        self.assertNotIn('formal_operator_ids',result.evidence)
+
+    def test_completion_with_residual_tickets_or_cross_fade_waits(self):
+        for residual in (OCRSpan('特种招募券',.67,(849,321,101,25)),
+                         OCRSpan('招募',.66,(877,490,46,27)),
+                         OCRSpan('沉沦于树海',.99,(1085,402,142,32))):
+            with self.subTest(residual=residual.text):
+                source,templates = self.completion(extra=(residual,))
+                result = detect_recruitment_screen(self.image,source,ocr=self.ocr,operators=OPERATORS,templates=templates)
+                self.assertFalse(result.actions)
+                self.assertIn('initial_recruitment_completion_requires_observation',result.diagnostics)
+
+    def test_completion_missing_weak_or_misaligned_marker_and_weak_text_wait(self):
+        name = 'BlackFlow@Roguelike@EnterAfterRecruit.png'
+        variants = [([], .99),([TemplateHit(name,.89,(1091,320,135,72),.9)],.99),
+                    ([TemplateHit(name,.99,(600,320,135,72),.9)],.99),
+                    ([TemplateHit(name,.99,(1091,320,135,72),.9),TemplateHit(name,.99,(1092,319,135,72),.9)],.99),
+                    (None,.89)]
+        for hits,confidence in variants:
+            with self.subTest(hits=hits,confidence=confidence):
+                source,templates = self.completion(hits=hits,button_confidence=confidence)
+                result = detect_recruitment_screen(self.image,source,ocr=self.ocr,operators=OPERATORS,templates=templates)
+                self.assertFalse(result.actions)
+
+    def test_weak_complete_enter_text_needs_two_agreeing_local_readings(self):
+        source,templates = self.completion(button_confidence=.86)
+        for readings,allowed in (([('沉沦于树海',.984),('沉沦于树海',.974)],True),
+                                 ([('沉沦于树海',.984),('沉沦于树海',.89)],False),
+                                 ([('沉沦于树海',.984),('远论于树海',.99)],False)):
+            with self.subTest(readings=readings):
+                self.ocr.recognize_crop.side_effect = readings
+                result = detect_recruitment_screen(self.image,source,ocr=self.ocr,operators=OPERATORS,templates=templates)
+                self.assertEqual(bool(result.actions),allowed)
+                if allowed:
+                    self.assertEqual(result.actions[0].bbox,source[1].bbox)
+                    self.assertGreaterEqual(result.actions[0].confidence,.90)
+
+    def test_complete_initial_page_integration_and_battle_priority(self):
+        source,templates = self.completion()
+        templates.labels,templates.node_specs = {},[]
+        pipeline = VisionPipeline(maa_root='missing',ocr=self.ocr,templates=templates,
+            corridor=SimpleNamespace(score=lambda *a:[],config={'decision':{'probability_threshold':.9}}))
+        pipeline._hud_resources = lambda *a:{}
+        result = pipeline.analyze(self.image,source,frame_id='synthetic-initial-complete',captured_at=0)
+        self.assertEqual(result.scene,'recruitment')
+        self.assertEqual([a.label for a in result.actions],['沉沦于树海'])
+        self.assertEqual(result.actions[0].metadata['source_frame_id'],result.frame_id)
+        result = pipeline.analyze(self.image,source+[OCRSpan('开始战斗',.99,(900,630,100,40))],
+                                  frame_id='synthetic-battle',captured_at=0)
+        self.assertEqual(result.scene,'battle_start')
+        self.assertFalse(result.actions)
+
+    def support_detail(self, *, hits=None, footer_confidence=.801):
+        source = [OCRSpan('招募助战',footer_confidence,(806,493,83,23)),
+                  OCRSpan('莉娜',.694,(827,240,143,25)),OCRSpan('6',.999,(831,457,11,14))]
+        if hits is None:
+            hits = [TemplateHit('Return.png',.963,(17,11,128,40),.9)]
+        templates = SimpleNamespace(match=lambda image,name,**kwargs: hits if name=='Return.png' else [],
+                                    labels={},node_specs=[])
+        self.ocr.recognize_crop.side_effect = None
+        self.ocr.recognize_crop.return_value = ('招募助战',.99)
+        return source,templates
+
+    def test_support_detail_returns_using_template_without_confirming_hire(self):
+        source,templates = self.support_detail()
+        result = detect_recruitment_screen(self.image,source,ocr=self.ocr,operators=OPERATORS,templates=templates)
+        self.assertEqual([a.label for a in result.actions],['返回'])
+        action = result.actions[0]
+        self.assertEqual(action.bbox,(17,11,128,40))
+        self.assertEqual(action.metadata['operation'],'event_advance')
+        self.assertEqual(action.metadata['selection_stage'],'support_detail_return')
+        for field in ('ends_node','operator_id','selected_operator_id','hope_cost','resource_costs'):
+            self.assertNotIn(field,action.metadata)
+        self.assertEqual(self.ocr.recognize_crop.call_count,2)
+
+    def test_support_detail_ambiguous_footer_or_return_waits(self):
+        variants = ('missing_return','weak_return','wrong_location','duplicate_return','inconsistent_ocr','weak_ocr','duplicate_footer')
+        for defect in variants:
+            with self.subTest(defect=defect):
+                hit = TemplateHit('Return.png',.963,(17,11,128,40),.9)
+                hits = [] if defect=='missing_return' else [hit]
+                if defect=='weak_return': hits = [replace(hit,confidence=.89)]
+                if defect=='wrong_location': hits = [replace(hit,bbox=(600,100,128,40))]
+                if defect=='duplicate_return': hits.append(replace(hit,bbox=(30,60,128,40)))
+                source,templates = self.support_detail(hits=hits)
+                if defect=='duplicate_footer': source.append(replace(source[0],bbox=(808,494,83,23)))
+                if defect=='inconsistent_ocr': self.ocr.recognize_crop.side_effect = [('招募助战',.99),('招募功战',.99)]
+                if defect=='weak_ocr': self.ocr.recognize_crop.return_value = ('招募助战',.89)
+                result = detect_recruitment_screen(self.image,source,ocr=self.ocr,operators=OPERATORS,templates=templates)
+                self.assertIsNotNone(result)
+                self.assertFalse(result.actions)
+                self.assertIn('support_detail_return_requires_observation',result.diagnostics)
+
+    def test_list_choose_support_button_cannot_be_a_detail_footer(self):
+        source,templates = self.support_detail()
+        for label in ('选择助战','招募助战'):
+            with self.subTest(label=label):
+                source[0] = replace(source[0],text=label,bbox=(1030,15,130,40))
+                self.assertIsNone(detect_recruitment_screen(self.image,source,ocr=self.ocr,operators=OPERATORS,templates=templates))
+
+    def test_support_detail_occludes_background_and_battle_still_wins(self):
+        source,templates = self.support_detail()
+        source += [OCRSpan('卡德霍之颅',.99,(600,10,100,22)),*tickets()]
+        pipeline = VisionPipeline(maa_root='missing',ocr=self.ocr,templates=templates,
+            corridor=SimpleNamespace(score=lambda *a:[],config={'decision':{'probability_threshold':.9}}))
+        pipeline._map = Mock(side_effect=AssertionError('support detail occludes the map'))
+        pipeline._hud_resources = lambda *a:{}
+        result = pipeline.analyze(self.image,source,frame_id='synthetic-support-detail',captured_at=0)
+        self.assertEqual(result.scene,'recruitment')
+        self.assertEqual([a.label for a in result.actions],['返回'])
+        pipeline._map.assert_not_called()
+        result = pipeline.analyze(self.image,source+[OCRSpan('开始战斗',.99,(900,630,100,40))],
+                                  frame_id='synthetic-support-battle',captured_at=0)
+        self.assertEqual(result.scene,'battle_start')
+        self.assertFalse(result.actions)
 
     def test_emergency_footer_outputs_exact_previews_and_leave_never_generic_hire(self):
         result = self.detect(employment(),wide=True)
@@ -180,8 +312,9 @@ class RecruitmentEvidenceTests(unittest.TestCase):
 class SavedRecruitmentPixelsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        from blackflow_live.vision import MaaPaddleOCR
+        from blackflow_live.vision import MaaPaddleOCR, MaaTemplates
         cls.ocr = MaaPaddleOCR()
+        cls.templates = MaaTemplates()
 
     def test_original_ticket_and_hiring_frames(self):
         from PIL import Image
@@ -195,10 +328,26 @@ class SavedRecruitmentPixelsTests(unittest.TestCase):
                 height,width = original.shape[:2]
                 image = np.asarray(Image.fromarray(original).resize((round(width*720/height),720),Image.Resampling.LANCZOS))
                 spans = self.ocr.recognize(image)
-                result = detect_recruitment_screen(image,spans,ocr=self.ocr,operators=OPERATORS)
+                result = detect_recruitment_screen(image,spans,ocr=self.ocr,operators=OPERATORS,templates=self.templates)
                 self.assertIsNotNone(result)
                 self.assertEqual([a.label for a in result.actions],case['expected_labels'])
                 self.assertTrue(all(a.metadata['operation']!='emergency_hire' for a in result.actions))
+
+    def test_completion_original_pixels_work_with_pil_and_opencv_lanczos(self):
+        import cv2
+        from PIL import Image
+        original = _read_image(FIXTURES/'initial_complete_360p.png')
+        variants = {'pil':np.asarray(Image.fromarray(original).resize((1280,720),Image.Resampling.LANCZOS)),
+                    'opencv':cv2.resize(original,(1280,720),interpolation=cv2.INTER_LANCZOS4)}
+        for name,image in variants.items():
+            with self.subTest(resize=name):
+                spans = self.ocr.recognize(image)
+                result = detect_recruitment_screen(image,spans,ocr=self.ocr,operators=OPERATORS,templates=self.templates)
+                self.assertIsNotNone(result)
+                self.assertEqual([a.label for a in result.actions],['沉沦于树海'])
+                self.assertGreaterEqual(result.actions[0].confidence,.90)
+                original_box = next(span.bbox for span in spans if span.text=='沉沦于树海')
+                self.assertEqual(result.actions[0].bbox,original_box)
 
 
 if __name__ == '__main__':

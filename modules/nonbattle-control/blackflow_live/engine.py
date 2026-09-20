@@ -13,6 +13,14 @@ from .models import LiveObservation, ObservedAction
 
 BATTLE_SCENES = frozenset({'battle', 'battle_start', 'combat', 'squad', 'battle_prepare'})
 FORBIDDEN_LABELS = ('开始战斗', '开始行动', '开始作战', '进入战斗', 'Start Operation')
+RECRUITMENT_WAIT_MESSAGES = {
+    'recruitment_hope_display_may_be_post_selection': '已识别付费招募，但尚未确认当前可用希望；正在等待。',
+    'recruitment_selected_cost_unreadable': '已识别选中的干员，但尚未读清招募费用；正在重新识别。',
+    'recruitment_hope_display_unreadable': '已识别免费招募，但尚未读清希望状态；正在重新识别。',
+    'recruitment_confirm_not_enabled': '尚未确认招募按钮可用；正在重新识别。',
+    'recruitment_selection_not_verified': '招募列表已识别，但尚未确认可操作的干员目标；正在重新识别。',
+    'initial_recruitment_completion_requires_observation': '招募完成页尚未显示完整，正在等待入场按钮。',
+}
 POLICY_METADATA_FIELDS = frozenset({
     'items', 'inventory', 'inventory_complete', 'shop_state', 'shop_items', 'pending_node_id',
     'formal_operator_ids', 'available_operator_ids', 'promoted_operator_ids',
@@ -302,7 +310,11 @@ class LiveEngine:
                 self._state['decision'] = asdict(decision)
         action = decision.action
         if action is None:
-            self._set_for_epoch(epoch, 'waiting_observation', decision.reason)
+            message = decision.reason
+            if decision.reason == 'no_grounded_scope_legal_action':
+                message = next((text for code,text in RECRUITMENT_WAIT_MESSAGES.items()
+                                if code in obs.diagnostics),message)
+            self._set_for_epoch(epoch, 'waiting_observation', message)
             return
         if not action_is_grounded(action, obs):
             self._set_for_epoch(epoch, 'waiting_observation', '当前动作缺少可靠的画面依据，正在重新识别')

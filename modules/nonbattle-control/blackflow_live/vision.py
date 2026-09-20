@@ -375,6 +375,19 @@ class VisionPipeline:
         for kind,hits in zip(marker_names, marker_hits):
             if hits:
                 markers[kind] = hits[0]
+        if 'ending' in markers and 'recruitment' in markers:
+            # The small ending-confirm asset is a reused check icon. When it
+            # lies inside the full recruitment button and that same button
+            # reads 确认招募, it is not independent evidence of a result screen.
+            rx,ry,rw,rh = markers['recruitment'].bbox
+            def inside_recruit_button(box):
+                bx,by,bw,bh = box
+                return rx<=bx and ry<=by and bx+bw<=rx+rw and by+bh<=ry+rh
+            if (inside_recruit_button(markers['ending'].bbox)
+                and any(span.confidence>=.75 and _clean(span.text)=='确认招募'
+                        and inside_recruit_button(span.bbox) for span in spans)):
+                markers.pop('ending')
+                diagnostics.append('shared_confirmation_icon_bound_to_recruitment')
         scene, confidence = "unknown", 0.0
         first_ending = False
         if any(word in clean_text for word in _BATTLE_WORDS) or "battle_start" in markers:
@@ -417,6 +430,7 @@ class VisionPipeline:
             scene,confidence = "dialog",0.9
         shop_dialog = None
         recruitment_screen = None
+        recruitment_cards = None
         if scene not in {'battle', 'battle_start', 'ending', 'ending_complete', 'failed'}:
             from .shop_vision import detect_shop_dialog
             shop_dialog = detect_shop_dialog(image, spans, ocr=self.ocr, item_names=self.item_names)
@@ -424,9 +438,16 @@ class VisionPipeline:
                 scene,confidence = 'shop',shop_dialog.confidence
             else:
                 from .recruitment_vision import detect_recruitment_screen
-                recruitment_screen = detect_recruitment_screen(image, spans, ocr=self.ocr, operators=self.operators)
+                recruitment_screen = detect_recruitment_screen(image, spans, ocr=self.ocr, operators=self.operators,
+                                                               templates=self.templates)
                 if recruitment_screen is not None:
                     scene,confidence = 'recruitment',recruitment_screen.confidence
+                else:
+                    from .recruitment_cards import detect_recruitment_cards
+                    recruitment_cards = detect_recruitment_cards(image, spans, ocr=self.ocr,
+                                                                 operators=self.operators)
+                    if recruitment_cards is not None:
+                        scene,confidence = 'recruitment',recruitment_cards.confidence
         nodes,edges,current = (),(),None
         actions: list[ObservedAction] = []
         if scene in {"map","shop","recruitment","inventory","reward","movement_preview"}:
@@ -448,6 +469,13 @@ class VisionPipeline:
         elif recruitment_screen is not None:
             actions = list(recruitment_screen.actions)
             diagnostics.extend(recruitment_screen.diagnostics)
+        elif recruitment_cards is not None:
+            # This screen can preview the post-selection hope balance. The map
+            # HUD reader cannot establish spendable hope for this contract.
+            resources.pop('hope', None)
+            resources.update(recruitment_cards.resources)
+            actions = list(recruitment_cards.actions)
+            diagnostics.extend(recruitment_cards.diagnostics)
         elif scene not in {"battle", "battle_start", "ending", "ending_complete", "unknown", "failed"}:
             actions.extend(self._actions(spans,scene,image.shape[1],image.shape[0]))
             if scene=="movement_preview":
@@ -661,6 +689,53 @@ class VisionPipeline:
                 values.add(tuple(int(p) for p in re.split(r"[/／]",value)))
         return next(iter(values)) if len(values)==1 else None
 
+    def _hope_current(self, image, hit):
+        """Read the yellow current value, never the separate gray upper limit.
+
+        The current number moves with the filled bar, so a fixed numeric ROI
+        reads the wrong field. Locate complete yellow glyphs after the icon.
+        """
+        if not hasattr(self.ocr, 'recognize_crop'):
+            return None
+        cv = _cv()
+        x,y,w,h = hit.bbox
+        left,top = max(0,round(x+w)),max(0,round(y+h*.1))
+        right,bottom = min(image.shape[1],round(x+w*4)),min(image.shape[0],round(y+h*1.2))
+        crop = image[top:bottom,left:right]
+        if not crop.size:
+            return None
+        hsv = cv.cvtColor(crop,cv.COLOR_BGR2HSV)
+        readings = []
+        for minimum in (80,100,120):
+            mask = ((hsv[:,:,0]>15)&(hsv[:,:,0]<45)&(hsv[:,:,1]>80)&(hsv[:,:,2]>minimum)).astype(np.uint8)*255
+            count,components,stats,_ = cv.connectedComponentsWithStats(mask)
+            glyphs = []
+            for index in range(1,count):
+                gx,gy,gw,gh,area = (int(value) for value in stats[index])
+                if (gx<=0 or gy<=0 or gx+gw>=crop.shape[1] or gy+gh>=crop.shape[0]
+                    or gh<h*.30 or gh>h*.8 or gw<max(3,h*.08) or gw>gh*1.8
+                    or area<gh*1.3):
+                    continue
+                glyphs.append((gx,gy,gw,gh,index))
+            glyphs.sort()
+            if not glyphs or len(glyphs)>3:
+                continue
+            if any(abs(a[1]-b[1])>h*.12 or b[0]-(a[0]+a[2])>h*.4 for a,b in zip(glyphs,glyphs[1:])):
+                continue
+            gx=min(g[0] for g in glyphs); gy=min(g[1] for g in glyphs)
+            gr=max(g[0]+g[2] for g in glyphs); gb=max(g[1]+g[3] for g in glyphs)
+            glyph=(np.isin(components[gy:gb,gx:gr],[g[4] for g in glyphs])*255).astype(np.uint8)
+            for vpad,hpad in ((.17,.17),(.34,.56)):
+                vertical,horizontal=max(2,round(glyph.shape[0]*vpad)),max(2,round(glyph.shape[0]*hpad))
+                for inverse in (False,True):
+                    prepared=cv.copyMakeBorder(255-glyph if inverse else glyph,vertical,vertical,horizontal,horizontal,
+                                              cv.BORDER_CONSTANT,value=255 if inverse else 0)
+                    value,score=self.ocr.recognize_crop(cv.cvtColor(prepared,cv.COLOR_GRAY2BGR))
+                    value=value.strip()
+                    if math.isfinite(score) and score>=.90 and re.fullmatch(r'\d{1,3}',value):
+                        readings.append(int(value))
+        return readings[0] if len(readings)>=2 and len(set(readings))==1 else None
+
     def _hud_resources(self,image,spans):
         """Locate HUD labels/icons, then read their neighboring *current* values.
 
@@ -714,7 +789,11 @@ class VisionPipeline:
             if not hits: continue
             x,y,w,h=hits[0].bbox
             if y>height*.18: continue
-            rect=(x+w*2.24,y+h*.25,w*.75,h*.85) if field=="hope" else (x+w*2.19,y+h*.4,w*.90,h*.64)
+            if field=='hope':
+                current=self._hope_current(image,hits[0])
+                if current is not None: resources[field]=current
+                continue
+            rect=(x+w*2.19,y+h*.4,w*.90,h*.64)
             value=self._numeric_crop(image,rect)
             if value: resources[field]=value[0]
         return resources

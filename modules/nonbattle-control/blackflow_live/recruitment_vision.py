@@ -15,6 +15,7 @@ from .models import ObservedAction
 
 _TICKET_PROFESSIONS = {name + '招募券': name
                        for name in ('先锋', '近卫', '重装', '狙击', '术师', '医疗', '辅助', '特种')}
+_ENTER_AFTER_RECRUIT = 'BlackFlow@Roguelike@EnterAfterRecruit.png'
 
 
 def _text(value):
@@ -78,6 +79,127 @@ class RecruitmentScreen:
     evidence: dict
 
 
+def _support_detail(image, spans, ocr, templates):
+    """Recognize the detail footer, offering only its observed return control."""
+    height,width = image.shape[:2]
+    footers = [span for span in spans if _valid(span,width,height,.65)
+               and _text(span.text)=='招募助战' and .55*width<_center(span)[0]<.94*width
+               and .50*height<_center(span)[1]<.85*height]
+    if not footers:
+        return None
+    evidence = {'kind':'support_detail'}
+    waiting = RecruitmentScreen(.84,(),('support_detail_return_requires_observation',),evidence)
+    if len(footers) != 1 or not hasattr(ocr,'recognize_crop'):
+        return waiting
+    footer = footers[0]
+    x,y,w,h = footer.bbox
+    margin = max(2,round(h*.30))
+    left,top = max(0,round(x)-margin),max(0,round(y)-margin)
+    right,bottom = min(width,round(x+w)+margin),min(height,round(y+h)+margin)
+    crop = image[top:bottom,left:right]
+    if not crop.size:
+        return waiting
+    import cv2
+    gray = cv2.cvtColor(cv2.cvtColor(crop,cv2.COLOR_BGR2GRAY),cv2.COLOR_GRAY2BGR)
+    readings = [ocr.recognize_crop(pixels) for pixels in (crop,gray)]
+    evidence['footer_bbox'] = list(footer.bbox)
+    if not all(_text(text)=='招募助战' and math.isfinite(score) and score>=.90 for text,score in readings):
+        return waiting
+    if templates is None or not hasattr(templates,'match'):
+        return waiting
+    # The MAA return asset is located in this image; task-specific fixed click
+    # coordinates and the unverified support-hire button are never executed.
+    hits = [hit for hit in templates.match(image,'Return.png',threshold=.90,maximum=2)
+            if _valid(hit,width,height) and hit.name=='Return.png'
+            and hit.bbox[0]+hit.bbox[2]<=width*.20 and hit.bbox[1]+hit.bbox[3]<=height*.18]
+    if len(hits) != 1:
+        return waiting
+    hit = hits[0]
+    confidence = min(.96,hit.confidence,*(score for _,score in readings))
+    action = ObservedAction(_key('support_return','返回',hit.bbox),'返回','ui',hit.bbox,
+                            hit.confidence,metadata={
+                                'operation':'event_advance','source':'maa_support_detail_return',
+                                'grounded':True,'selection_stage':'support_detail_return',
+                                'observed_detail_footer':'招募助战',
+                            })
+    evidence.update(return_bbox=list(hit.bbox),return_confidence=hit.confidence,
+                    footer_recheck_confidence=min(score for _,score in readings))
+    return RecruitmentScreen(confidence,(action,),(),evidence)
+
+
+def _initial_completion(image, spans, header, templates, ocr):
+    """The completed-recruitment deer marker corroborates the exact enter text.
+
+    Neither the header alone nor missing ticket OCR proves completion. The
+    marker is recognition-only; the click remains the observed text's bbox.
+    """
+    height,width = image.shape[:2]
+    buttons = [span for span in spans if _valid(span,width,height,.75)
+               and _text(span.text)=='沉沦于树海' and .60*width<_center(span)[0]<.98*width
+               and .30*height<_center(span)[1]<.80*height]
+    if not buttons:
+        return None
+    evidence = {'kind':'initial_complete','header_bbox':list(header.bbox)}
+    waiting = RecruitmentScreen(min(.84,header.confidence),(),
+                                ('initial_recruitment_completion_requires_observation',),evidence)
+    if len(buttons) != 1:
+        return waiting
+    button = buttons[0]
+    button_confidence = button.confidence
+    if button_confidence < .90:
+        if not hasattr(ocr,'recognize_crop'):
+            return waiting
+        import cv2
+        x,y,w,h = button.bbox
+        # Keep this complete label tight: a wider crop includes its adjacent
+        # cursor/artwork and can make Lanczos-resized text less readable.
+        margin = max(2,round(h*.10))
+        crop = image[max(0,round(y)-margin):min(height,round(y+h)+margin),
+                     max(0,round(x)-margin):min(width,round(x+w)+margin)]
+        if not crop.size:
+            return waiting
+        gray = cv2.cvtColor(cv2.cvtColor(crop,cv2.COLOR_BGR2GRAY),cv2.COLOR_GRAY2BGR)
+        readings = [ocr.recognize_crop(pixels) for pixels in (crop,gray)]
+        if not all(_text(text)=='沉沦于树海' and math.isfinite(score) and score>=.90
+                   for text,score in readings):
+            return waiting
+        button_confidence = min(score for _,score in readings)
+        evidence['enter_recheck_confidence'] = button_confidence
+    # A ticket/control left in the same frame may be an unfinished selection
+    # or cross-fade. Do not enter, and do not click those ghost ticket controls.
+    pending = [span for span in spans if _valid(span,width,height,.65)
+               and .20*height<_center(span)[1]<.85*height
+               and (_text(span.text)=='招募' or '招募券' in _text(span.text))]
+    if pending:
+        evidence['pending_recruitment_texts'] = sorted(span.text for span in pending)
+        return waiting
+    if templates is None or not hasattr(templates,'match'):
+        return waiting
+    hits = templates.match(image,_ENTER_AFTER_RECRUIT,threshold=.90,maximum=2)
+    associated = []
+    for hit in hits:
+        if not _valid(hit,width,height) or hit.name != _ENTER_AFTER_RECRUIT:
+            continue
+        hx,hy,hw,hh = hit.bbox
+        bx,by,bw,bh = button.bbox
+        if (abs((hx+hw/2)-(bx+bw/2)) <= max(hw,bw)*.35
+            and -bh*.2 <= by-(hy+hh) <= max(bh*2,height*.04)):
+            associated.append(hit)
+    if len(associated) != 1:
+        return waiting
+    marker = associated[0]
+    evidence.update(enter_bbox=list(button.bbox),marker_bbox=list(marker.bbox),
+                    marker_confidence=marker.confidence)
+    action = ObservedAction(_key('enter_exploration',button.text,button.bbox),button.text,'ui',button.bbox,
+                            min(button_confidence,marker.confidence),metadata={
+                                'operation':'advance','source':'ocr_and_maa_initial_completion',
+                                'grounded':True,'selection_stage':'initial_recruitment_complete',
+                                'observed_text':button.text,
+                            })
+    return RecruitmentScreen(min(.96,header.confidence,button_confidence,marker.confidence),
+                             (action,),(),evidence)
+
+
 def _initial_tickets(image, spans, headers, ocr):
     height,width = image.shape[:2]
     if len(headers) != 1:
@@ -126,7 +248,7 @@ def _initial_tickets(image, spans, headers, ocr):
                               'visible_button_count':len(buttons)})
 
 
-def detect_recruitment_screen(image: np.ndarray, spans, *, ocr, operators) -> RecruitmentScreen | None:
+def detect_recruitment_screen(image: np.ndarray, spans, *, ocr, operators, templates=None) -> RecruitmentScreen | None:
     """Use exact titles/footers; returned actions replace obscured background UI.
 
     ``operators`` maps complete normalized names to ``{'id': ..., 'name': ...}``.
@@ -135,10 +257,17 @@ def detect_recruitment_screen(image: np.ndarray, spans, *, ocr, operators) -> Re
     """
     height,width = image.shape[:2]
     spans = tuple(spans)
+    support = _support_detail(image,spans,ocr,templates)
+    if support is not None:
+        return support
     headers = [span for span in spans if _valid(span,width,height,.94)
                and _text(span.text)=='初始招募' and .20*width<_center(span)[0]<.80*width
                and _center(span)[1]<.15*height]
     if headers:
+        if len(headers)==1:
+            complete = _initial_completion(image,spans,headers[0],templates,ocr)
+            if complete is not None:
+                return complete
         return _initial_tickets(image,spans,headers,ocr)
     # This is an occlusion cue, not a clickable hire. A weak full label must
     # not restore the map underneath; independent card evidence gates previews.

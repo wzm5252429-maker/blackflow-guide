@@ -73,6 +73,22 @@ class LiveVisionTests(unittest.TestCase):
         self.assertEqual(obs.scene,"ending")
         self.assertFalse(obs.ending_first_confirmed)
 
+    def test_recruitment_checkmark_does_not_misclassify_as_ending(self):
+        ending='BlackFlow@Roguelike@GamePassTheEndConfirm.png'
+        recruitment='BlackFlow@Roguelike@ChooseOperConfirm.png'
+        templates=Templates({ending:[TemplateHit(ending,.92,(1114,667,29,31),1)],
+                             recruitment:[TemplateHit(recruitment,.93,(1080,660,179,45),1)]})
+        obs=self.analyze([OCRSpan('确认招募',.98,(1154,666,84,24)),
+                          OCRSpan('放弃',.99,(978,667,41,23))],templates)
+        self.assertEqual(obs.scene,'recruitment')
+        self.assertFalse(obs.ending_first_confirmed)
+        self.assertNotIn('ending',obs.metadata['markers'])
+        # An independent result badge still takes priority over card controls.
+        game_pass='BlackFlow@Roguelike@GamePass.png'
+        templates.hits[game_pass]=[TemplateHit(game_pass,.98,(500,100,100,80),1)]
+        result=self.analyze([OCRSpan('确认招募',.98,(1154,666,84,24))],templates)
+        self.assertEqual(result.scene,'ending')
+
     def test_first_ending_requires_visible_result_evidence(self):
         obs=self.analyze([OCRSpan("探索完成",.99,(400,180,150,40)),OCRSpan("结局一达成",.99,(400,300,180,40))])
         self.assertEqual(obs.scene,"ending_complete")

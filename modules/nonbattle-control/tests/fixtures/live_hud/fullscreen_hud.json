@@ -17,8 +17,9 @@
     "max_hp": 4,
     "action_points": 6,
     "gold": 25,
-    "hope": 6,
+    "hope": 0,
     "parts": 2,
     "relics": 1
-  }
+  },
+  "hope_expected_correction": "2026-09-20 independent review: left yellow current is 0; right gray 6 is the upper limit, previously mislabelled."
 }

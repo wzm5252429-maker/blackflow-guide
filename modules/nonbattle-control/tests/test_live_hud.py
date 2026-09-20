@@ -1,5 +1,6 @@
 """Label-bound HUD numbers; pixel regression uses the user's supplied image."""
 from pathlib import Path
+from hashlib import sha256
 import json
 import unittest
 from unittest.mock import Mock
@@ -79,6 +80,30 @@ class SavedHudPixelTests(unittest.TestCase):
                 expected=json.loads((FIXTURES/(name+'.json')).read_text(encoding='utf-8'))['expected']
                 spans=self.pipeline.ocr.recognize(image)
                 self.assertEqual(self.pipeline._hud_resources(image,spans),expected)
+
+    def test_current_hope_moves_with_bar_and_is_not_gray_capacity(self):
+        from PIL import Image
+        manifest=json.loads((FIXTURES/'hope_values.json').read_text(encoding='utf-8'))
+        self.assertFalse(manifest['current_user_native_capture'])
+        for case in manifest['cases']:
+            with self.subTest(image=case['image']):
+                path=FIXTURES/case['image']
+                self.assertEqual(sha256(path.read_bytes()).hexdigest(),case['sha256'])
+                raw=_read_image(path)
+                image=np.asarray(Image.fromarray(raw).resize((1280,720),Image.Resampling.LANCZOS))
+                resources=self.pipeline._hud_resources(image,self.pipeline.ocr.recognize(image))
+                self.assertEqual(resources['hope'],case['current_hope'])
+                # Removing current yellow pixels leaves the gray capacity in
+                # place. It must become unknown, never reuse capacity as hope.
+                import cv2
+                hsv=cv2.cvtColor(image,cv2.COLOR_BGR2HSV)
+                current=(hsv[:,:,0]>15)&(hsv[:,:,0]<45)&(hsv[:,:,1]>80)
+                hit=self.pipeline.templates.match(image,'hope_icon.png',threshold=.88)[0]
+                x,y,w,h=hit.bbox
+                region=np.zeros(image.shape[:2],bool)
+                region[round(y):round(y+h*1.3),round(x+w):round(x+w*4)]=True
+                obscured=image.copy(); obscured[current&region]=0
+                self.assertIsNone(self.pipeline._hope_current(obscured,hit))
 
 
 if __name__=='__main__':

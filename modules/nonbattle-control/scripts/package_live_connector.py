@@ -19,12 +19,18 @@ def build(output: Path):
     stage.mkdir()
     files = list((ROOT/'blackflow_live').glob('*.py'))
     files += list((ROOT/'blackflow_live/assets').glob('*'))
-    # These independent research modules are not used by the selected frozen
-    # inference stack and must not enter a live release merely by sharing a folder.
-    research_only = {'evidence_environment.py', 'neural_joint_attention.py'}
-    files += [p for p in (ROOT/'blackflow_rl').glob('*.py') if p.name not in research_only]
-    for folder in ('data/rules', 'data/evidence', 'data/training_environments'):
-        files += list((ROOT/folder).glob('*.json'))
+    # Keep independent research work out of releases. New inference dependencies
+    # require an explicit change to this reviewed list, not a folder-wide glob.
+    dependency_list = ROOT/'scripts/live_inference_files.json'
+    dependencies = json.loads(dependency_list.read_text(encoding='utf-8'))['files']
+    if len(dependencies) != len(set(dependencies)):
+        raise ValueError('Duplicate inference dependency')
+    for relative in dependencies:
+        path = (ROOT/relative).resolve()
+        if not path.is_relative_to(ROOT) or not path.is_file():
+            raise ValueError(f'Missing or invalid inference dependency: {relative}')
+        files.append(path)
+    files.append(dependency_list)
     selection_path = ROOT/'data/policies/current_neural_controller.json'
     selection = json.loads(selection_path.read_text(encoding='utf-8'))
     files += [selection_path]
@@ -36,7 +42,7 @@ def build(output: Path):
             raise ValueError(f'Selected {field} does not match its pinned hash')
         files.append(path)
     files += list((ROOT/'tests').glob('test_live_*.py'))
-    for fixture in ('live_hud', 'live_nodes', 'live_rewards', 'live_shop_dialog', 'live_recruitment'):
+    for fixture in ('live_hud', 'live_nodes', 'live_rewards', 'live_shop_dialog', 'live_recruitment', 'live_recruitment_cards'):
         files += [p for p in (ROOT/'tests/fixtures'/fixture).glob('*') if p.suffix in {'.png','.jpg','.json'}]
     files += [ROOT/p for p in ('requirements-core.txt','requirements-live.txt','tools/Start-BlackflowLive.cmd',
         'docs/nonbattle-control.md','docs/live-policy-coverage.md','scripts/package_live_connector.py')]

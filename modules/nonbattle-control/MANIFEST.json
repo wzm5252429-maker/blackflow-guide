@@ -43,6 +43,21 @@
       "bytes": 586
     },
     {
+      "path": "blackflow_live/assets/recruitment_hope_cost.png",
+      "sha256": "1cf77702dc559639a48c9893292a51aaa0eae22fce5be50fbd2397925f0de666",
+      "bytes": 1017
+    },
+    {
+      "path": "blackflow_live/assets/recruitment_hope_header.png",
+      "sha256": "90ed1728933b72c1f63e8d936897dbcf85abf14bd913b70911236ea543990642",
+      "bytes": 5561
+    },
+    {
+      "path": "blackflow_live/assets/recruitment_hope_zero.png",
+      "sha256": "2490b7b02b410d8bbb9c95a6aee77f9fe2b8e312c4a9cdf695e40ab7ec3d1b23",
+      "bytes": 1325
+    },
+    {
       "path": "blackflow_live/capture.py",
       "sha256": "d9fae572a5b234155e37202ee3b1c6d43929b10e350a82b1eb9ba66d1bff20da",
       "bytes": 18991
@@ -54,8 +69,8 @@
     },
     {
       "path": "blackflow_live/engine.py",
-      "sha256": "7c673e625a8c4cd597e2a0f5400866e90ae0f42f1fb620e67dc851077c2d45c3",
-      "bytes": 16666
+      "sha256": "017210c855520b5b19f48eb1846fc5e7f9efec46b4fd2ccc7566275680da9218",
+      "bytes": 17690
     },
     {
       "path": "blackflow_live/geometry.py",
@@ -73,9 +88,14 @@
       "bytes": 43437
     },
     {
+      "path": "blackflow_live/recruitment_cards.py",
+      "sha256": "978881aff8828d9c8ac2a2d19e428a5f050492818b85714e6dbf52901c5938f2",
+      "bytes": 15338
+    },
+    {
       "path": "blackflow_live/recruitment_vision.py",
-      "sha256": "95891e483ee114a7ac5f48cd947be27f15b6e4bf7fc52e555fe4d1cab4eb8d54",
-      "bytes": 10421
+      "sha256": "fc9a8e583aa6088b18962cebaf15ec818fac85ebe3989fcd3b7698983d5526f1",
+      "bytes": 17199
     },
     {
       "path": "blackflow_live/runtime.py",
@@ -94,8 +114,8 @@
     },
     {
       "path": "blackflow_live/vision.py",
-      "sha256": "21dddc164a390f97578cdc7b127afe89946a5404af5f220c5b1ad704a0625ec3",
-      "bytes": 48198
+      "sha256": "8d0fddd4c74f16000a0e545adf13a151c2581b57f2aaaee327f92a520787e44f",
+      "bytes": 52749
     },
     {
       "path": "blackflow_rl/__init__.py",
@@ -654,18 +674,18 @@
     },
     {
       "path": "docs/live-policy-coverage.md",
-      "sha256": "1af813924c2cee18384f10b3c82ee9da7323d24d5870ffc11109c4fde92e1182",
-      "bytes": 11373
+      "sha256": "1efb6c0e4e95fbdb3e075d197dcb169837ecd22ba6bd2b5505f09b8040cb718a",
+      "bytes": 11583
     },
     {
       "path": "docs/live-vision-coverage.md",
-      "sha256": "494cf03ac80e27c0a90cacc06b9f075c7a4b26b752bb18d410b48a55ad85e95f",
-      "bytes": 6517
+      "sha256": "031e3dfc57f70c11271be54f8da0e343b1f277c7e3a7f521677ee8de77367793",
+      "bytes": 8163
     },
     {
       "path": "docs/nonbattle-control.md",
-      "sha256": "7afd6293cd718e276136d07696d400628bea6cedd2df209b54e119886bfdee9a",
-      "bytes": 8904
+      "sha256": "06979f66e4fd21606cc43af11dddd99cce3c48dbf04f287a001030c6c26a87f2",
+      "bytes": 9601
     },
     {
       "path": "requirements-core.txt",
@@ -678,14 +698,19 @@
       "bytes": 69
     },
     {
+      "path": "scripts/live_inference_files.json",
+      "sha256": "df48e22af6d0aca6adc8ec6f96e5d620172500a292e4bffdb148fa49582a42be",
+      "bytes": 5207
+    },
+    {
       "path": "scripts/package_live_connector.py",
-      "sha256": "11b024e25184fa557ac8b61f64cba3e4244a838ae65b9826c1457915953c8d30",
-      "bytes": 4063
+      "sha256": "a2b4b9511b857ce561b9b6624355aff37661ad319910e908170334553372ea2e",
+      "bytes": 4330
     },
     {
       "path": "tests/fixtures/live_hud/fullscreen_hud.json",
-      "sha256": "b0b8da393d76733ce88a0e16ba09a1398e91f663b72943a990634455e584b324",
-      "bytes": 690
+      "sha256": "59acc6d0fd19418d29d988375991473f656bff5c876a1b563b61c5e95139db44",
+      "bytes": 838
     },
     {
       "path": "tests/fixtures/live_hud/fullscreen_hud.png",
@@ -693,9 +718,24 @@
       "bytes": 319203
     },
     {
+      "path": "tests/fixtures/live_hud/hope-initial-002.png",
+      "sha256": "16d95b6b2d8008638f48ec34f0b506abe3620727fe0cd5aec0485c7121794ce3",
+      "bytes": 276473
+    },
+    {
+      "path": "tests/fixtures/live_hud/hope-initial-020.png",
+      "sha256": "d0dca17de8e80cbd493ecdd5d4d9608e0b7afdfcff20bf4e9e5789809691de6d",
+      "bytes": 220999
+    },
+    {
+      "path": "tests/fixtures/live_hud/hope_values.json",
+      "sha256": "f1eb904ebbe56c14534f8d3a8c0036c0da5f83551edeb40eba24659cf2078e1b",
+      "bytes": 730
+    },
+    {
       "path": "tests/fixtures/live_hud/native_fullscreen_hud.json",
-      "sha256": "7d067b4174383751899a40eba15f6ee9988251e75003864e6d5f17c7c6737a09",
-      "bytes": 591
+      "sha256": "673849270e2977e3decc554180b896a0e17b1c9c616f6db4fa401835f20421cb",
+      "bytes": 739
     },
     {
       "path": "tests/fixtures/live_hud/native_fullscreen_hud.png",
@@ -733,14 +773,54 @@
       "bytes": 84556
     },
     {
+      "path": "tests/fixtures/live_recruitment/initial_complete_360p.png",
+      "sha256": "797bd6b6ced197e2611dda49455006ea9dc31648b6cf1584afa20688864424cf",
+      "bytes": 253542
+    },
+    {
       "path": "tests/fixtures/live_recruitment/initial_three_tickets_360p.jpg",
       "sha256": "8d06cd24ebfe606715803f44bd9240cab1e3c8b80697a29485448b95f303af8c",
       "bytes": 61731
     },
     {
       "path": "tests/fixtures/live_recruitment/manifest.json",
-      "sha256": "8df6853c433a438125306d293b482e8ead71be211a3a64459489f85868ee6c4b",
-      "bytes": 1469
+      "sha256": "54689efea43e4c34a5d06de8a4767f62293671f5c46f66f5b5584afa250a96b5",
+      "bytes": 3142
+    },
+    {
+      "path": "tests/fixtures/live_recruitment/support_detail_360p.png",
+      "sha256": "cac0124702c2bf6b0a1fadf8bcdd491b1b5a2c0fe22f8b48adf4fb7c082252ef",
+      "bytes": 287288
+    },
+    {
+      "path": "tests/fixtures/live_recruitment_cards/hope-transition-3.4.png",
+      "sha256": "c9cd7b753991f868e5d5dac2de83499d2382a7254f84d4a02e15576252075af4",
+      "bytes": 307099
+    },
+    {
+      "path": "tests/fixtures/live_recruitment_cards/initial-003.png",
+      "sha256": "9e4f398a1e12598b01a9de2a2e567466fc9412b404f49c667c374235468f189b",
+      "bytes": 267359
+    },
+    {
+      "path": "tests/fixtures/live_recruitment_cards/initial-004.png",
+      "sha256": "5598ceb7a6b2e48b37e09ae67d8c2a5feef259c77546c709843e35a7bec38003",
+      "bytes": 310058
+    },
+    {
+      "path": "tests/fixtures/live_recruitment_cards/initial-008.png",
+      "sha256": "e3cfa0a63d91fb018fbdbff4c1a4d9df5e16c295028353e6e5326dda7095b126",
+      "bytes": 279478
+    },
+    {
+      "path": "tests/fixtures/live_recruitment_cards/initial-010.png",
+      "sha256": "48eb90fd8765abfee5d2fd01a32245666bfac6192e7a677aa55e9b00cdffb2dd",
+      "bytes": 252656
+    },
+    {
+      "path": "tests/fixtures/live_recruitment_cards/manifest.json",
+      "sha256": "a36a07e2ff6f09d1f28ef3f4603d137e54a4b39acb43cc5302dd52b1d654b013",
+      "bytes": 81927
     },
     {
       "path": "tests/fixtures/live_rewards/manifest.json",
@@ -784,8 +864,8 @@
     },
     {
       "path": "tests/test_live_hud.py",
-      "sha256": "de440b97bfd635e896cecea381dd49ccebb16a030c383763cbff5110874c9058",
-      "bytes": 3552
+      "sha256": "4921040c6a1db0aa2e89426e6463dff7fcb7d8c89f043b4e8ea3a9e96e06f5d5",
+      "bytes": 5075
     },
     {
       "path": "tests/test_live_latency.py",
@@ -814,8 +894,13 @@
     },
     {
       "path": "tests/test_live_recruitment.py",
-      "sha256": "9d9dc74d4ba4c5bf2be4bc81cc17eb7714c63b262aa2dfbbf5cf937ca6cae09a",
-      "bytes": 10833
+      "sha256": "527abeee64b740e69040a106319efd6c6014cc7e1cde1bf17cfdb97d2fc4b5c0",
+      "bytes": 20936
+    },
+    {
+      "path": "tests/test_live_recruitment_cards.py",
+      "sha256": "6ce3ddb2e898bd3eec5feef84c5d006583408a7d5d21e0b130dc4cc81c4eed89",
+      "bytes": 13457
     },
     {
       "path": "tests/test_live_recruitment_policy.py",
@@ -859,8 +944,8 @@
     },
     {
       "path": "tests/test_live_vision.py",
-      "sha256": "ae8ee8dad750d4e3356c7f8b3f930b7dbfb0d05f75eef3d50e3edfa7206af73a",
-      "bytes": 8439
+      "sha256": "9edede70dbd52b753dc9f7dd5ea996a64fa99085bce18644bc7722eda1443f32",
+      "bytes": 9474
     },
     {
       "path": "tests/test_live_window_discovery.py",
