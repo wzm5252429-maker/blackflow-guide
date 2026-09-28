@@ -302,11 +302,11 @@ export default function LiveRouteControl() {
       <label htmlFor="bridge-code">输入本机启动器显示的 6 位连接码</label><div><Input id="bridge-code" aria-label="6 位连接码" autoComplete="off" inputMode="numeric" pattern="[0-9]{6}" maxLength={6} value={code} onChange={event => setCode(event.target.value.replace(/\D/g, ""))} /><Button disabled={busy || code.length !== 6}><Link2 />{pendingStart.current ? "连接并启动" : "连接"}</Button></div>
     </form>}
     {showSetup && <div className="live-setup" id="live-setup">
-      <div><h2>首次在游戏电脑上连接</h2><a className="live-download" href="/downloads/blackflow-live-connector.zip?v=15" download><Download size={18} />下载 Windows 本机接管器 v15</a></div>
+      <div><h2>首次在游戏电脑上连接</h2><a className="live-download" href="/downloads/blackflow-live-connector.zip?v=16" download><Download size={18} />下载 Windows 本机接管器 v16</a></div>
       <Button variant="outline" disabled={busy} onClick={() => void command("connect")}><Link2 />连接本机</Button>
       <ol><li><strong>准备本机环境。</strong>解压下载包，按包内说明安装 Python 3.13 和依赖，并准备 BFMapRecognizer / MAA 资源。</li><li><strong>双击启动。</strong>运行包内 <code>tools/Start-BlackflowLive.cmd</code>，会自动打开本站并连接。手动打开本站时，可输入启动器的连接码。</li><li><strong>一键开始。</strong>进入游戏的完整地图，保持窗口可见且未最小化，点击「一键启动自动执行」。浏览器询问本机网络访问时，请允许。</li></ol>
       <p>网页需要本机接管器才能读取和操作游戏，无法直接启动电脑程序。下载包包含神经网络权重和推理代码，MAA 资源需在本机另行准备。</p>
-      <p>v15 补充地图节点图标识别，并清理新会话中的旧截图和状态。使用旧版时，请重新下载并解压到新文件夹，关闭旧启动器后运行新版。</p>
+      <p>v16 补充节点详情中“出发前往”的识别；已覆盖的战斗启动确认弹窗会等待手动操作。使用旧版时，请重新下载并解压到新文件夹，关闭旧启动器后运行新版。</p>
     </div>}
     <div className="live-workspace">
       <div className="live-screenshot">

@@ -124,8 +124,8 @@
     },
     {
       "path": "blackflow_live/vision.py",
-      "sha256": "ffeb71926d0ffb79dd6a0662bde79f38553d14d6795e55f2ea4eccd888dfe051",
-      "bytes": 56503
+      "sha256": "47c7dd652e62773b0d069c45a357d4c7ba0b1ea31f40bb555a336844fb3c5f30",
+      "bytes": 61662
     },
     {
       "path": "blackflow_rl/__init__.py",
@@ -694,8 +694,8 @@
     },
     {
       "path": "docs/nonbattle-control.md",
-      "sha256": "1e3dcfd76b8bdc788eb200cc5d3fcd0f7a8b6f27a506db613e5c45a21e17e871",
-      "bytes": 12200
+      "sha256": "94a75f01dffdf6cd42749abcf9a33b9a7bc735e43df1d2100365365ad5cd83c0",
+      "bytes": 13215
     },
     {
       "path": "requirements-core.txt",
@@ -873,6 +873,11 @@
       "bytes": 79387
     },
     {
+      "path": "tests/test_live_battle_confirmation_independent.py",
+      "sha256": "0d61eb35a44545a36f3cff489720813d3763f90ff56ffddec01de7ac1493d271",
+      "bytes": 5742
+    },
+    {
       "path": "tests/test_live_card_inspection.py",
       "sha256": "320b193c74355e963b52de3e980e659e5af659b4f248f86e65e5fab9e7c47ec4",
       "bytes": 6155
@@ -911,6 +916,11 @@
       "path": "tests/test_live_map_icons_independent.py",
       "sha256": "aaf2bc66e5d385e6e5e49227e74cf432bed035740c770bd527a7d5179d0051d0",
       "bytes": 6131
+    },
+    {
+      "path": "tests/test_live_movement_preview_independent.py",
+      "sha256": "7de7a88957feefd8d62cc571cefc63787381bff5b9b4f31e051b1c670098e92c",
+      "bytes": 7431
     },
     {
       "path": "tests/test_live_node_labels.py",
@@ -1025,7 +1035,7 @@
   ],
   "scope": "first ending nonbattle; no claimed complete real-game acceptance",
   "maa_assets_included": false,
-  "source": "v14 frozen snapshot plus ordinary map icons and session display reset; candidate research excluded",
-  "release": "v15",
-  "base_archive_sha256": "81e3252777476768575897dec9d10a0af173f8325e1f71691a9c8e108cc97b3b"
+  "source": "v15 frozen snapshot plus observed-text-guided movement template refinement; candidate research excluded",
+  "release": "v16",
+  "base_archive_sha256": "fd051551e35a215ee516bee799d179b783c9a9e871f4d5181f32e790359eff91"
 }

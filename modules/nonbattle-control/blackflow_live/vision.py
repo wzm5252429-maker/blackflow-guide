@@ -393,6 +393,12 @@ class VisionPipeline:
         for kind,hits in zip(marker_names, marker_hits):
             if hits:
                 markers[kind] = hits[0]
+        movement_text = self._movement_preview_text(image, spans)
+        movement_blocked = any(_clean(span.text) == '无法抵达' for span in movement_text)
+        if movement_text and not movement_blocked and len(movement_text) == 1 and 'movement_preview' not in markers:
+            hit = self._movement_preview_match(image, movement_text[0])
+            if hit is not None:
+                markers['movement_preview'] = hit
         if 'ending' in markers:
             # GamePassTheEndConfirm is only a shared checkmark. Real recorded
             # recruitment frames match it even when the cursor hides the text
@@ -402,8 +408,11 @@ class VisionPipeline:
             diagnostics.append('shared_confirmation_icon_not_result_evidence')
         scene, confidence = "unknown", 0.0
         first_ending = False
-        if any(word in clean_text for word in _BATTLE_WORDS) or "battle_start" in markers:
-            scene,confidence = "battle_start", max([markers.get("battle_start",TemplateHit("",0,(),1)).confidence,0.97 if any(word in clean_text for word in _BATTLE_WORDS) else 0])
+        battle_confirmation = self._battle_start_confirmation(image, spans)
+        if battle_confirmation or any(word in clean_text for word in _BATTLE_WORDS) or "battle_start" in markers:
+            scene,confidence = "battle_start", max([battle_confirmation,markers.get("battle_start",TemplateHit("",0,(),1)).confidence,0.97 if any(word in clean_text for word in _BATTLE_WORDS) else 0])
+            if battle_confirmation:
+                diagnostics.append('battle_start_confirmation_requires_manual')
         elif "battle" in markers or ("撤退" in clean_text and ("费用" in clean_text or "敌方" in clean_text)):
             scene,confidence = "battle",0.97
         elif "game_pass" in markers or "探索完成" in clean_text or "旅途结束" in clean_text:
@@ -428,8 +437,13 @@ class VisionPipeline:
             scene,confidence = "reward",0.92
         elif "shop" in markers or any(word in clean_text for word in ("商品售价", "坎诺特", "培育区", "购买商品")):
             scene,confidence = "shop",0.92
-        elif "movement_preview" in markers:
-            scene,confidence = "movement_preview",markers["movement_preview"].confidence
+        elif "movement_preview" in markers or movement_text:
+            scene,confidence = "movement_preview",max([s.confidence for s in movement_text] +
+                ([markers["movement_preview"].confidence] if "movement_preview" in markers else []))
+            if movement_blocked:
+                diagnostics.append('movement_destination_unavailable')
+            elif len(movement_text) > 1:
+                diagnostics.append('ambiguous_movement_entry')
         elif "inventory" in markers:
             scene,confidence = "inventory",markers["inventory"].confidence
         elif any(len(_clean(span.text))>=3 and _clean(span.text) in self.choices and span.bbox[0]>image.shape[1]*.55 for span in spans if span.confidence>=.9):
@@ -490,11 +504,16 @@ class VisionPipeline:
             resources.update(recruitment_cards.resources)
             actions = list(recruitment_cards.actions)
             diagnostics.extend(recruitment_cards.diagnostics)
+        elif scene == 'movement_preview':
+            # A recognized detail panel must not expose the map behind it, or
+            # turn unrelated short OCR words into menu actions. Keep the same
+            # visual threshold for the globally and locally matched entry.
+            if 'movement_preview' in markers and not movement_blocked and len(movement_text) <= 1:
+                hit = markers['movement_preview']
+                actions.append(ObservedAction("map:enter_preview", "进入节点", "ui", hit.bbox, hit.confidence,
+                    metadata={"operation":"event_advance", "grounded":True, "source":"maa_template"}))
         elif scene not in {"battle", "battle_start", "ending", "ending_complete", "unknown", "failed"}:
             actions.extend(self._actions(spans,scene,image.shape[1],image.shape[0]))
-            if scene=="movement_preview":
-                hit=markers["movement_preview"]
-                actions.append(ObservedAction("map:enter_preview","进入节点","ui",hit.bbox,hit.confidence,metadata={"operation":"event_advance","grounded":True,"source":"maa_template"}))
             actions.extend(self._catalog_actions(spans,scene,image.shape[1],image.shape[0]))
             if scene == "reward":
                 actions = self._reward_card_actions(actions, spans, image.shape[1], image.shape[0])
@@ -513,6 +532,76 @@ class VisionPipeline:
             from .recruitment_cards import observed_recruitment_state
             metadata['recruitment_state']=observed_recruitment_state(recruitment_cards,frame_id)
         return LiveObservation(frame_id,captured_at,scene,confidence,tuple(actions),tuple(nodes),tuple(edges),resources,current,floor,first_ending,tuple(diagnostics),metadata)
+
+    @staticmethod
+    def _battle_start_confirmation(image, spans):
+        """The emergency-operator departure prompt commits battle startup."""
+        height,width = image.shape[:2]
+        def usable(span):
+            x,y,w,h = span.bbox
+            return (math.isfinite(span.confidence) and .8 <= span.confidence <= 1
+                    and all(math.isfinite(v) for v in span.bbox) and w > 0 and h > 0
+                    and x >= 0 and y >= 0 and x+w <= width and y+h <= height)
+        candidates = [s for s in spans if usable(s)]
+        prompts = [s for s in candidates if s.confidence >= .9
+                   and width*.1 <= s.bbox[0] and s.bbox[0]+s.bbox[2] <= width*.9
+                   and height*.2 <= s.bbox[1] <= height*.6
+                   and all(part in _clean(s.text) for part in ('应急干员','本次战斗后离开','是否要继续'))]
+        cancels = [s for s in candidates if _clean(s.text) == '取消']
+        confirms = [s for s in candidates if _clean(s.text) == '确认']
+        for prompt in prompts:
+            for cancel in cancels:
+                for confirm in confirms:
+                    if (cancel.bbox[0]+cancel.bbox[2] < confirm.bbox[0]
+                            and min(cancel.bbox[1],confirm.bbox[1]) > prompt.bbox[1]+prompt.bbox[3]
+                            and abs(cancel.bbox[1]-confirm.bbox[1]) <= max(cancel.bbox[3],confirm.bbox[3])):
+                        return prompt.confidence
+        return 0.
+
+
+    @staticmethod
+    def _movement_preview_text(image, spans):
+        height, width = image.shape[:2]
+        return tuple(span for span in spans
+            if math.isfinite(span.confidence) and .8 <= span.confidence <= 1
+            and _clean(span.text) in {'出发前往', '无法抵达'}
+            and all(math.isfinite(v) for v in span.bbox)
+            and span.bbox[2] > 0 and span.bbox[3] > 0
+            and width*.55 <= span.bbox[0] < width
+            and height*.5 <= span.bbox[1] < height*.88
+            and span.bbox[0]+span.bbox[2] <= width and span.bbox[1]+span.bbox[3] <= height)
+
+
+    def _movement_preview_match(self, image, span):
+        """Refine scale near observed text without lowering the color threshold."""
+        name = 'BlackFlow@Roguelike@MovePreviewEnter.png'
+        template = self.templates.template(name) if hasattr(self.templates, 'template') else None
+        if template is None or _clean(span.text) != '出发前往':
+            return None
+        x,y,w,h = span.bbox
+        height,width = image.shape[:2]
+        left,top = max(0,math.floor(x-h*.6)),max(0,math.floor(y-h*.6))
+        right,bottom = min(width,math.ceil(x+w+h*.6)),min(height,math.ceil(y+h+h*.6))
+        # Width is from this frame's complete four-character label, not from
+        # the window aspect ratio or a remembered previous frame's geometry.
+        base = w/template.shape[1]
+        scales = tuple(base*(1+offset/100) for offset in range(-8,9))
+        hits = self.templates.match(image[top:bottom,left:right], name,
+                                    threshold=.88, maximum=2, scales=scales)
+        accepted = []
+        for hit in hits:
+            hx,hy,hw,hh = hit.bbox
+            if (not math.isfinite(hit.confidence) or not .88 <= hit.confidence <= 1
+                    or not all(math.isfinite(v) for v in hit.bbox)
+                    or not math.isfinite(hit.scale) or hit.scale <= 0
+                    or hw <= 0 or hh <= 0 or hx < 0 or hy < 0
+                    or hx+hw > right-left or hy+hh > bottom-top):
+                continue
+            box = (hx+left,hy+top,hw,hh)
+            if math.dist((box[0]+hw/2,box[1]+hh/2),(x+w/2,y+h/2)) <= h*.5:
+                accepted.append(TemplateHit(name,hit.confidence,box,hit.scale))
+        return accepted[0] if len(accepted) == 1 else None
+
 
     def _actions(self, spans: tuple[OCRSpan,...], scene: str, width: int, height: int) -> list[ObservedAction]:
         actions = []
