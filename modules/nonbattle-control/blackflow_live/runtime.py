@@ -29,10 +29,14 @@ class GameRuntime:
         started = time.perf_counter()
         raw = self.capture.capture()
         captured = time.perf_counter()
-        height, width = raw.image.shape[:2]
-        # Template/OCR scale stays comparable while the full aspect ratio remains
-        # visible. UI relocation is handled by image matching, not fixed 16:9 ROIs.
-        frame = raw.normalize((max(64, round(width * 720 / height)), 720))
+        from .geometry import detect_content_rect
+        content = detect_content_rect(raw.image)
+        # Size the recognizer canvas from observed content, not client bars.
+        # Otherwise normalize() removes native bars only to insert new padding,
+        # shifting all relative UI regions. Preserve the crop in the transform
+        # so native OCR and physical input still include the original offsets.
+        frame = raw.normalize((max(64, round(content.width * 720 / content.height)), 720),
+                              detect_bars=False, content_rect=content)
         normalized = time.perf_counter()
         obs = self.vision.observe(frame.image, frame_id=frame.frame_id, captured_at=frame.captured_at)
         recognized = time.perf_counter()

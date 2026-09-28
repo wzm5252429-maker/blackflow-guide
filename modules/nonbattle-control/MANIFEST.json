@@ -109,8 +109,8 @@
     },
     {
       "path": "blackflow_live/runtime.py",
-      "sha256": "a355b2d3cf5101e5d79c4c5fa4b9f79c8c4f826921c1c46577ade841915d6a05",
-      "bytes": 3448
+      "sha256": "e0999a0ef0ccc57c50f3639ebeb54917e39e11e3ee430cfd1d919704edd199ba",
+      "bytes": 3739
     },
     {
       "path": "blackflow_live/service.py",
@@ -694,8 +694,8 @@
     },
     {
       "path": "docs/nonbattle-control.md",
-      "sha256": "4b4ec8179e3d0c3c3da09a2dbbf3c42524d4693b4f32bed9b26c4a71c4e74ea0",
-      "bytes": 10931
+      "sha256": "49f7b906a68843ee2418a60e00d71ee7dc0a81b871b1c499cdc33f8f564924dc",
+      "bytes": 11530
     },
     {
       "path": "requirements-core.txt",
@@ -973,6 +973,11 @@
       "bytes": 1471
     },
     {
+      "path": "tests/test_live_runtime_content.py",
+      "sha256": "663de1f810a43f8481429661d98ecca43aa0978e1d93c923e8a362552971aedc",
+      "bytes": 2484
+    },
+    {
       "path": "tests/test_live_service.py",
       "sha256": "645cb1a5cb077e70daec7476c0ba8938de640ae2d0cf832bafc15d7d064f784d",
       "bytes": 12047
@@ -1010,7 +1015,7 @@
   ],
   "scope": "first ending nonbattle; no claimed complete real-game acceptance",
   "maa_assets_included": false,
-  "source": "v12 frozen snapshot with reviewed HUD-only patch; native OCR and recruitment experiments excluded",
-  "release": "v13",
-  "base_archive_sha256": "b48d5f1a29f276bded2a10d0e02b3a83d2c66c13f69882b02f79fb8b92a3e8dc"
+  "source": "v13 frozen snapshot plus reviewed content-aspect normalization; candidate research excluded",
+  "release": "v14",
+  "base_archive_sha256": "99d4ae46faa805a5ca06f42acbbb3c12cab2085297fe4cba5b6fa5f474200e31"
 }
