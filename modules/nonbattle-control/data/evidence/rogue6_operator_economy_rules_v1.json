@@ -1,0 +1,2614 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "client": {
+    "path": "source_data\\roguelike_topic_table_full.json",
+    "sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+    "recruit_tickets": {
+      "rogue_6_recruit_ticket_pioneer": {
+        "id": "rogue_6_recruit_ticket_pioneer",
+        "profession": "PIONEER",
+        "rarity": "ALL",
+        "professionList": [
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_warrior": {
+        "id": "rogue_6_recruit_ticket_warrior",
+        "profession": "WARRIOR",
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_tank": {
+        "id": "rogue_6_recruit_ticket_tank",
+        "profession": "TANK",
+        "rarity": "ALL",
+        "professionList": [
+          "TANK"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_sniper": {
+        "id": "rogue_6_recruit_ticket_sniper",
+        "profession": "SNIPER",
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_caster": {
+        "id": "rogue_6_recruit_ticket_caster",
+        "profession": "CASTER",
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_support": {
+        "id": "rogue_6_recruit_ticket_support",
+        "profession": "SUPPORT",
+        "rarity": "ALL",
+        "professionList": [
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_medic": {
+        "id": "rogue_6_recruit_ticket_medic",
+        "profession": "MEDIC",
+        "rarity": "ALL",
+        "professionList": [
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_506_rmedic"
+        ]
+      },
+      "rogue_6_recruit_ticket_special": {
+        "id": "rogue_6_recruit_ticket_special",
+        "profession": "SPECIAL",
+        "rarity": "ALL",
+        "professionList": [
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_pioneer_sp": {
+        "id": "rogue_6_recruit_ticket_pioneer_sp",
+        "profession": "PIONEER",
+        "rarity": "ALL",
+        "professionList": [
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_warrior_sp": {
+        "id": "rogue_6_recruit_ticket_warrior_sp",
+        "profession": "WARRIOR",
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_tank_sp": {
+        "id": "rogue_6_recruit_ticket_tank_sp",
+        "profession": "TANK",
+        "rarity": "ALL",
+        "professionList": [
+          "TANK"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_sniper_sp": {
+        "id": "rogue_6_recruit_ticket_sniper_sp",
+        "profession": "SNIPER",
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_caster_sp": {
+        "id": "rogue_6_recruit_ticket_caster_sp",
+        "profession": "CASTER",
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_support_sp": {
+        "id": "rogue_6_recruit_ticket_support_sp",
+        "profession": "SUPPORT",
+        "rarity": "ALL",
+        "professionList": [
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_medic_sp": {
+        "id": "rogue_6_recruit_ticket_medic_sp",
+        "profession": "MEDIC",
+        "rarity": "ALL",
+        "professionList": [
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_506_rmedic"
+        ]
+      },
+      "rogue_6_recruit_ticket_special_sp": {
+        "id": "rogue_6_recruit_ticket_special_sp",
+        "profession": "SPECIAL",
+        "rarity": "ALL",
+        "professionList": [
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_pioneer_vip": {
+        "id": "rogue_6_recruit_ticket_pioneer_vip",
+        "profession": "PIONEER",
+        "rarity": "ALL",
+        "professionList": [
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_warrior_vip": {
+        "id": "rogue_6_recruit_ticket_warrior_vip",
+        "profession": "WARRIOR",
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_tank_vip": {
+        "id": "rogue_6_recruit_ticket_tank_vip",
+        "profession": "TANK",
+        "rarity": "ALL",
+        "professionList": [
+          "TANK"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_sniper_vip": {
+        "id": "rogue_6_recruit_ticket_sniper_vip",
+        "profession": "SNIPER",
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_caster_vip": {
+        "id": "rogue_6_recruit_ticket_caster_vip",
+        "profession": "CASTER",
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_support_vip": {
+        "id": "rogue_6_recruit_ticket_support_vip",
+        "profession": "SUPPORT",
+        "rarity": "ALL",
+        "professionList": [
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_medic_vip": {
+        "id": "rogue_6_recruit_ticket_medic_vip",
+        "profession": "MEDIC",
+        "rarity": "ALL",
+        "professionList": [
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_506_rmedic"
+        ]
+      },
+      "rogue_6_recruit_ticket_special_vip": {
+        "id": "rogue_6_recruit_ticket_special_vip",
+        "profession": "SPECIAL",
+        "rarity": "ALL",
+        "professionList": [
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_1": {
+        "id": "rogue_6_recruit_ticket_double_1",
+        "profession": 513,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_2": {
+        "id": "rogue_6_recruit_ticket_double_2",
+        "profession": 20,
+        "rarity": "ALL",
+        "professionList": [
+          "TANK",
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_514_rdfend",
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_3": {
+        "id": "rogue_6_recruit_ticket_double_3",
+        "profession": 10,
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER",
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_506_rmedic",
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_4": {
+        "id": "rogue_6_recruit_ticket_double_4",
+        "profession": 96,
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER",
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_1_vip": {
+        "id": "rogue_6_recruit_ticket_double_1_vip",
+        "profession": 513,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_2_vip": {
+        "id": "rogue_6_recruit_ticket_double_2_vip",
+        "profession": 20,
+        "rarity": "ALL",
+        "professionList": [
+          "TANK",
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_514_rdfend",
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_3_vip": {
+        "id": "rogue_6_recruit_ticket_double_3_vip",
+        "profession": 10,
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER",
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_506_rmedic",
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_4_vip": {
+        "id": "rogue_6_recruit_ticket_double_4_vip",
+        "profession": 96,
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER",
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_quad_melee": {
+        "id": "rogue_6_recruit_ticket_quad_melee",
+        "profession": 581,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "TANK",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_quad_ranged": {
+        "id": "rogue_6_recruit_ticket_quad_ranged",
+        "profession": 58,
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_all": {
+        "id": "rogue_6_recruit_ticket_all",
+        "profession": 639,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_507_rsnipe",
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_5star": {
+        "id": "rogue_6_recruit_ticket_5star",
+        "profession": 639,
+        "rarity": 31,
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_507_rsnipe",
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_all_premium": {
+        "id": "rogue_6_recruit_ticket_all_premium",
+        "profession": 639,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 1,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_507_rsnipe",
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_quad_melee_discount": {
+        "id": "rogue_6_recruit_ticket_quad_melee_discount",
+        "profession": 581,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "TANK",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_quad_ranged_discount": {
+        "id": "rogue_6_recruit_ticket_quad_ranged_discount",
+        "profession": 58,
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_all_discount": {
+        "id": "rogue_6_recruit_ticket_all_discount",
+        "profession": 639,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_507_rsnipe",
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_temp_5_up": {
+        "id": "rogue_6_recruit_ticket_temp_5_up",
+        "profession": 639,
+        "rarity": "TIER_5",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": []
+      },
+      "rogue_6_recruit_ticket_temp_6_up": {
+        "id": "rogue_6_recruit_ticket_temp_6_up",
+        "profession": 639,
+        "rarity": "TIER_6",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": []
+      },
+      "rogue_6_recruit_ticket_temp_6": {
+        "id": "rogue_6_recruit_ticket_temp_6",
+        "profession": 639,
+        "rarity": "TIER_6",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": []
+      },
+      "rogue_6_recruit_ticket_5star_double_1_vip": {
+        "id": "rogue_6_recruit_ticket_5star_double_1_vip",
+        "profession": 513,
+        "rarity": 31,
+        "professionList": [
+          "WARRIOR",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_5star_double_2_vip": {
+        "id": "rogue_6_recruit_ticket_5star_double_2_vip",
+        "profession": 20,
+        "rarity": 31,
+        "professionList": [
+          "TANK",
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_514_rdfend",
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_5star_double_3_vip": {
+        "id": "rogue_6_recruit_ticket_5star_double_3_vip",
+        "profession": 10,
+        "rarity": 31,
+        "professionList": [
+          "SNIPER",
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_506_rmedic",
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_5star_double_4_vip": {
+        "id": "rogue_6_recruit_ticket_5star_double_4_vip",
+        "profession": 96,
+        "rarity": 31,
+        "professionList": [
+          "CASTER",
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_pioneer_candle": {
+        "id": "rogue_6_recruit_ticket_pioneer_candle",
+        "profession": "PIONEER",
+        "rarity": "ALL",
+        "professionList": [
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_warrior_candle": {
+        "id": "rogue_6_recruit_ticket_warrior_candle",
+        "profession": "WARRIOR",
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_tank_candle": {
+        "id": "rogue_6_recruit_ticket_tank_candle",
+        "profession": "TANK",
+        "rarity": "ALL",
+        "professionList": [
+          "TANK"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_sniper_candle": {
+        "id": "rogue_6_recruit_ticket_sniper_candle",
+        "profession": "SNIPER",
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_caster_candle": {
+        "id": "rogue_6_recruit_ticket_caster_candle",
+        "profession": "CASTER",
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_support_candle": {
+        "id": "rogue_6_recruit_ticket_support_candle",
+        "profession": "SUPPORT",
+        "rarity": "ALL",
+        "professionList": [
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_medic_candle": {
+        "id": "rogue_6_recruit_ticket_medic_candle",
+        "profession": "MEDIC",
+        "rarity": "ALL",
+        "professionList": [
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_506_rmedic"
+        ]
+      },
+      "rogue_6_recruit_ticket_special_candle": {
+        "id": "rogue_6_recruit_ticket_special_candle",
+        "profession": "SPECIAL",
+        "rarity": "ALL",
+        "professionList": [
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_pioneer_sp_candle": {
+        "id": "rogue_6_recruit_ticket_pioneer_sp_candle",
+        "profession": "PIONEER",
+        "rarity": "ALL",
+        "professionList": [
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_warrior_sp_candle": {
+        "id": "rogue_6_recruit_ticket_warrior_sp_candle",
+        "profession": "WARRIOR",
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_tank_sp_candle": {
+        "id": "rogue_6_recruit_ticket_tank_sp_candle",
+        "profession": "TANK",
+        "rarity": "ALL",
+        "professionList": [
+          "TANK"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_sniper_sp_candle": {
+        "id": "rogue_6_recruit_ticket_sniper_sp_candle",
+        "profession": "SNIPER",
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_caster_sp_candle": {
+        "id": "rogue_6_recruit_ticket_caster_sp_candle",
+        "profession": "CASTER",
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_support_sp_candle": {
+        "id": "rogue_6_recruit_ticket_support_sp_candle",
+        "profession": "SUPPORT",
+        "rarity": "ALL",
+        "professionList": [
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_medic_sp_candle": {
+        "id": "rogue_6_recruit_ticket_medic_sp_candle",
+        "profession": "MEDIC",
+        "rarity": "ALL",
+        "professionList": [
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_506_rmedic"
+        ]
+      },
+      "rogue_6_recruit_ticket_special_sp_candle": {
+        "id": "rogue_6_recruit_ticket_special_sp_candle",
+        "profession": "SPECIAL",
+        "rarity": "ALL",
+        "professionList": [
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_4"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_pioneer_vip_candle": {
+        "id": "rogue_6_recruit_ticket_pioneer_vip_candle",
+        "profession": "PIONEER",
+        "rarity": "ALL",
+        "professionList": [
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_warrior_vip_candle": {
+        "id": "rogue_6_recruit_ticket_warrior_vip_candle",
+        "profession": "WARRIOR",
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_tank_vip_candle": {
+        "id": "rogue_6_recruit_ticket_tank_vip_candle",
+        "profession": "TANK",
+        "rarity": "ALL",
+        "professionList": [
+          "TANK"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_sniper_vip_candle": {
+        "id": "rogue_6_recruit_ticket_sniper_vip_candle",
+        "profession": "SNIPER",
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_caster_vip_candle": {
+        "id": "rogue_6_recruit_ticket_caster_vip_candle",
+        "profession": "CASTER",
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_support_vip_candle": {
+        "id": "rogue_6_recruit_ticket_support_vip_candle",
+        "profession": "SUPPORT",
+        "rarity": "ALL",
+        "professionList": [
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_medic_vip_candle": {
+        "id": "rogue_6_recruit_ticket_medic_vip_candle",
+        "profession": "MEDIC",
+        "rarity": "ALL",
+        "professionList": [
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_506_rmedic"
+        ]
+      },
+      "rogue_6_recruit_ticket_special_vip_candle": {
+        "id": "rogue_6_recruit_ticket_special_vip_candle",
+        "profession": "SPECIAL",
+        "rarity": "ALL",
+        "professionList": [
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [
+          "TIER_5"
+        ],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_1_candle": {
+        "id": "rogue_6_recruit_ticket_double_1_candle",
+        "profession": 513,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_2_candle": {
+        "id": "rogue_6_recruit_ticket_double_2_candle",
+        "profession": 20,
+        "rarity": "ALL",
+        "professionList": [
+          "TANK",
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_514_rdfend",
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_3_candle": {
+        "id": "rogue_6_recruit_ticket_double_3_candle",
+        "profession": 10,
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER",
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_506_rmedic",
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_4_candle": {
+        "id": "rogue_6_recruit_ticket_double_4_candle",
+        "profession": 96,
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER",
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_1_vip_candle": {
+        "id": "rogue_6_recruit_ticket_double_1_vip_candle",
+        "profession": 513,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_2_vip_candle": {
+        "id": "rogue_6_recruit_ticket_double_2_vip_candle",
+        "profession": 20,
+        "rarity": "ALL",
+        "professionList": [
+          "TANK",
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_514_rdfend",
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_3_vip_candle": {
+        "id": "rogue_6_recruit_ticket_double_3_vip_candle",
+        "profession": 10,
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER",
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_506_rmedic",
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_double_4_vip_candle": {
+        "id": "rogue_6_recruit_ticket_double_4_vip_candle",
+        "profession": 96,
+        "rarity": "ALL",
+        "professionList": [
+          "CASTER",
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_quad_melee_candle": {
+        "id": "rogue_6_recruit_ticket_quad_melee_candle",
+        "profession": 581,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "TANK",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_quad_ranged_candle": {
+        "id": "rogue_6_recruit_ticket_quad_ranged_candle",
+        "profession": 58,
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_all_candle": {
+        "id": "rogue_6_recruit_ticket_all_candle",
+        "profession": 639,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_507_rsnipe",
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_5star_candle": {
+        "id": "rogue_6_recruit_ticket_5star_candle",
+        "profession": 639,
+        "rarity": 31,
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_507_rsnipe",
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_all_premium_candle": {
+        "id": "rogue_6_recruit_ticket_all_premium_candle",
+        "profession": 639,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 1,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_507_rsnipe",
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_quad_melee_discount_candle": {
+        "id": "rogue_6_recruit_ticket_quad_melee_discount_candle",
+        "profession": 581,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "TANK",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_quad_ranged_discount_candle": {
+        "id": "rogue_6_recruit_ticket_quad_ranged_discount_candle",
+        "profession": 58,
+        "rarity": "ALL",
+        "professionList": [
+          "SNIPER",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_all_discount_candle": {
+        "id": "rogue_6_recruit_ticket_all_discount_candle",
+        "profession": 639,
+        "rarity": "ALL",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5",
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_507_rsnipe",
+          "char_505_rcast",
+          "char_506_rmedic",
+          "char_514_rdfend"
+        ]
+      },
+      "rogue_6_recruit_ticket_temp_5_up_candle": {
+        "id": "rogue_6_recruit_ticket_temp_5_up_candle",
+        "profession": 639,
+        "rarity": "TIER_5",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": []
+      },
+      "rogue_6_recruit_ticket_temp_6_up_candle": {
+        "id": "rogue_6_recruit_ticket_temp_6_up_candle",
+        "profession": 639,
+        "rarity": "TIER_6",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": []
+      },
+      "rogue_6_recruit_ticket_temp_6_candle": {
+        "id": "rogue_6_recruit_ticket_temp_6_candle",
+        "profession": 639,
+        "rarity": "TIER_6",
+        "professionList": [
+          "WARRIOR",
+          "SNIPER",
+          "TANK",
+          "MEDIC",
+          "SUPPORT",
+          "CASTER",
+          "SPECIAL",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_6"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": []
+      },
+      "rogue_6_recruit_ticket_5star_double_1_vip_candle": {
+        "id": "rogue_6_recruit_ticket_5star_double_1_vip_candle",
+        "profession": 513,
+        "rarity": 31,
+        "professionList": [
+          "WARRIOR",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "rogue_6_recruit_ticket_5star_double_2_vip_candle": {
+        "id": "rogue_6_recruit_ticket_5star_double_2_vip_candle",
+        "profession": 20,
+        "rarity": 31,
+        "professionList": [
+          "TANK",
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_514_rdfend",
+          "char_505_rcast"
+        ]
+      },
+      "rogue_6_recruit_ticket_5star_double_3_vip_candle": {
+        "id": "rogue_6_recruit_ticket_5star_double_3_vip_candle",
+        "profession": 10,
+        "rarity": 31,
+        "professionList": [
+          "SNIPER",
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_506_rmedic",
+          "char_507_rsnipe"
+        ]
+      },
+      "rogue_6_recruit_ticket_5star_double_4_vip_candle": {
+        "id": "rogue_6_recruit_ticket_5star_double_4_vip_candle",
+        "profession": 96,
+        "rarity": 31,
+        "professionList": [
+          "CASTER",
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_505_rcast"
+        ]
+      }
+    },
+    "mastery": {
+      "rogue_6_somaster_1": {
+        "id": "rogue_6_somaster_1",
+        "buffs": [
+          {
+            "key": "recruit_cost_char",
+            "blackboard": [
+              {
+                "key": "char_id_list",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              },
+              {
+                "key": "delta",
+                "value": -2.0,
+                "valueStr": null
+              }
+            ]
+          }
+        ]
+      },
+      "rogue_6_somaster_2": {
+        "id": "rogue_6_somaster_2",
+        "buffs": [
+          {
+            "key": "recruit_cost_char",
+            "blackboard": [
+              {
+                "key": "char_id_list",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              },
+              {
+                "key": "delta",
+                "value": -2.0,
+                "valueStr": null
+              }
+            ]
+          },
+          {
+            "key": "upgrade_cost_char",
+            "blackboard": [
+              {
+                "key": "char_id_list",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              },
+              {
+                "key": "delta",
+                "value": -2.0,
+                "valueStr": null
+              }
+            ]
+          }
+        ]
+      },
+      "rogue_6_somaster_3": {
+        "id": "rogue_6_somaster_3",
+        "buffs": [
+          {
+            "key": "recruit_cost_char",
+            "blackboard": [
+              {
+                "key": "char_id_list",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              },
+              {
+                "key": "delta",
+                "value": -4.0,
+                "valueStr": null
+              }
+            ]
+          },
+          {
+            "key": "upgrade_cost_char",
+            "blackboard": [
+              {
+                "key": "char_id_list",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              },
+              {
+                "key": "delta",
+                "value": -2.0,
+                "valueStr": null
+              }
+            ]
+          }
+        ]
+      },
+      "rogue_6_somaster_4": {
+        "id": "rogue_6_somaster_4",
+        "buffs": [
+          {
+            "key": "recruit_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_max_weight"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "char_id",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              }
+            ]
+          }
+        ]
+      },
+      "rogue_6_somaster_5": {
+        "id": "rogue_6_somaster_5",
+        "buffs": [
+          {
+            "key": "recruit_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_max_weight"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "char_id",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              }
+            ]
+          },
+          {
+            "key": "recruit_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_scrap_M_03"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "char_id",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              },
+              {
+                "key": "upgrade_phase",
+                "value": 1.0,
+                "valueStr": null
+              }
+            ]
+          },
+          {
+            "key": "upgrade_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_scrap_M_03"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "char_id",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              }
+            ]
+          }
+        ]
+      },
+      "rogue_6_somaster_6": {
+        "id": "rogue_6_somaster_6",
+        "buffs": [
+          {
+            "key": "recruit_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_max_weight"
+              },
+              {
+                "key": "count",
+                "value": 2.0,
+                "valueStr": null
+              },
+              {
+                "key": "char_id",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              }
+            ]
+          },
+          {
+            "key": "recruit_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_scrap_M_11"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "char_id",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              },
+              {
+                "key": "upgrade_phase",
+                "value": 1.0,
+                "valueStr": null
+              }
+            ]
+          },
+          {
+            "key": "upgrade_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_scrap_M_11"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "char_id",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              }
+            ]
+          }
+        ]
+      },
+      "rogue_6_somaster_7": {
+        "id": "rogue_6_somaster_7",
+        "buffs": [
+          {
+            "key": "zone_into_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "char_4230_mcnist"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "zone",
+                "value": 0.0,
+                "valueStr": "zone_1"
+              },
+              {
+                "key": "has_less",
+                "value": 1.0,
+                "valueStr": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "initial_recruit_groups": {
+      "recruit_group_random": {
+        "id": "recruit_group_random",
+        "iconId": "recruit_group_random",
+        "name": "随心所欲",
+        "desc": "三张随机的招募券，其中一张必定出现5星临时招募",
+        "unlockDesc": "使用其他招募组合进行一次探索"
+      },
+      "recruit_group_1": {
+        "id": "recruit_group_1",
+        "iconId": "recruit_group_1",
+        "name": "先手必胜",
+        "desc": "先锋、狙击、特种招募券各一张",
+        "unlockDesc": null
+      },
+      "recruit_group_2": {
+        "id": "recruit_group_2",
+        "iconId": "recruit_group_2",
+        "name": "稳扎稳打",
+        "desc": "重装、术师、狙击招募券各一张",
+        "unlockDesc": null
+      },
+      "recruit_group_3": {
+        "id": "recruit_group_3",
+        "iconId": "recruit_group_3",
+        "name": "取长补短",
+        "desc": "近卫、辅助、医疗招募券各一张",
+        "unlockDesc": null
+      },
+      "recruit_group_4": {
+        "id": "recruit_group_4",
+        "iconId": "recruit_group_4",
+        "name": "灵活部署",
+        "desc": "先锋、辅助、特种招募券各一张",
+        "unlockDesc": null
+      },
+      "recruit_group_5": {
+        "id": "recruit_group_5",
+        "iconId": "recruit_group_5",
+        "name": "坚不可摧",
+        "desc": "重装、术师、医疗招募券各一张",
+        "unlockDesc": null
+      },
+      "recruit_group_m1": {
+        "id": "recruit_group_m1",
+        "iconId": "recruit_group_random",
+        "name": "支援作战",
+        "desc": "两张随机的招募券",
+        "unlockDesc": null
+      },
+      "recruit_group_m2": {
+        "id": "recruit_group_m2",
+        "iconId": "recruit_group_random",
+        "name": "支援作战",
+        "desc": "两张随机的招募券",
+        "unlockDesc": null
+      },
+      "recruit_group_m3": {
+        "id": "recruit_group_m3",
+        "iconId": "recruit_group_random",
+        "name": "支援作战",
+        "desc": "两张随机的招募券",
+        "unlockDesc": null
+      },
+      "recruit_group_m4": {
+        "id": "recruit_group_m4",
+        "iconId": "recruit_group_random",
+        "name": "支援作战",
+        "desc": "两张随机的招募券",
+        "unlockDesc": null
+      },
+      "recruit_group_m5": {
+        "id": "recruit_group_m5",
+        "iconId": "recruit_group_random",
+        "name": "支援作战",
+        "desc": "两张随机的招募券",
+        "unlockDesc": null
+      },
+      "recruit_group_m6": {
+        "id": "recruit_group_m6",
+        "iconId": "recruit_group_random",
+        "name": "支援作战",
+        "desc": "两张随机的招募券",
+        "unlockDesc": null
+      },
+      "recruit_group_m7": {
+        "id": "recruit_group_m7",
+        "iconId": "recruit_group_random",
+        "name": "支援作战",
+        "desc": "两张随机的招募券",
+        "unlockDesc": null
+      },
+      "recruit_group_m8": {
+        "id": "recruit_group_m8",
+        "iconId": "recruit_group_random",
+        "name": "支援作战",
+        "desc": "两张随机的招募券",
+        "unlockDesc": null
+      }
+    }
+  },
+  "rules": {
+    "mechanist_id": "char_4230_mcnist",
+    "mechanist_profession": "TANK",
+    "mechanist_rarity": "TIER_6",
+    "initial_recruit_hope_before_mastery": 6,
+    "noninitial_N15_recruit_hope_before_mastery": 7,
+    "promotion_hope_before_mastery": 3,
+    "mastery_recruit_hope_delta": -4,
+    "mastery_promotion_hope_delta": -2,
+    "mastery_recruit_capacity": 2,
+    "mastery_actual_promotion_M11": 1,
+    "default_formal_roster_choice": "E1 Mechanist + 2 free anonymous formal companions; consumes 2 of initial 6 hope, not a free E2 recruitment",
+    "emergency_helper_is_not_formal_recruit": true
+  },
+  "sources": {
+    "mechanist": "https://prts.wiki/w/机械师",
+    "character_client": "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/character_table.json"
+  },
+  "unknowns": [
+    "Default two free formal companions have abstract identities.",
+    "Generic ticket totals do not establish profession. Only held concrete eligible tickets permit ticket promotion.",
+    "Ordinary expedition other supplies not quantitatively established; omitted with unresolved-rule ledger, not asserted to be zero."
+  ]
+}

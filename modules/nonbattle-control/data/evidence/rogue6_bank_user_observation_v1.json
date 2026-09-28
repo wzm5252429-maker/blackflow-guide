@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "source_priority": "User observed per-entry 12 ingots replaces the prior per-node allowance; stored balance conversion cost retains pinned PRTS evidence.",
+  "user_observed_rules": {
+    "withdraw_limit_per_actual_green_shop_entry": 12,
+    "stock_refresh_resets_allowance": false,
+    "avoid_unnecessary_withdrawals": true,
+    "random_transport_prefers_unrevealed_nonbattle_nodes": true,
+    "random_transport_within_priority_group": "UNVERIFIED_UNIFORM_PRIOR"
+  },
+  "bank_cost_evidence": {
+    "url": "https://prts.wiki/w/沉沦者的黑流树海",
+    "revision": "424917",
+    "page_sha256": "fa2975af969189fb04495f8aa1f8a6ccd797949256060b52466860a50de1ad6d",
+    "excerpt": "余额提取 功能解锁后，无论是否投资受限，都可以消耗一定的系统余额提取1源石锭。 通常情况下，每次提取消耗和当前节点取款次数相同的余额提取1源石锭（最高7源石锭/次），单个节点最多提取12次。 ",
+    "interpretation": "withdrawal n accumulated within the current node consumes min(n,7) bank balance and grants exactly 1 ingot; re-entry resets the user-observed allowance but not the node cost counter. The first 12 withdrawals at one node spend 63 balance; later full 12-withdrawal entries at that node spend 84."
+  },
+  "client_bank_balance_limit": 999,
+  "default_initial_balance": 999,
+  "default_balance_evidence": "ASSUMED_ACCOUNT_START_BALANCE; cumulative investment of 500 does not itself prove 999 available balance",
+  "observed_override_config": "EconomyConfig.observed_initial_bank_balance",
+  "external_support_metrics": [
+    "bank_initial_balance",
+    "bank_balance",
+    "total_bank_withdrawn",
+    "bank_balance_spent"
+  ],
+  "unknowns": [
+    "User per-entry allowance replaces the old source per-node cap only. The old source explicitly scopes conversion cost to current-node withdrawal count, which is preserved across re-entry."
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-09",
+  "event": "临时中介所",
+  "sources": [
+    {
+      "path": "source_data/roguelike_topic_table_full.json",
+      "sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+      "provenance": "Pinned client data, details.rogue_6 choices/recruitTickets/stashableTickets/items"
+    },
+    {
+      "path": "data/evidence/rogue6_noncombat_event_catalog_v1.json",
+      "sha256": "9f2d56f5c6881bcb893677a542a70f6d23eb68c3449a5074dcca1b3153edade1",
+      "provenance": "Existing registered public event catalog, three entry branch families; profession variant distribution unknown"
+    }
+  ],
+  "entry_scene": {
+    "id": "scene_ro6_hire1_enter",
+    "title": "临时中介所",
+    "description": "“朋友，你一定需要帮手。”一只穿着得体的鹰攫住了你的手腕，让你一时挣脱不开。愉快的玩闹声从它身后传来，吸引了你的注意——一群动物正在翻滚打闹，浑然不觉它们已经被圈在了栅栏里，成了被兜售的对象。“它们都很有活力吧？不眠不休地工作一个月也不会出问题。请放心，这绝不是什么夸大其词的广告，我们亲手测试过......是的，每一个。”",
+    "background": "pic_rogue_6_19",
+    "titleIcon": null,
+    "subTypeId": 0,
+    "useHiddenMusic": false
+  },
+  "standard_variants": [
+    {
+      "choice_id": "choice_ro6_hire1_1",
+      "choice": {
+        "id": "choice_ro6_hire1_1",
+        "title": "可靠的中介值得信任",
+        "description": "获得<@ro6.get>2</>希望，招募1名直升的5星及以下先锋或近卫干员",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": "scene_ro6_hire1_1",
+        "icon": "",
+        "displayData": {
+          "type": "NORMAL",
+          "costHintType": "NONE",
+          "effectHintType": "NONE",
+          "funcIconId": "recruit",
+          "itemId": null,
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": false,
+        "sortId": 0
+      },
+      "matching_ticket_id": "rogue_6_recruit_ticket_5star_double_1_vip",
+      "ticket_mapping_basis": "Matching client profession and <=5-star already-promoted usage; no server reward itemId supplied in choice displayData.",
+      "ticket": {
+        "id": "rogue_6_recruit_ticket_5star_double_1_vip",
+        "profession": 513,
+        "rarity": 31,
+        "professionList": [
+          "WARRIOR",
+          "PIONEER"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard"
+        ]
+      },
+      "item_usage": "招募一名5星及以下的先锋或近卫干员，所有干员招募时直接就是直升的状态",
+      "stashable_ticket": {
+        "ticketId": "rogue_6_recruit_ticket_5star_double_1_vip",
+        "stashedTicketId": "rogue_6_recruit_ticket_5star_double_1_vip_candle"
+      }
+    },
+    {
+      "choice_id": "choice_ro6_hire1_4",
+      "choice": {
+        "id": "choice_ro6_hire1_4",
+        "title": "可靠的中介值得信任",
+        "description": "获得<@ro6.get>2</>希望，招募1名直升的5星及以下重装或辅助干员",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": "scene_ro6_hire1_1",
+        "icon": "",
+        "displayData": {
+          "type": "NORMAL",
+          "costHintType": "NONE",
+          "effectHintType": "NONE",
+          "funcIconId": "recruit",
+          "itemId": null,
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": false,
+        "sortId": 0
+      },
+      "matching_ticket_id": "rogue_6_recruit_ticket_5star_double_2_vip",
+      "ticket_mapping_basis": "Matching client profession and <=5-star already-promoted usage; no server reward itemId supplied in choice displayData.",
+      "ticket": {
+        "id": "rogue_6_recruit_ticket_5star_double_2_vip",
+        "profession": 20,
+        "rarity": 31,
+        "professionList": [
+          "TANK",
+          "SUPPORT"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_514_rdfend",
+          "char_505_rcast"
+        ]
+      },
+      "item_usage": "招募一名5星及以下的重装或辅助干员，所有干员招募时直接就是直升的状态",
+      "stashable_ticket": {
+        "ticketId": "rogue_6_recruit_ticket_5star_double_2_vip",
+        "stashedTicketId": "rogue_6_recruit_ticket_5star_double_2_vip_candle"
+      }
+    },
+    {
+      "choice_id": "choice_ro6_hire1_5",
+      "choice": {
+        "id": "choice_ro6_hire1_5",
+        "title": "可靠的中介值得信任",
+        "description": "获得<@ro6.get>2</>希望，招募1名直升的5星及以下医疗或狙击干员",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": "scene_ro6_hire1_1",
+        "icon": "",
+        "displayData": {
+          "type": "NORMAL",
+          "costHintType": "NONE",
+          "effectHintType": "NONE",
+          "funcIconId": "recruit",
+          "itemId": null,
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": false,
+        "sortId": 0
+      },
+      "matching_ticket_id": "rogue_6_recruit_ticket_5star_double_3_vip",
+      "ticket_mapping_basis": "Matching client profession and <=5-star already-promoted usage; no server reward itemId supplied in choice displayData.",
+      "ticket": {
+        "id": "rogue_6_recruit_ticket_5star_double_3_vip",
+        "profession": 10,
+        "rarity": 31,
+        "professionList": [
+          "SNIPER",
+          "MEDIC"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_506_rmedic",
+          "char_507_rsnipe"
+        ]
+      },
+      "item_usage": "招募一名5星及以下的医疗或狙击干员，所有干员招募时直接就是直升的状态",
+      "stashable_ticket": {
+        "ticketId": "rogue_6_recruit_ticket_5star_double_3_vip",
+        "stashedTicketId": "rogue_6_recruit_ticket_5star_double_3_vip_candle"
+      }
+    },
+    {
+      "choice_id": "choice_ro6_hire1_6",
+      "choice": {
+        "id": "choice_ro6_hire1_6",
+        "title": "可靠的中介值得信任",
+        "description": "获得<@ro6.get>2</>希望，招募1名直升的5星及以下术师或特种干员",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": "scene_ro6_hire1_1",
+        "icon": "",
+        "displayData": {
+          "type": "NORMAL",
+          "costHintType": "NONE",
+          "effectHintType": "NONE",
+          "funcIconId": "recruit",
+          "itemId": null,
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": false,
+        "sortId": 0
+      },
+      "matching_ticket_id": "rogue_6_recruit_ticket_5star_double_4_vip",
+      "ticket_mapping_basis": "Matching client profession and <=5-star already-promoted usage; no server reward itemId supplied in choice displayData.",
+      "ticket": {
+        "id": "rogue_6_recruit_ticket_5star_double_4_vip",
+        "profession": 96,
+        "rarity": 31,
+        "professionList": [
+          "CASTER",
+          "SPECIAL"
+        ],
+        "rarityList": [
+          "TIER_1",
+          "TIER_2",
+          "TIER_3",
+          "TIER_4",
+          "TIER_5"
+        ],
+        "extraEliteNum": 0,
+        "extraFreeRarity": [],
+        "extraCharIds": [
+          "char_504_rguard",
+          "char_505_rcast"
+        ]
+      },
+      "item_usage": "招募一名5星及以下的术师或特种干员，所有干员招募时直接就是直升的状态",
+      "stashable_ticket": {
+        "ticketId": "rogue_6_recruit_ticket_5star_double_4_vip",
+        "stashedTicketId": "rogue_6_recruit_ticket_5star_double_4_vip_candle"
+      }
+    }
+  ],
+  "random_six": {
+    "choice": {
+      "id": "choice_ro6_hire1_2",
+      "title": "合格的帮手应当仔细挑选",
+      "description": "随机获得一名6星临时招募干员",
+      "lockedCoverDesc": null,
+      "type": "TRADE",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_hire1_2",
+      "icon": null,
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "recruit",
+        "itemId": null,
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    "matching_ticket": {
+      "id": "rogue_6_recruit_ticket_temp_6",
+      "name": "高级资深干员招募券",
+      "description": null,
+      "usage": "随机获得一名6星临时招募干员",
+      "obtainApproach": "在集成战略模式中获得",
+      "iconId": "rogue_6_recruit_ticket_temp_6",
+      "itemIconGroupId": null,
+      "type": "RECRUIT_TICKET",
+      "subType": "SINGLE_RAND_FREE",
+      "rarity": "NORMAL",
+      "sortId": 999,
+      "canSacrifice": false,
+      "tinyIconColor": null,
+      "unlockCondDesc": null,
+      "shortUsage": null
+    },
+    "coverage": "Non-promoted random six-star identity and already-owned resolution not observed; no sampler or economic payout is fabricated."
+  },
+  "leave": {
+    "id": "choice_ro6_hire1_3",
+    "title": "前行的速度更重要",
+    "description": "多一事不如少一事",
+    "lockedCoverDesc": null,
+    "type": "NEXT",
+    "leftDecoType": "NONE",
+    "nextSceneId": "scene_ro6_hire1_3",
+    "icon": "leave",
+    "displayData": {
+      "type": "NORMAL",
+      "costHintType": "NONE",
+      "effectHintType": "NONE",
+      "funcIconId": "leave",
+      "itemId": null,
+      "difficultyUpgradeRelicGroupId": null,
+      "taskId": null,
+      "instId": null
+    },
+    "forceShowWhenOnlyLeave": false,
+    "isHiddenChoice": false,
+    "sortId": 0
+  },
+  "economic_abstraction": {
+    "source_label": "CLIENT_CONFIRMED_BROKER_ALL_FOUR_VARIANTS_FREE_RESERVE",
+    "profession_variant": "Unobserved. No variant is sampled or presented as observed, and the four variants are not all made player-selectable.",
+    "common_action": "Every client variant contains at least one explicit extraCharIds reserve in a <=5-star rarity list. The limited shared action confirms one free reserve recruitment without assigning profession or character ID.",
+    "branch_selection": "+2 hope and one finite recruitment opportunity; no formal operator or corn growth yet.",
+    "recruit_confirmation": "Consume opportunity nonce exactly once, add one anonymous formal reserve instance, invoke the existing actual-recruitment hook once. No six-star or Mechanist promotion eligibility.",
+    "storage": "All four matching <=5-star tickets are explicitly in stashableTickets; one shared three-slot retention capability can therefore be represented without sampling the pair.",
+    "limitations": [
+      "This does not implement the full <=5-star roster or profession-dependent combat/promotion choice.",
+      "No character identity weights or profession-pair weights are inferred.",
+      "The random six-star branch remains an explicit coverage boundary.",
+      "The opaque formal instance is a bookkeeping nonce, not an invented canonical character identity."
+    ]
+  }
+}

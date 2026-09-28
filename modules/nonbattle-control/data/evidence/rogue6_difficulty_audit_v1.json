@@ -1,0 +1,1106 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "topic_id": "rogue_6",
+  "purpose": "Factual difficulty manifest and as-reviewed implementation audit, not a claim of full combat simulation.",
+  "sources": {
+    "client_path": "source_data\\roguelike_topic_table_full.json",
+    "client_sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+    "client_url": "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/roguelike_topic_table.json",
+    "weather_client_pointer": "modules.rogue_6.weather.mainWeatherData",
+    "weather_client_scope": "Original ideological effects for all ten region kinds and three tiers; economic/combat implementation is audited separately.",
+    "prts_url": "https://prts.wiki/w/沉沦者的黑流树海",
+    "prts_snapshot": "artifacts\\n15_difficulty_prts.html",
+    "prts_sha256": "cb8977e13b257c8e5759d93ee379fe4ff1789e9abbc47f16fb181212cd3c07f1"
+  },
+  "status_definitions": {
+    "implemented": "Current runtime represents this effect within the stated scope.",
+    "partial": "Some behavior is implemented; enumerated constraints remain missing or prior-based.",
+    "combat_oracle": "Combat is assumed won; this actual combat mechanic is not simulated.",
+    "unknown": "Required behavior or observations are not represented."
+  },
+  "audit_source_sha256": {
+    "blackflow_rl/domain.py": "f627d8728a9975fe70782a0b685eb9e8f44d1548bff4da11306f34abad0321de",
+    "blackflow_rl/economy.py": "8fa8dca339e4aaeb0c3ea7580c2e13ff0f1ec48593591da82aa78ff7bfd133d8",
+    "blackflow_rl/mapgen.py": "294ab11e32d6bc0677c422d349d77c20ee9fc92d2cd287831a9f38b0002dc9f6",
+    "blackflow_rl/operator_economy.py": "e21391e5af168671ebb33169a08b0339022d9c91f15c2a4f390e8f6184eb7fbe",
+    "blackflow_rl/recruitment.py": "bde4cf539477a4bbc0d523702bcef57b1df9428d5617c67c41115b2891c73f44",
+    "blackflow_rl/simulator.py": "a2835476eab3e278d0f71e18229c8ba5749072abaa79ebfa46125a0207a0cac1",
+    "blackflow_rl/utopia_economy.py": "cd48fd4768512da94491b5b2691521b78e1ac1db2966107c8dc14421a6802fcf"
+  },
+  "difficulty_rows": [
+    {
+      "grade": 0,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 0,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": "沉沦于黑流，浮起幻梦或骸骨",
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.0,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "初始生命值上限更高，失败时下次探索获得“特勤任务影像”",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 0,
+        "color": "#79a022",
+        "bpValue": 0,
+        "bossValue": 0,
+        "addDesc": "黑流树海的探索险象环生，失败后将在下次探索时获得额外支持",
+        "warningType": "NONE",
+        "unlockText": null,
+        "displayIconId": "icon_difficulty_0",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "partial",
+      "effects": [
+        {
+          "id": "initial_hp",
+          "summary": "Base initial HP and maximum HP are 8.",
+          "status": "implemented",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 1632,
+              "anchor": "def start("
+            }
+          ],
+          "note": null
+        },
+        {
+          "id": "failure_support",
+          "summary": "Failure grants next-run special mission footage at N0–N3.",
+          "status": "unknown",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 1632,
+              "anchor": "def start("
+            }
+          ],
+          "note": "Cross-run failure-support inventory is not simulated by previous_cleared_floors."
+        },
+        {
+          "id": "N0_only_enemy_scaling",
+          "summary": "PRTS: only at N0, enemy HP x0.60 and ATK x0.70.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 769,
+              "anchor": "def battle("
+            }
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "grade": 1,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 1,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.05,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "初始目标生命上限-2",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 1,
+        "color": "#79a022",
+        "bpValue": 5,
+        "bossValue": 0,
+        "addDesc": "黑流树海的探索险象环生，失败后将在下次探索时获得额外支持",
+        "warningType": "NONE",
+        "unlockText": "通过<保密等级>",
+        "displayIconId": "icon_difficulty_0",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "partial",
+      "effects": [
+        {
+          "id": "initial_hp_minus2",
+          "summary": "Initial maximum HP -2; initial HP becomes 6.",
+          "status": "implemented",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 1632,
+              "anchor": "def start("
+            }
+          ],
+          "note": null
+        },
+        {
+          "id": "N1_only_enemy_scaling",
+          "summary": "PRTS: only at N1, enemy HP/ATK x0.80.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 769,
+              "anchor": "def battle("
+            }
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "grade": 2,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 2,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.1,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "实托邦将会在区域中生成",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 2,
+        "color": "#79a022",
+        "bpValue": 10,
+        "bossValue": 0,
+        "addDesc": "黑流树海的探索险象环生，失败后将在下次探索时获得额外支持",
+        "warningType": "NONE",
+        "unlockText": "通过<保密等级·1>",
+        "displayIconId": "icon_difficulty_0",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "partial",
+      "effects": [
+        {
+          "id": "early_regions",
+          "summary": "Regions appear at early tier; floor probabilities 0/.10/.15/.20/.20/0.",
+          "status": "partial",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/utopia_economy.py",
+              "line": 55,
+              "anchor": "def generate_region("
+            }
+          ],
+          "note": "Tier/probability implemented; region count/center/ideology draws remain explicit priors."
+        },
+        {
+          "id": "N2_only_enemy_scaling",
+          "summary": "PRTS: only at N2, enemy HP/ATK x0.85.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 769,
+              "anchor": "def battle("
+            }
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "grade": 3,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 3,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.15,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "部分【险路尽头】节点不再提前揭示 ",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 3,
+        "color": "#79a022",
+        "bpValue": 15,
+        "bossValue": 0,
+        "addDesc": "黑流树海的探索险象环生，失败后将在下次探索时获得额外支持",
+        "warningType": "NONE",
+        "unlockText": "通过<保密等级·2>",
+        "displayIconId": "icon_difficulty_0",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "partial",
+      "effects": [
+        {
+          "id": "one_hidden_final",
+          "summary": "One FINAL node no longer receives automatic initial reveal.",
+          "status": "partial",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/simulator.py",
+              "line": 893,
+              "anchor": "hidden_final = None"
+            }
+          ],
+          "note": "Exactly one is withheld, but the choice of lexicographically last node is a model convention."
+        },
+        {
+          "id": "N3_only_enemy_scaling",
+          "summary": "PRTS: only at N3, enemy HP/ATK x0.90.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 769,
+              "anchor": "def battle("
+            }
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "grade": 4,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 4,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.2,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "出现【“居民”据点】节点，失败后不再获得“特勤任务影像”",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 4,
+        "color": "#79a022",
+        "bpValue": 20,
+        "bossValue": 0,
+        "addDesc": "深入故事将面临更严峻的考验",
+        "warningType": "NONE",
+        "unlockText": "通过<保密等级·3>",
+        "displayIconId": "icon_difficulty_1",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "partial",
+      "effects": [
+        {
+          "id": "resident_unlock",
+          "summary": "Resident strongholds appear from N4.",
+          "status": "partial",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/mapgen.py",
+              "line": 1484,
+              "anchor": "NodeType.BATTLE_SAVAGE: self.config.include_advanced_nodes"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 1558,
+              "anchor": "def initialize_population("
+            }
+          ],
+          "note": "The N15 evaluation profile enables advanced nodes; lower-difficulty configs are not automatically gated at N4. Read-only reproduction: artifacts/n4_generation_gate_audit.json, floor 2 seed 13 has F2_N04 stronghold and the same generator is accepted at N0."
+        },
+        {
+          "id": "failure_support_ends",
+          "summary": "No next-run special mission footage from N4 onward.",
+          "status": "implemented",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 1632,
+              "anchor": "def start("
+            }
+          ],
+          "note": "Current model never auto-grants it, so N15 does not receive this forbidden subsidy; lower-grade benefit is missing."
+        }
+      ]
+    },
+    {
+      "grade": 5,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 5,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.25,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "所有敌人最大生命+30%",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 5,
+        "color": "#79a022",
+        "bpValue": 25,
+        "bossValue": 1,
+        "addDesc": "每进入一个新区域，所有敌人攻击力和生命值额外+1%",
+        "warningType": "NONE",
+        "unlockText": "通过<保密等级·4>",
+        "displayIconId": "icon_difficulty_1",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "combat_oracle",
+      "effects": [
+        {
+          "id": "enemy_hp_30",
+          "summary": "All enemy maximum HP x1.30, cumulatively active at N15.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 769,
+              "anchor": "def battle("
+            }
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "grade": 6,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 6,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.3,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "实托邦的效果提升至中期，将会更频繁地生成，并将添加实托邦·方针的效果",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 6,
+        "color": "#79a022",
+        "bpValue": 30,
+        "bossValue": 2,
+        "addDesc": "每进入一个新区域，所有敌人攻击力和生命值额外+2%\\n实托邦的效果提升至中期",
+        "warningType": "NONE",
+        "unlockText": "通过<保密等级·5>",
+        "displayIconId": "icon_difficulty_1",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "partial",
+      "effects": [
+        {
+          "id": "middle_regions",
+          "summary": "Middle tier; probabilities .10/.20/.40/.40/.40/.30; negative policies enabled.",
+          "status": "partial",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/utopia_economy.py",
+              "line": 55,
+              "anchor": "def generate_region("
+            },
+            {
+              "file": "blackflow_rl/utopia_economy.py",
+              "line": 121,
+              "anchor": "def apply_policy("
+            }
+          ],
+          "note": "Gold/shield/HP policy losses are applied to traversed affected nodes. Combat ideologies have no combat engine."
+        }
+      ]
+    },
+    {
+      "grade": 7,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 7,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.35,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "零件箱的初始容量-2",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 7,
+        "color": "#79a022",
+        "bpValue": 35,
+        "bossValue": 3,
+        "addDesc": "每进入一个新区域，所有敌人攻击力和生命值额外+3%\\n实托邦的效果提升至中期",
+        "warningType": "NONE",
+        "unlockText": "通过<保密等级·6>",
+        "displayIconId": "icon_difficulty_1",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "implemented",
+      "effects": [
+        {
+          "id": "initial_parts_minus2",
+          "summary": "Initial parts capacity -2.",
+          "status": "implemented",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 1632,
+              "anchor": "def start("
+            }
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "grade": 8,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 8,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.4,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "精英及领袖敌人攻击力+15%",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 8,
+        "color": "#79a022",
+        "bpValue": 40,
+        "bossValue": 5,
+        "addDesc": "每进入一个新区域，所有敌人攻击力和生命值额外+5%\\n实托邦的效果提升至中期",
+        "warningType": "NONE",
+        "unlockText": "通过<保密等级·7>",
+        "displayIconId": "icon_difficulty_1",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "combat_oracle",
+      "effects": [
+        {
+          "id": "elite_boss_atk_15",
+          "summary": "Elite and boss enemy ATK x1.15.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 769,
+              "anchor": "def battle("
+            }
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "grade": 9,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 9,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.45,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "进入下一区域时损失10%的源石锭",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 9,
+        "color": "#79a022",
+        "bpValue": 45,
+        "bossValue": 6,
+        "addDesc": "每进入一个新区域，所有敌人攻击力和生命值额外+6%\\n实托邦的效果提升至中期",
+        "warningType": "NONE",
+        "unlockText": "通过<保密等级·8>",
+        "displayIconId": "icon_difficulty_1",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "partial",
+      "effects": [
+        {
+          "id": "next_region_gold_loss",
+          "summary": "Lose 10% gold when entering the next ordinary region.",
+          "status": "partial",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 719,
+              "anchor": "'difficulty9:floor_gold_loss'"
+            }
+          ],
+          "note": "Threshold and debit implemented; floor(gold*0.1) rounding remains an unverified convention."
+        }
+      ]
+    },
+    {
+      "grade": 10,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 10,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.5,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "可同时部署人数-1，初始目标生命上限-2",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 10,
+        "color": "#79a022",
+        "bpValue": 50,
+        "bossValue": 7,
+        "addDesc": "每进入一个新区域，所有敌人攻击力和生命值额外+7%\\n实托邦的效果提升至中期",
+        "warningType": "NONE",
+        "unlockText": "通过<保密等级·9>",
+        "displayIconId": "icon_difficulty_2",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "partial",
+      "effects": [
+        {
+          "id": "initial_hp_minus2_again",
+          "summary": "Another initial maximum HP -2: N15 starts at 4.",
+          "status": "implemented",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 1632,
+              "anchor": "def start("
+            }
+          ],
+          "note": null
+        },
+        {
+          "id": "deployment_minus1",
+          "summary": "Simultaneous deployment limit -1.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/domain.py",
+              "line": 320,
+              "anchor": "class GameState:"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            }
+          ],
+          "note": "No deployment-limit state. Full technology outbuff_50 adds +1, so these two known deltas cancel, but squad_capacity is a different resource."
+        }
+      ]
+    },
+    {
+      "grade": 11,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 11,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.5,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "领袖敌人受到的伤害降低20％",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 11,
+        "color": "#b51330",
+        "bpValue": 50,
+        "bossValue": 8,
+        "addDesc": "每进入一个新区域，所有敌人攻击力和生命值额外+8%\\n实托邦的效果提升至中期",
+        "warningType": "NORMAL",
+        "unlockText": "通过<保密等级·10>",
+        "displayIconId": "icon_difficulty_2",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "combat_oracle",
+      "effects": [
+        {
+          "id": "boss_damage_reduction",
+          "summary": "Boss enemies receive 20% less damage.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 769,
+              "anchor": "def battle("
+            }
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "grade": 12,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 12,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.5,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "实托邦的效果提升至晚期，单个实托邦影响的范围扩大",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 12,
+        "color": "#b51330",
+        "bpValue": 50,
+        "bossValue": 10,
+        "addDesc": "每进入一个新区域，所有敌人攻击力和生命值额外+10%\\n实托邦的效果提升至晚期",
+        "warningType": "NORMAL",
+        "unlockText": "通过<保密等级·11>",
+        "displayIconId": "icon_difficulty_3",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "partial",
+      "effects": [
+        {
+          "id": "late_regions",
+          "summary": "Late tier and enlarged footprint (Manhattan radius 3).",
+          "status": "partial",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/utopia_economy.py",
+              "line": 79,
+              "anchor": "def effect_tier("
+            },
+            {
+              "file": "blackflow_rl/utopia_economy.py",
+              "line": 44,
+              "anchor": "def region_coverage("
+            }
+          ],
+          "note": "Economic policy/slot/sale effects and footprint implemented; combat effects remain outside the model."
+        }
+      ]
+    },
+    {
+      "grade": 13,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 13,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.5,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "非初始招募五星干员的希望+1，“玻利瓦尔，症结之核”的防御力提升，“未熄之地”额外造成灼燃损伤",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 13,
+        "color": "#b51330",
+        "bpValue": 50,
+        "bossValue": 12,
+        "addDesc": "每进入一个新区域，所有敌人攻击力和生命值额外+12%\\n实托邦的效果提升至晚期",
+        "warningType": "NORMAL",
+        "unlockText": "通过<保密等级·12>",
+        "displayIconId": "icon_difficulty_3",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "partial",
+      "effects": [
+        {
+          "id": "noninitial_5star_hope",
+          "summary": "Only non-initial 5-star normal recruitment costs +1 hope.",
+          "status": "partial",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 1670,
+              "anchor": "def initialize_formal_roster("
+            },
+            {
+              "file": "blackflow_rl/recruitment.py",
+              "line": 188,
+              "anchor": "def reserve_recruit_options("
+            }
+          ],
+          "note": "No general paid 5-star recruitment menu. Explicit non-Mechanist initial IDs now require an observed total cost; missing quotes are rejected."
+        },
+        {
+          "id": "bolivar_and_burning",
+          "summary": "Bolivar DEF increases; Unextinguished Land also inflicts burn buildup.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 769,
+              "anchor": "def battle("
+            }
+          ],
+          "note": "PRTS numeric elaboration: DEF x1.50 and extra burn buildup equal to 10% ATK for the specified damage source."
+        }
+      ]
+    },
+    {
+      "grade": 14,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 14,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.5,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "“猎犬proto”进入目标点后行动力-1，“源阶方”的最大生命值提升，激活后全场我方每秒流失生命",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 14,
+        "color": "#b51330",
+        "bpValue": 50,
+        "bossValue": 16,
+        "addDesc": "每进入一个新区域，所有敌人攻击力和生命值额外+16%\\n实托邦的效果提升至晚期",
+        "warningType": "NORMAL",
+        "unlockText": "通过<保密等级·13>",
+        "displayIconId": "icon_difficulty_3",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "combat_oracle",
+      "effects": [
+        {
+          "id": "proto_leak_ap_loss",
+          "summary": "Each Hound proto entering the objective costs 1 AP.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 769,
+              "anchor": "def battle("
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 1586,
+              "anchor": "def chase("
+            }
+          ],
+          "note": "No enemy-leak observation or combat-outcome input. Guaranteed victory does not itself establish zero leaked enemies."
+        },
+        {
+          "id": "source_cube",
+          "summary": "Source Cube HP increases and, when activated, causes allied HP loss each second.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 769,
+              "anchor": "def battle("
+            }
+          ],
+          "note": "PRTS numeric elaboration: cube HP x2 and 100 HP/s loss."
+        }
+      ]
+    },
+    {
+      "grade": 15,
+      "raw_client": {
+        "modeDifficulty": "NORMAL",
+        "grade": 15,
+        "name": "保密等级",
+        "nameImage": null,
+        "subName": null,
+        "enrollId": null,
+        "haveInitialRelicIcon": false,
+        "scoreFactor": 1.5,
+        "canUnlockItem": true,
+        "doMonthTask": true,
+        "ruleDesc": "非初始招募六星干员的希望+1，“猎犬proto”的最大生命值提升且攻击时会为“卡德霍，黑流之源”回复生命",
+        "ruleDescReplacements": null,
+        "failTitle": "联系中断",
+        "failImageId": "image_rogue_6_fail_general",
+        "failForceDesc": "通过提升干员等级、技能等级或将干员精英化，可以在战斗中取得更大优势",
+        "sortId": 1,
+        "equivalentGrade": 15,
+        "color": "#b51330",
+        "bpValue": 50,
+        "bossValue": 20,
+        "addDesc": "每进入一个新区域，所有敌人攻击力和生命值额外+20%\\n实托邦的效果提升至晚期",
+        "warningType": "NORMAL",
+        "unlockText": "通过<保密等级·14>",
+        "displayIconId": "icon_difficulty_3",
+        "hideEndingStory": false,
+        "haveLegacy": true
+      },
+      "status": "partial",
+      "effects": [
+        {
+          "id": "noninitial_6star_hope",
+          "summary": "Only non-initial 6-star normal recruitment costs +1 hope.",
+          "status": "partial",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/operator_economy.py",
+              "line": 28,
+              "anchor": "def mechanist_hope_cost("
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 1670,
+              "anchor": "def initialize_formal_roster("
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 426,
+              "anchor": "def recruitment_options("
+            }
+          ],
+          "note": "Mechanist helper correctly prices initial 2, later 3, promotion 1 with full mastery. No general paid 6-star recruitment menu; explicit non-Mechanist initial IDs now fail closed without an observed total cost."
+        },
+        {
+          "id": "proto_hp_and_healing",
+          "summary": "Hound proto HP increases and its attacks heal Kadho and relevant incarnations.",
+          "status": "combat_oracle",
+          "code_locations": [
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 42,
+              "anchor": "combat_assumption: str = 'guaranteed_victory'"
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 769,
+              "anchor": "def battle("
+            },
+            {
+              "file": "blackflow_rl/economy.py",
+              "line": 1586,
+              "anchor": "def chase("
+            }
+          ],
+          "note": "PRTS numeric elaboration: proto HP x1.50; heal 1% maximum HP."
+        }
+      ]
+    }
+  ],
+  "stacking": {
+    "addition_conditions": "Apply all unlocked N1..N15 conditions; percentage boosts of the same kind multiply, other amounts add. N0..N3 enemy nerfs explicitly apply only at their own grade.",
+    "score_factor": {
+      "grade15": 1.5,
+      "bpValue": 50,
+      "meaning": "Score efficiency +50%; NOT enemy ATK/HP +50%."
+    },
+    "enemy_region_scaling": {
+      "client_field": "bossValue",
+      "grade15_final_percent": 20,
+      "grade15_multiplier_per_new_region": 1.2,
+      "includes_first_region": true,
+      "includes_black_pond": false,
+      "do_not_sum_boss_values_across_grades": true,
+      "status": "combat_oracle",
+      "source": "https://prts.wiki/w/沉沦者的黑流树海",
+      "note": "The number of actual new-region entries matters; floor number alone may not capture rewind."
+    }
+  },
+  "hope_costs": {
+    "source": "https://prts.wiki/w/沉沦者的黑流树海",
+    "client_mastery_ids": [
+      "rogue_6_somaster_3",
+      "rogue_6_somaster_6"
+    ],
+    "topic_base_normal_recruit_by_star": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 2,
+      "6": 6
+    },
+    "topic_base_promotion_by_star": {
+      "4": 1,
+      "5": 1,
+      "6": 3
+    },
+    "N13_noninitial_normal_five_star_delta": 1,
+    "N15_noninitial_normal_six_star_delta": 1,
+    "initial_exempt": true,
+    "promotion_is_not_normal_recruitment": true,
+    "temporary_recruitment_cost": 0,
+    "full_technology_general_hope_discount": "No such node found in complete rogue_6 commonDevelopment table; do not reuse older-theme discounts.",
+    "multilateral_trade_general_hope_discount": 0,
+    "mechanist_full_mastery": {
+      "initial_recruit": 2,
+      "noninitial_recruit_N15": 3,
+      "normal_ticket_promotion": 1,
+      "dedicated_upgrade_ticket_promotion": 0
+    },
+    "unsafe_entrypoint": {
+      "status": "fixed",
+      "previous_issue": "Arbitrary explicit non-Mechanist initial IDs previously defaulted to zero hope without an observed cost.",
+      "current_behavior": "EconomyConfig rejects such IDs unless initial_recruitment_hope_spent is a nonnegative integer; the total is charged once. Default declared-free abstract partners remain distinct.",
+      "code_location": {
+        "file": "blackflow_rl/economy.py",
+        "line": 88,
+        "anchor": "raise ValueError('explicit non-Mechanist initial operators require observed initial_recruitment_hope_spent')"
+      }
+    }
+  },
+  "N15_effective_initial_profile_before_starting_choice": {
+    "hp": 4,
+    "max_hp": 4,
+    "gold_full_technology": 20,
+    "hope_before_recruitment": 6,
+    "hope_after_default_initial_recruitment": 4,
+    "parts_capacity_before_mechanist": 12,
+    "parts_capacity_after_mechanist": 14,
+    "deployment_known_deltas": {
+      "N10": -1,
+      "full_technology_outbuff_50": 1
+    }
+  },
+  "N15_unmodeled_negative_effect_ids": [
+    "enemy_hp_30",
+    "elite_boss_atk_15",
+    "deployment_minus1",
+    "boss_damage_reduction",
+    "bolivar_and_burning",
+    "proto_leak_ap_loss",
+    "source_cube",
+    "proto_hp_and_healing",
+    "enemy_region_scaling"
+  ],
+  "limitations": [
+    "Manifest registration does not implement combat, prove zero leaks, or validate real N15 victory rate.",
+    "Code locations and statuses are an audit snapshot; compare audit_source_sha256 after subsequent fixes.",
+    "No server reward probability or shop price is altered by this audit."
+  ]
+}

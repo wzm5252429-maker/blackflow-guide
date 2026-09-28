@@ -1,0 +1,24 @@
+{
+  "source": "User-owned BlackFlow MAA read-only capture 2026-08-29",
+  "source_file_sha256": "7f91d8b1df6a522b3b6478f55213b3cc69400f0f7e16e54df8c1da25eaaa92a5",
+  "coordinate_space": "1280x720 reference only; runtime searches whole screenshot across scales",
+  "regions": {
+    "hope_icon": [
+      912,
+      5,
+      43,
+      40
+    ],
+    "gold_icon": [
+      1103,
+      5,
+      47,
+      38
+    ]
+  },
+  "fields": {
+    "hope_icon": "hope",
+    "gold_icon": "gold"
+  },
+  "license": "Locally captured game UI; included as small recognition references."
+}

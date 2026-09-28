@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "selected_at": "2026-09-13T15:18:58.791385+00:00",
+  "name": "opportunity_weighted_002",
+  "kind": "macro",
+  "checkpoint": "artifacts/strategy_route_refinement_20260911/opportunity_weighted/checkpoint_002.pt",
+  "checkpoint_sha256": "f8b4f384f8b18773fff98553b472b9951139bfa8c0417461fc5de43430feba99",
+  "profile": "artifacts/xianshu9_round2_training_20260910/profiles/core.json",
+  "profile_sha256": "5412c7a2378f54e14cc6487f0700fb6193e3bfd45a8a04a28d6ecb21f8ee5054",
+  "environment_sha256": "6b93d5588a7b1bb8c6e2d80bd04736a3413772cae89f4d2c171a8058fa989d16",
+  "menu_checkpoint": "artifacts/strategy_generalization_20260910/coverage/checkpoint_epoch_006.pt",
+  "menu_checkpoint_sha256": "a19d8d424d8d61d0f42cfb0f211fb0d91d3387e3c5230382a0c4d89a7ede4053",
+  "selection_basis": "EXPLICIT_USER_CHOICE_PREVIOUS_CANDIDATE",
+  "user_request": "那你还是用之前的候选吧",
+  "scope": "current default research candidate; frozen historical experiment comparisons remain reproducible",
+  "reference_evaluation": {
+    "path": "artifacts/source_scenario_menu_20260913/holdout.json",
+    "controller": "source",
+    "episodes": 128,
+    "mean_relics": 49.0703125,
+    "completed": 128
+  },
+  "automatic_release_gate_passed": false,
+  "teacher_used_at_inference": false,
+  "parameter_updates": false,
+  "bank_entry_variant_enabled": false
+}

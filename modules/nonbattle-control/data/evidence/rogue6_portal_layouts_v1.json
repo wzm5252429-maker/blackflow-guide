@@ -1,0 +1,2834 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-09-08",
+  "source_page": "https://www.lubiao.wiki/tools/blackstream-route",
+  "source_asset": "https://www.lubiao.wiki/_nuxt/D7uI_B3o.js",
+  "source_asset_sha256": "b3b32129fe3aef3b3508c3a9135318629c8e8635924be9fb6a243dac153e7819",
+  "topology_evidence": "community_extracted; template frequency and client-zone-to-red-template mapping unknown",
+  "coordinate_convention": "source [x,y], y increasing down; module converts to (row=y,col=x)",
+  "edge_derivation": "Source Ee connects occupied orthogonal neighbours, then removes excludedEdges",
+  "templates": [
+    {
+      "id": "treehole-01",
+      "sourceId": "utopia-red-construction-1",
+      "layerIndex": 6,
+      "gridShape": [
+        7,
+        1
+      ],
+      "occupiedSlots": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ]
+      ],
+      "startSlot": [
+        3,
+        0
+      ],
+      "terminalSlots": [],
+      "terminalType": "danger-end",
+      "utopiaPortals": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "action": 2,
+      "edges": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ],
+        [
+          [
+            5,
+            0
+          ],
+          [
+            6,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "treehole-02",
+      "sourceId": "utopia-red-construction-2",
+      "layerIndex": 6,
+      "gridShape": [
+        4,
+        4
+      ],
+      "occupiedSlots": [
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "startSlot": [
+        3,
+        3
+      ],
+      "terminalSlots": [],
+      "terminalType": "danger-end",
+      "utopiaPortals": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "action": 2,
+      "edges": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "treehole-03",
+      "sourceId": "utopia-red-construction-3",
+      "layerIndex": 6,
+      "gridShape": [
+        3,
+        3
+      ],
+      "occupiedSlots": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "startSlot": [
+        1,
+        1
+      ],
+      "terminalSlots": [],
+      "terminalType": "danger-end",
+      "utopiaPortals": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "action": 2,
+      "edges": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "treehole-04",
+      "sourceId": "utopia-red-construction-4",
+      "layerIndex": 6,
+      "gridShape": [
+        5,
+        3
+      ],
+      "occupiedSlots": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "startSlot": [
+        0,
+        1
+      ],
+      "terminalSlots": [],
+      "terminalType": "danger-end",
+      "utopiaPortals": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "action": 3,
+      "edges": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "treehole-05",
+      "sourceId": "utopia-omniscient-blind-spot",
+      "layerIndex": 6,
+      "gridShape": [
+        5,
+        4
+      ],
+      "occupiedSlots": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "startSlot": [
+        2,
+        3
+      ],
+      "terminalSlots": [],
+      "terminalType": "danger-end",
+      "utopiaPortal": 5,
+      "edges": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "treehole-06",
+      "sourceId": "utopia-undead-grudge",
+      "layerIndex": 6,
+      "gridShape": [
+        5,
+        5
+      ],
+      "occupiedSlots": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "startSlot": [
+        0,
+        0
+      ],
+      "terminalSlots": [],
+      "terminalType": "danger-end",
+      "fixedNodes": [
+        {
+          "slot": [
+            2,
+            2
+          ],
+          "type": "settlement"
+        }
+      ],
+      "utopiaPortal": 6,
+      "edges": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "treehole-07",
+      "sourceId": "utopia-originium-city",
+      "layerIndex": 6,
+      "gridShape": [
+        5,
+        2
+      ],
+      "occupiedSlots": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "startSlot": [
+        0,
+        1
+      ],
+      "terminalSlots": [],
+      "terminalType": "danger-end",
+      "utopiaPortal": 7,
+      "excludedEdges": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      ],
+      "edges": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "treehole-08",
+      "sourceId": "utopia-consumption-spiral",
+      "layerIndex": 6,
+      "gridShape": [
+        6,
+        1
+      ],
+      "occupiedSlots": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "startSlot": [
+        0,
+        0
+      ],
+      "terminalSlots": [],
+      "terminalType": "danger-end",
+      "utopiaPortal": 8,
+      "edges": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "treehole-09",
+      "sourceId": "utopia-heart-link",
+      "layerIndex": 6,
+      "gridShape": [
+        3,
+        3
+      ],
+      "occupiedSlots": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "startSlot": [
+        0,
+        1
+      ],
+      "terminalSlots": [],
+      "terminalType": "danger-end",
+      "excludedEdges": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "utopiaPortal": 9,
+      "edges": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    }
+  ],
+  "client_source_sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+  "client_secret_ap_buffs": [
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 2.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_1_1"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 2.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_1_2"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 2.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_2_1"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 2.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_2_2"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_3_1"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_3_2"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 2.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_4_1"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 2.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_4_2"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_5_1"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_5_2"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_5_3"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_6_1"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_6_2"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_6_3"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_7_1"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_7_2"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_8_1"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_8_2"
+        }
+      ]
+    },
+    {
+      "key": "secret_into_reward",
+      "blackboard": [
+        {
+          "key": "id",
+          "value": 0.0,
+          "valueStr": "rogue_6_ap"
+        },
+        {
+          "key": "count",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "zone",
+          "value": 0.0,
+          "valueStr": "zone_portal_normal_9"
+        }
+      ]
+    }
+  ],
+  "zone_action_points": {
+    "zone_portal_normal_1_1": 2,
+    "zone_portal_normal_1_2": 2,
+    "zone_portal_normal_2_1": 2,
+    "zone_portal_normal_2_2": 2,
+    "zone_portal_normal_3_1": 3,
+    "zone_portal_normal_3_2": 3,
+    "zone_portal_normal_4_1": 2,
+    "zone_portal_normal_4_2": 2,
+    "zone_portal_normal_5_1": 3,
+    "zone_portal_normal_5_2": 3,
+    "zone_portal_normal_5_3": 3,
+    "zone_portal_normal_6_1": 3,
+    "zone_portal_normal_6_2": 3,
+    "zone_portal_normal_6_3": 3,
+    "zone_portal_normal_7_1": 3,
+    "zone_portal_normal_7_2": 3,
+    "zone_portal_normal_8_1": 3,
+    "zone_portal_normal_8_2": 3,
+    "zone_portal_normal_9": 3
+  },
+  "client_portal_zones": [
+    "zone_portal_normal_1_1",
+    "zone_portal_normal_1_2",
+    "zone_portal_normal_2_1",
+    "zone_portal_normal_2_2",
+    "zone_portal_normal_3_1",
+    "zone_portal_normal_3_2",
+    "zone_portal_normal_4_1",
+    "zone_portal_normal_4_2",
+    "zone_portal_normal_5_1",
+    "zone_portal_normal_5_2",
+    "zone_portal_normal_5_3",
+    "zone_portal_normal_6_1",
+    "zone_portal_normal_6_2",
+    "zone_portal_normal_6_3",
+    "zone_portal_normal_7_1",
+    "zone_portal_normal_7_2",
+    "zone_portal_normal_8_1",
+    "zone_portal_normal_8_2",
+    "zone_portal_normal_9"
+  ],
+  "client_variations": {
+    "variation_1": {
+      "id": "variation_1",
+      "type": "BAT",
+      "outerName": "“巨人摇篮”",
+      "innerName": "“巨人摇篮”",
+      "functionDesc": "我方攻击力提升，但对较远的敌人造成的伤害降低",
+      "desc": "外面怎么会有大地？",
+      "iconId": "variation_1",
+      "sound": null
+    },
+    "variation_2": {
+      "id": "variation_2",
+      "type": "BAT",
+      "outerName": "“迪斯科狂热”",
+      "innerName": "“迪斯科狂热”",
+      "functionDesc": "我方干员技力需求降低，技能结束后向周围随机移动",
+      "desc": "肢体将死去的语言紧紧搂在怀中。",
+      "iconId": "variation_2",
+      "sound": null
+    },
+    "variation_3": {
+      "id": "variation_3",
+      "type": "BAT",
+      "outerName": "“已知浩劫”",
+      "innerName": "“已知浩劫”",
+      "functionDesc": "敌人和我方每秒损失生命",
+      "desc": "滴答，滴答，滴答——",
+      "iconId": "variation_3",
+      "sound": null
+    },
+    "variation_4": {
+      "id": "variation_4",
+      "type": "BAT",
+      "outerName": "“孤立石林”",
+      "innerName": "“孤立石林”",
+      "functionDesc": "我方攻击范围内存在我方干员时攻速+30，否则攻速-50",
+      "desc": "同类即地狱。",
+      "iconId": "variation_4",
+      "sound": null
+    },
+    "variation_5": {
+      "id": "variation_5",
+      "type": "MAP",
+      "outerName": "“全知者盲区”",
+      "innerName": "“全知者盲区”",
+      "functionDesc": "每次移动后，刷新其余未经过节点",
+      "desc": "当惰性知识遇见活性大地。",
+      "iconId": "variation_5",
+      "sound": null
+    },
+    "variation_6": {
+      "id": "variation_6",
+      "type": "MAP",
+      "outerName": "“未亡者遗怨”",
+      "innerName": "“未亡者遗怨”",
+      "functionDesc": "生成更多“居民”的恶意",
+      "desc": "那些被践踏的文明至今都没有忘记仇恨。",
+      "iconId": "variation_6",
+      "sound": null
+    },
+    "variation_7": {
+      "id": "variation_7",
+      "type": "RES",
+      "outerName": "“源石之城”",
+      "innerName": "“源石之城”",
+      "functionDesc": "完成节点后获得源石锭，敌方属性随源石锭数量提升",
+      "desc": "拥抱历史与既定的未来。",
+      "iconId": "variation_7",
+      "sound": null
+    },
+    "variation_8": {
+      "id": "variation_8",
+      "type": "MAP",
+      "outerName": "“消耗螺旋”",
+      "innerName": "“消耗螺旋”",
+      "functionDesc": "每名干员仅可在一场狭路相逢中出战",
+      "desc": "败者亡命，胜者剥离，究竟谁在获益？",
+      "iconId": "variation_8",
+      "sound": null
+    },
+    "variation_9": {
+      "id": "variation_9",
+      "type": "MAP",
+      "outerName": "“换心联结”",
+      "innerName": "“换心联结”",
+      "functionDesc": "每完成一个失与得节点，获得5源石锭",
+      "desc": "平凡的珍贵令我们不再孤独。",
+      "iconId": "variation_9",
+      "sound": null
+    }
+  },
+  "client_random_node_groups": {
+    "zone_portal_normal_5_1": {
+      "zoneId": "zone_portal_normal_5_1",
+      "groups": {
+        "INCIDENT": {
+          "nodeType": "INCIDENT"
+        },
+        "BATTLE_NORMAL": {
+          "nodeType": "BATTLE_NORMAL"
+        },
+        "BATTLE_ELITE": {
+          "nodeType": "BATTLE_ELITE"
+        },
+        "BATTLE_SHOP": {
+          "nodeType": "BATTLE_SHOP"
+        },
+        "WISH": {
+          "nodeType": "WISH"
+        }
+      }
+    },
+    "zone_portal_normal_5_2": {
+      "zoneId": "zone_portal_normal_5_2",
+      "groups": {
+        "INCIDENT": {
+          "nodeType": "INCIDENT"
+        },
+        "BATTLE_NORMAL": {
+          "nodeType": "BATTLE_NORMAL"
+        },
+        "BATTLE_ELITE": {
+          "nodeType": "BATTLE_ELITE"
+        },
+        "BATTLE_SHOP": {
+          "nodeType": "BATTLE_SHOP"
+        },
+        "WISH": {
+          "nodeType": "WISH"
+        }
+      }
+    },
+    "zone_portal_normal_5_3": {
+      "zoneId": "zone_portal_normal_5_3",
+      "groups": {
+        "INCIDENT": {
+          "nodeType": "INCIDENT"
+        },
+        "BATTLE_NORMAL": {
+          "nodeType": "BATTLE_NORMAL"
+        },
+        "BATTLE_ELITE": {
+          "nodeType": "BATTLE_ELITE"
+        },
+        "BATTLE_SHOP": {
+          "nodeType": "BATTLE_SHOP"
+        },
+        "WISH": {
+          "nodeType": "WISH"
+        }
+      }
+    }
+  },
+  "client_entry_scenes": [
+    {
+      "id": "scene_ro6_portal1a_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，红色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以趋利避害掌控规则为目标。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal1b_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，红色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以趋利避害掌控规则为目标。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal2a_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，红色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以趋利避害掌控规则为目标。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal2b_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，红色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以趋利避害掌控规则为目标。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal3a_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，红色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以趋利避害掌控规则为目标。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal3b_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，红色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以趋利避害掌控规则为目标。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal4a_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，红色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以趋利避害掌控规则为目标。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal4b_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，红色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以趋利避害掌控规则为目标。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal5a_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，蓝色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以灵活调整极速适应为策略。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal5b_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，蓝色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以灵活调整极速适应为策略。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal5c_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，蓝色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以灵活调整极速适应为策略。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal6a_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，绿色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以全民皆兵维护尊严为根本。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal6b_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，绿色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以全民皆兵维护尊严为根本。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal6c_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，绿色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以全民皆兵维护尊严为根本。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal7a_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，金色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以熔炼历史浇铸未来为纲领。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal7b_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，金色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以熔炼历史浇铸未来为纲领。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal8a_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，橙色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以舍生忘死不惧挑战为荣耀。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal8b_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，橙色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以舍生忘死不惧挑战为荣耀。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    {
+      "id": "scene_ro6_portal9_enter",
+      "title": "溯源",
+      "description": "一处弥漫着雾气的黑潭拦住了你的去路，若贸然踏入恐怕会有被黑流吞没的风险，但这是一个甩开猎犬的好机会。在你犹疑之际，紫色的雾气钻入你的耳中，声音在你脑海中响起：“踏足我等乌托邦者，须遵循我等之纯粹理想，以追溯本源复兴文明为己任。”",
+      "background": "pic_rogue_6_23",
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    }
+  ],
+  "client_entry_choices": [
+    {
+      "id": "choice_ro6_portal1a_1",
+      "title": "发动引擎规避风险",
+      "description": "消耗零件箱里的<@ro6.lose>1件</>加工品，进入黑潭",
+      "lockedCoverDesc": null,
+      "type": "SCRAP_PAY_SHOW",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_portal1a_1",
+      "icon": "",
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "unknown",
+        "itemId": null,
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    {
+      "id": "choice_ro6_portal1a_2",
+      "title": "或许该挑选一下",
+      "description": "消耗零件箱里的<@ro6.lose>1件</>加工品，进入黑潭",
+      "lockedCoverDesc": null,
+      "type": "SCRAP_PAY_SHOW",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_portal1a_1",
+      "icon": null,
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "unknown",
+        "itemId": null,
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    {
+      "id": "choice_ro6_portal1a_3",
+      "title": "用这个会更好吗",
+      "description": "消耗零件箱里的<@ro6.lose>1件</>加工品，进入黑潭",
+      "lockedCoverDesc": null,
+      "type": "SCRAP_PAY_SHOW",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_portal1a_1",
+      "icon": null,
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "unknown",
+        "itemId": null,
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    {
+      "id": "choice_ro6_portal1a_4",
+      "title": "成功了",
+      "description": "进入黑潭",
+      "lockedCoverDesc": null,
+      "type": "TELEPORT",
+      "leftDecoType": "NONE",
+      "nextSceneId": null,
+      "icon": null,
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "teleport",
+        "itemId": null,
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    {
+      "id": "choice_ro6_portal1a_5",
+      "title": "无法发动引擎",
+      "description": "没有可用的加工品",
+      "lockedCoverDesc": null,
+      "type": "NEXT",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_portal1a_2",
+      "icon": null,
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "leave",
+        "itemId": null,
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    {
+      "id": "choice_ro6_portal1a_6",
+      "title": "不应该冒进",
+      "description": "多一事不如少一事",
+      "lockedCoverDesc": null,
+      "type": "NEXT",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_portal1a_3",
+      "icon": null,
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "NONE",
+        "funcIconId": "leave",
+        "itemId": null,
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    }
+  ],
+  "community_rules": {
+    "sources": [
+      "https://prts.wiki/w/沉沦者的黑流树海",
+      "https://prts.wiki/w/沉沦者的黑流树海/黑流数据库",
+      "https://wiki.biligame.com/arknights/沉沦者的黑流树海"
+    ],
+    "outer_floors": [
+      3,
+      4,
+      5
+    ],
+    "offered_move_instances": 3,
+    "consume_whole_move_instance": true,
+    "private_ap_restores_outer_ap_on_return": true,
+    "return_to_portal_coordinate": true,
+    "voluntary_return_by_discarding_private_ap": true,
+    "cross_floor_expiry_on_enter_or_exit": false,
+    "utopia_7_gold_per_completed_node": 10,
+    "utopia_9_gold_per_completed_sacrifice": 5,
+    "utopia_6_resident_markers": 6
+  },
+  "unresolved": [
+    "Map selection probabilities and zone-to-topology correspondence for red fog",
+    "Exact slot contents and ordinary/elite stage selection probabilities",
+    "Blue reroll node probabilities",
+    "Spiral operator roster and consciousness exhaustion require operator state"
+  ]
+}

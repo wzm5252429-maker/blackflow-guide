@@ -1,0 +1,845 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "client": {
+    "path": "source_data\\roguelike_topic_table_full.json",
+    "sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+    "gameConst_expedEndingRelic": "rogue_6_relic_final_3",
+    "beacon": {
+      "id": "rogue_6_relic_final_3",
+      "name": "怦然信标",
+      "description": "一颗被时刻监测着的心脏，似乎正在夺走你的力量。调整至某个方向后，它微弱地跳动了起来。",
+      "usage": "所有敌人的生命+20%，我方单位的生命-40%，让探索开启不同的方向",
+      "obtainApproach": "在集成战略模式中获得",
+      "iconId": "rogue_6_relic_final_3",
+      "itemIconGroupId": null,
+      "type": "RELIC",
+      "subType": "NONE",
+      "rarity": "SUPER_RARE",
+      "sortId": 999,
+      "canSacrifice": false,
+      "tinyIconColor": null,
+      "unlockCondDesc": "完成游戏结局",
+      "shortUsage": null
+    },
+    "beacon_buffs": {
+      "id": "rogue_6_relic_final_3",
+      "buffs": [
+        {
+          "key": "char_attribute_mul",
+          "blackboard": [
+            {
+              "key": "max_hp",
+              "value": -0.4,
+              "valueStr": null
+            }
+          ]
+        },
+        {
+          "key": "global_buff_normal",
+          "blackboard": [
+            {
+              "key": "key",
+              "value": 0.0,
+              "valueStr": "enemy_max_hp_down"
+            },
+            {
+              "key": "max_hp",
+              "value": 1.2,
+              "valueStr": null
+            }
+          ]
+        },
+        {
+          "key": "push_message",
+          "blackboard": [
+            {
+              "key": "path",
+              "value": 0.0,
+              "valueStr": "RLV2_CHANGE_ENDING"
+            }
+          ]
+        }
+      ]
+    },
+    "source_expedition_choice": {
+      "id": "choice_ro6_scout_3",
+      "title": "尝试探索树的源头",
+      "description": "派一名同伴探索",
+      "lockedCoverDesc": null,
+      "type": "EXPEDITION",
+      "leftDecoType": "NONE",
+      "nextSceneId": "scene_ro6_scout_3",
+      "icon": null,
+      "displayData": {
+        "type": "NORMAL",
+        "costHintType": "NONE",
+        "effectHintType": "EXPEDITION",
+        "funcIconId": "adventure",
+        "itemId": null,
+        "difficultyUpgradeRelicGroupId": null,
+        "taskId": null,
+        "instId": null
+      },
+      "forceShowWhenOnlyLeave": false,
+      "isHiddenChoice": false,
+      "sortId": 0
+    },
+    "starting_choices": {
+      "choice_ro6_startbuff_1": {
+        "id": "choice_ro6_startbuff_1",
+        "title": "未编号物",
+        "description": "获得<@ro6.get>1件</>普通收藏品",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": "initial_reward_relic",
+        "displayData": {
+          "type": "NORMAL",
+          "costHintType": "NONE",
+          "effectHintType": "NONE",
+          "funcIconId": "initial_reward_relic",
+          "itemId": null,
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": false,
+        "sortId": 0
+      },
+      "choice_ro6_startbuff_2": {
+        "id": "choice_ro6_startbuff_2",
+        "title": "调查预付款",
+        "description": "获得<@ro6.get>8</>源石锭",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": "initial_reward_gold",
+        "displayData": {
+          "type": "NORMAL",
+          "costHintType": "NONE",
+          "effectHintType": "NONE",
+          "funcIconId": "initial_reward_gold",
+          "itemId": "rogue_6_gold",
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": false,
+        "sortId": 0
+      },
+      "choice_ro6_startbuff_3": {
+        "id": "choice_ro6_startbuff_3",
+        "title": "空间租赁",
+        "description": "消耗<@ro6.lose>6</>源石锭，零件箱容量<@ro6.get>+2</>",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": "initial_reward_max_weight",
+        "displayData": {
+          "type": "NORMAL",
+          "costHintType": "NONE",
+          "effectHintType": "NONE",
+          "funcIconId": "initial_reward_max_weight",
+          "itemId": "rogue_6_max_weight",
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": false,
+        "sortId": 0
+      },
+      "choice_ro6_startbuff_4": {
+        "id": "choice_ro6_startbuff_4",
+        "title": "退行补偿",
+        "description": "消耗<@ro6.lose>2</>目标生命值上限，获得<@ro6.get>1件</>随机收藏品",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": "initial_reward_unknown_pay_hp",
+        "displayData": {
+          "type": "NORMAL",
+          "costHintType": "NONE",
+          "effectHintType": "NONE",
+          "funcIconId": "initial_reward_unknown_pay_hp",
+          "itemId": null,
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": false,
+        "sortId": 0
+      },
+      "choice_ro6_startbuff_5": {
+        "id": "choice_ro6_startbuff_5",
+        "title": "林间代步",
+        "description": "获得<@ro6.get>1件</>加工品",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": "initial_reward_scrap_move",
+        "displayData": {
+          "type": "NORMAL",
+          "costHintType": "NONE",
+          "effectHintType": "NONE",
+          "funcIconId": "initial_reward_scrap_move",
+          "itemId": null,
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": false,
+        "sortId": 0
+      },
+      "choice_ro6_startbuff_6": {
+        "id": "choice_ro6_startbuff_6",
+        "title": "巢寄生",
+        "description": "零件箱容量<@ro6.lose>-1</>，获得<@ro6.get>1件</>稀有收藏品",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": "initial_reward_unknown_pay_weight",
+        "displayData": {
+          "type": "NORMAL",
+          "costHintType": "NONE",
+          "effectHintType": "NONE",
+          "funcIconId": "initial_reward_unknown_pay_weight",
+          "itemId": null,
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": false,
+        "sortId": 0
+      },
+      "choice_ro6_startbuff_7": {
+        "id": "choice_ro6_startbuff_7",
+        "title": "襁褓天马",
+        "description": "每一区域额外获得<@ro6.get>1</>行动力",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": null,
+        "displayData": {
+          "type": "ITEM",
+          "costHintType": "NONE",
+          "effectHintType": "ITEM",
+          "funcIconId": null,
+          "itemId": "rogue_6_start_1",
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": true,
+        "sortId": 1
+      },
+      "choice_ro6_startbuff_8": {
+        "id": "choice_ro6_startbuff_8",
+        "title": "襁褓骏鹰",
+        "description": "初始额外获得<@ro6.get>1</>希望，前2个区域初始揭露全部视野",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": null,
+        "displayData": {
+          "type": "ITEM",
+          "costHintType": "NONE",
+          "effectHintType": "ITEM",
+          "funcIconId": null,
+          "itemId": "rogue_6_start_2",
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": true,
+        "sortId": 1
+      },
+      "choice_ro6_startbuff_9": {
+        "id": "choice_ro6_startbuff_9",
+        "title": "襁褓巨龙",
+        "description": "前2个区域中所有敌人的最大生命值-50%",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": null,
+        "displayData": {
+          "type": "ITEM",
+          "costHintType": "NONE",
+          "effectHintType": "ITEM",
+          "funcIconId": null,
+          "itemId": "rogue_6_start_3",
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": true,
+        "sortId": 1
+      },
+      "choice_ro6_startbuff_10": {
+        "id": "choice_ro6_startbuff_10",
+        "title": "襁褓九头蛇",
+        "description": "所有敌人的攻击和生命值+30%，每次进入新的区域，我方单位攻击力和生命值+10%",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": null,
+        "displayData": {
+          "type": "ITEM",
+          "costHintType": "NONE",
+          "effectHintType": "ITEM",
+          "funcIconId": null,
+          "itemId": "rogue_6_start_4",
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": true,
+        "sortId": 1
+      },
+      "choice_ro6_startbuff_11": {
+        "id": "choice_ro6_startbuff_11",
+        "title": "襁褓白泽",
+        "description": "临时招募干员的出现概率提升",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": null,
+        "displayData": {
+          "type": "ITEM",
+          "costHintType": "NONE",
+          "effectHintType": "ITEM",
+          "funcIconId": null,
+          "itemId": "rogue_6_start_5",
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": true,
+        "sortId": 1
+      },
+      "choice_ro6_startbuff_12": {
+        "id": "choice_ro6_startbuff_12",
+        "title": "襁褓金乌",
+        "description": "进入区域血色空脉时获得<@ro6.get>3个</>随机收藏品",
+        "lockedCoverDesc": null,
+        "type": "TRADE",
+        "leftDecoType": "NONE",
+        "nextSceneId": null,
+        "icon": null,
+        "displayData": {
+          "type": "ITEM",
+          "costHintType": "NONE",
+          "effectHintType": "ITEM",
+          "funcIconId": null,
+          "itemId": "rogue_6_start_6",
+          "difficultyUpgradeRelicGroupId": null,
+          "taskId": null,
+          "instId": null
+        },
+        "forceShowWhenOnlyLeave": false,
+        "isHiddenChoice": true,
+        "sortId": 1
+      }
+    },
+    "starting_scene": {
+      "id": "scene_ro6_startbuff_enter",
+      "title": "行动奖励",
+      "description": "你的上一次探索突破了至少两层困难，这一次可以获得更多支援。",
+      "background": null,
+      "titleIcon": null,
+      "subTypeId": 0,
+      "useHiddenMusic": false
+    },
+    "seed_starting_buffs": {
+      "rogue_6_start_1": {
+        "id": "rogue_6_start_1",
+        "buffs": [
+          {
+            "key": "zone_into_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_ap"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "zone",
+                "value": 0.0,
+                "valueStr": "zone_1"
+              }
+            ]
+          },
+          {
+            "key": "zone_into_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_ap"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "zone",
+                "value": 0.0,
+                "valueStr": "zone_2"
+              }
+            ]
+          },
+          {
+            "key": "zone_into_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_ap"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "zone",
+                "value": 0.0,
+                "valueStr": "zone_3"
+              }
+            ]
+          },
+          {
+            "key": "zone_into_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_ap"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "zone",
+                "value": 0.0,
+                "valueStr": "zone_4"
+              }
+            ]
+          },
+          {
+            "key": "zone_into_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_ap"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "zone",
+                "value": 0.0,
+                "valueStr": "zone_4_1"
+              }
+            ]
+          },
+          {
+            "key": "zone_into_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_ap"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "zone",
+                "value": 0.0,
+                "valueStr": "zone_5"
+              }
+            ]
+          },
+          {
+            "key": "zone_into_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_ap"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "zone",
+                "value": 0.0,
+                "valueStr": "zone_6"
+              }
+            ]
+          }
+        ]
+      },
+      "rogue_6_start_2": {
+        "id": "rogue_6_start_2",
+        "buffs": [
+          {
+            "key": "immediate_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "rogue_6_population"
+              },
+              {
+                "key": "count",
+                "value": 1.0,
+                "valueStr": null
+              }
+            ]
+          },
+          {
+            "key": "map_gen_delta",
+            "blackboard": [
+              {
+                "key": "force_clear_zones",
+                "value": 0.0,
+                "valueStr": "zone_1,zone_2"
+              }
+            ]
+          }
+        ]
+      },
+      "rogue_6_start_3": {
+        "id": "rogue_6_start_3",
+        "buffs": [
+          {
+            "key": "global_buff_layer",
+            "blackboard": [
+              {
+                "key": "key",
+                "value": 0.0,
+                "valueStr": "rogue_6_start_3"
+              },
+              {
+                "key": "max_cnt",
+                "value": 3.0,
+                "valueStr": null
+              },
+              {
+                "key": "max_hp",
+                "value": 0.5,
+                "valueStr": null
+              }
+            ]
+          },
+          {
+            "key": "layer_zone_in_up_elite_down",
+            "blackboard": [
+              {
+                "key": "max",
+                "value": 10.0,
+                "valueStr": null
+              },
+              {
+                "key": "init",
+                "value": 0.0,
+                "valueStr": null
+              },
+              {
+                "key": "up_layer",
+                "value": 1.0,
+                "valueStr": null
+              },
+              {
+                "key": "down_layer",
+                "value": 0.0,
+                "valueStr": null
+              }
+            ]
+          }
+        ]
+      },
+      "rogue_6_start_4": {
+        "id": "rogue_6_start_4",
+        "buffs": [
+          {
+            "key": "global_buff_normal",
+            "blackboard": [
+              {
+                "key": "key",
+                "value": 0.0,
+                "valueStr": "enemy_max_hp_down"
+              },
+              {
+                "key": "max_hp",
+                "value": 1.3,
+                "valueStr": null
+              }
+            ]
+          },
+          {
+            "key": "global_buff_normal",
+            "blackboard": [
+              {
+                "key": "key",
+                "value": 0.0,
+                "valueStr": "enemy_atk_down"
+              },
+              {
+                "key": "atk",
+                "value": 1.3,
+                "valueStr": null
+              }
+            ]
+          },
+          {
+            "key": "zone_into_buff",
+            "blackboard": [
+              {
+                "key": "buff",
+                "value": 0.0,
+                "valueStr": "char_attribute_mul"
+              },
+              {
+                "key": "atk",
+                "value": 0.1,
+                "valueStr": null
+              }
+            ]
+          },
+          {
+            "key": "zone_into_buff",
+            "blackboard": [
+              {
+                "key": "buff",
+                "value": 0.0,
+                "valueStr": "char_attribute_mul"
+              },
+              {
+                "key": "max_hp",
+                "value": 0.1,
+                "valueStr": null
+              }
+            ]
+          }
+        ]
+      },
+      "rogue_6_start_5": {
+        "id": "rogue_6_start_5",
+        "buffs": [
+          {
+            "key": "recruit_extra_prob",
+            "blackboard": [
+              {
+                "key": "pa",
+                "value": 3.0,
+                "valueStr": null
+              },
+              {
+                "key": "pb",
+                "value": 0.0,
+                "valueStr": null
+              }
+            ]
+          }
+        ]
+      },
+      "rogue_6_start_6": {
+        "id": "rogue_6_start_6",
+        "buffs": [
+          {
+            "key": "zone_into_reward",
+            "blackboard": [
+              {
+                "key": "id",
+                "value": 0.0,
+                "valueStr": "pool_treasure"
+              },
+              {
+                "key": "count",
+                "value": 3.0,
+                "valueStr": null
+              },
+              {
+                "key": "zone",
+                "value": 0.0,
+                "valueStr": "zone_3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ending_ids": {
+      "ro6_ending_1": {
+        "id": "ro6_ending_1",
+        "familyId": 1,
+        "name": "强制重启",
+        "desc": "“你”还会继续尝试的，对吗？错误原因：子线程因栈空间不足发生致命错误，进程终止。",
+        "bgId": "pic_rogue_6_41",
+        "icons": [
+          {
+            "level": 12,
+            "iconId": "rogue_6_complete_icon_1d"
+          },
+          {
+            "level": 10,
+            "iconId": "rogue_6_complete_icon_1c"
+          },
+          {
+            "level": 4,
+            "iconId": "rogue_6_complete_icon_1b"
+          },
+          {
+            "level": 0,
+            "iconId": "rogue_6_complete_icon_1a"
+          }
+        ],
+        "priority": 0,
+        "changeEndingDesc": null,
+        "bossIconId": null
+      },
+      "ro6_ending_2": {
+        "id": "ro6_ending_2",
+        "familyId": 1,
+        "name": "维度重构",
+        "desc": "她始终会在这里等“你”。错误原因：调试器已附加到目标进程，会话即将终止。",
+        "bgId": "pic_rogue_6_42",
+        "icons": [
+          {
+            "level": 12,
+            "iconId": "rogue_6_complete_icon_2d"
+          },
+          {
+            "level": 10,
+            "iconId": "rogue_6_complete_icon_2c"
+          },
+          {
+            "level": 4,
+            "iconId": "rogue_6_complete_icon_2b"
+          },
+          {
+            "level": 0,
+            "iconId": "rogue_6_complete_icon_2a"
+          }
+        ],
+        "priority": 1,
+        "changeEndingDesc": "篡夺者静候求索者的到来。",
+        "bossIconId": "boss_shorbb"
+      },
+      "ro6_ending_3": {
+        "id": "ro6_ending_3",
+        "familyId": 1,
+        "name": "纠缠，调和",
+        "desc": "它们发现“你”了。错误原因：在尝试写入时发生冲突；请求因无法解析中枢地址而终止。",
+        "bgId": "pic_rogue_6_43",
+        "icons": [
+          {
+            "level": 12,
+            "iconId": "rogue_6_complete_icon_3d"
+          },
+          {
+            "level": 10,
+            "iconId": "rogue_6_complete_icon_3c"
+          },
+          {
+            "level": 4,
+            "iconId": "rogue_6_complete_icon_3b"
+          },
+          {
+            "level": 0,
+            "iconId": "rogue_6_complete_icon_3a"
+          }
+        ],
+        "priority": 2,
+        "changeEndingDesc": "乌托邦必将崛起。",
+        "bossIconId": "boss_shchmr"
+      }
+    }
+  },
+  "prts": {
+    "url": "https://prts.wiki/w/沉沦者的黑流树海",
+    "revision": "424917",
+    "page_sha256": "fa2975af969189fb04495f8aa1f8a6ccd797949256060b52466860a50de1ad6d",
+    "evidence": "B_PRTS_EXPLICIT",
+    "clips": {
+      "starting_reward_gate": "2. 选择行动奖励 若上一次行动至少通过两层，则会触发本阶段，玩家可选择一个行动奖励，否则跳过本阶段进入第三阶段。 ※以下6个选项中随机出现3个，再选择其一。 在本主题中，襁褓生灵的效果可以增加行动奖励选项及选择次数。 你的上一次探索突破了至少两层困难，这一次可以获得更多支援。 未编号物 获得 1件 普通收藏品 调查预付款 获得 8 源石锭 空间租赁 消耗 6 源石锭，零件箱容量 +2 退行补偿 消耗 2 目标生命值上限，获得 1件 随机收藏品 林间代步 获得 1件 加工品 巢寄生 零件箱容量 -1 ，获得 1件 稀有收藏品 从头开始事件 3. 选择招募组合 选择一组三张招募券职业组合。包括： 先手必胜 ：获得先锋、狙击、特种招募券各一张 稳扎稳打 ：获得重装、术师、狙击招募券各一张 取长补短 ：获得近卫、辅助、医疗招募券各一张 灵活部署 ：获得先锋、辅助、特种招募券各一张 坚不可摧 ：获得重装、术师、医疗招募券各一张 随心所欲 ：获得随机三张招募券（不会出现三张相同职业），但其中必然有一张包含5星临时招募的高级招募券。 需使用其它招募组合进行一次探索后才能解锁。 ※第一张为5星临时招募券，第二张仅可能出现先锋、近卫、重装、特种职业的招募券，第三张仅可能出现狙击、术师、医疗、辅助职业的招募券。 4. 进行初始招募 开始招募本次探索所需的初始干员。初始干员可以使用好友的助战干员。 此时选择招募券进入干员选择页后，可点击右上角“选择助战”按钮招募助战干员（包括好友和系统助战），消耗的希望正常计算，被招募的助战干员将带有 助战招募 标志。需要对所有的初始招募券进行招募（或放弃招募）后方可进行下一步。 完成以上步骤后，探索准备阶段结束，探索正式开始。 实践者列表 需在【常规行动】模式",
+      "source_expedition": "于第Ⅱ层到第IV层进入【先行一步】，选择【尝试探索树的源头】，并送出一名干员。 进入下一层后，该干员返回，但不会被进阶，而是带来2希望和收藏品【 怦然信标 】，这会使我方单位生命值-40%，且所有敌人生命值+20%。 （非必须）在抵达第Ⅵ层前，找到具有以下标记的节点，可以获得削弱强敌的办法： < 神明之殇 >：未持有【 击坠“神明” 】时标记于【不期而遇】： 泪之聚落 ，选择【倾囊相助】，消耗所有源石锭获得收藏品【 击坠“神明” 】 < 文明之烬 >：未持有【 焚毁“文明” 】时标记于【失与得】，选择【复原“文明”】，可以选择消耗随机2个自然物获得收藏品【 焚毁“文明” 】 < 光明之末 >：未持有【 湮没“光明” 】时标记于普通【作战】：对战 未名的荒原 的 无效验尸 ，完成后可以选择获得收藏品【 湮没“光明” 】 持有【怦然信标】而通过第Ⅴ层战斗后，可进入该层，直面【 畸症 】的核心 玻利瓦尔，症结之核 。 （非必须） 调谐仪式 ：于该层起点右侧的【命运所指】中遭遇，可以提交指定收藏品以削弱 玻利瓦尔，症结之核 的能力。 提交【击坠“神明”】后，首次释放的灾厄之口不会摧毁“危朽”。 提交【焚毁“文明”】后，灾厄之口释放时不会封锁待部署区。 提交【湮没“光明”】后，灾厄之口的伤害降低。 使用【 源私钥 】可以作弊以替换上述任一需求。 通过第Ⅵ层即可完成游戏结局。 不同区域中作战获得的指挥经验和源石锭有所不同，具体如下： 作战指挥经验值及源石锭数量 此处基础数值表示不受战斗经验加成或源石锭加成影响时，能获取的基础指挥经验值和基础源石锭数量。多个指挥经验加成之间乘算叠加，最终结果向下取整 显示满级生命游戏加成 显示基础数值 作战区域 普通作战 紧急作战 险路恶敌 追猎 指挥经验",
+      "normal_ending": "通过与 卡德霍，黑流之源 对决的【 永无安宁 】或其追猎版本【 痛苦将息 】，且以不持有【怦然信标】的状态通过第Ⅴ层，即可完成游戏结局。 我看见，梅兰德的特工找到了这里 //Theory-4 starting... 维度重构 reshape() LOG 进入方式 完成游戏结局【强制重启】，解锁本结局的相关选项和收藏品。 获取 一个或多个 【沙盘】收藏品： 【 沙盘α 】：于第Ⅱ层到第Ⅳ层探索时可能会出现一个标记为< 线人与线索 >的不期而遇“ 线人 ”。 在该事件中选择“我受雇于梅兰德”即可获得，但这会使我方单位的部署费用+2。 【 沙盘β 】：大概率在第Ⅰ层到第Ⅲ层的诡意行商中以1源石锭的价格出售，但这会使我方单位的部署费用+3。 抵达第Ⅴ层，此时地图上将刷新3个命运所指。 其中2个为 好奇心与死 ，1个为窥视箱中。 3个命运所指无法从外观分辨。 同时持有两个【沙盘】时，为【窥视箱中】的命运所指将被自动标记为< 谜题与谜底 >。 若遭遇的是 好奇心与死 ： 本次寻找失败 ，可选择在此处获得1个收藏品；未标记时，可选择消耗50源石锭立即标记。 若遭遇的是 窥视箱中 ： 寻找成功 。 窥视箱中 ：选择【保护证据，查缴那些机器！】，此后该节点变为阻止 洛伦茨，扰动之谬 及 源阶方 的 险路恶敌 【 混沌源阶理论 】。 因节点机制影响，对“作战 节点 ”生效的效果 不能 在这个险路恶敌中生效（如概念体），且 节点变化后将无法离开 ，请在此之前做好所需准备。 若选择【她在说什么疯话？】，则会暂离并完成该节点。该节点 可重复 且会被标记，可在完成准备后再次访问。 以不持有【怦然信标】的状态完成该作战通过第Ⅴ层，即可完成游戏结局。 0 源流交汇处 cero(O) 源流交汇处 (VI) B",
+      "shop_refresh": "初始消耗4源石锭，每次刷新库存消耗的源石锭+4，每个节点最多刷新4次。 在点亮【生命游戏】的“额叶”节点后，还可以出售不再需要的零件。 ※ 可重复 ；完成节点后将在节点详情处展示商品状态。 ※前瞻性投资系统 在本主题中仍然有效且不与其他主题互通，但存在以下更新： 投资计算方式更新：不再需要投资系统的余额达到标准，只需你的 历史累计投资额 达到标准就可解锁对应奖赏。 投资奖赏更新： 历史累计投资额 投资奖赏 15 前瞻性投资系统解锁取款功能 50 坎诺特向你展示了货柜？ 125 诡意行商中会额外出售一个商品 250 解锁收藏品【 金酒之杯 】 500 诡意行商中会额外出售一个商品 余额提取 功能解锁后，无论是否投资受限，都可以消耗一定的系统余额提取1源石锭。 通常情况下，每次提取消耗和当前节点取款次数相同的余额提取1源石锭（最高7源石锭/次），单个节点最多提取12次。 返回 当玩家在本主题的最高投资额达到50时，画面左下角将出现“试探性碰碰商品”按钮，连续点击可激怒坎诺特。 此时玩家可以“听坎诺特的”，或者“请”坎诺特“降价”。 选择“听坎诺特的”，则无事发生。 选择“请”坎诺特“降价”，则会进入特殊的商店战斗（到达第4层前进入 死箱 ，第4层及之后进入 活木 ）。 通关后即可 有限洗劫 坎诺特的商店，但坎诺特会离开，该诡意行商节点变为林间空地，且在本次探索内之后的诡意行商节点将不再提供任何功能（空无一物）。 与以往不同的是，在本主题中， 坎诺特 会将商品封入到若干个 坎诺特保险柜 中。 我方可以主动出击撬开保险柜，再部署干员“零元购买”商品，但这些干员在这次战斗中无法再部署。 坎诺特会回收他附近的保险柜，并让自身获得一定的物理和法术伤害减免。 击倒坎诺特可以从其手中夺取 部分",
+      "seed_carryover": "1.5. 收获培育结果 若上一次行动中培育出了襁褓生灵，则它们将在这个阶段开始生效。 如需了解 襁褓生灵的具体信息 ，您也可以查阅 沉沦者的黑流树海/黑流数据库#襁褓培育室 页面。 如需了解 襁褓生灵的具体信息 ，您也可以查阅 沉沦者的黑流树海/黑流数据库#襁褓培育室 页面。 2. 选择行动奖励 若上一次行动至少通过两层，则会触发本阶段，玩家可选择一个行动奖励，否则跳过本阶段进入第三阶段。 ※以下6个选项中随机出现3个，再选择其一。 在本主题中，襁褓生灵的效果可以增加行动奖励选项及选择次数。 你的上一次探索突破了至少两层困难，这一次可以获得更多支援。 未编号物 获得 1件 普通收藏品 调查预付款 获得 8 源石锭 空间租赁 消耗 6 源石锭，零件箱容量 +2 退行补偿 消耗 2 目标生命值上限，获得 1件 随机收藏品 林间代步 获得 1件 加工品 巢寄生 零件箱容量 -1 ，获得 1件 稀有收藏品 从头开始事件 3. 选择招募组合 选择一组三张招募券职业组合。包括： 先手必胜 ：获得先锋、狙击、特种招募券各一张 稳扎稳打 ：获得重装、术师、狙击招募券各一张 取长补短 ：获得近卫、辅助、医疗招募券各一张 灵活部署 ：获得先锋、辅助、特种招募券各一张 坚不可摧 ：获得重装、术师、医疗招募券各一张 随心所欲 ：获得随机三张招募券（不会出现三张相同职业），但其中必然有一张包含5星临时招募的高级招募券。 需使用其它招募组合进行一次探索后才能解锁。 ※第一张为5星临时招募券，第二张仅可能出现先锋、近卫、重装、特种职业的招募券，第三张仅可能出现狙击、术师、医疗、辅助职业的招募券。 4. 进行初始招募 开始招募本次探索所需的初始干员。初始干员可以使用好友的助战干员。 此时选择招募券进入干员选"
+    }
+  },
+  "known_rules": {
+    "ordinary_floor_count": 5,
+    "sixth_floor_requires": "rogue_6_relic_final_3",
+    "source_expedition_floors": [
+      2,
+      3,
+      4
+    ],
+    "source_expedition_prior_ending_required": "ro6_ending_1",
+    "source_expedition_return_hope": 2,
+    "source_expedition_promotes": false,
+    "source_expedition_return_next_ordinary_floor": true,
+    "starting_reward_previous_cleared_floors": 2,
+    "starting_reward_baseline_options": 6,
+    "starting_reward_baseline_shown": 3,
+    "starting_reward_baseline_selections": 1,
+    "green_shop_refresh_costs": [
+      4,
+      8,
+      12,
+      16
+    ],
+    "green_shop_refresh_limit_per_node": 4
+  },
+  "unknowns": [
+    "starting offer server weights",
+    "starting reward exact item pools",
+    "yellow shop refresh upper bound separately unverified; do not silently equate green evidence",
+    "same-node refresh persistence inferred from per-node limit and persistent goods display",
+    "seed creatures require explicit previous-run profile; full technology does not grant them",
+    "full technology does not imply mechanical-operator mastery",
+    "observed door-exit hidden-natural marker can persist per PRTS, but client cargo_4 node whitelist excludes DOOR; do not add DOOR to random marker pool"
+  ]
+}

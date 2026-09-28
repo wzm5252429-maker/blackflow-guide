@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "evidence_kind": "USER_CONFIRMED_GAMEPLAY_RULE",
+  "source": "User confirmation in the active task, relayed by the coordinating agent; this is not a client profession-pool record.",
+  "observed_rule": {
+    "duel_ticket_has_zero_hope_reserve_option": true,
+    "resident_ticket_has_zero_hope_reserve_option": true,
+    "ordinary_chase_ticket_has_zero_hope_reserve_option": true,
+    "acquiring_ticket_is_not_recruitment": true,
+    "profession_observed": false,
+    "canonical_character_id_observed": false,
+    "mechanist_promotion_eligibility_established": false
+  },
+  "implementation_boundaries": [
+    "Preserve each source's previously established ticket count; this observation establishes a free reserve option and creates no extra tickets.",
+    "Each real offered opportunity requires an independent once-consumable nonce and a recorded source occurrence.",
+    "Offer only an actual zero-hope reserve recruitment decision when profession and reserve identity are unobserved; do not draw or fabricate a character ID.",
+    "The unknown profession opportunity cannot recruit or promote Mechanist and cannot stand in for a dedicated upgrade ticket.",
+    "Only completing the actual recruitment triggers held echo-corn appraisal growth; acquiring, retaining, declining or discarding the opportunity does not.",
+    "Already-rolled same-screen item rewards remain available without rerolling, and the policy takes the pending item rewards before recruitment.",
+    "Concrete tickets and these observed opportunities share the established three-ticket retention capacity; stored opportunities can be retrieved only at FINAL, not EVACUATE.",
+    "This observation does not establish a free reserve option for every other generic event, shop service or recruitment-ticket family."
+  ],
+  "related_evidence": {
+    "concrete_client_reserve_choices": "data/evidence/rogue6_reserve_recruitment_v1.json",
+    "ticket_retention": "data/evidence/rogue6_recruit_storage_v1.json"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "url": "https://prts.wiki/w/沉沦者的黑流树海",
+  "section": "招募券留存",
+  "rules": {
+    "initial_stored_ticket_capacity": 3,
+    "retention_is_available_after_initial_recruitment": true,
+    "retention_does_not_consume_supply_vouchers": true,
+    "retrieval_node": "FINAL",
+    "retrieval_unavailable_at_EVACUATE": true,
+    "replace_existing_stored_ticket_when_full": false,
+    "temporary_offer_randomization_at_retrieval": "known rule, unimplemented; reserve choices are client-guaranteed extras"
+  },
+  "paraphrase": "获得招募券时可留存，初始可留存三张；已满时不能留存或替换旧券。仅险路尽头可取出，险路小径不提供取券。留存指保存招募券，不是消耗另一种留存券。",
+  "implementation": "Concrete pending and stored ticket instance IDs are separate. Same-screen recruitment does not reroll already offered collectible/part alternatives. The policy chooses whether to take corn before recruiting.",
+  "unknowns": [
+    "Temporary recruitment, randomized promotion and full operator rosters remain outside this guaranteed reserve-only action model.",
+    "The observed battle composition pools condition on recorded tickets and do not establish ticket presence probability; the pre-existing one-ticket battle reward count is unchanged."
+  ]
+}

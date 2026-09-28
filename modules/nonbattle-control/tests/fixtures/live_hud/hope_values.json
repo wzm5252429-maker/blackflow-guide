@@ -1,0 +1,21 @@
+{
+  "source": "C:\\Users\\wzm52\\Documents\\ChatGPT\\方舟自动化\\artifacts\\student60_20260913\\video_sources\\BV1mWYa6QENi-p2-c1.mp4",
+  "source_sha256": "1c3abfa04ab67a1cf91b0e6ec699bce0a57f52cf1e99138474737c25073b521b",
+  "current_user_native_capture": false,
+  "cases": [
+    {
+      "image": "hope-initial-002.png",
+      "source_second": 2,
+      "sha256": "16d95b6b2d8008638f48ec34f0b506abe3620727fe0cd5aec0485c7121794ce3",
+      "current_hope": 6,
+      "maximum_hope": 6
+    },
+    {
+      "image": "hope-initial-020.png",
+      "source_second": 20,
+      "sha256": "d0dca17de8e80cbd493ecdd5d4d9608e0b7afdfcff20bf4e9e5789809691de6d",
+      "current_hope": 0,
+      "maximum_hope": 6
+    }
+  ]
+}

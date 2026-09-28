@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "sources": [
+    "https://prts.wiki/w/沉沦者的黑流树海",
+    "https://prts.wiki/w/集成战略",
+    "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/character_table.json"
+  ],
+  "client_character_sha256": "12030388f7b695062f1e4ce2cab042d8a3be2251d853797bbf74dd2b8b22bcf2",
+  "client_topic_sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+  "temporary": {
+    "actual_ticket_ids": ["rogue_6_recruit_ticket_temp_5_up", "rogue_6_recruit_ticket_temp_6_up"],
+    "qualification": "Client recruitTickets rarityList/professionList intersect actual character metadata and predefinedChars canBeFree=true,recruitType=FREE. Qualification is not an identity sampling pool.",
+    "displayed_candidates_required": true,
+    "actual_confirmed_new_recruit": {"ticket_consumed": 1, "hope_cost": 0, "already_promoted": true, "formal_recruit_callback": 1},
+    "storage": "Shared actual-ticket capacity 3; open a retained ticket only at FINAL with a fresh supplied observation. Do not convert aggregate ticket history or portable unretained historical tickets.",
+    "unresolved": ["Identity weights and candidate generation", "Already-owned identity outcome", "Temporary tickets outside the two supported promoted variants", "Exact identity overlap when earlier formal roster identity was never observed"]
+  },
+  "employment": {
+    "requires_actual_entered_node": "EMPLOY",
+    "supported_floors": [2, 3, 4, 5],
+    "observed_slots": 8,
+    "observed_exclusive_count": [2, 3],
+    "max_hires_per_visit": 3,
+    "refresh_costs_per_node": [4, 8, 12, 16],
+    "price_rule": "Charge supplied real displayed price; no random-price or random-identity generator.",
+    "refresh_rule": "Pay before accepting replacement candidates. Observation does not pay twice or reset hire count. Leaving after payment still consumes this refresh in node history. The actual active offer is consumed once.",
+    "identity_rule": "Separate emergency instances; not formal recruits, recruit tickets, promotions, expeditions or permanent roster counts.",
+    "battle_departure": "Only supplied participants of an actually completed numbered battle depart. No future battle assignment, retroactive assignment before hire, or replayed battle settlement.",
+    "unresolved": ["Candidate frequencies and discount generation", "Reentry availability", "Whether refresh resets hire count; conservative current count retained", "Emergency hiring triggers of corn and mastery; no such reward added", "Default combat participant identities; no automatic departure assumption"]
+  },
+  "rest_upgrade_correction": {
+    "client_choice": "choice_ro6_rest_4",
+    "client_displayData_itemId": "rogue_6_upgrade_ticket_all",
+    "actual_quantity": 1,
+    "runtime": "Give a physical all-profession upgrade ticket instead of an inert scalar supply voucher. Existing actual promotion logic consumes it once; receipt itself is not recruitment and does not grow corn."
+  },
+  "automatic_simulation": "No observed candidate inputs are fabricated. These bridges add executable real observations, not synthetic free recruits or an EMPLOY income source."
+}

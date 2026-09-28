@@ -1,0 +1,23 @@
+{
+  "source": "https://www.bilibili.com/video/BV1BgtD61E88/",
+  "source_file": "artifacts/xianshu9_research_20260910/BV1BgtD61E88-00480.jpg",
+  "source_second": 480,
+  "source_sha256": "53b569d0fcad0eb5bbd14cf170c3e3f6d199c64a30135e3e49bdeffe1af04acd",
+  "source_metadata": "artifacts/xianshu9_research_20260910/BV1BgtD61E88-metadata.json",
+  "crop_xywh": [
+    12,
+    7,
+    540,
+    308
+  ],
+  "fixture": "two_card_rewards.png",
+  "fixture_sha256": "697bab5777a3a59dbb318e63b96fe6a2c71621f80d42eb5b2d83f2c6b88c8a00",
+  "processing": "game viewport only, resampled proportionally to height 720; excludes broadcast sidebar and player commentary strip",
+  "evidence": "existing video frame, not current native game; not proof of claim execution",
+  "expected": {
+    "scene": "reward",
+    "named_claim": "标准引擎",
+    "claim_buttons": 2,
+    "unknown_card_identity": "种子 title remains below confidence threshold; do not infer identity/quantity"
+  }
+}

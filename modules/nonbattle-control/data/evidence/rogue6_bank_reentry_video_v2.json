@@ -1,0 +1,51 @@
+{
+  "schema_version": 2,
+  "audit_date": "2026-09-13",
+  "status": "DIRECT_VIDEO_COUNTER_EVIDENCE_ISOLATED_RULE_VARIANT",
+  "source_url": "https://www.bilibili.com/video/BV1qBbv6NEcq/",
+  "publisher": "昀屿",
+  "difficulty_marker_observed": 15,
+  "source_manifest": "artifacts/strategy_materials_20260913/new_sources/BV1qBbv6NEcq-manifest.json",
+  "frames_manifest": "artifacts/strategy_materials_20260913/frames/BV1qBbv6NEcq/first_shop_5s-manifest.json",
+  "observations": [
+    {
+      "second": 300,
+      "bank_balance_before_first_withdrawal": 394,
+      "displayed_balance_after_withdrawal": 393
+    },
+    {
+      "second": 310,
+      "bank_balance": 331,
+      "entry_limit_toast_visible": true
+    },
+    {
+      "second": 360,
+      "same_first_floor_green_shop_reentry": true,
+      "subtitle_describes_second_entry": true
+    },
+    {
+      "second": 365,
+      "bank_balance_after_first_reentry_withdrawal": 330
+    },
+    {
+      "second": 375,
+      "bank_balance": 268,
+      "entry_limit_toast_visible": true
+    }
+  ],
+  "derived_comparison": {
+    "first_entry_bank_spent": 63,
+    "second_entry_bank_spent": 63,
+    "first_reentry_withdrawal_cost": 1,
+    "legacy_model_second_entry_bank_spent": 84,
+    "legacy_model_first_reentry_withdrawal_cost": 7
+  },
+  "interpretation": "A paid re-entry into this same physical green merchant resets the withdrawal cost sequence as well as its12-withdrawal allowance. Keep lifetime node withdrawal counts for accounting, but quote marginal cost from entry_withdrawn. Refreshing inventory or merely reopening an existing menu is not evidence of a new entry.",
+  "previous_evidence": "rogue6_bank_user_observation_v1.json remains frozen. Its cost-counter persistence was an interpretation of ambiguous PRTS wording, whereas the new video exposes the actual counter decrements across two entries.",
+  "client_data_boundary": "roguelike_topic_table_full.json declares bankDrawLimit12, but does not establish the runtime counter-reset scope.",
+  "limitations": "One directly reviewed recorded run. No claim that this changes relic yield in every world or explains the full teacher/student gap. Costs are bank-account debits, not extra relic rewards or free cash.",
+  "default_environment_modified": false,
+  "source_manifest_sha256": "4b16fac733e7c6b0bf79d691380bc6c3057044a9781b322cb0f174abb0016659",
+  "frames_manifest_sha256": "098d430da118afdc53fd2e64833dd694869a7318c11291142a16bcf146ed3109",
+  "source_media_sha256": "1b6df78340709bdb31fdea18f5f5d69d213deb61fb5bb500d84ffa9d56961e81"
+}

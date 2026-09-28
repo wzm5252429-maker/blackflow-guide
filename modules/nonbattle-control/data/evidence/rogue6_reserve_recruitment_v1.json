@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "sources": {
+    "character_client": {
+      "url": "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/character_table.json",
+      "sha256": "12030388f7b695062f1e4ce2cab042d8a3be2251d853797bbf74dd2b8b22bcf2"
+    },
+    "ticket_client": {
+      "path": "data/evidence/rogue6_operator_economy_rules_v1.json",
+      "field": "client.recruit_tickets.*.extraCharIds"
+    },
+    "reserve_repeatability_and_cost": {
+      "url": "https://prts.wiki/w/集成战略#3._招募干员",
+      "retrieved": "2026-09-08",
+      "facts": [
+        "The mode-exclusive reserve operators may be recruited repeatedly and simultaneously owned as multiple copies.",
+        "An actual first temporary recruitment costs zero hope; these five reserve operators are TIER_3."
+      ]
+    }
+  },
+  "reserve_characters": {
+    "char_504_rguard": {
+      "name": "预备干员-近战",
+      "profession": "PIONEER",
+      "rarity": "TIER_3",
+      "isNotObtainable": true
+    },
+    "char_505_rcast": {
+      "name": "预备干员-术师",
+      "profession": "CASTER",
+      "rarity": "TIER_3",
+      "isNotObtainable": true
+    },
+    "char_506_rmedic": {
+      "name": "预备干员-后勤",
+      "profession": "MEDIC",
+      "rarity": "TIER_3",
+      "isNotObtainable": true
+    },
+    "char_507_rsnipe": {
+      "name": "预备干员-狙击",
+      "profession": "SNIPER",
+      "rarity": "TIER_3",
+      "isNotObtainable": true
+    },
+    "char_514_rdfend": {
+      "name": "预备干员-重装",
+      "profession": "TANK",
+      "rarity": "TIER_3",
+      "isNotObtainable": true
+    }
+  },
+  "scope": [
+    "Only an actual concrete ticket instance authorizes a recruitment.",
+    "Explicit extraCharIds permits a cross-profession reserve choice; do not replace this with profession equality.",
+    "No inferred profession from aggregate ticket counts.",
+    "Each used ticket creates one unique formal reserve instance; ordinary operators cannot use this repeatability exception.",
+    "Ticket drop probabilities and stash eligibility are outside this helper."
+  ]
+}

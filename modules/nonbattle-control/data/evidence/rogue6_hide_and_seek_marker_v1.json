@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-08",
+  "client_source": "source_data/roguelike_topic_table_full.json",
+  "client_sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+  "relic_id": "rogue_6_relic_cargo_4",
+  "relic_name": "迷藏",
+  "marker_id": "rogue_6_bubble_07",
+  "marker_name": "藏果地",
+  "client_visibility_path": "modules.rogue_6.gridZone.buoyItemDatas.rogue_6_bubble_07",
+  "client_visibility_record": {"itemId": "rogue_6_bubble_07", "isVisible": true},
+  "prts_source": "https://prts.wiki/w/沉沦者的黑流树海/黑流数据库",
+  "prts_rule": "由收藏品迷藏的效果生成，立即揭示；前往可获得恋家果、光彩松露或板藤。",
+  "marker_visibility_source": "https://prts.wiki/w/沉沦者的黑流树海",
+  "marker_visibility_source_sha256": "5b413391cb064ff898b164d7859957fb895d64afeebfdab942bf38a043075e74",
+  "marker_visibility_interpretation": "Immediate visibility of a marker is independent of observation of its underlying node. Publish the overlay position, preserve node masking, and do not count marker visibility as a node discovery.",
+  "reward_pool_id": "pool_scrap_7",
+  "reward_quantity": 1,
+  "observed_reward_members": ["rogue_6_scrap_G_09", "rogue_6_scrap_G_10", "rogue_6_scrap_G_11"],
+  "member_rarity": "SUPER_RARE",
+  "runtime_counter": "hidden_natural:<node_id>",
+  "runtime_counter_values": {"1": "unclaimed publicly visible marker", "2": "reward already claimed"},
+  "initial_region_entry": {
+    "source": "https://prts.wiki/w/沉沦者的黑流树海",
+    "basis": "开始探索 lists starting reward before initial recruitment and 区域 I. Client cargo_4 zone_into_node_attach_buff does not exclude zone_1.",
+    "runtime": "After initial formal recruitment, run owned-relic on_floor_enter once behind first_region_enter_done. This includes cargo_4 acquired from the starting reward, without repeating base resources or retroactively marking the current region on later acquisition."
+  },
+  "implementation_notes": [
+    "The marker is an overlay on an existing eligible node, not the WISH node type.",
+    "Publishing this marker does not reveal the underlying node or trigger grass appraisal. Only ordinary node discovery can do that.",
+    "Starting reward selection must still hide first-map marker coordinates and generation logs.",
+    "This correction does not add another reward or alter the existing one-time marker completion hook."
+  ],
+  "unverified": [
+    "Marked-node selection probabilities remain an explicitly uniform modelling prior.",
+    "Reward member frequencies remain unknown; the existing uniform pool prior is unchanged.",
+    "PRTS describes a repeated door-exit marker interaction but the client's marker whitelist excludes DOOR; this correction does not expand generation eligibility."
+  ]
+}

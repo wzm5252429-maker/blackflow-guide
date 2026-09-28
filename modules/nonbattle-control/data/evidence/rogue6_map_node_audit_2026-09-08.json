@@ -1,0 +1,1865 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-09-08",
+  "status": "client_display_plus_community_mechanics_not_server_generation",
+  "client_source": {
+    "repository": "Kengxxiao/ArknightsGameData",
+    "path": "zh_CN/gamedata/excel/roguelike_topic_table.json",
+    "git_blob_sha": "723f15432e989b6d0d402c38548a74a317f2f97c",
+    "sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+    "verified_at": "2026-09-01"
+  },
+  "snapshot_sha256": "c0dc1f4da2d39108da082cf13c1104d80aca468aedb9d24c5855efea932cf8bf",
+  "sources": [
+    {
+      "url": "https://prts.wiki/w/沉沦者的黑流树海",
+      "revision_id": 424917,
+      "role": "B-community node mechanics"
+    },
+    {
+      "url": "https://prts.wiki/w/沉沦者的黑流树海/引擎配件目录",
+      "revision_id": 423515,
+      "role": "B-community exchange rarity constraints"
+    },
+    {
+      "url": "https://wiki.biligame.com/arknights/沉沦者的黑流树海",
+      "role": "B-community chase clears current region; prevents misreading PRTS continue exploration as staying on the same map"
+    },
+    {
+      "url": "https://prts.wiki/w/沉沦者的黑流树海/事件一览",
+      "role": "B-community cave next-floor ordinary battle and repeatable event occurrences"
+    },
+    {
+      "url": "https://prts.wiki/w/沉沦者的黑流树海/拟造物质编目#rogue_6_relic_artifact_5",
+      "role": "B-community different IV region treated as new region"
+    },
+    {
+      "path": "data/evidence/rogue6_portal_layouts_v1.json",
+      "role": "independent portal topology and client AP snapshot"
+    },
+    {
+      "path": "data/evidence/rogue6_resident_rules_v1.json",
+      "role": "independent resident movement and stage snapshot"
+    }
+  ],
+  "client_choices": [
+    {
+      "id": "choice_ro6_bomb1_1",
+      "title": "我受雇于梅兰德",
+      "description": "获得<@ro6.get>沙盘α</>，让探索开启不同的方向",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bomb1_1"
+    },
+    {
+      "id": "choice_ro6_bomb1_2",
+      "title": "我是一名独立探险家",
+      "description": "获得<@ro6.get>1件</>珍贵的加工品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bomb1_2"
+    },
+    {
+      "id": "choice_ro6_bomb1_3",
+      "title": "我是联合政府派来的",
+      "description": "多一事不如少一事",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bomb1_3"
+    },
+    {
+      "id": "choice_ro6_chimera2_1",
+      "title": "倾囊资助",
+      "description": "消耗<@ro5.lose>全部</>源石锭，获得收藏品<@ro6.get>击坠“神明”</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_chimera2_1"
+    },
+    {
+      "id": "choice_ro6_chimera2_2",
+      "title": "无能为力",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_chimera2_2"
+    },
+    {
+      "id": "choice_ro6_normal1_1",
+      "title": "清理门上的人形藤蔓",
+      "description": "消耗<@ro6.lose>2</>目标生命值，获得<@ro6.get>笼控器</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal1_1"
+    },
+    {
+      "id": "choice_ro6_normal1_2",
+      "title": "试图和人形藤蔓交流",
+      "description": "消耗<@ro6.lose>8</>源石锭，获得<@ro6.get>笼控器</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal1_2"
+    },
+    {
+      "id": "choice_ro6_normal1_3",
+      "title": "离开",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_normal1_3"
+    },
+    {
+      "id": "choice_ro6_normal2_1",
+      "title": "掏出笼控器控制猎狗",
+      "description": "持有<@ro6.get>笼控器</>，获得收藏品<@ro6.get>猎印</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal2_1"
+    },
+    {
+      "id": "choice_ro6_normal2_2",
+      "title": "和猎狗战斗到底",
+      "description": "遭遇一场艰难的特殊作战",
+      "type": "TRADE_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_normal2_3",
+      "title": "落荒而逃",
+      "description": "消耗<@ro6.lose>3</>目标生命值（至少保留1目标生命值）",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal2_2"
+    },
+    {
+      "id": "choice_ro6_normal2_4",
+      "title": "落荒而逃",
+      "description": "消耗<@ro6.lose>3</>目标生命值（至少保留1目标生命值）",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal2_2"
+    },
+    {
+      "id": "choice_ro6_normal2_5",
+      "title": "落荒而逃",
+      "description": "消耗<@ro6.lose>3</>目标生命值（至少保留1目标生命值）",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal2_2"
+    },
+    {
+      "id": "choice_ro6_normal2_6",
+      "title": "落荒而逃",
+      "description": "消耗<@ro6.lose>3</>目标生命值（至少保留1目标生命值）",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_normal2_2"
+    },
+    {
+      "id": "choice_ro6_normal5_1",
+      "title": "紧紧拥抱愈创木",
+      "description": "消耗<@ro6.lose>3</>行动力，获得收藏品<@ro6.get>追忆</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal5_1"
+    },
+    {
+      "id": "choice_ro6_normal5_2",
+      "title": "让这里有一个秋千",
+      "description": "消耗随机<@ro6.lose>2件</>加工品，获得收藏品<@ro6.get>追忆</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal5_2"
+    },
+    {
+      "id": "choice_ro6_normal5_3",
+      "title": "比对像素小猫和树干刻痕",
+      "description": "消耗<@ro6.lose>源私钥</>，获得收藏品<@ro6.get>追忆</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal5_3"
+    },
+    {
+      "id": "choice_ro6_normal5_4",
+      "title": "检测此地有无危险",
+      "description": "持有<@ro6.lose>笼控器</>，获得<@ro6.get>5</>行动力",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal5_4"
+    },
+    {
+      "id": "choice_ro6_normal5_5",
+      "title": "闭上眼感受宁静",
+      "description": "获得<@ro6.get>1</>行动力",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal5_5"
+    },
+    {
+      "id": "choice_ro6_relic1_1",
+      "title": "拽出衣服寻找可用物资",
+      "description": "获得收藏品<@ro6.get>他缚</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_relic1_1"
+    },
+    {
+      "id": "choice_ro6_relic1_2",
+      "title": "割下怪花",
+      "description": "获得收藏品<@ro6.get>剑锤</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_relic1_2"
+    },
+    {
+      "id": "choice_ro6_relic1_3",
+      "title": "砍断藤蔓",
+      "description": "获得收藏品<@ro6.get>一串钱伥</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_relic1_3"
+    },
+    {
+      "id": "choice_ro6_relic1_4",
+      "title": "离开",
+      "description": "获得<@ro6.get>2</>目标生命值上限",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_relic1_4"
+    },
+    {
+      "id": "choice_ro6_relic2_1",
+      "title": "帮助蛇",
+      "description": "获得收藏品<@ro6.get>“翱翼”</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_relic2_1"
+    },
+    {
+      "id": "choice_ro6_relic2_2",
+      "title": "帮助鹰",
+      "description": "获得收藏品<@ro6.get>“虬蜕”</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_relic2_2"
+    },
+    {
+      "id": "choice_ro6_relic2_3",
+      "title": "不关我的事",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_relic2_3"
+    },
+    {
+      "id": "choice_ro6_res1_1",
+      "title": "帮它梳理绒毛",
+      "description": "获得<@ro6.get>3</>希望",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_res1_1"
+    },
+    {
+      "id": "choice_ro6_res1_2",
+      "title": "唱一首摇篮曲",
+      "description": "获得<@ro6.get>10</>源石锭",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_res1_2"
+    },
+    {
+      "id": "choice_ro6_res2_1",
+      "title": "拿走看上去像是苹果的食物",
+      "description": "获得<@ro6.get>3</>目标生命值上限",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_res2_1"
+    },
+    {
+      "id": "choice_ro6_res2_2",
+      "title": "拿走看上去像是鱼的食物",
+      "description": "获得<@ro6.get>5</>护盾",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_res2_2"
+    },
+    {
+      "id": "choice_ro6_res2_3",
+      "title": "我不饿",
+      "description": "离开",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_res2_3"
+    },
+    {
+      "id": "choice_ro6_res3_1",
+      "title": "想要一个能节省力气的",
+      "description": "消耗<@ro6.lose>4</>源石锭，获得<@ro6.get>1件</>随机加工品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_res3_1"
+    },
+    {
+      "id": "choice_ro6_res3_2",
+      "title": "想要一个可以保值的",
+      "description": "消耗<@ro6.lose>4</>源石锭，获得<@ro6.get>1件</>随机概念体",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_res3_2"
+    },
+    {
+      "id": "choice_ro6_res3_3",
+      "title": "想要一个树海特色纪念品",
+      "description": "消耗<@ro6.lose>4</>源石锭，获得<@ro6.get>1件</>随机自然物",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_res3_3"
+    },
+    {
+      "id": "choice_ro6_res3_4",
+      "title": "没什么想买的",
+      "description": "离开",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_res3_4"
+    },
+    {
+      "id": "choice_ro6_res4_1",
+      "title": "上去帮个小忙",
+      "description": "获得<@ro6.get>2</>行动力",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_res4_1"
+    },
+    {
+      "id": "choice_ro6_res4_2",
+      "title": "推翻石磨",
+      "description": "消耗<@ro6.lose>一半</>目标生命值，获得<@ro6.get>5</>行动力",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_res4_2"
+    },
+    {
+      "id": "choice_ro6_res4_3",
+      "title": "不关我的事",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_res4_3"
+    },
+    {
+      "id": "choice_ro6_res5_1",
+      "title": "敲一次",
+      "description": "消耗<@ro6.lose>4</>源石锭，获得<@ro6.get>1件</>随机收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_res5_1"
+    },
+    {
+      "id": "choice_ro6_res5_2",
+      "title": "敲三次",
+      "description": "消耗<@ro6.lose>10</>源石锭，获得<@ro6.get>3件</>随机收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_res5_2"
+    },
+    {
+      "id": "choice_ro6_res5_3",
+      "title": "不感兴趣",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_res5_3"
+    },
+    {
+      "id": "choice_ro6_rest_1",
+      "title": "坐下休息",
+      "description": "获得<@ro6.get>3</>目标生命值上限",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_rest_1"
+    },
+    {
+      "id": "choice_ro6_rest_2",
+      "title": "采样金色泉水",
+      "description": "可携带干员<@ro6.get>+1</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_rest_2"
+    },
+    {
+      "id": "choice_ro6_rest_3",
+      "title": "向泉水许愿",
+      "description": "获得<@ro6.get>3</>希望",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_rest_3"
+    },
+    {
+      "id": "choice_ro6_rest_4",
+      "title": "查看无人机",
+      "description": "获得高级物资配给券",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_rest_4"
+    },
+    {
+      "id": "choice_ro6_rest_5",
+      "title": "抚摸静止的小动物",
+      "description": "获得<@ro6.get>2</>行动力",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_rest_5"
+    },
+    {
+      "id": "choice_ro6_rest_6",
+      "title": "整理行囊",
+      "description": "零件箱容量<@ro6.get>+1</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_rest_6"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_1",
+      "title": "复原藏品",
+      "description": "拿出珍藏赞助研究",
+      "type": "SACRIFICE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_sacrifice1_10",
+      "title": "有点可疑",
+      "description": "见好就收",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_sacrifice1_10"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_11",
+      "title": "复原零件",
+      "description": "拿出工具赞助研究",
+      "type": "SACRIFICE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_sacrifice1_12",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_13"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_13",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_13"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_14",
+      "title": "继续赞助它",
+      "description": "看看还能有什么把戏",
+      "type": "SACRIFICE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_sacrifice1_15",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_16"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_16",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_16"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_17",
+      "title": "有点可疑",
+      "description": "见好就收",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_sacrifice1_17"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_18",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_13"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_19",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_16"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_2",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_1"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_3",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_1"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_4",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_1"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_5",
+      "title": "离开",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_sacrifice1_5"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_6",
+      "title": "继续赞助它",
+      "description": "看看还能有什么把戏",
+      "type": "SACRIFICE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_sacrifice1_7",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_9"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_8",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_9"
+    },
+    {
+      "id": "choice_ro6_sacrifice1_9",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice1_9"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_1",
+      "title": "复原藏品",
+      "description": "拿出珍藏赞助研究",
+      "type": "SACRIFICE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_sacrifice2_10",
+      "title": "有点可疑",
+      "description": "见好就收",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_sacrifice2_10"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_11",
+      "title": "复原零件",
+      "description": "拿出工具赞助研究",
+      "type": "SACRIFICE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_sacrifice2_12",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_13"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_13",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_13"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_14",
+      "title": "继续赞助它",
+      "description": "看看还能有什么把戏",
+      "type": "SACRIFICE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_sacrifice2_15",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_16"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_16",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_16"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_17",
+      "title": "有点可疑",
+      "description": "见好就收",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_sacrifice2_17"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_18",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_13"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_19",
+      "title": "接过零件",
+      "description": "获得<@ro6.get>1件</>零件",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_16"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_2",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_1"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_20",
+      "title": "复原“文明”",
+      "description": "消耗随机<@ro6.lose>2件</>自然物，帮助它复原“文明”",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_sacrifice2_20"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_21",
+      "title": "等待结果",
+      "description": "获得收藏品<@ro6.get>焚毁“文明”</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_sacrifice2_21"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_3",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_1"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_4",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_1"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_5",
+      "title": "远离这个疯子",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_sacrifice2_5"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_6",
+      "title": "继续赞助它",
+      "description": "看看还能有什么把戏",
+      "type": "SACRIFICE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_sacrifice2_7",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_9"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_8",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_9"
+    },
+    {
+      "id": "choice_ro6_sacrifice2_9",
+      "title": "接过藏品",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE_PROB_SHOW",
+      "nextSceneId": "scene_ro6_sacrifice2_9"
+    },
+    {
+      "id": "choice_ro6_bat1_1",
+      "title": "赶跑它",
+      "description": "我也迷路了！管不了你！",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat1_1"
+    },
+    {
+      "id": "choice_ro6_bat1_2",
+      "title": "安慰它",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat1_2"
+    },
+    {
+      "id": "choice_ro6_bat1_3",
+      "title": "强行驱赶",
+      "description": "遭遇一场特殊的战斗",
+      "type": "TRADE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat2_1",
+      "title": "让它闭嘴",
+      "description": "晦气！我看走不出树海的是你！",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat2_1"
+    },
+    {
+      "id": "choice_ro6_bat2_2",
+      "title": "装没听到",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat2_2"
+    },
+    {
+      "id": "choice_ro6_bat2_3",
+      "title": "为客户群体发声！",
+      "description": "遭遇一场特殊的战斗",
+      "type": "TRADE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat3_1",
+      "title": "呛一句",
+      "description": "鸭子你是不是自恋啊？",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat3_1"
+    },
+    {
+      "id": "choice_ro6_bat3_2",
+      "title": "故意挑事",
+      "description": "遭遇一场艰难的特殊战斗",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat3_2"
+    },
+    {
+      "id": "choice_ro6_bat3_3",
+      "title": "区区打手！",
+      "description": "遭遇一场特殊的战斗",
+      "type": "TRADE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat3_4",
+      "title": "兴趣缺缺",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat3_3"
+    },
+    {
+      "id": "choice_ro6_bat3_5",
+      "title": "区区商人！",
+      "description": "遭遇一场艰难的特殊战斗",
+      "type": "TRADE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat4_1",
+      "title": "凭什么？",
+      "description": "原地坐下",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat4_1"
+    },
+    {
+      "id": "choice_ro6_bat4_2",
+      "title": "扎穿货车车胎",
+      "description": "遭遇一场艰难的战斗",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat4_2"
+    },
+    {
+      "id": "choice_ro6_bat4_3",
+      "title": "阻拦到底",
+      "description": "遭遇一场特殊的战斗",
+      "type": "TRADE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat4_4",
+      "title": "果断求饶",
+      "description": "消耗<@ro5.lose>一半</>的源石锭逃跑",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat4_3"
+    },
+    {
+      "id": "choice_ro6_bat4_5",
+      "title": "就挑衅，怎么了？",
+      "description": "遭遇一场艰难的特殊战斗",
+      "type": "TRADE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat5_1",
+      "title": "上前看看",
+      "description": "到底是什么事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat5_1"
+    },
+    {
+      "id": "choice_ro6_bat5_10",
+      "title": "获得了奖励",
+      "description": "获得了<@ro6.get>1件</>珍贵的收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat5_9"
+    },
+    {
+      "id": "choice_ro6_bat5_2",
+      "title": "不理会她",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat5_2"
+    },
+    {
+      "id": "choice_ro6_bat5_3",
+      "title": "拿出诚意",
+      "description": "失去<@ro6.lose>1</>源石锭",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat5_5"
+    },
+    {
+      "id": "choice_ro6_bat5_4",
+      "title": "休想骗我",
+      "description": "这太可疑了",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat5_3"
+    },
+    {
+      "id": "choice_ro6_bat5_5",
+      "title": "到此为止了！",
+      "description": "遭遇一场特殊的战斗",
+      "type": "TRADE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat5_6",
+      "title": "离开",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat5_4"
+    },
+    {
+      "id": "choice_ro6_bat5_7",
+      "title": "继续拿出诚意",
+      "description": "失去<@ro6.lose>1</>源石锭",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat5_6"
+    },
+    {
+      "id": "choice_ro6_bat5_8",
+      "title": "继续拿出诚意",
+      "description": "失去<@ro6.lose>1</>源石锭",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat5_9",
+      "title": "我不要困在这里！",
+      "description": "遭遇一场艰难的特殊战斗",
+      "type": "TRADE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_normal4_1",
+      "title": "加入它们",
+      "description": "消耗<@ro6.lose>1</>目标生命值",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_normal4_10",
+      "title": "收下",
+      "description": "获得<@ro6.get>1件</>随机自然物",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_11"
+    },
+    {
+      "id": "choice_ro6_normal4_11",
+      "title": "休息好了",
+      "description": "回复<@ro6.get>2</>目标生命值",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_11"
+    },
+    {
+      "id": "choice_ro6_normal4_12",
+      "title": "加入它们",
+      "description": "消耗<@ro6.lose>2</>目标生命值",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_normal4_13",
+      "title": "收下",
+      "description": "获得<@ro6.get>1件</>随机加工品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_15"
+    },
+    {
+      "id": "choice_ro6_normal4_14",
+      "title": "收下",
+      "description": "获得<@ro6.get>12</>源石锭",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_15"
+    },
+    {
+      "id": "choice_ro6_normal4_15",
+      "title": "休息好了",
+      "description": "回复<@ro6.get>2</>目标生命值",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_15"
+    },
+    {
+      "id": "choice_ro6_normal4_16",
+      "title": "加入它们",
+      "description": "消耗<@ro6.lose>2</>目标生命值",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_normal4_17",
+      "title": "收下",
+      "description": "获得<@ro6.get>1件</>随机收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_18"
+    },
+    {
+      "id": "choice_ro6_normal4_18",
+      "title": "收下",
+      "description": "获得<@ro6.get>5</>目标生命值",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_18"
+    },
+    {
+      "id": "choice_ro6_normal4_19",
+      "title": "加入它们",
+      "description": "消耗<@ro6.lose>3</>目标生命值",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_normal4_2",
+      "title": "我不会跳舞",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_normal4_2"
+    },
+    {
+      "id": "choice_ro6_normal4_20",
+      "title": "收下",
+      "description": "获得<@ro6.get>8</>希望",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_22"
+    },
+    {
+      "id": "choice_ro6_normal4_21",
+      "title": "收下",
+      "description": "可携带干员<@ro6.get>+1</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_22"
+    },
+    {
+      "id": "choice_ro6_normal4_22",
+      "title": "休息好了",
+      "description": "回复<@ro6.get>3</>目标生命值",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_22"
+    },
+    {
+      "id": "choice_ro6_normal4_23",
+      "title": "加入它们",
+      "description": "消耗<@ro6.lose>3</>目标生命值",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_normal4_24",
+      "title": "收下",
+      "description": "获得<@ro6.get>3件</>随机收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_24"
+    },
+    {
+      "id": "choice_ro6_normal4_25",
+      "title": "加入它们",
+      "description": "消耗<@ro6.lose>3</>目标生命值",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_normal4_26",
+      "title": "收下",
+      "description": "获得收藏品<@ro6.lose>犬植浆</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_27"
+    },
+    {
+      "id": "choice_ro6_normal4_27",
+      "title": "收下",
+      "description": "获得<@ro6.get>1</>行动力",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_24"
+    },
+    {
+      "id": "choice_ro6_normal4_28",
+      "title": "加入它们",
+      "description": "消耗<@ro6.lose>3</>目标生命值",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_normal4_26"
+    },
+    {
+      "id": "choice_ro6_normal4_3",
+      "title": "收下",
+      "description": "获得<@ro6.get>4</>源石锭",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_4"
+    },
+    {
+      "id": "choice_ro6_normal4_4",
+      "title": "休息好了",
+      "description": "回复<@ro6.get>1</>目标生命值",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_4"
+    },
+    {
+      "id": "choice_ro6_normal4_5",
+      "title": "加入它们",
+      "description": "消耗<@ro6.lose>1</>目标生命值",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_normal4_6",
+      "title": "收下",
+      "description": "获得<@ro6.get>2</>希望",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_8"
+    },
+    {
+      "id": "choice_ro6_normal4_7",
+      "title": "休息好了",
+      "description": "回复<@ro6.get>1</>目标生命值",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal4_8"
+    },
+    {
+      "id": "choice_ro6_normal4_8",
+      "title": "不想再跳了",
+      "description": "该离开了",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_normal4_7"
+    },
+    {
+      "id": "choice_ro6_normal4_9",
+      "title": "加入它们",
+      "description": "消耗<@ro6.lose>2</>目标生命值",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_task1_1",
+      "title": "加入队伍，接取悬赏",
+      "description": "获得收藏品<@ro6.get>厄运火杆</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_task1_1"
+    },
+    {
+      "id": "choice_ro6_task1_2",
+      "title": "离开队伍",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_task1_2"
+    },
+    {
+      "id": "choice_ro6_task1_3",
+      "title": "守卫和平！",
+      "description": "立即前往最近的“居民”据点",
+      "type": "MOVE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_task1_4",
+      "title": "从长计议",
+      "description": "仅标记地图上最近的“居民”据点，暂不前往",
+      "type": "VISION",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_task2_1",
+      "title": "去看看小狗",
+      "description": "获得收藏品<@ro6.get>同行者</>",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_task2_1"
+    },
+    {
+      "id": "choice_ro6_task2_2",
+      "title": "小心为上",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_task2_2"
+    },
+    {
+      "id": "choice_ro6_task2_3",
+      "title": "跟随小狗",
+      "description": "前往应急助力",
+      "type": "MOVE",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_task2_4",
+      "title": "请小狗告知营地位置",
+      "description": "标记应急助力位置",
+      "type": "VISION",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6_1",
+      "title": "树洞里肯定有好东西",
+      "description": "掏一下",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6_2",
+      "title": "离开",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6_1"
+    },
+    {
+      "id": "choice_ro6_bat6_3",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>5</>源石锭",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6_6"
+    },
+    {
+      "id": "choice_ro6_bat6_4",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6_22"
+    },
+    {
+      "id": "choice_ro6_bat6_5",
+      "title": "怎么是空的！",
+      "description": "继续掏",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6_6"
+    },
+    {
+      "id": "choice_ro6_bat6_6",
+      "title": "放开我！",
+      "description": "遭遇一场艰难的战斗",
+      "type": "TRADE_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6_7",
+      "title": "一定是错觉",
+      "description": "继续掏",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6_8",
+      "title": "太诡异了",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6_7"
+    },
+    {
+      "id": "choice_ro6_bat6_9",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>5</>源石锭",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6_12"
+    },
+    {
+      "id": "choice_ro6_bat6_10",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6_22"
+    },
+    {
+      "id": "choice_ro6_bat6_11",
+      "title": "怎么是空的！",
+      "description": "继续掏",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6_12"
+    },
+    {
+      "id": "choice_ro6_bat6_12",
+      "title": "放开我！",
+      "description": "遭遇一场艰难的战斗",
+      "type": "TRADE_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6_13",
+      "title": "一定是错觉",
+      "description": "继续掏",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6_14",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>5</>源石锭",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6_17"
+    },
+    {
+      "id": "choice_ro6_bat6_15",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6_22"
+    },
+    {
+      "id": "choice_ro6_bat6_16",
+      "title": "怎么是空的！",
+      "description": "继续掏",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6_17"
+    },
+    {
+      "id": "choice_ro6_bat6_17",
+      "title": "放开我！",
+      "description": "遭遇一场艰难的战斗",
+      "type": "TRADE_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6_18",
+      "title": "一定是错觉",
+      "description": "继续掏",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6_19",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>5</>源石锭",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6_22"
+    },
+    {
+      "id": "choice_ro6_bat6_20",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6_22"
+    },
+    {
+      "id": "choice_ro6_bat6_21",
+      "title": "怎么是空的！",
+      "description": "继续掏",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6_22"
+    },
+    {
+      "id": "choice_ro6_bat6_22",
+      "title": "放开我！",
+      "description": "遭遇一场艰难的战斗",
+      "type": "TRADE_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_normal3_1",
+      "title": "尝试驱赶猎狗",
+      "description": "持有<@ro6.get>笼控器</>，获得<@ro6.get>30</>源石锭，并在下一区域生成“希望的沃土”",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal3_1"
+    },
+    {
+      "id": "choice_ro6_normal3_2",
+      "title": "将种子埋在此处",
+      "description": "种下<@ro6.lose>1枚</>种子，在下一区域生成“希望的沃土”",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_normal3_2"
+    },
+    {
+      "id": "choice_ro6_normal3_3",
+      "title": "快逃",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_normal3_3"
+    },
+    {
+      "id": "choice_ro6_bat6b_1",
+      "title": "树洞里肯定有好东西",
+      "description": "掏一下",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6b_2",
+      "title": "离开",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6b_1"
+    },
+    {
+      "id": "choice_ro6_bat6b_3",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>5</>源石锭",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6b_6"
+    },
+    {
+      "id": "choice_ro6_bat6b_4",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6b_22"
+    },
+    {
+      "id": "choice_ro6_bat6b_5",
+      "title": "怎么是空的！",
+      "description": "继续掏",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6b_6"
+    },
+    {
+      "id": "choice_ro6_bat6b_6",
+      "title": "放开我！",
+      "description": "遭遇一场艰难的战斗",
+      "type": "TRADE_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6b_7",
+      "title": "一定是错觉",
+      "description": "继续掏",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6b_8",
+      "title": "太诡异了",
+      "description": "多一事不如少一事",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6b_7"
+    },
+    {
+      "id": "choice_ro6_bat6b_9",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>5</>源石锭",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6b_12"
+    },
+    {
+      "id": "choice_ro6_bat6b_10",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6b_22"
+    },
+    {
+      "id": "choice_ro6_bat6b_11",
+      "title": "怎么是空的！",
+      "description": "继续掏",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6b_12"
+    },
+    {
+      "id": "choice_ro6_bat6b_12",
+      "title": "放开我！",
+      "description": "遭遇一场艰难的战斗",
+      "type": "TRADE_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6b_13",
+      "title": "一定是错觉",
+      "description": "继续掏",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6b_14",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>5</>源石锭",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6b_17"
+    },
+    {
+      "id": "choice_ro6_bat6b_15",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6b_22"
+    },
+    {
+      "id": "choice_ro6_bat6b_16",
+      "title": "怎么是空的！",
+      "description": "继续掏",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6b_17"
+    },
+    {
+      "id": "choice_ro6_bat6b_17",
+      "title": "放开我！",
+      "description": "遭遇一场艰难的战斗",
+      "type": "TRADE_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6b_18",
+      "title": "一定是错觉",
+      "description": "继续掏",
+      "type": "NEXT_PROB",
+      "nextSceneId": null
+    },
+    {
+      "id": "choice_ro6_bat6b_19",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>5</>源石锭",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6b_22"
+    },
+    {
+      "id": "choice_ro6_bat6b_20",
+      "title": "我的了！",
+      "description": "获得<@ro6.get>1件</>收藏品",
+      "type": "TRADE",
+      "nextSceneId": "scene_ro6_bat6b_22"
+    },
+    {
+      "id": "choice_ro6_bat6b_21",
+      "title": "怎么是空的！",
+      "description": "继续掏",
+      "type": "NEXT",
+      "nextSceneId": "scene_ro6_bat6b_22"
+    },
+    {
+      "id": "choice_ro6_bat6b_22",
+      "title": "放开我！",
+      "description": "遭遇一场艰难的战斗",
+      "type": "TRADE_PROB",
+      "nextSceneId": null
+    }
+  ],
+  "client_named_items": [
+    {
+      "id": "rogue_6_scrap_G_12",
+      "name": "笼控器",
+      "type": "SCRAP",
+      "rarity": "SUPER_RARE",
+      "canSacrifice": true
+    },
+    {
+      "id": "rogue_6_relic_legacy_141",
+      "name": "一串钱伥",
+      "type": "RELIC",
+      "rarity": "RARE",
+      "canSacrifice": true
+    },
+    {
+      "id": "rogue_6_relic_legacy_142",
+      "name": "“剑锤”",
+      "type": "RELIC",
+      "rarity": "RARE",
+      "canSacrifice": true
+    },
+    {
+      "id": "rogue_6_relic_cargo_12",
+      "name": "猎印",
+      "type": "RELIC",
+      "rarity": "RARE",
+      "canSacrifice": true
+    },
+    {
+      "id": "rogue_6_relic_fight_11",
+      "name": "他缚",
+      "type": "RELIC",
+      "rarity": "SUPER_RARE",
+      "canSacrifice": true
+    },
+    {
+      "id": "rogue_6_relic_fight_18",
+      "name": "翱翼",
+      "type": "RELIC",
+      "rarity": "NORMAL",
+      "canSacrifice": true
+    },
+    {
+      "id": "rogue_6_relic_fight_19",
+      "name": "虬蜕",
+      "type": "RELIC",
+      "rarity": "NORMAL",
+      "canSacrifice": true
+    },
+    {
+      "id": "rogue_6_relic_final_1",
+      "name": "沙盘α",
+      "type": "RELIC",
+      "rarity": "SUPER_RARE",
+      "canSacrifice": false
+    },
+    {
+      "id": "rogue_6_relic_final_4",
+      "name": "击坠“神明”",
+      "type": "RELIC",
+      "rarity": "SUPER_RARE",
+      "canSacrifice": false
+    },
+    {
+      "id": "rogue_6_relic_final_6",
+      "name": "焚毁“文明”",
+      "type": "RELIC",
+      "rarity": "SUPER_RARE",
+      "canSacrifice": false
+    }
+  ],
+  "reviewed_constraints": {
+    "res5": {
+      "cost_gold": [
+        4,
+        10
+      ],
+      "relic_count": [
+        1,
+        3
+      ],
+      "one_choice_per_node": true,
+      "unlimited_reentry_supported": false
+    },
+    "res3": {
+      "cost_gold": 4,
+      "quantity": 1,
+      "mutually_exclusive_categories": [
+        "MOVE",
+        "PASSIVE",
+        "GOODS"
+      ]
+    },
+    "res4": {
+      "safe_ap": 2,
+      "risk_ap": 5,
+      "risk_cost": "one_half_current_target_hp",
+      "odd_integer_rounding": "not_proved; runtime currently floors cost and records as approximation"
+    },
+    "sacrifice": {
+      "normal_relic_exchange": "one collectible for one collectible",
+      "normal_scrap_exchange": "one part for one part",
+      "full_tech_max_exchanges": 2,
+      "second_exchange_category": "same as first",
+      "additional_gold_or_hope": false,
+      "special_natural_item_exchange": {
+        "choice": "choice_ro6_sacrifice2_20",
+        "cost_natural_items": 2,
+        "named_reward": "rogue_6_relic_final_6"
+      },
+      "scrap_rarity_rule": {
+        "NORMAL": [
+          "NORMAL"
+        ],
+        "RARE": [
+          "RARE"
+        ],
+        "SUPER_RARE": [
+          "SUPER_RARE except cage",
+          "one-use jetpack",
+          "painted Liberi",
+          "painted Perro",
+          "painted Aegir"
+        ]
+      },
+      "may_return_same_part": true
+    },
+    "duel": {
+      "left": {
+        "parts": 1,
+        "tickets": 2,
+        "rarities": [
+          "NORMAL",
+          "RARE"
+        ]
+      },
+      "middle": {
+        "parts": 1,
+        "tickets": 2,
+        "rarities": [
+          "RARE",
+          "SUPER_RARE"
+        ],
+        "special_pool_members": [
+          "浪花",
+          "雾滚草",
+          "小八界"
+        ]
+      },
+      "right": {
+        "relics": 1,
+        "tickets": 2
+      },
+      "failure_hp_or_shield_loss": 0
+    },
+    "visibility": {
+      "n3plus_hidden_final_count": 1,
+      "light_initial_manhattan_radius": 1,
+      "light_visit_manhattan_radius": 2,
+      "light_full_tech_n3plus_visit_manhattan_radius": 3,
+      "shape_note": "4/12/24 surrounding grid cells; ignores path edge layout"
+    },
+    "roaming_residents": {
+      "initial_cells": "EMPTY cells within actual graph distance 5 of BATTLE_SAVAGE",
+      "normal_count": "min(3, eligible cells)",
+      "recollection_count": "unknown random cap 0..3",
+      "movement": "one path edge after each player move; legal destination restrictions apply",
+      "on_stronghold_win": "remove all roaming residents in current region"
+    },
+    "chase": {
+      "is_map_node": false,
+      "ordinary_rewards": {
+        "tickets": 1,
+        "gold": 0,
+        "relics": 0,
+        "command_exp": 0
+      },
+      "boss_chase": "normal boss settlement",
+      "after_success": "advance to next region; do not create a free exploration loop on the exhausted map",
+      "next_floor_ap_penalty": 1
+    },
+    "shadow_dance": {
+      "hp_costs": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3
+      ],
+      "seventh_circle_guarantees_relics": 3,
+      "eighth_circle": [
+        "named dog relic and finish",
+        "one AP and return to scene_ro6_normal4_24"
+      ],
+      "already_owned_dog_relic_on_entry": "one AP outcome only; repeat requires paying 3HP again",
+      "random_branch_probabilities": "not provided by public client; must explicitly remain synthetic"
+    },
+    "lake_fairy": {
+      "individual_gold_costs": [
+        1,
+        1,
+        1
+      ],
+      "reject_gives_battle": "ro6_t_5",
+      "after_third_payment": [
+        "ro6_e_t_5",
+        "one valuable collectible"
+      ],
+      "probabilities": "unknown; not a guaranteed three-ingot collectible"
+    },
+    "legendary_gang": {
+      "ordinary_stage": "ro6_t_4",
+      "elite_stage": "ro6_e_t_4",
+      "elite_option_gold_requirement": ">50",
+      "escape_cost": "one half current gold"
+    },
+    "tears_settlement": {
+      "required_item": "rogue_6_relic_final_3",
+      "cost": "all current gold",
+      "reward": "rogue_6_relic_final_4"
+    },
+    "bat6": {
+      "max_draws": 4,
+      "possible_outcomes": [
+        "5gold",
+        "1relic",
+        "empty",
+        "next_floor_normal_battle"
+      ],
+      "relic_outcome_ends_event": true,
+      "gold_and_empty_continue_before_draw4": true,
+      "sampling_weights": "unverified",
+      "once_ordinary_and_once_portal": true
+    },
+    "normal3": {
+      "held_cage_not_consumed": true,
+      "cage_gold": 30,
+      "seed_cost": 1,
+      "future_effect": "rogue_6_next_weather_1",
+      "target_region": "next region",
+      "fertile_soil": "policy increases held GOODS appraisal by 2 when traversing affected nodes"
+    },
+    "normal5": {
+      "cost_ap": 3,
+      "alternative_cost_move_instances": 2,
+      "alternative_cost_named_relic": "rogue_6_relic_cargo_13",
+      "result": "rogue_6_relic_artifact_5",
+      "held_cage_not_consumed_ap": 5,
+      "leave_ap": 1,
+      "redirect": "different IV region treated as new region; once; no portal trigger"
+    },
+    "repeatable_event_occurrences": [
+      "色味不同源",
+      "货从口出",
+      "敲动杠杆"
+    ]
+  },
+  "unresolved": [
+    "26 map quantity/distance disagreements remain in map_rule_conflicts_v1.json",
+    "official map and event occurrence weights",
+    "ordinary event-to-choice graph for unimplemented multistage events",
+    "odd HP/gold halving rounding",
+    "roaming resident destination weights and collision resolution",
+    "portal template-to-zone pairing and node type fill probabilities",
+    "remembrance replacement map sampling probabilities and ending-unlock save profile"
+  ],
+  "runtime_files": [
+    "blackflow_rl/events.py",
+    "blackflow_rl/mapgen.py",
+    "blackflow_rl/portal.py",
+    "blackflow_rl/rewind.py",
+    "blackflow_rl/residents.py"
+  ],
+  "client_stages": [
+    {
+      "id": "ro6_t_1",
+      "name": "陌生旅伴",
+      "isElite": 0,
+      "linkedStageId": "",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-1"
+    },
+    {
+      "id": "ro6_t_2",
+      "name": "安保措施",
+      "isElite": 0,
+      "linkedStageId": "",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-2"
+    },
+    {
+      "id": "ro6_t_3",
+      "name": "开业剪彩",
+      "isElite": 0,
+      "linkedStageId": "",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-3"
+    },
+    {
+      "id": "ro6_e_t_3",
+      "name": "开业剪彩",
+      "isElite": 1,
+      "linkedStageId": "ro6_t_3",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-3"
+    },
+    {
+      "id": "ro6_t_4",
+      "name": "合伙人会议",
+      "isElite": 0,
+      "linkedStageId": "",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-4"
+    },
+    {
+      "id": "ro6_e_t_4",
+      "name": "合伙人会议",
+      "isElite": 1,
+      "linkedStageId": "ro6_t_4",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-4"
+    },
+    {
+      "id": "ro6_t_5",
+      "name": "湖中魇",
+      "isElite": 0,
+      "linkedStageId": "",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-5"
+    },
+    {
+      "id": "ro6_e_t_5",
+      "name": "湖中魇",
+      "isElite": 1,
+      "linkedStageId": "ro6_t_5",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_t-5"
+    },
+    {
+      "id": "ro6_t_13",
+      "name": "“闹乐”",
+      "isElite": 0,
+      "linkedStageId": "",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_c-5"
+    },
+    {
+      "id": "ro6_t_14",
+      "name": "“纵怒”",
+      "isElite": 0,
+      "linkedStageId": "",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_c-6"
+    },
+    {
+      "id": "ro6_t_15",
+      "name": "“灭身”",
+      "isElite": 0,
+      "linkedStageId": "",
+      "levelId": "Obt/Roguelike/RO6/level_rogue6_c-7"
+    }
+  ],
+  "special_battle_base_rewards": {
+    "ro6_t_1": {
+      "name": "陌生旅伴",
+      "gold": 2,
+      "gold_max": 3,
+      "command_exp": 10,
+      "is_elite": false,
+      "relic_pool": null
+    },
+    "ro6_t_2": {
+      "name": "安保措施",
+      "gold": 2,
+      "gold_max": 2,
+      "command_exp": 12,
+      "is_elite": false,
+      "relic_pool": null
+    },
+    "ro6_t_3": {
+      "name": "开业剪彩",
+      "gold": 2,
+      "gold_max": 2,
+      "command_exp": 13,
+      "is_elite": false,
+      "relic_pool": null
+    },
+    "ro6_e_t_3": {
+      "name": "开业剪彩（紧急）",
+      "gold": 3,
+      "gold_max": 3,
+      "command_exp": 24,
+      "is_elite": true,
+      "relic_pool": null
+    },
+    "ro6_t_4": {
+      "name": "合伙人会议",
+      "gold": 3,
+      "gold_max": 3,
+      "command_exp": 25,
+      "is_elite": false,
+      "relic_pool": null
+    },
+    "ro6_e_t_4": {
+      "name": "合伙人会议（紧急）",
+      "gold": 3,
+      "gold_max": 3,
+      "command_exp": 36,
+      "is_elite": true,
+      "relic_pool": null
+    },
+    "ro6_t_5": {
+      "name": "湖中魇",
+      "gold": 4,
+      "gold_max": 4,
+      "command_exp": 25,
+      "is_elite": false,
+      "relic_pool": "rogue_6:不期而遇：湖中仙女"
+    },
+    "ro6_e_t_5": {
+      "name": "湖中魇（紧急）",
+      "gold": 8,
+      "gold_max": 8,
+      "command_exp": 36,
+      "is_elite": true,
+      "relic_pool": "rogue_6:不期而遇：湖中仙女（紧急）"
+    },
+    "ro6_t_13": {
+      "name": "闹乐",
+      "gold": 3,
+      "gold_max": 3,
+      "command_exp": 30,
+      "is_elite": false,
+      "relic_pool": null
+    },
+    "ro6_t_14": {
+      "name": "纵怒",
+      "gold": 3,
+      "gold_max": 3,
+      "command_exp": 30,
+      "is_elite": false,
+      "relic_pool": null
+    },
+    "ro6_t_15": {
+      "name": "灭身",
+      "gold": 3,
+      "gold_max": 3,
+      "command_exp": 30,
+      "is_elite": false,
+      "relic_pool": null
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "current_user_native_capture": false,
+  "source": "Previously downloaded public gameplay video frames, preserved without pixel edits",
+  "cases": [
+    {
+      "image": "sell_confirm_360p.jpg",
+      "expected": "sell",
+      "source_image": "artifacts\\student60_20260913\\video_frames\\BV1mWYa6QENi-p2-c1\\middle-shop-detail-04832.00.jpg",
+      "source_manifest": "artifacts\\student60_20260913\\video_frames\\BV1mWYa6QENi-p2-c1\\middle-shop-detail-manifest.json",
+      "source_video_id": "BV1mWYa6QENi-p2-c1",
+      "source_second": 4832,
+      "sha256": "ae01b0b4f073e08df49dafb9d0eb9f229e7cddc51ded3c8ed3bb76454b8b8d7b"
+    },
+    {
+      "image": "purchase_transition_360p.jpg",
+      "expected": "cancel_only",
+      "source_image": "artifacts\\student60_20260913\\video_frames\\BV1mWYa6QENi-p2-c1\\middle-shop-detail-04828.00.jpg",
+      "source_manifest": "artifacts\\student60_20260913\\video_frames\\BV1mWYa6QENi-p2-c1\\middle-shop-detail-manifest.json",
+      "source_video_id": "BV1mWYa6QENi-p2-c1",
+      "source_second": 4828,
+      "sha256": "7c72dfadc6b5ae0cbef16c66ac759020ce6aa6fa96b6b58e558ef1b775d333ea"
+    }
+  ]
+}

@@ -1,0 +1,1494 @@
+{
+  "schema_version": 1,
+  "artifact_id": "rogue6-noncombat-event-catalog-v1",
+  "status": "evidence_catalog_not_server_executable_model",
+  "sources": [
+    {
+      "title": "PRTS：沉沦者的黑流树海",
+      "url": "https://prts.wiki/w/沉沦者的黑流树海",
+      "role": "节点机制、战斗收益、特殊规则",
+      "accessed": "2026-08-31"
+    },
+    {
+      "title": "PRTS：事件一览",
+      "url": "https://prts.wiki/w/沉沦者的黑流树海/事件一览",
+      "role": "事件标题、选项与结果",
+      "accessed": "2026-08-31"
+    },
+    {
+      "title": "PRTS：引擎配件目录",
+      "url": "https://prts.wiki/w/沉沦者的黑流树海/引擎配件目录",
+      "role": "零件池、来源与交换规则",
+      "accessed": "2026-08-31"
+    },
+    {
+      "title": "PRTS：拟造物质编目",
+      "url": "https://prts.wiki/w/沉沦者的黑流树海/拟造物质编目",
+      "role": "收藏品目录与效果复核",
+      "accessed": "2026-08-31"
+    },
+    {
+      "title": "ArknightsGameData",
+      "url": "https://github.com/Kengxxiao/ArknightsGameData",
+      "role": "公开客户端数据：节点、场景、选项、关卡、零件、收藏品",
+      "accessed": "2026-08-31"
+    }
+  ],
+  "source_pins": {
+    "client_sha256": "aa2b1fc6ba0cc9ee29b9e6a08803550181c3a27189ac449efbad87608880d35b",
+    "client_git_blob_sha": "723f15432e989b6d0d402c38548a74a317f2f97c",
+    "prts_event_page_revision": 422994,
+    "reviewed_at": "2026-09-01"
+  },
+  "evidence_levels": {
+    "A": "公开客户端数据直接确认",
+    "B": "PRTS规则/事件页确认",
+    "C": "社区路线或页面不完整，需实测复核"
+  },
+  "runtime_policy": {
+    "unknown_probability": "NEEDS_OBSERVATION; never assume uniform",
+    "unknown_effect": "NEEDS_OBSERVATION; never substitute a no-op or generic reward",
+    "training": "synthetic effects require explicit opt-in and cannot be called verified"
+  },
+  "coverage": {
+    "real_event_groups": 38,
+    "summary_options": 102,
+    "client_choices": 396,
+    "client_choice_scenes": 338,
+    "note": "The summaries encode publicly documented semantic branches; the exact client display graph remains in the client snapshot."
+  },
+  "execution_order": [
+    "校验移动目标和行动力/加工品移动条件",
+    "触发装载加工品和概念体的到达效果",
+    "确定节点场景；仅从满足楼层、结局、旗标、保密度条件的候选中抽取",
+    "显示满足requirement的选项",
+    "原子扣除cost；生命扣除规则若注明最低保留1则强制钳制",
+    "执行result；随机结果必须引用具名池和外部权重",
+    "若进入战斗，战后按层级及关卡类型结算",
+    "写入事件旗标、节点完成/可重复状态",
+    "处理出口、远征归队和下一层状态迁移"
+  ],
+  "required_state": [
+    "floor",
+    "zone_id",
+    "action_points",
+    "target_hp",
+    "target_hp_max",
+    "shield",
+    "hope",
+    "ingots",
+    "squad_limit",
+    "parts_box_capacity",
+    "parts",
+    "loaded_move_part",
+    "collectibles",
+    "operators",
+    "stored_vouchers",
+    "confidentiality",
+    "life_game_organs",
+    "event_flags",
+    "ending_flags",
+    "merchant_investment_max",
+    "merchant_defeated",
+    "revealed_nodes",
+    "resident_nodes",
+    "rng_seed"
+  ],
+  "node_rules": [
+    {
+      "id": "BATTLE_NORMAL",
+      "name": "作战",
+      "description": "大家手里都拿着武器，肯定不是来谈判的。",
+      "simulator_rule": "随机普通作战；胜利结算当前层级经验与源石锭，并继续处理藏品/零件等战后额外掉落。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "BATTLE_ELITE",
+      "name": "紧急作战",
+      "description": "有些暴力可能会超出你的预期，这很常见。",
+      "simulator_rule": "随机紧急作战；奖励高于普通作战。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "BATTLE_BOSS",
+      "name": "险路恶敌",
+      "description": "坏人、恶棍、受诅咒之人......你有麻烦了。",
+      "simulator_rule": "险路恶敌；部分区域为强制出口。胜利后按表结算，离开区域时剩余行动力转希望。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "BATTLE_SHOP",
+      "name": "诡意行商",
+      "description": "不是盟友也不是敌人，有些人喜欢站在中间。",
+      "simulator_rule": "诡意行商：购买招募券、战术道具、收藏品、零件等。『生命游戏·脊椎』下可刷新4次，首次4锭、每次再+4。可在满足条件后挑衅行商。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "REST",
+      "name": "安全的角落",
+      "description": "这里不会有人打扰，食物和水也很充足，别一直紧绷着神经了。",
+      "simulator_rule": "从随机展示的3项恢复/成长效果中选择1项；第I层不出现。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "INCIDENT",
+      "name": "不期而遇",
+      "description": "新朋友、老对头......奇遇不会老去，陈旧的只有伤疤。",
+      "simulator_rule": "从本规范事件池抽取并显示满足前置条件的选项；事件权重若未提供不得擅自均匀化。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "WISH",
+      "name": "得偿所愿",
+      "description": "许愿的形式千奇百怪，而愿望本身却大同小异。",
+      "simulator_rule": "通常展示2件收藏品免费二选一；可支付4锭刷新1次。特定场景为『无人商店』。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "SACRIFICE",
+      "name": "失与得",
+      "description": "失去的空洞与无措，会被获得的满足与喜悦填充。",
+      "simulator_rule": "消耗收藏品进行同稀有度规则置换；声带能力开放时可换零件；『生命游戏·手』允许追加1次同类型交换。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "EXPEDITION",
+      "name": "先行一步",
+      "description": "总有人要走在前头，好为后来的人指明道路。",
+      "simulator_rule": "派遣一名干员至下一层；未派遣则希望+2。『生命游戏·喙』使归队时额外获得随机加工品。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "PORTAL",
+      "name": "误入奇境",
+      "description": "枝条旁，叶片外，未探之地就在身边。",
+      "simulator_rule": "消耗一个界面允许的加工品进入特殊层/区域；第I、II、VI层不出现。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "DUEL",
+      "name": "狭路相逢",
+      "description": "猎物与猎手的对话。",
+      "simulator_rule": "公平作战，失败不扣目标生命或护盾；按左/中/右奖励档结算。第I、II、VI层不出现。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "STORY",
+      "name": "命运所指",
+      "description": "抉择就在眼前，结果早已注定。",
+      "simulator_rule": "命运所指：按结局状态机触发；必须维护事件旗标和互斥条件。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "STORY_HIDDEN",
+      "name": "命运所指",
+      "description": "抉择就在眼前，结果早已注定。",
+      "simulator_rule": "隐藏命运节点；生成条件依结局状态。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "SCRAP_SHOP",
+      "name": "秘境行商",
+      "description": "秘密与路途被摆上天平，摇晃之间价码已被定下。",
+      "simulator_rule": "秘境行商：买卖零件、培育种子；可重复访问。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "DOOR",
+      "name": "曲折密道",
+      "description": "本地人的杰作。",
+      "simulator_rule": "曲折密道成对传送；进入点消耗行动力，未完成时可越过；第I、II、VI层不出现。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "FINAL",
+      "name": "险路尽头",
+      "description": "只是另一场求索的起点。",
+      "simulator_rule": "险路尽头：获得加工品，剩余行动力转希望，可领取寄存招募券，进入下一区域。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "EVACUATE",
+      "name": "险路小径",
+      "description": "嘘，不要把这个秘密告诉别人。",
+      "simulator_rule": "险路小径：获得稀有加工品，保留行动力，不可领取寄存招募券，进入下一区域。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "EMPLOY",
+      "name": "应急助力",
+      "description": "人手不嫌多，朋友不嫌少。",
+      "simulator_rule": "应急助力：8名候选（通常5—6名普通费用4、2—3名本主题临时干员免费），最多招3名且均为已晋升；刷新费4起、每次+4、最多4次。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "LIGHT",
+      "name": "羽瞰点",
+      "description": "所见并非所得，做好标记后别忘了计算行程。",
+      "simulator_rule": "羽瞰点：初始揭示自身与周围4格；访问后扩为12格并行动力+1。保密度≥3且有『生命游戏』前额叶时扩为24格。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "BATTLE_SAVAGE",
+      "name": "“居民”据点",
+      "description": "平静的生活被打破，也难怪它们怒火中烧。",
+      "simulator_rule": "『居民』据点：保密度≥4后出现；会生成游走居民。击破据点时清除区域内全部游走居民。第I、VI层不出现。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    },
+    {
+      "id": "EMPTY",
+      "name": "林间空地",
+      "description": "无事发生便是最动人的温柔。",
+      "simulator_rule": "林间空地：不触发事件和收益。",
+      "display_confidence": "A",
+      "mechanics_confidence": "B",
+      "confidence": "B"
+    }
+  ],
+  "events": [
+    {
+      "name": "桑尼的邀请",
+      "node_type": "INCIDENT",
+      "availability": "已确认可在第I层出现",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "帮新郎唱首歌",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "希望+3",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "收下谢礼",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "源石锭+10",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "色味不同源",
+      "node_type": "INCIDENT",
+      "availability": "已确认可在第I层出现",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "吃下苹果",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "目标生命上限+3",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "吃下鱼",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "护盾+5",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "货从口出",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": true,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "购买",
+          "requirement": "始终",
+          "cost": "源石锭-4",
+          "result": "随机获得1个零件；类型可为加工品/概念体/自然物",
+          "transition": "可再次购买或离开",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "零件类型候选已知，类型及物品权重未知。"
+    },
+    {
+      "name": "沉重的契约",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "签下契约",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "行动力+2",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "以血签约",
+          "requirement": "始终",
+          "cost": "当前目标生命值减半",
+          "result": "行动力+5",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "敲动杠杆",
+      "node_type": "INCIDENT",
+      "availability": "已确认可在第I层出现",
+      "repeatable": true,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "轻轻敲动",
+          "requirement": "始终",
+          "cost": "源石锭-4",
+          "result": "随机收藏品+1",
+          "transition": "可继续或离开",
+          "confidence": "B"
+        },
+        {
+          "label": "用力敲动",
+          "requirement": "始终",
+          "cost": "源石锭-10",
+          "result": "随机收藏品+3",
+          "transition": "可继续或离开",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "收藏品抽取权重未公开。"
+    },
+    {
+      "name": "血衣之下",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "选择『他缚』",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得对应事件收藏品『他缚』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "选择『剑锤』",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得对应事件收藏品『剑锤』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "选择『一串钱伥』",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得对应事件收藏品『一串钱伥』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "转身离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "目标生命上限+2",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "三个事件收藏品的客户端ID由名称解析表给出。"
+    },
+    {
+      "name": "擒与缚",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "选择『翱翼』",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得『翱翼』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "选择『虬蜕』",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得『虬蜕』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "沉寂之屋",
+      "node_type": "INCIDENT",
+      "availability": "已确认可在第I层出现",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "以血换取",
+          "requirement": "目标生命值足够支付",
+          "cost": "目标生命值-2",
+          "result": "获得零件『笼控器』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "购买",
+          "requirement": "源石锭≥8",
+          "cost": "源石锭-8",
+          "result": "获得零件『笼控器』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "黑诞",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开；与『沉寂之屋』支线关联",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "出示笼控器",
+          "requirement": "持有『笼控器』",
+          "cost": "无",
+          "result": "获得『猎印』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "迎战",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "随机进入『闹乐』『纵怒』『灭身』之一；胜利结算特殊战斗奖励",
+          "transition": "战斗结算",
+          "confidence": "B"
+        },
+        {
+          "label": "逃离",
+          "requirement": "始终",
+          "cost": "目标生命值-3（最低保留1）",
+          "result": "无额外奖励",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "三个战斗关卡的抽取权重未知。"
+    },
+    {
+      "name": "呼吸的红苔",
+      "node_type": "INCIDENT",
+      "availability": "需先经历『沉寂之屋』；楼层池未公开",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "使用笼控器",
+          "requirement": "持有『笼控器』",
+          "cost": "无",
+          "result": "源石锭+30；下一层出现希望地块",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "播种",
+          "requirement": "持有可培育的『种子』",
+          "cost": "消耗种子",
+          "result": "执行种子培育结果；下一层出现希望地块",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "被歌颂的影子",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "第一圈",
+          "requirement": "始终",
+          "cost": "目标生命值-1",
+          "result": "随机：源石锭+4，或回复1目标生命",
+          "transition": "进入下一圈或离开",
+          "confidence": "B"
+        },
+        {
+          "label": "第二圈",
+          "requirement": "始终",
+          "cost": "目标生命值-1",
+          "result": "随机：希望+2，或回复1目标生命",
+          "transition": "进入下一圈或离开",
+          "confidence": "B"
+        },
+        {
+          "label": "第三圈",
+          "requirement": "始终",
+          "cost": "目标生命值-2",
+          "result": "随机自然物+1，或回复2目标生命",
+          "transition": "进入下一圈或离开",
+          "confidence": "B"
+        },
+        {
+          "label": "第四圈",
+          "requirement": "始终",
+          "cost": "目标生命值-2",
+          "result": "随机：加工品+1、源石锭+12、或回复2目标生命",
+          "transition": "进入下一圈或离开",
+          "confidence": "B"
+        },
+        {
+          "label": "第五圈",
+          "requirement": "始终",
+          "cost": "目标生命值-2",
+          "result": "随机收藏品+1，或回复5目标生命",
+          "transition": "进入下一圈或离开",
+          "confidence": "B"
+        },
+        {
+          "label": "第六圈",
+          "requirement": "始终",
+          "cost": "目标生命值-3",
+          "result": "随机：希望+8、编队上限+1、或回复3目标生命",
+          "transition": "进入下一圈或离开",
+          "confidence": "B"
+        },
+        {
+          "label": "第七圈",
+          "requirement": "始终",
+          "cost": "目标生命值-3",
+          "result": "随机收藏品+3",
+          "transition": "进入下一圈或离开",
+          "confidence": "B"
+        },
+        {
+          "label": "第八圈",
+          "requirement": "始终",
+          "cost": "目标生命值-3",
+          "result": "未持有时获得『犬植浆』；已持有时行动力+1",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "保留此前已取得的结果",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "每圈分支概率未公开；应由外部权重表注入。"
+    },
+    {
+      "name": "愈创之心",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开；结局支线事件",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "以行动力交换",
+          "requirement": "行动力≥3",
+          "cost": "行动力-3",
+          "result": "获得『追忆』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "献上加工品",
+          "requirement": "加工品≥2",
+          "cost": "随机消耗2个加工品",
+          "result": "获得『追忆』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "使用源私钥",
+          "requirement": "持有『源私钥』",
+          "cost": "消耗『源私钥』",
+          "result": "获得『追忆』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "启动笼控器",
+          "requirement": "持有『笼控器』",
+          "cost": "无",
+          "result": "行动力+5",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "休整",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "行动力+1",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "思乡心切",
+      "node_type": "INCIDENT",
+      "availability": "已确认可在第I层出现",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "接受挑战",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "进入特殊战斗『陌生旅伴』",
+          "transition": "战斗结算",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "划算买卖",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "处理问题",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "进入特殊战斗『安保措施』",
+          "transition": "战斗结算",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "鸭托邦",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "嘲弄",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "进入普通难度『开业剪彩』",
+          "transition": "战斗结算",
+          "confidence": "B"
+        },
+        {
+          "label": "挑衅",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "进入高难/紧急难度『开业剪彩』",
+          "transition": "战斗结算",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "传奇团伙",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "入座",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "进入普通难度『合伙人会议』",
+          "transition": "战斗结算",
+          "confidence": "B"
+        },
+        {
+          "label": "戳破骗局",
+          "requirement": "源石锭>50",
+          "cost": "无",
+          "result": "进入紧急难度『合伙人会议』",
+          "transition": "战斗结算",
+          "confidence": "B"
+        },
+        {
+          "label": "交钱脱身",
+          "requirement": "始终",
+          "cost": "失去当前源石锭的一半",
+          "result": "离开事件",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "湖中仙女",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "献上供物（第1—3次）",
+          "requirement": "每次源石锭≥1",
+          "cost": "每次源石锭-1",
+          "result": "推进供奉；前三次均可选择离开",
+          "transition": "继续供奉或离开",
+          "confidence": "B"
+        },
+        {
+          "label": "揭穿倒影",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "进入普通『湖中魇』",
+          "transition": "战斗结算",
+          "confidence": "B"
+        },
+        {
+          "label": "完成三次供奉",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "随机：进入紧急『湖中魇』，或获得珍贵收藏品",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "第三次供奉的分支概率与珍贵收藏品候选池未公开。"
+    },
+    {
+      "name": "洞中宝",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": true,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "挖掘",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "随机：源石锭+5、收藏品+1、无事发生并可继续、或遭咬伤并使下一层普通作战变为高难",
+          "transition": "依结果继续或结束",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "公开页面未给出完整递进轮次和权重；客户端选项原文已附在JSON原始目录。"
+    },
+    {
+      "name": "临时中介所",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "聘用王牌",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得随机六星临时招募干员",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "聘用熟手",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "希望+2；从先锋/近卫、重装/辅助、医疗/狙击、术师/特种之一的组合中招募已晋升的五星及以下干员",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "职业组合及干员抽取权重未公开。"
+    },
+    {
+      "name": "和平守卫者",
+      "node_type": "INCIDENT",
+      "availability": "楼层池未公开",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "接下武器",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得『厄运火杆』；若区域内有未完成的最近居民据点则立即前往，否则标记最近据点",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "独活",
+      "node_type": "INCIDENT",
+      "availability": "社区资料标注第II层；需客户端/实测复核",
+      "repeatable": false,
+      "confidence": "C",
+      "options": [
+        {
+          "label": "接受同行",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得『同行者』；立即前往最近的紧急作战协助，或标记目标",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "线人",
+      "node_type": "INCIDENT",
+      "availability": "结局路线资料标注第II—IV层；需实测复核",
+      "repeatable": true,
+      "confidence": "C",
+      "options": [
+        {
+          "label": "接头",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得『α』与1个稀有加工品",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "未进入核心选项时事件可保留/再次访问",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "泪之聚落",
+      "node_type": "INCIDENT",
+      "availability": "结局路线资料标注第II—IV层；需实测复核",
+      "repeatable": true,
+      "confidence": "C",
+      "options": [
+        {
+          "label": "倾尽所有",
+          "requirement": "始终",
+          "cost": "失去全部源石锭",
+          "result": "获得『击坠神明』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "未进入核心选项时事件可保留/再次访问",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "安眠一隅",
+      "node_type": "INCIDENT_HIDDEN",
+      "availability": "不会自然生成；使用『小八界』时有极低概率传送",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "接受馈赠",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得『源私钥』（其效果包含源石锭+99）；立即进入下一层并触发乌托邦『美丽新大地』",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "传送概率未公开。"
+    },
+    {
+      "name": "未涉足之树",
+      "node_type": "EXPEDITION",
+      "availability": "除第I、V、VI层外",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "尝试探索树的内部",
+          "requirement": "选择1名已招募干员",
+          "cost": "该干员离队至下一层",
+          "result": "下一层归队；常规路线按客户端远征结算；持『生命游戏·喙』时额外获得随机加工品",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "探索源头",
+          "requirement": "选择1名已招募干员",
+          "cost": "该干员离队至下一层",
+          "result": "归队时不晋升；希望+2；获得『怦然』信号",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "在树下休息",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "希望+2",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "常规路线的晋升细节应以实际远征结算配置为准。"
+    },
+    {
+      "name": "回滚文明",
+      "node_type": "SACRIFICE",
+      "availability": "除第I、VI层外",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "置换收藏品",
+          "requirement": "持有可献祭收藏品",
+          "cost": "消耗所选收藏品",
+          "result": "按稀有度规则获得随机收藏品；持『生命游戏·手』时可追加1次同类型交换",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "置换零件",
+          "requirement": "持有零件且声带能力开放",
+          "cost": "消耗所选零件",
+          "result": "按零件稀有度规则获得随机零件；持『生命游戏·手』时可追加1次同类型交换",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "燃尽",
+          "requirement": "持有『怦然』且自然物≥2",
+          "cost": "随机消耗2个自然物",
+          "result": "获得『焚毁文明』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "无人商店",
+      "node_type": "WISH",
+      "availability": "得偿所愿的特定场景",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "打开大木桶",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "从该槽位展示的收藏品中选择/获得1个",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "打开两个小木桶",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "从该槽位展示的收藏品中选择/获得1个",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "打开巨型带轮容器",
+          "requirement": "持有『四叶草化石』",
+          "cost": "无",
+          "result": "获得该隐藏槽位收藏品",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "撬开补货",
+          "requirement": "源石锭≥4且未刷新",
+          "cost": "源石锭-4",
+          "result": "刷新一次，并提高展示收藏品档位",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "具体槽位候选池和权重未在公开客户端表中完整暴露。"
+    },
+    {
+      "name": "溯源",
+      "node_type": "PORTAL",
+      "availability": "除第I、II、VI层外；六种目的地变体",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "投入加工品",
+          "requirement": "至少持有界面列出的1个加工品",
+          "cost": "消耗所选加工品",
+          "result": "进入对应黑色水池/特殊层；加工品在进入和离开时不额外损耗",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "界面最多列出3个可用加工品；六变体目的地映射仍需实测/服务器权重。"
+    },
+    {
+      "name": "原始娱乐",
+      "node_type": "DUEL",
+      "availability": "狭路相逢；不在第I、II、VI层出现",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "应战",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "公平作战；失败不扣目标生命/护盾；胜利获得低/中稀有零件+2张招募券",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "掠夺成性",
+      "node_type": "DUEL",
+      "availability": "狭路相逢；不在第I、II、VI层出现",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "应战",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "公平作战；失败不扣目标生命/护盾；胜利获得中/高稀有零件或『浪花/雾滚草/小八界』之一+2张招募券",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "好奇心与死",
+      "node_type": "STORY",
+      "availability": "结局链节点",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "追踪目标",
+          "requirement": "源石锭≥50，且未同时满足两处沙坑/未访问『窥视箱中』等互斥条件",
+          "cost": "源石锭-50",
+          "result": "标记或定位目标节点",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "取走收藏品",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得场景收藏品",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "互斥条件需由结局状态机维护。"
+    },
+    {
+      "name": "窥视箱中",
+      "node_type": "STORY",
+      "availability": "结局链节点",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "保护箱中之物",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "节点转化为首领战『混沌源阶理论』；转化后不可离开",
+          "transition": "战斗结算",
+          "confidence": "B"
+        },
+        {
+          "label": "离开",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "",
+          "transition": "保留事件状态",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "调谐仪式",
+      "node_type": "STORY",
+      "availability": "结局链节点",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "提交击坠神明",
+          "requirement": "持有『击坠神明』或用『源私钥』替代",
+          "cost": "消耗提交物",
+          "result": "首个『灾厄之口』不再摧毁『危朽』",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "提交焚毁文明",
+          "requirement": "持有『焚毁文明』或用『源私钥』替代",
+          "cost": "消耗提交物",
+          "result": "不再锁定部署区",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "提交湮没光明",
+          "requirement": "持有『湮没光明』或用『源私钥』替代",
+          "cost": "消耗提交物",
+          "result": "降低最终战相关伤害",
+          "transition": "结束事件",
+          "confidence": "B"
+        },
+        {
+          "label": "不提交",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "不获得对应削弱",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "险路尽头",
+      "node_type": "FINAL",
+      "availability": "区域出口；可重复访问，信息默认揭示",
+      "repeatable": true,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "进入下一区域",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "随机加工品+1；剩余行动力等量转化为希望；可领取寄存招募券；进入下一层",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "保密度≥3时会少揭示1项信息。"
+    },
+    {
+      "name": "三重身·年幼",
+      "node_type": "EVACUATE",
+      "availability": "险路小径出口变体",
+      "repeatable": true,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "撤离",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得稀有加工品；保留剩余行动力；不可领取寄存招募券；进入下一层",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "三重身·壮年",
+      "node_type": "EVACUATE",
+      "availability": "险路小径出口变体",
+      "repeatable": true,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "撤离",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得稀有加工品；保留剩余行动力；不可领取寄存招募券；进入下一层",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "三重身·老去",
+      "node_type": "EVACUATE",
+      "availability": "险路小径出口变体",
+      "repeatable": true,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "撤离",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "获得稀有加工品；保留剩余行动力；不可领取寄存招募券；进入下一层",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "name": "金色凝滞",
+      "node_type": "REST",
+      "availability": "安全的角落场景；第I层不出现",
+      "repeatable": false,
+      "confidence": "B",
+      "options": [
+        {
+          "label": "从3项展示中选1项",
+          "requirement": "始终",
+          "cost": "无",
+          "result": "候选池6项：目标生命上限+3、编队上限+1、希望+3、高级补给券+1、行动力+2、零件箱容量+1",
+          "transition": "结束事件",
+          "confidence": "B"
+        }
+      ],
+      "notes": "每次从6项随机展示3项；展示权重未公开。"
+    }
+  ],
+  "unknowns": [
+    "各楼层完整事件候选池与抽取权重未在公开客户端表中完整给出。",
+    "随机收藏品的每个场景专属候选池/权重未完整公开。",
+    "行商库存、刷新和特殊槽位的精确权重未完整公开。",
+    "部分连续事件（如洞中宝）后续轮次和概率需要实测。",
+    "第VII层常规战斗收益表在所查规则页为空。",
+    "公开资料会更新；版本升级后应按topic表差分重建。"
+  ]
+}
