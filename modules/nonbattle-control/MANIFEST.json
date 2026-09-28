@@ -69,8 +69,8 @@
     },
     {
       "path": "blackflow_live/engine.py",
-      "sha256": "3dd1da8fb16a83fa5946e1e7dd386d78d8bfb7d1e634331a4f849950b6487a09",
-      "bytes": 21549
+      "sha256": "6480d28c869ba669f2c410e01d78dab68778016d582d6e20887152af2780611c",
+      "bytes": 22047
     },
     {
       "path": "blackflow_live/geometry.py",
@@ -124,8 +124,8 @@
     },
     {
       "path": "blackflow_live/vision.py",
-      "sha256": "c90fe168ae8b2ad0a5898b23046de6b6c828ea58c81fd99e2202f72c7d3916b7",
-      "bytes": 55114
+      "sha256": "ffeb71926d0ffb79dd6a0662bde79f38553d14d6795e55f2ea4eccd888dfe051",
+      "bytes": 56503
     },
     {
       "path": "blackflow_rl/__init__.py",
@@ -694,8 +694,8 @@
     },
     {
       "path": "docs/nonbattle-control.md",
-      "sha256": "49f7b906a68843ee2418a60e00d71ee7dc0a81b871b1c499cdc33f8f564924dc",
-      "bytes": 11530
+      "sha256": "1e3dcfd76b8bdc788eb200cc5d3fcd0f7a8b6f27a506db613e5c45a21e17e871",
+      "bytes": 12200
     },
     {
       "path": "requirements-core.txt",
@@ -908,6 +908,11 @@
       "bytes": 5647
     },
     {
+      "path": "tests/test_live_map_icons_independent.py",
+      "sha256": "aaf2bc66e5d385e6e5e49227e74cf432bed035740c770bd527a7d5179d0051d0",
+      "bytes": 6131
+    },
+    {
       "path": "tests/test_live_node_labels.py",
       "sha256": "e38de20f2d65b46559aab8db6f52942b5da06ffb5e93b165236c83943dcefa2b",
       "bytes": 3856
@@ -988,6 +993,11 @@
       "bytes": 10697
     },
     {
+      "path": "tests/test_live_session_reset.py",
+      "sha256": "6891ac4a3422aa9a7358607debe1c3194e6eb46c41664a25621489e4c44a21d7",
+      "bytes": 3118
+    },
+    {
       "path": "tests/test_live_shop_dialog.py",
       "sha256": "2d657e8fb983669856325dd6fd671b041554a34f4d6ca9b9f4c26fd05ce81d06",
       "bytes": 10835
@@ -1015,7 +1025,7 @@
   ],
   "scope": "first ending nonbattle; no claimed complete real-game acceptance",
   "maa_assets_included": false,
-  "source": "v13 frozen snapshot plus reviewed content-aspect normalization; candidate research excluded",
-  "release": "v14",
-  "base_archive_sha256": "99d4ae46faa805a5ca06f42acbbb3c12cab2085297fe4cba5b6fa5f474200e31"
+  "source": "v14 frozen snapshot plus ordinary map icons and session display reset; candidate research excluded",
+  "release": "v15",
+  "base_archive_sha256": "81e3252777476768575897dec9d10a0af173f8325e1f71691a9c8e108cc97b3b"
 }

@@ -146,7 +146,15 @@ class LiveEngine:
             self._last_clicked_scene = None
             self._pointer_cleanup_guard = False
             self._focus_requested = not observe_only
-            self._set('starting', '正在连接游戏窗口和识别模型', clicks=0, observe_only=observe_only)
+            # A new run cannot advertise the previous window, image or choice
+            # while its runtime is loading (or if initialization later fails).
+            # Publish this reset atomically with the starting status. Pause and
+            # resume deliberately keep their current observation instead.
+            with self._lock:
+                self._preview = None
+                for field in ('observation', 'window', 'decision'):
+                    self._state.pop(field, None)
+                self._set('starting', '正在连接游戏窗口和识别模型', clicks=0, observe_only=observe_only)
             self._thread = threading.Thread(target=self._run, args=(hwnd, observe_only), daemon=True,
                                             name='blackflow-live-loop')
             self._thread.start()

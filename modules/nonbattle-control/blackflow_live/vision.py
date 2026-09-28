@@ -878,9 +878,11 @@ class VisionPipeline:
         height,width = image.shape[:2]
         candidates: list[tuple[str,tuple[float,float,float,float],float]] = []
         scales = []
-        node_specs = [spec for spec in self.templates.node_specs if spec.get('role', 'ordinary') in {'empty', 'special'}]
+        node_specs = [spec for spec in self.templates.node_specs
+                      if spec.get('role', 'ordinary') in {'empty', 'special', 'ordinary'}]
         marker_spec = next((s for s in self.templates.node_specs if s.get('role') == 'current_marker'), None)
-        requests = [(spec['file'], {'threshold': max(0.78, float(spec.get('threshold', 0.8))), 'maximum': 60})
+        requests = [(spec['file'], {'threshold': max(0.88 if spec.get('role', 'ordinary') == 'ordinary' else 0.78,
+                                                    float(spec.get('threshold', 0.8))), 'maximum': 60})
                     for spec in node_specs]
         if marker_spec:
             requests.append((marker_spec['file'], {'threshold': 0.8, 'maximum': 2}))
@@ -888,11 +890,19 @@ class VisionPipeline:
         for spec,hits in zip(node_specs, node_hits):
             for hit in hits:
                 x,y,w,h = hit.bbox
-                if height*0.08 < y+h/2 < height*0.87:
+                threshold = max(.88 if spec.get('role', 'ordinary') == 'ordinary' else .78,
+                                float(spec.get('threshold', .8)))
+                if (math.isfinite(hit.confidence) and threshold <= hit.confidence <= 1
+                        and all(math.isfinite(v) for v in hit.bbox)
+                        and x >= 0 and y >= 0 and w > 0 and h > 0
+                        and x+w <= width and y+h <= height
+                        and math.isfinite(hit.scale) and hit.scale > 0
+                        and height*0.08 < y+h/2 < height*0.87):
                     candidates.append((spec.get("node_type","empty"),hit.bbox,hit.confidence))
                     scales.append(hit.scale)
         map_scale = float(np.median(scales)) if scales else min(width/1280,height/720)
-        # Ordinary map nodes use the visible node title, as in MAA's manifest.
+        # Text and icons are independent current-frame evidence. Icons remain
+        # usable when small node labels are unreadable; neither invents a label.
         for span in spans:
             x,y,w,h = span.bbox
             if span.confidence < .84 or not (height*.09 < y < height*.82 and 0 <= x < width*.88):
@@ -903,6 +913,18 @@ class VisionPipeline:
                 size = 42*map_scale
                 center = (x+w/2,y+h/2-29*map_scale)
                 candidates.append((node_type,(center[0]-size/2,center[1]-size/2,size,size),span.confidence))
+        def node_kind(kind):
+            return {"shop":"SCRAP_SHOP", "informant":"STORY", "sacrifice":"SACRIFICE",
+                    "battle_mid_boss_shsgzd":"BATTLE_BOSS", "battle_mid_boss_shwksc":"BATTLE_BOSS",
+                    "battle_boss_cadejo":"BATTLE_BOSS"}.get(kind, kind.upper())
+        # A stronger score must not silently resolve two incompatible node
+        # identities at one location (e.g. an icon/text transition overlap).
+        for index, candidate in enumerate(candidates):
+            kind, (x,y,w,h), _ = candidate
+            for other_kind, (ox,oy,ow,oh), _ in candidates[index+1:]:
+                if (node_kind(kind) != node_kind(other_kind)
+                        and math.dist((x+w/2,y+h/2),(ox+ow/2,oy+oh/2)) < 30*map_scale):
+                    return (),(),None,["conflicting_map_node_types"]
         merged = []
         for candidate in sorted(candidates,key=lambda c:c[2],reverse=True):
             x,y,w,h = candidate[1]
@@ -928,7 +950,7 @@ class VisionPipeline:
             col = int(np.argmin([abs(x+w/2-value) for value in columns]))
             row = int(np.argmin([abs(y+h/2-value) for value in rows]))
             revealed=kind not in {"hide_invisible","hide_battle","unclassified"}
-            mapped={"shop":"SCRAP_SHOP","informant":"STORY","sacrifice":"SACRIFICE","battle_mid_boss_shsgzd":"BATTLE_BOSS","battle_mid_boss_shwksc":"BATTLE_BOSS","battle_boss_cadejo":"BATTLE_BOSS"}.get(kind,kind.upper()) if revealed else kind
+            mapped=node_kind(kind) if revealed else kind
             nodes.append(ObservedNode(f"r{row}c{col}",mapped,row,col,bbox,score,revealed,False))
         # Duplicate/overlapping grid assignments make a route unsafe to execute.
         if len({n.node_id for n in nodes}) != len(nodes):
