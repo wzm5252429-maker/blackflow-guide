@@ -274,10 +274,22 @@ class CorridorNet:
         return [float(1/(1+math.exp(-float(np.clip(logit/temperature,-60,60))))) for logit in logits]
 
 
-def extract_resources(spans: Iterable[OCRSpan]) -> dict[str, int]:
+def _retain_resource(resources, disputed, field, value):
+    if field in disputed:
+        return
+    if field in resources and resources[field] != value:
+        disputed.update(('hp','max_hp') if field in {'hp','max_hp'} else (field,))
+        for name in disputed:
+            resources.pop(name,None)
+    else:
+        resources[field] = value
+
+
+def extract_resources(spans: Iterable[OCRSpan], *, disputed=None) -> dict[str, int]:
     """Read labeled current quantities only, never costs/effects or bare numbers."""
     labels = {"行动力":"action_points", "行动点":"action_points", "目标生命值":"hp", "目标生命":"hp", "生命值":"hp", "生命":"hp", "源石锭":"gold", "希望":"hope", "零件":"parts", "零件箱":"parts", "收藏品":"relics", "藏品":"relics"}
     result: dict[str,int] = {}
+    disputed = set() if disputed is None else disputed
     for span in spans:
         text = re.sub(r"\s", "", span.text)
         if span.confidence < 0.85 or re.search(r"获得|失去|消耗|花费|需要|兑换|上限提升|[+＋\-−]", text):
@@ -285,9 +297,14 @@ def extract_resources(spans: Iterable[OCRSpan]) -> dict[str, int]:
         for label, field in labels.items():
             match = re.fullmatch(re.escape(label)+r"[:：]?(\d{1,3})(?:[/／](\d{1,3}))?", text)
             if match:
-                result[field] = int(match[1])
+                if field == 'hp' and match[2] and (int(match[1])>int(match[2]) or int(match[2])==0):
+                    disputed.update(('hp','max_hp'))
+                    result.pop('hp',None)
+                    result.pop('max_hp',None)
+                    continue
+                _retain_resource(result,disputed,field,int(match[1]))
                 if match[2] and field == "hp":
-                    result["max_hp"] = int(match[2])
+                    _retain_resource(result,disputed,'max_hp',int(match[2]))
     return result
 
 
@@ -341,7 +358,7 @@ class VisionPipeline:
         if image.dtype != np.uint8 or image.ndim != 3 or image.shape[2] != 3 or min(image.shape[:2]) < 32:
             raise ValueError("Vision requires a nonempty BGR8 screenshot")
         frame_id = frame_id or getattr(frame,"frame_id",None) or sha256(image.tobytes()).hexdigest()[:24]
-        captured_at = captured_at if captured_at is not None else getattr(getattr(frame,"geometry",None),"captured_at",time.time())
+        captured_at = captured_at if captured_at is not None else getattr(frame,"captured_at",time.time())
         spans = self.ocr.recognize(image)
         return self.analyze(image,spans,frame_id=frame_id,captured_at=captured_at)
 
@@ -352,7 +369,8 @@ class VisionPipeline:
         diagnostics = []
         text = " ".join(span.text for span in spans if span.confidence >= 0.8)
         clean_text = _clean(text)
-        resources = extract_resources(spans)
+        resource_conflicts=set()
+        resources = extract_resources(spans,disputed=resource_conflicts)
         floor = next((i+1 for i,label in enumerate(_FLOORS) if label in clean_text),None)
         markers: dict[str,TemplateHit] = {}
         # These are recognition-only assets. Their task actions are never run.
@@ -445,7 +463,9 @@ class VisionPipeline:
         nodes,edges,current = (),(),None
         actions: list[ObservedAction] = []
         if scene in {"map","shop","recruitment","inventory","reward","movement_preview"}:
-            resources.update(self._hud_resources(image,spans))
+            hud_resources=self._hud_resources(image,spans,disputed=resource_conflicts)
+            for field,value in hud_resources.items():
+                _retain_resource(resources,resource_conflicts,field,value)
         if scene == "map":
             nodes,edges,current,map_notes = self._map(image,spans)
             diagnostics.extend(map_notes)
@@ -481,6 +501,9 @@ class VisionPipeline:
             actions=self._unique_actions(actions)
         for action in actions:
             action.metadata["source_frame_id"]=frame_id
+        for field in sorted(resource_conflicts):
+            resources.pop(field,None)
+            diagnostics.append('resource_reading_conflict:'+field)
         if scene == "unknown":
             diagnostics.append("unrecognized_scene_no_input")
         if not actions and scene not in {"battle","battle_start","ending","ending_complete"}:
@@ -616,7 +639,7 @@ class VisionPipeline:
             accepted.append(action)
         return accepted
 
-    def _numeric_crop(self,image,rect,*,allow_fraction=False,contrast=False,require_fraction=False):
+    def _numeric_crop(self,image,rect,*,allow_fraction=False,contrast=False,require_fraction=False,readings_out=None):
         x,y,w,h = rect
         left,top = max(0,round(x)),max(0,round(y))
         right,bottom = min(image.shape[1],left+round(w)),min(image.shape[0],top+round(h))
@@ -670,11 +693,13 @@ class VisionPipeline:
                 accepted.add(tuple(int(p) for p in re.split(r"[/／]",value)))
         # Disagreeing preprocessing results are evidence of ambiguity, never
         # grounds for choosing whichever value happens to appear first.
+        if readings_out is not None:
+            readings_out.update(accepted)
         return next(iter(accepted)) if len(accepted)==1 else None
 
     @staticmethod
-    def _numeric_span(spans,rect,*,fraction=False):
-        """Use a complete OCR number only when bound to a nearby HUD label."""
+    def _numeric_span_readings(spans,rect,*,fraction=False):
+        """Retain conflicting complete numbers bound to the same HUD label."""
         x,y,w,h=rect
         values=set()
         pattern=r"\d{1,3}[/／]\d{1,3}" if fraction else r"\d{1,3}"
@@ -685,6 +710,12 @@ class VisionPipeline:
                 continue
             if x<=bx and y<=by and bx+bw<=x+w and by+bh<=y+h:
                 values.add(tuple(int(p) for p in re.split(r"[/／]",value)))
+        return values
+
+    @staticmethod
+    def _numeric_span(spans,rect,*,fraction=False):
+        """Use a complete OCR number only when bound to a nearby HUD label."""
+        values=VisionPipeline._numeric_span_readings(spans,rect,fraction=fraction)
         return next(iter(values)) if len(values)==1 else None
 
     def _hope_current(self, image, hit):
@@ -734,13 +765,16 @@ class VisionPipeline:
                         readings.append(int(value))
         return readings[0] if len(readings)>=2 and len(set(readings))==1 else None
 
-    def _hud_resources(self,image,spans):
+    def _hud_resources(self,image,spans,*,disputed=None):
         """Locate HUD labels/icons, then read their neighboring *current* values.
 
         Relative label/icon offsets follow actual HUD elements, including scale.
         No frame edge, fixed 1280 ROI, old state, or forecast participates.
         """
         resources={}
+        disputed=set() if disputed is None else disputed
+        def retain(field,value):
+            _retain_resource(resources,disputed,field,value)
         height,width=image.shape[:2]
         for span in spans:
             x,y,w,h=span.bbox
@@ -752,36 +786,52 @@ class VisionPipeline:
                 # not discard that high-confidence reading by recropping the
                 # blue label underline into the numerator (4/4 became 474).
                 region=(x-w*.1,y+h*.7,w*.9,h*2.4)
-                value=self._numeric_span(spans,region,fraction=True)
-                if value is None:
+                readings=self._numeric_span_readings(spans,region,fraction=True)
+                if not readings:
                     rx,ry,rw,rh=region
-                    readings=set()
                     for number in spans:
                         nx,ny,nw,nh=number.bbox
                         if (number.confidence>=.65 and re.fullmatch(r"\d{1,3}(?:[/／]\d{1,3})?",number.text.strip())
                             and rx<=nx and ry<=ny and nx+nw<=rx+rw and ny+nh<=ry+rh):
-                            reading=self._numeric_crop(image,number.bbox,require_fraction=True)
-                            if reading:
-                                readings.add(reading)
-                    if len(readings)==1:
-                        value=next(iter(readings))
-                if value is None:
-                    value=self._numeric_crop(image,(x-w*.05,y+h*1.2,w*.75,h*1.8),require_fraction=True)
-                if value and len(value)==2 and value[0]<=value[1]:
-                    resources["hp"]=value[0]
-                    resources["max_hp"]=value[1]
+                            self._numeric_crop(image,number.bbox,require_fraction=True,readings_out=readings)
+                if not readings:
+                    self._numeric_crop(image,(x-w*.05,y+h*1.2,w*.75,h*1.8),require_fraction=True,readings_out=readings)
+                if len(readings)>1 or any(v[0]>v[1] or v[1]==0 for v in readings):
+                    # Neither later crops nor later labels may erase conflicting
+                    # complete fractions, including preprocessing disagreements.
+                    disputed.update(('hp','max_hp'))
+                    resources.pop('hp',None)
+                    resources.pop('max_hp',None)
+                    continue
+                value=next(iter(readings)) if readings else None
+                if value and len(value)==2 and value[0]<=value[1] and value[1]>0:
+                    retain('hp',value[0])
+                    retain('max_hp',value[1])
+                    if disputed.intersection(('hp','max_hp')):
+                        disputed.update(('hp','max_hp'))
+                        resources.pop('hp',None)
+                        resources.pop('max_hp',None)
             elif label=="行动力" and x>width*.6 and y<height*.35:
                 value=self._numeric_crop(image,(x-w*.4,y+h*1.5,w*1.3,h*3.5))
-                if value: resources["action_points"]=value[0]
+                if value: retain('action_points',value[0])
             elif label=="零件箱" and y>height*.7:
                 value=self._numeric_crop(image,(x-w*.20,y+h,w*1.55,h*1.90),allow_fraction=True)
-                if value: resources["parts"]=value[0]
+                if value: retain('parts',value[0])
             elif label in {"收藏品","藏品"} and y>height*.7:
                 rect=(x+w*.22,y-h*1.35,w*.59,h*1.35)
-                value=self._numeric_span(spans,rect)
+                readings=self._numeric_span_readings(spans,rect)
+                if len(readings)>1:
+                    disputed.add('relics')
+                    resources.pop('relics',None)
+                    continue
+                value=next(iter(readings)) if readings else None
                 if value is None:
-                    value=self._numeric_crop(image,rect,contrast=True)
-                if value: resources["relics"]=value[0]
+                    value=self._numeric_crop(image,rect,contrast=True,readings_out=readings)
+                if len(readings)>1:
+                    disputed.add('relics')
+                    resources.pop('relics',None)
+                    continue
+                if value: retain('relics',value[0])
         for field in ("hope","gold"):
             hits=self.templates.match(image,field+"_icon.png",threshold=.88)
             if not hits: continue
@@ -789,11 +839,11 @@ class VisionPipeline:
             if y>height*.18: continue
             if field=='hope':
                 current=self._hope_current(image,hits[0])
-                if current is not None: resources[field]=current
+                if current is not None: retain(field,current)
                 continue
             rect=(x+w*2.19,y+h*.4,w*.90,h*.64)
             value=self._numeric_crop(image,rect)
-            if value: resources[field]=value[0]
+            if value: retain(field,value[0])
         return resources
 
     def _node_label_span(self, image: np.ndarray, span: OCRSpan):

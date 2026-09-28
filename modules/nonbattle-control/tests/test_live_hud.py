@@ -44,11 +44,34 @@ class HudAssociationTests(unittest.TestCase):
 
     def test_ambiguous_or_impossible_fraction_stays_unknown(self):
         pipeline=self.pipeline()
+        pipeline.ocr.recognize_crop.return_value=('4/4',.999)
         image=np.zeros((720,1246,3),np.uint8)
         label=OCRSpan('目标生命值',.99,(153,11,70,15))
         for values in (['5/4'],['3/4','4/4']):
             spans=[label]+[OCRSpan(value,.99,(155,31,31,19)) for value in values]
             self.assertNotIn('hp',pipeline._hud_resources(image,spans))
+        pipeline.ocr.recognize_crop.assert_not_called()
+
+    def test_two_disagreeing_life_labels_cannot_make_a_mixed_fraction(self):
+        pipeline=self.pipeline()
+        spans=[OCRSpan('目标生命值',.99,(153,11,70,15)),OCRSpan('4/4',.99,(155,31,31,19)),
+               OCRSpan('生命值',.99,(400,11,70,15)),OCRSpan('4/6',.99,(402,31,31,19))]
+        image=np.zeros((720,1246,3),np.uint8)
+        for ordered in (spans,list(reversed(spans))):
+            result=pipeline._hud_resources(image,ordered)
+            self.assertNotIn('hp',result)
+            self.assertNotIn('max_hp',result)
+
+    def test_relic_conflict_cannot_be_overwritten_by_recrop_or_later_label(self):
+        pipeline=self.pipeline()
+        pipeline.ocr.recognize_crop.return_value=('1',.999)
+        spans=[OCRSpan('收藏品',.99,(128,688,58,23)),
+               OCRSpan('1',.99,(148,660,13,20)),OCRSpan('7',.99,(148,660,13,20)),
+               OCRSpan('藏品',.99,(400,688,58,23)),OCRSpan('1',.99,(420,660,13,20))]
+        image=np.zeros((720,1246,3),np.uint8)
+        for ordered in (spans,list(reversed(spans))):
+            self.assertNotIn('relics',pipeline._hud_resources(image,ordered))
+        pipeline.ocr.recognize_crop.assert_not_called()
 
     def test_weak_fraction_is_not_promoted_by_a_strong_label(self):
         pipeline=self.pipeline()

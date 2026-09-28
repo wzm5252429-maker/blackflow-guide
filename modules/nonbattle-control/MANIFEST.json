@@ -124,8 +124,8 @@
     },
     {
       "path": "blackflow_live/vision.py",
-      "sha256": "251a9c41c073d06f9649929be9b00f0170a19e10ad0b339382b31d5a76e95ff7",
-      "bytes": 52567
+      "sha256": "c90fe168ae8b2ad0a5898b23046de6b6c828ea58c81fd99e2202f72c7d3916b7",
+      "bytes": 55114
     },
     {
       "path": "blackflow_rl/__init__.py",
@@ -694,8 +694,8 @@
     },
     {
       "path": "docs/nonbattle-control.md",
-      "sha256": "60a597de37e2f3e41b85043cc05ab534db985d681ac7f241fa313017de83c069",
-      "bytes": 10429
+      "sha256": "4b4ec8179e3d0c3c3da09a2dbbf3c42524d4693b4f32bed9b26c4a71c4e74ea0",
+      "bytes": 10931
     },
     {
       "path": "requirements-core.txt",
@@ -894,8 +894,13 @@
     },
     {
       "path": "tests/test_live_hud.py",
-      "sha256": "4921040c6a1db0aa2e89426e6463dff7fcb7d8c89f043b4e8ea3a9e96e06f5d5",
-      "bytes": 5075
+      "sha256": "56e54989f9cf98aec89f205c710bbb7db248d3db653020a3ab2eb271b336be98",
+      "bytes": 6372
+    },
+    {
+      "path": "tests/test_live_hud_conflicts.py",
+      "sha256": "c547b776646ab5a0bda997c7c4b0a1abbca2f4e7d3742ba10a84e98a5a5359d4",
+      "bytes": 4489
     },
     {
       "path": "tests/test_live_latency.py",
@@ -929,8 +934,8 @@
     },
     {
       "path": "tests/test_live_recruitment.py",
-      "sha256": "527abeee64b740e69040a106319efd6c6014cc7e1cde1bf17cfdb97d2fc4b5c0",
-      "bytes": 20936
+      "sha256": "015d4f7ad9af139b6f62cdac56ed8bf83db5e54df213293324bf82cd0a89529e",
+      "bytes": 20951
     },
     {
       "path": "tests/test_live_recruitment_cards.py",
@@ -1005,5 +1010,7 @@
   ],
   "scope": "first ending nonbattle; no claimed complete real-game acceptance",
   "maa_assets_included": false,
-  "source": "local frozen inference dependency snapshot"
+  "source": "v12 frozen snapshot with reviewed HUD-only patch; native OCR and recruitment experiments excluded",
+  "release": "v13",
+  "base_archive_sha256": "b48d5f1a29f276bded2a10d0e02b3a83d2c66c13f69882b02f79fb8b92a3e8dc"
 }

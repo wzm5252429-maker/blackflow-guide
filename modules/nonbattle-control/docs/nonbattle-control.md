@@ -66,3 +66,10 @@
 运行 `py -3.13 -m unittest discover -s tests -p "test_live_*.py" -v`。这些测试不向真实游戏提交输入；真实模型测试只执行本机神经网络前向计算。部署包可用 `py -3.13 scripts/package_live_connector.py --output <目录>` 生成，包含冻结推理依赖和所选权重，避免覆盖研究工程正在进行的训练修改。
 
 浏览器连接依据：[Chrome 本机网络访问说明](https://developer.chrome.com/blog/local-network-access?hl=zh-cn)。物理 DPI 坐标依据：[Microsoft DPI awareness](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setthreaddpiawarenesscontext)。MAA 资源与算法来源：[MaaAssistantArknights](https://github.com/MaaAssistantArknights/MaaAssistantArknights)。
+
+
+## v13：资源识别冲突修复（2026-09-28）
+
+生命、生命上限和藏品出现矛盾读数时保持未知，后续局部重读或另一处标签不能覆盖冲突。生命与上限作为同一分数处理。当前截图的未知值不会从旧截图回填。
+
+这是 v12 的资源识别修复包；默认网络权重、招募语义及截图尺寸处理保持 v12。开发中的双尺寸 OCR 和独立招募网络没有启用。尚未完成全部非战斗流程或第一结局实机验收。

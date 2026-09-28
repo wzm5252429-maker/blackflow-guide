@@ -153,7 +153,7 @@ class RecruitmentEvidenceTests(unittest.TestCase):
         templates.labels,templates.node_specs = {},[]
         pipeline = VisionPipeline(maa_root='missing',ocr=self.ocr,templates=templates,
             corridor=SimpleNamespace(score=lambda *a:[],config={'decision':{'probability_threshold':.9}}))
-        pipeline._hud_resources = lambda *a:{}
+        pipeline._hud_resources = lambda *a,**kw:{}
         result = pipeline.analyze(self.image,source,frame_id='synthetic-initial-complete',captured_at=0)
         self.assertEqual(result.scene,'recruitment')
         self.assertEqual([a.label for a in result.actions],['沉沦于树海'])
@@ -217,7 +217,7 @@ class RecruitmentEvidenceTests(unittest.TestCase):
         pipeline = VisionPipeline(maa_root='missing',ocr=self.ocr,templates=templates,
             corridor=SimpleNamespace(score=lambda *a:[],config={'decision':{'probability_threshold':.9}}))
         pipeline._map = Mock(side_effect=AssertionError('support detail occludes the map'))
-        pipeline._hud_resources = lambda *a:{}
+        pipeline._hud_resources = lambda *a,**kw:{}
         result = pipeline.analyze(self.image,source,frame_id='synthetic-support-detail',captured_at=0)
         self.assertEqual(result.scene,'recruitment')
         self.assertEqual([a.label for a in result.actions],['返回'])
@@ -252,7 +252,7 @@ class RecruitmentEvidenceTests(unittest.TestCase):
             corridor=SimpleNamespace(score=lambda *a:[],config={'decision':{'probability_threshold':.9}}))
         pipeline.operators = OPERATORS
         pipeline._map = Mock(side_effect=AssertionError('obscured background map must not run'))
-        pipeline._hud_resources = lambda *a:{}
+        pipeline._hud_resources = lambda *a,**kw:{}
         result = pipeline.analyze(self.wide_image,source,frame_id='synthetic-weak-footer',captured_at=0)
         self.assertEqual(result.scene,'recruitment')
         self.assertEqual([a.label for a in result.actions],['帕拉斯','Pith','离开'])

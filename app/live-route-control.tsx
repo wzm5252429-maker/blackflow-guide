@@ -295,7 +295,7 @@ export default function LiveRouteControl() {
         <h2>执行状态</h2><strong>{status ? friendly(status.message) : "等待本机连接，尚未开始操作游戏。"}</strong>
         {status?.window && <p>{status.window.title} · {status.window.client_rect.width} × {status.window.client_rect.height} · {Math.round(status.window.dpi / 96 * 100)}% 缩放</p>}
         <dl><div><dt>当前界面</dt><dd>{obs ? SCENES[obs.scene] || obs.scene : "—"}</dd></div><div><dt>已确认层数</dt><dd>{obs?.floor ? `${obs.floor} 层` : "—"}</dd></div><div><dt>已执行点击</dt><dd>{status?.clicks ?? 0}</dd></div></dl>
-        {obs && <div className="live-resource-grid">{Object.entries(RESOURCES).map(([key, label]) => <div key={key}><span>{label}</span><strong>{obs.resources[key] ?? "未识别"}</strong></div>)}</div>}
+        {obs && <div className="live-resource-grid">{Object.entries(RESOURCES).map(([key, label]) => <div key={key}><span>{label}</span><strong>{obs.diagnostics?.includes(`resource_reading_conflict:${key}`) ? "读数冲突" : obs.resources[key] ?? "未识别"}</strong></div>)}</div>}
         {status?.decision?.neural && <p className="live-choice">神经网络选择：{target?.label || "等待下一帧"}</p>}
         {!!status?.events?.length && <ol className="live-events">{status.events.slice(-3).reverse().map((e, i) => <li key={`${e.time}-${i}`}><time>{new Date(e.time * 1000).toLocaleTimeString("zh-CN", { hour12: false })}</time>{friendly(e.message)}</li>)}</ol>}
         {status?.lease?.has_owner && !status.lease.is_owner && <p role="status">此页正在旁观。自动执行由另一页面控制；需要切换时，请先暂停，再在此页继续。</p>}
