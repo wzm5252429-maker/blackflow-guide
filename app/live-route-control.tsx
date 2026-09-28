@@ -4,18 +4,19 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AlertTriangle, BrainCircuit, Download, Link2, Monitor, Pause, Play, RefreshCw, Square } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { previewIdentity, readConsistentPreview } from "@/lib/live-preview";
 
 const BRIDGE = "http://127.0.0.1:19761";
 const TOKEN_KEY = "blackflow-live-token";
 const LEASE_PROTOCOL = "page-owner-v1";
 type WindowGeometry = { hwnd: number; title: string; dpi: number; client_rect: { width: number; height: number } };
 type GameWindow = Omit<WindowGeometry, "dpi" | "client_rect"> & Partial<Pick<WindowGeometry, "dpi" | "client_rect">> & { state?: "visible" | "minimized" | "hidden" };
-type Action = { action_id: string; label: string; bbox: number[] };
+type Action = { action_id: string; label: string; bbox: number[]; metadata?: { source_frame_id?: string } };
 type Status = {
   state: string; message: string; clicks: number; has_preview: boolean; observe_only?: boolean;
   lease?: { protocol: string; has_owner: boolean; is_owner: boolean };
   window?: WindowGeometry;
-  observation?: { scene: string; floor: number | null; confidence: number; captured_at: number;
+  observation?: { frame_id?: string; scene: string; floor: number | null; confidence: number; captured_at: number;
     resources: Record<string, number | null>; nodes: unknown[]; edges: unknown[];
     metadata: { image_width?: number; image_height?: number }; diagnostics: string[] };
   decision?: { action: Action | null; neural: boolean; reason: string; policy_name: string };
@@ -56,17 +57,26 @@ export default function LiveRouteControl() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [connectionLost, setConnectionLost] = useState(false);
-  const [preview, setPreview] = useState("");
+  const [preview, setPreview] = useState<{ url: string; frameId: string; capturedAt: number } | null>(null);
   const [frameError, setFrameError] = useState("");
   const mounted = useRef(true);
   const imageUrl = useRef("");
+  const previousSessionFrame = useRef<string | null>(null);
   const active = !!status && !["idle", "error", "stopped", "completed"].includes(status.state);
 
+  const clearPreview = useCallback(() => {
+    if (imageUrl.current) URL.revokeObjectURL(imageUrl.current);
+    imageUrl.current = "";
+    setPreview(null);
+    setFrameError("");
+  }, []);
+
   const saveToken = useCallback((value: string) => {
+    if (value !== tokenRef.current) clearPreview();
     tokenRef.current = value;
     setToken(value);
     if (value) sessionStorage.setItem(TOKEN_KEY, value); else sessionStorage.removeItem(TOKEN_KEY);
-  }, []);
+  }, [clearPreview]);
 
   useEffect(() => {
     mounted.current = true;
@@ -108,10 +118,10 @@ export default function LiveRouteControl() {
     if (!token) return;
     let cancelled = false;
     let timer: ReturnType<typeof setTimeout>;
-    let lastFrame = 0;
+    let lastFrame: string | null = null;
     const poll = async () => {
       const generation = commandGeneration.current;
-      const current = () => !cancelled && generation === commandGeneration.current && !commandLock.current;
+      const current = () => !cancelled && token === tokenRef.current && generation === commandGeneration.current && !commandLock.current;
       try {
         if (!current()) return;
         // Old bridges count every status request as a heartbeat. Check before
@@ -121,27 +131,35 @@ export default function LiveRouteControl() {
         const next: Status = await request("/v1/status");
         if (!current()) return;
         setStatus(next); setConnectionError(""); setConnectionLost(false);
-        if (next.has_preview && (next.observation?.captured_at || 0) !== lastFrame) {
+        const identity = previewIdentity(next);
+        if (!identity || next.state === "starting" || identity === previousSessionFrame.current) {
+          clearPreview(); lastFrame = null;
+        }
+        else if (identity !== lastFrame || !imageUrl.current) {
+          previousSessionFrame.current = null;
+          clearPreview(); lastFrame = null;
           try {
-          const response = await fetch(BRIDGE + "/v1/frame", { headers: { Authorization: "Bearer " + token }, cache: "no-store", signal: AbortSignal.timeout(5000) });
-          if (response.ok) {
-            const blob = await response.blob();
-            if (current()) {
-              const url = URL.createObjectURL(blob);
+            const verified = await readConsistentPreview(next, async () => {
+              const response = await fetch(BRIDGE + "/v1/frame", { headers: { Authorization: "Bearer " + token }, cache: "no-store", signal: AbortSignal.timeout(5000) });
+              if (!response.ok) throw new Error("画面暂时无法加载");
+              return response.blob();
+            }, () => request("/v1/status"), current);
+            if (verified && current()) {
+              const url = URL.createObjectURL(verified.blob);
               if (imageUrl.current) URL.revokeObjectURL(imageUrl.current);
-              imageUrl.current = url; setPreview(url); setFrameError("");
-              lastFrame = next.observation?.captured_at || 0;
-            }
-          } else if (current()) setFrameError("画面暂时无法加载，正在重试；执行状态仍正常连接。");
-          } catch { if (current()) setFrameError("画面暂时无法加载，正在重试；执行状态仍正常连接。"); }
+              imageUrl.current = url;
+              setPreview({ url, frameId: verified.status.observation!.frame_id!, capturedAt: verified.status.observation!.captured_at });
+              setStatus(verified.status); setFrameError(""); lastFrame = verified.identity;
+            } else if (current()) setFrameError("游戏画面已更新，正在获取对应截图。");
+          } catch { if (current()) setFrameError("截图或执行状态暂时无法核对，正在重试。"); }
         }
       } catch (err) {
-        if (current()) { setConnectionLost(true); setConnectionError(err instanceof TypeError ? "无法连接本机接管器。请确认启动器正在运行，并允许浏览器连接本机。连接丢失后会自动暂停点击。" : String((err as Error).message)); }
+        if (current()) { clearPreview(); lastFrame = null; setConnectionLost(true); setConnectionError(err instanceof TypeError ? "无法连接本机接管器。请确认启动器正在运行，并允许浏览器连接本机。连接丢失后会自动暂停点击。" : String((err as Error).message)); }
       } finally { if (!cancelled) timer = setTimeout(poll, 1500); }
     };
     void poll();
     return () => { cancelled = true; clearTimeout(timer); };
-  }, [token, request, checkProtocol]);
+  }, [token, request, checkProtocol, clearPreview]);
 
   // Games can be opened or restarted after the page connects. Refresh client
   // identities while idle; this endpoint reads metadata and never captures or
@@ -186,6 +204,9 @@ export default function LiveRouteControl() {
     for (let attempt = 0; mounted.current; attempt += 1) {
       try {
         const next = await request("/v1/start", { ending: "first", client_id: clientId.current, ...(hwnd ? { hwnd: Number(hwnd) } : {}) }, auth);
+        // v14 retains the previous session's observation while starting. Do
+        // not redisplay that frame until this run supplies a different identity.
+        previousSessionFrame.current = previewIdentity(next);
         setStatus(next);
         return;
       } catch (err) {
@@ -210,6 +231,7 @@ export default function LiveRouteControl() {
     if (commandLock.current) return;
     commandLock.current = true;
     commandGeneration.current += 1;
+    clearPreview();
     setBusy(true); setError("");
     try {
       if (!tokenRef.current) {
@@ -247,6 +269,8 @@ export default function LiveRouteControl() {
 
   const obs = status?.observation;
   const target = status?.decision?.action;
+  const previewTarget = preview && !connectionLost && obs?.frame_id === preview.frameId
+    && target?.metadata?.source_frame_id === preview.frameId ? target : null;
   const paused = status?.state === "paused" && !status.observe_only;
   const executing = active && !status?.observe_only;
   const needsWindow = !active && windows.length > 1 && !hwnd;
@@ -285,10 +309,10 @@ export default function LiveRouteControl() {
     </div>}
     <div className="live-workspace">
       <div className="live-screenshot">
-        <div className="live-frame-heading"><Monitor size={16} /><span>实时游戏画面</span><small>{preview ? "本机截图" : "等待启动"}</small></div>
+        <div className="live-frame-heading"><Monitor size={16} /><span>游戏截图</span><small>{preview ? `最近截图 · ${new Date(preview.capturedAt * 1000).toLocaleTimeString("zh-CN", { hour12: false })}` : "等待游戏截图"}</small></div>
         {frameError && <p className="live-frame-error" role="status">{frameError}</p>}
-        <div className="live-frame-content">{preview ? <><img src={preview} alt="本机接管器读取到的真实游戏窗口" />
-          {target && obs?.metadata.image_width && obs.metadata.image_height && <svg className="live-target" viewBox={`0 0 ${obs.metadata.image_width} ${obs.metadata.image_height}`} aria-label={`下一步目标：${target.label}`}><rect x={target.bbox[0]} y={target.bbox[1]} width={target.bbox[2]} height={target.bbox[3]} /></svg>}</>
+        <div className="live-frame-content">{preview ? <><img src={preview.url} alt="本机接管器读取到的真实游戏窗口" />
+          {previewTarget && obs?.metadata.image_width && obs.metadata.image_height && <svg className="live-target" viewBox={`0 0 ${obs.metadata.image_width} ${obs.metadata.image_height}`} aria-label={`下一步目标：${previewTarget.label}`}><rect x={previewTarget.bbox[0]} y={previewTarget.bbox[1]} width={previewTarget.bbox[2]} height={previewTarget.bbox[3]} /></svg>}</>
           : <div className="live-empty"><Monitor /><strong>启动后，这里显示识别到的游戏画面</strong><span>自动读取真实窗口和探索状态，无需手工填写路线。</span></div>}</div>
       </div>
       <div className="live-observation" aria-live="polite">
